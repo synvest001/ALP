@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Magical Kingdom</title>
+    
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#2c3e50">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="/icon-192.png">
+    
+    <!-- We will rely on style.css for styles, but some base resets are good here -->
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <!-- UI Modules will inject their content into these root containers -->
+      <div id="screen-landing" class="screen"></div>
+      <div id="screen-map" class="screen"></div>
+      <div id="screen-sandbox" class="screen"></div>
+      <div id="screen-parents" class="screen parents-theme"></div>
+      <div id="screen-account" class="screen parents-theme"></div>
+      
+      <!-- Overlays -->
+      <div id="modal-task-runner" class="modal"></div>
+      <div id="modal-reward" class="modal"></div>
+      <div id="modal-avatar" class="modal"></div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

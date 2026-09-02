@@ -1,0 +1,418 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "QuestionSpecification",
+  "type": "object",
+  "required": [
+    "item_id",
+    "schema_version",
+    "target_subskill_id",
+    "domain_id",
+    "evidence_archetype",
+    "cognitive_depth",
+    "transfer_level",
+    "primary_modality",
+    "supported_alternative_modalities",
+    "language_load_class",
+    "representation_type",
+    "challenge_type",
+    "creation_stage",
+    "estimated_duration_seconds",
+    "prompt_structure",
+    "interaction_model",
+    "scaffolding_protocol",
+    "rubric",
+    "safeguard_metadata"
+  ],
+  "properties": {
+    "item_id": {
+      "type": "string",
+      "pattern": "^ITEM-[MESLW]-[A-Z]{2}-[0-9]{2}-[0-9]{4}$",
+      "description": "Unique identifier conforming to Domain-Strand-Skill-Sequence format. (1.1: character class corrected from [M|E|S|L|W] to [MESLW].)"
+    },
+    "schema_version": {
+      "type": "string",
+      "enum": ["1.0.0", "1.1.0", "1.2.0"."1.3.0"]
+    },
+    "target_subskill_id": {
+      "type": "string",
+      "pattern": "^[MESLW]-[A-Z]{2}-[0-9]{2}$",
+      "description": "Must match one of the 187 Curriculum Map V1.0 skill identifiers. (1.1: character class corrected from [M|E|S|L|W] to [MESLW].)"
+    },
+    "domain_id": {
+      "type": "string",
+      "enum": [
+        "MATHEMATICS",
+        "ENGLISH_LANGUAGE",
+        "SCIENCE_EVS",
+        "LOGICAL_REASONING",
+        "WORLD_KNOWLEDGE"
+      ]
+    },
+    "evidence_archetype": {
+      "type": "string",
+      "enum": [
+        "CONCEPTUAL",
+        "PROCEDURAL_FLUENCY",
+        "KNOWLEDGE_ACQUISITION",
+        "STRATEGIC_REASONING",
+        "CREATIVE_GENERATIVE"
+      ],
+      "description": "Inherited from Assessment Framework V0.4 §3.1. Must equal the canonical archetype WS2 assigns to target_subskill_id (enforced by Stage 1 validator, Section 6, Rule 3.6 — not by this enum alone, since the enum only checks membership, not correctness for the specific subskill)."
+    },
+    "cognitive_depth": {
+      "type": "string",
+      "enum": ["UNDERSTAND", "APPLY", "REASON", "GENERALIZE", "CREATE"],
+      "description": "Master Plan Axis 2 depth classification."
+    },
+    "transfer_level": {
+      "type": "string",
+      "enum": [
+        "LEVEL_1_SURFACE",
+        "LEVEL_2_CONTEXTUAL",
+        "LEVEL_3_REPRESENTATIONAL",
+        "LEVEL_4_STRUCTURAL",
+        "LEVEL_5_NOVEL"
+      ],
+      "description": "Master Plan Section 8 Transfer taxonomy. Equivalent to what Assessment Framework V0.4 §6 calls intended_transfer_level — see Section 8 for the explicit cross-document field-name mapping."
+    },
+    "primary_modality": {
+      "type": "string",
+      "enum": [
+        "TAP_SELECT",
+        "DRAW_DIAGRAM",
+        "SPOKEN_DICTATED",
+        "TYPED_KEYBOARD",
+        "HANDWRITTEN_STYLUS"
+      ],
+      "description": "Together with supported_alternative_modalities, equivalent to what Assessment Framework V0.4 §6 calls intended_modality — see Section 8 for the explicit cross-document field-name mapping."
+    },
+    "supported_alternative_modalities": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "enum": [
+          "TAP_SELECT",
+          "DRAW_DIAGRAM",
+          "SPOKEN_DICTATED",
+          "TYPED_KEYBOARD",
+          "HANDWRITTEN_STYLUS"
+        ]
+      }
+    },
+    "language_load_class": {
+      "type": "string",
+      "enum": ["PURE_REASONING", "INTEGRATED_LANGUAGE_AND_REASONING"],
+      "description": "Master Plan Section 16 construct-load isolation. Also gates safeguard_metadata.has_unvoiced_text and safeguard_metadata.reading_grade_level via the allOf conditional block below (1.1)."
+    },
+    "representation_type": {
+      "type": "string",
+      "enum": ["CONCRETE", "VISUAL", "VERBAL", "SYMBOLIC", "ABSTRACT"]
+    },
+    "challenge_type": {
+      "type": "string",
+      "enum": [
+        "STANDARD",
+        "UNFAMILIAR_CONTEXT",
+        "INCOMPLETE_INFORMATION",
+        "MULTIPLE_SOLUTIONS",
+        "CONFLICTING_EVIDENCE",
+        "NEW_REPRESENTATION",
+        "STRATEGY_SELECTION"
+      ]
+    },
+    "creation_stage": {
+      "type": "string",
+      "enum": [
+        "NONE",
+        "ANSWERING",
+        "EXPLAINING",
+        "MODIFYING",
+        "GENERATING",
+        "CREATING"
+      ]
+    },
+    "estimated_duration_seconds": {
+      "type": "integer",
+      "minimum": 15,
+      "maximum": 300
+    },
+    "prompt_structure": {
+      "type": "object",
+      "required": ["spoken_audio_uri", "display_text", "visual_assets"],
+      "properties": {
+        "spoken_audio_uri": { "type": "string" },
+        "display_text": { "type": "string" },
+        "visual_assets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["asset_id", "asset_type", "uri"],
+            "properties": {
+              "asset_id": { "type": "string" },
+              "asset_type": {
+                "type": "string",
+                "enum": ["STATIC_SVG", "DYNAMIC_SVG", "STATIC_IMAGE", "INTERACTIVE_CANVAS"]
+              },
+              "uri": { "type": "string" },
+              "state_bindings": { "type": "object" }
+            }
+          }
+        }
+      }
+    },
+    "interaction_model": {
+      "type": "object",
+      "required": ["input_mechanic", "modality_configurations"],
+      "properties": {
+        "input_mechanic": {
+          "type": "string",
+          "enum": [
+            "SINGLE_CHOICE",
+            "MULTIPLE_CHOICE",
+            "ORDERING_SEQUENCE",
+            "CANVAS_DRAW_OR_CONNECT",
+            "ASR_SPEECH_RESPONSE",
+            "NUMBER_PAD_ENTRY",
+            "OPEN_TEXT_KEYBOARD",
+            "STYLUS_FREE_DRAW"
+          ]
+        },
+        "modality_configurations": { "type": "object" }
+      }
+    },
+    "scaffolding_protocol": {
+      "type": "object",
+      "required": [
+        "level_1_reflection_prompt",
+        "level_2_representation_shift",
+        "level_3_prerequisite_bridge"
+      ],
+      "properties": {
+        "level_1_reflection_prompt": {
+          "type": "object",
+          "required": ["spoken_text", "pedagogical_target", "preserves_productive_struggle"],
+          "properties": {
+            "spoken_text": { "type": "string" },
+            "pedagogical_target": { "type": "string" },
+            "preserves_productive_struggle": { "type": "boolean", "const": true }
+          }
+        },
+        "level_2_representation_shift": {
+          "type": "object",
+          "required": ["spoken_text", "target_representation"],
+          "properties": {
+            "spoken_text": { "type": "string" },
+            "target_representation": {
+              "type": "string",
+              "enum": ["CONCRETE", "VISUAL", "VERBAL", "SYMBOLIC", "ABSTRACT"]
+            },
+            "visual_asset_override": { "type": "string" }
+          }
+        },
+        "level_3_prerequisite_bridge": {
+          "type": "object",
+          "required": ["spoken_text", "target_prerequisite_subskill_id"],
+          "properties": {
+            "spoken_text": { "type": "string" },
+            "target_prerequisite_subskill_id": { "type": "string" },
+            "interactive_overlay": { "type": "string" }
+          }
+        }
+      }
+    },
+    "rubric": {
+      "type": "object",
+      "required": ["evaluation_mode", "correct_criteria", "diagnostic_distractors"],
+      "properties": {
+        "evaluation_mode": {
+          "type": "string",
+          "enum": [
+            "DETERMINISTIC_EXACT_MATCH",
+            "TOPOLOGICAL_RELATIONAL_MATCH",
+            "SEMANTIC_CONCEPT_KEYWORD_MATCH",
+            "CONSTRAINT_SATISFACTION_CHECK"
+          ]
+        },
+        "correct_criteria": { "type": "object" },
+        "diagnostic_distractors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["response_pattern", "diagnostic_misconception", "recommended_ws3_branch"],
+            "properties": {
+              "response_pattern": { "type": "string" },
+              "diagnostic_misconception": { "type": "string" },
+              "recommended_ws3_branch": {
+                "type": "string",
+                "enum": [
+                  "PREREQUISITE_STRENGTHENING",
+                  "PRODUCTIVE_STRUGGLE_PROTECT",
+                  "STRATEGY_REFLECTION_PIVOT",
+                  "LOAD_REDUCTION"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "safeguard_metadata": {
+      "type": "object",
+      "required": [
+        "reading_grade_level",
+        "has_unvoiced_text",
+        "cultural_neutrality_verified",
+        "contains_gamified_dark_patterns"
+      ],
+      "properties": {
+        "reading_grade_level": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Base type only; the actual ceiling is language_load_class-dependent — see the allOf conditional block below (1.1)."
+        },
+        "has_unvoiced_text": {
+          "type": "boolean",
+          "description": "Base type only; whether this may be true is language_load_class-dependent — see the allOf conditional block below (1.1)."
+        },
+        "cultural_neutrality_verified": { "type": "boolean", "const": true },
+        "contains_gamified_dark_patterns": { "type": "boolean", "const": false }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "description": "1.1 FIX: PURE_REASONING items must minimize construct-irrelevant reading load (Master Plan §16) — narration stays mandatory and reading level stays near-zero. 1.2 FIX: spoken_audio_uri must be non-empty, not merely present (minLength alone cannot catch a whitespace-only string — see Rule 3.2 in Section 6 for the actual enforcement).",
+      "if": {
+        "properties": { "language_load_class": { "const": "PURE_REASONING" } }
+      },
+      "then": {
+        "properties": {
+          "prompt_structure": {
+            "type": "object",
+            "properties": {
+              "spoken_audio_uri": { "minLength": 1 }
+            }
+          },
+          "safeguard_metadata": {
+            "type": "object",
+            "properties": {
+              "has_unvoiced_text": { "const": false },
+              "reading_grade_level": { "maximum": 1.0 }
+            }
+          }
+        }
+      }
+    },
+    {
+      "description": "1.1 FIX: INTEGRATED_LANGUAGE_AND_REASONING items measure language itself as the construct (Master Plan §16), so neither mandatory narration nor a near-zero reading ceiling is appropriate. A structural ceiling of 6.0 still bounds authoring; actual age-appropriateness is certified by Question Bank Stage 4 human review (Implementation Plan §6.2), not by this schema alone.",
+      "if": {
+        "properties": { "language_load_class": { "const": "INTEGRATED_LANGUAGE_AND_REASONING" } }
+      },
+      "then": {
+        "properties": {
+          "safeguard_metadata": {
+            "type": "object",
+            "properties": {
+              "reading_grade_level": { "maximum": 6.0 }
+            }
+          }
+        }
+      }
+    },
+    {
+      "description": "1.2 FIX (Rule 3.9): DETERMINISTIC_EXACT_MATCH items must carry a recognizable exact-match key in correct_criteria, not an arbitrary unconstrained object.",
+      "if": {
+        "properties": {
+          "rubric": {
+            "properties": { "evaluation_mode": { "const": "DETERMINISTIC_EXACT_MATCH" } }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "rubric": {
+            "properties": {
+              "correct_criteria": {
+                "anyOf": [
+                  { "required": ["selected_option_id"] },
+                  { "required": ["target_word"] },
+                  { "required": ["target_value"] }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "description": "1.2 FIX (Rule 3.9): SEMANTIC_CONCEPT_KEYWORD_MATCH items must carry a matchable concept/keyword set in correct_criteria.",
+      "if": {
+        "properties": {
+          "rubric": {
+            "properties": { "evaluation_mode": { "const": "SEMANTIC_CONCEPT_KEYWORD_MATCH" } }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "rubric": {
+            "properties": {
+              "correct_criteria": {
+                "anyOf": [
+                  { "required": ["matched_concepts"] },
+                  { "required": ["target_semantic_clusters"] }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "description": "1.2 FIX (Rule 3.9): TOPOLOGICAL_RELATIONAL_MATCH items must carry an explicit topology_graph definition (Section 3.4) in correct_criteria.",
+      "if": {
+        "properties": {
+          "rubric": {
+            "properties": { "evaluation_mode": { "const": "TOPOLOGICAL_RELATIONAL_MATCH" } }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "rubric": {
+            "properties": {
+              "correct_criteria": { "required": ["topology_graph"] }
+            }
+          }
+        }
+      }
+    },
+    {
+      "description": "1.2 FIX (Rule 3.9): CONSTRAINT_SATISFACTION_CHECK items must carry an explicit constraint_set definition (Section 3.4) in correct_criteria.",
+      "if": {
+        "properties": {
+          "rubric": {
+            "properties": { "evaluation_mode": { "const": "CONSTRAINT_SATISFACTION_CHECK" } }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "rubric": {
+            "properties": {
+              "correct_criteria": { "required": ["constraint_set"] }
+            }
+          }
+        }
+      }
+    },
+    {
+      "description": "1.3 NEW: every item must carry a device-universal fallback modality. TAP_SELECT has no microphone, canvas, or stylus dependency and is renderable on effectively any touch/pointer-capable runtime, including low-memory legacy devices. This is independent of, and in addition to, the existing motor/expressive alternative-modality requirement (minItems:1 on supported_alternative_modalities) — that requirement guarantees *an* alternative exists; this requirement guarantees the device-universal one specifically is always among the options. Enforced structurally here via anyOf, and redundantly in Python as Rule 3.10 (Section 6) for validators that do not run a full JSON-Schema-draft-2020-12 implementation.",
+      "anyOf": [
+        { "properties": { "primary_modality": { "const": "TAP_SELECT" } } },
+        { "properties": { "supported_alternative_modalities": { "contains": { "const": "TAP_SELECT" } } } }
+      ]
+    }
+  ]
+}

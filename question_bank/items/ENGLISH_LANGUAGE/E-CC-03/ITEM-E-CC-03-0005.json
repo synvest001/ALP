@@ -1,0 +1,50 @@
+{
+  "item_id": "ITEM-E-CC-03-0005",
+  "schema_version": "1.3.0",
+  "target_subskill_id": "E-CC-03",
+  "domain_id": "ENGLISH_LANGUAGE",
+  "evidence_archetype": "CREATIVE_GENERATIVE",
+  "language_load_class": "INTEGRATED_LANGUAGE_AND_REASONING",
+  "challenge_type": "MULTIPLE_CHOICE",
+  "creation_stage": "DRAFT",
+  "estimated_duration_seconds": 30,
+  "prompt_structure": {
+    "display_text": "Read and answer.",
+    "spoken_audio_uri": "asset://audio/mock.mp3"
+  },
+  "scaffolding_protocol": {
+    "level_1_reflection_prompt": {
+      "preserves_productive_struggle": true,
+      "prompt": "Try again."
+    },
+    "level_2_representation_shift": {
+      "hint": "Look here."
+    },
+    "level_3_prerequisite_bridge": {
+      "hint": "Remember this."
+    }
+  },
+  "rubric": {
+    "evaluation_mode": "DETERMINISTIC_EXACT_MATCH",
+    "correct_criteria": {
+      "selected_option_id": "opt_1"
+    }
+  },
+  "safeguard_metadata": {
+    "reading_grade_level": 1.5,
+    "contains_gamified_dark_patterns": false,
+    "has_unvoiced_text": false
+  },
+  "cognitive_depth": "REASON",
+  "transfer_level": "LEVEL_2_CONTEXTUAL",
+  "representation_type": "SYMBOLIC",
+  "primary_modality": "TAP_SELECT",
+  "supported_alternative_modalities": [
+    "TAP_SELECT"
+  ],
+  "interaction_model": {
+    "modality_configurations": {
+      "tap_select": {}
+    }
+  }
+}

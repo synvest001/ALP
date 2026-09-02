@@ -1,0 +1,20 @@
+{
+  "name": "magical-kingdom-pwa",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "core-js": "^3.37.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0",
+    "@vitejs/plugin-legacy": "^5.4.0",
+    "terser": "^5.31.0"
+  }
+}

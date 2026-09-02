@@ -1,0 +1,115 @@
+{
+  "item_id": "ITEM-M-OP-05-0014",
+  "schema_version": "1.3.0",
+  "target_subskill_id": "M-OP-05",
+  "domain_id": "MATHEMATICS",
+  "evidence_archetype": "CONCEPTUAL",
+  "cognitive_depth": "REASON",
+  "transfer_level": "LEVEL_4_STRUCTURAL",
+  "primary_modality": "TAP_SELECT",
+  "supported_alternative_modalities": [
+    "SPOKEN_DICTATED"
+  ],
+  "language_load_class": "PURE_REASONING",
+  "representation_type": "CONCRETE",
+  "challenge_type": "MULTIPLE_SOLUTIONS",
+  "creation_stage": "ANSWERING",
+  "estimated_duration_seconds": 90,
+  "prompt_structure": {
+    "spoken_audio_uri": "assets/audio/math/m_op_05_0014_prompt.mp3",
+    "display_text": "Which pair balances five plus three?",
+    "visual_assets": [
+      {
+        "asset_id": "split_bag_balance",
+        "asset_type": "DYNAMIC_SVG",
+        "uri": "assets/svg/split_bag_balance_8.svg",
+        "state_bindings": {
+          "left_sum": 8,
+          "target_pairs": [
+            [
+              4,
+              4
+            ],
+            [
+              6,
+              2
+            ],
+            [
+              7,
+              1
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  "interaction_model": {
+    "input_mechanic": "SINGLE_CHOICE",
+    "modality_configurations": {
+      "tap_select": {
+        "options": [
+          {
+            "option_id": "opt_1",
+            "display_value": "4 + 4"
+          },
+          {
+            "option_id": "opt_2",
+            "display_value": "5 + 3"
+          },
+          {
+            "option_id": "opt_3",
+            "display_value": "8 + 1"
+          }
+        ]
+      },
+      "spoken_dictated": {
+        "target_tokens": [
+          "four plus four",
+          "4+4"
+        ],
+        "acoustic_confidence_threshold": 0.75
+      }
+    }
+  },
+  "scaffolding_protocol": {
+    "level_1_reflection_prompt": {
+      "spoken_text": "Find a pair that adds up to 8.",
+      "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
+      "preserves_productive_struggle": true
+    },
+    "level_2_representation_shift": {
+      "spoken_text": "5 plus 3 is 8. 4 plus 4 is also 8.",
+      "target_representation": "VISUAL",
+      "visual_asset_override": "assets/svg/eight_dots_two_ways.svg"
+    },
+    "level_3_prerequisite_bridge": {
+      "spoken_text": "Different pairs can add up to the same number 8.",
+      "target_prerequisite_subskill_id": "M-NQ-04",
+      "interactive_overlay": "PAIR_DECOMPOSITION_TOOL"
+    }
+  },
+  "rubric": {
+    "evaluation_mode": "DETERMINISTIC_EXACT_MATCH",
+    "correct_criteria": {
+      "selected_option_id": "opt_1"
+    },
+    "diagnostic_distractors": [
+      {
+        "response_pattern": "opt_3",
+        "diagnostic_misconception": "ADDITIVE_OVERCOUNTING",
+        "recommended_ws3_branch": "PREREQUISITE_STRENGTHENING"
+      },
+      {
+        "response_pattern": "opt_2",
+        "diagnostic_misconception": "IDENTITY_COPYING",
+        "recommended_ws3_branch": "STRATEGY_REFLECTION_PIVOT"
+      }
+    ]
+  },
+  "safeguard_metadata": {
+    "reading_grade_level": 0.6,
+    "has_unvoiced_text": false,
+    "cultural_neutrality_verified": true,
+    "contains_gamified_dark_patterns": false
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "item_id": "ITEM-M-OP-05-0006",
+  "schema_version": "1.3.0",
+  "target_subskill_id": "M-OP-05",
+  "domain_id": "MATHEMATICS",
+  "evidence_archetype": "CONCEPTUAL",
+  "cognitive_depth": "APPLY",
+  "transfer_level": "LEVEL_1_SURFACE",
+  "primary_modality": "TYPED_KEYBOARD",
+  "supported_alternative_modalities": [
+    "TAP_SELECT"
+  ],
+  "language_load_class": "PURE_REASONING",
+  "representation_type": "SYMBOLIC",
+  "challenge_type": "STANDARD",
+  "creation_stage": "ANSWERING",
+  "estimated_duration_seconds": 45,
+  "prompt_structure": {
+    "spoken_audio_uri": "assets/audio/math/m_op_05_0006_prompt.mp3",
+    "display_text": "Which number makes the sum nine?",
+    "visual_assets": [
+      {
+        "asset_id": "eq_box_plus_4_9",
+        "asset_type": "STATIC_SVG",
+        "uri": "assets/svg/eq_box_plus_4_9.svg"
+      }
+    ]
+  },
+  "interaction_model": {
+    "input_mechanic": "NUMBER_PAD_ENTRY",
+    "modality_configurations": {
+      "typed_keyboard": {
+        "keypad_type": "NUMERIC_STANDARD",
+        "max_length": 2
+      },
+      "tap_select": {
+        "options": [
+          {
+            "option_id": "opt_1",
+            "display_value": "5"
+          },
+          {
+            "option_id": "opt_2",
+            "display_value": "4"
+          },
+          {
+            "option_id": "opt_3",
+            "display_value": "9"
+          }
+        ]
+      }
+    }
+  },
+  "scaffolding_protocol": {
+    "level_1_reflection_prompt": {
+      "spoken_text": "The box comes first. What plus 4 equals 9?",
+      "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
+      "preserves_productive_struggle": true
+    },
+    "level_2_representation_shift": {
+      "spoken_text": "Turn the equation around: 4 plus what equals 9?",
+      "target_representation": "VISUAL",
+      "visual_asset_override": "assets/svg/commutative_ten_frame_4_5.svg"
+    },
+    "level_3_prerequisite_bridge": {
+      "spoken_text": "Start at 4 and count up to 9.",
+      "target_prerequisite_subskill_id": "M-NQ-02",
+      "interactive_overlay": "NUMBER_LINE_STEPPER"
+    }
+  },
+  "rubric": {
+    "evaluation_mode": "DETERMINISTIC_EXACT_MATCH",
+    "correct_criteria": {
+      "target_value": 5
+    },
+    "diagnostic_distractors": [
+      {
+        "response_pattern": "9",
+        "diagnostic_misconception": "EQUALITY_AS_SUM_TOTAL",
+        "recommended_ws3_branch": "STRATEGY_REFLECTION_PIVOT"
+      },
+      {
+        "response_pattern": "13",
+        "diagnostic_misconception": "ADDITIVE_OVERCOUNTING",
+        "recommended_ws3_branch": "PREREQUISITE_STRENGTHENING"
+      }
+    ]
+  },
+  "safeguard_metadata": {
+    "reading_grade_level": 0.5,
+    "has_unvoiced_text": false,
+    "cultural_neutrality_verified": true,
+    "contains_gamified_dark_patterns": false
+  }
+}

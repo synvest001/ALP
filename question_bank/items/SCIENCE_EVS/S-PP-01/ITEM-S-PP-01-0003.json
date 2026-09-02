@@ -1,0 +1,50 @@
+{
+  "item_id": "ITEM-S-PP-01-0003",
+  "schema_version": "1.3.0",
+  "target_subskill_id": "S-PP-01",
+  "domain_id": "SCIENCE_EVS",
+  "evidence_archetype": "CONCEPTUAL",
+  "language_load_class": "PURE_REASONING",
+  "challenge_type": "MULTIPLE_CHOICE",
+  "creation_stage": "DRAFT",
+  "estimated_duration_seconds": 30,
+  "prompt_structure": {
+    "display_text": "Answer this.",
+    "spoken_audio_uri": "asset://audio/mock.mp3"
+  },
+  "scaffolding_protocol": {
+    "level_1_reflection_prompt": {
+      "preserves_productive_struggle": true,
+      "prompt": "Try again."
+    },
+    "level_2_representation_shift": {
+      "hint": "Look here."
+    },
+    "level_3_prerequisite_bridge": {
+      "hint": "Remember this."
+    }
+  },
+  "rubric": {
+    "evaluation_mode": "DETERMINISTIC_EXACT_MATCH",
+    "correct_criteria": {
+      "selected_option_id": "opt_1"
+    }
+  },
+  "safeguard_metadata": {
+    "has_unvoiced_text": false,
+    "reading_grade_level": 1.0,
+    "contains_gamified_dark_patterns": false
+  },
+  "cognitive_depth": "APPLY",
+  "transfer_level": "LEVEL_1_SURFACE",
+  "representation_type": "VISUAL",
+  "primary_modality": "TAP_SELECT",
+  "supported_alternative_modalities": [
+    "TAP_SELECT"
+  ],
+  "interaction_model": {
+    "modality_configurations": {
+      "tap_select": {}
+    }
+  }
+}

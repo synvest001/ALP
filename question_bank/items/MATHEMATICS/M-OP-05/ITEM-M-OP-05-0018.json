@@ -1,0 +1,102 @@
+{
+  "item_id": "ITEM-M-OP-05-0018",
+  "schema_version": "1.3.0",
+  "target_subskill_id": "M-OP-05",
+  "domain_id": "MATHEMATICS",
+  "evidence_archetype": "CONCEPTUAL",
+  "cognitive_depth": "GENERALIZE",
+  "transfer_level": "LEVEL_4_STRUCTURAL",
+  "primary_modality": "TAP_SELECT",
+  "supported_alternative_modalities": [
+    "SPOKEN_DICTATED"
+  ],
+  "language_load_class": "PURE_REASONING",
+  "representation_type": "CONCRETE",
+  "challenge_type": "INCOMPLETE_INFORMATION",
+  "creation_stage": "ANSWERING",
+  "estimated_duration_seconds": 120,
+  "prompt_structure": {
+    "spoken_audio_uri": "assets/audio/math/m_op_05_0018_prompt.mp3",
+    "display_text": "Which weight balances all three scales?",
+    "visual_assets": [
+      {
+        "asset_id": "multi_pan_scale",
+        "asset_type": "DYNAMIC_SVG",
+        "uri": "assets/svg/multi_pan_scale_invariant.svg",
+        "state_bindings": {
+          "rule": "cube_equals_2_spheres",
+          "target": 2
+        }
+      }
+    ]
+  },
+  "interaction_model": {
+    "input_mechanic": "SINGLE_CHOICE",
+    "modality_configurations": {
+      "tap_select": {
+        "options": [
+          {
+            "option_id": "opt_1",
+            "display_value": "2"
+          },
+          {
+            "option_id": "opt_2",
+            "display_value": "4"
+          },
+          {
+            "option_id": "opt_3",
+            "display_value": "6"
+          }
+        ]
+      },
+      "spoken_dictated": {
+        "target_tokens": [
+          "two",
+          "2"
+        ],
+        "acoustic_confidence_threshold": 0.75
+      }
+    }
+  },
+  "scaffolding_protocol": {
+    "level_1_reflection_prompt": {
+      "spoken_text": "Look at how 1 cube balances 2 spheres on every scale.",
+      "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
+      "preserves_productive_struggle": true
+    },
+    "level_2_representation_shift": {
+      "spoken_text": "1 cube always equals 2 spheres.",
+      "target_representation": "VISUAL",
+      "visual_asset_override": "assets/svg/cube_to_sphere_ratio.svg"
+    },
+    "level_3_prerequisite_bridge": {
+      "spoken_text": "2 spheres match 1 cube.",
+      "target_prerequisite_subskill_id": "M-NQ-04",
+      "interactive_overlay": "WEIGHT_SUBSTITUTION_PALETTE"
+    }
+  },
+  "rubric": {
+    "evaluation_mode": "DETERMINISTIC_EXACT_MATCH",
+    "correct_criteria": {
+      "selected_option_id": "opt_1"
+    },
+    "diagnostic_distractors": [
+      {
+        "response_pattern": "opt_2",
+        "diagnostic_misconception": "ADDITIVE_OVERCOUNTING",
+        "recommended_ws3_branch": "PREREQUISITE_STRENGTHENING"
+      },
+      {
+        "response_pattern": "opt_3",
+        "diagnostic_misconception": "EQUALITY_AS_SUM_TOTAL",
+        "recommended_ws3_branch": "STRATEGY_REFLECTION_PIVOT"
+      }
+    ]
+  },
+  "safeguard_metadata": {
+    "reading_grade_level": 0.7,
+    "has_unvoiced_text": false,
+    "cultural_neutrality_verified": true,
+    "contains_gamified_dark_patterns": false
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "item_id": "ITEM-M-OP-05-0011",
+  "schema_version": "1.3.0",
+  "target_subskill_id": "M-OP-05",
+  "domain_id": "MATHEMATICS",
+  "evidence_archetype": "CONCEPTUAL",
+  "cognitive_depth": "REASON",
+  "transfer_level": "LEVEL_2_CONTEXTUAL",
+  "primary_modality": "TAP_SELECT",
+  "supported_alternative_modalities": [
+    "SPOKEN_DICTATED"
+  ],
+  "language_load_class": "PURE_REASONING",
+  "representation_type": "CONCRETE",
+  "challenge_type": "INCOMPLETE_INFORMATION",
+  "creation_stage": "ANSWERING",
+  "estimated_duration_seconds": 90,
+  "prompt_structure": {
+    "spoken_audio_uri": "assets/audio/math/m_op_05_0011_prompt.mp3",
+    "display_text": "How many blocks are inside the box?",
+    "visual_assets": [
+      {
+        "asset_id": "mystery_box_3_7",
+        "asset_type": "DYNAMIC_SVG",
+        "uri": "assets/svg/mystery_box_3_7.svg",
+        "state_bindings": {
+          "right_total": 7,
+          "left_visible": 3,
+          "box_hidden": 4
+        }
+      }
+    ]
+  },
+  "interaction_model": {
+    "input_mechanic": "SINGLE_CHOICE",
+    "modality_configurations": {
+      "tap_select": {
+        "options": [
+          {
+            "option_id": "opt_1",
+            "display_value": "4"
+          },
+          {
+            "option_id": "opt_2",
+            "display_value": "3"
+          },
+          {
+            "option_id": "opt_3",
+            "display_value": "7"
+          }
+        ]
+      },
+      "spoken_dictated": {
+        "target_tokens": [
+          "four",
+          "4"
+        ],
+        "acoustic_confidence_threshold": 0.75
+      }
+    }
+  },
+  "scaffolding_protocol": {
+    "level_1_reflection_prompt": {
+      "spoken_text": "The scale is level. 7 blocks are on the right. How many must be on the left?",
+      "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
+      "preserves_productive_struggle": true
+    },
+    "level_2_representation_shift": {
+      "spoken_text": "You see 3 blocks on the left. The box has the rest of the 7.",
+      "target_representation": "VISUAL",
+      "visual_asset_override": "assets/svg/transparent_box_3_4.svg"
+    },
+    "level_3_prerequisite_bridge": {
+      "spoken_text": "3 plus 4 equals 7.",
+      "target_prerequisite_subskill_id": "M-NQ-02",
+      "interactive_overlay": "BLOCK_REMOVAL_TOOL"
+    }
+  },
+  "rubric": {
+    "evaluation_mode": "DETERMINISTIC_EXACT_MATCH",
+    "correct_criteria": {
+      "selected_option_id": "opt_1"
+    },
+    "diagnostic_distractors": [
+      {
+        "response_pattern": "opt_3",
+        "diagnostic_misconception": "EQUALITY_AS_SUM_TOTAL",
+        "recommended_ws3_branch": "STRATEGY_REFLECTION_PIVOT"
+      },
+      {
+        "response_pattern": "opt_2",
+        "diagnostic_misconception": "IDENTITY_COPYING",
+        "recommended_ws3_branch": "STRATEGY_REFLECTION_PIVOT"
+      }
+    ]
+  },
+  "safeguard_metadata": {
+    "reading_grade_level": 0.7,
+    "has_unvoiced_text": false,
+    "cultural_neutrality_verified": true,
+    "contains_gamified_dark_patterns": false
+  }
+}
