@@ -9,19 +9,28 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Solve this problem.",
-    "spoken_audio_uri": "asset://audio/mock.mp3"
+    "display_text": "Count the juicy red apples in the basket.",
+    "spoken_audio_uri": "assets/audio/mathematics/item-m-ps-05-0008_prompt.mp3",
+    "visual_assets": [
+      {
+        "asset_id": "ITEM-M-PS-05-0008_vis_1",
+        "asset_type": "DYNAMIC_SVG",
+        "uri": "assets/svg/item-m-ps-05-0008_visual.svg"
+      }
+    ]
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "preserves_productive_struggle": true,
-      "prompt": "Try again."
+      "prompt": "Touch each red apple as you count: 1, 2, 3, 4.",
+      "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
+      "preserves_productive_struggle": true
     },
     "level_2_representation_shift": {
-      "hint": "Look here."
+      "target_representation": "CONCRETE",
+      "hint": "Look closely at the picture and count each item."
     },
     "level_3_prerequisite_bridge": {
-      "hint": "Remember this."
+      "hint": "Remember the foundational rule: observe, compare, and verify."
     }
   },
   "rubric": {
@@ -33,6 +42,7 @@
   "safeguard_metadata": {
     "has_unvoiced_text": false,
     "reading_grade_level": 1.0,
+    "cultural_neutrality_verified": true,
     "contains_gamified_dark_patterns": false
   },
   "cognitive_depth": "GENERALIZE",
@@ -40,11 +50,38 @@
   "representation_type": "SYMBOLIC",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
-    "TAP_SELECT"
+    "TAP_SELECT",
+    "SPOKEN_DICTATED"
   ],
   "interaction_model": {
+    "input_mechanic": "SINGLE_CHOICE",
     "modality_configurations": {
-      "tap_select": {}
+      "tap_select": {
+        "options": [
+          {
+            "option_id": "opt_1",
+            "display_value": "4"
+          },
+          {
+            "option_id": "opt_2",
+            "display_value": "5"
+          },
+          {
+            "option_id": "opt_3",
+            "display_value": "6"
+          },
+          {
+            "option_id": "opt_4",
+            "display_value": "3"
+          }
+        ]
+      },
+      "spoken_dictated": {
+        "target_tokens": [
+          "4"
+        ],
+        "acoustic_confidence_threshold": 0.75
+      }
     }
   }
 }

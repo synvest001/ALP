@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 200" width="100%" height="100%">
+  <rect width="240" height="200" rx="16" fill="#fdf2f8"/>
+  <line x1="120" y1="120" x2="120" y2="185" stroke="#16a34a" stroke-width="6" stroke-linecap="round"/>
+  <path d="M 120,150 Q 90,135 90,150 Q 110,165 120,150" fill="#22c55e"/>
+  <!-- Petals -->
+  <circle cx="120" cy="80" r="18" fill="#ec4899"/>
+  <circle cx="120" cy="120" r="18" fill="#ec4899"/>
+  <circle cx="100" cy="100" r="18" fill="#ec4899"/>
+  <circle cx="140" cy="100" r="18" fill="#ec4899"/>
+  <!-- Center -->
+  <circle cx="120" cy="100" r="15" fill="#facc15"/>
+</svg>

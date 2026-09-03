@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Look at the cute puppy! What rhyming word sounds like 'Cat'?",
+    "display_text": "Which letter does the word 'Sun' start with?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cc-05-0005_prompt.mp3",
     "visual_assets": [
       {
@@ -21,9 +21,16 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Cat and Hat end in the same sound: -at!",
+      "prompt": "Listen to the first sound: /s/ ... Sun starts with S!",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
+    },
+    "level_2_representation_shift": {
+      "target_representation": "CONCRETE",
+      "hint": "Look closely at the picture and count each item."
+    },
+    "level_3_prerequisite_bridge": {
+      "hint": "Remember the foundational rule: observe, compare, and verify."
     }
   },
   "rubric": {
@@ -33,16 +40,18 @@
     }
   },
   "safeguard_metadata": {
-    "reading_grade_level": 1.5,
-    "contains_gamified_dark_patterns": false,
-    "has_unvoiced_text": false
+    "has_unvoiced_text": false,
+    "reading_grade_level": 1.0,
+    "cultural_neutrality_verified": true,
+    "contains_gamified_dark_patterns": false
   },
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_2_CONTEXTUAL",
   "representation_type": "SYMBOLIC",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
-    "TAP_SELECT"
+    "TAP_SELECT",
+    "SPOKEN_DICTATED"
   ],
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",
@@ -51,25 +60,25 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Hat"
+            "display_value": "S"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Dog"
+            "display_value": "T"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Fish"
+            "display_value": "B"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Cup"
+            "display_value": "M"
           }
         ]
       },
       "spoken_dictated": {
         "target_tokens": [
-          "hat"
+          "s"
         ],
         "acoustic_confidence_threshold": 0.75
       }

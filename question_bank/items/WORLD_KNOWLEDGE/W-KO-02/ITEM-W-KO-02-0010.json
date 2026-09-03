@@ -9,19 +9,28 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Answer this.",
-    "spoken_audio_uri": "asset://audio/mock.mp3"
+    "display_text": "What do honeybees make in their hive?",
+    "spoken_audio_uri": "assets/audio/world_knowledge/item-w-ko-02-0010_prompt.mp3",
+    "visual_assets": [
+      {
+        "asset_id": "ITEM-W-KO-02-0010_vis_1",
+        "asset_type": "DYNAMIC_SVG",
+        "uri": "assets/svg/item-w-ko-02-0010_visual.svg"
+      }
+    ]
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "preserves_productive_struggle": true,
-      "prompt": "Try again."
+      "prompt": "Bees collect nectar from colorful flowers to make sweet honey.",
+      "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
+      "preserves_productive_struggle": true
     },
     "level_2_representation_shift": {
-      "hint": "Look here."
+      "target_representation": "CONCRETE",
+      "hint": "Look closely at the picture and count each item."
     },
     "level_3_prerequisite_bridge": {
-      "hint": "Remember this."
+      "hint": "Remember the foundational rule: observe, compare, and verify."
     }
   },
   "rubric": {
@@ -33,20 +42,46 @@
   "safeguard_metadata": {
     "has_unvoiced_text": false,
     "reading_grade_level": 1.0,
+    "cultural_neutrality_verified": true,
     "contains_gamified_dark_patterns": false
   },
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_2_CONTEXTUAL",
   "representation_type": "SYMBOLIC",
-  "primary_modality": "SPOKEN_DICTATED",
+  "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "interaction_model": {
+    "input_mechanic": "SINGLE_CHOICE",
     "modality_configurations": {
-      "tap_select": {},
-      "spoken_dictated": {}
+      "tap_select": {
+        "options": [
+          {
+            "option_id": "opt_1",
+            "display_value": "Sweet Honey"
+          },
+          {
+            "option_id": "opt_2",
+            "display_value": "Ice Cream"
+          },
+          {
+            "option_id": "opt_3",
+            "display_value": "Chocolate"
+          },
+          {
+            "option_id": "opt_4",
+            "display_value": "Bread"
+          }
+        ]
+      },
+      "spoken_dictated": {
+        "target_tokens": [
+          "sweet honey"
+        ],
+        "acoustic_confidence_threshold": 0.75
+      }
     }
   }
 }

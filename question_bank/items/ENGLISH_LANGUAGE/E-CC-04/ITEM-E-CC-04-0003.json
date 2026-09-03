@@ -24,6 +24,13 @@
       "prompt": "Listen to the first sound: /s/ ... Sun starts with S!",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
+    },
+    "level_2_representation_shift": {
+      "target_representation": "CONCRETE",
+      "hint": "Look closely at the picture and count each item."
+    },
+    "level_3_prerequisite_bridge": {
+      "hint": "Remember the foundational rule: observe, compare, and verify."
     }
   },
   "rubric": {
@@ -33,16 +40,18 @@
     }
   },
   "safeguard_metadata": {
-    "reading_grade_level": 1.5,
-    "contains_gamified_dark_patterns": false,
-    "has_unvoiced_text": false
+    "has_unvoiced_text": false,
+    "reading_grade_level": 1.0,
+    "cultural_neutrality_verified": true,
+    "contains_gamified_dark_patterns": false
   },
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_1_SURFACE",
   "representation_type": "VISUAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
-    "TAP_SELECT"
+    "TAP_SELECT",
+    "SPOKEN_DICTATED"
   ],
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",

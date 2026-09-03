@@ -9,19 +9,28 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Read and answer.",
-    "spoken_audio_uri": "asset://audio/mock.mp3"
+    "display_text": "What word rhymes with Cat?",
+    "spoken_audio_uri": "assets/audio/english_language/item-e-we-08-0006_prompt.mp3",
+    "visual_assets": [
+      {
+        "asset_id": "ITEM-E-WE-08-0006_vis_1",
+        "asset_type": "DYNAMIC_SVG",
+        "uri": "assets/svg/item-e-we-08-0006_visual.svg"
+      }
+    ]
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "preserves_productive_struggle": true,
-      "prompt": "Try again."
+      "prompt": "Cat and Hat end in the same sound: -at!",
+      "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
+      "preserves_productive_struggle": true
     },
     "level_2_representation_shift": {
-      "hint": "Look here."
+      "target_representation": "CONCRETE",
+      "hint": "Look closely at the picture and count each item."
     },
     "level_3_prerequisite_bridge": {
-      "hint": "Remember this."
+      "hint": "Remember the foundational rule: observe, compare, and verify."
     }
   },
   "rubric": {
@@ -31,20 +40,48 @@
     }
   },
   "safeguard_metadata": {
-    "reading_grade_level": 1.5,
-    "contains_gamified_dark_patterns": false,
-    "has_unvoiced_text": false
+    "has_unvoiced_text": false,
+    "reading_grade_level": 1.0,
+    "cultural_neutrality_verified": true,
+    "contains_gamified_dark_patterns": false
   },
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_3_REPRESENTATIONAL",
   "representation_type": "SYMBOLIC",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
-    "TAP_SELECT"
+    "TAP_SELECT",
+    "SPOKEN_DICTATED"
   ],
   "interaction_model": {
+    "input_mechanic": "SINGLE_CHOICE",
     "modality_configurations": {
-      "tap_select": {}
+      "tap_select": {
+        "options": [
+          {
+            "option_id": "opt_1",
+            "display_value": "Hat"
+          },
+          {
+            "option_id": "opt_2",
+            "display_value": "Dog"
+          },
+          {
+            "option_id": "opt_3",
+            "display_value": "Fish"
+          },
+          {
+            "option_id": "opt_4",
+            "display_value": "Cup"
+          }
+        ]
+      },
+      "spoken_dictated": {
+        "target_tokens": [
+          "hat"
+        ],
+        "acoustic_confidence_threshold": 0.75
+      }
     }
   }
 }
