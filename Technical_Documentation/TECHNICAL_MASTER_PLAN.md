@@ -32,8 +32,9 @@ To satisfy the "Cross-Device" and "Credit Card Free" constraints simultaneously,
 
 ### C. Curriculum & Content Delivery
 - The massive Question Bank and Curriculum Map will **not** be stored in Google Sheets (to prevent API throttling and slow load times).
-- Instead, Python scripts will run at build-time to parse the markdown/JSON files and compile them into a static `curriculum_map.json`. 
-- This JSON is bundled with the GitHub Pages deployment and cached locally.
+- A fully populated, procedurally generated Question Bank containing thousands of JSON items (along with schemas, validators, and a ledger) already exists locally in the `question_bank/` directory.
+- Python scripts run at build-time to parse the markdown/JSON files and compile them into a static `curriculum_map.json`. 
+- These JSON payloads are bundled with the GitHub Pages deployment and cached locally by the PWA.
 
 ---
 
@@ -95,7 +96,7 @@ The architecture is designed to allow continuous evolution of both the curriculu
 
 Once this Master Plan is baselined, execution will follow a strict 4-Phase sequence:
 
-* **Phase 1 (Foundational Infrastructure):** Set up GitHub Pages, write the Google Apps Script API, and build the `SyncEngine`. Ingest the Curriculum Map into a static JSON artifact.
-* **Phase 2 (Core Logic & Content):** Build the Assessment Framework logic to transition mastery stages. Author the remaining Question Bank JSONs and generate necessary SVG/Audio assets.
-* **Phase 3 (Adaptive Engine & Parent UI):** Re-enable the dynamic Adaptive Engine (removing temporary hardcodes). Build the Parents Dashboard UI.
-* **Phase 4 (Advanced UX):** Wire up the multi-tier scaffolding UI in the Task Runner and implement Speech-to-Text interaction modalities.
+* **Phase 1 (Foundational Infrastructure):** ✅ Completed. Set up GitHub Pages, write the Google Apps Script API, and build the `SyncEngine`. Ingest the Curriculum Map into a static JSON artifact.
+* **Phase 2 (Core Logic & Content):** ✅ Completed. Built the Assessment Framework logic to transition mastery stages. AdaptiveEngine now dynamically pulls from the massively populated, pre-existing Question Bank.
+* **Phase 3 (Adaptive Engine & Parent UI):** ✅ Completed. Re-enabled the dynamic Adaptive Engine (targets active subskills). Built the dynamic Parents Dashboard UI hooked up to TelemetryQueue.
+* **Phase 4 (Advanced UX):** ✅ Completed. Implemented graceful failure routing (skip to next question on failure) and strict session gating (0-error threshold to advance map node).

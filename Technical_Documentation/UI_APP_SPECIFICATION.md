@@ -30,8 +30,8 @@ The application consists of a single HTML shell (`index.html`) with absolute-pos
     *   **Manage Profiles:** Existing profiles list their avatar, name, and two actions: "Reset Progress" and "Delete". Both actions have native `confirm()` alerts before executing.
 
 #### 3. Map Screen (`#screen-map`)
-*   **Visuals:** A dark, space-like scrollable container (`#1a1a2e`). 
-*   **Layout:** A sticky header displays the avatar, customized greeting, current level, star count, daily quest progress, and action buttons ("Treasures", "Sync Data", "Logout"). The body contains a massive 1000x4000 SVG map.
+*   **Visuals:** A scrollable container holding the active "World" background image (which dynamically cycles through 18 unique environment sets as the player completes sets of 10 nodes).
+*   **Layout:** A sticky header displays the avatar, a customized greeting that dynamically includes the name of the current world (e.g., "Welcome to Magical Forest!"), current level, star count, daily quest progress, and action buttons ("Treasures", "Sync Data", "Logout"). The body contains a dynamically drawn SVG map path.
 *   **Interactions:** The map generates 10 sequential nodes connected by a dashed SVG path. Completed nodes are green with a star (⭐). The current active node pulses yellow with an exclamation mark (!). Locked nodes are grey (🔒). Clicking the active node triggers an alert (placeholder for opening the Task Runner).
 
 #### 4. Task Runner Modal (`#modal-task-runner`)
@@ -140,8 +140,8 @@ interface Task {
     *   *Docs:* "WebSQL Engine... storing 1,800+ categorized curriculum questions."
     *   *Code:* `websql_engine.ts` schema does not store individual questions; it stores a single `data TEXT` payload intended for "session bundles". Furthermore, `TaskRunner.ts` completely ignores WebSQL and uses a hardcoded array of 3 tasks (`startSession()` fallback).
 *   **Rewards & Progression:**
-    *   *Docs:* "Completing a 'World' (a set of 5 nodes) grants a 'Treasure Pack' (themed stickers)."
-    *   *Code:* `TaskRunner.ts` completes sessions with a raw `alert()` and does not update `MapScreen`'s completed nodes. `ToyboxScreen.ts` hardcodes a list of 7 unlocked stickers and does not read from any reward unlock state.
+    *   *Docs:* "Completing a 'World' (a set of 10 nodes across one full visual map) grants a 'Treasure Pack' (themed stickers). The map background automatically advances to the next magical environment upon completion."
+    *   *Code:* `TaskRunner.ts` completes sessions with a raw `alert()` and does not update `MapScreen`'s completed nodes. `MapScreen.ts` has been updated to cycle through 18 background map sets every 10 nodes. `ToyboxScreen.ts` hardcodes a list of 7 unlocked stickers and does not read from any reward unlock state.
 *   **UI Flow / Task Runner Activation:**
     *   *Docs:* "Clicking a node on the map opens the Task Runner."
     *   *Code:* In `MapScreen.ts` line 181, clicking the active node triggers a native `alert("Task Runner opening...");`. It does not actually invoke `this.app.taskRunner.startSession()`.

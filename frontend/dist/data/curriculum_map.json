@@ -1,0 +1,5221 @@
+{
+  "domains": [
+    {
+      "id": "1",
+      "title": "Mathematics & Mathematical Thinking",
+      "strands": [
+        {
+          "id": "6.1",
+          "title": "Number & Quantity",
+          "skills": [
+            {
+              "code": "M-NQ-01",
+              "title": "Counting and Cardinality",
+              "subskills": [
+                "Counting objects meaningfully",
+                "Connecting number words to quantities",
+                "Understanding cardinality",
+                "Recognizing quantities",
+                "Comparing quantities"
+              ],
+              "priority": "Essential Foundation",
+              "progression": [
+                "Phase A",
+                "Phase B"
+              ],
+              "prerequisites": {
+                "required": [
+                  "None \u2014 foundational entry point"
+                ],
+                "strongly_supportive": [
+                  "TBD"
+                ],
+                "useful_background": [
+                  "TBD"
+                ]
+              }
+            },
+            {
+              "code": "M-NQ-02",
+              "title": "Number Relationships",
+              "subskills": [
+                "Recognizing relationships between numbers",
+                "Comparing numbers",
+                "Composing quantities",
+                "Decomposing quantities",
+                "Recognizing part-whole relationships"
+              ],
+              "priority": "Essential Foundation",
+              "progression": [
+                "Phase A",
+                "Phase B",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-NQ-01"
+                ],
+                "strongly_supportive": [
+                  "TBD"
+                ],
+                "useful_background": [
+                  "TBD"
+                ]
+              }
+            },
+            {
+              "code": "M-NQ-03",
+              "title": "Magnitude and Comparison",
+              "subskills": [
+                "Judging relative magnitude on a continuous scale",
+                "Locating and comparing quantities on a number line",
+                "Estimating \"about how much more/less\" without exact calculation",
+                "Recognizing greater/less relationships across representations (objects, numerals, number line)"
+              ],
+              "priority": "Essential Foundation",
+              "progression": [
+                "Phase A",
+                "Phase B",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-NQ-01"
+                ],
+                "strongly_supportive": [
+                  "M-NQ-02"
+                ],
+                "useful_background": [
+                  "TBD"
+                ]
+              }
+            },
+            {
+              "code": "M-NQ-04",
+              "title": "Place Value",
+              "subskills": [
+                "Understanding positional value",
+                "Representing numbers using place-value structure",
+                "Comparing numbers using place value",
+                "Decomposing numbers according to place value"
+              ],
+              "priority": "Essential Foundation",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-NQ-02, M-NQ-03"
+                ],
+                "strongly_supportive": [
+                  "TBD"
+                ],
+                "useful_background": [
+                  "TBD"
+                ]
+              }
+            },
+            {
+              "code": "M-NQ-05",
+              "title": "Estimation",
+              "subskills": [
+                "Estimating quantities",
+                "Estimating numerical results",
+                "Comparing estimates with actual quantities",
+                "Recognizing reasonable versus unreasonable estimates"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-NQ-03"
+                ],
+                "strongly_supportive": [
+                  "M-NQ-04"
+                ],
+                "useful_background": [
+                  "measurement concepts TBD"
+                ]
+              }
+            },
+            {
+              "code": "M-NQ-06",
+              "title": "Mental Number Relationships",
+              "subskills": [
+                "Recognizing useful numerical relationships",
+                "Using known relationships to reason about unknown quantities",
+                "Developing flexible mental representations of number"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-NQ-02"
+                ],
+                "strongly_supportive": [
+                  "M-NQ-04"
+                ],
+                "useful_background": [
+                  "M-OP foundational operations"
+                ]
+              }
+            },
+            {
+              "code": "M-OP-01",
+              "title": "Addition and Subtraction",
+              "subskills": [
+                "Meaning of addition",
+                "Meaning of subtraction",
+                "Combining and separating quantities",
+                "Part-whole relationships",
+                "Calculation strategies",
+                "Flexible calculation"
+              ],
+              "priority": "Essential Foundation",
+              "progression": [
+                "Phase A",
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-NQ-01, M-NQ-02"
+                ],
+                "strongly_supportive": [
+                  "M-NQ-03"
+                ],
+                "useful_background": [
+                  "M-NQ-05"
+                ]
+              }
+            },
+            {
+              "code": "M-OP-02",
+              "title": "Multiplication and Division",
+              "subskills": [
+                "Equal groups",
+                "Repeated relationships",
+                "Sharing",
+                "Grouping",
+                "Multiplicative relationships",
+                "Calculation strategies"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-NQ-02, M-OP-01"
+                ],
+                "strongly_supportive": [
+                  "M-NQ-03"
+                ],
+                "useful_background": [
+                  "TBD"
+                ]
+              }
+            },
+            {
+              "code": "M-OP-03",
+              "title": "Inverse Relationships",
+              "subskills": [
+                "Recognizing inverse relationships",
+                "Using inverse operations to reason",
+                "Checking results using inverse relationships"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-OP-01"
+                ],
+                "strongly_supportive": [
+                  "M-OP-02"
+                ],
+                "useful_background": [
+                  "M-NQ-02"
+                ]
+              }
+            },
+            {
+              "code": "M-OP-04",
+              "title": "Properties",
+              "subskills": [
+                "Recognizing useful operation properties",
+                "Using properties to simplify reasoning",
+                "Recognizing structural relationships"
+              ],
+              "priority": "Enrichment / Advanced",
+              "progression": [
+                "Phase D",
+                "Phase E",
+                "Phase F"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-OP-01"
+                ],
+                "strongly_supportive": [
+                  "M-OP-02, M-NQ-02"
+                ],
+                "useful_background": [
+                  "TBD"
+                ]
+              }
+            },
+            {
+              "code": "M-OP-05",
+              "title": "Equality",
+              "subskills": [
+                "Understanding equality as a relationship",
+                "Recognizing equivalent expressions",
+                "Reasoning about unknown quantities",
+                "Avoiding an equality-as-answer-only interpretation"
+              ],
+              "priority": "Essential Foundation",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-NQ-02"
+                ],
+                "strongly_supportive": [
+                  "M-OP-01, M-NQ-04"
+                ],
+                "useful_background": [
+                  "TBD"
+                ]
+              }
+            },
+            {
+              "code": "M-OP-06",
+              "title": "Unknown Quantities",
+              "subskills": [
+                "Identifying unknown quantities",
+                "Representing unknowns",
+                "Reasoning about relationships involving unknowns",
+                "Solving simple unknown-value situations"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D",
+                "Phase E"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-OP-01, M-OP-05"
+                ],
+                "strongly_supportive": [
+                  "M-NQ-04"
+                ],
+                "useful_background": [
+                  "pattern relationships"
+                ]
+              }
+            },
+            {
+              "code": "M-FR-01",
+              "title": "Part-Whole Relationships",
+              "subskills": [
+                "Recognizing parts and wholes",
+                "Representing equal parts",
+                "Relating parts to wholes"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-NQ-02"
+                ],
+                "strongly_supportive": [
+                  "M-OP-01"
+                ],
+                "useful_background": [
+                  "visual representation"
+                ]
+              }
+            },
+            {
+              "code": "M-FR-02",
+              "title": "Unit Fractions",
+              "subskills": [
+                "Understanding unit fractions",
+                "Relating unit fractions to wholes",
+                "Representing unit fractions"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-FR-01"
+                ],
+                "strongly_supportive": [
+                  "M-NQ-03"
+                ],
+                "useful_background": [
+                  "M-OP-01"
+                ]
+              }
+            },
+            {
+              "code": "M-FR-03",
+              "title": "Equal Shares",
+              "subskills": [
+                "Dividing quantities into equal shares",
+                "Recognizing unequal versus equal partitioning",
+                "Connecting sharing to fractional ideas"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-FR-01"
+                ],
+                "strongly_supportive": [
+                  "M-OP-02"
+                ],
+                "useful_background": [
+                  "M-NQ-02"
+                ]
+              }
+            },
+            {
+              "code": "M-FR-04",
+              "title": "Fraction Comparison",
+              "subskills": [
+                "Comparing fractions",
+                "Recognizing relationships between fractional quantities",
+                "Representing comparisons"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase D",
+                "Phase E"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-FR-01, M-FR-02"
+                ],
+                "strongly_supportive": [
+                  "M-NQ-03"
+                ],
+                "useful_background": [
+                  "M-FR-03"
+                ]
+              }
+            },
+            {
+              "code": "M-FR-05",
+              "title": "Equivalence",
+              "subskills": [
+                "Recognizing equivalent fractional representations",
+                "Connecting different representations of the same quantity"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase D",
+                "Phase E"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-FR-02, M-FR-04"
+                ],
+                "strongly_supportive": [
+                  "M-NQ-02"
+                ],
+                "useful_background": [
+                  "representation flexibility"
+                ]
+              }
+            },
+            {
+              "code": "M-FR-06",
+              "title": "Simple Proportional Reasoning",
+              "subskills": [
+                "Recognizing simple proportional relationships",
+                "Reasoning about scaling relationships",
+                "Connecting quantities proportionally"
+              ],
+              "priority": "Enrichment / Advanced",
+              "progression": [
+                "Phase E",
+                "Phase F"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-NQ-02, M-OP-02"
+                ],
+                "strongly_supportive": [
+                  "M-FR-04, M-FR-05"
+                ],
+                "useful_background": [
+                  "pattern and relationship skills"
+                ]
+              }
+            },
+            {
+              "code": "M-PA-01",
+              "title": "Repeating Patterns",
+              "subskills": [
+                "Recognizing repeating structures",
+                "Extending patterns",
+                "Describing pattern rules"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-NQ-02"
+                ],
+                "strongly_supportive": [
+                  "TBD"
+                ],
+                "useful_background": []
+              }
+            },
+            {
+              "code": "M-PA-02",
+              "title": "Growing Patterns",
+              "subskills": [
+                "Recognizing growth",
+                "Describing changes",
+                "Extending growing patterns",
+                "Comparing growth relationships"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-PA-01"
+                ],
+                "strongly_supportive": [
+                  "M-NQ-02"
+                ],
+                "useful_background": [
+                  "M-NQ-05"
+                ]
+              }
+            },
+            {
+              "code": "M-PA-03",
+              "title": "Relationships",
+              "subskills": [
+                "Recognizing relationships between quantities",
+                "Representing relationships",
+                "Comparing related quantities"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-NQ-02"
+                ],
+                "strongly_supportive": [
+                  "M-PA-02"
+                ],
+                "useful_background": [
+                  "M-OP-01"
+                ]
+              }
+            },
+            {
+              "code": "M-PA-04",
+              "title": "Rules",
+              "subskills": [
+                "Identifying pattern rules",
+                "Describing rules",
+                "Applying rules to new cases"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase D",
+                "Phase E"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-PA-01, M-PA-02"
+                ],
+                "strongly_supportive": [
+                  "M-PA-03"
+                ],
+                "useful_background": [
+                  "M-OP-05"
+                ]
+              }
+            },
+            {
+              "code": "M-PA-05",
+              "title": "Functional Relationships",
+              "subskills": [
+                "Connecting inputs and outputs",
+                "Recognizing systematic relationships",
+                "Representing simple functions"
+              ],
+              "priority": "Enrichment / Advanced",
+              "progression": [
+                "Phase E",
+                "Phase F"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-PA-03, M-PA-04"
+                ],
+                "strongly_supportive": [
+                  "M-OP-06"
+                ],
+                "useful_background": [
+                  "TBD"
+                ]
+              }
+            },
+            {
+              "code": "M-PA-06",
+              "title": "Generalization",
+              "subskills": [
+                "Recognizing underlying pattern structures",
+                "Describing generalized relationships",
+                "Applying a generalized relationship beyond the original examples"
+              ],
+              "priority": "Enrichment / Advanced",
+              "progression": [
+                "Phase D",
+                "Phase E",
+                "Phase F"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-PA-02, M-PA-04"
+                ],
+                "strongly_supportive": [
+                  "M-PA-03"
+                ],
+                "useful_background": [
+                  "M-NQ-02"
+                ]
+              }
+            },
+            {
+              "code": "M-ME-01",
+              "title": "Length",
+              "subskills": [
+                "Comparing lengths directly and indirectly",
+                "Measuring length using non-standard units",
+                "Measuring length using standard units",
+                "Solving simple real-world length problems"
+              ],
+              "priority": "Essential Foundation",
+              "progression": [
+                "Phase A",
+                "Phase B",
+                "Phase C"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-NQ-01, M-NQ-03"
+                ],
+                "strongly_supportive": [
+                  "M-GS-01"
+                ],
+                "useful_background": [
+                  "M-GS-04"
+                ]
+              }
+            },
+            {
+              "code": "M-ME-02",
+              "title": "Mass",
+              "subskills": [
+                "Comparing weights directly through hefting or balance scales",
+                "Measuring mass using non-standard units",
+                "Measuring mass using standard units",
+                "Comparing and ordering objects by mass"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-NQ-01, M-NQ-03"
+                ],
+                "strongly_supportive": [
+                  "M-ME-01, M-ME-07"
+                ],
+                "useful_background": [
+                  "M-OP-01"
+                ]
+              }
+            },
+            {
+              "code": "M-ME-03",
+              "title": "Capacity",
+              "subskills": [
+                "Comparing container volumes directly by pouring",
+                "Measuring capacity using non-standard units",
+                "Measuring capacity using standard units",
+                "Relating container size to fluid volume"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-NQ-01, M-NQ-03"
+                ],
+                "strongly_supportive": [
+                  "M-ME-01, M-ME-07"
+                ],
+                "useful_background": [
+                  "M-OP-01"
+                ]
+              }
+            },
+            {
+              "code": "M-ME-04",
+              "title": "Time",
+              "subskills": [
+                "Sequencing daily routines and temporal events",
+                "Understanding calendar concepts and time cycles",
+                "Telling time to the hour and half-hour on analog and digital clocks",
+                "Measuring and comparing duration of activities"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase A",
+                "Phase B",
+                "Phase C"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-NQ-01, M-NQ-02"
+                ],
+                "strongly_supportive": [
+                  "M-PA-01"
+                ],
+                "useful_background": [
+                  "E-CR-04"
+                ]
+              }
+            },
+            {
+              "code": "M-ME-05",
+              "title": "Money",
+              "subskills": [
+                "Identifying coins and currency notes and their values",
+                "Counting collections of coins and notes",
+                "Comparing monetary values",
+                "Solving simple purchase and change situations"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-NQ-01, M-NQ-04, M-OP-01"
+                ],
+                "strongly_supportive": [
+                  "M-NQ-02, M-NQ-03"
+                ],
+                "useful_background": [
+                  "M-OP-02"
+                ]
+              }
+            },
+            {
+              "code": "M-ME-06",
+              "title": "Units",
+              "subskills": [
+                "Distinguishing between non-standard and standard units",
+                "Selecting appropriate units for specific measurement attributes",
+                "Understanding the inverse relationship between unit size and unit count",
+                "Converting between simple related units"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-ME-01, M-NQ-03"
+                ],
+                "strongly_supportive": [
+                  "M-ME-02, M-ME-03"
+                ],
+                "useful_background": [
+                  "M-OP-02"
+                ]
+              }
+            },
+            {
+              "code": "M-ME-07",
+              "title": "Comparison",
+              "subskills": [
+                "Comparing physical attributes directly using measurement vocabulary",
+                "Ordering three or more objects by a continuous physical attribute",
+                "Comparing quantities measured in standard units",
+                "Calculating differences between measured quantities"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase A",
+                "Phase B",
+                "Phase C"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-NQ-03, M-ME-01"
+                ],
+                "strongly_supportive": [
+                  "M-OP-01"
+                ],
+                "useful_background": [
+                  "M-NQ-02"
+                ]
+              }
+            },
+            {
+              "code": "M-ME-08",
+              "title": "Estimation",
+              "subskills": [
+                "Estimating physical measurements using personal or physical benchmarks",
+                "Comparing physical estimates against actual measurements",
+                "Assessing the reasonableness of measurement estimates",
+                "Refining estimation strategies through experience"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-NQ-05, M-ME-01, M-ME-06"
+                ],
+                "strongly_supportive": [
+                  "M-ME-07"
+                ],
+                "useful_background": [
+                  "M-NQ-03"
+                ]
+              }
+            },
+            {
+              "code": "M-GS-01",
+              "title": "Shape Properties",
+              "subskills": [
+                "Recognizing shapes",
+                "Comparing properties",
+                "Describing meaningful attributes"
+              ],
+              "priority": "Essential Foundation",
+              "progression": [
+                "Phase A",
+                "Phase B",
+                "Phase C"
+              ],
+              "prerequisites": {
+                "required": [
+                  "None \u2014 foundational entry point"
+                ],
+                "strongly_supportive": [
+                  "L-PC-02 (Logical Reasoning \u2014 Attributes)"
+                ],
+                "useful_background": [
+                  "TBD"
+                ]
+              }
+            },
+            {
+              "code": "M-GS-02",
+              "title": "Composition",
+              "subskills": [
+                "Combining shapes",
+                "Building larger structures from components",
+                "Recognizing relationships among parts"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Expresses L-SR-05 (Composition) in a geometric shape composition context."
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-GS-01"
+                ],
+                "strongly_supportive": [
+                  "TBD"
+                ],
+                "useful_background": [
+                  "TBD"
+                ]
+              }
+            },
+            {
+              "code": "M-GS-03",
+              "title": "Decomposition",
+              "subskills": [
+                "Breaking shapes into parts",
+                "Recognizing multiple decompositions",
+                "Connecting parts to wholes"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Expresses L-SR-05 (Composition) and L-CE-02 (Impossible Combinations) in a geometric shape decomposition context."
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-GS-01"
+                ],
+                "strongly_supportive": [
+                  "M-GS-02"
+                ],
+                "useful_background": [
+                  "TBD"
+                ]
+              }
+            },
+            {
+              "code": "M-GS-04",
+              "title": "Position",
+              "subskills": [
+                "Describing position",
+                "Understanding spatial relationships",
+                "Representing relative location"
+              ],
+              "priority": "Essential Foundation",
+              "progression": [
+                "Expresses L-SR-01 (Position) in a geometric spatial context."
+              ],
+              "prerequisites": {
+                "required": [
+                  "None \u2014 foundational entry point"
+                ],
+                "strongly_supportive": [
+                  "L-SR-01 (Logical Reasoning \u2014 Position)"
+                ],
+                "useful_background": [
+                  "TBD"
+                ]
+              }
+            },
+            {
+              "code": "M-GS-05",
+              "title": "Symmetry",
+              "subskills": [
+                "Recognizing symmetry",
+                "Representing symmetrical structures",
+                "Comparing symmetrical and non-symmetrical forms"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-GS-01"
+                ],
+                "strongly_supportive": [
+                  "M-GS-03"
+                ],
+                "useful_background": [
+                  "TBD"
+                ]
+              }
+            },
+            {
+              "code": "M-GS-06",
+              "title": "Visualization",
+              "subskills": [
+                "Mentally representing spatial structures",
+                "Reasoning about spatial relationships",
+                "Manipulating representations"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Expresses L-SR-03 (Visualization) and L-SR-04 (Rotation) in a spatial geometry context."
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-GS-01, M-GS-04"
+                ],
+                "strongly_supportive": [
+                  "L-SR-03 (Logical Reasoning \u2014 Visualization)"
+                ],
+                "useful_background": [
+                  "TBD"
+                ]
+              }
+            },
+            {
+              "code": "M-GS-07",
+              "title": "Transformations",
+              "subskills": [
+                "Recognizing transformations",
+                "Describing changes in position/orientation",
+                "Comparing transformed representations"
+              ],
+              "priority": "Enrichment / Advanced",
+              "progression": [
+                "Phase D",
+                "Phase E",
+                "Phase F"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-GS-01, M-GS-04"
+                ],
+                "strongly_supportive": [
+                  "L-SR-02 (Logical Reasoning \u2014 Transformation)"
+                ],
+                "useful_background": [
+                  "TBD"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "6.7",
+          "title": "Data, Uncertainty & Representation",
+          "skills": [
+            {
+              "code": "M-DU-01",
+              "title": "Classification",
+              "subskills": [
+                "Sorting items by a single attribute",
+                "Sorting items by multiple attributes",
+                "Identifying sorting rules used by others",
+                "Creating criteria for classification"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase A",
+                "Phase B",
+                "Phase C"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-NQ-01, M-GS-01"
+                ],
+                "strongly_supportive": [
+                  "S-OC-05"
+                ],
+                "useful_background": [
+                  "L-PC-02"
+                ]
+              }
+            },
+            {
+              "code": "M-DU-02",
+              "title": "Sorting",
+              "subskills": [
+                "Organizing objects into discrete groups",
+                "Partitioning collections based on shared features",
+                "Reorganizing items using a new rule",
+                "Explaining sorting arrangements"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase A",
+                "Phase B",
+                "Phase C"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-DU-01"
+                ],
+                "strongly_supportive": [
+                  "M-NQ-02"
+                ],
+                "useful_background": [
+                  "S-OC-04"
+                ]
+              }
+            },
+            {
+              "code": "M-DU-03",
+              "title": "Tables",
+              "subskills": [
+                "Organizing data into simple rows and columns",
+                "Entering categorical data into a structured table",
+                "Reading information directly from a table",
+                "Translating physical counts into a table format"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-DU-01, M-DU-02"
+                ],
+                "strongly_supportive": [
+                  "M-NQ-01"
+                ],
+                "useful_background": [
+                  "W-KO-01"
+                ]
+              }
+            },
+            {
+              "code": "M-DU-04",
+              "title": "Graphs",
+              "subskills": [
+                "Constructing object and picture graphs",
+                "Representing data using simple bar representations",
+                "Connecting physical counts to graphical height or length",
+                "Reading data from basic graphs"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-NQ-01, M-DU-03"
+                ],
+                "strongly_supportive": [
+                  "M-NQ-03"
+                ],
+                "useful_background": [
+                  "M-ME-01"
+                ]
+              }
+            },
+            {
+              "code": "M-DU-05",
+              "title": "Comparison",
+              "subskills": [
+                "Comparing data categories using \"more,\" \"less,\" and \"equal\"",
+                "Finding differences between category totals",
+                "Interpreting relative magnitudes in tables and graphs",
+                "Answering comparison questions about data sets"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-NQ-03, M-DU-03, M-DU-04"
+                ],
+                "strongly_supportive": [
+                  "M-OP-01"
+                ],
+                "useful_background": [
+                  "M-NQ-02"
+                ]
+              }
+            },
+            {
+              "code": "M-DU-06",
+              "title": "Interpretation",
+              "subskills": [
+                "Extracting conclusions from structured data sets",
+                "Explaining what a graph or table shows overall",
+                "Identifying trends or notable features in data",
+                "Connecting data representations to real-world situations"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-DU-03, M-DU-04, M-DU-05"
+                ],
+                "strongly_supportive": [
+                  "E-CR-01"
+                ],
+                "useful_background": [
+                  "S-EE-02"
+                ]
+              }
+            },
+            {
+              "code": "M-DU-07",
+              "title": "Simple Probability",
+              "subskills": [
+                "Identifying all possible outcomes in a simple situation",
+                "Distinguishing between possible and impossible events",
+                "Recognizing events that are more likely versus less likely",
+                "Describing likelihood using intuitive language"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D",
+                "Phase E"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-NQ-01, M-DU-01"
+                ],
+                "strongly_supportive": [
+                  "M-NQ-03"
+                ],
+                "useful_background": [
+                  "S-PP-03"
+                ]
+              }
+            },
+            {
+              "code": "M-DU-08",
+              "title": "Intuitive Uncertainty",
+              "subskills": [
+                "Recognizing when an outcome cannot be known in advance",
+                "Comparing degrees of certainty across different scenarios",
+                "Reasoning about fairness in simple games or choices",
+                "Distinguishing sure events from uncertain events"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D",
+                "Phase E"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-DU-07"
+                ],
+                "strongly_supportive": [
+                  "S-EE-01"
+                ],
+                "useful_background": [
+                  "L-CO-03"
+                ]
+              }
+            },
+            {
+              "code": "M-PS-01",
+              "title": "Understanding Situations",
+              "subskills": [
+                "Identifying what a problem describes",
+                "Recognizing the goal",
+                "Distinguishing relevant from irrelevant information"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-OL-02, M-OP-01"
+                ],
+                "strongly_supportive": [
+                  "E-CR-01"
+                ],
+                "useful_background": [
+                  "W-KA-07"
+                ]
+              }
+            },
+            {
+              "code": "M-PS-02",
+              "title": "Identifying Relevant Information",
+              "subskills": [
+                "Selecting relevant information",
+                "Recognizing unnecessary information",
+                "Managing multiple pieces of information"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-PS-01"
+                ],
+                "strongly_supportive": [
+                  "L-RC-04"
+                ],
+                "useful_background": [
+                  "E-CR-01"
+                ]
+              }
+            },
+            {
+              "code": "M-PS-03",
+              "title": "Representation",
+              "subskills": [
+                "Representing situations visually",
+                "Representing relationships symbolically where appropriate",
+                "Connecting representations to situations"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-NQ-02, M-OP-01"
+                ],
+                "strongly_supportive": [
+                  "M-DU-04"
+                ],
+                "useful_background": [
+                  "S-MO-01"
+                ]
+              }
+            },
+            {
+              "code": "M-PS-04",
+              "title": "Strategy Selection",
+              "subskills": [
+                "Choosing an appropriate strategy",
+                "Comparing strategies",
+                "Recognizing when a strategy fits"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D",
+                "Phase E"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-PS-01, M-PS-03"
+                ],
+                "strongly_supportive": [
+                  "M-NQ-06"
+                ],
+                "useful_background": [
+                  "L-PC-04"
+                ]
+              }
+            },
+            {
+              "code": "M-PS-05",
+              "title": "Checking",
+              "subskills": [
+                "Checking results",
+                "Recognizing unreasonable results",
+                "Revisiting an approach when necessary"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-OP-01, M-PS-01"
+                ],
+                "strongly_supportive": [
+                  "M-NQ-05"
+                ],
+                "useful_background": [
+                  "L-CE-01"
+                ]
+              }
+            },
+            {
+              "code": "M-PS-06",
+              "title": "Multiple Solutions",
+              "subskills": [
+                "Recognizing when multiple solutions exist",
+                "Finding alternative solutions",
+                "Comparing solutions"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase D",
+                "Phase E",
+                "Phase F"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-PS-04"
+                ],
+                "strongly_supportive": [
+                  "M-OP-03"
+                ],
+                "useful_background": [
+                  "E-CC-06"
+                ]
+              }
+            },
+            {
+              "code": "M-PS-07",
+              "title": "Explanation",
+              "subskills": [
+                "Making mathematical thinking visible",
+                "Representing reasoning",
+                "Communicating strategy or solution"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D",
+                "Phase F"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-OL-04, M-PS-01"
+                ],
+                "strongly_supportive": [
+                  "E-WE-04"
+                ],
+                "useful_background": [
+                  "S-EE-02"
+                ]
+              }
+            },
+            {
+              "code": "M-PS-08",
+              "title": "Mathematical Modelling",
+              "subskills": [
+                "Representing real situations mathematically",
+                "Connecting mathematical structures to situations",
+                "Constructing simple mathematical models"
+              ],
+              "priority": "Enrichment / Advanced",
+              "progression": [
+                "Phase E",
+                "Phase F"
+              ],
+              "prerequisites": {
+                "required": [
+                  "M-PS-03, M-PS-04"
+                ],
+                "strongly_supportive": [
+                  "S-MO-04"
+                ],
+                "useful_background": [
+                  "W-KP-06"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "English Language, Reading & Reasoning",
+      "strands": [
+        {
+          "id": "7.1",
+          "title": "Oral Language & Listening",
+          "skills": [
+            {
+              "code": "E-OL-01",
+              "title": "Vocabulary",
+              "subskills": [
+                "Understanding words",
+                "Using words appropriately",
+                "Connecting word meanings"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase A",
+                "Phase B",
+                "Phase C"
+              ],
+              "prerequisites": {
+                "required": [
+                  "None \u2014 foundational entry point"
+                ],
+                "strongly_supportive": [
+                  "None \u2014 foundational entry point"
+                ],
+                "useful_background": [
+                  "None \u2014 foundational entry point"
+                ]
+              }
+            },
+            {
+              "code": "E-OL-02",
+              "title": "Listening Comprehension",
+              "subskills": [
+                "Understanding spoken information",
+                "Identifying key information",
+                "Connecting ideas"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase A",
+                "Phase B",
+                "Phase C"
+              ],
+              "prerequisites": {
+                "required": [
+                  "None \u2014 foundational entry point"
+                ],
+                "strongly_supportive": [
+                  "E-OL-01"
+                ],
+                "useful_background": [
+                  "None \u2014 foundational entry point"
+                ]
+              }
+            },
+            {
+              "code": "E-OL-03",
+              "title": "Narrative Understanding",
+              "subskills": [
+                "Understanding events",
+                "Sequencing",
+                "Identifying relationships among events",
+                "Interpreting character/action relationships"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-OL-02"
+                ],
+                "strongly_supportive": [
+                  "E-OL-01"
+                ],
+                "useful_background": [
+                  "W-KA-03"
+                ]
+              }
+            },
+            {
+              "code": "E-OL-04",
+              "title": "Explanation",
+              "subskills": [
+                "Explaining ideas orally",
+                "Organizing explanations",
+                "Making reasoning visible"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-OL-01, E-OL-02"
+                ],
+                "strongly_supportive": [
+                  "E-OL-03"
+                ],
+                "useful_background": [
+                  "L-PC-02"
+                ]
+              }
+            },
+            {
+              "code": "E-OL-05",
+              "title": "Questioning",
+              "subskills": [
+                "Asking relevant questions",
+                "Asking clarifying questions",
+                "Generating questions from information"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D",
+                "Phase F"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-OL-02"
+                ],
+                "strongly_supportive": [
+                  "E-OL-01, E-OL-04"
+                ],
+                "useful_background": [
+                  "S-OC-01"
+                ]
+              }
+            },
+            {
+              "code": "E-OL-06",
+              "title": "Conversation",
+              "subskills": [
+                "Participating in conversation",
+                "Responding appropriately",
+                "Building on another person's contribution",
+                "Communicating ideas clearly"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase A",
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-OL-01, E-OL-02"
+                ],
+                "strongly_supportive": [
+                  "E-OL-04, E-OL-05"
+                ],
+                "useful_background": [
+                  "W-KA-07"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "7.2",
+          "title": "Phonological Awareness, Decoding & Spelling",
+          "skills": [
+            {
+              "code": "E-PD-01",
+              "title": "Phonological Awareness",
+              "subskills": [
+                "Isolating initial, medial, and final sounds in spoken words",
+                "Blending individual phonemes into words",
+                "Segmenting words into constituent phonemes",
+                "Manipulating phonemes through substitution, deletion, and addition"
+              ],
+              "priority": "Essential Foundation",
+              "progression": [
+                "Phase A",
+                "Phase B"
+              ],
+              "prerequisites": {
+                "required": [
+                  "None \u2014 foundational entry point"
+                ],
+                "strongly_supportive": [
+                  "E-OL-02 (Listening Comprehension)"
+                ],
+                "useful_background": [
+                  "E-OL-01 (Vocabulary)"
+                ]
+              }
+            },
+            {
+              "code": "E-PD-02",
+              "title": "Phonics",
+              "subskills": [
+                "Mapping single graphemes to corresponding phonemes",
+                "Recognizing consonant blends and digraphs",
+                "Identifying vowel teams and r-controlled vowels",
+                "Applying grapheme-phoneme correspondences to letter strings"
+              ],
+              "priority": "Essential Foundation",
+              "progression": [
+                "Phase A",
+                "Phase B",
+                "Phase C"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-PD-01"
+                ],
+                "strongly_supportive": [
+                  "E-OL-01"
+                ],
+                "useful_background": [
+                  "M-GS-01"
+                ]
+              }
+            },
+            {
+              "code": "E-PD-03",
+              "title": "Decoding",
+              "subskills": [
+                "Blending letter sounds to read simple phonetically regular words",
+                "Applying decoding rules to unfamiliar regular words",
+                "Recognizing high-frequency irregular words by sight",
+                "Sounding out multisyllabic words using syllable types"
+              ],
+              "priority": "Essential Foundation",
+              "progression": [
+                "Phase A",
+                "Phase B",
+                "Phase C"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-PD-01, E-PD-02"
+                ],
+                "strongly_supportive": [
+                  "E-OL-01"
+                ],
+                "useful_background": [
+                  "L-PC-01"
+                ]
+              }
+            },
+            {
+              "code": "E-PD-04",
+              "title": "Spelling Patterns",
+              "subskills": [
+                "Encoding phonetically regular words using grapheme knowledge",
+                "Applying common spelling conventions and orthographic rules",
+                "Representing silent letters and inflectional endings correctly",
+                "Writing high-frequency irregular words accurately"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-PD-02, E-PD-03"
+                ],
+                "strongly_supportive": [
+                  "E-PD-01"
+                ],
+                "useful_background": [
+                  "L-PC-02"
+                ]
+              }
+            },
+            {
+              "code": "E-PD-05",
+              "title": "Increasing Word Complexity",
+              "subskills": [
+                "Decoding compound words and inflectional endings",
+                "Syllabifying and decoding multi-syllable regular words",
+                "Applying morphological clues to decode unfamiliar words",
+                "Recognizing low-frequency orthographic patterns"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-PD-03"
+                ],
+                "strongly_supportive": [
+                  "E-PD-04"
+                ],
+                "useful_background": [
+                  "E-VM-03"
+                ]
+              }
+            },
+            {
+              "code": "E-PD-06",
+              "title": "Decoding-to-Fluency Transition",
+              "subskills": [
+                "Reducing reliance on sound-by-sound decoding for familiar patterns",
+                "Shifting from effortful decoding to automatic word recognition",
+                "Recognizing when decoding effort should trigger a fluency check-in (bridges into E-RF)"
+              ],
+              "priority": "Essential Foundation",
+              "progression": [
+                "Phase B",
+                "Phase C"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-PD-03, E-PD-05"
+                ],
+                "strongly_supportive": [
+                  "E-PD-04"
+                ],
+                "useful_background": [
+                  "E-OL-02"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "7.3",
+          "title": "Vocabulary & Morphology",
+          "skills": [
+            {
+              "code": "E-VM-01",
+              "title": "Word Meanings",
+              "subskills": [
+                "Identifying definitions of tier-one and tier-two words",
+                "Explaining word meanings using student-friendly language",
+                "Matching target words to visual or concrete representations",
+                "Connecting new words to known synonyms and antonyms"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-OL-01, E-PD-03"
+                ],
+                "strongly_supportive": [
+                  "E-PD-06"
+                ],
+                "useful_background": [
+                  "W-KA-01"
+                ]
+              }
+            },
+            {
+              "code": "E-VM-02",
+              "title": "Context",
+              "subskills": [
+                "Using surrounding sentence clues to infer unknown word meanings",
+                "Identifying definition and restatement clues within a text",
+                "Utilizing contrast and cause-effect clues for vocabulary meaning",
+                "Verifying inferred meanings against text context"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-VM-01, E-PD-06"
+                ],
+                "strongly_supportive": [
+                  "E-SG-01"
+                ],
+                "useful_background": [
+                  "E-CR-01"
+                ]
+              }
+            },
+            {
+              "code": "E-VM-03",
+              "title": "Word Families",
+              "subskills": [
+                "Grouping words with shared base forms or orthographic patterns",
+                "Generating related words within a single word family",
+                "Identifying semantic connections across word family members",
+                "Recognizing shared meaning roots in familiar word clusters"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-PD-04, E-VM-01"
+                ],
+                "strongly_supportive": [
+                  "E-PD-05"
+                ],
+                "useful_background": [
+                  "L-PC-02"
+                ]
+              }
+            },
+            {
+              "code": "E-VM-04",
+              "title": "Prefixes",
+              "subskills": [
+                "Identifying common prefixes and their specific meanings",
+                "Analyzing how adding a prefix alters the meaning of a base word",
+                "Decoding and interpreting words containing target prefixes",
+                "Constructing new words by applying appropriate prefixes"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D",
+                "Phase E"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-PD-05, E-VM-01"
+                ],
+                "strongly_supportive": [
+                  "E-VM-03"
+                ],
+                "useful_background": [
+                  "L-PC-04"
+                ]
+              }
+            },
+            {
+              "code": "E-VM-05",
+              "title": "Suffixes",
+              "subskills": [
+                "Identifying inflectional and derivational suffixes",
+                "Recognizing how a suffix changes a word's part of speech or meaning",
+                "Decoding and interpreting words containing target suffixes",
+                "Applying spelling changes required when appending suffixes"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D",
+                "Phase E"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-PD-04, E-PD-05, E-VM-01"
+                ],
+                "strongly_supportive": [
+                  "E-VM-03, E-SG-02"
+                ],
+                "useful_background": [
+                  "L-PC-04"
+                ]
+              }
+            },
+            {
+              "code": "E-VM-06",
+              "title": "Roots",
+              "subskills": [
+                "Identifying common Greek and Latin root words",
+                "Determining the core meaning contributed by a root word",
+                "Analyzing unfamiliar multisyllabic words using root knowledge",
+                "Connecting groups of words that share a common root"
+              ],
+              "priority": "Enrichment / Advanced",
+              "progression": [
+                "Phase D",
+                "Phase E",
+                "Phase F"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-VM-04, E-VM-05"
+                ],
+                "strongly_supportive": [
+                  "E-VM-03"
+                ],
+                "useful_background": [
+                  "W-KA-02"
+                ]
+              }
+            },
+            {
+              "code": "E-VM-07",
+              "title": "Semantic Relationships",
+              "subskills": [
+                "Identifying and categorizing synonyms and antonyms",
+                "Analyzing shades of meaning among related verbs or adjectives",
+                "Understanding simple analogies and word associations",
+                "Classifying words into hierarchical semantic categories"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D",
+                "Phase E"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-VM-01, E-VM-02"
+                ],
+                "strongly_supportive": [
+                  "L-PC-02"
+                ],
+                "useful_background": [
+                  "L-AR-01"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "7.4",
+          "title": "Syntax & Grammar",
+          "skills": [
+            {
+              "code": "E-SG-01",
+              "title": "Sentence Structure",
+              "subskills": [
+                "Identifying the subject and predicate in simple sentences",
+                "Distinguishing complete sentences from fragments and run-ons",
+                "Constructing simple declarative, interrogative, and imperative sentences",
+                "Expanding simple sentences using adjectives and adverbs"
+              ],
+              "priority": "Essential Foundation",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-OL-01, E-PD-03"
+                ],
+                "strongly_supportive": [
+                  "E-OL-04"
+                ],
+                "useful_background": [
+                  "E-PD-06"
+                ]
+              }
+            },
+            {
+              "code": "E-SG-02",
+              "title": "Grammatical Relationships",
+              "subskills": [
+                "Ensuring subject-verb agreement in singular and plural forms",
+                "Maintaining consistent verb tense across simple texts",
+                "Using pronouns correctly to match antecedent noun gender and number",
+                "Applying correct prepositions to establish spatial and temporal links"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-SG-01"
+                ],
+                "strongly_supportive": [
+                  "E-OL-06"
+                ],
+                "useful_background": [
+                  "L-RC-01"
+                ]
+              }
+            },
+            {
+              "code": "E-SG-03",
+              "title": "Sentence Complexity",
+              "subskills": [
+                "Combining simple sentences using coordinating conjunctions",
+                "Forming compound sentences with correct punctuation",
+                "Using subordinating conjunctions to build complex sentences",
+                "Parsing complex sentences to determine main and dependent clauses"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D",
+                "Phase E"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-SG-01, E-SG-02"
+                ],
+                "strongly_supportive": [
+                  "E-VM-02"
+                ],
+                "useful_background": [
+                  "L-RC-04"
+                ]
+              }
+            },
+            {
+              "code": "E-SG-04",
+              "title": "Punctuation",
+              "subskills": [
+                "Applying terminal punctuation correctly to end sentences",
+                "Using commas in dates, series, and direct address",
+                "Applying apostrophes for contractions and singular/plural possession",
+                "Utilizing quotation marks to indicate direct speech"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-PD-04, E-SG-01"
+                ],
+                "strongly_supportive": [
+                  "E-PD-06"
+                ],
+                "useful_background": [
+                  "E-SG-03"
+                ]
+              }
+            },
+            {
+              "code": "E-SG-05",
+              "title": "Meaning Through Syntax",
+              "subskills": [
+                "Recognizing how word order changes sentence meaning and emphasis",
+                "Interpreting meaning delivered through passive versus active voice",
+                "Analyzing how punctuation modifies the rhythm and interpretation of text",
+                "Identifying syntactic ambiguity in ambiguous or poorly structured sentences"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D",
+                "Phase E"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-SG-02, E-SG-03, E-SG-04"
+                ],
+                "strongly_supportive": [
+                  "E-PD-06"
+                ],
+                "useful_background": [
+                  "L-CE-01"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "7.5",
+          "title": "Reading Fluency",
+          "skills": [
+            {
+              "code": "E-RF-01",
+              "title": "Accuracy",
+              "subskills": [
+                "Decoding target words accurately in connected text",
+                "Applying self-correction strategies when misreadings occur",
+                "Minimizing word insertion, omission, or substitution errors"
+              ],
+              "priority": "Essential Foundation",
+              "progression": [
+                "Phase A",
+                "Phase B",
+                "Phase C"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-PD-03, E-PD-05"
+                ],
+                "strongly_supportive": [
+                  "E-PD-04, E-OL-02"
+                ],
+                "useful_background": [
+                  "E-SG-01"
+                ]
+              }
+            },
+            {
+              "code": "E-RF-02",
+              "title": "Automaticity",
+              "subskills": [
+                "Recognizing high-frequency and regular words without conscious decoding effort",
+                "Maintaining consistent reading pace across grade-appropriate passages",
+                "Allocating cognitive capacity to comprehension rather than word identification"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase A",
+                "Phase B",
+                "Phase C"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-RF-01, E-PD-06"
+                ],
+                "strongly_supportive": [
+                  "E-VM-01"
+                ],
+                "useful_background": [
+                  "E-VM-03"
+                ]
+              }
+            },
+            {
+              "code": "E-RF-03",
+              "title": "Phrasing",
+              "subskills": [
+                "Grouping words into meaningful syntactic units while reading aloud",
+                "Respecting punctuation marks to guide natural pauses",
+                "Avoiding word-by-word monotone reading delivery"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-RF-01, E-SG-01"
+                ],
+                "strongly_supportive": [
+                  "E-SG-04"
+                ],
+                "useful_background": [
+                  "E-OL-03"
+                ]
+              }
+            },
+            {
+              "code": "E-RF-04",
+              "title": "Appropriate Pace",
+              "subskills": [
+                "Reading connected text at a speed that mirrors natural speech rhythm",
+                "Adjusting reading speed when encountering complex or unfamiliar content",
+                "Balancing rate and accuracy to preserve comprehension"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-RF-02, E-RF-03"
+                ],
+                "strongly_supportive": [
+                  "E-VM-02"
+                ],
+                "useful_background": [
+                  "E-SG-03"
+                ]
+              }
+            },
+            {
+              "code": "E-RF-05",
+              "title": "Expression",
+              "subskills": [
+                "Adjusting pitch, tone, and emphasis to reflect text meaning and emotion",
+                "Varying vocal intonation for dialogue and different sentence types",
+                "Conveying character perspective and mood through oral reading"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-RF-03, E-RF-04"
+                ],
+                "strongly_supportive": [
+                  "E-OL-03, E-SG-04"
+                ],
+                "useful_background": [
+                  "E-CC-03"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "7.6",
+          "title": "Comprehension & Reasoning",
+          "skills": [
+            {
+              "code": "E-CR-01",
+              "title": "Literal Comprehension",
+              "subskills": [
+                "Locating directly stated facts and details in a text",
+                "Identifying main characters, settings, and key events",
+                "Recalling explicitly stated sequence of actions"
+              ],
+              "priority": "Essential Foundation",
+              "progression": [
+                "Phase B",
+                "Phase C"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-PD-06, E-OL-02"
+                ],
+                "strongly_supportive": [
+                  "E-VM-01"
+                ],
+                "useful_background": [
+                  "E-OL-03"
+                ]
+              }
+            },
+            {
+              "code": "E-CR-02",
+              "title": "Inference",
+              "subskills": [
+                "Combining textual clues with prior knowledge to draw unstated conclusions",
+                "Inferring character feelings, motives, and traits from actions",
+                "Determining implicit setting or context details"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-CR-01, E-VM-02"
+                ],
+                "strongly_supportive": [
+                  "E-OL-03"
+                ],
+                "useful_background": [
+                  "L-RC-01"
+                ]
+              }
+            },
+            {
+              "code": "E-CR-03",
+              "title": "Cause and Effect",
+              "subskills": [
+                "Identifying explicit cause-and-effect relationships in text",
+                "Inferring implicit causal connections between events or character actions",
+                "Explaining how one event leads to subsequent outcomes in a narrative or informational text"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-CR-01, E-CR-02"
+                ],
+                "strongly_supportive": [
+                  "S-EE-03"
+                ],
+                "useful_background": [
+                  "W-KO-06"
+                ]
+              }
+            },
+            {
+              "code": "E-CR-04",
+              "title": "Sequencing",
+              "subskills": [
+                "Ordering events chronologically as presented in a text",
+                "Reconstructing correct event sequence when text uses non-linear narration",
+                "Identifying signal words that indicate temporal order"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-CR-01"
+                ],
+                "strongly_supportive": [
+                  "E-OL-03, L-PC-01"
+                ],
+                "useful_background": [
+                  "W-KO-03"
+                ]
+              }
+            },
+            {
+              "code": "E-CR-05",
+              "title": "Comparison",
+              "subskills": [
+                "Identifying similarities and differences between characters, settings, or events",
+                "Comparing information presented across two distinct texts on the same topic",
+                "Using graphic organizers to map textual comparisons"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-CR-01, E-CR-02"
+                ],
+                "strongly_supportive": [
+                  "M-DU-05, S-OC-03"
+                ],
+                "useful_background": [
+                  "W-KP-02"
+                ]
+              }
+            },
+            {
+              "code": "E-CR-06",
+              "title": "Prediction",
+              "subskills": [
+                "Formulating reasonable predictions based on text clues and illustrations",
+                "Adjusting or confirming predictions as additional text is read",
+                "Justifying predictions using specific textual evidence"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-CR-01, E-CR-02"
+                ],
+                "strongly_supportive": [
+                  "S-PP-03"
+                ],
+                "useful_background": [
+                  "L-CO-01"
+                ]
+              }
+            },
+            {
+              "code": "E-CR-07",
+              "title": "Evidence",
+              "subskills": [
+                "Locating specific words or sentences that support a given statement or answer",
+                "Citing textual proof to justify inferences",
+                "Evaluating whether provided text excerpts adequately support a claim"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D",
+                "Phase E"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-CR-01, E-CR-02"
+                ],
+                "strongly_supportive": [
+                  "S-EE-02"
+                ],
+                "useful_background": [
+                  "L-RC-04"
+                ]
+              }
+            },
+            {
+              "code": "E-CR-08",
+              "title": "Fact versus Interpretation",
+              "subskills": [
+                "Distinguishing directly verifiable statements from reader interpretations",
+                "Identifying author opinion versus objective factual statement",
+                "Recognizing when an inference goes beyond the evidence provided by the text"
+              ],
+              "priority": "Enrichment / Advanced",
+              "progression": [
+                "Phase D",
+                "Phase E",
+                "Phase F"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-CR-02, E-CR-07"
+                ],
+                "strongly_supportive": [
+                  "S-EE-01"
+                ],
+                "useful_background": [
+                  "L-CE-03"
+                ]
+              }
+            },
+            {
+              "code": "E-CR-09",
+              "title": "Evaluation",
+              "subskills": [
+                "Assessing the credibility, clarity, or effectiveness of a text",
+                "Evaluating character decisions and actions against explicit criteria",
+                "Forming and defending a personal judgment about a text's message or quality"
+              ],
+              "priority": "Enrichment / Advanced",
+              "progression": [
+                "Phase D",
+                "Phase E",
+                "Phase F"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-CR-02, E-CR-07, E-CR-08"
+                ],
+                "strongly_supportive": [
+                  "E-WE-05"
+                ],
+                "useful_background": [
+                  "W-KP-04"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "7.7",
+          "title": "Written & Verbal Expression",
+          "skills": [
+            {
+              "code": "E-WE-01",
+              "title": "Sentence Construction",
+              "subskills": [
+                "Formulating grammatically complete spoken or written sentences",
+                "Varying sentence structures to express ideas clearly"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-SG-01"
+                ],
+                "strongly_supportive": [
+                  "E-OL-04"
+                ],
+                "useful_background": [
+                  "E-SG-02"
+                ]
+              }
+            },
+            {
+              "code": "E-WE-02",
+              "title": "Organization",
+              "subskills": [
+                "Ordering thoughts logically with a clear beginning, middle, and end",
+                "Using basic transition words to connect ideas smoothly"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-WE-01, E-CR-04"
+                ],
+                "strongly_supportive": [
+                  "E-OL-03"
+                ],
+                "useful_background": [
+                  "W-KO-02"
+                ]
+              }
+            },
+            {
+              "code": "E-WE-03",
+              "title": "Narrative",
+              "subskills": [
+                "Recounting real or imagined experiences with descriptive detail",
+                "Structuring character actions and event sequences effectively"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-WE-01, E-OL-03"
+                ],
+                "strongly_supportive": [
+                  "E-WE-02"
+                ],
+                "useful_background": [
+                  "E-CR-02"
+                ]
+              }
+            },
+            {
+              "code": "E-WE-04",
+              "title": "Explanation",
+              "subskills": [
+                "Conveying information or step-by-step processes clearly",
+                "Stating cause-and-effect relationships within an explanation"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D",
+                "Phase E"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-WE-01, E-OL-04"
+                ],
+                "strongly_supportive": [
+                  "E-CR-03"
+                ],
+                "useful_background": [
+                  "S-EE-03"
+                ]
+              }
+            },
+            {
+              "code": "E-WE-05",
+              "title": "Opinion",
+              "subskills": [
+                "Stating a clear preference or opinion on a topic",
+                "Providing one or more reasons to support the stated position"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-WE-01"
+                ],
+                "strongly_supportive": [
+                  "E-CR-07"
+                ],
+                "useful_background": [
+                  "E-OL-05"
+                ]
+              }
+            },
+            {
+              "code": "E-WE-06",
+              "title": "Reasoning",
+              "subskills": [
+                "Articulating logical connections between claims and supporting evidence",
+                "Explaining the \"why\" behind conclusions or solutions"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase D",
+                "Phase E",
+                "Phase F"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-WE-04, E-WE-05, E-CR-07"
+                ],
+                "strongly_supportive": [
+                  "L-RC-01"
+                ],
+                "useful_background": [
+                  "S-EE-02"
+                ]
+              }
+            },
+            {
+              "code": "E-WE-07",
+              "title": "Coherence",
+              "subskills": [
+                "Maintaining a consistent topic focus throughout a paragraph or discourse",
+                "Linking sentences effectively so ideas flow logically without gaps"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase D",
+                "Phase E"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-WE-02, E-SG-03"
+                ],
+                "strongly_supportive": [
+                  "E-VM-07"
+                ],
+                "useful_background": [
+                  "L-CE-03"
+                ]
+              }
+            },
+            {
+              "code": "E-WE-08",
+              "title": "Revision",
+              "subskills": [
+                "Identifying areas in draft expression that require clarification or detail",
+                "Adding, deleting, or rephrasing words to improve overall message clarity"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D",
+                "Phase F"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-WE-01, E-SG-04"
+                ],
+                "strongly_supportive": [
+                  "E-WE-07"
+                ],
+                "useful_background": [
+                  "L-CE-04"
+                ]
+              }
+            },
+            {
+              "code": "E-WE-09",
+              "title": "Audience Awareness",
+              "subskills": [
+                "Adapting tone, vocabulary, and level of detail for different listeners or readers",
+                "Distinguishing between informal conversation and formal presentation styles"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase D",
+                "Phase E",
+                "Phase F"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-OL-06, E-WE-01"
+                ],
+                "strongly_supportive": [
+                  "E-VM-01"
+                ],
+                "useful_background": [
+                  "W-KA-03"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "7.8",
+          "title": "Creative & Critical Language Use",
+          "skills": [
+            {
+              "code": "E-CC-01",
+              "title": "Alternative Endings",
+              "subskills": [
+                "Imagining alternative outcomes for a narrative based on altered character choices",
+                "Composing logical yet creative narrative conclusions that deviate from original text"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D",
+                "Phase E"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-CR-02, E-WE-03"
+                ],
+                "strongly_supportive": [
+                  "E-OL-03"
+                ],
+                "useful_background": [
+                  "L-CO-04"
+                ]
+              }
+            },
+            {
+              "code": "E-CC-02",
+              "title": "Question Generation",
+              "subskills": [
+                "Formulating deep \"how\" and \"why\" questions inspired by text or topic",
+                "Creating investigative or open-ended inquiries to explore beyond provided information"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D",
+                "Phase E"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-OL-05, E-CR-01"
+                ],
+                "strongly_supportive": [
+                  "S-IN-01"
+                ],
+                "useful_background": [
+                  "W-KP-04"
+                ]
+              }
+            },
+            {
+              "code": "E-CC-03",
+              "title": "Perspective",
+              "subskills": [
+                "Retelling events or expressing viewpoints from different character perspectives",
+                "Identifying how narrative perception shifts when told by an alternate speaker"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D",
+                "Phase E",
+                "Phase F"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-CR-02, E-OL-03"
+                ],
+                "strongly_supportive": [
+                  "E-WE-05"
+                ],
+                "useful_background": [
+                  "W-KA-03"
+                ]
+              }
+            },
+            {
+              "code": "E-CC-04",
+              "title": "Interpretation",
+              "subskills": [
+                "Offering original personal insights into underlying story themes or abstract ideas",
+                "Translating visual, symbolic, or figurative language into conceptual understanding"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase D",
+                "Phase E",
+                "Phase F"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-CR-02, E-VM-02"
+                ],
+                "strongly_supportive": [
+                  "E-CR-07"
+                ],
+                "useful_background": [
+                  "L-AR-02"
+                ]
+              }
+            },
+            {
+              "code": "E-CC-05",
+              "title": "Explanations",
+              "subskills": [
+                "Inventing creative or non-obvious explanations for complex phenomena or scenarios",
+                "Constructing analogies or metaphors to illuminate a difficult concept"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase D",
+                "Phase E",
+                "Phase F"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-WE-04, E-CR-03"
+                ],
+                "strongly_supportive": [
+                  "S-EE-04"
+                ],
+                "useful_background": [
+                  "L-AR-02"
+                ]
+              }
+            },
+            {
+              "code": "E-CC-06",
+              "title": "Original Responses",
+              "subskills": [
+                "Generating novel stories, poems, or dialogues from open prompt stimuli",
+                "Synthesizing concepts across domains to form unique written or spoken creations"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase D",
+                "Phase E",
+                "Phase F"
+              ],
+              "prerequisites": {
+                "required": [
+                  "E-WE-01, E-WE-03"
+                ],
+                "strongly_supportive": [
+                  "E-WE-06"
+                ],
+                "useful_background": [
+                  "W-KP-06"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Science / EVS & Scientific Inquiry",
+      "strands": [
+        {
+          "id": "8.1",
+          "title": "Scientific Knowledge",
+          "skills": [
+            {
+              "code": "S-KN-01",
+              "title": "Living Organisms",
+              "subskills": [
+                "Distinguishing living from non-living things using observable characteristics",
+                "Identifying basic survival needs of plants and animals",
+                "Describing structures of living things that help them meet their needs",
+                "Recognizing diversity among living organisms"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase A",
+                "Phase B",
+                "Phase C"
+              ],
+              "prerequisites": {
+                "required": [
+                  "S-OC-01"
+                ],
+                "strongly_supportive": [
+                  "S-OC-02, S-OC-03"
+                ],
+                "useful_background": [
+                  "W-KA-04"
+                ]
+              }
+            },
+            {
+              "code": "S-KN-02",
+              "title": "Physical Systems",
+              "subskills": [
+                "Identifying observable parts that work together in a simple physical system",
+                "Describing how changing one part affects the whole system",
+                "Recognizing natural versus human-made physical structures",
+                "Observing interactions within everyday physical systems"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "S-OC-01, S-OC-02"
+                ],
+                "strongly_supportive": [
+                  "S-KN-03"
+                ],
+                "useful_background": [
+                  "W-KO-05"
+                ]
+              }
+            },
+            {
+              "code": "S-KN-03",
+              "title": "Materials",
+              "subskills": [
+                "Identifying common everyday materials and their observable properties",
+                "Testing how materials behave under different conditions",
+                "Matching materials to specific uses based on their physical attributes",
+                "Observing changes in materials when combined or heated/cooled"
+              ],
+              "priority": "Essential Foundation",
+              "progression": [
+                "Phase A",
+                "Phase B",
+                "Phase C"
+              ],
+              "prerequisites": {
+                "required": [
+                  "S-OC-01, S-OC-02"
+                ],
+                "strongly_supportive": [
+                  "S-OC-04"
+                ],
+                "useful_background": [
+                  "W-KA-06"
+                ]
+              }
+            },
+            {
+              "code": "S-KN-04",
+              "title": "Forces and Motion",
+              "subskills": [
+                "Describing motion in terms of position, direction, and speed",
+                "Identifying pushes and pulls as forces acting on objects",
+                "Observing how force strength and direction alter object motion",
+                "Recognizing the effects of friction and gravity in daily life"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "S-OC-01, S-KN-03"
+                ],
+                "strongly_supportive": [
+                  "S-OC-03"
+                ],
+                "useful_background": [
+                  "M-GS-04"
+                ]
+              }
+            },
+            {
+              "code": "S-KN-05",
+              "title": "Heat",
+              "subskills": [
+                "Identifying common sources of heat in everyday environments",
+                "Observing temperature changes when heat energy is added or removed",
+                "Describing how heat moves between objects through direct contact",
+                "Distinguishing materials that conduct heat well from insulators"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "S-OC-01, S-KN-03"
+                ],
+                "strongly_supportive": [
+                  "S-OC-02"
+                ],
+                "useful_background": [
+                  "W-KA-05"
+                ]
+              }
+            },
+            {
+              "code": "S-KN-06",
+              "title": "Weather",
+              "subskills": [
+                "Observing and recording daily weather conditions using senses and simple tools",
+                "Identifying seasonal weather patterns and shifts over time",
+                "Describing how weather impacts living things and daily human activities",
+                "Recognizing major weather indicators like cloud cover, wind, and precipitation"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase A",
+                "Phase B",
+                "Phase C"
+              ],
+              "prerequisites": {
+                "required": [
+                  "S-OC-01"
+                ],
+                "strongly_supportive": [
+                  "S-OC-02, S-PP-01"
+                ],
+                "useful_background": [
+                  "W-KA-04"
+                ]
+              }
+            },
+            {
+              "code": "S-KN-07",
+              "title": "Water",
+              "subskills": [
+                "Identifying different natural forms and states of water",
+                "Observing the movement and flow of water across surfaces",
+                "Describing the importance of water for living organisms",
+                "Recognizing basic phase changes of water in daily environments"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase A",
+                "Phase B",
+                "Phase C"
+              ],
+              "prerequisites": {
+                "required": [
+                  "S-OC-01, S-KN-03"
+                ],
+                "strongly_supportive": [
+                  "S-KN-06"
+                ],
+                "useful_background": [
+                  "W-KA-08"
+                ]
+              }
+            },
+            {
+              "code": "S-KN-08",
+              "title": "Earth",
+              "subskills": [
+                "Identifying major surface features of Earth like landforms and water bodies",
+                "Observing physical components of soil, rocks, and natural landscapes",
+                "Recognizing day/night cycles and movement of the sun and moon",
+                "Describing natural resources provided by Earth used in daily life"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "S-OC-01"
+                ],
+                "strongly_supportive": [
+                  "S-KN-03, S-KN-07"
+                ],
+                "useful_background": [
+                  "W-KA-01"
+                ]
+              }
+            },
+            {
+              "code": "S-KN-09",
+              "title": "Habitats",
+              "subskills": [
+                "Matching plants and animals to environments that meet their needs",
+                "Describing how physical attributes help organisms survive in specific habitats",
+                "Comparing different habitats and the living things found within them",
+                "Observing changes in habitats and how organisms respond"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "S-OC-01, S-KN-01"
+                ],
+                "strongly_supportive": [
+                  "S-KN-08"
+                ],
+                "useful_background": [
+                  "W-KA-04"
+                ]
+              }
+            },
+            {
+              "code": "S-KN-10",
+              "title": "Life Cycles",
+              "subskills": [
+                "Identifying sequential stages in the life cycles of common plants and animals",
+                "Comparing life cycles across different species",
+                "Describing how offspring resemble and differ from their parents",
+                "Observing growth and developmental changes over time"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "S-OC-01, S-KN-01"
+                ],
+                "strongly_supportive": [
+                  "S-PP-01"
+                ],
+                "useful_background": [
+                  "E-CR-04"
+                ]
+              }
+            },
+            {
+              "code": "S-KN-11",
+              "title": "Everyday Technology",
+              "subskills": [
+                "Identifying simple tools and devices that solve human problems",
+                "Describing how common tools extend human senses or physical capability",
+                "Analyzing how materials and mechanisms allow a tool to function",
+                "Comparing how basic tasks are performed with and without technology"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "S-OC-01, S-KN-03"
+                ],
+                "strongly_supportive": [
+                  "S-KN-02, S-KN-04"
+                ],
+                "useful_background": [
+                  "W-KA-06"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "8.2",
+          "title": "Observation & Classification",
+          "skills": [
+            {
+              "code": "S-OC-01",
+              "title": "Observation",
+              "subskills": [
+                "Using senses systematically to gather details about objects and events",
+                "Identifying specific details without making immediate inferences",
+                "Describing observable attributes using clear qualitative terms",
+                "Utilizing basic tools like magnifying glasses to extend observation"
+              ],
+              "priority": "Essential Foundation",
+              "progression": [
+                "Phase A",
+                "Phase B",
+                "Phase C"
+              ],
+              "prerequisites": {
+                "required": [
+                  "None \u2014 foundational entry point"
+                ],
+                "strongly_supportive": [
+                  "None \u2014 foundational entry point"
+                ],
+                "useful_background": [
+                  "None \u2014 foundational entry point"
+                ]
+              }
+            },
+            {
+              "code": "S-OC-02",
+              "title": "Properties",
+              "subskills": [
+                "Identifying physical characteristics like color, shape, texture, and size",
+                "Distinguishing constant properties from temporary states of an object",
+                "Describing material properties through direct interaction",
+                "Recognizing key identifying attributes of common items"
+              ],
+              "priority": "Essential Foundation",
+              "progression": [
+                "Phase A",
+                "Phase B",
+                "Phase C"
+              ],
+              "prerequisites": {
+                "required": [
+                  "S-OC-01"
+                ],
+                "strongly_supportive": [
+                  "M-GS-01"
+                ],
+                "useful_background": [
+                  "E-OL-01"
+                ]
+              }
+            },
+            {
+              "code": "S-OC-03",
+              "title": "Comparison",
+              "subskills": [
+                "Identifying similarities between two or more observed items",
+                "Identifying differences between two or more observed items",
+                "Comparing objects based on specific physical properties",
+                "Ordering objects according to a continuous physical attribute"
+              ],
+              "priority": "Essential Foundation",
+              "progression": [
+                "Phase A",
+                "Phase B",
+                "Phase C"
+              ],
+              "prerequisites": {
+                "required": [
+                  "S-OC-01, S-OC-02"
+                ],
+                "strongly_supportive": [
+                  "M-NQ-03"
+                ],
+                "useful_background": [
+                  "M-DU-05"
+                ]
+              }
+            },
+            {
+              "code": "S-OC-04",
+              "title": "Sorting",
+              "subskills": [
+                "Grouping objects based on a single chosen attribute",
+                "Partitioning a collection into mutually exclusive groups",
+                "Regrouping the same set of items using a different criterion",
+                "Describing the physical rule used to sort a set of objects"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase A",
+                "Phase B",
+                "Phase C"
+              ],
+              "prerequisites": {
+                "required": [
+                  "S-OC-01, S-OC-02, S-OC-03"
+                ],
+                "strongly_supportive": [
+                  "M-DU-01, M-DU-02"
+                ],
+                "useful_background": [
+                  "L-PC-02"
+                ]
+              }
+            },
+            {
+              "code": "S-OC-05",
+              "title": "Classification",
+              "subskills": [
+                "Creating multi-attribute rules to categorize complex objects",
+                "Sorting items into hierarchical or nested sub-categories",
+                "Identifying an item's category based on established scientific criteria",
+                "Explaining why an object belongs or does not belong in a class"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "S-OC-01, S-OC-02"
+                ],
+                "strongly_supportive": [
+                  "S-OC-03, S-OC-04, M-DU-01"
+                ],
+                "useful_background": [
+                  "W-KO-01"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "8.3",
+          "title": "Patterns & Prediction",
+          "skills": [
+            {
+              "code": "S-PP-01",
+              "title": "Regularities",
+              "subskills": [
+                "Identifying repeating sequences in natural phenomena and systems",
+                "Recognizing recurring cyclical events in daily environmental observations",
+                "Describing structural patterns in physical and biological objects",
+                "Distinguishing regular pattern occurrences from random variation"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "S-OC-01, S-OC-02"
+                ],
+                "strongly_supportive": [
+                  "M-PA-01"
+                ],
+                "useful_background": [
+                  "L-PC-01"
+                ]
+              }
+            },
+            {
+              "code": "S-PP-02",
+              "title": "Change",
+              "subskills": [
+                "Observing and describing physical changes in objects over time",
+                "Distinguishing rapid changes from slow or gradual environmental changes",
+                "Identifying reversible versus irreversible changes in materials",
+                "Tracking direction and rate of change in natural phenomena"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "S-OC-01, S-OC-02, S-OC-03"
+                ],
+                "strongly_supportive": [
+                  "S-KN-03"
+                ],
+                "useful_background": [
+                  "M-PA-02"
+                ]
+              }
+            },
+            {
+              "code": "S-PP-03",
+              "title": "Prediction",
+              "subskills": [
+                "Formulating expectations about future events based on observed patterns",
+                "Predicting the outcome of simple physical interactions or changes",
+                "Explaining the observational basis for a scientific prediction",
+                "Testing predictions against actual physical results"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "S-OC-01, S-PP-01, S-PP-02"
+                ],
+                "strongly_supportive": [
+                  "E-CR-06"
+                ],
+                "useful_background": [
+                  "M-DU-07"
+                ]
+              }
+            },
+            {
+              "code": "S-PP-04",
+              "title": "Observation Comparison",
+              "subskills": [
+                "Comparing predicted outcomes directly with actual observational data",
+                "Identifying discrepancies between predictions and empirical observations",
+                "Revising initial expectations when new observational evidence conflicts",
+                "Recording similarities and differences across multiple observational trials"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D",
+                "Phase E"
+              ],
+              "prerequisites": {
+                "required": [
+                  "S-OC-01, S-OC-03, S-PP-03"
+                ],
+                "strongly_supportive": [
+                  "M-DU-05"
+                ],
+                "useful_background": [
+                  "S-EE-01"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "8.4",
+          "title": "Evidence & Explanation",
+          "skills": [
+            {
+              "code": "S-EE-01",
+              "title": "Observation versus Interpretation",
+              "subskills": [
+                "Distinguishing direct sensory observations from inferred explanations",
+                "Identifying statements as either objective empirical facts or subjective interpretations",
+                "Explaining how the same observation can lead to different interpretations"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "S-OC-01, S-OC-02"
+                ],
+                "strongly_supportive": [
+                  "E-CR-08"
+                ],
+                "useful_background": [
+                  "L-CE-03"
+                ]
+              }
+            },
+            {
+              "code": "S-EE-02",
+              "title": "Evidence",
+              "subskills": [
+                "Identifying specific observational data that supports or refutes a simple claim",
+                "Evaluating whether provided evidence is sufficient to justify an explanation",
+                "Gathering and selecting relevant physical evidence to answer a scientific question"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D",
+                "Phase E"
+              ],
+              "prerequisites": {
+                "required": [
+                  "S-OC-01, S-EE-01"
+                ],
+                "strongly_supportive": [
+                  "E-CR-07"
+                ],
+                "useful_background": [
+                  "L-RC-04"
+                ]
+              }
+            },
+            {
+              "code": "S-EE-03",
+              "title": "Cause and Effect",
+              "subskills": [
+                "Identifying explicit causal connections between observed physical events",
+                "Distinguishing simple direct cause-and-effect relationships from coincidental occurrences",
+                "Predicting how modifying a cause alters the resulting physical effect"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "S-OC-01, S-PP-02"
+                ],
+                "strongly_supportive": [
+                  "E-CR-03"
+                ],
+                "useful_background": [
+                  "W-KO-06"
+                ]
+              }
+            },
+            {
+              "code": "S-EE-04",
+              "title": "Competing Explanations",
+              "subskills": [
+                "Comparing two or more plausible explanations for the same observed event",
+                "Identifying which explanation best aligns with available observational evidence",
+                "Recognizing when current evidence is insufficient to choose between competing explanations"
+              ],
+              "priority": "Enrichment / Advanced",
+              "progression": [
+                "Phase D",
+                "Phase E",
+                "Phase F"
+              ],
+              "prerequisites": {
+                "required": [
+                  "S-EE-01, S-EE-02, S-EE-03"
+                ],
+                "strongly_supportive": [
+                  "L-CE-01"
+                ],
+                "useful_background": [
+                  "E-CC-05"
+                ]
+              }
+            },
+            {
+              "code": "S-EE-05",
+              "title": "Revision",
+              "subskills": [
+                "Recognizing when new observational evidence contradicts a previously held explanation",
+                "Modifying a scientific explanation or model to incorporate new conflicting evidence",
+                "Explaining why an earlier explanation was incomplete or incorrect"
+              ],
+              "priority": "Enrichment / Advanced",
+              "progression": [
+                "Phase D",
+                "Phase E",
+                "Phase F"
+              ],
+              "prerequisites": {
+                "required": [
+                  "S-EE-02, S-EE-04"
+                ],
+                "strongly_supportive": [
+                  "L-CO-04"
+                ],
+                "useful_background": [
+                  "M-PS-05"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "8.5",
+          "title": "Modelling",
+          "skills": [
+            {
+              "code": "S-MO-01",
+              "title": "Drawings",
+              "subskills": [
+                "Creating observational drawings to represent physical objects and living things",
+                "Labeling key parts and features in a scientific drawing",
+                "Comparing a representative drawing directly against the actual physical object"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "S-OC-01, S-OC-02"
+                ],
+                "strongly_supportive": [
+                  "M-PS-03"
+                ],
+                "useful_background": [
+                  "E-WE-01"
+                ]
+              }
+            },
+            {
+              "code": "S-MO-02",
+              "title": "Diagrams",
+              "subskills": [
+                "Constructing simple visual diagrams to show relationships or sequential processes",
+                "Using arrows, symbols, and labels to represent directional movement or change",
+                "Interpreting information presented in simple scientific diagrams"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "S-OC-01, S-MO-01"
+                ],
+                "strongly_supportive": [
+                  "S-PP-01"
+                ],
+                "useful_background": [
+                  "M-DU-04"
+                ]
+              }
+            },
+            {
+              "code": "S-MO-03",
+              "title": "Physical Models",
+              "subskills": [
+                "Building 3D physical models to represent real-world structures or organisms",
+                "Explaining how parts of a physical model correspond to parts of the real object",
+                "Identifying limitations of a physical model compared to the actual system"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "S-OC-01, S-KN-03"
+                ],
+                "strongly_supportive": [
+                  "M-GS-02"
+                ],
+                "useful_background": [
+                  "M-GS-03"
+                ]
+              }
+            },
+            {
+              "code": "S-MO-04",
+              "title": "System Representations",
+              "subskills": [
+                "Constructing visual or physical representations of interacting systems",
+                "Showing inputs, outputs, and internal interactions within a model",
+                "Using a system model to explain or predict how a real system behaves"
+              ],
+              "priority": "Enrichment / Advanced",
+              "progression": [
+                "Phase C",
+                "Phase D",
+                "Phase E"
+              ],
+              "prerequisites": {
+                "required": [
+                  "S-KN-02, S-MO-02, S-MO-03"
+                ],
+                "strongly_supportive": [
+                  "W-KO-05"
+                ],
+                "useful_background": [
+                  "M-PS-08"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "8.6",
+          "title": "Investigation",
+          "skills": [
+            {
+              "code": "S-IN-01",
+              "title": "Questions",
+              "subskills": [
+                "Formulating testable questions about observable phenomena",
+                "Distinguishing questions that can be answered through observation from opinion questions",
+                "Refining broad questions into specific, investigable inquiries"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "S-OC-01, E-OL-05"
+                ],
+                "strongly_supportive": [
+                  "E-CC-02"
+                ],
+                "useful_background": [
+                  "W-KA-05"
+                ]
+              }
+            },
+            {
+              "code": "S-IN-02",
+              "title": "Observation",
+              "subskills": [
+                "Conducting planned observations to gather data relevant to a specific question",
+                "Using simple tools and measuring instruments to collect quantitative observational data",
+                "Maintaining focused, systematic observation over extended time periods"
+              ],
+              "priority": "Essential Foundation",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "S-OC-01, S-OC-02"
+                ],
+                "strongly_supportive": [
+                  "M-ME-01"
+                ],
+                "useful_background": [
+                  "S-PP-02"
+                ]
+              }
+            },
+            {
+              "code": "S-IN-03",
+              "title": "Prediction",
+              "subskills": [
+                "Generating explicit predictions about the outcome of an investigation",
+                "Justifying predictions using prior scientific knowledge or observed patterns",
+                "Comparing initial investigation predictions with final results"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "S-OC-01, S-PP-03"
+                ],
+                "strongly_supportive": [
+                  "E-CR-06"
+                ],
+                "useful_background": [
+                  "S-EE-03"
+                ]
+              }
+            },
+            {
+              "code": "S-IN-04",
+              "title": "Simple Investigation",
+              "subskills": [
+                "Planning steps to carry out a simple hands-on exploration or test",
+                "Conducting a fair test by keeping key conditions constant while changing one variable",
+                "Following simple procedural steps safely and systematically"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D",
+                "Phase E"
+              ],
+              "prerequisites": {
+                "required": [
+                  "S-IN-01, S-IN-02, S-IN-03"
+                ],
+                "strongly_supportive": [
+                  "L-RC-01"
+                ],
+                "useful_background": [
+                  "M-PS-04"
+                ]
+              }
+            },
+            {
+              "code": "S-IN-05",
+              "title": "Recording",
+              "subskills": [
+                "Recording observational data using pictures, tallies, tables, or simple text",
+                "Organizing collected investigation data systematically for review",
+                "Representing data accurately without altering or omitting unexpected findings"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "S-OC-01, M-DU-03"
+                ],
+                "strongly_supportive": [
+                  "M-DU-04"
+                ],
+                "useful_background": [
+                  "E-WE-04"
+                ]
+              }
+            },
+            {
+              "code": "S-IN-06",
+              "title": "Comparison",
+              "subskills": [
+                "Comparing results across multiple trials or different investigation groups",
+                "Identifying patterns, similarities, and differences in recorded investigation data",
+                "Drawing simple evidence-based conclusions by comparing recorded data to initial questions"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D",
+                "Phase E"
+              ],
+              "prerequisites": {
+                "required": [
+                  "S-OC-03, S-IN-05"
+                ],
+                "strongly_supportive": [
+                  "M-DU-05, S-PP-04"
+                ],
+                "useful_background": [
+                  "S-EE-02"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Logical Reasoning",
+      "strands": [
+        {
+          "id": "9.1",
+          "title": "Pattern & Classification",
+          "skills": [
+            {
+              "code": "L-PC-01",
+              "title": "Sequences",
+              "subskills": [
+                "Identifying repeating patterns in visual and abstract symbols",
+                "Extending sequential patterns using identified rules",
+                "Identifying missing elements within an ordered series",
+                "Predicting subsequent steps in a growing or changing sequence"
+              ],
+              "priority": "Essential Foundation",
+              "progression": [
+                "Phase A",
+                "Phase B",
+                "Phase C"
+              ],
+              "prerequisites": {
+                "required": [
+                  "None \u2014 foundational entry point"
+                ],
+                "strongly_supportive": [
+                  "None \u2014 foundational entry point"
+                ],
+                "useful_background": [
+                  "None \u2014 foundational entry point"
+                ]
+              }
+            },
+            {
+              "code": "L-PC-02",
+              "title": "Attributes",
+              "subskills": [
+                "Identifying discrete visual, geometric, or conceptual attributes",
+                "Isolating single attributes within multi-attribute items",
+                "Matching items based on shared attribute sets",
+                "Identifying non-matching or outlier attributes within collections"
+              ],
+              "priority": "Essential Foundation",
+              "progression": [
+                "Phase A",
+                "Phase B",
+                "Phase C"
+              ],
+              "prerequisites": {
+                "required": [
+                  "None \u2014 foundational entry point"
+                ],
+                "strongly_supportive": [
+                  "None \u2014 foundational entry point"
+                ],
+                "useful_background": [
+                  "None \u2014 foundational entry point"
+                ]
+              }
+            },
+            {
+              "code": "L-PC-03",
+              "title": "Transformations",
+              "subskills": [
+                "Recognizing changes in state, color, size, or form across objects",
+                "Identifying rules governing single-step transformations",
+                "Predicting the result of applying a transformation rule to a new item",
+                "Reversing simple transformation rules to determine initial states"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "L-PC-01, L-PC-02"
+                ],
+                "strongly_supportive": [
+                  "M-GS-01"
+                ],
+                "useful_background": [
+                  "S-OC-02"
+                ]
+              }
+            },
+            {
+              "code": "L-PC-04",
+              "title": "Relationships",
+              "subskills": [
+                "Identifying underlying connections between non-identical elements",
+                "Categorizing elements using implicit relational criteria",
+                "Comparing relational structures across different pairs or groups",
+                "Detecting violations of established relational rules"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "L-PC-02, L-PC-03"
+                ],
+                "strongly_supportive": [
+                  "L-PC-01"
+                ],
+                "useful_background": [
+                  "M-PA-03"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "9.2",
+          "title": "Analogical Reasoning",
+          "skills": [
+            {
+              "code": "L-AR-01",
+              "title": "Relationships Between Pairs",
+              "subskills": [
+                "Identifying the core relationship within a given pair of items",
+                "Categorizing relationship types such as part-whole, function, or cause-effect",
+                "Comparing relationships across distinct item pairs",
+                "Determining whether two distinct pairs share an equivalent relationship"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "L-PC-02, L-PC-04"
+                ],
+                "strongly_supportive": [
+                  "E-VM-07"
+                ],
+                "useful_background": [
+                  "S-OC-03"
+                ]
+              }
+            },
+            {
+              "code": "L-AR-02",
+              "title": "Transferring Relationships",
+              "subskills": [
+                "Applying a identified relationship to complete a novel analogy pair",
+                "Constructing parallel relational pairs based on an abstract target rule",
+                "Evaluating multiple target options to select the correct structural match",
+                "Mapping abstract relational rules onto unfamiliar representations"
+              ],
+              "priority": "Enrichment / Advanced",
+              "progression": [
+                "Phase C",
+                "Phase D",
+                "Phase E"
+              ],
+              "prerequisites": {
+                "required": [
+                  "L-AR-01"
+                ],
+                "strongly_supportive": [
+                  "L-PC-03"
+                ],
+                "useful_background": [
+                  "M-FR-06"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "9.3",
+          "title": "Spatial Reasoning",
+          "skills": [
+            {
+              "code": "L-SR-01",
+              "title": "Position",
+              "subskills": [
+                "Describing relative spatial positions using directional concepts",
+                "Identifying relative orientation of objects within a spatial field",
+                "Navigating simple visual grids or spatial maps",
+                "Replicating spatial configurations of multi-part objects"
+              ],
+              "priority": "Essential Foundation",
+              "progression": [
+                "Phase A",
+                "Phase B",
+                "Phase C"
+              ],
+              "prerequisites": {
+                "required": [
+                  "None \u2014 foundational entry point"
+                ],
+                "strongly_supportive": [
+                  "None \u2014 foundational entry point"
+                ],
+                "useful_background": [
+                  "None \u2014 foundational entry point"
+                ]
+              }
+            },
+            {
+              "code": "L-SR-02",
+              "title": "Transformation",
+              "subskills": [
+                "Identifying spatial shifts including translations and reflections",
+                "Predicting the physical outcome of simple spatial slides or flips",
+                "Distinguishing static spatial arrangements from transformed arrangements",
+                "Reversing spatial movements mentally to restore original positions"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "L-SR-01, L-PC-02"
+                ],
+                "strongly_supportive": [
+                  "M-GS-07"
+                ],
+                "useful_background": [
+                  "L-PC-03"
+                ]
+              }
+            },
+            {
+              "code": "L-SR-03",
+              "title": "Visualization",
+              "subskills": [
+                "Mentally manipulating two-dimensional shapes and simple three-dimensional objects",
+                "Predicting hidden views, back sides, or interior structures of objects",
+                "Constructing complete mental images from partial visual information",
+                "Comparing two-dimensional flat representations with three-dimensional objects"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D",
+                "Phase E"
+              ],
+              "prerequisites": {
+                "required": [
+                  "L-SR-01, M-GS-01"
+                ],
+                "strongly_supportive": [
+                  "L-SR-02"
+                ],
+                "useful_background": [
+                  "S-MO-03"
+                ]
+              }
+            },
+            {
+              "code": "L-SR-04",
+              "title": "Rotation",
+              "subskills": [
+                "Recognizing two-dimensional shape rotations across various angular turns",
+                "Mentally rotating two-dimensional figures to match a target orientation",
+                "Distinguishing rotated figures from mirror-reflected figures",
+                "Matching rotated views of simple three-dimensional structures"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D",
+                "Phase E"
+              ],
+              "prerequisites": {
+                "required": [
+                  "L-SR-01, L-SR-02"
+                ],
+                "strongly_supportive": [
+                  "L-SR-03"
+                ],
+                "useful_background": [
+                  "M-GS-06"
+                ]
+              }
+            },
+            {
+              "code": "L-SR-05",
+              "title": "Composition",
+              "subskills": [
+                "Combining simple geometric shapes to form complex target figures",
+                "Decomposing complex spatial figures into individual component parts",
+                "Predicting composite outcomes from a given set of sub-shapes",
+                "Identifying missing components required to complete a composite structure"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "L-SR-01, M-GS-02"
+                ],
+                "strongly_supportive": [
+                  "M-GS-03, L-SR-03"
+                ],
+                "useful_background": [
+                  "L-PC-02"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "9.4",
+          "title": "Relational & Constraint Reasoning",
+          "skills": [
+            {
+              "code": "L-RC-01",
+              "title": "Multiple Conditions",
+              "subskills": [
+                "Tracking two or more active attributes simultaneously",
+                "Evaluating items against multiple criteria at once",
+                "Identifying items that satisfy all given conditions"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "L-PC-02, L-SR-01"
+                ],
+                "strongly_supportive": [
+                  "L-PC-01"
+                ],
+                "useful_background": [
+                  "M-DU-01"
+                ]
+              }
+            },
+            {
+              "code": "L-RC-02",
+              "title": "Ordering",
+              "subskills": [
+                "Arranging elements based on relative comparison statements",
+                "Constructing linear sequences from partial relational clues",
+                "Determining relative positions of unstated elements"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "L-PC-01, L-RC-01"
+                ],
+                "strongly_supportive": [
+                  "M-NQ-03"
+                ],
+                "useful_background": [
+                  "E-CR-04"
+                ]
+              }
+            },
+            {
+              "code": "L-RC-03",
+              "title": "Grouping",
+              "subskills": [
+                "Partitioning elements into groups based on relational criteria",
+                "Sorting items according to shared relational constraints",
+                "Identifying valid and invalid group configurations"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "L-PC-02, L-RC-01"
+                ],
+                "strongly_supportive": [
+                  "S-OC-04"
+                ],
+                "useful_background": [
+                  "M-DU-02"
+                ]
+              }
+            },
+            {
+              "code": "L-RC-04",
+              "title": "Constraints",
+              "subskills": [
+                "Identifying restrictive rules that limit valid outcomes",
+                "Applying negative constraints (\"must not be\") to narrow options",
+                "Balancing overlapping constraints to find valid configurations"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D",
+                "Phase E"
+              ],
+              "prerequisites": {
+                "required": [
+                  "L-RC-01"
+                ],
+                "strongly_supportive": [
+                  "L-RC-02, L-RC-03"
+                ],
+                "useful_background": [
+                  "M-PS-02"
+                ]
+              }
+            },
+            {
+              "code": "L-RC-05",
+              "title": "Elimination",
+              "subskills": [
+                "Systematically ruling out invalid options using constraint rules",
+                "Deducing the single remaining valid solution",
+                "Identifying redundant or non-restrictive information"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D",
+                "Phase E"
+              ],
+              "prerequisites": {
+                "required": [
+                  "L-RC-01, L-RC-04"
+                ],
+                "strongly_supportive": [
+                  "L-PC-02"
+                ],
+                "useful_background": [
+                  "M-PS-05"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "9.5",
+          "title": "Conditional Reasoning",
+          "skills": [
+            {
+              "code": "L-CO-01",
+              "title": "If/Then Relationships",
+              "subskills": [
+                "Understanding simple cause-and-effect logical rules",
+                "Applying a given conditional rule to deduce an outcome",
+                "Recognizing when a conditional rule applies versus when it does not"
+              ],
+              "priority": "Enrichment / Advanced",
+              "progression": [
+                "Phase C",
+                "Phase D",
+                "Phase E"
+              ],
+              "prerequisites": {
+                "required": [
+                  "L-RC-01, L-PC-04"
+                ],
+                "strongly_supportive": [
+                  "S-EE-03"
+                ],
+                "useful_background": [
+                  "E-CR-03"
+                ]
+              }
+            },
+            {
+              "code": "L-CO-02",
+              "title": "Necessary Conditions",
+              "subskills": [
+                "Distinguishing necessary conditions from sufficient conditions",
+                "Identifying what must be true for an outcome to occur",
+                "Recognizing when a missing condition prevents an outcome"
+              ],
+              "priority": "Enrichment / Advanced",
+              "progression": [
+                "Phase D",
+                "Phase E",
+                "Phase F"
+              ],
+              "prerequisites": {
+                "required": [
+                  "L-CO-01, L-RC-04"
+                ],
+                "strongly_supportive": [
+                  "L-RC-05"
+                ],
+                "useful_background": [
+                  "S-EE-02"
+                ]
+              }
+            },
+            {
+              "code": "L-CO-03",
+              "title": "Possible Conditions",
+              "subskills": [
+                "Identifying conditions that could be true versus those that must be true",
+                "Evaluating scenarios with incomplete conditional information",
+                "Distinguishing guaranteed outcomes from possible outcomes"
+              ],
+              "priority": "Enrichment / Advanced",
+              "progression": [
+                "Phase D",
+                "Phase E",
+                "Phase F"
+              ],
+              "prerequisites": {
+                "required": [
+                  "L-CO-01"
+                ],
+                "strongly_supportive": [
+                  "M-DU-07"
+                ],
+                "useful_background": [
+                  "S-PP-03"
+                ]
+              }
+            },
+            {
+              "code": "L-CO-04",
+              "title": "Changing Conclusions",
+              "subskills": [
+                "Updating logical conclusions when new premises or conditions are added",
+                "Reevaluating previous inferences in light of modified constraints",
+                "Recognizing when prior deductions become invalid"
+              ],
+              "priority": "Enrichment / Advanced",
+              "progression": [
+                "Phase D",
+                "Phase E",
+                "Phase F"
+              ],
+              "prerequisites": {
+                "required": [
+                  "L-CO-01, L-CO-02"
+                ],
+                "strongly_supportive": [
+                  "S-EE-05"
+                ],
+                "useful_background": [
+                  "E-CR-06"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "9.6",
+          "title": "Consistency & Error Detection",
+          "skills": [
+            {
+              "code": "L-CE-01",
+              "title": "Contradictions",
+              "subskills": [
+                "Identifying mutually exclusive statements or conditions",
+                "Detecting direct visual or logical clashes in given data",
+                "Explaining why two claims cannot both be true simultaneously"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D",
+                "Phase E"
+              ],
+              "prerequisites": {
+                "required": [
+                  "L-RC-01, L-RC-04"
+                ],
+                "strongly_supportive": [
+                  "L-PC-02"
+                ],
+                "useful_background": [
+                  "S-EE-01"
+                ]
+              }
+            },
+            {
+              "code": "L-CE-02",
+              "title": "Impossible Combinations",
+              "subskills": [
+                "Recognizing item or attribute combinations that violate set constraints",
+                "Identifying impossible spatial or relational configurations",
+                "Explaining why a scenario cannot exist under stated rules"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D",
+                "Phase E"
+              ],
+              "prerequisites": {
+                "required": [
+                  "L-RC-01, L-RC-04, L-CE-01"
+                ],
+                "strongly_supportive": [
+                  "L-SR-02"
+                ],
+                "useful_background": [
+                  "M-GS-03"
+                ]
+              }
+            },
+            {
+              "code": "L-CE-03",
+              "title": "Inconsistent Statements",
+              "subskills": [
+                "Identifying statements within a narrative or set that conflict",
+                "Locating discrepancies across multiple data sources or descriptions",
+                "Distinguishing consistent information sets from inconsistent ones"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase D",
+                "Phase E"
+              ],
+              "prerequisites": {
+                "required": [
+                  "L-CE-01, E-CR-01"
+                ],
+                "strongly_supportive": [
+                  "E-CR-08"
+                ],
+                "useful_background": [
+                  "S-EE-02"
+                ]
+              }
+            },
+            {
+              "code": "L-CE-04",
+              "title": "Reasoning Errors",
+              "subskills": [
+                "Identifying flawed logical steps in a given solution path",
+                "Detecting overgeneralization or false assumptions",
+                "Correcting invalid logical deductions to restore consistency"
+              ],
+              "priority": "Enrichment / Advanced",
+              "progression": [
+                "Phase D",
+                "Phase E",
+                "Phase F"
+              ],
+              "prerequisites": {
+                "required": [
+                  "L-CE-01, L-CO-01"
+                ],
+                "strongly_supportive": [
+                  "M-PS-05"
+                ],
+                "useful_background": [
+                  "E-WE-08"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "title": "World Knowledge & Understanding",
+      "strands": [
+        {
+          "id": "10.1",
+          "title": "Knowledge Acquisition",
+          "skills": [
+            {
+              "code": "W-KA-01",
+              "title": "Geography",
+              "subskills": [
+                "Identifying major landforms, bodies of water, and climate regions",
+                "Using maps, globes, and cardinal directions to locate places",
+                "Describing how physical environment shapes human activity",
+                "Comparing physical characteristics of different regions"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase A",
+                "Phase B",
+                "Phase C"
+              ],
+              "prerequisites": {
+                "required": [
+                  "None \u2014 foundational entry point"
+                ],
+                "strongly_supportive": [
+                  "S-OC-01"
+                ],
+                "useful_background": [
+                  "L-SR-01"
+                ]
+              }
+            },
+            {
+              "code": "W-KA-02",
+              "title": "History",
+              "subskills": [
+                "Distinguishing past, present, and future events",
+                "Identifying key historical figures, events, and symbols",
+                "Understanding how daily life changes over time",
+                "Connecting historical events to present-day practices"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "W-KA-01"
+                ],
+                "strongly_supportive": [
+                  "E-OL-03"
+                ],
+                "useful_background": [
+                  "W-KO-03"
+                ]
+              }
+            },
+            {
+              "code": "W-KA-03",
+              "title": "Culture",
+              "subskills": [
+                "Identifying cultural traditions, celebrations, and languages",
+                "Recognizing diverse ways families and communities live",
+                "Respecting cultural differences and shared human experiences",
+                "Describing artistic, musical, and literary expressions of culture"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "W-KA-01"
+                ],
+                "strongly_supportive": [
+                  "E-OL-06"
+                ],
+                "useful_background": [
+                  "E-WE-09"
+                ]
+              }
+            },
+            {
+              "code": "W-KA-04",
+              "title": "Nature",
+              "subskills": [
+                "Observing local flora, fauna, and seasonal natural phenomena",
+                "Describing relationships between living things and natural habitats",
+                "Recognizing natural resources and environmental stewardship",
+                "Identifying natural cycles in terrestrial and aquatic environments"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase A",
+                "Phase B",
+                "Phase C"
+              ],
+              "prerequisites": {
+                "required": [
+                  "S-OC-01"
+                ],
+                "strongly_supportive": [
+                  "S-KN-01, S-KN-08"
+                ],
+                "useful_background": [
+                  "S-KN-09"
+                ]
+              }
+            },
+            {
+              "code": "W-KA-05",
+              "title": "Science Awareness",
+              "subskills": [
+                "Recognizing everyday applications of scientific discoveries",
+                "Identifying how scientists observe, question, and experiment",
+                "Connecting scientific principles to household tools and phenomena",
+                "Asking curious questions about natural and physical phenomena"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "S-OC-01, S-IN-01"
+                ],
+                "strongly_supportive": [
+                  "S-EE-01"
+                ],
+                "useful_background": [
+                  "E-OL-05"
+                ]
+              }
+            },
+            {
+              "code": "W-KA-06",
+              "title": "Technology",
+              "subskills": [
+                "Identifying digital and physical technological tools in daily life",
+                "Understanding how tools and technology solve human problems",
+                "Recognizing safe and responsible practices when using technology",
+                "Tracing how technological tools have evolved over time"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "S-KN-11"
+                ],
+                "strongly_supportive": [
+                  "W-KA-02"
+                ],
+                "useful_background": [
+                  "S-KN-03"
+                ]
+              }
+            },
+            {
+              "code": "W-KA-07",
+              "title": "Communities",
+              "subskills": [
+                "Identifying roles, jobs, and responsibilities within a community",
+                "Understanding how community members cooperate and support each other",
+                "Recognizing civic rules, rights, and shared spaces",
+                "Describing how communities meet basic human needs"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase A",
+                "Phase B",
+                "Phase C"
+              ],
+              "prerequisites": {
+                "required": [
+                  "W-KA-01"
+                ],
+                "strongly_supportive": [
+                  "E-OL-06"
+                ],
+                "useful_background": [
+                  "W-KA-03"
+                ]
+              }
+            },
+            {
+              "code": "W-KA-08",
+              "title": "Everyday Systems",
+              "subskills": [
+                "Identifying infrastructure systems like transportation, food, and energy supply",
+                "Tracing how goods and services move from production to consumption",
+                "Describing how public services serve individuals and families",
+                "Recognizing interconnections among everyday urban and rural systems"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "W-KA-07"
+                ],
+                "strongly_supportive": [
+                  "S-KN-02"
+                ],
+                "useful_background": [
+                  "W-KO-05"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "10.2",
+          "title": "Knowledge Organization",
+          "skills": [
+            {
+              "code": "W-KO-01",
+              "title": "Categories",
+              "subskills": [
+                "Grouping domain knowledge into conceptual categories",
+                "Assigning new facts and examples to established mental categories",
+                "Recognizing overlapping or nested category structures",
+                "Explaining the defining features of a knowledge category"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "W-KA-01, S-OC-04"
+                ],
+                "strongly_supportive": [
+                  "M-DU-01, L-PC-02"
+                ],
+                "useful_background": [
+                  "E-VM-07"
+                ]
+              }
+            },
+            {
+              "code": "W-KO-02",
+              "title": "Relationships",
+              "subskills": [
+                "Connecting related facts and concepts across different domains",
+                "Identifying functional and structural links between ideas",
+                "Comparing related concepts to identify shared principles",
+                "Building conceptual networks that integrate new information"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "W-KO-01, L-PC-04"
+                ],
+                "strongly_supportive": [
+                  "L-AR-01"
+                ],
+                "useful_background": [
+                  "E-WE-07"
+                ]
+              }
+            },
+            {
+              "code": "W-KO-03",
+              "title": "Timelines",
+              "subskills": [
+                "Organizing historical events and processes in chronological sequence",
+                "Interpreting visual timeline representations of time periods",
+                "Connecting historical causes to subsequent developments across time",
+                "Estimating relative duration and interval between historical events"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "W-KA-02, E-CR-04"
+                ],
+                "strongly_supportive": [
+                  "M-ME-04, L-RC-02"
+                ],
+                "useful_background": [
+                  "L-PC-01"
+                ]
+              }
+            },
+            {
+              "code": "W-KO-04",
+              "title": "Spatial Relationships",
+              "subskills": [
+                "Mapping geographical and spatial connections between locations",
+                "Analyzing spatial distribution of human populations and natural features",
+                "Interpreting spatial representations like diagrams, plans, and maps",
+                "Reasoning about relative distance and spatial orientation in real-world contexts"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase B",
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "W-KA-01, L-SR-01"
+                ],
+                "strongly_supportive": [
+                  "M-GS-04"
+                ],
+                "useful_background": [
+                  "M-DU-04"
+                ]
+              }
+            },
+            {
+              "code": "W-KO-05",
+              "title": "Systems",
+              "subskills": [
+                "Representing complex real-world phenomena as interconnected systems",
+                "Identifying components, boundaries, inputs, and outputs of a system",
+                "Analyzing how changes in one system component affect the whole",
+                "Comparing natural systems with human-made organizational systems"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D",
+                "Phase E"
+              ],
+              "prerequisites": {
+                "required": [
+                  "W-KO-02, S-KN-02"
+                ],
+                "strongly_supportive": [
+                  "S-MO-04, W-KO-04"
+                ],
+                "useful_background": [
+                  "TBD"
+                ]
+              }
+            },
+            {
+              "code": "W-KO-06",
+              "title": "Causes and Effects",
+              "subskills": [
+                "Tracing causal chains across historical, natural, and social events",
+                "Distinguishing primary causes from secondary effects in complex scenarios",
+                "Recognizing multiple contributing factors to a single outcome",
+                "Evaluating cause-and-effect claims using factual evidence"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D",
+                "Phase E"
+              ],
+              "prerequisites": {
+                "required": [
+                  "W-KO-02, S-EE-03"
+                ],
+                "strongly_supportive": [
+                  "E-CR-03"
+                ],
+                "useful_background": [
+                  "L-CO-01"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "10.3",
+          "title": "Knowledge Application",
+          "skills": [
+            {
+              "code": "W-KP-01",
+              "title": "Explanation",
+              "subskills": [
+                "Articulating how and why natural or social phenomena occur",
+                "Synthesizing domain facts into coherent explanatory narratives",
+                "Tailoring explanations of real-world knowledge for different audiences",
+                "Using accurate domain vocabulary to support an explanation"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D",
+                "Phase E"
+              ],
+              "prerequisites": {
+                "required": [
+                  "W-KO-01, E-WE-04"
+                ],
+                "strongly_supportive": [
+                  "S-EE-01"
+                ],
+                "useful_background": [
+                  "E-OL-04"
+                ]
+              }
+            },
+            {
+              "code": "W-KP-02",
+              "title": "Comparison",
+              "subskills": [
+                "Comparing real-world systems, cultures, or historical eras",
+                "Evaluating similarities and differences across geographical regions",
+                "Contrasting alternative technological or societal solutions",
+                "Organizing comparative knowledge using structured representations"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D"
+              ],
+              "prerequisites": {
+                "required": [
+                  "W-KO-01, E-CR-05"
+                ],
+                "strongly_supportive": [
+                  "S-OC-03"
+                ],
+                "useful_background": [
+                  "M-DU-05"
+                ]
+              }
+            },
+            {
+              "code": "W-KP-03",
+              "title": "Prediction",
+              "subskills": [
+                "Predicting outcomes in natural or human systems based on organized knowledge",
+                "Using historical or environmental patterns to forecast future trends",
+                "Justifying predictions about real-world scenarios using factual evidence",
+                "Evaluating the accuracy of knowledge-based predictions when new data arrives"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase C",
+                "Phase D",
+                "Phase E"
+              ],
+              "prerequisites": {
+                "required": [
+                  "W-KO-06, S-PP-03"
+                ],
+                "strongly_supportive": [
+                  "E-CR-06"
+                ],
+                "useful_background": [
+                  "L-CO-03"
+                ]
+              }
+            },
+            {
+              "code": "W-KP-04",
+              "title": "Reasoning",
+              "subskills": [
+                "Applying general domain principles to analyze specific real-world situations",
+                "Evaluating claims about world events using logical criteria and evidence",
+                "Identifying fallacies or misconceptions in everyday assertions",
+                "Drawing valid inferences about unfamiliar cultural or historical contexts"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase D",
+                "Phase E",
+                "Phase F"
+              ],
+              "prerequisites": {
+                "required": [
+                  "W-KO-02, E-WE-06"
+                ],
+                "strongly_supportive": [
+                  "L-RC-04, S-EE-02"
+                ],
+                "useful_background": [
+                  "L-CE-03"
+                ]
+              }
+            },
+            {
+              "code": "W-KP-05",
+              "title": "Interpretation",
+              "subskills": [
+                "Interpreting primary sources, historical artifacts, and geographical data",
+                "Analyzing perspectives and motives underlying historical or cultural accounts",
+                "Extracting core insights from informational texts and media",
+                "Distinguishing objective factual reporting from biased interpretation in world knowledge"
+              ],
+              "priority": "Core Development",
+              "progression": [
+                "Phase D",
+                "Phase E",
+                "Phase F"
+              ],
+              "prerequisites": {
+                "required": [
+                  "W-KO-01, E-CR-08"
+                ],
+                "strongly_supportive": [
+                  "E-CC-04"
+                ],
+                "useful_background": [
+                  "S-EE-01"
+                ]
+              }
+            },
+            {
+              "code": "W-KP-06",
+              "title": "Connections",
+              "subskills": [
+                "Transferring domain knowledge to solve novel, real-world problems",
+                "Connecting concepts across science, history, geography, and technology",
+                "Recognizing underlying global or systemic principles in everyday occurrences",
+                "Generating creative solutions or models that synthesize multi-domain knowledge"
+              ],
+              "priority": "Enrichment / Advanced",
+              "progression": [
+                "Phase E",
+                "Phase F"
+              ],
+              "prerequisites": {
+                "required": [
+                  "W-KO-05, W-KP-01, W-KP-04"
+                ],
+                "strongly_supportive": [
+                  "L-AR-02"
+                ],
+                "useful_background": [
+                  "M-PS-08"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "11.1",
+          "title": "Strategic Flexibility",
+          "skills": []
+        },
+        {
+          "id": "11.2",
+          "title": "Metacognition",
+          "skills": []
+        },
+        {
+          "id": "11.3",
+          "title": "Productive Persistence",
+          "skills": []
+        },
+        {
+          "id": "11.4",
+          "title": "Executive Function",
+          "skills": []
+        },
+        {
+          "id": "11.5",
+          "title": "Representational Flexibility",
+          "skills": []
+        },
+        {
+          "id": "11.6",
+          "title": "Communication",
+          "skills": []
+        },
+        {
+          "id": "11.7",
+          "title": "Creativity",
+          "skills": []
+        },
+        {
+          "id": "11.8",
+          "title": "Misconception Sensitivity",
+          "skills": []
+        },
+        {
+          "id": "11.9",
+          "title": "Retention & Durability",
+          "skills": []
+        },
+        {
+          "id": "16.1",
+          "title": "Coverage",
+          "skills": []
+        },
+        {
+          "id": "16.2",
+          "title": "Dependency Integrity",
+          "skills": []
+        },
+        {
+          "id": "16.3",
+          "title": "Foundation Integrity",
+          "skills": []
+        },
+        {
+          "id": "16.4",
+          "title": "Priority Integrity",
+          "skills": []
+        },
+        {
+          "id": "16.5",
+          "title": "Phase Integrity",
+          "skills": []
+        },
+        {
+          "id": "16.6",
+          "title": "Axis Integrity",
+          "skills": []
+        },
+        {
+          "id": "16.7",
+          "title": "Cross-Domain Integrity",
+          "skills": []
+        },
+        {
+          "id": "16.8",
+          "title": "Representation Integrity",
+          "skills": []
+        },
+        {
+          "id": "16.9",
+          "title": "Modality Integrity",
+          "skills": []
+        },
+        {
+          "id": "16.10",
+          "title": "Master Plan Compliance",
+          "skills": [
+            {
+              "code": "Next",
+              "title": "action:",
+              "subskills": [],
+              "priority": "",
+              "progression": [],
+              "prerequisites": {
+                "required": [],
+                "strongly_supportive": [],
+                "useful_background": []
+              }
+            },
+            {
+              "code": "Next",
+              "title": "action:",
+              "subskills": [],
+              "priority": "",
+              "progression": [],
+              "prerequisites": {
+                "required": [],
+                "strongly_supportive": [],
+                "useful_background": []
+              }
+            },
+            {
+              "code": "Next",
+              "title": "action:",
+              "subskills": [],
+              "priority": "",
+              "progression": [],
+              "prerequisites": {
+                "required": [],
+                "strongly_supportive": [],
+                "useful_background": []
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

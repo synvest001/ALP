@@ -1,5 +1,6 @@
 import { LearnerSkillProfile, MockProfile } from './LearnerProfileMock';
 import { QuestionBank, QuestionItem } from './QuestionBank';
+import { AssessmentEngine } from './AssessmentEngine';
 
 export interface TaskRequestPayload {
   session_id: string;
@@ -40,9 +41,11 @@ const mapDomainToCategory = (domain: string) => {
 
 export class SessionComposer {
   private questionBank: QuestionBank;
+  private assessmentEngine: AssessmentEngine;
 
   constructor() {
     this.questionBank = new QuestionBank();
+    this.assessmentEngine = new AssessmentEngine();
   }
 
   public generateSession(profile: LearnerSkillProfile = MockProfile): TaskRequestPayload[] {
@@ -103,24 +106,60 @@ export class SessionComposer {
     // Rank by deficit score descending
     candidatePairs.sort((a, b) => b.deficitScore - a.deficitScore);
 
+    // Get active learning states from real telemetry
+    const activeStates = this.assessmentEngine.getAllStates().filter(s => s.state === 'INTRODUCED' || s.state === 'DEVELOPING');
+
     // STEP 3 - FILL REMAINING TASK BUDGET
-    // For testing purposes, we are forcing the engine to only pick M-OP-05 (where we have real data)
+    // We will dynamically pick domains based on deficits, rather than forcing M-OP-05
     while (session.length < targetTaskCount && currentTimeBudget < maxTimeBudgetSeconds) {
       const payload: TaskRequestPayload = {
         session_id: sessionId,
         task_index: session.length + 1,
         session_task_count: targetTaskCount,
         task_function_type: 'FOCUSED_CORE',
-        domain_id: 'MATHEMATICS',
-        target_subskill_id: 'M-OP-05',
+        domain_id: '',
         phase_context: 'PHASE_B',
         required_cognitive_depth: 'UNDERSTAND',
         time_budget_seconds: 180
       };
       
-      payload.question_item = this.questionBank.getTask(payload.domain_id, payload.target_subskill_id);
+      // Try to target an active subskill first
+      if (activeStates.length > 0) {
+        const targetState = activeStates[Math.floor(Math.random() * activeStates.length)];
+        payload.question_item = this.questionBank.getTask('', targetState.subskill_id); // Domain empty, subskill specified
+      }
+
+      // If no item found from active states, fallback to deficit candidates
+      if (!payload.question_item) {
+        const topCandidate = candidatePairs.length > 0 ? candidatePairs[0].domain : 'MATHEMATICS';
+        let domainIdToUse = topCandidate;
+        if (domainIdToUse === 'SCIENCE_EVS' || domainIdToUse === 'WORLD_KNOWLEDGE') {
+          domainIdToUse = 'SCIENCE_EVS_WORLD_KNOWLEDGE';
+        }
+        payload.domain_id = domainIdToUse;
+        payload.question_item = this.questionBank.getTask(payload.domain_id);
+      }
+      
+      // Ultimate fallback: completely random
+      if (!payload.question_item) {
+        const allDomains = ['MATHEMATICS', 'ENGLISH_LANGUAGE', 'SCIENCE_EVS_WORLD_KNOWLEDGE', 'LOGICAL_REASONING', 'SEL', 'ARTS'];
+        const randDomain = allDomains[Math.floor(Math.random() * allDomains.length)];
+        payload.question_item = this.questionBank.getTask(randDomain);
+      }
+
+      if (payload.question_item) {
+        payload.domain_id = payload.question_item.domain_id;
+        payload.target_subskill_id = payload.question_item.target_subskill_id;
+      }
+      
       session.push(payload);
       currentTimeBudget += payload.time_budget_seconds;
+      
+      // Shift to avoid picking the same domain constantly
+      if (candidatePairs.length > 0) {
+        const shifted = candidatePairs.shift();
+        if (shifted) candidatePairs.push(shifted);
+      }
     }
 
     // STEP 4 - CLOSE

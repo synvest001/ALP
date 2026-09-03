@@ -1,4 +1,5 @@
 import { App } from '../app';
+import { SyncEngine } from '../engine/SyncEngine';
 
 export class MapScreen {
   private container: HTMLElement;
@@ -8,6 +9,27 @@ export class MapScreen {
   private totalNodes = 10;
   private playerNodesCompleted = 0;
   private currentPathNodes: {x: number, y: number}[] = [];
+  
+  private backgrounds = [
+    'magical_forest.jpg',
+    'crystal_cave.jpg',
+    'dragon_castle.jpg',
+    'mushroom_village.jpg',
+    'pixie_hollow.jpg',
+    'whispering_woods.jpg',
+    'candy_canyon.jpg',
+    'clockwork_city.jpg',
+    'cloud_kingdom.jpg',
+    'dinosaur_valley.jpg',
+    'enchanted_library.jpg',
+    'fairy_treehouse.jpg',
+    'floating_islands.jpg',
+    'frozen_tundra.jpg',
+    'mermaid_lagoon.jpg',
+    'rainbow_peaks.jpg',
+    'starlight_observatory.jpg',
+    'volcano_forge.jpg'
+  ];
   
   constructor(app: App) {
     this.app = app;
@@ -58,6 +80,13 @@ export class MapScreen {
     localStorage.setItem('alp_nodes_completed', this.playerNodesCompleted.toString());
   }
 
+  private getCurrentWorldName(): string {
+    const worldIndex = Math.floor(this.playerNodesCompleted / this.totalNodes);
+    const bgIndex = worldIndex % this.backgrounds.length;
+    let name = this.backgrounds[bgIndex].replace('.jpg', '').replace(/_/g, ' ');
+    return name.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+  }
+
   public updateHeader(playerName: string, avatar: string) {
     const avatarDisplay = this.container.querySelector('#map-avatar-display') as HTMLElement;
     const greeting = this.container.querySelector('#map-greeting') as HTMLElement;
@@ -76,12 +105,13 @@ export class MapScreen {
     }
     
     if (greeting) {
+      const worldName = this.getCurrentWorldName();
       const getGreeting = (a: string, n: string) => {
         const map: Record<string, (n: string) => string> = {
-          princess: (n) => `Welcome, Royal Highness ${n}!`,
-          knight: (n) => `Welcome, Brave Dame ${n}!`, 
-          magician: (n) => `Welcome, Grand Sorceress ${n}!`,
-          explorer: (n) => `Welcome, Intrepid Explorer ${n}!`
+          princess: (n) => `Welcome, Royal Highness ${n} to ${worldName}!`,
+          knight: (n) => `Welcome, Brave Dame ${n} to ${worldName}!`, 
+          magician: (n) => `Welcome, Grand Sorceress ${n} to ${worldName}!`,
+          explorer: (n) => `Welcome, Intrepid Explorer ${n} to ${worldName}!`
         };
         const func = map[a] || map['princess'];
         return func(n);
@@ -98,6 +128,28 @@ export class MapScreen {
   private bindEvents() {
     const btnSandbox = this.container.querySelector('#btn-goto-sandbox');
     const btnLogout = this.container.querySelector('#btn-logout');
+    const btnSync = this.container.querySelector('#btn-sync') as HTMLButtonElement;
+    
+    if (btnSync) {
+      btnSync.addEventListener('click', async () => {
+        btnSync.textContent = 'Syncing...';
+        btnSync.disabled = true;
+        
+        const syncEngine = new SyncEngine();
+        const success = await syncEngine.sync();
+        
+        btnSync.textContent = success ? 'Synced!' : 'Sync Failed';
+        setTimeout(() => {
+          btnSync.textContent = 'Sync Data';
+          btnSync.disabled = false;
+        }, 2000);
+        
+        if (success) {
+          // Re-render entirely to update map nodes and star counts if they were overwritten
+          this.render();
+        }
+      });
+    }
     
     if (btnSandbox) {
       btnSandbox.addEventListener('click', () => {
@@ -178,8 +230,23 @@ export class MapScreen {
       this.app.profileSwitcher.getCurrentAvatar() || 'princess'
     );
     this.loadState();
+    this.updateBackground();
     this.generateMapWorld();
     this.centerMapOnActiveNode();
+  }
+
+  private updateBackground() {
+    const mapContainer = this.container.querySelector('.map-container') as HTMLElement;
+    if (!mapContainer) return;
+
+    // Each world is 10 nodes (this.totalNodes). So world index = floor(nodes / 10)
+    // If the kid exceeds the number of backgrounds, it loops.
+    const worldIndex = Math.floor(this.playerNodesCompleted / this.totalNodes);
+    const bgIndex = worldIndex % this.backgrounds.length;
+    
+    mapContainer.style.backgroundImage = `url('/art/${this.backgrounds[bgIndex]}')`;
+    mapContainer.style.backgroundSize = 'cover';
+    mapContainer.style.backgroundPosition = 'center';
   }
 
   private generateMapWorld() {
@@ -230,14 +297,16 @@ export class MapScreen {
     mapWorld.appendChild(svg);
 
     // Draw Nodes
+    const localNodesCompleted = this.playerNodesCompleted % this.totalNodes;
+    
     this.currentPathNodes.forEach((node, i) => {
       const nodeEl = document.createElement('div');
       nodeEl.className = 'map-node';
       nodeEl.style.left = `${node.x}px`;
       nodeEl.style.top = `${node.y}px`;
       
-      const isCompleted = i < this.playerNodesCompleted;
-      const isActive = i === this.playerNodesCompleted;
+      const isCompleted = i < localNodesCompleted;
+      const isActive = i === localNodesCompleted;
 
       if (isCompleted) {
         nodeEl.classList.add('completed');

@@ -1,16 +1,23 @@
 import { SessionComposer, TaskRequestPayload } from '../engine/AdaptiveEngine';
 import { MockProfile } from '../engine/LearnerProfileMock';
 import { UNLOCKED_STICKERS } from './ToyboxScreen';
+import { AssessmentEngine } from '../engine/AssessmentEngine';
+import { TelemetryQueue } from '../storage/telemetry_queue';
 
 export class TaskRunner {
   private container: HTMLElement;
   private currentSession: TaskRequestPayload[] = [];
   private currentTaskIndex = 0;
+  private sessionErrors = 0;
   private composer: SessionComposer;
+  private assessmentEngine: AssessmentEngine;
+  private telemetry: TelemetryQueue;
 
   constructor(_app: any) {
     this.container = document.getElementById('modal-task-runner') as HTMLElement;
     this.composer = new SessionComposer();
+    this.assessmentEngine = new AssessmentEngine();
+    this.telemetry = new TelemetryQueue();
   }
 
   public render() {
@@ -59,6 +66,7 @@ export class TaskRunner {
     }
     
     this.currentTaskIndex = 0;
+    this.sessionErrors = 0;
     this.container.classList.add('active');
     this.renderTask();
   }
@@ -146,6 +154,16 @@ export class TaskRunner {
   private handleAnswer(selectedIndex: number, correctIndex: number, btnElement: HTMLButtonElement) {
     const isCorrect = selectedIndex === correctIndex;
     
+    const item = this.currentSession[this.currentTaskIndex].question_item;
+    if (item) {
+      this.assessmentEngine.recordAttempt(item.target_subskill_id, isCorrect, item.evidence_archetype);
+      this.telemetry.trackEvent('TASK_ANSWERED', {
+        subskill_id: item.target_subskill_id,
+        isCorrect: isCorrect,
+        archetype: item.evidence_archetype
+      });
+    }
+    
     const options = this.container.querySelector('#options-container');
     if (options) {
       const allBtns = options.querySelectorAll('.btn-option') as NodeListOf<HTMLButtonElement>;
@@ -159,54 +177,68 @@ export class TaskRunner {
         this.renderTask();
       }, 1000);
     } else {
+      this.sessionErrors++;
       btnElement.classList.add('incorrect');
       const hint = this.container.querySelector('#scaffolding-hint');
       if (hint) hint.classList.remove('hidden');
       
+      // Graceful failure routing: Move to the next question after 2.5 seconds
       setTimeout(() => {
-        if (options) {
-          const allBtns = options.querySelectorAll('.btn-option') as NodeListOf<HTMLButtonElement>;
-          allBtns.forEach(b => b.disabled = false);
-        }
         btnElement.classList.remove('incorrect');
-      }, 2000);
+        this.currentTaskIndex++;
+        this.renderTask();
+      }, 2500);
     }
   }
 
   private finishSession() {
     this.container.classList.remove('active');
     
-    const currentStars = parseInt(localStorage.getItem('alp_stars') || '0', 10);
-    const newStars = currentStars + 1;
-    localStorage.setItem('alp_stars', newStars.toString());
+    let celebrationHTML = '';
     
-    const currentNodes = parseInt(localStorage.getItem('alp_nodes_completed') || '0', 10);
-    localStorage.setItem('alp_nodes_completed', (currentNodes + 1).toString());
+    if (this.sessionErrors === 0) {
+      // Perfect session: advance progress and award star
+      const currentStars = parseInt(localStorage.getItem('alp_stars') || '0', 10);
+      const newStars = currentStars + 1;
+      localStorage.setItem('alp_stars', newStars.toString());
+      
+      const currentNodes = parseInt(localStorage.getItem('alp_nodes_completed') || '0', 10);
+      localStorage.setItem('alp_nodes_completed', (currentNodes + 1).toString());
 
-    const starBadge = document.getElementById('player-stars');
-    if (starBadge) {
-      starBadge.textContent = `⭐ ${newStars}`;
-    }
+      const starBadge = document.getElementById('player-stars');
+      if (starBadge) {
+        starBadge.textContent = `⭐ ${newStars}`;
+      }
 
-    const unlockedTreasure = UNLOCKED_STICKERS[currentNodes];
-    let celebrationHTML = `
-      <div class="celebration-content">
-        <div class="celebration-stars">⭐</div>
-        <h2>Milestone Reached!</h2>
-        <p>You earned a new star!</p>
-      </div>
-    `;
-
-    if (unlockedTreasure) {
-      celebrationHTML = `
-        <div class="celebration-content">
-          <div class="celebration-stars">⭐</div>
-          <h2>Milestone Reached!</h2>
-          <p>You earned a new star!</p>
-          <div class="treasure-reveal" style="margin-top: 20px; animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
-            <div style="font-size: 1.2em; color: #f1c40f; margin-bottom: 10px; font-weight: bold;">New Treasure Unlocked!</div>
-            <div style="font-size: 4em; filter: drop-shadow(0 0 20px rgba(241, 196, 15, 0.8)); text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);">${unlockedTreasure}</div>
+      const unlockedTreasure = UNLOCKED_STICKERS[currentNodes];
+      if (unlockedTreasure) {
+        celebrationHTML = `
+          <div class="celebration-content">
+            <div class="celebration-stars">⭐</div>
+            <h2>Milestone Reached!</h2>
+            <p>You earned a new star!</p>
+            <div class="treasure-reveal" style="margin-top: 20px; animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
+              <div style="font-size: 1.2em; color: #f1c40f; margin-bottom: 10px; font-weight: bold;">New Treasure Unlocked!</div>
+              <div style="font-size: 4em; filter: drop-shadow(0 0 20px rgba(241, 196, 15, 0.8)); text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);">${unlockedTreasure}</div>
+            </div>
           </div>
+        `;
+      } else {
+        celebrationHTML = `
+          <div class="celebration-content">
+            <div class="celebration-stars">⭐</div>
+            <h2>Milestone Reached!</h2>
+            <p>You earned a new star!</p>
+          </div>
+        `;
+      }
+    } else {
+      // Imperfect session: strict gating, no progress awarded
+      celebrationHTML = `
+        <div class="celebration-content" style="background: rgba(255,255,255,0.95); border: 2px solid #3498db;">
+          <div class="celebration-stars" style="color: #3498db;">💡</div>
+          <h2 style="color: #2c3e50;">Keep Practicing!</h2>
+          <p style="color: #34495e;">You made a few mistakes. Let's try another path on the map!</p>
         </div>
       `;
     }

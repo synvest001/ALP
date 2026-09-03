@@ -56,7 +56,6 @@ export class LandingScreen {
     if (!container) return;
     
     container.innerHTML = '';
-    const lastActiveName = this.app.profileSwitcher.getCurrentPlayerName();
     const profiles = this.app.profileSwitcher.getSavedProfiles();
     
     if (profiles.length === 0) {
