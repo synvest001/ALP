@@ -1062,15 +1062,18 @@ header {
   overflow: auto;
   border: 4px solid var(--secondary);
   border-radius: 15px;
-  background: url('/art/dragon_castle.jpg') no-repeat center center;
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   box-shadow: inset 0 0 50px rgba(0,0,0,0.8);
 }
 
 .map-world {
   position: relative;
-  width: 1000px;
-  height: 1000px;
+  width: 100%;
+  height: 100%;
+  min-width: 1000px;
+  min-height: 700px;
 }
 
 .map-path-svg {

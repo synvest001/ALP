@@ -247,16 +247,20 @@ export class MapScreen {
     mapContainer.style.backgroundImage = `url('/art/${this.backgrounds[bgIndex]}')`;
     mapContainer.style.backgroundSize = 'cover';
     mapContainer.style.backgroundPosition = 'center';
+    mapContainer.style.backgroundRepeat = 'no-repeat';
   }
 
   private generateMapWorld() {
     const mapWorld = this.container.querySelector('#map-world') as HTMLElement;
-    if (!mapWorld) return;
+    const viewport = this.container.querySelector('#map-viewport') as HTMLElement;
+    if (!mapWorld || !viewport) return;
     mapWorld.innerHTML = '';
     
     this.currentPathNodes = [];
-    const mapWidth = 1000;
-    const mapHeight = 1000;
+    const mapWidth = Math.max(viewport.clientWidth, 1000);
+    const mapHeight = Math.max(viewport.clientHeight, 700);
+    mapWorld.style.width = `${mapWidth}px`;
+    mapWorld.style.height = `${mapHeight}px`;
     
     for (let i = 0; i < this.totalNodes; i++) {
       let x, y;

@@ -51,9 +51,14 @@ export class QuestionBank {
     const modules = import.meta.glob('../../../question_bank/items/**/*.json', { eager: true });
     
     for (const path in modules) {
-      this.items.push((modules[path] as any).default || modules[path]);
+      const item = (modules[path] as any).default || modules[path];
+      
+      // Filter out mock items that are missing visual assets
+      if (item.prompt_structure?.visual_assets && item.prompt_structure.visual_assets.length > 0) {
+        this.items.push(item);
+      }
     }
-    console.log(`QuestionBank loaded ${this.items.length} items.`);
+    console.log(`QuestionBank loaded ${this.items.length} fully populated items with visuals.`);
   }
 
   public getTask(
