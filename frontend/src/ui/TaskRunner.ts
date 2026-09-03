@@ -98,8 +98,10 @@ export class TaskRunner {
       if (item?.prompt_structure?.visual_assets && item.prompt_structure.visual_assets.length > 0) {
         const asset = item.prompt_structure.visual_assets[0];
         let assetUri = asset.uri || '';
-        if (!assetUri.startsWith('http') && !assetUri.startsWith('/')) {
-          assetUri = '/' + assetUri;
+        if (!assetUri.startsWith('http')) {
+          if (assetUri.startsWith('/')) assetUri = assetUri.substring(1);
+          const base = import.meta.env.BASE_URL || './';
+          assetUri = base.endsWith('/') ? base + assetUri : base + '/' + assetUri;
         }
         visual.innerHTML = `<img src="${assetUri}" alt="Visual context" style="max-width: 100%; max-height: 280px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); background: #fff;" onerror="this.style.display='none';" />`;
       } else {
@@ -163,7 +165,11 @@ export class TaskRunner {
         let optHtml = `<span>${opt.text}</span>`;
         if (opt.assetUri) {
           let uri = opt.assetUri;
-          if (!uri.startsWith('http') && !uri.startsWith('/')) uri = '/' + uri;
+          if (!uri.startsWith('http')) {
+            if (uri.startsWith('/')) uri = uri.substring(1);
+            const base = import.meta.env.BASE_URL || './';
+            uri = base.endsWith('/') ? base + uri : base + '/' + uri;
+          }
           optHtml = `<div style="display:flex; flex-direction:column; align-items:center; gap:6px;">
             <img src="${uri}" style="height:35px; max-width:80px; object-fit:contain;" onerror="this.style.display='none';"/>
             <span style="font-size:1.2em; font-weight:bold;">${opt.text}</span>
