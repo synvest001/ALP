@@ -97,10 +97,24 @@ export class TaskRunner {
     if (visual) {
       if (item?.prompt_structure?.visual_assets && item.prompt_structure.visual_assets.length > 0) {
         const asset = item.prompt_structure.visual_assets[0];
-        visual.innerHTML = `<img src="${asset.uri}" alt="Visual context" style="max-width: 100%; max-height: 350px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);" />`;
+        let assetUri = asset.uri || '';
+        if (!assetUri.startsWith('http') && !assetUri.startsWith('/')) {
+          assetUri = '/' + assetUri;
+        }
+        visual.innerHTML = `<img src="${assetUri}" alt="Visual context" style="max-width: 100%; max-height: 280px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); background: #fff;" onerror="this.style.display='none';" />`;
       } else {
-        // For now, render a mock placeholder based on domain/representation
-        visual.innerHTML = `<div class="mock-visual">[${item?.domain_id || 'UNKNOWN'}]<br/>${item?.representation_type || ''} Visual Placeholder</div>`;
+        // Render a friendly icon card based on domain
+        const domainIcons: Record<string, string> = {
+          'MATHEMATICS': '🔢',
+          'ENGLISH_LANGUAGE': '📖',
+          'SCIENCE_EVS': '🌿',
+          'WORLD_KNOWLEDGE': '🌍',
+          'LOGICAL_REASONING': '🧩',
+          'ARTS': '🎨',
+          'SEL': '💛'
+        };
+        const icon = domainIcons[item?.domain_id || ''] || '⭐';
+        visual.innerHTML = `<div class="mock-visual" style="font-size: 3em; padding: 20px;">${icon}</div>`;
       }
     }
     
@@ -112,13 +126,14 @@ export class TaskRunner {
     if (options && item) {
       options.innerHTML = '';
       
-      let optionsData: { id: string, text: string }[] = [];
+      let optionsData: { id: string, text: string, assetUri?: string }[] = [];
       const tapSelectOptions = item.interaction_model?.modality_configurations?.tap_select?.options;
       
       if (tapSelectOptions && tapSelectOptions.length > 0) {
         optionsData = tapSelectOptions.map((o: any) => ({
           id: o.option_id,
-          text: o.display_value
+          text: o.display_value,
+          assetUri: o.asset_uri
         }));
       } else if (item.options && item.options.length > 0) {
         optionsData = item.options;
@@ -144,7 +159,17 @@ export class TaskRunner {
       optionsData.forEach((opt, idx) => {
         const btn = document.createElement('button');
         btn.className = 'btn-option';
-        btn.textContent = opt.text;
+        
+        let optHtml = `<span>${opt.text}</span>`;
+        if (opt.assetUri) {
+          let uri = opt.assetUri;
+          if (!uri.startsWith('http') && !uri.startsWith('/')) uri = '/' + uri;
+          optHtml = `<div style="display:flex; flex-direction:column; align-items:center; gap:6px;">
+            <img src="${uri}" style="height:35px; max-width:80px; object-fit:contain;" onerror="this.style.display='none';"/>
+            <span style="font-size:1.2em; font-weight:bold;">${opt.text}</span>
+          </div>`;
+        }
+        btn.innerHTML = optHtml;
         btn.onclick = () => this.handleAnswer(idx, correctIndex, btn);
         options.appendChild(btn);
       });

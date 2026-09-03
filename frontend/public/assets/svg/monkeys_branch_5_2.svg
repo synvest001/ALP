@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200" width="100%" height="100%">
+  <rect width="500" height="200" rx="16" fill="#f0fdf4" stroke="#86efac" stroke-width="2"/>
+  <path d="M 30,120 Q 250,90 470,120" stroke="#854d0e" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <!-- 5 monkeys on left -->
+  <g fill="#a16207">
+    <circle cx="80" cy="90" r="18"/>
+    <circle cx="130" cy="85" r="18"/>
+    <circle cx="180" cy="82" r="18"/>
+    <circle cx="230" cy="80" r="18"/>
+    <circle cx="280" cy="82" r="18"/>
+  </g>
+  <text x="180" y="50" font-family="'Comic Sans MS', sans-serif" font-size="18" font-weight="bold" fill="#15803d" text-anchor="middle">5 Monkeys on Left</text>
+  <!-- 2 monkeys on right + box -->
+  <g fill="#ea580c">
+    <circle cx="360" cy="95" r="18"/>
+    <circle cx="410" cy="100" r="18"/>
+  </g>
+  <rect x="440" y="80" width="40" height="40" rx="8" fill="#fef08a" stroke="#ca8a04" stroke-width="2" stroke-dasharray="4,2"/>
+  <text x="460" y="105" font-family="'Comic Sans MS', sans-serif" font-size="20" font-weight="bold" fill="#854d0e" text-anchor="middle">?</text>
+  <text x="410" y="50" font-family="'Comic Sans MS', sans-serif" font-size="18" font-weight="bold" fill="#15803d" text-anchor="middle">2 + [ ? ] on Right</text>
+</svg>
