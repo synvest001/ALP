@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200">
   <rect width="500" height="200" rx="16" fill="#f0fdf4" stroke="#86efac" stroke-width="2"/>
   <path d="M 30,120 Q 250,90 470,120" stroke="#854d0e" stroke-width="16" fill="none" stroke-linecap="round"/>
   <!-- 5 monkeys on left -->
