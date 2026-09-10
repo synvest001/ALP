@@ -5,8 +5,8 @@
   "domain_id": "MATHEMATICS",
   "evidence_archetype": "PROCEDURAL_FLUENCY",
   "language_load_class": "PURE_REASONING",
-  "challenge_type": "MULTIPLE_CHOICE",
-  "creation_stage": "DRAFT",
+  "challenge_type": "STANDARD",
+  "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
     "display_text": "The galactic merchant demands a \u20b9100 note to buy the hyper-fuel. How many Rupees is that worth?",

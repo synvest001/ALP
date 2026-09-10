@@ -5,8 +5,8 @@
   "domain_id": "MATHEMATICS",
   "evidence_archetype": "STRATEGIC_REASONING",
   "language_load_class": "PURE_REASONING",
-  "challenge_type": "MULTIPLE_CHOICE",
-  "creation_stage": "DRAFT",
+  "challenge_type": "STANDARD",
+  "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
     "display_text": "The quest requires 24 hyper-drive cores to succeed. You have collected 17. How many MORE hyper-drive cores must you find?",

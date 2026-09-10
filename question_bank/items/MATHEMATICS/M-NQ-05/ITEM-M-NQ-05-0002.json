@@ -5,8 +5,8 @@
   "domain_id": "MATHEMATICS",
   "evidence_archetype": "CONCEPTUAL",
   "language_load_class": "PURE_REASONING",
-  "challenge_type": "MULTIPLE_CHOICE",
-  "creation_stage": "DRAFT",
+  "challenge_type": "STANDARD",
+  "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
     "display_text": "The wizard's potion needs 2 tens and 2 ones of spider venom drops. What is the total number?",

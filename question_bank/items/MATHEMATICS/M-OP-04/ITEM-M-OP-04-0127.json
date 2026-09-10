@@ -5,8 +5,8 @@
   "domain_id": "MATHEMATICS",
   "evidence_archetype": "STRATEGIC_REASONING",
   "language_load_class": "PURE_REASONING",
-  "challenge_type": "MULTIPLE_CHOICE",
-  "creation_stage": "DRAFT",
+  "challenge_type": "STANDARD",
+  "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
     "display_text": "During the battle, 11 shadow knights charged forward, and then 3 more joined them. How many shadow knights in all?",

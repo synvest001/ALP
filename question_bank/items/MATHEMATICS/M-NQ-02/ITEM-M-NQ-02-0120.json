@@ -5,8 +5,8 @@
   "domain_id": "MATHEMATICS",
   "evidence_archetype": "CONCEPTUAL",
   "language_load_class": "PURE_REASONING",
-  "challenge_type": "MULTIPLE_CHOICE",
-  "creation_stage": "DRAFT",
+  "challenge_type": "STANDARD",
+  "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
     "display_text": "The spaceship's countdown is at 24. What number comes directly AFTER 24 to launch the rocket?",
