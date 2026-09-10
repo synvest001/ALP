@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Which sentence is written correctly for The wise owl's royal decree?",
+    "display_text": "Which sentence is capitalized and punctuated correctly for The wise owl's letter?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-sg-03-0003_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "The wizard casts a spell."
+            "display_value": "Where did the golden key vanish?"
           },
           {
             "option_id": "opt_2",
-            "display_value": "The wizards cast a spells."
+            "display_value": "where did the golden key vanish"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Casts a spell the wizard."
+            "display_value": "Where did the golden key vanish."
           },
           {
             "option_id": "opt_4",
-            "display_value": "Wizard the spell a casts."
+            "display_value": "Where did the golden key vanish!"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The subject and verb must agree, and the order must make sense!"
+      "prompt": "Sentences must begin with a capital letter and end with the correct punctuation mark."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

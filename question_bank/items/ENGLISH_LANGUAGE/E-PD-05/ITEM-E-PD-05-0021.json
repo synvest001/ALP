@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Captain Orion needs a password starting with the /p/ sound to enter the space station. Which word works?",
+    "display_text": "Listen closely as A brave knight sounds out: /s - u - n/. What word do these sounds blend together to form?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-pd-05-0021_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Potion"
+            "display_value": "Sun"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Wand"
+            "display_value": "Star"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Spellbook"
+            "display_value": "Moon"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Crystal"
+            "display_value": "Sky"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Potion starts with /p/."
+      "prompt": "Blending /s - u - n/ makes the word 'Sun'."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

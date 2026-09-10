@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Scanning their dimensions, which item is SHORTER: A laser beam pointer or A massive light saber?",
+    "display_text": "An apprentice measures the wizard's staff using chalk sticks placed end to end. The staff spans exactly 10 chalk sticks. What is its total length?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-me-07-0056_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "A laser beam pointer is definitely shorter.",
+      "prompt": "The staff spans 10 chalk sticks.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,15 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "A laser beam pointer"
+            "display_value": "10 chalk sticks"
           },
           {
             "option_id": "opt_2",
-            "display_value": "A massive light saber"
+            "display_value": "12 chalk sticks"
           },
           {
             "option_id": "opt_3",
-            "display_value": "They are identical in length"
+            "display_value": "9 chalk sticks"
+          },
+          {
+            "option_id": "opt_4",
+            "display_value": "50 chalk sticks"
           }
         ]
       },

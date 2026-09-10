@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "In the ancient ruins, the tooth hurts! Who should you call?",
+    "display_text": "Public services in the ancient ruins: a classroom of children gathers to learn reading, math, and science every day. Which community professional facilitates this learning?",
     "spoken_audio_uri": "assets/audio/world_knowledge/item-w-ko-04-0024_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "A Dentist"
+            "display_value": "A School Teacher"
           },
           {
             "option_id": "opt_2",
-            "display_value": "A Plumber"
+            "display_value": "A Pilot"
           },
           {
             "option_id": "opt_3",
-            "display_value": "A Baker"
+            "display_value": "A Chef"
           },
           {
             "option_id": "opt_4",
-            "display_value": "An Electrician"
+            "display_value": "A Dentist"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "A Dentist fixes this."
+      "prompt": "A School Teacher provides educational guidance."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

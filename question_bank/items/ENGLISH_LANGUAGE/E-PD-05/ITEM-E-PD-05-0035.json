@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Sir Lancelot needs a password starting with the /f/ sound to enter Mars. Which word works?",
+    "display_text": "Listen closely as Lady Gwen sounds out: /f - i - sh/. What word do these sounds blend together to form?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-pd-05-0035_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Fairy"
+            "display_value": "Fish"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Goblin"
+            "display_value": "Frog"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Troll"
+            "display_value": "Bird"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Orc"
+            "display_value": "Fairy"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Fairy starts with /f/."
+      "prompt": "Blending /f - i - sh/ makes the word 'Fish'."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

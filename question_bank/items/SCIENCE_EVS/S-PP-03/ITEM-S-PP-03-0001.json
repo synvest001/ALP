@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "If Captain Orion freezes liquid water, what state of matter does it become?",
+    "display_text": "When warm water vapor in the air touches the cold glass of Captain Orion's iced lemonade, droplets form on the outside. What process is this?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-pp-03-0001_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Solid"
+            "display_value": "Condensation"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Gas"
+            "display_value": "Evaporation"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Plasma"
+            "display_value": "Freezing"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Energy"
+            "display_value": "Melting"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "It becomes Solid."
+      "prompt": "Condensation occurs when a gas cools down and turns back into a liquid."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

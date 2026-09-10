@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Captain Orion eats a delicious meal of Sushi, wrapped in seaweed. Which country did this originate from?",
+    "display_text": "Architectural heritage: Commander Zorg studies the dome-shaped Igloo built from blocks of compacted snow for arctic shelter. Which culture or region historically created this structure?",
     "spoken_audio_uri": "assets/audio/world_knowledge/item-w-ka-08-0031_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Japan"
+            "display_value": "Inuit people of the Arctic"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Italy"
+            "display_value": "Bedouin nomads of the desert"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Mexico"
+            "display_value": "Gauchos of Argentina"
           },
           {
             "option_id": "opt_4",
-            "display_value": "India"
+            "display_value": "Maori of New Zealand"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Sushi, wrapped in seaweed is from Japan."
+      "prompt": "This architectural structure was developed by Inuit people of the Arctic."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

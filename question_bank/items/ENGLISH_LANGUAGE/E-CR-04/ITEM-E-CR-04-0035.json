@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Read the scroll: 'Sir Lancelot read the blue spellbook in the tower.' What did they interact with?",
+    "display_text": "Read the excerpt: 'Bees visit flowers to sip sweet nectar, and while doing so, they carry pollen from bloom to bloom so new plants can grow.' What is the central main idea of this passage?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cr-04-0035_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "The blue spellbook"
+            "display_value": "Bees play a vital role in helping plants reproduce"
           },
           {
             "option_id": "opt_2",
-            "display_value": "The red potion"
+            "display_value": "Bees only sleep in the winter"
           },
           {
             "option_id": "opt_3",
-            "display_value": "The green scroll"
+            "display_value": "Flowers do not need bees"
           },
           {
             "option_id": "opt_4",
-            "display_value": "The yellow wand"
+            "display_value": "Honey is made of water"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Read the sentence carefully to find the object."
+      "prompt": "The main idea captures the big picture: Bees play a vital role in helping plants reproduce."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

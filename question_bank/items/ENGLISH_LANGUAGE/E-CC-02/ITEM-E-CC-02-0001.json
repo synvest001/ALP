@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Complete the story logically: Captain Orion dropped his sword, so...",
+    "display_text": "Generate an investigative inquiry: Captain Orion discovered a glowing, pulsing purple crystal deep inside an abandoned mine. Which question is the most insightful to investigate?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cc-02-0001_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "He had to fight with his shield."
+            "display_value": "What kind of energy does this strange crystal produce?"
           },
           {
             "option_id": "opt_2",
-            "display_value": "He flew away."
+            "display_value": "Why is water wet?"
           },
           {
             "option_id": "opt_3",
-            "display_value": "He became a baker."
+            "display_value": "What time is dinner?"
           },
           {
             "option_id": "opt_4",
-            "display_value": "He turned invisible."
+            "display_value": "Who likes apples?"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Think about what logically happens next."
+      "prompt": "An investigative question directly explores the mystery at hand."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

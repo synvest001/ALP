@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "The grumpy troll eats a delicious meal of Pizza and pasta. Which country did this originate from?",
+    "display_text": "Princess Luna studies world cultures: Carnival, famous for vibrant samba parades, elaborate costumes, and festive music. In which region did this cultural celebration originate?",
     "spoken_audio_uri": "assets/audio/world_knowledge/item-w-ka-02-0014_prompt.mp3",
     "visual_assets": [
       {
@@ -34,7 +34,7 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Italy"
+            "display_value": "Brazil"
           },
           {
             "option_id": "opt_2",
@@ -42,11 +42,11 @@
           },
           {
             "option_id": "opt_3",
-            "display_value": "Mexico"
+            "display_value": "Egypt"
           },
           {
             "option_id": "opt_4",
-            "display_value": "India"
+            "display_value": "Iceland"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Pizza and pasta is from Italy."
+      "prompt": "This cultural celebration is deeply rooted in Brazil."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The quest requires 24 golden shields to succeed. You have collected 17. How many MORE golden shields must you find?",
+    "display_text": "Sir Roland collected 9 golden shields. Lady Gwen gathered 7 MORE golden shields than Sir Roland. How many did Lady Gwen gather?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-ps-05-0100_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Subtract what you have from what you need: 24 - 17 = 7!",
+      "prompt": "Add the extra amount: 9 + 7 = 16.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,7 +60,7 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "7"
+            "display_value": "16"
           },
           {
             "option_id": "opt_2",
@@ -68,11 +68,11 @@
           },
           {
             "option_id": "opt_3",
-            "display_value": "6"
+            "display_value": "7"
           },
           {
             "option_id": "opt_4",
-            "display_value": "24"
+            "display_value": "23"
           }
         ]
       },

@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "You are flying a golden plane over the pyramids of Giza. Which continent are you exploring?",
+    "display_text": "You are piloting a golden exploration plane over the iron lattice Eiffel Tower in Paris. Which continent are you exploring?",
     "spoken_audio_uri": "assets/audio/world_knowledge/item-w-kp-01-0034_prompt.mp3",
     "visual_assets": [
       {
@@ -34,7 +34,7 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Africa"
+            "display_value": "Europe"
           },
           {
             "option_id": "opt_2",
@@ -42,7 +42,7 @@
           },
           {
             "option_id": "opt_3",
-            "display_value": "Europe"
+            "display_value": "Africa"
           },
           {
             "option_id": "opt_4",
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The pyramids of Giza is in Africa."
+      "prompt": "the iron lattice Eiffel Tower in Paris is located on the continent of Europe."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "While exploring the dark cave, which of these is a non-living thing?",
+    "display_text": "Analyzing matter in the dark cave: Which specimen is a solid with a definite shape and volume?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-oc-05-0023_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Bicycle"
+            "display_value": "An ice cube"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Dog"
+            "display_value": "Liquid water"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Flower"
+            "display_value": "Water vapor"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Bird"
+            "display_value": "Helium gas"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Bicycle is non-living."
+      "prompt": "An ice cube exemplifies this state of matter."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

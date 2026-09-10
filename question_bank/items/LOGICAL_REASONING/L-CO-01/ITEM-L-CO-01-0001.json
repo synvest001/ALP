@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Logic rule for Captain Orion: If it rains, the ground is wet. You observe the first part. What happens?",
+    "display_text": "Rule of logic for Captain Orion: 'If rain falls, the courtyard flagstones become wet.' You observe the first condition occur. What must follow?",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-co-01-0001_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "The ground is wet"
+            "display_value": "The flagstones become wet"
           },
           {
             "option_id": "opt_2",
-            "display_value": "The ground is dry"
+            "display_value": "The flagstones remain completely dry"
           },
           {
             "option_id": "opt_3",
-            "display_value": "It snows"
+            "display_value": "It begins to snow"
           },
           {
             "option_id": "opt_4",
-            "display_value": "The sun shines"
+            "display_value": "The sun shines warmly"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The result is The ground is wet."
+      "prompt": "Direct conditional modus ponens: The flagstones become wet."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

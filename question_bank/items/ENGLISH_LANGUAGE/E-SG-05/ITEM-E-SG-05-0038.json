@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Which sentence is written correctly for The mystic wizard's royal decree?",
+    "display_text": "Select the correct verb tense for the timeframe described: 'Right now, Commander Zorg [pilots / piloted / will pilot] the flagship.'",
     "spoken_audio_uri": "assets/audio/english_language/item-e-sg-05-0038_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "A red dragon breathes fire."
+            "display_value": "pilots"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Breathes fire a red dragon."
+            "display_value": "piloted"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Dragon red a fire breathes."
+            "display_value": "will pilot"
           },
           {
             "option_id": "opt_4",
-            "display_value": "A red dragons breathe fires."
+            "display_value": "piloting"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The subject and verb must agree, and the order must make sense!"
+      "prompt": "The time clue determines the correct verb tense: 'pilots'."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

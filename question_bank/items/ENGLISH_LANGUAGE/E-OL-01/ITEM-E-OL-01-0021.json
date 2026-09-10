@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Situation in the enchanted library: Someone gives you a gift near Captain Orion. What is the most polite thing to say?",
+    "display_text": "Situation in the enchanted library: You are introduced to the Queen alongside A brave knight. What is the most respectful and polite greeting?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-ol-01-0021_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Thank you"
+            "display_value": "Your Majesty, it is an honor to meet you."
           },
           {
             "option_id": "opt_2",
-            "display_value": "No way"
+            "display_value": "Hey there, Queen!"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Give me more"
+            "display_value": "What's up, lady?"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Whatever"
+            "display_value": "Yo, what are you doing here?"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Think about polite manners."
+      "prompt": "Formal royal introductions require respectful titles and honorifics."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "The red dragon was *ancient*, according to The space explorer. What does 'ancient' mean?",
+    "display_text": "Which word is the exact OPPOSITE (antonym) of 'gloomy'?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-vm-03-0030_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Very old"
+            "display_value": "Bright"
           },
           {
             "option_id": "opt_2",
-            "display_value": "New"
+            "display_value": "Dark"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Shiny"
+            "display_value": "Cloudy"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Broken"
+            "display_value": "Sad"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The meaning of ancient is Very old."
+      "prompt": "The opposite of 'gloomy' is 'Bright'."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The galactic merchant demands a \u20b910 coin to buy the hyper-fuel. How many Rupees is that worth?",
+    "display_text": "The explorer recorded specimens found on an expedition: red gems: 8, blue gems: 5, green gems: 3. Which specimen was collected the MOST?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-me-08-0136_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "a \u20b910 coin equals 10 Rupees.",
+      "prompt": "red gems has the highest count of 8.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "10 Rupees"
+            "display_value": "red gems"
           },
           {
             "option_id": "opt_2",
-            "display_value": "1 Rupee"
+            "display_value": "blue gems"
           },
           {
             "option_id": "opt_3",
-            "display_value": "5 Rupees"
+            "display_value": "green gems"
           },
           {
             "option_id": "opt_4",
-            "display_value": "500 Rupees"
+            "display_value": "All are equal"
           }
         ]
       },

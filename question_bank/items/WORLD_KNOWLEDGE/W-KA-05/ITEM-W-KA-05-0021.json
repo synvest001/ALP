@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Captain Orion eats a delicious meal of Tacos and burritos. Which country did this originate from?",
+    "display_text": "International communication: A traveler warmly greets A brave knight saying 'Bonjour'! Which language is being spoken?",
     "spoken_audio_uri": "assets/audio/world_knowledge/item-w-ka-05-0021_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Mexico"
+            "display_value": "French"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Japan"
+            "display_value": "Spanish"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Italy"
+            "display_value": "German"
           },
           {
             "option_id": "opt_4",
-            "display_value": "India"
+            "display_value": "Japanese"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Tacos and burritos is from Mexico."
+      "prompt": "'Bonjour' is the standard greeting in French."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

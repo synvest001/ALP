@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Fix the grammar error in the message from The space explorer: 'The knights is brave.'",
+    "display_text": "In the sentence 'The space explorer ate a *good* feast', which vivid adjective best replaces 'good'?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-we-07-0010_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "The knights are brave."
+            "display_value": "sumptuous"
           },
           {
             "option_id": "opt_2",
-            "display_value": "The knight are brave."
+            "display_value": "nice"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Knights is brave."
+            "display_value": "fine"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Brave is the knights."
+            "display_value": "okay"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Make sure the grammar is correct."
+      "prompt": "'sumptuous' provides far richer descriptive depth."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

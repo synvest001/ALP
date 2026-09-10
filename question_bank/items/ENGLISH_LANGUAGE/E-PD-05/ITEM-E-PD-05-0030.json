@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "The space explorer needs a password starting with the /f/ sound to enter the enchanted library. Which word works?",
+    "display_text": "Listen closely as Professor Quark sounds out: /c - a - p/. What word do these sounds blend together to form?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-pd-05-0030_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Fairy"
+            "display_value": "Cap"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Goblin"
+            "display_value": "Hat"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Troll"
+            "display_value": "Crown"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Orc"
+            "display_value": "Cup"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Fairy starts with /f/."
+      "prompt": "Blending /c - a - p/ makes the word 'Cap'."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

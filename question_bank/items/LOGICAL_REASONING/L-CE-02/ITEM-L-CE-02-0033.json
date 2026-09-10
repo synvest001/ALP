@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Cause and Effect: The wise owl felt the ground shaking violently. What is happening?",
+    "display_text": "Cause and Effect: A brave knight spots thick, dark billowing smoke rising above the tree canopy. What is the most probable cause?",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-ce-02-0033_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "An earthquake"
+            "display_value": "A fire has broken out in the woods"
           },
           {
             "option_id": "opt_2",
-            "display_value": "A flood"
+            "display_value": "A snowstorm is arriving"
           },
           {
             "option_id": "opt_3",
-            "display_value": "A fire"
+            "display_value": "A rainbow has appeared"
           },
           {
             "option_id": "opt_4",
-            "display_value": "A hurricane"
+            "display_value": "The river is freezing over"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The logical cause/effect is An earthquake."
+      "prompt": "Billowing smoke is the direct physical byproduct of combustion and fire."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

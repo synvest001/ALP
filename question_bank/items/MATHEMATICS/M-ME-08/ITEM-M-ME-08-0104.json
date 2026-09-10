@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The galactic merchant demands a \u20b950 note to buy the hyper-fuel. How many Rupees is that worth?",
+    "display_text": "The explorer recorded specimens found on an expedition: solar crystals: 12, lunar rocks: 7, stardust jars: 4. Which specimen was collected the MOST?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-me-08-0104_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "a \u20b950 note equals 50 Rupees.",
+      "prompt": "solar crystals has the highest count of 12.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "50 Rupees"
+            "display_value": "solar crystals"
           },
           {
             "option_id": "opt_2",
-            "display_value": "1 Rupee"
+            "display_value": "lunar rocks"
           },
           {
             "option_id": "opt_3",
-            "display_value": "5 Rupees"
+            "display_value": "stardust jars"
           },
           {
             "option_id": "opt_4",
-            "display_value": "500 Rupees"
+            "display_value": "All are equal"
           }
         ]
       },

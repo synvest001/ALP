@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "In a test of ultimate strength, which object is HEAVIER: A boulder of solid gold or A handful of feathers?",
+    "display_text": "Thermal sensors scan two areas: A bubbling lava pool and A frozen ice cave. Which location is HOTTER?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-me-06-0109_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "A boulder of solid gold has way more mass.",
+      "prompt": "A bubbling lava pool is noticeably hotter.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,15 +60,15 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "A boulder of solid gold"
+            "display_value": "A bubbling lava pool"
           },
           {
             "option_id": "opt_2",
-            "display_value": "A handful of feathers"
+            "display_value": "A frozen ice cave"
           },
           {
             "option_id": "opt_3",
-            "display_value": "They weigh the exact same"
+            "display_value": "They have identical temperatures"
           }
         ]
       },

@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "If Captain Orion traces the edges of a triangle, how many sides do they draw?",
+    "display_text": "If Captain Orion traces a continuous line along the outer boundary of a triangle, how many straight sides do they trace?",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-sr-01-0001_prompt.mp3",
     "visual_assets": [
       {
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "It has 3 sides."
+      "prompt": "A triangle has exactly 3 straight perimeter edges."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

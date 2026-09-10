@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "The emerald dragon was *swift*, according to A brave knight. What does 'swift' mean?",
+    "display_text": "Which word is the exact OPPOSITE (antonym) of 'fierce'?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-vm-03-0019_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Fast"
+            "display_value": "Gentle"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Slow"
+            "display_value": "Wild"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Loud"
+            "display_value": "Mean"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Heavy"
+            "display_value": "Rough"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The meaning of swift is Fast."
+      "prompt": "The opposite of 'fierce' is 'Gentle'."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

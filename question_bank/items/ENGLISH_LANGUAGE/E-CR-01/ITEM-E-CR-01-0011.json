@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Read the scroll: 'Captain Orion read the blue spellbook in the tower.' What did they interact with?",
+    "display_text": "Read the scroll: 'Lady Gwen read the blue spellbook in the tower.' What object did they interact with?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cr-01-0011_prompt.mp3",
     "visual_assets": [
       {
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Read the sentence carefully to find the object."
+      "prompt": "Read the sentence carefully to identify the specific object."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

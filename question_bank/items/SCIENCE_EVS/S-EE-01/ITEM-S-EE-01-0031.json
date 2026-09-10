@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "You must survive a sandy and dry environment wearing a red suit. Which animal lives here naturally?",
+    "display_text": "You are trekking across a scorching, sandy desert in a red suit. Which animal has specialized humps to store fat for energy in this dry habitat?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-ee-01-0031_prompt.mp3",
     "visual_assets": [
       {
@@ -42,11 +42,11 @@
           },
           {
             "option_id": "opt_3",
-            "display_value": "Frog"
+            "display_value": "Penguin"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Penguin"
+            "display_value": "Tree Frog"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Camel lives in sandy and dry environments."
+      "prompt": "Camels are specially adapted with fat-storing humps and wide feet for desert survival."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

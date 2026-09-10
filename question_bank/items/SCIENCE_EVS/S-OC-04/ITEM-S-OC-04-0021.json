@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "While exploring the enchanted library, which of these is a mammal thing?",
+    "display_text": "Classifying specimens in the enchanted library: Which item is a natural material harvested from organic resources?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-oc-04-0021_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Bear"
+            "display_value": "Timber wood"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Snake"
+            "display_value": "Synthetic plastic"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Frog"
+            "display_value": "Nylon rope"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Shark"
+            "display_value": "Polyester fabric"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Bear is mammal."
+      "prompt": "Timber wood is an example."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

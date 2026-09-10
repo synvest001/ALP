@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "The wise owl spots something that grows from an acorn. What is it?",
+    "display_text": "A brave knight studies human physiology. Which muscular organ acts as a pump to circulate oxygen-rich blood throughout the body?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-kn-07-0033_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Oak tree"
+            "display_value": "The Heart"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Pine tree"
+            "display_value": "The Lungs"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Rose bush"
+            "display_value": "The Stomach"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Sunflower"
+            "display_value": "The Liver"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "A Oak tree grows from an acorn."
+      "prompt": "The heart pumps blood through arteries and veins."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

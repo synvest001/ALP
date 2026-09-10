@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Situation in Jupiter: Someone gives you a gift near Commander Zorg. What is the most polite thing to say?",
+    "display_text": "Situation in Jupiter: You accidentally bump into The wise owl and drop a fragile potion bottle. What is the most polite apology?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-ol-02-0027_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Thank you"
+            "display_value": "I am so sorry for my carelessness! Let me help clean this up."
           },
           {
             "option_id": "opt_2",
-            "display_value": "No way"
+            "display_value": "You were standing in my way!"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Give me more"
+            "display_value": "Whatever, potions are cheap."
           },
           {
             "option_id": "opt_4",
-            "display_value": "Whatever"
+            "display_value": "You should look where you're going!"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Think about polite manners."
+      "prompt": "A genuine apology expresses remorse and offers to help fix the mistake."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

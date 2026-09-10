@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Captain Orion collected 12 space crystals on Mars and 8 on Jupiter. How many crystals does he have to power his rocket?",
+    "display_text": "Commander Zorg needs 23 energy cells to activate the teleporter. He currently has 12 cells. How many MORE cells must he insert?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-op-05-0096_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Add them up: 12 + 8 = 20.",
+      "prompt": "Find the missing part: 23 - 12 = 11 cells needed.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,15 +60,15 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "20"
+            "display_value": "11"
           },
           {
             "option_id": "opt_2",
-            "display_value": "18"
+            "display_value": "13"
           },
           {
             "option_id": "opt_3",
-            "display_value": "21"
+            "display_value": "10"
           },
           {
             "option_id": "opt_4",

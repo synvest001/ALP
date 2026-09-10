@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "If Professor Quark traces the edges of a triangle, how many sides do they draw?",
+    "display_text": "A cylinder is placed upright on a table. If The grumpy troll looks directly DOWN at it from a bird's-eye view above, what 2D shape do they see?",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-sr-04-0016_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "3"
+            "display_value": "A Circle"
           },
           {
             "option_id": "opt_2",
-            "display_value": "4"
+            "display_value": "A Rectangle"
           },
           {
             "option_id": "opt_3",
-            "display_value": "5"
+            "display_value": "A Triangle"
           },
           {
             "option_id": "opt_4",
-            "display_value": "6"
+            "display_value": "A Diamond"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "It has 3 sides."
+      "prompt": "Looking directly down onto an upright cylinder reveals its circular base."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

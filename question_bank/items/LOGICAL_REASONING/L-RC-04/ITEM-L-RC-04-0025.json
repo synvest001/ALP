@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Size logic in the crystal palace: Gigantosaurus > T-Rex > Velociraptor. Which is the SMALLEST?",
+    "display_text": "Velocity comparison in the crystal palace: Cheetah runs faster than Horse. Horse runs faster than Turtle. Which traveler is the FASTEST?",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-rc-04-0025_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Velociraptor"
+            "display_value": "Cheetah"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Gigantosaurus"
+            "display_value": "Horse"
           },
           {
             "option_id": "opt_3",
-            "display_value": "T-Rex"
+            "display_value": "Turtle"
           },
           {
             "option_id": "opt_4",
-            "display_value": "They are equal"
+            "display_value": "All run at the same speed"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Velociraptor is the SMALLEST."
+      "prompt": "Following the speed chain confirms Cheetah is the fastest."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

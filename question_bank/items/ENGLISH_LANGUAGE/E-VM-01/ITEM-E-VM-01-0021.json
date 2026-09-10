@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "The blue dragon was *colossal*, according to Captain Orion. What does 'colossal' mean?",
+    "display_text": "The blue dragon was described as *colossal* by A brave knight. What does the word 'colossal' mean?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-vm-01-0021_prompt.mp3",
     "visual_assets": [
       {

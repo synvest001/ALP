@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Floating on the wind, which object is LIGHTER: A single raindrop or A swirling hurricane?",
+    "display_text": "In a test of ultimate strength, which object is LIGHTER: A single raindrop or A swirling hurricane?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-me-02-0067_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "A single raindrop is much lighter!",
+      "prompt": "A single raindrop is far lighter.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },

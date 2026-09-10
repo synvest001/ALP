@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Scanning their dimensions, which item is SHORTER: A laser beam pointer or A massive light saber?",
+    "display_text": "Scanning their dimensions, which item is SHORTER: A laser pointer beam or A massive light saber?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-me-03-0136_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "A laser beam pointer is definitely shorter.",
+      "prompt": "A laser pointer beam is definitely shorter.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,7 +60,7 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "A laser beam pointer"
+            "display_value": "A laser pointer beam"
           },
           {
             "option_id": "opt_2",

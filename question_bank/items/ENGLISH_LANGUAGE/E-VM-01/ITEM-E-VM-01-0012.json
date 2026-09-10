@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "The green dragon was *fragile*, according to Princess Luna. What does 'fragile' mean?",
+    "display_text": "The green dragon was described as *fragile* by Dr. Nova. What does the word 'fragile' mean?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-vm-01-0012_prompt.mp3",
     "visual_assets": [
       {

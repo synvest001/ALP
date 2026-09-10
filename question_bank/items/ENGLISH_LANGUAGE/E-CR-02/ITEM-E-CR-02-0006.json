@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Read the scroll: 'Professor Quark buried a treasure chest on the island.' What did they interact with?",
+    "display_text": "Read the log: 'Professor Quark brewed a magical healing elixir for the sick dragon.' Who carried out this important task?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cr-02-0006_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "A treasure chest"
+            "display_value": "Professor Quark"
           },
           {
             "option_id": "opt_2",
-            "display_value": "A bag of coins"
+            "display_value": "The town blacksmith"
           },
           {
             "option_id": "opt_3",
-            "display_value": "A secret map"
+            "display_value": "A forest goblin"
           },
           {
             "option_id": "opt_4",
-            "display_value": "A compass"
+            "display_value": "The royal guard"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Read the sentence carefully to find the object."
+      "prompt": "The text explicitly names Professor Quark."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

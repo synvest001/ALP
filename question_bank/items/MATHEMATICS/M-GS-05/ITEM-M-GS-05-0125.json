@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "To bypass the laser grid, you must touch the Octagon. How many straight sides does it have?",
+    "display_text": "A glowing forcefield has the outline of a Triangle. How many sharp corners (vertices) does it have?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-gs-05-0125_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "A Octagon always has 8 sides.",
+      "prompt": "A Triangle has exactly 3 corners (vertices).",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "8"
+            "display_value": "3"
           },
           {
             "option_id": "opt_2",
-            "display_value": "9"
+            "display_value": "4"
           },
           {
             "option_id": "opt_3",
-            "display_value": "7"
+            "display_value": "2"
           },
           {
             "option_id": "opt_4",
-            "display_value": "5"
+            "display_value": "8"
           }
         ]
       },

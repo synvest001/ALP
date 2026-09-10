@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Floating on the wind, which object is LIGHTER: A paper airplane or A steel locomotive?",
+    "display_text": "Thermal sensors scan two areas: A frosted icicle and A steaming bowl of soup. Which location is COLDER?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-me-06-0036_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "A paper airplane is much lighter!",
+      "prompt": "A frosted icicle is noticeably colder.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,15 +60,15 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "A paper airplane"
+            "display_value": "A frosted icicle"
           },
           {
             "option_id": "opt_2",
-            "display_value": "A steel locomotive"
+            "display_value": "A steaming bowl of soup"
           },
           {
             "option_id": "opt_3",
-            "display_value": "They weigh the exact same"
+            "display_value": "They have identical temperatures"
           }
         ]
       },

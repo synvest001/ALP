@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Cause and Effect: Princess Luna saw smoke in the sky. What is likely happening?",
+    "display_text": "Cause and Effect: Dark purple thunderclouds roll in, the air cools rapidly, and bright lightning flashes. What will happen next?",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-ce-04-0032_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "A fire"
+            "display_value": "A torrential rainstorm will begin"
           },
           {
             "option_id": "opt_2",
-            "display_value": "A flood"
+            "display_value": "The desert will dry out further"
           },
           {
             "option_id": "opt_3",
-            "display_value": "An earthquake"
+            "display_value": "The stars will shine clearly"
           },
           {
             "option_id": "opt_4",
-            "display_value": "A blizzard"
+            "display_value": "A heatwave will occur"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The logical cause/effect is A fire."
+      "prompt": "Thunderclouds, dropping temperatures, and lightning are direct precursors to rain."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

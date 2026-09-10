@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "To bypass the laser grid, you must touch the Square. How many straight sides does it have?",
+    "display_text": "A glowing forcefield has the outline of a Square. How many sharp corners (vertices) does it have?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-gs-05-0022_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "A Square always has 4 sides.",
+      "prompt": "A Square has exactly 4 corners (vertices).",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -72,7 +72,7 @@
           },
           {
             "option_id": "opt_4",
-            "display_value": "5"
+            "display_value": "8"
           }
         ]
       },

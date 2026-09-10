@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Professor Quark spots something that grows from an acorn. What is it?",
+    "display_text": "Dr. Nova collects a hard brown seed with a cup-like cap that will grow into a mighty tree. What tree grows from an acorn?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-kn-03-0036_prompt.mp3",
     "visual_assets": [
       {
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "A Oak tree grows from an acorn."
+      "prompt": "Acorns are the seeds of oak trees."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

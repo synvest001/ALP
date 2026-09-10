@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Fix the grammar error in the message from The grumpy troll: 'She run fast.'",
+    "display_text": "Which option correctly shortens the words 'cannot' into a contraction?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-we-05-0014_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "She runs fast."
+            "display_value": "can't"
           },
           {
             "option_id": "opt_2",
-            "display_value": "She running fast."
+            "display_value": "cant"
           },
           {
             "option_id": "opt_3",
-            "display_value": "She runned fast."
+            "display_value": "ca'nt"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Her runs fast."
+            "display_value": "cann't"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Make sure the grammar is correct."
+      "prompt": "The apostrophe replaces omitted letters: 'cannot' becomes 'can't'."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

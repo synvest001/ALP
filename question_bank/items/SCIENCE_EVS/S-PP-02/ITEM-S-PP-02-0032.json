@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "If Princess Luna cools a gas, what state of matter does it become?",
+    "display_text": "When The mystic wizard heats water over a hot stove until it boils vigorously, what does the liquid transform into?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-pp-02-0032_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Liquid"
+            "display_value": "Gas (Water Vapor)"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Solid"
+            "display_value": "Solid (Ice)"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Plasma"
+            "display_value": "Liquid (Mercury)"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Energy"
+            "display_value": "Plasma"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "It becomes Liquid."
+      "prompt": "Boiling causes liquid to vaporize into water vapor gas."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

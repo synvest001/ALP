@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Read the scroll: 'The space explorer found a golden key under the mat.' What did they interact with?",
+    "display_text": "Read the scenario: 'The space explorer discovered that The navigation computer shut down unexpectedly, leaving the spacecraft drifting in deep space.' What is the primary conflict or problem?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cr-07-0010_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "A golden key"
+            "display_value": "The navigation computer shut down unexpectedly"
           },
           {
             "option_id": "opt_2",
-            "display_value": "A silver sword"
+            "display_value": "The spaceship was cruising safely"
           },
           {
             "option_id": "opt_3",
-            "display_value": "A diamond ring"
+            "display_value": "The crew had plenty of fuel"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Nothing"
+            "display_value": "The stars looked pretty"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Read the sentence carefully to find the object."
+      "prompt": "The main obstacle or problem is that The navigation computer shut down unexpectedly."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

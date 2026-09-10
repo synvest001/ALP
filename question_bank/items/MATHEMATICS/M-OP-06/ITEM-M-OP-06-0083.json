@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The treasure vault had 20 gold bars. The pirate took away 9 bars. How many are left?",
+    "display_text": "In the droid hangar, there are 4 landing pads, and each pad holds exactly 3 scout drones. How many drones are there in total?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-op-06-0083_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Subtract: 20 - 9 = 11.",
+      "prompt": "Count 4 equal groups of 3: 4 \u00d7 3 = 12 drones!",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "11"
-          },
-          {
-            "option_id": "opt_2",
             "display_value": "12"
           },
           {
+            "option_id": "opt_2",
+            "display_value": "15"
+          },
+          {
             "option_id": "opt_3",
-            "display_value": "9"
+            "display_value": "10"
           },
           {
             "option_id": "opt_4",
-            "display_value": "13"
+            "display_value": "7"
           }
         ]
       },

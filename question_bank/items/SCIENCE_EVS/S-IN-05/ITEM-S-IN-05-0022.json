@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "If you drop a heavy rock in water in the space station, what will happen?",
+    "display_text": "An engineer releases a toy car down a smooth wooden ramp and then down a rough carpet ramp. On which surface will the car roll FARTHER?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-in-05-0022_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "It sinks"
+            "display_value": "On the smooth wooden ramp, because it has less friction"
           },
           {
             "option_id": "opt_2",
-            "display_value": "It floats"
+            "display_value": "On the rough carpet ramp, because it has more friction"
           },
           {
             "option_id": "opt_3",
-            "display_value": "It evaporates"
+            "display_value": "Both ramps will produce identical distances"
           },
           {
             "option_id": "opt_4",
-            "display_value": "It explodes"
+            "display_value": "Neither ramp will allow the car to move"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The result is: It sinks."
+      "prompt": "Smooth surfaces produce less friction to slow moving objects down."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

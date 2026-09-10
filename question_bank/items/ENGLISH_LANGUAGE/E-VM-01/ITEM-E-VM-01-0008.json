@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "The neon dragon was *fragile*, according to The mystic wizard. What does 'fragile' mean?",
+    "display_text": "The neon dragon was described as *fragile* by The mystic wizard. What does the word 'fragile' mean?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-vm-01-0008_prompt.mp3",
     "visual_assets": [
       {

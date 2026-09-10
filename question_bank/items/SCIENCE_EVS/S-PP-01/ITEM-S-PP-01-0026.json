@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "If Professor Quark cools a gas, what state of matter does it become?",
+    "display_text": "If Princess Luna places liquid water into a sub-zero freezer, what state of matter does it change into?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-pp-01-0026_prompt.mp3",
     "visual_assets": [
       {
@@ -34,11 +34,11 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Liquid"
+            "display_value": "Solid (Ice)"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Solid"
+            "display_value": "Gas (Steam)"
           },
           {
             "option_id": "opt_3",
@@ -46,7 +46,7 @@
           },
           {
             "option_id": "opt_4",
-            "display_value": "Energy"
+            "display_value": "Liquid"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "It becomes Liquid."
+      "prompt": "Water freezes at 0\u00b0C (32\u00b0F) and transitions from liquid to solid ice."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

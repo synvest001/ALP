@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "The wise owl needs a password starting with the /m/ sound to enter the ancient ruins. Which word works?",
+    "display_text": "A brave knight unlocks the gate with a secret word ending in the /t/ sound. Which word ends with /t/?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-pd-02-0033_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Magic"
+            "display_value": "Knight"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Potion"
+            "display_value": "Dragon"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Spell"
+            "display_value": "Shield"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Hex"
+            "display_value": "Broom"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Magic starts with /m/."
+      "prompt": "Knight ends with the /t/ sound."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

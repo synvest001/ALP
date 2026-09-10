@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Complete the story logically: Professor Quark dropped his sword, so...",
+    "display_text": "Choose the smoothest transition phrase to connect these narrative events: 'The alarms blared through the space station. ___, Commander Zorg scrambled to the command bridge.'",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cc-06-0016_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "He had to fight with his shield."
+            "display_value": "Instantly"
           },
           {
             "option_id": "opt_2",
-            "display_value": "He flew away."
+            "display_value": "Many years later"
           },
           {
             "option_id": "opt_3",
-            "display_value": "He became a baker."
+            "display_value": "On the other hand"
           },
           {
             "option_id": "opt_4",
-            "display_value": "He turned invisible."
+            "display_value": "In conclusion"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Think about what logically happens next."
+      "prompt": "'Instantly' connects the timing and momentum of the two events seamlessly."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "The crystal dragon was *ancient*, according to Professor Quark. What does 'ancient' mean?",
+    "display_text": "The crystal dragon was described as *ancient* by Princess Luna. What does the word 'ancient' mean?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-vm-01-0026_prompt.mp3",
     "visual_assets": [
       {

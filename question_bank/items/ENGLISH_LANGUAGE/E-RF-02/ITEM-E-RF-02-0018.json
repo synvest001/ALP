@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Decode the ancient hieroglyph found in the forbidden forest! Which option correctly spells the word 'WOULD'?",
+    "display_text": "When the magic silent 'e' attaches to the word 'tap', what new word is created?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-rf-02-0018_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "would"
+            "display_value": "tape"
           },
           {
             "option_id": "opt_2",
-            "display_value": "would"
+            "display_value": "tap"
           },
           {
             "option_id": "opt_3",
-            "display_value": "would"
+            "display_value": "tapp"
           },
           {
             "option_id": "opt_4",
-            "display_value": "wouldz"
+            "display_value": "tep"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The correct spelling is would."
+      "prompt": "Adding silent 'e' makes the vowel say its name: 'tap' becomes 'tape'."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."
@@ -73,7 +73,7 @@
   "rubric": {
     "evaluation_mode": "DETERMINISTIC_EXACT_MATCH",
     "correct_criteria": {
-      "selected_option_id": "opt_3"
+      "selected_option_id": "opt_1"
     }
   },
   "safeguard_metadata": {

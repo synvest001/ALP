@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Princess Luna needs a password starting with the /b/ sound to enter the dark cave. Which word works?",
+    "display_text": "Which magical word contains the long /o/ sound?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-pd-06-0032_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Broom"
+            "display_value": "Boat"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Hat"
+            "display_value": "Bat"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Cauldron"
+            "display_value": "Box"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Wand"
+            "display_value": "Bus"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Broom starts with /b/."
+      "prompt": "'Boat' contains the long /o/ sound."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

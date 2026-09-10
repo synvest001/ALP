@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Read the red tablet to complete the logic: Bird is to sky as Fish is to...",
+    "display_text": "Read the red tablet to complete the environmental analogy: Bird is to Sky as Fish is to...",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-ar-01-0031_prompt.mp3",
     "visual_assets": [
       {
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Think about the relationship between the items."
+      "prompt": "Consider the relationship between the creature or vehicle and its medium of movement."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

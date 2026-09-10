@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "The crystal dragon was *fragile*, according to Professor Quark. What does 'fragile' mean?",
+    "display_text": "The crystal dragon was described as *fragile* by The grumpy troll. What does the word 'fragile' mean?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-vm-01-0016_prompt.mp3",
     "visual_assets": [
       {

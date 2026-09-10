@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The quest requires 22 magic potions to succeed. You have collected 17. How many MORE magic potions must you find?",
+    "display_text": "3 galactic explorers discovered a cache of 18 magic potions. If they share them equally, how many magic potions does each explorer receive?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-ps-02-0068_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Subtract what you have from what you need: 22 - 17 = 5!",
+      "prompt": "Divide equally: 18 \u00f7 3 = 6 magic potions.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,7 +60,7 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "5"
+            "display_value": "6"
           },
           {
             "option_id": "opt_2",
@@ -72,7 +72,7 @@
           },
           {
             "option_id": "opt_4",
-            "display_value": "22"
+            "display_value": "18"
           }
         ]
       },

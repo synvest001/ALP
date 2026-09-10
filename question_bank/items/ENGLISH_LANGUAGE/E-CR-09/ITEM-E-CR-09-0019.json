@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Read the scroll: 'A brave knight found a golden key under the mat.' What did they interact with?",
+    "display_text": "Read the passage: 'Commander Zorg opened the ancient treasure chest and discovered it was completely empty after months of searching. Her shoulders slumped and she let out a heavy sigh.' How was Commander Zorg feeling based on these actions?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cr-09-0019_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "A golden key"
+            "display_value": "Disappointed and weary"
           },
           {
             "option_id": "opt_2",
-            "display_value": "A silver sword"
+            "display_value": "Overjoyed and excited"
           },
           {
             "option_id": "opt_3",
-            "display_value": "A diamond ring"
+            "display_value": "Terrified and panicking"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Nothing"
+            "display_value": "Eager to dance"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Read the sentence carefully to find the object."
+      "prompt": "The character's body language and reactions show they felt Disappointed and weary."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Read the scroll: 'Commander Zorg read the blue spellbook in the tower.' What did they interact with?",
+    "display_text": "Read the resolution: 'To solve the blocked mountain stream, the crew used a wooden lever and pulley to roll the boulder aside.' How did they successfully resolve the problem?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cr-08-0017_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "The blue spellbook"
+            "display_value": "They used a lever and pulley to roll the boulder aside"
           },
           {
             "option_id": "opt_2",
-            "display_value": "The red potion"
+            "display_value": "They waited for it to rain"
           },
           {
             "option_id": "opt_3",
-            "display_value": "The green scroll"
+            "display_value": "They built a new castle"
           },
           {
             "option_id": "opt_4",
-            "display_value": "The yellow wand"
+            "display_value": "They walked away"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Read the sentence carefully to find the object."
+      "prompt": "The solution implemented was: They used a lever and pulley to roll the boulder aside."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

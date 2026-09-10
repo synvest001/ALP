@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "You must survive a sandy and dry environment wearing a silver suit. Which animal lives here naturally?",
+    "display_text": "Exploring an icy, frozen polar tundra in a silver parka: Which creature has thick insulating blubber and water-resistant feathers to thrive in freezing oceans?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-ee-02-0025_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Camel"
+            "display_value": "Penguin"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Polar Bear"
+            "display_value": "Camel"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Frog"
+            "display_value": "Desert Lizard"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Penguin"
+            "display_value": "Chimpanzee"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Camel lives in sandy and dry environments."
+      "prompt": "Penguins have dense feathers and thick blubber layers to stay warm in freezing waters."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

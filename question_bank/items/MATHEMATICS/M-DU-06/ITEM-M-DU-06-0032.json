@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "A bag contains ONLY 10 golden dragon scales and 0 black scales. If you reach in blindly, what will you definitely pull out?",
+    "display_text": "In an animal survey, a scout records four vertical tally marks crossed by one diagonal slash. How many animals does that complete bundle represent?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-du-06-0032_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "There are only golden scales inside, so it's a 100% certainty!",
+      "prompt": "A standard tally bundle always represents 5 items.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "A golden dragon scale"
+            "display_value": "5"
           },
           {
             "option_id": "opt_2",
-            "display_value": "A black dragon scale"
+            "display_value": "4"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Nothing at all"
+            "display_value": "10"
           },
           {
             "option_id": "opt_4",
-            "display_value": "A magic wand"
+            "display_value": "6"
           }
         ]
       },

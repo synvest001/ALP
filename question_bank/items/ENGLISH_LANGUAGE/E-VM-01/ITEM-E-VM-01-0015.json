@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "The purple dragon was *swift*, according to Sir Lancelot. What does 'swift' mean?",
+    "display_text": "The purple dragon was described as *swift* by The wise owl. What does the word 'swift' mean?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-vm-01-0015_prompt.mp3",
     "visual_assets": [
       {

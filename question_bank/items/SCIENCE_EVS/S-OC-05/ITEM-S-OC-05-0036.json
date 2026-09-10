@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "While exploring Mars, which of these is a mammal thing?",
+    "display_text": "Analyzing matter in Mars: Which specimen is a gas that expands to fill the entire container?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-oc-05-0036_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Bear"
+            "display_value": "Steam vapor"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Snake"
+            "display_value": "A wooden block"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Frog"
+            "display_value": "Liquid milk"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Shark"
+            "display_value": "A metal coin"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Bear is mammal."
+      "prompt": "Steam vapor exemplifies this state of matter."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Size logic in the enchanted library: Ant < Cat < Horse. Which is the LARGEST?",
+    "display_text": "Height ranking in the enchanted library: Tower Alpha is taller than Tower Beta. Tower Beta is taller than Tower Gamma. Which one is the TALLEST?",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-rc-03-0021_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Horse"
+            "display_value": "Tower Alpha"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Ant"
+            "display_value": "Tower Beta"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Cat"
+            "display_value": "Tower Gamma"
           },
           {
             "option_id": "opt_4",
-            "display_value": "They are equal"
+            "display_value": "All are equal"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Horse is the LARGEST."
+      "prompt": "By transitive comparison, Tower Alpha is the tallest."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

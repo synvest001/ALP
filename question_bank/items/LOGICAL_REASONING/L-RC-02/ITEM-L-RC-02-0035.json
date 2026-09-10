@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Size logic in the crystal palace: Sun > Earth > Moon. Which is the SMALLEST?",
+    "display_text": "Comparative weight logic in the crystal palace: A boulder is heavier than an anvil. An anvil is heavier than a hammer. Which item is the HEAVIEST?",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-rc-02-0035_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Moon"
+            "display_value": "The boulder"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Sun"
+            "display_value": "The anvil"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Earth"
+            "display_value": "The hammer"
           },
           {
             "option_id": "opt_4",
-            "display_value": "They are equal"
+            "display_value": "All weigh the same"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Moon is the SMALLEST."
+      "prompt": "Trace the transitive weight chain: The boulder is the heaviest."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

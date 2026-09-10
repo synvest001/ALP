@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "A bag contains ONLY 10 green dragon scales and 0 purple scales. If you reach in blindly, what will you definitely pull out?",
+    "display_text": "A pouch contains 8 green marbles and 2 purple marbles. Which color are you MORE LIKELY to pull out blindly?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-du-03-0121_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "There are only green scales inside, so it's a 100% certainty!",
+      "prompt": "There are more green marbles than purple marbles.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,15 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "A green dragon scale"
+            "display_value": "A green marble"
           },
           {
             "option_id": "opt_2",
-            "display_value": "A purple dragon scale"
+            "display_value": "A purple marble"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Nothing at all"
-          },
-          {
-            "option_id": "opt_4",
-            "display_value": "A magic wand"
+            "display_value": "Both are equally likely"
           }
         ]
       },

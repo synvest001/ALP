@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Scanning their dimensions, which item is LONGER: An endless cosmic wormhole or A simple garden hose?",
+    "display_text": "An apprentice measures the wizard's staff using paperclips placed end to end. The staff spans exactly 6 paperclips. What is its total length?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-me-07-0045_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "An endless cosmic wormhole is definitely longer.",
+      "prompt": "The staff spans 6 paperclips.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,15 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "An endless cosmic wormhole"
+            "display_value": "6 paperclips"
           },
           {
             "option_id": "opt_2",
-            "display_value": "A simple garden hose"
+            "display_value": "8 paperclips"
           },
           {
             "option_id": "opt_3",
-            "display_value": "They are identical in length"
+            "display_value": "5 paperclips"
+          },
+          {
+            "option_id": "opt_4",
+            "display_value": "50 paperclips"
           }
         ]
       },

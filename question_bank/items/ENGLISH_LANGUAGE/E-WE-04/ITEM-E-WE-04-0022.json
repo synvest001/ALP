@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Fix the grammar error in the message from Princess Luna: 'The knights is brave.'",
+    "display_text": "What is the correct plural spelling of the noun 'fox' in The space explorer's inventory list?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-we-04-0022_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "The knights are brave."
+            "display_value": "foxes"
           },
           {
             "option_id": "opt_2",
-            "display_value": "The knight are brave."
+            "display_value": "foxs"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Knights is brave."
+            "display_value": "foxies"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Brave is the knights."
+            "display_value": "foxen"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Make sure the grammar is correct."
+      "prompt": "The plural form of 'fox' is 'foxes'."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

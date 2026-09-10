@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "You are flying a crystal plane over the pyramids of Giza. Which continent are you exploring?",
+    "display_text": "River systems: The Nile River, historically recognized as one of the longest rivers on Earth, flows northward through which continent?",
     "spoken_audio_uri": "assets/audio/world_knowledge/item-w-kp-04-0037_prompt.mp3",
     "visual_assets": [
       {
@@ -38,7 +38,7 @@
           },
           {
             "option_id": "opt_2",
-            "display_value": "Asia"
+            "display_value": "South America"
           },
           {
             "option_id": "opt_3",
@@ -46,7 +46,7 @@
           },
           {
             "option_id": "opt_4",
-            "display_value": "South America"
+            "display_value": "Asia"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The pyramids of Giza is in Africa."
+      "prompt": "This major river flows through Africa."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

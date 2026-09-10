@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "The space explorer spots something that breathes through gills. What is it?",
+    "display_text": "The space explorer examines a warm-blooded animal that has lightweight hollow bones, feathers, and lays hard-shelled eggs. What class of animal is it?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-kn-04-0010_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Shark"
+            "display_value": "Bird"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Dolphin"
+            "display_value": "Reptile"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Turtle"
+            "display_value": "Mammal"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Penguin"
+            "display_value": "Amphibian"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "A Shark breathes through gills."
+      "prompt": "Feathers and hollow bones are defining characteristics of birds."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

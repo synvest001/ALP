@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Logic rule for The space explorer: If the sun sets, it gets dark. You observe the first part. What happens?",
+    "display_text": "Deductive chain for Professor Quark: 'Rule 1: If the fuel valve opens, the rocket engine ignites. Rule 2: If the engine ignites, the rocket launches. The fuel valve opens.' What is the final resulting outcome?",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-co-04-0030_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "It gets dark"
+            "display_value": "The rocket launches into space"
           },
           {
             "option_id": "opt_2",
-            "display_value": "It gets bright"
+            "display_value": "The engine stays cold"
           },
           {
             "option_id": "opt_3",
-            "display_value": "It rains"
+            "display_value": "The rocket is disassembled"
           },
           {
             "option_id": "opt_4",
-            "display_value": "It snows"
+            "display_value": "The mission is cancelled"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The result is It gets dark."
+      "prompt": "Chain the conditionals: If A then B, and if B then C, therefore The rocket launches into space."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

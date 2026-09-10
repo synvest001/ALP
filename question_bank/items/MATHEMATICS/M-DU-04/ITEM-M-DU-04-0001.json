@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "A bag contains ONLY 10 purple dragon scales and 0 silver scales. If you reach in blindly, what will you definitely pull out?",
+    "display_text": "A coin has a sun on one side and a moon on the other side. When flipped, which outcome is expected?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-du-04-0001_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "There are only purple scales inside, so it's a 100% certainty!",
+      "prompt": "A fair two-sided coin gives an equal 50/50 chance.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "A purple dragon scale"
+            "display_value": "Sun and Moon are equally likely"
           },
           {
             "option_id": "opt_2",
-            "display_value": "A silver dragon scale"
+            "display_value": "Sun is guaranteed"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Nothing at all"
+            "display_value": "Moon is guaranteed"
           },
           {
             "option_id": "opt_4",
-            "display_value": "A magic wand"
+            "display_value": "Neither will land"
           }
         ]
       },

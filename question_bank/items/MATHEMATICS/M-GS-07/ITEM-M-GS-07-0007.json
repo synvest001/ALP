@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The invisible spy is hiding inside the dark cave. Where is the spy located?",
+    "display_text": "A master builder assembles a large rectangle by joining 2 equal squares edge-to-edge. Which smaller shape was used to compose it?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-gs-07-0007_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "The spy is inside!",
+      "prompt": "2 equal squares were combined together.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Inside the target"
+            "display_value": "Squares"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Across the galaxy"
+            "display_value": "Circles"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Underground in a bunker"
+            "display_value": "Stars"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Nowhere to be found"
+            "display_value": "Spheres"
           }
         ]
       },

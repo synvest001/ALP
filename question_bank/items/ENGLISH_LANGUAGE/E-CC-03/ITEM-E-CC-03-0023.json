@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Complete the story logically: The wise owl saw that the bridge was broken, so...",
+    "display_text": "Choose the most gripping narrative hook to begin a story about exploring a sunken pirate galleon:",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cc-03-0023_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "They built a raft."
+            "display_value": "Beneath the crashing waves, a shadow loomed over the coral reef: the cursed galleon had reappeared."
           },
           {
             "option_id": "opt_2",
-            "display_value": "They walked on clouds."
+            "display_value": "Once there was water."
           },
           {
             "option_id": "opt_3",
-            "display_value": "They drank a potion."
+            "display_value": "Fish swim in the ocean."
           },
           {
             "option_id": "opt_4",
-            "display_value": "They went to sleep."
+            "display_value": "Boats are made of wood."
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Think about what logically happens next."
+      "prompt": "A great narrative hook creates immediate intrigue and vivid action."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

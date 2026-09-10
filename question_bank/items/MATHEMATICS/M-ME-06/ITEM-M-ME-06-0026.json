@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "In a test of ultimate strength, which object is HEAVIER: A massive space cruiser or A tiny hoverboard?",
+    "display_text": "Thermal sensors scan two areas: A blazing desert dune at noon and A snowy mountaintop. Which location is HOTTER?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-me-06-0026_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "A massive space cruiser has way more mass.",
+      "prompt": "A blazing desert dune at noon is noticeably hotter.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,15 +60,15 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "A massive space cruiser"
+            "display_value": "A blazing desert dune at noon"
           },
           {
             "option_id": "opt_2",
-            "display_value": "A tiny hoverboard"
+            "display_value": "A snowy mountaintop"
           },
           {
             "option_id": "opt_3",
-            "display_value": "They weigh the exact same"
+            "display_value": "They have identical temperatures"
           }
         ]
       },

@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "If The wise owl boils liquid water, what state of matter does it become?",
+    "display_text": "A brave knight tests various objects with a bar magnet. Which item will be strongly ATTRACTED to the magnet?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-pp-04-0033_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Gas"
+            "display_value": "An iron nail"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Solid"
+            "display_value": "A wooden stick"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Plasma"
+            "display_value": "A plastic ruler"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Energy"
+            "display_value": "A rubber eraser"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "It becomes Gas."
+      "prompt": "Magnets attract ferromagnetic metals like iron, steel, and nickel."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

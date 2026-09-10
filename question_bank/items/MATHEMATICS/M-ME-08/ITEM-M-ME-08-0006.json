@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The galactic merchant demands a \u20b9100 note to buy the hyper-fuel. How many Rupees is that worth?",
+    "display_text": "The explorer recorded specimens found on an expedition: gold coins: 15, silver coins: 10, bronze coins: 6. Which specimen was collected the MOST?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-me-08-0006_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "a \u20b9100 note equals 100 Rupees.",
+      "prompt": "gold coins has the highest count of 15.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "100 Rupees"
+            "display_value": "gold coins"
           },
           {
             "option_id": "opt_2",
-            "display_value": "1 Rupee"
+            "display_value": "silver coins"
           },
           {
             "option_id": "opt_3",
-            "display_value": "5 Rupees"
+            "display_value": "bronze coins"
           },
           {
             "option_id": "opt_4",
-            "display_value": "500 Rupees"
+            "display_value": "All are equal"
           }
         ]
       },

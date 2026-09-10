@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The ancient artifact looks exactly like a knight's pillar. Which 3D shape is it?",
+    "display_text": "The crystal butterfly has a line of symmetry down its center. If the left side has 4 sparkling gems, how many matching gems must be on the right side?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-gs-06-0091_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "A knight's pillar is the shape of a Cylinder.",
+      "prompt": "Symmetry means both halves match identically: exactly 4 gems!",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Cylinder"
+            "display_value": "4"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Cube"
+            "display_value": "6"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Cone"
+            "display_value": "3"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Pyramid"
+            "display_value": "8"
           }
         ]
       },

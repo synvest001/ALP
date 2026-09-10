@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Floating on the wind, which object is LIGHTER: A paper airplane or A steel locomotive?",
+    "display_text": "In a test of ultimate strength, which object is LIGHTER: A paper airplane or A steel locomotive?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-me-02-0104_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "A paper airplane is much lighter!",
+      "prompt": "A paper airplane is far lighter.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },

@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "A brave knight eats a delicious meal of Sushi, wrapped in seaweed. Which country did this originate from?",
+    "display_text": "International communication: A traveler warmly greets Commander Zorg saying 'Namaste'! Which language is being spoken?",
     "spoken_audio_uri": "assets/audio/world_knowledge/item-w-ka-05-0019_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Japan"
+            "display_value": "Hindi"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Italy"
+            "display_value": "Russian"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Mexico"
+            "display_value": "Portuguese"
           },
           {
             "option_id": "opt_4",
-            "display_value": "India"
+            "display_value": "Greek"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Sushi, wrapped in seaweed is from Japan."
+      "prompt": "'Namaste' is the standard greeting in Hindi."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

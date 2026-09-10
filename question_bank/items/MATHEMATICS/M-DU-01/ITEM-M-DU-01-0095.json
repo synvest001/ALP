@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "A bag contains ONLY 10 red dragon scales and 0 blue scales. If you reach in blindly, what will you definitely pull out?",
+    "display_text": "A pouch contains ONLY 10 red dragon scales and 0 blue scales. If you draw one blindly, what will you definitely pull out?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-du-01-0095_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "There are only red scales inside, so it's a 100% certainty!",
+      "prompt": "There are only red scales inside, so it is a 100% certainty!",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },

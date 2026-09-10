@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "If The wise owl traces the edges of a triangle, how many sides do they draw?",
+    "display_text": "A flat paper pattern consists of 6 connected squares arranged in the shape of a cross. When folded along its edges, what 3D geometric solid does it form?",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-sr-03-0013_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "3"
+            "display_value": "A Cube"
           },
           {
             "option_id": "opt_2",
-            "display_value": "4"
+            "display_value": "A Pyramid"
           },
           {
             "option_id": "opt_3",
-            "display_value": "5"
+            "display_value": "A Cylinder"
           },
           {
             "option_id": "opt_4",
-            "display_value": "6"
+            "display_value": "A Sphere"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "It has 3 sides."
+      "prompt": "A cross net of 6 squares folds into a 6-faced closed cube."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Size logic in the dark cave: Gigantosaurus > T-Rex > Velociraptor. Which is the SMALLEST?",
+    "display_text": "Size logic in the dark cave: Given the inequality chain Titan > Earth > Moon, which body is the SMALLEST?",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-rc-01-0013_prompt.mp3",
     "visual_assets": [
       {
@@ -34,15 +34,15 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Velociraptor"
+            "display_value": "Moon"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Gigantosaurus"
+            "display_value": "Titan"
           },
           {
             "option_id": "opt_3",
-            "display_value": "T-Rex"
+            "display_value": "Earth"
           },
           {
             "option_id": "opt_4",
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Velociraptor is the SMALLEST."
+      "prompt": "Follow the inequality symbols: Moon is the smallest."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

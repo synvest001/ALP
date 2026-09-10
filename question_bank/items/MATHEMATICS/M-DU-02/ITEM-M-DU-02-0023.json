@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "A bag contains ONLY 10 blue dragon scales and 0 green scales. If you reach in blindly, what will you definitely pull out?",
+    "display_text": "A chest contains 15 blue crystals and zero green crystals. What is the chance of pulling out a green crystal?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-du-02-0023_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "There are only blue scales inside, so it's a 100% certainty!",
+      "prompt": "There are no green crystals in the chest, so it's impossible.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "A blue dragon scale"
+            "display_value": "Impossible (0% chance)"
           },
           {
             "option_id": "opt_2",
-            "display_value": "A green dragon scale"
+            "display_value": "Certain (100% chance)"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Nothing at all"
+            "display_value": "Very likely"
           },
           {
             "option_id": "opt_4",
-            "display_value": "A magic wand"
+            "display_value": "50% chance"
           }
         ]
       },

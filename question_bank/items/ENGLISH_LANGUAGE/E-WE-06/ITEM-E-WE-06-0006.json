@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Fix the grammar error in the message from Professor Quark: 'They was happy.'",
+    "display_text": "Proofread and repair this run-on sentence: 'The dragon roared loudly the knight raised his shield.'",
     "spoken_audio_uri": "assets/audio/english_language/item-e-we-06-0006_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "They were happy."
+            "display_value": "The dragon roared loudly, so the knight raised his shield."
           },
           {
             "option_id": "opt_2",
-            "display_value": "They is happy."
+            "display_value": "The dragon roared loudly so, the knight raised his shield."
           },
           {
             "option_id": "opt_3",
-            "display_value": "Them was happy."
+            "display_value": "The dragon roared, loudly the knight raised his shield."
           },
           {
             "option_id": "opt_4",
-            "display_value": "They happy was."
+            "display_value": "The dragon roared loudly the knight, raised his shield."
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Make sure the grammar is correct."
+      "prompt": "Connect independent clauses with a comma and a coordinating conjunction."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

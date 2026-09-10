@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "A bag contains ONLY 10 black dragon scales and 0 white scales. If you reach in blindly, what will you definitely pull out?",
+    "display_text": "In a class poll, 12 students voted for black and 4 voted for white. Is it TRUE that black received more votes than white?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-du-07-0030_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "There are only black scales inside, so it's a 100% certainty!",
+      "prompt": "12 is greater than 4, so the statement is true.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,15 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "A black dragon scale"
+            "display_value": "True"
           },
           {
             "option_id": "opt_2",
-            "display_value": "A white dragon scale"
+            "display_value": "False"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Nothing at all"
-          },
-          {
-            "option_id": "opt_4",
-            "display_value": "A magic wand"
+            "display_value": "Cannot be determined"
           }
         ]
       },

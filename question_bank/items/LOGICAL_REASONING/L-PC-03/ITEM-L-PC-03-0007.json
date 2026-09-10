@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Commander Zorg asks: Which of these does NOT belong with space travel?",
+    "display_text": "Commander Zorg examines four geometric shapes: Triangle, Square, Hexagon, and Circle. Which shape does NOT belong with the others?",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-pc-03-0007_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Submarine"
+            "display_value": "Circle"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Star Cruiser"
+            "display_value": "Triangle"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Lunar Rover"
+            "display_value": "Square"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Orbital Station"
+            "display_value": "Hexagon"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Submarine is the odd one out."
+      "prompt": "A circle has a continuous curved boundary, while the others are polygons made of straight sides."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "The silver dragon was *fragile*, according to The grumpy troll. What does 'fragile' mean?",
+    "display_text": "The silver dragon was described as *fragile* by The grumpy troll. What does the word 'fragile' mean?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-vm-01-0004_prompt.mp3",
     "visual_assets": [
       {

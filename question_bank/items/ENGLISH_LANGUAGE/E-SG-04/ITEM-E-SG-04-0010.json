@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Which sentence is written correctly for The space explorer's royal decree?",
+    "display_text": "Fill in the blank with the correct pronoun: 'Princess Luna found an ancient scroll. ___ unrolled it carefully.'",
     "spoken_audio_uri": "assets/audio/english_language/item-e-sg-04-0010_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "The brave knights rode swiftly."
+            "display_value": "She"
           },
           {
             "option_id": "opt_2",
-            "display_value": "The braved knights rides swift."
+            "display_value": "He"
           },
           {
             "option_id": "opt_3",
-            "display_value": "knights brave the rode swiftly"
+            "display_value": "They"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Riding knights brave the."
+            "display_value": "It"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The subject and verb must agree, and the order must make sense!"
+      "prompt": "Use 'She' to match the antecedent."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

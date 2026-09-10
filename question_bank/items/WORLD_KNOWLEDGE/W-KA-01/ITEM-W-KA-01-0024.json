@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "The grumpy troll eats a delicious meal of Tacos and burritos. Which country did this originate from?",
+    "display_text": "Dr. Nova attends an international banquet and enjoys Fragrant basmati rice with curry and naan bread. Which country did this traditional dish originate from?",
     "spoken_audio_uri": "assets/audio/world_knowledge/item-w-ka-01-0024_prompt.mp3",
     "visual_assets": [
       {
@@ -34,7 +34,7 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Mexico"
+            "display_value": "India"
           },
           {
             "option_id": "opt_2",
@@ -46,7 +46,7 @@
           },
           {
             "option_id": "opt_4",
-            "display_value": "India"
+            "display_value": "Mexico"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Tacos and burritos is from Mexico."
+      "prompt": "Fragrant basmati rice with curry and naan bread originated in India."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

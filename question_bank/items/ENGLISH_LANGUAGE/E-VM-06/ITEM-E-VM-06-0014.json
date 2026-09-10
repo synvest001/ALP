@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "The silver dragon was *ancient*, according to The grumpy troll. What does 'ancient' mean?",
+    "display_text": "Read the sentence: 'Princess Luna was cautious as she crept past the sleeping dragon without making a sound.' Using clues from the sentence, what does 'cautious' mean?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-vm-06-0014_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Very old"
+            "display_value": "Very careful"
           },
           {
             "option_id": "opt_2",
-            "display_value": "New"
+            "display_value": "Reckless"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Shiny"
+            "display_value": "Noisy"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Broken"
+            "display_value": "Confused"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The meaning of ancient is Very old."
+      "prompt": "The clues in the sentence show that 'cautious' means Very careful."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

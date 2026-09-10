@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Fix the grammar error in the message from Professor Quark: 'They was happy.'",
+    "display_text": "Proofread Professor Quark's journal entry for capitalization: 'princess luna lives in the crystal palace.' Which version is correct?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-we-02-0006_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "They were happy."
+            "display_value": "Princess Luna lives in the Crystal Palace."
           },
           {
             "option_id": "opt_2",
-            "display_value": "They is happy."
+            "display_value": "princess luna Lives in the Crystal palace."
           },
           {
             "option_id": "opt_3",
-            "display_value": "Them was happy."
+            "display_value": "Princess luna lives in the crystal Palace."
           },
           {
             "option_id": "opt_4",
-            "display_value": "They happy was."
+            "display_value": "princess Luna lives in the Crystal Palace."
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Make sure the grammar is correct."
+      "prompt": "Capitalize the first word of a sentence, proper names, and specific geographical places."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

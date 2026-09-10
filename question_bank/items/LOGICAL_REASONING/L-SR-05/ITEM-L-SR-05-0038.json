@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "If The mystic wizard traces the edges of a square, how many sides do they draw?",
+    "display_text": "A lowercase letter 'b' is held up facing a flat vertical mirror. What letter shape does its reflection most closely resemble?",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-sr-05-0038_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "4"
+            "display_value": "Letter 'd'"
           },
           {
             "option_id": "opt_2",
-            "display_value": "3"
+            "display_value": "Letter 'p'"
           },
           {
             "option_id": "opt_3",
-            "display_value": "5"
+            "display_value": "Letter 'q'"
           },
           {
             "option_id": "opt_4",
-            "display_value": "6"
+            "display_value": "Letter 'b'"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "It has 4 sides."
+      "prompt": "A vertical mirror flips left and right: 'b' reflects into 'd'."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

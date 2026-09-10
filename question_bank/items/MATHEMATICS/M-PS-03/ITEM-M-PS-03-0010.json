@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The quest requires 24 ancient scrolls to succeed. You have collected 17. How many MORE ancient scrolls must you find?",
+    "display_text": "The hero carried 13 ancient scrolls, discovered 4 more in a chest, and used 2 during a dungeon crawl. How many ancient scrolls remain?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-ps-03-0010_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Subtract what you have from what you need: 24 - 17 = 7!",
+      "prompt": "13 + 4 = 17, minus 2 = 15.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "7"
+            "display_value": "15"
           },
           {
             "option_id": "opt_2",
-            "display_value": "9"
+            "display_value": "17"
           },
           {
             "option_id": "opt_3",
-            "display_value": "6"
+            "display_value": "14"
           },
           {
             "option_id": "opt_4",
-            "display_value": "24"
+            "display_value": "17"
           }
         ]
       },

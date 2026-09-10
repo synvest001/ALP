@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Complete the story logically: Sir Lancelot saw that the bridge was broken, so...",
+    "display_text": "Which sentence adds the richest sensory imagery describing a stormy winter night at the fortress?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cc-04-0035_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "They built a raft."
+            "display_value": "Howling icy winds rattled the heavy oak shutters as sleet pelted against cold stone walls."
           },
           {
             "option_id": "opt_2",
-            "display_value": "They walked on clouds."
+            "display_value": "It was cold and dark outside."
           },
           {
             "option_id": "opt_3",
-            "display_value": "They drank a potion."
+            "display_value": "Winter is one of four seasons."
           },
           {
             "option_id": "opt_4",
-            "display_value": "They went to sleep."
+            "display_value": "There was weather happening."
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Think about what logically happens next."
+      "prompt": "Rich imagery appeals to sight, sound, smell, and touch."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

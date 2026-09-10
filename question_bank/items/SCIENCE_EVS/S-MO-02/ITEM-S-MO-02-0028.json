@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Which tool would The mystic wizard use to measure the temperature of an object?",
+    "display_text": "Which laboratory tool should The grumpy troll use to measure the exact mass of mineral crystals in grams?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-mo-02-0028_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Thermometer"
+            "display_value": "Balance scale"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Ruler"
+            "display_value": "Thermometer"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Scale"
+            "display_value": "Ruler"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Microscope"
+            "display_value": "Telescope"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "A Thermometer measures temperature."
+      "prompt": "A balance scale measures mass/weight."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

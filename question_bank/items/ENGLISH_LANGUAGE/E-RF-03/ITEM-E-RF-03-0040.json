@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Decode the ancient hieroglyph found in the floating castle! Which option correctly spells the word 'COULD'?",
+    "display_text": "Which word contains the vowel team 'ea' to make the long vowel sound?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-rf-03-0040_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "could"
+            "display_value": "Leaf"
           },
           {
             "option_id": "opt_2",
-            "display_value": "could"
+            "display_value": "Life"
           },
           {
             "option_id": "opt_3",
-            "display_value": "could"
+            "display_value": "Loaf"
           },
           {
             "option_id": "opt_4",
-            "display_value": "couldz"
+            "display_value": "Left"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The correct spelling is could."
+      "prompt": "'Leaf' uses the 'ea' team."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."
@@ -73,7 +73,7 @@
   "rubric": {
     "evaluation_mode": "DETERMINISTIC_EXACT_MATCH",
     "correct_criteria": {
-      "selected_option_id": "opt_3"
+      "selected_option_id": "opt_1"
     }
   },
   "safeguard_metadata": {

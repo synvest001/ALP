@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Logic rule for Captain Orion: If you drop a glass, it breaks. You observe the first part. What happens?",
+    "display_text": "Deductive condition for Lady Gwen: 'The magical vault door opens ONLY IF the silver key is inserted. The silver key was NOT inserted.' What conclusion is guaranteed?",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-co-02-0011_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "It breaks"
+            "display_value": "The vault door remains locked"
           },
           {
             "option_id": "opt_2",
-            "display_value": "It bounces"
+            "display_value": "The vault door swings wide open"
           },
           {
             "option_id": "opt_3",
-            "display_value": "It floats"
+            "display_value": "The door turns into glass"
           },
           {
             "option_id": "opt_4",
-            "display_value": "It vanishes"
+            "display_value": "The gold vanishes"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The result is It breaks."
+      "prompt": "Because the required prerequisite condition was not met, the outcome cannot occur."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

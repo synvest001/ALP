@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Situation in the floating castle: You meet the Queen near The space explorer. What is the most polite thing to say?",
+    "display_text": "Situation in the floating castle: A companion hands The grumpy troll an extra water flask during a long trek. What is the most courteous response?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-ol-03-0040_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Your Majesty"
+            "display_value": "Thank you so much, I truly appreciate your kindness."
           },
           {
             "option_id": "opt_2",
-            "display_value": "Hey there"
+            "display_value": "Give me another one too."
           },
           {
             "option_id": "opt_3",
-            "display_value": "What's up"
+            "display_value": "Took you long enough."
           },
           {
             "option_id": "opt_4",
-            "display_value": "Yo"
+            "display_value": "I didn't ask for this."
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Think about polite manners."
+      "prompt": "Polite gratitude acknowledges the helpful act warmly."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

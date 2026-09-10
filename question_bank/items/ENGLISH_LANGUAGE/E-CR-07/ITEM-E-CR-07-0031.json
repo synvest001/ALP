@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Read the scroll: 'Captain Orion found a golden key under the mat.' What did they interact with?",
+    "display_text": "Read the scenario: 'Commander Zorg discovered that The kingdom's water supply stopped completely because a giant boulder blocked the mountain stream.' What is the primary conflict or problem?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cr-07-0031_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "A golden key"
+            "display_value": "A giant boulder blocked the mountain stream"
           },
           {
             "option_id": "opt_2",
-            "display_value": "A silver sword"
+            "display_value": "The villagers were singing"
           },
           {
             "option_id": "opt_3",
-            "display_value": "A diamond ring"
+            "display_value": "The kingdom had too much water"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Nothing"
+            "display_value": "The mountain was made of gold"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Read the sentence carefully to find the object."
+      "prompt": "The main obstacle or problem is that A giant boulder blocked the mountain stream."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "While exploring the crystal palace, which of these is a non-living thing?",
+    "display_text": "Observing plant life in the crystal palace: Which plant part absorbs water and nutrients from the soil while anchoring the plant?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-oc-03-0005_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Bicycle"
+            "display_value": "Roots"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Dog"
+            "display_value": "Leaves"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Flower"
+            "display_value": "Flowers"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Bird"
+            "display_value": "Stem"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Bicycle is non-living."
+      "prompt": "The roots perform this function."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

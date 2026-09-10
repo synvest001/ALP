@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "The shadow dragon was *swift*, according to Commander Zorg. What does 'swift' mean?",
+    "display_text": "The shadow dragon was described as *swift* by Commander Zorg. What does the word 'swift' mean?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-vm-01-0007_prompt.mp3",
     "visual_assets": [
       {

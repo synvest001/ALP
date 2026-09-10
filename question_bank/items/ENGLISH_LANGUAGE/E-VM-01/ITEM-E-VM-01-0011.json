@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "The blue dragon was *swift*, according to Captain Orion. What does 'swift' mean?",
+    "display_text": "The blue dragon was described as *swift* by Lady Gwen. What does the word 'swift' mean?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-vm-01-0011_prompt.mp3",
     "visual_assets": [
       {

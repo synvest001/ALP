@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "If you leave ice in the sun in the forbidden forest, what will happen?",
+    "display_text": "In the forbidden forest, a scientist leaves an ice cube in the direct hot sun. What thermodynamic change occurs?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-in-02-0008_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "It melts"
+            "display_value": "The ice absorbs heat energy and melts into liquid water"
           },
           {
             "option_id": "opt_2",
-            "display_value": "It freezes"
+            "display_value": "The ice gets colder and grows bigger"
           },
           {
             "option_id": "opt_3",
-            "display_value": "It grows"
+            "display_value": "The ice turns into solid gold"
           },
           {
             "option_id": "opt_4",
-            "display_value": "It turns to stone"
+            "display_value": "The ice bursts into flames"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The result is: It melts."
+      "prompt": "Heat energy causes solid ice to melt into liquid water."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

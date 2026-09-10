@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Decode the ancient hieroglyph found in the dark cave! Which option correctly spells the word 'SHOULD'?",
+    "display_text": "Which word belongs to the '-all' word family?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-rf-05-0023_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "should"
+            "display_value": "Ball"
           },
           {
             "option_id": "opt_2",
-            "display_value": "should"
+            "display_value": "Bell"
           },
           {
             "option_id": "opt_3",
-            "display_value": "should"
+            "display_value": "Bull"
           },
           {
             "option_id": "opt_4",
-            "display_value": "shouldz"
+            "display_value": "Bill"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The correct spelling is should."
+      "prompt": "'Ball' ends with '-all'."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."
@@ -73,7 +73,7 @@
   "rubric": {
     "evaluation_mode": "DETERMINISTIC_EXACT_MATCH",
     "correct_criteria": {
-      "selected_option_id": "opt_3"
+      "selected_option_id": "opt_1"
     }
   },
   "safeguard_metadata": {

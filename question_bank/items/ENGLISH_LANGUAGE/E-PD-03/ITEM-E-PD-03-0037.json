@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Commander Zorg needs a password starting with the /b/ sound to enter the forbidden forest. Which word works?",
+    "display_text": "In the forbidden forest, Captain Orion must chant a spell rhyming with 'star'. Which word creates a perfect rhyme?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-pd-03-0037_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Broom"
+            "display_value": "Far"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Hat"
+            "display_value": "Moon"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Cauldron"
+            "display_value": "Sky"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Wand"
+            "display_value": "Sun"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Broom starts with /b/."
+      "prompt": "'Far' rhymes with 'star' because they share the same ending sound."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

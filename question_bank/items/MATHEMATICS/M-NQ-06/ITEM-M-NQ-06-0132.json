@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Explorer! You found a hidden chest. How many superhero capes are sparkling inside?",
+    "display_text": "The star runner hopped past stone #21, then stone #___, then stone #23. Which stone number is missing in the middle?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-nq-06-0132_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Count carefully! The chest contains exactly 16 superhero capes.",
+      "prompt": "The number between 21 and 23 is 22.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "16"
+            "display_value": "22"
           },
           {
             "option_id": "opt_2",
-            "display_value": "14"
+            "display_value": "24"
           },
           {
             "option_id": "opt_3",
-            "display_value": "18"
+            "display_value": "20"
           },
           {
             "option_id": "opt_4",
-            "display_value": "19"
+            "display_value": "24"
           }
         ]
       },

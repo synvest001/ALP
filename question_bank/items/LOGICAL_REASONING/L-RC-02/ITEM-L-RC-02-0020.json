@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Size logic in the floating castle: Sun > Earth > Moon. Which is the SMALLEST?",
+    "display_text": "Comparative weight logic in the floating castle: A gold coin is lighter than a silver bar. A silver bar is lighter than a chest. Which item is the LIGHTEST?",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-rc-02-0020_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Moon"
+            "display_value": "The gold coin"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Sun"
+            "display_value": "The silver bar"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Earth"
+            "display_value": "The chest"
           },
           {
             "option_id": "opt_4",
-            "display_value": "They are equal"
+            "display_value": "All weigh the same"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Moon is the SMALLEST."
+      "prompt": "Trace the transitive weight chain: The gold coin is the lightest."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

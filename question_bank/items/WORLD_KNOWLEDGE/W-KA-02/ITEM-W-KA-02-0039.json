@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "A brave knight eats a delicious meal of Tacos and burritos. Which country did this originate from?",
+    "display_text": "The wise owl studies world cultures: Lunar New Year, celebrated with festive dragon dances and red envelopes. In which region did this cultural celebration originate?",
     "spoken_audio_uri": "assets/audio/world_knowledge/item-w-ka-02-0039_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Mexico"
+            "display_value": "China and East Asia"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Japan"
+            "display_value": "France"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Italy"
+            "display_value": "Chile"
           },
           {
             "option_id": "opt_4",
-            "display_value": "India"
+            "display_value": "Australia"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Tacos and burritos is from Mexico."
+      "prompt": "This cultural celebration is deeply rooted in China and East Asia."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

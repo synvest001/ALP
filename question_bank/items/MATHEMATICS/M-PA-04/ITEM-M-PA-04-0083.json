@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "A secret agent is cracking a vault code: Triangle, Hexagon, Circle, Triangle, Hexagon... If she presses the wrong button, the alarm sounds! What comes next?",
+    "display_text": "The ancient clockwork engine ticks in a growing sequence: 5, 10, 15, 20, ___? What number comes next?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-pa-04-0083_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "The pattern repeats: Circle is next.",
+      "prompt": "Identify the growing step to find 25.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Circle"
+            "display_value": "25"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Triangle"
+            "display_value": "30"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Hexagon"
+            "display_value": "22"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Square"
+            "display_value": "35"
           }
         ]
       },

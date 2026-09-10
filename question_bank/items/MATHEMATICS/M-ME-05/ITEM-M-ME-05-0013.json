@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The time bomb will explode when the little hand hits 2 and the big hand is on 12. What time must you defuse it?",
+    "display_text": "Comparing fluid capacity, which container holds MORE liquid: A giant pirate water barrel or A tiny glass test tube?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-me-05-0013_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "When the long hand is on 12, it is exactly 2 o'clock!",
+      "prompt": "A giant pirate water barrel holds more liquid.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,15 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "2 o'clock"
+            "display_value": "A giant pirate water barrel"
           },
           {
             "option_id": "opt_2",
-            "display_value": "3 o'clock"
+            "display_value": "A tiny glass test tube"
           },
           {
             "option_id": "opt_3",
-            "display_value": "1 o'clock"
-          },
-          {
-            "option_id": "opt_4",
-            "display_value": "12 o'clock"
+            "display_value": "They hold the exact same volume"
           }
         ]
       },

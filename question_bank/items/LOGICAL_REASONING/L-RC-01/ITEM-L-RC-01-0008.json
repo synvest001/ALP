@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Size logic in the forbidden forest: Sun > Earth > Moon. Which is the SMALLEST?",
+    "display_text": "Size logic in the forbidden forest: Given the inequality chain Sun > Jupiter > Earth, which body is the LARGEST?",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-rc-01-0008_prompt.mp3",
     "visual_assets": [
       {
@@ -34,11 +34,11 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Moon"
+            "display_value": "Sun"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Sun"
+            "display_value": "Jupiter"
           },
           {
             "option_id": "opt_3",
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Moon is the SMALLEST."
+      "prompt": "Follow the inequality symbols: Sun is the largest."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

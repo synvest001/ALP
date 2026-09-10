@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Sir Lancelot eats a delicious meal of Tacos and burritos. Which country did this originate from?",
+    "display_text": "Architectural heritage: The wise owl studies the tiered multi-roofed Pagoda built as a sacred tower. Which culture or region historically created this structure?",
     "spoken_audio_uri": "assets/audio/world_knowledge/item-w-ka-08-0015_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Mexico"
+            "display_value": "East Asia (China and Japan)"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Japan"
+            "display_value": "Ancient Rome"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Italy"
+            "display_value": "Scandinavia"
           },
           {
             "option_id": "opt_4",
-            "display_value": "India"
+            "display_value": "Ancient Egypt"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Tacos and burritos is from Mexico."
+      "prompt": "This architectural structure was developed by East Asia (China and Japan)."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

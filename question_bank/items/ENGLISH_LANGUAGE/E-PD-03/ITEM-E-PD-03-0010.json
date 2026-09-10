@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "The space explorer needs a password starting with the /f/ sound to enter the enchanted library. Which word works?",
+    "display_text": "In the enchanted library, The space explorer must chant a spell rhyming with 'night'. Which word creates a perfect rhyme?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-pd-03-0010_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Fairy"
+            "display_value": "Knight"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Goblin"
+            "display_value": "Day"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Troll"
+            "display_value": "Sword"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Orc"
+            "display_value": "Castle"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Fairy starts with /f/."
+      "prompt": "'Knight' rhymes with 'night' because they share the same ending sound."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

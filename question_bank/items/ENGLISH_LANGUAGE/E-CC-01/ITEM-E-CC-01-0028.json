@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Complete the story logically: The mystic wizard dropped his sword, so...",
+    "display_text": "Create a logical alternative ending: The grumpy troll dropped his sword, so...",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cc-01-0028_prompt.mp3",
     "visual_assets": [
       {
@@ -34,11 +34,11 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "He had to fight with his shield."
+            "display_value": "He had to defend himself with his shield."
           },
           {
             "option_id": "opt_2",
-            "display_value": "He flew away."
+            "display_value": "He flew away on a broom."
           },
           {
             "option_id": "opt_3",
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Think about what logically happens next."
+      "prompt": "Consider what logically and realistically resolves the situation."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

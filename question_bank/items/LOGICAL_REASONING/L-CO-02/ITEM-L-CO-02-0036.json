@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Logic rule for Professor Quark: If the sun sets, it gets dark. You observe the first part. What happens?",
+    "display_text": "Deductive condition for Dr. Nova: 'The robot activates ONLY WHEN its battery is charged above 50%. The battery is at 10%.' What conclusion is guaranteed?",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-co-02-0036_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "It gets dark"
+            "display_value": "The robot does not activate"
           },
           {
             "option_id": "opt_2",
-            "display_value": "It gets bright"
+            "display_value": "The robot starts running"
           },
           {
             "option_id": "opt_3",
-            "display_value": "It rains"
+            "display_value": "The robot flies"
           },
           {
             "option_id": "opt_4",
-            "display_value": "It snows"
+            "display_value": "The battery explodes"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The result is It gets dark."
+      "prompt": "Because the required prerequisite condition was not met, the outcome cannot occur."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

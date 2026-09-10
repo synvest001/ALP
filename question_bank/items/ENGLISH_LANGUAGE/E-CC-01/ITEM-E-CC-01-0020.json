@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Complete the story logically: The space explorer saw that the bridge was broken, so...",
+    "display_text": "Create a logical alternative ending: The mystic wizard saw that the bridge was broken, so...",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cc-01-0020_prompt.mp3",
     "visual_assets": [
       {
@@ -34,11 +34,11 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "They built a raft."
+            "display_value": "They built a sturdy raft from logs."
           },
           {
             "option_id": "opt_2",
-            "display_value": "They walked on clouds."
+            "display_value": "They walked on the clouds."
           },
           {
             "option_id": "opt_3",
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Think about what logically happens next."
+      "prompt": "Consider what logically and realistically resolves the situation."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

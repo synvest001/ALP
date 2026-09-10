@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "The mystic wizard spots something that has eight legs. What is it?",
+    "display_text": "While hiking, Princess Luna encounters a warm-blooded animal covered in thick fur that nourishes its young with milk. What class is it?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-kn-06-0038_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Spider"
+            "display_value": "Mammal"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Beetle"
+            "display_value": "Bird"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Ant"
+            "display_value": "Reptile"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Fly"
+            "display_value": "Insect"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "A Spider has eight legs."
+      "prompt": "Having fur/hair and producing milk for young are hallmark mammal traits."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

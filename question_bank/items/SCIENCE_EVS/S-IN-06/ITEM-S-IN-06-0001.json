@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "If you drop a heavy rock in water in the enchanted library, what will happen?",
+    "display_text": "In the acoustics chamber in the enchanted library, a musician gently plucks a tight guitar string. What causes the sound to be produced?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-in-06-0001_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "It sinks"
+            "display_value": "The string vibrates rapidly back and forth, creating sound waves"
           },
           {
             "option_id": "opt_2",
-            "display_value": "It floats"
+            "display_value": "The string changes color"
           },
           {
             "option_id": "opt_3",
-            "display_value": "It evaporates"
+            "display_value": "Air is sucked into a vacuum"
           },
           {
             "option_id": "opt_4",
-            "display_value": "It explodes"
+            "display_value": "Light bounces off the wood"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The result is: It sinks."
+      "prompt": "Sound is produced by rapid physical vibrations traveling as acoustic waves."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

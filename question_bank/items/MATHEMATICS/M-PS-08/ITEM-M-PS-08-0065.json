@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The quest requires 19 ancient scrolls to succeed. You have collected 11. How many MORE ancient scrolls must you find?",
+    "display_text": "Each of the magical mana stones costs 3 gold coins. If your party buys 3 of them, what is the total cost in gold coins?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-ps-08-0065_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Subtract what you have from what you need: 19 - 11 = 8!",
+      "prompt": "Multiply: 3 \u00d7 3 = 9 gold coins.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,11 +60,11 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "8"
+            "display_value": "9"
           },
           {
             "option_id": "opt_2",
-            "display_value": "10"
+            "display_value": "12"
           },
           {
             "option_id": "opt_3",
@@ -72,7 +72,7 @@
           },
           {
             "option_id": "opt_4",
-            "display_value": "19"
+            "display_value": "6"
           }
         ]
       },

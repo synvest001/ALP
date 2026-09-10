@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "The grumpy troll eats a delicious meal of Tacos and burritos. Which country did this originate from?",
+    "display_text": "World music discovery: Dr. Nova listens to the djembe, a rope-tuned goblet drum played with bare hands. With which culture or country is it traditionally associated?",
     "spoken_audio_uri": "assets/audio/world_knowledge/item-w-ka-03-0024_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Mexico"
+            "display_value": "West Africa"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Japan"
+            "display_value": "Russia"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Italy"
+            "display_value": "Canada"
           },
           {
             "option_id": "opt_4",
-            "display_value": "India"
+            "display_value": "Germany"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Tacos and burritos is from Mexico."
+      "prompt": "This instrument originated in West Africa."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

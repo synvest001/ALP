@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Complete the story logically: Sir Lancelot was extremely hungry, so...",
+    "display_text": "Choose the smoothest transition phrase to connect these narrative events: 'The explorers decoded the map. ___, they set sail for the mysterious island.'",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cc-06-0015_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "He ate a large meal."
+            "display_value": "The following morning"
           },
           {
             "option_id": "opt_2",
-            "display_value": "He sang a song."
+            "display_value": "Suddenly without warning"
           },
           {
             "option_id": "opt_3",
-            "display_value": "He read a book."
+            "display_value": "Because it was raining"
           },
           {
             "option_id": "opt_4",
-            "display_value": "He built a house."
+            "display_value": "In the distant past"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Think about what logically happens next."
+      "prompt": "'The following morning' connects the timing and momentum of the two events seamlessly."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

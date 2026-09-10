@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Read the golden tablet to complete the logic: Bird is to sky as Fish is to...",
+    "display_text": "Read the golden tablet to solve the attribute analogy: Fire is to Hot as Ice is to...",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-ar-02-0034_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Water"
+            "display_value": "Cold"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Ground"
+            "display_value": "Warm"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Space"
+            "display_value": "Bright"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Tree"
+            "display_value": "Dark"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Think about the relationship between the items."
+      "prompt": "Identify the direct sensory or semantic property connecting each pair."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

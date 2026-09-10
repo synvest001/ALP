@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Logic rule for Professor Quark: If you drop a glass, it breaks. You observe the first part. What happens?",
+    "display_text": "Rule of logic for Princess Luna: 'If you press the red emergency button, the fortress alarm sounds.' You observe the first condition occur. What must follow?",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-co-01-0026_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "It breaks"
+            "display_value": "The fortress alarm sounds"
           },
           {
             "option_id": "opt_2",
-            "display_value": "It bounces"
+            "display_value": "The doors unlock quietly"
           },
           {
             "option_id": "opt_3",
-            "display_value": "It floats"
+            "display_value": "The lights turn off"
           },
           {
             "option_id": "opt_4",
-            "display_value": "It vanishes"
+            "display_value": "Music begins playing"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The result is It breaks."
+      "prompt": "Direct conditional modus ponens: The fortress alarm sounds."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

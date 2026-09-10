@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "While exploring Mars, which of these is a mammal thing?",
+    "display_text": "While exploring Mars, which of these is classified as a non-living entity?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-oc-01-0006_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Bear"
+            "display_value": "A Silver Coin"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Snake"
+            "display_value": "A Flying Sparrow"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Frog"
+            "display_value": "A Green Fern"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Shark"
+            "display_value": "A Swimming Trout"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Bear is mammal."
+      "prompt": "A Silver Coin is non-living because of biological growth and cellular structure."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

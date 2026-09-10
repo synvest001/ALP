@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Captain Orion eats a delicious meal of Sushi, wrapped in seaweed. Which country did this originate from?",
+    "display_text": "Commander Zorg attends an international banquet and enjoys Tacos filled with seasoned beans and salsa. Which country did this traditional dish originate from?",
     "spoken_audio_uri": "assets/audio/world_knowledge/item-w-ka-01-0031_prompt.mp3",
     "visual_assets": [
       {
@@ -34,15 +34,15 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Japan"
+            "display_value": "Mexico"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Italy"
+            "display_value": "Japan"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Mexico"
+            "display_value": "Italy"
           },
           {
             "option_id": "opt_4",
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Sushi, wrapped in seaweed is from Japan."
+      "prompt": "Tacos filled with seasoned beans and salsa originated in Mexico."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

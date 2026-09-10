@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Explorer! You found a hidden chest. How many glowing moon crystals are sparkling inside?",
+    "display_text": "The star runner hopped past stone #10, then stone #___, then stone #12. Which stone number is missing in the middle?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-nq-06-0061_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Count carefully! The chest contains exactly 5 glowing moon crystals.",
+      "prompt": "The number between 10 and 12 is 11.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "5"
+            "display_value": "11"
           },
           {
             "option_id": "opt_2",
-            "display_value": "3"
+            "display_value": "13"
           },
           {
             "option_id": "opt_3",
-            "display_value": "7"
+            "display_value": "9"
           },
           {
             "option_id": "opt_4",
-            "display_value": "8"
+            "display_value": "13"
           }
         ]
       },

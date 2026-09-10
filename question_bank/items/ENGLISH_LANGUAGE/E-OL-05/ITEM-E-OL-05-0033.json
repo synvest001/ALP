@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Situation in the dark cave: Someone gives you a gift near The wise owl. What is the most polite thing to say?",
+    "display_text": "Situation in the dark cave: A brave knight gives complex instructions on defusing the power grid. Which response demonstrates active listening?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-ol-05-0033_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Thank you"
+            "display_value": "So if I understand correctly, I must pull the blue switch first, then turn the silver dial?"
           },
           {
             "option_id": "opt_2",
-            "display_value": "No way"
+            "display_value": "Yeah yeah, whatever you say."
           },
           {
             "option_id": "opt_3",
-            "display_value": "Give me more"
+            "display_value": "I wasn't listening at all."
           },
           {
             "option_id": "opt_4",
-            "display_value": "Whatever"
+            "display_value": "Can you just do it yourself?"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Think about polite manners."
+      "prompt": "Active listening paraphrases and checks understanding."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

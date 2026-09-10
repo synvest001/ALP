@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Scanning their dimensions, which item is SHORTER: A tiny microchip or A giant supercomputer?",
+    "display_text": "An apprentice measures the wizard's staff using hand-spans placed end to end. The staff spans exactly 5 hand-spans. What is its total length?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-me-07-0051_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "A tiny microchip is definitely shorter.",
+      "prompt": "The staff spans 5 hand-spans.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,15 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "A tiny microchip"
+            "display_value": "5 hand-spans"
           },
           {
             "option_id": "opt_2",
-            "display_value": "A giant supercomputer"
+            "display_value": "7 hand-spans"
           },
           {
             "option_id": "opt_3",
-            "display_value": "They are identical in length"
+            "display_value": "4 hand-spans"
+          },
+          {
+            "option_id": "opt_4",
+            "display_value": "50 hand-spans"
           }
         ]
       },

@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Which sentence is written correctly for The mystic wizard's royal decree?",
+    "display_text": "Fill in the blank with the correct pronoun: 'Captain Orion adjusted his helmet. ___ stepped onto the red dust of Mars.'",
     "spoken_audio_uri": "assets/audio/english_language/item-e-sg-04-0008_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "A red dragon breathes fire."
+            "display_value": "He"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Breathes fire a red dragon."
+            "display_value": "She"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Dragon red a fire breathes."
+            "display_value": "They"
           },
           {
             "option_id": "opt_4",
-            "display_value": "A red dragons breathe fires."
+            "display_value": "It"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The subject and verb must agree, and the order must make sense!"
+      "prompt": "Use 'He' to match the antecedent."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

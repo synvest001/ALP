@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Fix the grammar error in the message from Princess Luna: 'She run fast.'",
+    "display_text": "Fix the grammar error in The mystic wizard's message: 'She run fast.'",
     "spoken_audio_uri": "assets/audio/english_language/item-e-we-01-0032_prompt.mp3",
     "visual_assets": [
       {
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Make sure the grammar is correct."
+      "prompt": "Make sure the subject and verb agree in number."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

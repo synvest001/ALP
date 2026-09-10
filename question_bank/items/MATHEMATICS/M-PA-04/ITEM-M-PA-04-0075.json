@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "A secret agent is cracking a vault code: Up, Down, Left, Up, Down, Left, Up... If she presses the wrong button, the alarm sounds! What comes next?",
+    "display_text": "The ancient clockwork engine ticks in a growing sequence: 10, 20, 30, 40, ___? What number comes next?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-pa-04-0075_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "The pattern repeats: Down is next.",
+      "prompt": "Identify the growing step to find 50.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Down"
+            "display_value": "50"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Left"
+            "display_value": "60"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Up"
+            "display_value": "45"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Right"
+            "display_value": "55"
           }
         ]
       },

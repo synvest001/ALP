@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "The golden dragon was *colossal*, according to The wise owl. What does 'colossal' mean?",
+    "display_text": "The golden dragon was described as *colossal* by A brave knight. What does the word 'colossal' mean?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-vm-01-0033_prompt.mp3",
     "visual_assets": [
       {

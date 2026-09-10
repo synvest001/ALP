@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The time bomb will explode when the little hand hits 10 and the big hand is on 12. What time must you defuse it?",
+    "display_text": "Comparing fluid capacity, which container holds LESS liquid: An eye dropper or A wooden water cistern?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-me-05-0120_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "When the long hand is on 12, it is exactly 10 o'clock!",
+      "prompt": "An eye dropper holds less liquid.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,15 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "10 o'clock"
+            "display_value": "An eye dropper"
           },
           {
             "option_id": "opt_2",
-            "display_value": "11 o'clock"
+            "display_value": "A wooden water cistern"
           },
           {
             "option_id": "opt_3",
-            "display_value": "9 o'clock"
-          },
-          {
-            "option_id": "opt_4",
-            "display_value": "12 o'clock"
+            "display_value": "They hold the exact same volume"
           }
         ]
       },

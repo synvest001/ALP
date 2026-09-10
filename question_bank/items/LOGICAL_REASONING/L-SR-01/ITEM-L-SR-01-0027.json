@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "If Commander Zorg traces the edges of a pentagon, how many sides do they draw?",
+    "display_text": "If The wise owl traces a continuous line along the outer boundary of a pentagon, how many straight sides do they trace?",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-sr-01-0027_prompt.mp3",
     "visual_assets": [
       {
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "It has 5 sides."
+      "prompt": "A pentagon has exactly 5 straight perimeter edges."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

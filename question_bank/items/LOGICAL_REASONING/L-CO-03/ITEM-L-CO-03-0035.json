@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Logic rule for Sir Lancelot: If you drop a glass, it breaks. You observe the first part. What happens?",
+    "display_text": "Disjunctive reasoning for Lady Gwen: 'The missing map is located in EITHER the blue chest OR the green chest. The blue chest is completely empty.' What must logically be true?",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-co-03-0035_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "It breaks"
+            "display_value": "The map must be in the green chest"
           },
           {
             "option_id": "opt_2",
-            "display_value": "It bounces"
+            "display_value": "The map is in the blue chest"
           },
           {
             "option_id": "opt_3",
-            "display_value": "It floats"
+            "display_value": "The map never existed"
           },
           {
             "option_id": "opt_4",
-            "display_value": "It vanishes"
+            "display_value": "Both chests are full"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The result is It breaks."
+      "prompt": "When one of two exclusive possibilities is eliminated, the remaining option must hold."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

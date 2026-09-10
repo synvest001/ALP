@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Cause and Effect: The mystic wizard felt the ground shaking violently. What is happening?",
+    "display_text": "Cause and Effect: The stone walls suddenly rattle and the castle chandelier sways back and forth violently. What is the most probable cause?",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-ce-03-0018_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "An earthquake"
+            "display_value": "An earthquake tremor is occurring"
           },
           {
             "option_id": "opt_2",
-            "display_value": "A flood"
+            "display_value": "A gentle autumn breeze blew through"
           },
           {
             "option_id": "opt_3",
-            "display_value": "A fire"
+            "display_value": "The sun came out"
           },
           {
             "option_id": "opt_4",
-            "display_value": "A hurricane"
+            "display_value": "Someone dropped a coin"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The logical cause/effect is An earthquake."
+      "prompt": "Violent ground shaking and swaying buildings are caused by seismic earthquake activity."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

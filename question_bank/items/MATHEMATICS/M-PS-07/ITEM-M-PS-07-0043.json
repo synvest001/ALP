@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The quest requires 17 magic potions to succeed. You have collected 13. How many MORE magic potions must you find?",
+    "display_text": "An artisan bundles energy batteries into crates of 5. If the artisan fills 5 complete crates, how many energy batteries are packed in total?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-ps-07-0043_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Subtract what you have from what you need: 17 - 13 = 4!",
+      "prompt": "Count 5 groups of 5: 25 energy batteries!",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "4"
+            "display_value": "25"
           },
           {
             "option_id": "opt_2",
-            "display_value": "6"
+            "display_value": "30"
           },
           {
             "option_id": "opt_3",
-            "display_value": "3"
+            "display_value": "20"
           },
           {
             "option_id": "opt_4",
-            "display_value": "17"
+            "display_value": "10"
           }
         ]
       },

@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "The space explorer eats a delicious meal of Sushi, wrapped in seaweed. Which country did this originate from?",
+    "display_text": "Cultural history lesson: The grumpy troll examines the Poncho, a woolen outer garment designed to keep the body warm and dry. In which country or region is this traditional attire worn?",
     "spoken_audio_uri": "assets/audio/world_knowledge/item-w-ka-04-0040_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Japan"
+            "display_value": "The Andes of South America"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Italy"
+            "display_value": "Japan"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Mexico"
+            "display_value": "Egypt"
           },
           {
             "option_id": "opt_4",
-            "display_value": "India"
+            "display_value": "Iceland"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Sushi, wrapped in seaweed is from Japan."
+      "prompt": "the Poncho, a woolen outer garment designed to keep the body warm and dry is traditional attire in The Andes of South America."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

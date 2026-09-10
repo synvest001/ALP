@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Fix the grammar error in the message from Captain Orion: 'She run fast.'",
+    "display_text": "Find the misspelled word in this journal sentence: 'We observed a wonderfull meteor shower.' Which word is spelled incorrectly?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-we-09-0011_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "She runs fast."
+            "display_value": "wonderful"
           },
           {
             "option_id": "opt_2",
-            "display_value": "She running fast."
+            "display_value": "observed"
           },
           {
             "option_id": "opt_3",
-            "display_value": "She runned fast."
+            "display_value": "meteor"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Her runs fast."
+            "display_value": "shower"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Make sure the grammar is correct."
+      "prompt": "The correct spelling is 'wonderful'."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

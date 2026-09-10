@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "The green dragon was *ancient*, according to Princess Luna. What does 'ancient' mean?",
+    "display_text": "The green dragon was described as *ancient* by The space explorer. What does the word 'ancient' mean?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-vm-01-0022_prompt.mp3",
     "visual_assets": [
       {

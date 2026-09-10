@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Complete the story logically: Captain Orion dropped his sword, so...",
+    "display_text": "Which dialogue line best captures the character voice of a cautious elder wizard warning an impatient apprentice?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cc-05-0001_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "He had to fight with his shield."
+            "display_value": "'Tread softly, young one, for ancient wards sleep lightly in these catacombs.'"
           },
           {
             "option_id": "opt_2",
-            "display_value": "He flew away."
+            "display_value": "'Let's run as fast as we can!'"
           },
           {
             "option_id": "opt_3",
-            "display_value": "He became a baker."
+            "display_value": "'Whatever, do whatever you want.'"
           },
           {
             "option_id": "opt_4",
-            "display_value": "He turned invisible."
+            "display_value": "'I am going to eat a sandwich.'"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Think about what logically happens next."
+      "prompt": "The character voice must match their personality, wisdom, and the dramatic urgency."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."
