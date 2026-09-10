@@ -200,7 +200,9 @@ export class QuestionBank {
         : (this.itemsByDomain.get(domain_id) || []);
       const domainUnseenIdOnly = domainItems.filter(it => !excludeSet.has(it.item_id));
       if (domainUnseenIdOnly.length > 0) {
-        return domainUnseenIdOnly[Math.floor(Math.random() * domainUnseenIdOnly.length)];
+        const fallbackItem = domainUnseenIdOnly[Math.floor(Math.random() * domainUnseenIdOnly.length)];
+        console.warn(`[QuestionBank] Domain Affinity Guard fallback: exhausted unique prompts for domain '${domain_id}'. Dropping excludePrompts filter and serving item '${fallbackItem.item_id}' (prompt: "${fallbackItem.prompt_structure?.display_text}").`);
+        return fallbackItem;
       }
     }
 
@@ -213,7 +215,9 @@ export class QuestionBank {
     // 9. If strictly no unseen prompts exist anywhere, relax prompt filter but still enforce unique item ID
     const unseenIdOnly = this.items.filter(it => !excludeSet.has(it.item_id));
     if (unseenIdOnly.length > 0) {
-      return unseenIdOnly[Math.floor(Math.random() * unseenIdOnly.length)];
+      const fallbackItem = unseenIdOnly[Math.floor(Math.random() * unseenIdOnly.length)];
+      console.warn(`[QuestionBank] Global fallback: exhausted unique prompts globally. Dropping excludePrompts filter and serving item '${fallbackItem.item_id}' (prompt: "${fallbackItem.prompt_structure?.display_text}").`);
+      return fallbackItem;
     }
 
     return this.items.length > 0 ? this.items[Math.floor(Math.random() * this.items.length)] : null;

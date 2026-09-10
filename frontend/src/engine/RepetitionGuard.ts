@@ -149,7 +149,6 @@ export class RepetitionGuard {
     const cleanId = (kidId || 'default_player').toLowerCase().trim();
     const cooldownIds = this.getCooldownItemIds(cleanId, this.COOLDOWN_SESSION_COUNT);
     const cooldownPrompts = this.getCooldownPrompts(cleanId, this.COOLDOWN_SESSION_COUNT);
-    const lifetimeSeen = this.getAllSeenItemIds(cleanId);
 
     const sessionSeenIds = new Set<string>();
     const sessionSeenPrompts = new Set<string>();
@@ -185,8 +184,8 @@ export class RepetitionGuard {
       if (isViolation) {
         console.warn(`[RepetitionGuard] REPETITION DETECTED! ${violationReason}. Swapping with guaranteed fresh question...`);
 
-        // Combined exclusion sets
-        const allForbiddenIds = Array.from(new Set([...sessionSeenIds, ...cooldownIds, ...lifetimeSeen]));
+        // Combined exclusion sets (cooldown window and current session items)
+        const allForbiddenIds = Array.from(new Set([...sessionSeenIds, ...cooldownIds]));
         const allForbiddenPrompts = new Set([...sessionSeenPrompts, ...cooldownPrompts]);
 
         // Attempt 1: Target subskill & cognitive depth

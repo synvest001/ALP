@@ -52,11 +52,12 @@ export class SessionComposer {
     const maxTimeBudgetSeconds = 40 * 60; // Increased time budget
     let currentTimeBudget = 0;
 
-    // Load kid-specific cooldown items & prompts (last 5 sessions) and all seen items
+    // Load kid-specific cooldown items & prompts (last 5 sessions)
     const cooldownIds = RepetitionGuard.getCooldownItemIds(cleanKidId, RepetitionGuard.COOLDOWN_SESSION_COUNT);
     const cooldownPrompts = RepetitionGuard.getCooldownPrompts(cleanKidId, RepetitionGuard.COOLDOWN_SESSION_COUNT);
-    const lifetimeSeen = RepetitionGuard.getAllSeenItemIds(cleanKidId);
-    const forbiddenBase = new Set([...cooldownIds, ...lifetimeSeen]);
+    // Rely on the 5-session cooldown window alone to allow spaced-retrieval re-use of items.
+    // lifetimeSeen is retained for reporting/analytics, not for session exclusion.
+    const forbiddenBase = new Set([...cooldownIds]);
     const sessionSeenPrompts = new Set<string>();
 
     // 1. Get real learner states
