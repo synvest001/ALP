@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "An apprentice measures the wizard's staff using paperclips placed end to end. The staff spans exactly 4 paperclips. What is its total length?",
+    "display_text": "A pencil is 6 paperclips long and an eraser is 2 paperclips long. How many paperclips LONGER is the pencil than the eraser?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-me-07-0113_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-ME-07-0113_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-me-07-0113_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "The staff spans 4 paperclips.",
+      "prompt": "Subtract the eraser length: 6 - 2 = 4 paperclips.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
@@ -64,15 +58,15 @@
           },
           {
             "option_id": "opt_2",
-            "display_value": "6 paperclips"
+            "display_value": "8 paperclips"
           },
           {
             "option_id": "opt_3",
-            "display_value": "3 paperclips"
+            "display_value": "2 paperclips"
           },
           {
             "option_id": "opt_4",
-            "display_value": "50 paperclips"
+            "display_value": "3 paperclips"
           }
         ]
       },

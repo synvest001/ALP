@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "GENERALIZE",
   "transfer_level": "LEVEL_4_STRUCTURAL",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Observing plant life in the forbidden forest: Which plant part uses sunlight to produce food for the plant through photosynthesis?",
+    "display_text": "Which plant part uses sunlight to make food for the plant through photosynthesis?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-oc-03-0008_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-S-OC-03-0008_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-s-oc-03-0008_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",

@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "In the droid hangar, there are 5 landing pads, and each pad holds exactly 2 scout drones. How many drones are there in total?",
+    "display_text": "There are 5 baskets, and each basket holds exactly 2 oranges. How many oranges are there in total?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-op-06-0052_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-OP-06-0052_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-op-06-0052_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Count 5 equal groups of 2: 5 \u00d7 2 = 10 drones!",
+      "prompt": "Count 5 equal groups of 2: 5 \u00d7 2 = 10 oranges.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",

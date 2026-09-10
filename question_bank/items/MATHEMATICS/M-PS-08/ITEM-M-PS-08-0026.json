@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Each of the magical mana stones costs 4 gold coins. If your party buys 3 of them, what is the total cost in gold coins?",
+    "display_text": "Notebooks cost 4 Rupees each. How much will 3 notebooks cost in total?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-ps-08-0026_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-PS-08-0026_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-ps-08-0026_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Multiply: 3 \u00d7 4 = 12 gold coins.",
+      "prompt": "Multiply: 3 \u00d7 4 = 12 Rupees.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_3_REPRESENTATIONAL",
-  "representation_type": "SYMBOLIC",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",

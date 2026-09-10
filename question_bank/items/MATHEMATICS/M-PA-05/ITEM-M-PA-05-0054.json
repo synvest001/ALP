@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Analyze the repeating sequence: Sun, Moon, Star, Sun, Moon, Star. What is the fundamental pattern unit that repeats?",
+    "display_text": "In the repeating sequence 'Sun, Moon, Star, Sun, Moon, Star', which group of shapes forms the repeating pattern unit?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-pa-05-0054_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-PA-05-0054_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-pa-05-0054_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "The core unit repeating over and over is 'Sun, Moon, Star'.",
+      "prompt": "The repeating unit is 'Sun, Moon, Star'.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_2_CONTEXTUAL",
-  "representation_type": "SYMBOLIC",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",

@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "A coin has a sun on one side and a moon on the other side. When flipped, which outcome is expected?",
+    "display_text": "A coin has heads on one side and tails on the other side. When flipped, which result is expected?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-du-04-0074_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-DU-04-0074_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-du-04-0074_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "A fair two-sided coin gives an equal 50/50 chance.",
+      "prompt": "A fair coin has a 50/50 equal chance of landing on heads or tails.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_2_CONTEXTUAL",
-  "representation_type": "SYMBOLIC",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
@@ -60,19 +54,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Sun and Moon are equally likely"
+            "display_value": "Heads and tails are equally likely"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Sun is guaranteed"
+            "display_value": "Heads is guaranteed"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Moon is guaranteed"
+            "display_value": "Tails is guaranteed"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Neither will land"
+            "display_value": "Neither can happen"
           }
         ]
       },

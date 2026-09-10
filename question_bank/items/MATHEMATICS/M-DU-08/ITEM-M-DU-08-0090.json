@@ -9,15 +9,9 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "A weather report shows an 80% probability of sunshine tomorrow in the kingdom. What is the most reasonable expectation?",
+    "display_text": "The weather forecast predicts an 80% chance of sunshine tomorrow. What is the most reasonable expectation?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-du-08-0090_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-DU-08-0090_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-du-08-0090_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_2_CONTEXTUAL",
-  "representation_type": "SYMBOLIC",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
@@ -72,7 +66,7 @@
           },
           {
             "option_id": "opt_4",
-            "display_value": "It will definitely rain"
+            "display_value": "It will definitely snow"
           }
         ]
       },

@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The ancient Temple of Shapes has a magical door guarded by a polygon with exactly 3 straight sides. Which shape is carved into the door?",
+    "display_text": "Look at the polygon above. It has exactly 4 straight sides. What is the name of this shape?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-gs-04-0123_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "A shape with exactly 3 sides is a Triangle.",
+      "prompt": "A shape with 4 straight sides is a Square.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,7 +60,7 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Triangle"
+            "display_value": "Square"
           },
           {
             "option_id": "opt_2",
@@ -68,7 +68,7 @@
           },
           {
             "option_id": "opt_3",
-            "display_value": "Square"
+            "display_value": "Triangle"
           },
           {
             "option_id": "opt_4",

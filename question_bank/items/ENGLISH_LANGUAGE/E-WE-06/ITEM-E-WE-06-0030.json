@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_2_CONTEXTUAL",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Proofread and repair this run-on sentence: 'The dragon roared loudly the knight raised his shield.'",
+    "display_text": "Proofread and repair this run-on sentence: 'The dog barked loudly the cat climbed the fence.'",
     "spoken_audio_uri": "assets/audio/english_language/item-e-we-06-0030_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-E-WE-06-0030_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-e-we-06-0030_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",
@@ -34,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "The dragon roared loudly, so the knight raised his shield."
+            "display_value": "The dog barked loudly, and the cat climbed the fence."
           },
           {
             "option_id": "opt_2",
-            "display_value": "The dragon roared loudly so, the knight raised his shield."
+            "display_value": "The dog barked loudly and, the cat climbed the fence."
           },
           {
             "option_id": "opt_3",
-            "display_value": "The dragon roared, loudly the knight raised his shield."
+            "display_value": "The dog barked, loudly the cat climbed the fence."
           },
           {
             "option_id": "opt_4",
-            "display_value": "The dragon roared loudly the knight, raised his shield."
+            "display_value": "The dog barked loudly the cat, climbed the fence."
           }
         ]
       },
@@ -61,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Connect independent clauses with a comma and a coordinating conjunction."
+      "prompt": "Connect independent clauses with a comma and a conjunction."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "A glowing forcefield has the outline of a Pentagon. How many sharp corners (vertices) does it have?",
+    "display_text": "Count the sharp corners (vertices) on the Pentagon shown above. How many vertices does it have?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-gs-05-0099_prompt.mp3",
     "visual_assets": [
       {
@@ -47,7 +47,7 @@
   },
   "cognitive_depth": "GENERALIZE",
   "transfer_level": "LEVEL_4_STRUCTURAL",
-  "representation_type": "SYMBOLIC",
+  "representation_type": "VISUAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",

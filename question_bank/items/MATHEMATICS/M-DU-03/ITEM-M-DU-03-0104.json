@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "A pouch contains 8 green marbles and 2 purple marbles. Which color are you MORE LIKELY to pull out blindly?",
+    "display_text": "A jar has 8 green tokens and 2 yellow tokens. Which color are you MORE LIKELY to pull out without looking?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-du-03-0104_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-DU-03-0104_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-du-03-0104_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "There are more green marbles than purple marbles.",
+      "prompt": "There are more green tokens than yellow tokens.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_2_CONTEXTUAL",
-  "representation_type": "SYMBOLIC",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
@@ -60,11 +54,11 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "A green marble"
+            "display_value": "A green token"
           },
           {
             "option_id": "opt_2",
-            "display_value": "A purple marble"
+            "display_value": "A yellow token"
           },
           {
             "option_id": "opt_3",

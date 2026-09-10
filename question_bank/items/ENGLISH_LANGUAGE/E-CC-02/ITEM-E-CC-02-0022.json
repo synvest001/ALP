@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Generate an investigative inquiry: The space explorer found a locked chest with three keyholes on an uncharted island. Which question is the most insightful to investigate?",
+    "display_text": "Question Generation: Princess Luna found an old, locked wooden box in the attic. Which is the best investigative question to ask?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cc-02-0022_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-E-CC-02-0022_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-e-cc-02-0022_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",
@@ -34,11 +28,11 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Which three keys unlock this mysterious chest?"
+            "display_value": "What key opens this old wooden box?"
           },
           {
             "option_id": "opt_2",
-            "display_value": "What is 2 plus 2?"
+            "display_value": "How many pennies make a dollar?"
           },
           {
             "option_id": "opt_3",
@@ -46,7 +40,7 @@
           },
           {
             "option_id": "opt_4",
-            "display_value": "Where can I buy milk?"
+            "display_value": "Who likes ice cream?"
           }
         ]
       },
@@ -61,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "An investigative question directly explores the mystery at hand."
+      "prompt": "An investigative question directly addresses the situation."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

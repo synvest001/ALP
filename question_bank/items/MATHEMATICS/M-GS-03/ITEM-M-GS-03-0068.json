@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The invisible spy is sneaking behind the ancient statues. Where is the spy located?",
+    "display_text": "A bird is standing directly behind the tall fence. Which positional word describes where the bird is located?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-gs-03-0068_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-GS-03-0068_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-gs-03-0068_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "The spy is behind!",
+      "prompt": "The clue word is 'behind'.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "GENERALIZE",
   "transfer_level": "LEVEL_4_STRUCTURAL",
-  "representation_type": "SYMBOLIC",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
@@ -60,19 +54,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Behind the target"
+            "display_value": "Behind"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Across the galaxy"
+            "display_value": "Across"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Underground in a bunker"
+            "display_value": "Underground"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Nowhere to be found"
+            "display_value": "Between"
           }
         ]
       },

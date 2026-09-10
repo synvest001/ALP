@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "A glowing forcefield has the outline of a Hexagon. How many sharp corners (vertices) does it have?",
+    "display_text": "Count the sharp corners (vertices) on the Hexagon shown above. How many vertices does it have?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-gs-05-0032_prompt.mp3",
     "visual_assets": [
       {

@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Read the excerpt: 'Bees visit flowers to sip sweet nectar, and while doing so, they carry pollen from bloom to bloom so new plants can grow.' What is the central main idea of this passage?",
+    "display_text": "Read the passage: 'Honeybees visit blooming flowers to sip nectar, carrying pollen from flower to flower so healthy new plants can grow.' What is the main idea?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cr-04-0033_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-E-CR-04-0033_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-e-cr-04-0033_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",
@@ -34,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Bees play a vital role in helping plants reproduce"
+            "display_value": "Honeybees help plants grow by pollinating them"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Bees only sleep in the winter"
+            "display_value": "Honeybees sleep all summer long"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Flowers do not need bees"
+            "display_value": "Flowers do not need insects"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Honey is made of water"
+            "display_value": "Honey is made from rainwater"
           }
         ]
       },
@@ -61,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The main idea captures the big picture: Bees play a vital role in helping plants reproduce."
+      "prompt": "The main idea summarizes the key point: Honeybees help plants grow by pollinating them."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

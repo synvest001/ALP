@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "An apprentice measures the wizard's staff using wooden blocks placed end to end. The staff spans exactly 4 wooden blocks. What is its total length?",
+    "display_text": "A ribbon is 9 hand-spans long. You cut off 4 hand-spans. How many hand-spans long is the ribbon now?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-me-07-0106_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-ME-07-0106_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-me-07-0106_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "The staff spans 4 wooden blocks.",
+      "prompt": "Subtract: 9 - 4 = 5 hand-spans.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_3_REPRESENTATIONAL",
-  "representation_type": "SYMBOLIC",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
@@ -60,19 +54,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "4 wooden blocks"
+            "display_value": "5 hand-spans"
           },
           {
             "option_id": "opt_2",
-            "display_value": "6 wooden blocks"
+            "display_value": "13 hand-spans"
           },
           {
             "option_id": "opt_3",
-            "display_value": "3 wooden blocks"
+            "display_value": "4 hand-spans"
           },
           {
             "option_id": "opt_4",
-            "display_value": "50 wooden blocks"
+            "display_value": "6 hand-spans"
           }
         ]
       },

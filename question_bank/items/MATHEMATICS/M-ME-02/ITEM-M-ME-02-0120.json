@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "In a test of ultimate strength, which object is LIGHTER: A paper airplane or A steel locomotive?",
+    "display_text": "Comparing weights: Which object is LIGHTER: A paper airplane or A steel locomotive train?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-me-02-0120_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-ME-02-0120_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-me-02-0120_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "A paper airplane is far lighter.",
+      "prompt": "A paper airplane is lighter.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_2_CONTEXTUAL",
-  "representation_type": "SYMBOLIC",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
@@ -64,7 +58,7 @@
           },
           {
             "option_id": "opt_2",
-            "display_value": "A steel locomotive"
+            "display_value": "A steel locomotive train"
           },
           {
             "option_id": "opt_3",

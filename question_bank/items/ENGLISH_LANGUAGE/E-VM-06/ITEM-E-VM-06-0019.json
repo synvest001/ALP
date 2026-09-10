@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "GENERALIZE",
   "transfer_level": "LEVEL_4_STRUCTURAL",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Read the sentence: 'Commander Zorg was parched after wandering through the scorching desert with no water.' Using clues from the sentence, what does 'parched' mean?",
+    "display_text": "Read the sentence: 'The thirsty travelers were *parched* after walking across the dry desert without any water.' Using context clues, what does 'parched' mean?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-vm-06-0019_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-E-VM-06-0019_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-e-vm-06-0019_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",
@@ -34,7 +28,7 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Very thirsty"
+            "display_value": "Extremely thirsty"
           },
           {
             "option_id": "opt_2",
@@ -42,7 +36,7 @@
           },
           {
             "option_id": "opt_3",
-            "display_value": "Overly full"
+            "display_value": "Full of food"
           },
           {
             "option_id": "opt_4",
@@ -61,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The clues in the sentence show that 'parched' means Very thirsty."
+      "prompt": "The clues in the sentence show that 'parched' means extremely thirsty."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

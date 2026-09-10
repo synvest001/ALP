@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The spaceship's countdown is at 19. What number comes directly AFTER 19 to launch the rocket?",
+    "display_text": "The launch countdown is at 19. What number comes directly AFTER 19?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-nq-02-0010_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-NQ-02-0010_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-nq-02-0010_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Count up: ..., 19, 20!",
+      "prompt": "Count forward: ..., 19, 20!",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_2_CONTEXTUAL",
-  "representation_type": "SYMBOLIC",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",

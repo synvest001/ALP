@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "World music discovery: Dr. Nova listens to the djembe, a rope-tuned goblet drum played with bare hands. With which culture or country is it traditionally associated?",
+    "display_text": "With which country or culture is the didgeridoo, a long wooden wind instrument traditionally associated?",
     "spoken_audio_uri": "assets/audio/world_knowledge/item-w-ka-03-0012_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-W-KA-03-0012_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-w-ka-03-0012_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",
@@ -34,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "West Africa"
+            "display_value": "Australia"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Russia"
+            "display_value": "Norway"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Canada"
+            "display_value": "Japan"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Germany"
+            "display_value": "Mexico"
           }
         ]
       },
@@ -61,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "This instrument originated in West Africa."
+      "prompt": "This instrument is from Australia."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

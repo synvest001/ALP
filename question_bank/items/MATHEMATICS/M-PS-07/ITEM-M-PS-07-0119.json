@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "An artisan bundles energy batteries into crates of 5. If the artisan fills 5 complete crates, how many energy batteries are packed in total?",
+    "display_text": "A store packages lunchboxes in packs of 5. If you buy 5 full packs, how many lunchboxes do you get altogether?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-ps-07-0119_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-PS-07-0119_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-ps-07-0119_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Count 5 groups of 5: 25 energy batteries!",
+      "prompt": "Count 5 groups of 5: 25 lunchboxes.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "GENERALIZE",
   "transfer_level": "LEVEL_4_STRUCTURAL",
-  "representation_type": "SYMBOLIC",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",

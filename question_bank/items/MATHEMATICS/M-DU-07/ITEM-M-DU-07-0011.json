@@ -9,15 +9,9 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "In a class poll, 12 students voted for black and 4 voted for white. Is it TRUE that black received more votes than white?",
+    "display_text": "In a poll, 12 children voted for silver and 4 voted for gold. Is it TRUE that silver received more votes than gold?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-du-07-0011_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-DU-07-0011_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-du-07-0011_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",

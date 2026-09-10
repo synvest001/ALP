@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Princess Luna studies human physiology. Which muscular organ acts as a pump to circulate oxygen-rich blood throughout the body?",
+    "display_text": "Look at the human organ shown above. Which organ acts as a muscular pump to circulate blood throughout the body?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-kn-07-0014_prompt.mp3",
     "visual_assets": [
       {
@@ -46,7 +46,7 @@
           },
           {
             "option_id": "opt_4",
-            "display_value": "The Liver"
+            "display_value": "The Brain"
           }
         ]
       },

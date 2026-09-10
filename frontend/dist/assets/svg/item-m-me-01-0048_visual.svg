@@ -1,25 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="100%" height="100%">
-  <rect width="300" height="200" rx="16" fill="#fefce8"/>
-  <g transform="translate(150, 105)">
-    <!-- Fluffy Glorious Mane -->
-    <g fill="#b45309" stroke="#78350f" stroke-width="3">
-      <circle cx="0" cy="-60" r="25"/><circle cx="42" cy="-42" r="25"/><circle cx="60" cy="0" r="25"/>
-      <circle cx="42" cy="42" r="25"/><circle cx="0" cy="60" r="25"/><circle cx="-42" cy="42" r="25"/>
-      <circle cx="-60" cy="0" r="25"/><circle cx="-42" cy="-42" r="25"/>
-    </g>
-    <!-- Ears -->
-    <circle cx="-35" cy="-35" r="14" fill="#f59e0b" stroke="#b45309" stroke-width="2.5"/>
-    <circle cx="-35" cy="-35" r="8" fill="#fef3c7"/>
-    <circle cx="35" cy="-35" r="14" fill="#f59e0b" stroke="#b45309" stroke-width="2.5"/>
-    <circle cx="35" cy="-35" r="8" fill="#fef3c7"/>
-    <!-- Head -->
-    <circle cx="0" cy="0" r="45" fill="#f59e0b" stroke="#b45309" stroke-width="3"/>
-    <!-- Muzzle -->
-    <ellipse cx="0" cy="14" rx="22" ry="15" fill="#fef3c7"/>
-    <polygon points="0,5 -9,0 9,0" fill="#78350f"/>
-    <path d="M 0,5 L 0,16 Q -8,22 -14,16 M 0,16 Q 8,22 14,16" fill="none" stroke="#78350f" stroke-width="3" stroke-linecap="round"/>
-    <!-- Eyes -->
-    <ellipse cx="-16" cy="-10" rx="6" ry="8" fill="#78350f"/><circle cx="-18" cy="-12" r="2" fill="#ffffff"/>
-    <ellipse cx="16" cy="-10" rx="6" ry="8" fill="#78350f"/><circle cx="14" cy="-12" r="2" fill="#ffffff"/>
-  </g>
+  <rect width="300" height="200" rx="16" fill="#f8fafc"/>
+  <!-- Clock Outer Rim -->
+  <circle cx="150" cy="100" r="70" fill="#ffffff" stroke="#0284c7" stroke-width="6"/>
+  <!-- Clock Numbers -->
+  <text x="150" y="48" font-size="13" font-weight="bold" fill="#1e293b" text-anchor="middle">12</text>
+  <text x="204" y="104" font-size="13" font-weight="bold" fill="#1e293b" text-anchor="middle">3</text>
+  <text x="150" y="160" font-size="13" font-weight="bold" fill="#1e293b" text-anchor="middle">6</text>
+  <text x="96" y="104" font-size="13" font-weight="bold" fill="#1e293b" text-anchor="middle">9</text>
+  <!-- Minute Hand (points straight up to 12) -->
+  <line x1="150" y1="100" x2="150" y2="52" stroke="#0f172a" stroke-width="3" stroke-linecap="round"/>
+  <!-- Hour Hand (points to 4) -->
+  <line x1="150" y1="100" x2="177.7" y2="116.0" stroke="#dc2626" stroke-width="4.5" stroke-linecap="round"/>
+  <!-- Center Pin -->
+  <circle cx="150" cy="100" r="4.5" fill="#dc2626"/>
 </svg>

@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_3_REPRESENTATIONAL",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "In Jupiter, a high-pressure water pipe bursts under the floor and floods the basement! Which skilled trade specialist should be called to fix it safely?",
+    "display_text": "When a water pipe bursts and floods the kitchen floor, which community helper should you call to repair it?",
     "spoken_audio_uri": "assets/audio/world_knowledge/item-w-ko-01-0007_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-W-KO-01-0007_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-w-ko-01-0007_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",

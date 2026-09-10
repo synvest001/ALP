@@ -9,15 +9,9 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Sir Roland collected 13 golden shields. Lady Gwen gathered 4 MORE golden shields than Sir Roland. How many did Lady Gwen gather?",
+    "display_text": "Emma read 13 stickers. Noah read 4 MORE stickers than Emma. How many stickers did Noah read?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-ps-05-0072_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-PS-05-0072_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-ps-05-0072_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",

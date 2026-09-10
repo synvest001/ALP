@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The time bomb will explode when the little hand hits 11 and the big hand is on 12. What time must you defuse it?",
+    "display_text": "Look at the clock shown above. What time does the clock display?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-me-01-0132_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "When the long hand is on 12, it is exactly 11 o'clock!",
+      "prompt": "The minute hand is on 12, and the hour hand points to 11: it is 11 o'clock.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },

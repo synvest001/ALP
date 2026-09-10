@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Which scientific instrument would The space explorer use to measure the thermal temperature of a liquid in degrees Celsius?",
+    "display_text": "Look at the scientific tool shown above. Which instrument measures thermal temperature in degrees Celsius?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-mo-01-0022_prompt.mp3",
     "visual_assets": [
       {

@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Which tool does The wise owl need to measure the exact length of a dinosaur bone specimen in centimeters?",
+    "display_text": "Look at the measuring tool shown above. Which tool is used to measure length or distance in centimeters?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-mo-03-0027_prompt.mp3",
     "visual_assets": [
       {
@@ -34,7 +34,7 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Ruler or measuring tape"
+            "display_value": "Ruler"
           },
           {
             "option_id": "opt_2",
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Rulers and measuring tapes measure length and distance."
+      "prompt": "A ruler measures length."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

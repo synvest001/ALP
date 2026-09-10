@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Scanning their dimensions, which item is SHORTER: A tiny microchip or A giant supercomputer?",
+    "display_text": "Comparing lengths: Which item is SHORTER: A paperclip or A baseball bat?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-me-03-0023_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-ME-03-0023_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-me-03-0023_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "A tiny microchip is definitely shorter.",
+      "prompt": "A paperclip is shorter.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
@@ -60,11 +54,11 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "A tiny microchip"
+            "display_value": "A paperclip"
           },
           {
             "option_id": "opt_2",
-            "display_value": "A giant supercomputer"
+            "display_value": "A baseball bat"
           },
           {
             "option_id": "opt_3",

@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_3_REPRESENTATIONAL",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Situation in Jupiter: You need help carrying a heavy chest of equipment with Sir Lancelot. How do you ask courteously?",
+    "display_text": "You need help carrying a heavy box of books into the classroom with Liam. How do you ask politely?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-ol-04-0017_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-E-OL-04-0017_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-e-ol-04-0017_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",
@@ -34,7 +28,7 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Excuse me, would you mind lending a hand with this heavy chest?"
+            "display_value": "Excuse me, could you please help me carry this box?"
           },
           {
             "option_id": "opt_2",
@@ -61,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Courteous requests begin with polite phrases like 'Excuse me' and 'Would you mind'."
+      "prompt": "Polite requests use phrases like 'Could you please'."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

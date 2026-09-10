@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_3_REPRESENTATIONAL",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Temporal timeline logic in Jupiter: Event A happened before Event B. Event B happened before Event C. Which occurred FIRST?",
+    "display_text": "Timeline order: Breakfast happens before lunch. Lunch happens before dinner. Which comes FIRST?",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-rc-05-0017_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-L-RC-05-0017_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-l-rc-05-0017_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",
@@ -34,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Event A"
+            "display_value": "Breakfast"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Event B"
+            "display_value": "Lunch"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Event C"
+            "display_value": "Dinner"
           },
           {
             "option_id": "opt_4",
-            "display_value": "All happened simultaneously"
+            "display_value": "All happen at noon"
           }
         ]
       },
@@ -61,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Event A is ordered first on the timeline."
+      "prompt": "Breakfast comes first."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

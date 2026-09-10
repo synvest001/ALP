@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Captain Orion collected 10 space crystals on Mars and 3 on Jupiter. How many crystals does he have to power his rocket?",
+    "display_text": "Maya picked 10 red apples, and Leo picked 3 green apples. How many apples did they pick in all?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-op-01-0086_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-OP-01-0086_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-op-01-0086_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Add them up: 10 + 3 = 13.",
+      "prompt": "Add the two groups: 10 + 3 = 13.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_3_REPRESENTATIONAL",
-  "representation_type": "SYMBOLIC",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",

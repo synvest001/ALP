@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Situation in the space station: You accidentally bump into Princess Luna and drop a fragile potion bottle. What is the most polite apology?",
+    "display_text": "You accidentally bump into Maya in the hallway and drop their notebook. What is the most courteous apology?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-ol-02-0002_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-E-OL-02-0002_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-e-ol-02-0002_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",
@@ -34,7 +28,7 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "I am so sorry for my carelessness! Let me help clean this up."
+            "display_value": "I am so sorry for my carelessness! Let me help pick that up."
           },
           {
             "option_id": "opt_2",
@@ -42,11 +36,11 @@
           },
           {
             "option_id": "opt_3",
-            "display_value": "Whatever, potions are cheap."
+            "display_value": "Whatever, it's just paper."
           },
           {
             "option_id": "opt_4",
-            "display_value": "You should look where you're going!"
+            "display_value": "Watch where you're walking!"
           }
         ]
       },
@@ -61,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "A genuine apology expresses remorse and offers to help fix the mistake."
+      "prompt": "A genuine apology expresses regret and offers help."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

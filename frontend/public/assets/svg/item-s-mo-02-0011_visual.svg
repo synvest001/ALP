@@ -1,25 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="100%" height="100%">
-  <defs>
-    <linearGradient id="daySky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#38bdf8"/><stop offset="100%" stop-color="#bae6fd"/>
-    </linearGradient>
-  </defs>
-  <rect width="300" height="200" rx="16" fill="url(#daySky)"/>
-  <g fill="#ffffff" opacity="0.9">
-    <path d="M 20,150 Q 40,120 70,135 Q 95,115 120,135 Q 140,125 150,150 Z"/>
-    <path d="M 180,160 Q 200,135 225,145 Q 250,125 270,145 Q 290,135 300,160 Z"/>
-  </g>
-  <g transform="translate(150, 95)">
-    <g stroke="#f59e0b" stroke-width="4.5" stroke-linecap="round">
-      <line x1="0" y1="-65" x2="0" y2="-80"/><line x1="46" y1="-46" x2="56" y2="-56"/>
-      <line x1="65" y1="0" x2="80" y2="0"/><line x1="46" y1="46" x2="56" y2="56"/>
-      <line x1="0" y1="65" x2="0" y2="80"/><line x1="-46" y1="46" x2="-56" y2="56"/>
-      <line x1="-65" y1="0" x2="-80" y2="0"/><line x1="-46" y1="-46" x2="-56" y2="-56"/>
-    </g>
-    <circle cx="0" cy="0" r="50" fill="#facc15" stroke="#f59e0b" stroke-width="4"/>
-    <ellipse cx="-16" cy="-8" rx="5.5" ry="7" fill="#78350f"/><ellipse cx="16" cy="-8" rx="5.5" ry="7" fill="#78350f"/>
-    <circle cx="-18" cy="-10" r="2" fill="#ffffff"/><circle cx="14" cy="-10" r="2" fill="#ffffff"/>
-    <circle cx="-25" cy="8" r="7" fill="#fb7185" opacity="0.6"/><circle cx="25" cy="8" r="7" fill="#fb7185" opacity="0.6"/>
-    <path d="M -16,12 Q 0,28 16,12" fill="none" stroke="#78350f" stroke-width="4" stroke-linecap="round"/>
-  </g>
+  <rect width="300" height="200" rx="16" fill="#f8fafc"/>
+  <!-- Balance Scale Base & Post -->
+  <polygon points="120,165 180,165 155,100 145,100" fill="#475569"/>
+  <rect x="147" y="55" width="6" height="95" fill="#334155"/>
+  <line x1="75" y1="65" x2="225" y2="65" stroke="#0f172a" stroke-width="4"/>
+  <!-- Left Pan -->
+  <line x1="75" y1="65" x2="55" y2="115" stroke="#64748b" stroke-width="1.5"/>
+  <line x1="75" y1="65" x2="95" y2="115" stroke="#64748b" stroke-width="1.5"/>
+  <path d="M 45,115 Q 75,135 105,115 Z" fill="#94a3b8" stroke="#475569" stroke-width="2"/>
+  <!-- Right Pan -->
+  <line x1="225" y1="65" x2="205" y2="115" stroke="#64748b" stroke-width="1.5"/>
+  <line x1="225" y1="65" x2="245" y2="115" stroke="#64748b" stroke-width="1.5"/>
+  <path d="M 195,115 Q 225,135 255,115 Z" fill="#94a3b8" stroke="#475569" stroke-width="2"/>
+  <text x="150" y="188" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle">Balance Scale (Measures Mass)</text>
 </svg>

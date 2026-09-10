@@ -1,31 +1,50 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="100%" height="100%">
   <defs>
-    <linearGradient id="seaDeep" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#38bdf8"/><stop offset="50%" stop-color="#0284c7"/><stop offset="100%" stop-color="#0c4a6e"/>
+    <linearGradient id="chestWood" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#854d0e"/><stop offset="100%" stop-color="#451a03"/>
     </linearGradient>
-    <linearGradient id="dolphinGrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#e0f2fe"/><stop offset="50%" stop-color="#38bdf8"/><stop offset="100%" stop-color="#0284c7"/>
+    <linearGradient id="goldTrim" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fde047"/><stop offset="100%" stop-color="#ca8a04"/>
     </linearGradient>
   </defs>
-  <rect width="300" height="200" rx="16" fill="url(#seaDeep)"/>
-  <polygon points="40,0 80,0 120,200 60,200" fill="#ffffff" opacity="0.12"/>
-  <polygon points="140,0 180,0 220,200 160,200" fill="#ffffff" opacity="0.12"/>
-  <g transform="translate(0, 160)">
-    <path d="M 10,40 Q 25,5 40,40 Q 55,10 70,40 Z" fill="#f43f5e"/>
-    <path d="M 60,40 Q 75,-5 90,40 Q 105,15 120,40 Z" fill="#ec4899"/>
-    <path d="M 200,40 Q 220,0 240,40 Q 255,10 270,40 Z" fill="#10b981"/>
+  <rect width="300" height="200" rx="16" fill="#1e1b4b"/>
+  <!-- Sparkles in background -->
+  <g fill="#fde047" opacity="0.6">
+    <circle cx="35" cy="40" r="2"/><circle cx="265" cy="50" r="2.5"/><circle cx="50" cy="160" r="1.5"/><circle cx="250" cy="150" r="2"/>
   </g>
-  <g fill="#ffffff" opacity="0.6">
-    <circle cx="80" cy="120" r="4"/><circle cx="95" cy="95" r="6"/>
+  <!-- Open Chest Base -->
+  <g transform="translate(150, 150)">
+    <rect x="-95" y="-30" width="190" height="65" rx="10" fill="url(#chestWood)" stroke="#ca8a04" stroke-width="3.5"/>
+    <rect x="-90" y="-26" width="180" height="10" fill="#713f12"/>
+    <circle cx="0" cy="6" r="8" fill="url(#goldTrim)" stroke="#78350f" stroke-width="1.5"/>
+    <rect x="-3" y="6" width="6" height="12" fill="#1e1b4b"/>
   </g>
-  <g transform="translate(150, 85) rotate(-15)">
-    <path d="M -70,25 C -40,-25 30,-30 70,5 C 50,25 -20,35 -70,25 Z" fill="url(#dolphinGrad)" stroke="#0369a1" stroke-width="2"/>
-    <path d="M -50,23 C -20,-5 25,-10 55,8 C 30,22 -15,28 -50,23 Z" fill="#f0f9ff" opacity="0.7"/>
-    <path d="M 68,3 C 78,6 82,10 70,14 Z" fill="#38bdf8" stroke="#0369a1" stroke-width="1.5"/>
-    <path d="M -5,-25 C 0,-45 15,-40 18,-26 Z" fill="#0284c7" stroke="#0369a1" stroke-width="1.5"/>
-    <path d="M 10,15 C 20,35 10,40 0,25 Z" fill="#0284c7" stroke="#0369a1" stroke-width="1.5"/>
-    <polygon points="-70,25 -88,10 -80,25 -92,38 -70,28" fill="#0284c7" stroke="#0369a1" stroke-width="1.5"/>
-    <circle cx="50" cy="2" r="2.5" fill="#0f172a"/>
-    <path d="M 54,8 Q 62,11 68,7" fill="none" stroke="#0369a1" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Open Lid Tilted Back -->
+  <g transform="translate(150, 115)">
+    <path d="M -95,0 Q 0,-38 95,0 L 85,-26 Q 0,-62 -85,-26 Z" fill="url(#chestWood)" stroke="#ca8a04" stroke-width="3"/>
+  </g>
+  <!-- Glowing Items Inside Chest -->
+  <g transform="translate(150, 112)">
+
+        <g transform="translate(-44.0, -18)">
+          <polygon points="0,-9 7,0 0,9 -7,0" fill="#38bdf8" stroke="#0284c7" stroke-width="1.5"/>
+          <polygon points="0,-6 4,0 0,6 -4,0" fill="#bae6fd" opacity="0.6"/>
+        </g>
+        <g transform="translate(-22.0, -18)">
+          <polygon points="0,-9 7,0 0,9 -7,0" fill="#38bdf8" stroke="#0284c7" stroke-width="1.5"/>
+          <polygon points="0,-6 4,0 0,6 -4,0" fill="#bae6fd" opacity="0.6"/>
+        </g>
+        <g transform="translate(0.0, -18)">
+          <polygon points="0,-9 7,0 0,9 -7,0" fill="#38bdf8" stroke="#0284c7" stroke-width="1.5"/>
+          <polygon points="0,-6 4,0 0,6 -4,0" fill="#bae6fd" opacity="0.6"/>
+        </g>
+        <g transform="translate(22.0, -18)">
+          <polygon points="0,-9 7,0 0,9 -7,0" fill="#38bdf8" stroke="#0284c7" stroke-width="1.5"/>
+          <polygon points="0,-6 4,0 0,6 -4,0" fill="#bae6fd" opacity="0.6"/>
+        </g>
+        <g transform="translate(44.0, -18)">
+          <polygon points="0,-9 7,0 0,9 -7,0" fill="#38bdf8" stroke="#0284c7" stroke-width="1.5"/>
+          <polygon points="0,-6 4,0 0,6 -4,0" fill="#bae6fd" opacity="0.6"/>
+        </g>
   </g>
 </svg>

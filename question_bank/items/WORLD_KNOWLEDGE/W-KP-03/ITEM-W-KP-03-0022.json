@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Mountain geography: The towering Himalayas, home to Mount Everest (the highest peak on Earth), are located on which continent?",
+    "display_text": "The Andes, the longest continental mountain range in the world, are located in:",
     "spoken_audio_uri": "assets/audio/world_knowledge/item-w-kp-03-0022_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-W-KP-03-0022_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-w-kp-03-0022_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",
@@ -34,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Asia"
+            "display_value": "South America"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Europe"
+            "display_value": "Africa"
           },
           {
             "option_id": "opt_3",
-            "display_value": "North America"
+            "display_value": "Asia"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Africa"
+            "display_value": "Europe"
           }
         ]
       },
@@ -61,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "This mountain system is located in Asia."
+      "prompt": "This mountain system is located in South America."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

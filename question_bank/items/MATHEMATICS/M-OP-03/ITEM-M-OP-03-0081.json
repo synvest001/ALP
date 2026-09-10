@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The alien has 4 eyes. By looking into the magic mirror, its eyes DOUBLE! How many eyes does it have now?",
+    "display_text": "A recipe calls for 4 strawberries. If you DOUBLE the recipe, how many strawberries do you need?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-op-03-0081_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-OP-03-0081_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-op-03-0081_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Double means adding the number to itself: 4 + 4 = 8.",
+      "prompt": "Doubling means adding the number to itself: 4 + 4 = 8.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",

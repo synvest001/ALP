@@ -1,20 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="100%" height="100%">
-  <defs>
-    <radialGradient id="earthGlow" cx="40%" cy="40%" r="60%">
-      <stop offset="0%" stop-color="#38bdf8"/><stop offset="60%" stop-color="#0284c7"/><stop offset="100%" stop-color="#082f49"/>
-    </radialGradient>
-  </defs>
-  <rect width="300" height="200" rx="16" fill="#090d16"/>
-  <g fill="#ffffff">
-    <circle cx="35" cy="30" r="1.5"/><circle cx="85" cy="50" r="2"/><circle cx="240" cy="35" r="1.5"/><circle cx="270" cy="80" r="2.5"/>
+  <rect width="300" height="200" rx="16" fill="#f8fafc"/>
+  <rect x="35" y="80" width="230" height="40" rx="4" fill="#fde047" stroke="#ca8a04" stroke-width="2.5"/>
+  <!-- Tick Marks -->
+  <g stroke="#854d0e" stroke-width="1.5">
+    <line x1="50" y1="80" x2="50" y2="98"/><text x="50" y="112" font-size="10" font-weight="bold" fill="#713f12" text-anchor="middle">0</text>
+    <line x1="85" y1="80" x2="85" y2="94"/>
+    <line x1="120" y1="80" x2="120" y2="98"/><text x="120" y="112" font-size="10" font-weight="bold" fill="#713f12" text-anchor="middle">5</text>
+    <line x1="155" y1="80" x2="155" y2="94"/>
+    <line x1="190" y1="80" x2="190" y2="98"/><text x="190" y="112" font-size="10" font-weight="bold" fill="#713f12" text-anchor="middle">10</text>
+    <line x1="225" y1="80" x2="225" y2="94"/>
+    <line x1="250" y1="80" x2="250" y2="98"/><text x="250" y="112" font-size="10" font-weight="bold" fill="#713f12" text-anchor="middle">15</text>
   </g>
-  <circle cx="150" cy="100" r="76" fill="#38bdf8" opacity="0.2"/>
-  <circle cx="150" cy="100" r="68" fill="url(#earthGlow)" stroke="#38bdf8" stroke-width="2"/>
-  <g fill="#22c55e" stroke="#16a34a" stroke-width="1.5">
-    <path d="M 115,65 Q 130,55 145,65 Q 135,80 125,95 Q 120,105 130,115 Q 115,100 110,80 Z"/>
-    <path d="M 130,118 Q 145,125 140,145 Q 130,160 125,145 Q 120,130 130,118 Z"/>
-    <path d="M 160,55 Q 185,50 180,75 Q 195,85 190,115 Q 170,135 160,110 Q 155,90 160,55 Z"/>
-    <ellipse cx="150" cy="36" rx="28" ry="8" fill="#ffffff"/>
-  </g>
-  <path d="M 105,75 Q 130,70 160,85 Q 180,80 195,75" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
+  <text x="150" y="160" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle">Ruler (Measures Length)</text>
 </svg>

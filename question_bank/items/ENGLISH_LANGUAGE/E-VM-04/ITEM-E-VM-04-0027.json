@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_3_REPRESENTATIONAL",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "When The wise owl combines the root words 'dragon' and 'fly', which compound word is created?",
+    "display_text": "When you combine the words 'butter' and 'fly', what compound word is formed?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-vm-04-0027_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-E-VM-04-0027_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-e-vm-04-0027_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",
@@ -34,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Dragonfly"
+            "display_value": "Butterfly"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Dragonwing"
+            "display_value": "Buttercup"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Flydragon"
+            "display_value": "Flybutter"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Firefly"
+            "display_value": "Breadfly"
           }
         ]
       },
@@ -61,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "'dragon' + 'fly' = 'Dragonfly'."
+      "prompt": "'butter' + 'fly' = 'Butterfly'."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

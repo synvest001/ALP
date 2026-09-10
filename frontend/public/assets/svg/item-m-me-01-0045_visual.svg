@@ -1,34 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="100%" height="100%">
-  <defs>
-    <linearGradient id="skyNest" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#dbeafe"/><stop offset="100%" stop-color="#f0fdf4"/>
-    </linearGradient>
-  </defs>
-  <rect width="300" height="200" rx="16" fill="url(#skyNest)"/>
-  <g fill="#78350f" stroke="#451a03" stroke-width="3">
-    <path d="M 0,20 Q 40,70 80,120 L 0,200 Z"/>
-    <path d="M 50,105 Q 120,115 220,135 Q 260,140 300,130 L 300,165 Q 200,175 40,140 Z"/>
-  </g>
-  <g fill="#22c55e" stroke="#15803d" stroke-width="2">
-    <path d="M 30,70 C 15,50 40,30 55,50 C 65,70 45,80 30,70 Z"/>
-    <path d="M 230,110 C 220,85 250,75 260,95 C 270,115 245,125 230,110 Z"/>
-  </g>
-  <g transform="translate(150, 115)">
-    <ellipse cx="0" cy="0" rx="48" ry="18" fill="#713f12" stroke="#451a03" stroke-width="2.5"/>
-    <g fill="#7dd3fc" stroke="#0284c7" stroke-width="2">
-      <ellipse cx="-18" cy="-5" rx="10" ry="14" transform="rotate(-15 -18 -5)"/>
-      <ellipse cx="2" cy="-8" rx="10" ry="14"/>
-      <ellipse cx="20" cy="-4" rx="10" ry="14" transform="rotate(15 20 -4)"/>
-    </g>
-    <circle cx="-16" cy="-6" r="1.5" fill="#0369a1"/><circle cx="4" cy="-10" r="1.5" fill="#0369a1"/><circle cx="22" cy="-4" r="1.5" fill="#0369a1"/>
-    <path d="M -50,0 C -50,35 50,35 50,0 C 35,8 -35,8 -50,0 Z" fill="#92400e" stroke="#451a03" stroke-width="3"/>
-    <g stroke="#b45309" stroke-width="2" stroke-linecap="round">
-      <path d="M -45,5 Q 0,28 45,5"/><path d="M -40,14 Q 0,34 40,14"/>
-    </g>
-  </g>
-  <g transform="translate(235, 105) scale(0.9)">
-    <ellipse cx="0" cy="0" rx="16" ry="12" fill="#3b82f6" stroke="#1d4ed8" stroke-width="2"/>
-    <circle cx="-12" cy="-10" r="10" fill="#60a5fa" stroke="#1d4ed8" stroke-width="2"/>
-    <polygon points="-22,-10 -30,-8 -22,-6" fill="#f59e0b"/><circle cx="-15" cy="-12" r="2" fill="#000"/>
-  </g>
+  <rect width="300" height="200" rx="16" fill="#f8fafc"/>
+  <!-- Clock Outer Rim -->
+  <circle cx="150" cy="100" r="70" fill="#ffffff" stroke="#0284c7" stroke-width="6"/>
+  <!-- Clock Numbers -->
+  <text x="150" y="48" font-size="13" font-weight="bold" fill="#1e293b" text-anchor="middle">12</text>
+  <text x="204" y="104" font-size="13" font-weight="bold" fill="#1e293b" text-anchor="middle">3</text>
+  <text x="150" y="160" font-size="13" font-weight="bold" fill="#1e293b" text-anchor="middle">6</text>
+  <text x="96" y="104" font-size="13" font-weight="bold" fill="#1e293b" text-anchor="middle">9</text>
+  <!-- Minute Hand (points straight up to 12) -->
+  <line x1="150" y1="100" x2="150" y2="52" stroke="#0f172a" stroke-width="3" stroke-linecap="round"/>
+  <!-- Hour Hand (points to 1) -->
+  <line x1="150" y1="100" x2="166.0" y2="72.3" stroke="#dc2626" stroke-width="4.5" stroke-linecap="round"/>
+  <!-- Center Pin -->
+  <circle cx="150" cy="100" r="4.5" fill="#dc2626"/>
 </svg>

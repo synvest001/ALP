@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_2_CONTEXTUAL",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Fix the grammar error in Dr. Nova's message: 'They was happy.'",
+    "display_text": "Fix the grammar error in this sentence: 'They was ready.'",
     "spoken_audio_uri": "assets/audio/english_language/item-e-we-01-0024_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-E-WE-01-0024_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-e-we-01-0024_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",
@@ -34,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "They were happy."
+            "display_value": "They were ready."
           },
           {
             "option_id": "opt_2",
-            "display_value": "They is happy."
+            "display_value": "They is ready."
           },
           {
             "option_id": "opt_3",
-            "display_value": "Them was happy."
+            "display_value": "Them was ready."
           },
           {
             "option_id": "opt_4",
-            "display_value": "They happy was."
+            "display_value": "They ready was."
           }
         ]
       },

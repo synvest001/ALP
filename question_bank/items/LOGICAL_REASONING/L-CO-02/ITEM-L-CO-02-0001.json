@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Deductive condition for Captain Orion: 'The magical vault door opens ONLY IF the silver key is inserted. The silver key was NOT inserted.' What conclusion is guaranteed?",
+    "display_text": "Deductive rule: 'The lock opens ONLY IF the bronze key is used. The bronze key was NOT used.' What conclusion is guaranteed?",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-co-02-0001_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-L-CO-02-0001_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-l-co-02-0001_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",
@@ -34,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "The vault door remains locked"
+            "display_value": "The lock stays closed"
           },
           {
             "option_id": "opt_2",
-            "display_value": "The vault door swings wide open"
+            "display_value": "The lock swings open"
           },
           {
             "option_id": "opt_3",
-            "display_value": "The door turns into glass"
+            "display_value": "The door vanishes"
           },
           {
             "option_id": "opt_4",
-            "display_value": "The gold vanishes"
+            "display_value": "The key turns to gold"
           }
         ]
       },
@@ -61,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Because the required prerequisite condition was not met, the outcome cannot occur."
+      "prompt": "Because the required condition was not met, the outcome cannot occur."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

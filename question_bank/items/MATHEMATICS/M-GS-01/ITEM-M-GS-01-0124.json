@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "To bypass the laser grid, you must touch the Hexagon. How many straight sides does it have?",
+    "display_text": "Look at the shape shown above. It is a Hexagon. How many straight sides does it have?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-gs-01-0124_prompt.mp3",
     "visual_assets": [
       {
@@ -47,7 +47,7 @@
   },
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_2_CONTEXTUAL",
-  "representation_type": "SYMBOLIC",
+  "representation_type": "VISUAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",

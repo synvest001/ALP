@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Thermal sensors scan two areas: A frosted icicle and A steaming bowl of soup. Which location is COLDER?",
+    "display_text": "Comparing temperatures: Which is COLDER: A frosted icicle or A campfire?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-me-06-0072_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-ME-06-0072_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-me-06-0072_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "A frosted icicle is noticeably colder.",
+      "prompt": "A frosted icicle is colder.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
@@ -64,11 +58,11 @@
           },
           {
             "option_id": "opt_2",
-            "display_value": "A steaming bowl of soup"
+            "display_value": "A campfire"
           },
           {
             "option_id": "opt_3",
-            "display_value": "They have identical temperatures"
+            "display_value": "They have the same temperature"
           }
         ]
       },

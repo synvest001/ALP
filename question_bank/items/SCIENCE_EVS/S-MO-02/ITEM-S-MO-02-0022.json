@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Which laboratory tool should The space explorer use to measure the exact mass of mineral crystals in grams?",
+    "display_text": "Look at the laboratory tool shown above. Which instrument is used to measure the mass or weight of objects?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-mo-02-0022_prompt.mp3",
     "visual_assets": [
       {

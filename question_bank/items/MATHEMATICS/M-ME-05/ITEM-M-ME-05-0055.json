@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Comparing fluid capacity, which container holds LESS liquid: A sewing thimble or A massive iron cauldron?",
+    "display_text": "Comparing fluid capacity: Which container holds LESS liquid: A teaspoon or A large cooking pot?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-me-05-0055_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-ME-05-0055_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-me-05-0055_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "A sewing thimble holds less liquid.",
+      "prompt": "A teaspoon holds less liquid.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_2_CONTEXTUAL",
-  "representation_type": "SYMBOLIC",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
@@ -60,11 +54,11 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "A sewing thimble"
+            "display_value": "A teaspoon"
           },
           {
             "option_id": "opt_2",
-            "display_value": "A massive iron cauldron"
+            "display_value": "A large cooking pot"
           },
           {
             "option_id": "opt_3",

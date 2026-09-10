@@ -9,15 +9,9 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The hero carried 13 ancient scrolls, discovered 6 more in a chest, and used 2 during a dungeon crawl. How many ancient scrolls remain?",
+    "display_text": "Liam had 13 notebooks, received 6 more from his friend, and gave 2 away. How many notebooks does Liam have now?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-ps-03-0076_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-PS-03-0076_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-ps-03-0076_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_3_REPRESENTATIONAL",
-  "representation_type": "SYMBOLIC",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",

@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "A young merchant had 21 star crystals and traded away 9 of them for supplies. How many star crystals remain in the wagon?",
+    "display_text": "Maya had 21 Rupees and spent 9 Rupees on a snack. How many Rupees does she have left?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-ps-06-0092_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-PS-06-0092_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-ps-06-0092_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Subtract the traded amount: 21 - 9 = 12.",
+      "prompt": "Subtract the cost: 21 - 9 = 12 Rupees.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",

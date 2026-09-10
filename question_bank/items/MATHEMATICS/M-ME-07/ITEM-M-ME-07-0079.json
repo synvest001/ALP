@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "An apprentice measures the wizard's staff using hand-spans placed end to end. The staff spans exactly 5 hand-spans. What is its total length?",
+    "display_text": "A toy train is 4 wooden blocks long. A second train is 5 blocks long. Connected together, how many blocks long are both trains?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-me-07-0079_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-ME-07-0079_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-me-07-0079_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "The staff spans 5 hand-spans.",
+      "prompt": "Add the lengths: 4 + 5 = 9 blocks.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "GENERALIZE",
   "transfer_level": "LEVEL_4_STRUCTURAL",
-  "representation_type": "SYMBOLIC",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
@@ -60,19 +54,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "5 hand-spans"
+            "display_value": "9 blocks"
           },
           {
             "option_id": "opt_2",
-            "display_value": "7 hand-spans"
+            "display_value": "8 blocks"
           },
           {
             "option_id": "opt_3",
-            "display_value": "4 hand-spans"
+            "display_value": "1 block"
           },
           {
             "option_id": "opt_4",
-            "display_value": "50 hand-spans"
+            "display_value": "10 blocks"
           }
         ]
       },

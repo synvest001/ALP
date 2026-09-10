@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Analyze the repeating sequence: Circle, Triangle, Circle, Triangle, Circle, Triangle. What is the fundamental pattern unit that repeats?",
+    "display_text": "In the repeating sequence 'Sun, Moon, Star, Sun, Moon, Star', which group of shapes forms the repeating pattern unit?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-pa-05-0112_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-PA-05-0112_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-pa-05-0112_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "The core unit repeating over and over is 'Circle, Triangle'.",
+      "prompt": "The repeating unit is 'Sun, Moon, Star'.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
@@ -60,19 +54,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Circle, Triangle"
+            "display_value": "Sun, Moon, Star"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Circle, Circle"
+            "display_value": "Sun, Moon"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Triangle, Triangle"
+            "display_value": "Star, Sun"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Square"
+            "display_value": "Moon, Star"
           }
         ]
       },

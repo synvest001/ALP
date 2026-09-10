@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "A secret agent is cracking a vault code: Fire, Ice, Lightning, Fire, Ice, Lightning, Fire, Ice... If she presses the wrong button, the alarm sounds! What comes next?",
+    "display_text": "Look at the repeating pattern: Red, Blue, Green, Red, Blue, Green, Red, Blue, ___? What comes next?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-pa-01-0106_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-PA-01-0106_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-pa-01-0106_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "The pattern repeats: Lightning is next.",
+      "prompt": "The pattern repeats: 'Green' comes next.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_3_REPRESENTATIONAL",
-  "representation_type": "SYMBOLIC",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
@@ -60,19 +54,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Lightning"
+            "display_value": "Green"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Fire"
+            "display_value": "Red"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Ice"
+            "display_value": "Blue"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Earth"
+            "display_value": "Yellow"
           }
         ]
       },

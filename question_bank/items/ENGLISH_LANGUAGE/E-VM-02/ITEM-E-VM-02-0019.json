@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "GENERALIZE",
   "transfer_level": "LEVEL_4_STRUCTURAL",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Which word has the SAME meaning (synonym) as 'clever' in Commander Zorg's quest log?",
+    "display_text": "Which word has the SAME meaning (synonym) as 'clever'?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-vm-02-0019_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-E-VM-02-0019_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-e-vm-02-0019_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",

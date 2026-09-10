@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "GENERALIZE",
   "transfer_level": "LEVEL_4_STRUCTURAL",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Public services in the deep ocean: a student needs to research reliable historical books and borrow reference material. Which community professional facilitates this learning?",
+    "display_text": "When you want to find a book and research a topic in the town library, which community educator assists you?",
     "spoken_audio_uri": "assets/audio/world_knowledge/item-w-ko-04-0019_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-W-KO-04-0019_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-w-ko-04-0019_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",

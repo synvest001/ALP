@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Read the resolution: 'To reboot the dark spacecraft, {name} connected the emergency solar battery to the master circuit.' How did they successfully resolve the problem?",
+    "display_text": "Read the resolution: 'To fix the bicycle, Maya carefully pulled the wedged stick out from between the spokes.' How was the problem solved?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cr-08-0012_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-E-CR-08-0012_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-e-cr-08-0012_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",
@@ -34,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Connected the emergency solar battery to the master circuit"
+            "display_value": "Pulled the wedged stick out from the spokes"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Opened the spaceship door"
+            "display_value": "Painted the bicycle frame"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Threw away the battery"
+            "display_value": "Rode on the sidewalk"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Flew into a black hole"
+            "display_value": "Bought a new bell"
           }
         ]
       },
@@ -61,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The solution implemented was: Connected the emergency solar battery to the master circuit."
+      "prompt": "The solution was: pulled the wedged stick out from the spokes."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

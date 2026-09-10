@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Read the chronicle: 'Because the rain poured heavily all night, the river overflowed its grassy banks.' What was the direct CAUSE of this event?",
+    "display_text": "Read the sentence: 'Because heavy rain poured down all night, the school sports day was postponed.' What was the direct CAUSE of this event?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cr-05-0021_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-E-CR-05-0021_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-e-cr-05-0021_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",
@@ -34,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "The heavy rain poured"
+            "display_value": "The heavy rain poured down"
           },
           {
             "option_id": "opt_2",
-            "display_value": "The sun was shining"
+            "display_value": "The sun was shining brightly"
           },
           {
             "option_id": "opt_3",
-            "display_value": "The river dried up"
+            "display_value": "The students forgot their shoes"
           },
           {
             "option_id": "opt_4",
-            "display_value": "The bridge was painted"
+            "display_value": "The grass was painted"
           }
         ]
       },
@@ -61,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Look for what triggered the event: 'The heavy rain poured' caused 'The river overflowed'."
+      "prompt": "'The heavy rain poured down' is what caused 'The sports day was postponed'."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

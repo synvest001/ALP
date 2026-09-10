@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "In a test of ultimate strength, which object is LIGHTER: A single raindrop or A swirling hurricane?",
+    "display_text": "Comparing weights: Which object is LIGHTER: A single drop of rain or A bucket of water?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-me-02-0079_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-ME-02-0079_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-me-02-0079_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "A single raindrop is far lighter.",
+      "prompt": "A single drop of rain is lighter.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "GENERALIZE",
   "transfer_level": "LEVEL_4_STRUCTURAL",
-  "representation_type": "SYMBOLIC",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
@@ -60,11 +54,11 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "A single raindrop"
+            "display_value": "A single drop of rain"
           },
           {
             "option_id": "opt_2",
-            "display_value": "A swirling hurricane"
+            "display_value": "A bucket of water"
           },
           {
             "option_id": "opt_3",

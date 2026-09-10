@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "A spinner has 9 silver spaces and only 1 golden space. Which outcome is LEAST LIKELY when spun?",
+    "display_text": "A spinner has 9 purple sections and only 1 orange section. Which outcome is LEAST LIKELY when spun?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-du-05-0121_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-DU-05-0121_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-du-05-0121_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "golden has the smallest fraction of space.",
+      "prompt": "orange covers the smallest part of the spinner.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
@@ -60,11 +54,11 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Landing on golden"
+            "display_value": "Landing on orange"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Landing on silver"
+            "display_value": "Landing on purple"
           },
           {
             "option_id": "opt_3",

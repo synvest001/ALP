@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "An apprentice measures the wizard's staff using chalk sticks placed end to end. The staff spans exactly 4 chalk sticks. What is its total length?",
+    "display_text": "A notebook is 5 craft sticks long. The desk is 3 times as long as the notebook. How many craft sticks long is the desk?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-me-07-0120_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-ME-07-0120_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-me-07-0120_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "The staff spans 4 chalk sticks.",
+      "prompt": "Multiply: 5 \u00d7 3 = 15 craft sticks.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_2_CONTEXTUAL",
-  "representation_type": "SYMBOLIC",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
@@ -60,19 +54,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "4 chalk sticks"
+            "display_value": "15 craft sticks"
           },
           {
             "option_id": "opt_2",
-            "display_value": "6 chalk sticks"
+            "display_value": "8 craft sticks"
           },
           {
             "option_id": "opt_3",
-            "display_value": "3 chalk sticks"
+            "display_value": "12 craft sticks"
           },
           {
             "option_id": "opt_4",
-            "display_value": "50 chalk sticks"
+            "display_value": "18 craft sticks"
           }
         ]
       },

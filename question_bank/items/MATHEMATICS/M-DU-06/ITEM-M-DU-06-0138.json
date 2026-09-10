@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "In an animal survey, a scout records four vertical tally marks crossed by one diagonal slash. How many animals does that complete bundle represent?",
+    "display_text": "In a reading log, a student drew four vertical tally marks crossed by one diagonal slash. How many books does that full tally bundle represent?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-du-06-0138_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-DU-06-0138_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-du-06-0138_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "A standard tally bundle always represents 5 items.",
+      "prompt": "A standard tally bundle represents 5 items.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "GENERALIZE",
   "transfer_level": "LEVEL_4_STRUCTURAL",
-  "representation_type": "SYMBOLIC",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",

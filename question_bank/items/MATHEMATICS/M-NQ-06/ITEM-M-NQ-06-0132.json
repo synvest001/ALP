@@ -9,15 +9,9 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The star runner hopped past stone #21, then stone #___, then stone #23. Which stone number is missing in the middle?",
+    "display_text": "Look at the number sequence: 21, ___, 23. Which number is missing in the middle?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-nq-06-0132_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-NQ-06-0132_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-nq-06-0132_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",

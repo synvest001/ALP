@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Which optical instrument allows Captain Orion to magnify and view microscopic plant cells invisible to the naked eye?",
+    "display_text": "Look at the optical instrument shown above. Which tool magnifies tiny plant cells so they can be observed clearly?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-mo-04-0013_prompt.mp3",
     "visual_assets": [
       {

@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Commander Zorg spots an invertebrate crawling on a leaf with exactly eight jointed legs and two body sections. What is it?",
+    "display_text": "Look at the insect/arachnid shown above. It has exactly eight jointed legs. What is it?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-kn-02-0019_prompt.mp3",
     "visual_assets": [
       {
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Insects have 6 legs, whereas arachnids (spiders) have 8 legs."
+      "prompt": "Insects have 6 legs, whereas spiders (arachnids) have 8 legs."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

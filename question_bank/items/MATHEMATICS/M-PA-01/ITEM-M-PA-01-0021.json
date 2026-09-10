@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "A secret agent is cracking a vault code: Up, Down, Left, Up, Down, Left, Up... If she presses the wrong button, the alarm sounds! What comes next?",
+    "display_text": "Look at the repeating pattern: Up, Down, Left, Up, Down, Left, Up, ___? What comes next?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-pa-01-0021_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-PA-01-0021_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-pa-01-0021_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "The pattern repeats: Down is next.",
+      "prompt": "The pattern repeats: 'Down' comes next.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",

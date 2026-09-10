@@ -1,20 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="100%" height="100%">
-  <defs>
-    <radialGradient id="earthGlow" cx="40%" cy="40%" r="60%">
-      <stop offset="0%" stop-color="#38bdf8"/><stop offset="60%" stop-color="#0284c7"/><stop offset="100%" stop-color="#082f49"/>
-    </radialGradient>
-  </defs>
-  <rect width="300" height="200" rx="16" fill="#090d16"/>
-  <g fill="#ffffff">
-    <circle cx="35" cy="30" r="1.5"/><circle cx="85" cy="50" r="2"/><circle cx="240" cy="35" r="1.5"/><circle cx="270" cy="80" r="2.5"/>
-  </g>
-  <circle cx="150" cy="100" r="76" fill="#38bdf8" opacity="0.2"/>
-  <circle cx="150" cy="100" r="68" fill="url(#earthGlow)" stroke="#38bdf8" stroke-width="2"/>
-  <g fill="#22c55e" stroke="#16a34a" stroke-width="1.5">
-    <path d="M 115,65 Q 130,55 145,65 Q 135,80 125,95 Q 120,105 130,115 Q 115,100 110,80 Z"/>
-    <path d="M 130,118 Q 145,125 140,145 Q 130,160 125,145 Q 120,130 130,118 Z"/>
-    <path d="M 160,55 Q 185,50 180,75 Q 195,85 190,115 Q 170,135 160,110 Q 155,90 160,55 Z"/>
-    <ellipse cx="150" cy="36" rx="28" ry="8" fill="#ffffff"/>
-  </g>
-  <path d="M 105,75 Q 130,70 160,85 Q 180,80 195,75" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
+  <rect width="300" height="200" rx="16" fill="#f8fafc"/>
+  <!-- Microscope Base & Arm -->
+  <path d="M 100,165 L 200,165 L 180,150 L 120,150 Z" fill="#334155"/>
+  <path d="M 160,150 C 185,150 200,120 190,90 C 180,60 160,50 140,50" fill="none" stroke="#475569" stroke-width="12"/>
+  <!-- Objective Lens & Tube -->
+  <rect x="120" y="40" width="22" height="60" rx="3" fill="#64748b" stroke="#334155" stroke-width="2" transform="rotate(-15 130 70)"/>
+  <!-- Stage -->
+  <line x1="110" y1="125" x2="165" y2="125" stroke="#0f172a" stroke-width="5"/>
+  <text x="150" y="188" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle">Microscope (Magnifies Specimens)</text>
 </svg>

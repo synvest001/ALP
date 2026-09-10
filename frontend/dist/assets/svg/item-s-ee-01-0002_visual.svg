@@ -1,21 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="100%" height="100%">
-  <defs>
-    <linearGradient id="seedSoil" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#713f12"/><stop offset="100%" stop-color="#451a03"/>
-    </linearGradient>
-  </defs>
-  <rect width="300" height="200" rx="16" fill="#fefce8"/>
-  <rect x="0" y="90" width="300" height="110" fill="url(#seedSoil)"/>
-  <path d="M 0,90 Q 75,85 150,90 T 300,90" stroke="#15803d" stroke-width="4" fill="none"/>
-  <ellipse cx="60" cy="120" rx="6" ry="4" fill="#582f0e"/><ellipse cx="240" cy="140" rx="8" ry="5" fill="#582f0e"/>
+  <rect width="300" height="200" rx="16" fill="#fef3c7"/>
+  <!-- Sand Dune -->
+  <path d="M 0,160 Q 150,130 300,165 L 300,200 L 0,200 Z" fill="#fde68a"/>
+  <!-- Camel Body with Hump -->
   <g transform="translate(150, 115)">
-    <path d="M 5,10 Q 15,35 8,60 T 12,75" fill="none" stroke="#fef08a" stroke-width="4.5" stroke-linecap="round"/>
-    <path d="M 10,35 Q 25,48 30,55" fill="none" stroke="#fef08a" stroke-width="2.5" stroke-linecap="round"/>
-    <path d="M -15,5 C -25,-10 -5,-25 15,-15 C 25,-5 20,15 5,20 C -10,25 -20,15 -15,5 Z" fill="#92400e" stroke="#713f12" stroke-width="2.5"/>
-    <path d="M -5,12 C 5,8 10,-2 8,-12" fill="none" stroke="#fde047" stroke-width="3"/>
-    <path d="M 0,-10 Q -5,-35 0,-65" fill="none" stroke="#22c55e" stroke-width="6" stroke-linecap="round"/>
-    <path d="M 0,-65 C -25,-65 -35,-85 -20,-92 C -10,-85 0,-75 0,-65 Z" fill="#4ade80" stroke="#16a34a" stroke-width="2"/>
-    <path d="M 0,-65 C 25,-65 35,-85 20,-92 C 10,-85 0,-75 0,-65 Z" fill="#4ade80" stroke="#16a34a" stroke-width="2"/>
+    <ellipse cx="0" cy="0" rx="42" ry="28" fill="#d97706"/>
+    <!-- Hump -->
+    <circle cx="5" cy="-22" r="20" fill="#d97706"/>
+    <!-- Neck & Head -->
+    <path d="M -30,-5 Q -55,-25 -45,-50 Q -35,-55 -30,-45" fill="none" stroke="#d97706" stroke-width="12" stroke-linecap="round"/>
+    <!-- Legs -->
+    <line x1="-25" y1="20" x2="-28" y2="55" stroke="#b45309" stroke-width="6"/>
+    <line x1="-10" y1="20" x2="-10" y2="55" stroke="#d97706" stroke-width="6"/>
+    <line x1="15" y1="20" x2="15" y2="55" stroke="#b45309" stroke-width="6"/>
+    <line x1="30" y1="20" x2="32" y2="55" stroke="#d97706" stroke-width="6"/>
   </g>
-  <circle cx="150" cy="20" r="18" fill="#facc15" opacity="0.6"/>
+  <text x="150" y="188" font-size="14" font-weight="bold" fill="#78350f" text-anchor="middle">Camel (Desert Adaptation)</text>
 </svg>

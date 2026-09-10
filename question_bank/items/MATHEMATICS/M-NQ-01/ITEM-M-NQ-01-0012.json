@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Explorer! You found a hidden chest. How many superhero capes are sparkling inside?",
+    "display_text": "Explorer! Look inside the treasure chest. How many hero badges are sparkling inside?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-nq-01-0012_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Count carefully! The chest contains exactly 16 superhero capes.",
+      "prompt": "Count each item carefully in the chest: there are exactly 16 hero badges.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },

@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "If The wise owl traces a continuous line along the outer boundary of a pentagon, how many straight sides do they trace?",
+    "display_text": "If you trace along the outer edge of a pentagon, how many straight sides do you trace?",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-sr-01-0003_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-L-SR-01-0003_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-l-sr-01-0003_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",
@@ -61,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "A pentagon has exactly 5 straight perimeter edges."
+      "prompt": "A pentagon has exactly 5 sides."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

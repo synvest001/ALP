@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "GENERALIZE",
   "transfer_level": "LEVEL_4_STRUCTURAL",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Professor Quark is designing an eco-friendly outpost. Which of these is an inexhaustible, renewable source of energy?",
+    "display_text": "Which of these is a clean, renewable energy resource that comes from nature?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-kn-11-0018_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-S-KN-11-0018_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-s-kn-11-0018_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",
@@ -46,7 +40,7 @@
           },
           {
             "option_id": "opt_4",
-            "display_value": "Natural gas"
+            "display_value": "Gasoline"
           }
         ]
       },
@@ -61,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Sunlight, wind, and flowing water are clean, renewable energy resources."
+      "prompt": "Sunlight and wind are inexhaustible renewable energy sources."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "To bypass the laser grid, you must touch the Triangle. How many straight sides does it have?",
+    "display_text": "Look at the shape shown above. It is a Triangle. How many straight sides does it have?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-gs-01-0041_prompt.mp3",
     "visual_assets": [
       {

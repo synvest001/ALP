@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "To bypass the alien security matrix, complete the sequence: 7, 14, 21, 28, ___?",
+    "display_text": "Follow the skip counting pattern: 5, 10, 15, 20, ___? What number is next?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-pa-02-0004_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-PA-02-0004_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-pa-02-0004_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Follow the skip counting logic!",
+      "prompt": "Add the same amount each time to get 25.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_2_CONTEXTUAL",
-  "representation_type": "SYMBOLIC",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
@@ -60,7 +54,7 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "35"
+            "display_value": "25"
           },
           {
             "option_id": "opt_2",
@@ -68,11 +62,11 @@
           },
           {
             "option_id": "opt_3",
-            "display_value": "42"
+            "display_value": "22"
           },
           {
             "option_id": "opt_4",
-            "display_value": "29"
+            "display_value": "26"
           }
         ]
       },

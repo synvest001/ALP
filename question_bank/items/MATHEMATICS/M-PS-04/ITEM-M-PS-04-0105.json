@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "A scout hover-car travels at 5 leagues per hour. How many leagues will it cover after cruising for 4 hours?",
+    "display_text": "A cyclist rides at a steady speed of 5 kilometers per hour. How many kilometers will they cover in 4 hours?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-ps-04-0105_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-PS-04-0105_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-ps-04-0105_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Multiply speed by hours: 5 \u00d7 4 = 20 leagues.",
+      "prompt": "Multiply speed by hours: 5 \u00d7 4 = 20 kilometers.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_2_CONTEXTUAL",
-  "representation_type": "SYMBOLIC",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",

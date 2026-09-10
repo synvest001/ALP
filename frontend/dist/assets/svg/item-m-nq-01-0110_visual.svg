@@ -1,20 +1,60 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="100%" height="100%">
-  <rect width="300" height="200" rx="16" fill="#e0f2fe"/>
-  <!-- Water ripples -->
-  <ellipse cx="150" cy="155" rx="110" ry="18" fill="#0284c7" opacity="0.3"/>
-  <path d="M 20,165 Q 85,155 150,165 T 280,165" stroke="#38bdf8" stroke-width="3" fill="none"/>
-  <!-- Duck Body -->
-  <g transform="translate(140, 125)">
-    <ellipse cx="0" cy="0" rx="48" ry="32" fill="#facc15" stroke="#eab308" stroke-width="3"/>
-    <!-- Wing -->
-    <path d="M -20,-10 C 10,-20 30,-5 15,15 C -5,25 -25,10 -20,-10 Z" fill="#eab308" stroke="#ca8a04" stroke-width="2"/>
-    <!-- Duck Head -->
-    <circle cx="-35" cy="-35" r="26" fill="#facc15" stroke="#eab308" stroke-width="3"/>
-    <!-- Orange Beak -->
-    <polygon points="-58,-32 -82,-28 -58,-22" fill="#f97316" stroke="#c2410c" stroke-width="2"/>
-    <!-- Eye -->
-    <circle cx="-42" cy="-40" r="5" fill="#0f172a"/><circle cx="-44" cy="-42" r="1.8" fill="#ffffff"/>
-    <!-- Tail Feathers -->
-    <polygon points="45,-5 68,-22 55,10" fill="#facc15" stroke="#eab308" stroke-width="2.5"/>
+  <defs>
+    <linearGradient id="chestWood" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#854d0e"/><stop offset="100%" stop-color="#451a03"/>
+    </linearGradient>
+    <linearGradient id="goldTrim" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fde047"/><stop offset="100%" stop-color="#ca8a04"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="200" rx="16" fill="#1e1b4b"/>
+  <!-- Sparkles in background -->
+  <g fill="#fde047" opacity="0.6">
+    <circle cx="35" cy="40" r="2"/><circle cx="265" cy="50" r="2.5"/><circle cx="50" cy="160" r="1.5"/><circle cx="250" cy="150" r="2"/>
+  </g>
+  <!-- Open Chest Base -->
+  <g transform="translate(150, 150)">
+    <rect x="-95" y="-30" width="190" height="65" rx="10" fill="url(#chestWood)" stroke="#ca8a04" stroke-width="3.5"/>
+    <rect x="-90" y="-26" width="180" height="10" fill="#713f12"/>
+    <circle cx="0" cy="6" r="8" fill="url(#goldTrim)" stroke="#78350f" stroke-width="1.5"/>
+    <rect x="-3" y="6" width="6" height="12" fill="#1e1b4b"/>
+  </g>
+  <!-- Open Lid Tilted Back -->
+  <g transform="translate(150, 115)">
+    <path d="M -95,0 Q 0,-38 95,0 L 85,-26 Q 0,-62 -85,-26 Z" fill="url(#chestWood)" stroke="#ca8a04" stroke-width="3"/>
+  </g>
+  <!-- Glowing Items Inside Chest -->
+  <g transform="translate(150, 112)">
+
+        <g transform="translate(-55.0, -18)">
+          <ellipse cx="0" cy="5" rx="7" ry="9" fill="#a16207" stroke="#451a03" stroke-width="1.5"/>
+          <path d="M -7,0 Q 0,-6 7,0" fill="#451a03" stroke="#292524" stroke-width="1.5"/>
+          <rect x="-1" y="-8" width="2" height="4" fill="#292524"/>
+        </g>
+        <g transform="translate(-33.0, -18)">
+          <ellipse cx="0" cy="5" rx="7" ry="9" fill="#a16207" stroke="#451a03" stroke-width="1.5"/>
+          <path d="M -7,0 Q 0,-6 7,0" fill="#451a03" stroke="#292524" stroke-width="1.5"/>
+          <rect x="-1" y="-8" width="2" height="4" fill="#292524"/>
+        </g>
+        <g transform="translate(-11.0, -18)">
+          <ellipse cx="0" cy="5" rx="7" ry="9" fill="#a16207" stroke="#451a03" stroke-width="1.5"/>
+          <path d="M -7,0 Q 0,-6 7,0" fill="#451a03" stroke="#292524" stroke-width="1.5"/>
+          <rect x="-1" y="-8" width="2" height="4" fill="#292524"/>
+        </g>
+        <g transform="translate(11.0, -18)">
+          <ellipse cx="0" cy="5" rx="7" ry="9" fill="#a16207" stroke="#451a03" stroke-width="1.5"/>
+          <path d="M -7,0 Q 0,-6 7,0" fill="#451a03" stroke="#292524" stroke-width="1.5"/>
+          <rect x="-1" y="-8" width="2" height="4" fill="#292524"/>
+        </g>
+        <g transform="translate(33.0, -18)">
+          <ellipse cx="0" cy="5" rx="7" ry="9" fill="#a16207" stroke="#451a03" stroke-width="1.5"/>
+          <path d="M -7,0 Q 0,-6 7,0" fill="#451a03" stroke="#292524" stroke-width="1.5"/>
+          <rect x="-1" y="-8" width="2" height="4" fill="#292524"/>
+        </g>
+        <g transform="translate(55.0, -18)">
+          <ellipse cx="0" cy="5" rx="7" ry="9" fill="#a16207" stroke="#451a03" stroke-width="1.5"/>
+          <path d="M -7,0 Q 0,-6 7,0" fill="#451a03" stroke="#292524" stroke-width="1.5"/>
+          <rect x="-1" y="-8" width="2" height="4" fill="#292524"/>
+        </g>
   </g>
 </svg>

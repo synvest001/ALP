@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "A chest contains 15 blue crystals and zero green crystals. What is the chance of pulling out a green crystal?",
+    "display_text": "A box contains 15 blue blocks and zero green blocks. What is the chance of pulling out a green block?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-du-02-0069_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-DU-02-0069_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-du-02-0069_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "There are no green crystals in the chest, so it's impossible.",
+      "prompt": "There are no green blocks in the box, so it is impossible.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "GENERALIZE",
   "transfer_level": "LEVEL_4_STRUCTURAL",
-  "representation_type": "SYMBOLIC",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",

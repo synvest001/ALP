@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "When Lady Gwen combines the root words 'sun' and 'flower', which compound word is created?",
+    "display_text": "When you combine the words 'sun' and 'flower', what compound word is formed?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-vm-04-0011_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-E-VM-04-0011_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-e-vm-04-0011_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",

@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "GENERALIZE",
   "transfer_level": "LEVEL_4_STRUCTURAL",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Exploring an icy, frozen polar tundra in a shadow parka: Which creature has thick insulating blubber and water-resistant feathers to thrive in freezing oceans?",
+    "display_text": "Which animal has thick insulating blubber and dense feathers to thrive in freezing polar waters?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-ee-02-0028_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-S-EE-02-0028_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-s-ee-02-0028_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",
@@ -46,7 +40,7 @@
           },
           {
             "option_id": "opt_4",
-            "display_value": "Chimpanzee"
+            "display_value": "Giraffe"
           }
         ]
       },
@@ -61,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Penguins have dense feathers and thick blubber layers to stay warm in freezing waters."
+      "prompt": "Penguins are adapted for cold arctic/antarctic marine habitats."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

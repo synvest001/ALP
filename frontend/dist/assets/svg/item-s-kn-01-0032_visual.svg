@@ -1,40 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="100%" height="100%">
-  <defs>
-    <linearGradient id="aurora" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.4"/>
-      <stop offset="50%" stop-color="#a855f7" stop-opacity="0.5"/>
-      <stop offset="100%" stop-color="#22c55e" stop-opacity="0.4"/>
-    </linearGradient>
-    <linearGradient id="iceGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#ffffff"/><stop offset="40%" stop-color="#e0f2fe"/><stop offset="100%" stop-color="#7dd3fc"/>
-    </linearGradient>
-    <linearGradient id="seaGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#082f49"/>
-    </linearGradient>
-  </defs>
-  <rect width="300" height="200" rx="16" fill="#0f172a"/>
-  <path d="M 0,30 Q 80,60 150,25 T 300,45 L 300,80 Q 220,50 150,75 T 0,60 Z" fill="url(#aurora)"/>
-  <polygon points="20,120 70,70 120,120" fill="#334155"/>
-  <polygon points="55,85 70,70 85,85 70,95" fill="#f8fafc"/>
-  <polygon points="180,120 235,65 290,120" fill="#334155"/>
-  <polygon points="220,80 235,65 250,80 235,90" fill="#f8fafc"/>
-  <rect x="0" y="120" width="300" height="80" fill="url(#seaGrad)"/>
-  <polygon points="30,140 70,110 180,110 215,140 170,165 60,165" fill="url(#iceGrad)" stroke="#38bdf8" stroke-width="2"/>
-  <g transform="translate(125, 110)">
-    <ellipse cx="0" cy="-18" rx="28" ry="20" fill="#ffffff" stroke="#94a3b8" stroke-width="2"/>
-    <ellipse cx="-24" cy="-28" rx="14" ry="12" fill="#ffffff" stroke="#94a3b8" stroke-width="2"/>
-    <ellipse cx="-34" cy="-27" rx="6" ry="5" fill="#f1f5f9"/>
-    <ellipse cx="-37" cy="-28" rx="2.5" ry="2" fill="#0f172a"/>
-    <circle cx="-25" cy="-32" r="2" fill="#0f172a"/>
-    <circle cx="-16" cy="-37" r="4.5" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.5"/>
-    <rect x="-22" y="-6" width="10" height="15" rx="5" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
-    <rect x="8" y="-6" width="10" height="15" rx="5" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
-    <circle cx="28" cy="-22" r="4" fill="#ffffff"/>
+  <rect width="300" height="200" rx="16" fill="#e0f2fe"/>
+  <!-- Shark Body -->
+  <g transform="translate(150, 100)">
+    <path d="M -80,10 Q 0,-35 85,-10 Q 95,0 80,10 Q 0,35 -80,10 Z" fill="#64748b" stroke="#334155" stroke-width="2"/>
+    <!-- Dorsal Fin -->
+    <polygon points="10,-22 25,-55 45,-20" fill="#64748b" stroke="#334155" stroke-width="2"/>
+    <!-- Tail Fin -->
+    <polygon points="-80,10 -115,-20 -95,10 -115,35" fill="#64748b" stroke="#334155" stroke-width="2"/>
+    <!-- Pectoral Fin -->
+    <polygon points="15,15 25,45 45,20" fill="#475569"/>
+    <!-- Gills -->
+    <line x1="30" y1="-8" x2="30" y2="8" stroke="#334155" stroke-width="2"/>
+    <line x1="35" y1="-8" x2="35" y2="8" stroke="#334155" stroke-width="2"/>
+    <line x1="40" y1="-8" x2="40" y2="8" stroke="#334155" stroke-width="2"/>
+    <!-- Eye -->
+    <circle cx="65" cy="-6" r="3" fill="#0f172a"/>
   </g>
-  <g transform="translate(180, 118)">
-    <ellipse cx="0" cy="-12" rx="7" ry="12" fill="#0f172a"/>
-    <ellipse cx="0" cy="-10" rx="4.5" ry="9" fill="#ffffff"/>
-    <polygon points="-7,-12 -3,-14 -3,-8" fill="#f97316"/>
-    <circle cx="-1" cy="-18" r="1.5" fill="#ffffff"/>
-  </g>
+  <text x="150" y="185" font-size="14" font-weight="bold" fill="#0369a1" text-anchor="middle">Shark (Breathes with Gills)</text>
 </svg>

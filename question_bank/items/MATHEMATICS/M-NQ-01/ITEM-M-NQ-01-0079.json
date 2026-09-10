@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Explorer! You found a hidden chest. How many robot gears are sparkling inside?",
+    "display_text": "Explorer! Look inside the treasure chest. How many robot gears are sparkling inside?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-nq-01-0079_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Count carefully! The chest contains exactly 8 robot gears.",
+      "prompt": "Count each item carefully in the chest: there are exactly 11 robot gears.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +47,7 @@
   },
   "cognitive_depth": "GENERALIZE",
   "transfer_level": "LEVEL_4_STRUCTURAL",
-  "representation_type": "SYMBOLIC",
+  "representation_type": "VISUAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "8"
+            "display_value": "11"
           },
           {
             "option_id": "opt_2",
-            "display_value": "6"
+            "display_value": "9"
           },
           {
             "option_id": "opt_3",
-            "display_value": "10"
+            "display_value": "13"
           },
           {
             "option_id": "opt_4",
-            "display_value": "11"
+            "display_value": "14"
           }
         ]
       },

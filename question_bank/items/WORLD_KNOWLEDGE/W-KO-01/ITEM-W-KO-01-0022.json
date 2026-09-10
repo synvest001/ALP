@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "In the space station, the electrical circuit breaker sparks and the power completely shuts down! Which skilled trade specialist should be called to fix it safely?",
+    "display_text": "When the electrical power shuts off and circuit breakers trip, which community helper should you call to repair it?",
     "spoken_audio_uri": "assets/audio/world_knowledge/item-w-ko-01-0022_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-W-KO-01-0022_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-w-ko-01-0022_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",

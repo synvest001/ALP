@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "To unlock the secret door, you must press the button that comes directly BEFORE 18. What is it?",
+    "display_text": "What number comes directly BEFORE 18 on the number line?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-nq-04-0064_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-NQ-04-0064_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-nq-04-0064_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Think backwards from 18: the number right before is 17.",
+      "prompt": "Think backwards: the number directly before 18 is 17.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_2_CONTEXTUAL",
-  "representation_type": "SYMBOLIC",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",

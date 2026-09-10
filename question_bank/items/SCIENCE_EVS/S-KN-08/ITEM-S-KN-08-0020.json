@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "The mystic wizard looks through the observatory telescope. Which celestial body is the closest star to planet Earth?",
+    "display_text": "Look at the celestial body shown above. Which body is the closest star to planet Earth?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-kn-08-0020_prompt.mp3",
     "visual_assets": [
       {
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The Sun is a yellow dwarf star at the center of our solar system."
+      "prompt": "The Sun is the star at the center of our solar system."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

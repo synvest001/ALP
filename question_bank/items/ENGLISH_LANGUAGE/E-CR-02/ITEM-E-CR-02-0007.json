@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_3_REPRESENTATIONAL",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Read the log: 'Commander Zorg steered the star cruiser safely through the asteroid belt while the crew rested.' Who carried out this important task?",
+    "display_text": "Read the sentence: 'Noah steered the ferry boat safely to the harbor while the passengers rested.' Who carried out this action?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cr-02-0007_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-E-CR-02-0007_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-e-cr-02-0007_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",
@@ -34,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Commander Zorg"
+            "display_value": "Noah"
           },
           {
             "option_id": "opt_2",
-            "display_value": "The space pirate"
+            "display_value": "The bus driver"
           },
           {
             "option_id": "opt_3",
-            "display_value": "The alien queen"
+            "display_value": "The train conductor"
           },
           {
             "option_id": "opt_4",
-            "display_value": "A robot mechanic"
+            "display_value": "The lighthouse keeper"
           }
         ]
       },
@@ -61,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The text explicitly names Commander Zorg."
+      "prompt": "The text clearly states that Noah performed the action."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

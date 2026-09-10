@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The wizard council of 4 found a treasure chest with 16 gold coins. To avoid a mutiny, they must split it EQUALLY. What does sharing equally mean?",
+    "display_text": "A rectangle is folded down the center into 2 equal parts. What is each part called?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-fr-02-0128_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-FR-02-0128_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-fr-02-0128_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Equal means fair shares for each member of the wizard council!",
+      "prompt": "Half means dividing into 2 equal parts.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "GENERALIZE",
   "transfer_level": "LEVEL_4_STRUCTURAL",
-  "representation_type": "SYMBOLIC",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
@@ -60,19 +54,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Everyone gets the exact same amount"
+            "display_value": "One-half"
           },
           {
             "option_id": "opt_2",
-            "display_value": "The captain gets the most"
+            "display_value": "One-third"
           },
           {
             "option_id": "opt_3",
-            "display_value": "The fastest pirate gets them all"
+            "display_value": "One-fourth"
           },
           {
             "option_id": "opt_4",
-            "display_value": "It's impossible to share"
+            "display_value": "One whole"
           }
         ]
       },

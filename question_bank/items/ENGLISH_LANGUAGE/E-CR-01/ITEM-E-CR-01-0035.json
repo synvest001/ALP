@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_2_CONTEXTUAL",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Read the scroll: 'Lady Gwen read the blue spellbook in the tower.' What object did they interact with?",
+    "display_text": "Read the passage: 'Commander Zorg found a lost golden key under the garden mat.' What object was mentioned?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cr-01-0035_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-E-CR-01-0035_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-e-cr-01-0035_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",
@@ -34,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "The blue spellbook"
+            "display_value": "A lost golden key"
           },
           {
             "option_id": "opt_2",
-            "display_value": "The red potion"
+            "display_value": "A silver sword"
           },
           {
             "option_id": "opt_3",
-            "display_value": "The green scroll"
+            "display_value": "A diamond ring"
           },
           {
             "option_id": "opt_4",
-            "display_value": "The yellow wand"
+            "display_value": "A brass coin"
           }
         ]
       },
@@ -61,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Read the sentence carefully to identify the specific object."
+      "prompt": "Read the sentence carefully to find the specific object."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

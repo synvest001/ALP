@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "A piece of the ancient map is missing! Fill in the blank: Red, Blue, Green, Red, ___, Green",
+    "display_text": "Find the missing item in this sequence: Circle, Triangle, ___, Circle, Triangle, Square",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-pa-03-0117_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-PA-03-0117_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-pa-03-0117_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Analyze the sequence before and after the blank.",
+      "prompt": "Look at the pattern before and after the blank.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_3_REPRESENTATIONAL",
-  "representation_type": "SYMBOLIC",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
@@ -60,19 +54,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Blue"
+            "display_value": "Square"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Yellow"
+            "display_value": "Circle"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Red"
+            "display_value": "Triangle"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Black"
+            "display_value": "Star"
           }
         ]
       },

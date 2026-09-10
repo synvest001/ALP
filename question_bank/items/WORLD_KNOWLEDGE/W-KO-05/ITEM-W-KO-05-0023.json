@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Transportation logistics in the dark cave: safely flying a commercial airliner carrying 200 passengers through stormy weather. Who operates this transport vehicle?",
+    "display_text": "Who operates the vehicle when flying a commercial passenger airplane safely across the country?",
     "spoken_audio_uri": "assets/audio/world_knowledge/item-w-ko-05-0023_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-W-KO-05-0023_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-w-ko-05-0023_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",

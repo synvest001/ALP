@@ -9,15 +9,9 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Comparing fluid capacity, which container holds LESS liquid: An eye dropper or A wooden water cistern?",
+    "display_text": "Comparing fluid capacity: Which container holds LESS liquid: An eye dropper or A water pitcher?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-me-05-0064_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-ME-05-0064_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-me-05-0064_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_2_CONTEXTUAL",
-  "representation_type": "SYMBOLIC",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
@@ -64,7 +58,7 @@
           },
           {
             "option_id": "opt_2",
-            "display_value": "A wooden water cistern"
+            "display_value": "A water pitcher"
           },
           {
             "option_id": "opt_3",

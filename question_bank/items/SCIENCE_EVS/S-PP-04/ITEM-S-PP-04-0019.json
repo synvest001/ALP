@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Commander Zorg tests various objects with a bar magnet. Which item will be strongly ATTRACTED to the magnet?",
+    "display_text": "Look at the horseshoe magnet shown above. Which object will be strongly ATTRACTED to this magnet?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-pp-04-0019_prompt.mp3",
     "visual_assets": [
       {
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Magnets attract ferromagnetic metals like iron, steel, and nickel."
+      "prompt": "Magnets attract ferromagnetic metals like iron and steel."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

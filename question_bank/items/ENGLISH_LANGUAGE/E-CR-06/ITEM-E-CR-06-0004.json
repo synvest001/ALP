@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_2_CONTEXTUAL",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Analyze the timeline: 'First, The grumpy troll mapped the coordinates. Next, they fired the hyper-thrusters. Finally, they entered orbit.' What happened FIRST in the sequence?",
+    "display_text": "Read the sequence: 'First, Leo opened his notebook. Next, he sharpened his pencil. Finally, he began writing his essay.' What happened FIRST?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cr-06-0004_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-E-CR-06-0004_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-e-cr-06-0004_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",
@@ -34,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Mapped the coordinates"
+            "display_value": "Opened his notebook"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Fired the hyper-thrusters"
+            "display_value": "Sharpened his pencil"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Entered orbit"
+            "display_value": "Began writing his essay"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Landed the ship"
+            "display_value": "Closed his backpack"
           }
         ]
       },
@@ -61,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Look for the clue word 'First' to determine the initial event."
+      "prompt": "Look for the sequence word 'First' to identify the initial step."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

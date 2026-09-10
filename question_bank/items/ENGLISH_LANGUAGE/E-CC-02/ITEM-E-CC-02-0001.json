@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Generate an investigative inquiry: Captain Orion discovered a glowing, pulsing purple crystal deep inside an abandoned mine. Which question is the most insightful to investigate?",
+    "display_text": "Question Generation: Alex discovered an unfamiliar footprint in the garden soil. Which is the best investigative question to ask?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cc-02-0001_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-E-CC-02-0001_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-e-cc-02-0001_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",
@@ -34,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "What kind of energy does this strange crystal produce?"
+            "display_value": "Which animal made this footprint in the garden?"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Why is water wet?"
+            "display_value": "What time is breakfast?"
           },
           {
             "option_id": "opt_3",
-            "display_value": "What time is dinner?"
+            "display_value": "Why is water wet?"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Who likes apples?"
+            "display_value": "What color is a banana?"
           }
         ]
       },
@@ -61,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "An investigative question directly explores the mystery at hand."
+      "prompt": "An investigative question directly addresses the situation."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

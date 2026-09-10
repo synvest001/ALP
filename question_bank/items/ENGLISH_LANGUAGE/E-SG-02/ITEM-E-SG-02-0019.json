@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "GENERALIZE",
   "transfer_level": "LEVEL_4_STRUCTURAL",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Choose the correct verb form to complete the sentence: 'The two dragons [fly / flies] across the starry sky.'",
+    "display_text": "Choose the correct verb to complete the sentence: 'The two dogs [barks / bark / barking] at the mail carrier.'",
     "spoken_audio_uri": "assets/audio/english_language/item-e-sg-02-0019_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-E-SG-02-0019_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-e-sg-02-0019_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",
@@ -34,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "fly"
+            "display_value": "bark"
           },
           {
             "option_id": "opt_2",
-            "display_value": "flies"
+            "display_value": "barks"
           },
           {
             "option_id": "opt_3",
-            "display_value": "flying"
+            "display_value": "barking"
           },
           {
             "option_id": "opt_4",
-            "display_value": "flew"
+            "display_value": "barked"
           }
         ]
       },
@@ -61,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Singular subjects take singular verbs; plural subjects take plural verbs: 'fly'."
+      "prompt": "Singular subjects take singular verbs; plural subjects take plural verbs: 'bark'."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

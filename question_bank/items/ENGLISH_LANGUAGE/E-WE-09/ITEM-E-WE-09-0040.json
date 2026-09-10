@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_2_CONTEXTUAL",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Find the misspelled word in this journal sentence: 'The explorer walked down the secret passige.' Which word is spelled incorrectly?",
+    "display_text": "Find the misspelled word in this sentence: 'The students walked down the school passige.'",
     "spoken_audio_uri": "assets/audio/english_language/item-e-we-09-0040_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-E-WE-09-0040_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-e-we-09-0040_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",
@@ -38,11 +32,11 @@
           },
           {
             "option_id": "opt_2",
-            "display_value": "secret"
+            "display_value": "school"
           },
           {
             "option_id": "opt_3",
-            "display_value": "explorer"
+            "display_value": "students"
           },
           {
             "option_id": "opt_4",

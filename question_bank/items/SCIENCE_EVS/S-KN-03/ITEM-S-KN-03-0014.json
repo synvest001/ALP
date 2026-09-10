@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Princess Luna collects a hard brown seed with a cup-like cap that will grow into a mighty tree. What tree grows from an acorn?",
+    "display_text": "Look at the mighty tree shown above. Which tree grows from an acorn seed?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-kn-03-0014_prompt.mp3",
     "visual_assets": [
       {

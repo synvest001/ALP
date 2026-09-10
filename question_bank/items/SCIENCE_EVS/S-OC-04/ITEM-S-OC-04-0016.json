@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_3_REPRESENTATIONAL",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Classifying specimens in Mars: Which item is a human-made synthetic material created in a factory?",
+    "display_text": "Which item is a human-made synthetic material made in a factory?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-oc-04-0016_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-S-OC-04-0016_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-s-oc-04-0016_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",

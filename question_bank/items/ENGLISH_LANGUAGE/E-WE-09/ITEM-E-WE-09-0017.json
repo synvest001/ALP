@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_3_REPRESENTATIONAL",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Find the misspelled word in this journal sentence: 'We observed a wonderfull meteor shower.' Which word is spelled incorrectly?",
+    "display_text": "Find the misspelled word in this sentence: 'We observed a wonderfull sunset over the hills.'",
     "spoken_audio_uri": "assets/audio/english_language/item-e-we-09-0017_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-E-WE-09-0017_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-e-we-09-0017_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",
@@ -42,11 +36,11 @@
           },
           {
             "option_id": "opt_3",
-            "display_value": "meteor"
+            "display_value": "sunset"
           },
           {
             "option_id": "opt_4",
-            "display_value": "shower"
+            "display_value": "hills"
           }
         ]
       },

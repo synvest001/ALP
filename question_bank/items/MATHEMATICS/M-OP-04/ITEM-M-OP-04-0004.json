@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "During the battle, 8 goblins charged forward, and then 4 more joined them. How many goblins in all?",
+    "display_text": "Emma has 8 buttons, and Liam gives her 4 more buttons. How many buttons does Emma have altogether?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-op-04-0004_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-OP-04-0004_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-op-04-0004_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Combine the attacking forces: 8 + 4 = 12 goblins!",
+      "prompt": "Combine the amounts: 8 + 4 = 12 buttons.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_2_CONTEXTUAL",
-  "representation_type": "SYMBOLIC",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",

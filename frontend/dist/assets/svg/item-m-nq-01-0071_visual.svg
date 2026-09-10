@@ -1,34 +1,90 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="100%" height="100%">
   <defs>
-    <linearGradient id="skyNest" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#dbeafe"/><stop offset="100%" stop-color="#f0fdf4"/>
+    <linearGradient id="chestWood" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#854d0e"/><stop offset="100%" stop-color="#451a03"/>
+    </linearGradient>
+    <linearGradient id="goldTrim" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fde047"/><stop offset="100%" stop-color="#ca8a04"/>
     </linearGradient>
   </defs>
-  <rect width="300" height="200" rx="16" fill="url(#skyNest)"/>
-  <g fill="#78350f" stroke="#451a03" stroke-width="3">
-    <path d="M 0,20 Q 40,70 80,120 L 0,200 Z"/>
-    <path d="M 50,105 Q 120,115 220,135 Q 260,140 300,130 L 300,165 Q 200,175 40,140 Z"/>
+  <rect width="300" height="200" rx="16" fill="#1e1b4b"/>
+  <!-- Sparkles in background -->
+  <g fill="#fde047" opacity="0.6">
+    <circle cx="35" cy="40" r="2"/><circle cx="265" cy="50" r="2.5"/><circle cx="50" cy="160" r="1.5"/><circle cx="250" cy="150" r="2"/>
   </g>
-  <g fill="#22c55e" stroke="#15803d" stroke-width="2">
-    <path d="M 30,70 C 15,50 40,30 55,50 C 65,70 45,80 30,70 Z"/>
-    <path d="M 230,110 C 220,85 250,75 260,95 C 270,115 245,125 230,110 Z"/>
+  <!-- Open Chest Base -->
+  <g transform="translate(150, 150)">
+    <rect x="-95" y="-30" width="190" height="65" rx="10" fill="url(#chestWood)" stroke="#ca8a04" stroke-width="3.5"/>
+    <rect x="-90" y="-26" width="180" height="10" fill="#713f12"/>
+    <circle cx="0" cy="6" r="8" fill="url(#goldTrim)" stroke="#78350f" stroke-width="1.5"/>
+    <rect x="-3" y="6" width="6" height="12" fill="#1e1b4b"/>
   </g>
+  <!-- Open Lid Tilted Back -->
   <g transform="translate(150, 115)">
-    <ellipse cx="0" cy="0" rx="48" ry="18" fill="#713f12" stroke="#451a03" stroke-width="2.5"/>
-    <g fill="#7dd3fc" stroke="#0284c7" stroke-width="2">
-      <ellipse cx="-18" cy="-5" rx="10" ry="14" transform="rotate(-15 -18 -5)"/>
-      <ellipse cx="2" cy="-8" rx="10" ry="14"/>
-      <ellipse cx="20" cy="-4" rx="10" ry="14" transform="rotate(15 20 -4)"/>
-    </g>
-    <circle cx="-16" cy="-6" r="1.5" fill="#0369a1"/><circle cx="4" cy="-10" r="1.5" fill="#0369a1"/><circle cx="22" cy="-4" r="1.5" fill="#0369a1"/>
-    <path d="M -50,0 C -50,35 50,35 50,0 C 35,8 -35,8 -50,0 Z" fill="#92400e" stroke="#451a03" stroke-width="3"/>
-    <g stroke="#b45309" stroke-width="2" stroke-linecap="round">
-      <path d="M -45,5 Q 0,28 45,5"/><path d="M -40,14 Q 0,34 40,14"/>
-    </g>
+    <path d="M -95,0 Q 0,-38 95,0 L 85,-26 Q 0,-62 -85,-26 Z" fill="url(#chestWood)" stroke="#ca8a04" stroke-width="3"/>
   </g>
-  <g transform="translate(235, 105) scale(0.9)">
-    <ellipse cx="0" cy="0" rx="16" ry="12" fill="#3b82f6" stroke="#1d4ed8" stroke-width="2"/>
-    <circle cx="-12" cy="-10" r="10" fill="#60a5fa" stroke="#1d4ed8" stroke-width="2"/>
-    <polygon points="-22,-10 -30,-8 -22,-6" fill="#f59e0b"/><circle cx="-15" cy="-12" r="2" fill="#000"/>
+  <!-- Glowing Items Inside Chest -->
+  <g transform="translate(150, 112)">
+
+        <g transform="translate(-77.0, -18)">
+          <polygon points="0,-9 7,0 0,9 -7,0" fill="#38bdf8" stroke="#0284c7" stroke-width="1.5"/>
+          <polygon points="0,-6 4,0 0,6 -4,0" fill="#bae6fd" opacity="0.6"/>
+        </g>
+        <g transform="translate(-55.0, -18)">
+          <polygon points="0,-9 7,0 0,9 -7,0" fill="#38bdf8" stroke="#0284c7" stroke-width="1.5"/>
+          <polygon points="0,-6 4,0 0,6 -4,0" fill="#bae6fd" opacity="0.6"/>
+        </g>
+        <g transform="translate(-33.0, -18)">
+          <polygon points="0,-9 7,0 0,9 -7,0" fill="#38bdf8" stroke="#0284c7" stroke-width="1.5"/>
+          <polygon points="0,-6 4,0 0,6 -4,0" fill="#bae6fd" opacity="0.6"/>
+        </g>
+        <g transform="translate(-11.0, -18)">
+          <polygon points="0,-9 7,0 0,9 -7,0" fill="#38bdf8" stroke="#0284c7" stroke-width="1.5"/>
+          <polygon points="0,-6 4,0 0,6 -4,0" fill="#bae6fd" opacity="0.6"/>
+        </g>
+        <g transform="translate(11.0, -18)">
+          <polygon points="0,-9 7,0 0,9 -7,0" fill="#38bdf8" stroke="#0284c7" stroke-width="1.5"/>
+          <polygon points="0,-6 4,0 0,6 -4,0" fill="#bae6fd" opacity="0.6"/>
+        </g>
+        <g transform="translate(33.0, -18)">
+          <polygon points="0,-9 7,0 0,9 -7,0" fill="#38bdf8" stroke="#0284c7" stroke-width="1.5"/>
+          <polygon points="0,-6 4,0 0,6 -4,0" fill="#bae6fd" opacity="0.6"/>
+        </g>
+        <g transform="translate(55.0, -18)">
+          <polygon points="0,-9 7,0 0,9 -7,0" fill="#38bdf8" stroke="#0284c7" stroke-width="1.5"/>
+          <polygon points="0,-6 4,0 0,6 -4,0" fill="#bae6fd" opacity="0.6"/>
+        </g>
+        <g transform="translate(77.0, -18)">
+          <polygon points="0,-9 7,0 0,9 -7,0" fill="#38bdf8" stroke="#0284c7" stroke-width="1.5"/>
+          <polygon points="0,-6 4,0 0,6 -4,0" fill="#bae6fd" opacity="0.6"/>
+        </g>
+        <g transform="translate(-66.0, 6)">
+          <polygon points="0,-9 7,0 0,9 -7,0" fill="#38bdf8" stroke="#0284c7" stroke-width="1.5"/>
+          <polygon points="0,-6 4,0 0,6 -4,0" fill="#bae6fd" opacity="0.6"/>
+        </g>
+        <g transform="translate(-44.0, 6)">
+          <polygon points="0,-9 7,0 0,9 -7,0" fill="#38bdf8" stroke="#0284c7" stroke-width="1.5"/>
+          <polygon points="0,-6 4,0 0,6 -4,0" fill="#bae6fd" opacity="0.6"/>
+        </g>
+        <g transform="translate(-22.0, 6)">
+          <polygon points="0,-9 7,0 0,9 -7,0" fill="#38bdf8" stroke="#0284c7" stroke-width="1.5"/>
+          <polygon points="0,-6 4,0 0,6 -4,0" fill="#bae6fd" opacity="0.6"/>
+        </g>
+        <g transform="translate(0.0, 6)">
+          <polygon points="0,-9 7,0 0,9 -7,0" fill="#38bdf8" stroke="#0284c7" stroke-width="1.5"/>
+          <polygon points="0,-6 4,0 0,6 -4,0" fill="#bae6fd" opacity="0.6"/>
+        </g>
+        <g transform="translate(22.0, 6)">
+          <polygon points="0,-9 7,0 0,9 -7,0" fill="#38bdf8" stroke="#0284c7" stroke-width="1.5"/>
+          <polygon points="0,-6 4,0 0,6 -4,0" fill="#bae6fd" opacity="0.6"/>
+        </g>
+        <g transform="translate(44.0, 6)">
+          <polygon points="0,-9 7,0 0,9 -7,0" fill="#38bdf8" stroke="#0284c7" stroke-width="1.5"/>
+          <polygon points="0,-6 4,0 0,6 -4,0" fill="#bae6fd" opacity="0.6"/>
+        </g>
+        <g transform="translate(66.0, 6)">
+          <polygon points="0,-9 7,0 0,9 -7,0" fill="#38bdf8" stroke="#0284c7" stroke-width="1.5"/>
+          <polygon points="0,-6 4,0 0,6 -4,0" fill="#bae6fd" opacity="0.6"/>
+        </g>
   </g>
 </svg>

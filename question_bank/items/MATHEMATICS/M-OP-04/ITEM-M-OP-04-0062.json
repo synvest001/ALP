@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "During the battle, 10 ice wolves charged forward, and then 5 more joined them. How many ice wolves in all?",
+    "display_text": "Emma has 10 sunflower seeds, and Liam gives her 5 more sunflower seeds. How many sunflower seeds does Emma have altogether?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-op-04-0062_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-OP-04-0062_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-op-04-0062_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Combine the attacking forces: 10 + 5 = 15 ice wolves!",
+      "prompt": "Combine the amounts: 10 + 5 = 15 sunflower seeds.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",

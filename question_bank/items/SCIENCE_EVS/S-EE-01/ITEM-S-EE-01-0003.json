@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "You are trekking across a scorching, sandy desert in a green suit. Which animal has specialized humps to store fat for energy in this dry habitat?",
+    "display_text": "Look at the animal shown above. Which desert animal stores fat in its humps to survive long journeys without food?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-ee-01-0003_prompt.mp3",
     "visual_assets": [
       {
@@ -46,7 +46,7 @@
           },
           {
             "option_id": "opt_4",
-            "display_value": "Tree Frog"
+            "display_value": "Chimpanzee"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Camels are specially adapted with fat-storing humps and wide feet for desert survival."
+      "prompt": "Camels store fat in their humps for desert survival."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

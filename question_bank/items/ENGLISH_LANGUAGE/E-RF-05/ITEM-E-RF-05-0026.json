@@ -10,7 +10,7 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_3_REPRESENTATIONAL",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
@@ -19,13 +19,7 @@
   "prompt_structure": {
     "display_text": "Which word belongs to the '-all' word family?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-rf-05-0026_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-E-RF-05-0026_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-e-rf-05-0026_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",

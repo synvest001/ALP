@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Comparing fluid capacity, which container holds MORE liquid: A giant pirate water barrel or A tiny glass test tube?",
+    "display_text": "Comparing fluid capacity: Which container holds MORE liquid: A bathtub or A teacup?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-me-05-0061_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-ME-05-0061_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-me-05-0061_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "A giant pirate water barrel holds more liquid.",
+      "prompt": "A bathtub holds more liquid.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
@@ -60,11 +54,11 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "A giant pirate water barrel"
+            "display_value": "A bathtub"
           },
           {
             "option_id": "opt_2",
-            "display_value": "A tiny glass test tube"
+            "display_value": "A teacup"
           },
           {
             "option_id": "opt_3",

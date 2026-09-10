@@ -1,27 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="100%" height="100%">
-  <defs>
-    <linearGradient id="winterSky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#0f172a"/><stop offset="100%" stop-color="#1e293b"/>
-    </linearGradient>
-  </defs>
-  <rect width="300" height="200" rx="16" fill="url(#winterSky)"/>
-  <ellipse cx="150" cy="205" rx="160" ry="35" fill="#f1f5f9"/>
-  <ellipse cx="150" cy="200" rx="150" ry="28" fill="#ffffff"/>
-  <g transform="translate(150, 45)" fill="#e2e8f0">
-    <ellipse cx="0" cy="0" rx="55" ry="24"/><circle cx="-35" cy="-8" r="22"/><circle cx="35" cy="-8" r="22"/><circle cx="0" cy="-18" r="26"/>
-  </g>
-  <g stroke="#ffffff" stroke-width="2.5" stroke-linecap="round">
-    <g transform="translate(150, 115) scale(0.9)">
-      <line x1="0" y1="-25" x2="0" y2="25"/><line x1="-22" y1="-12" x2="22" y2="12"/><line x1="-22" y1="12" x2="22" y2="-12"/>
-      <circle cx="0" cy="0" r="3.5" fill="#38bdf8"/>
-    </g>
-    <g transform="translate(70, 125) scale(0.7)">
-      <line x1="0" y1="-20" x2="0" y2="20"/><line x1="-18" y1="-10" x2="18" y2="10"/><line x1="-18" y1="10" x2="18" y2="-10"/>
-      <circle cx="0" cy="0" r="3" fill="#38bdf8"/>
-    </g>
-    <g transform="translate(230, 110) scale(0.75)">
-      <line x1="0" y1="-20" x2="0" y2="20"/><line x1="-18" y1="-10" x2="18" y2="10"/><line x1="-18" y1="10" x2="18" y2="-10"/>
-      <circle cx="0" cy="0" r="3" fill="#38bdf8"/>
-    </g>
-  </g>
+  <rect width="300" height="200" rx="16" fill="#f1f5f9"/>
+  <!-- Eiffel Tower -->
+  <path d="M 147,25 L 153,25 L 155,75 L 165,125 L 185,165 L 165,165 L 158,135 Q 150,120 142,135 L 135,165 L 115,165 L 135,125 L 145,75 Z" fill="#475569" stroke="#1e293b" stroke-width="2"/>
+  <line x1="140" y1="80" x2="160" y2="80" stroke="#1e293b" stroke-width="3"/>
+  <line x1="132" y1="125" x2="168" y2="125" stroke="#1e293b" stroke-width="3"/>
+  <text x="150" y="188" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle">Eiffel Tower (Europe)</text>
 </svg>

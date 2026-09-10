@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "During the battle, 5 fire dragons charged forward, and then 6 more joined them. How many fire dragons in all?",
+    "display_text": "Emma has 5 blueberries, and Liam gives her 6 more blueberries. How many blueberries does Emma have altogether?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-op-04-0049_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-OP-04-0049_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-op-04-0049_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Combine the attacking forces: 5 + 6 = 11 fire dragons!",
+      "prompt": "Combine the amounts: 5 + 6 = 11 blueberries.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "GENERALIZE",
   "transfer_level": "LEVEL_4_STRUCTURAL",
-  "representation_type": "SYMBOLIC",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",

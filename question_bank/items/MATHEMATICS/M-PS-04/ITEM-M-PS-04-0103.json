@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "A scout hover-car travels at 3 leagues per hour. How many leagues will it cover after cruising for 2 hours?",
+    "display_text": "A cyclist rides at a steady speed of 3 kilometers per hour. How many kilometers will they cover in 2 hours?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-ps-04-0103_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-PS-04-0103_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-ps-04-0103_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Multiply speed by hours: 3 \u00d7 2 = 6 leagues.",
+      "prompt": "Multiply speed by hours: 3 \u00d7 2 = 6 kilometers.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",

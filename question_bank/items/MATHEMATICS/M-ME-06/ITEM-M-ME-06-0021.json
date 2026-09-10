@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Thermal sensors scan two areas: A bubbling lava pool and A frozen ice cave. Which location is HOTTER?",
+    "display_text": "Comparing temperatures: Which is HOTTER: A cup of hot cocoa or A bowl of ice cream?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-me-06-0021_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-ME-06-0021_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-me-06-0021_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "A bubbling lava pool is noticeably hotter.",
+      "prompt": "A cup of hot cocoa is hotter.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
@@ -60,15 +54,15 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "A bubbling lava pool"
+            "display_value": "A cup of hot cocoa"
           },
           {
             "option_id": "opt_2",
-            "display_value": "A frozen ice cave"
+            "display_value": "A bowl of ice cream"
           },
           {
             "option_id": "opt_3",
-            "display_value": "They have identical temperatures"
+            "display_value": "They have the same temperature"
           }
         ]
       },

@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_2_CONTEXTUAL",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Professor Quark needs a password starting with the /b/ sound to enter the enchanted library. Which word works?",
+    "display_text": "Which word begins with the /b/ sound?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-pd-01-0030_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-E-PD-01-0030_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-e-pd-01-0030_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",
@@ -38,15 +32,15 @@
           },
           {
             "option_id": "opt_2",
-            "display_value": "Hat"
+            "display_value": "Carpet"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Cauldron"
+            "display_value": "Chair"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Wand"
+            "display_value": "Door"
           }
         ]
       },
@@ -61,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Broom starts with the sound /b/."
+      "prompt": "'Broom' begins with the sound /b/."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

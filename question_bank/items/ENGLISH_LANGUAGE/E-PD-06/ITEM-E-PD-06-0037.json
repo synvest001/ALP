@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_3_REPRESENTATIONAL",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Which magical word contains the short /a/ sound?",
+    "display_text": "Which word contains the short /a/ vowel sound?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-pd-06-0037_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-E-PD-06-0037_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-e-pd-06-0037_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",

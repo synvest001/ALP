@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Scanning their dimensions, which item is SHORTER: A laser pointer beam or A massive light saber?",
+    "display_text": "Comparing lengths: Which item is SHORTER: A crayon or A flagpole?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-me-03-0128_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-ME-03-0128_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-me-03-0128_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "A laser pointer beam is definitely shorter.",
+      "prompt": "A crayon is shorter.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "GENERALIZE",
   "transfer_level": "LEVEL_4_STRUCTURAL",
-  "representation_type": "SYMBOLIC",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
@@ -60,11 +54,11 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "A laser pointer beam"
+            "display_value": "A crayon"
           },
           {
             "option_id": "opt_2",
-            "display_value": "A massive light saber"
+            "display_value": "A flagpole"
           },
           {
             "option_id": "opt_3",

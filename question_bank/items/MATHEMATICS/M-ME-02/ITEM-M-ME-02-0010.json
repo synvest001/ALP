@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "In a test of ultimate strength, which object is HEAVIER: A massive space cruiser or A tiny hoverboard?",
+    "display_text": "Comparing weights: Which object is HEAVIER: A massive school bus or A small skateboard?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-me-02-0010_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-ME-02-0010_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-me-02-0010_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "A massive space cruiser has much more mass and weight.",
+      "prompt": "A massive school bus is heavier.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_2_CONTEXTUAL",
-  "representation_type": "SYMBOLIC",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
@@ -60,11 +54,11 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "A massive space cruiser"
+            "display_value": "A massive school bus"
           },
           {
             "option_id": "opt_2",
-            "display_value": "A tiny hoverboard"
+            "display_value": "A small skateboard"
           },
           {
             "option_id": "opt_3",

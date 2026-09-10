@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "3 galactic explorers discovered a cache of 12 magic potions. If they share them equally, how many magic potions does each explorer receive?",
+    "display_text": "3 students share 12 markers equally among themselves. How many markers does each student receive?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-ps-02-0050_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-PS-02-0050_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-ps-02-0050_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Divide equally: 12 \u00f7 3 = 4 magic potions.",
+      "prompt": "Divide equally: 12 \u00f7 3 = 4.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_2_CONTEXTUAL",
-  "representation_type": "SYMBOLIC",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",

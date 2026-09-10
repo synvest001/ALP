@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The ancient clockwork engine ticks in a growing sequence: 10, 20, 30, 40, ___? What number comes next?",
+    "display_text": "Identify the rule and complete the number sequence: 100, 90, 80, 70, ___?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-pa-04-0102_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-PA-04-0102_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-pa-04-0102_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Identify the growing step to find 50.",
+      "prompt": "Follow the consistent step to reach 60.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
@@ -60,15 +54,15 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "50"
-          },
-          {
-            "option_id": "opt_2",
             "display_value": "60"
           },
           {
+            "option_id": "opt_2",
+            "display_value": "50"
+          },
+          {
             "option_id": "opt_3",
-            "display_value": "45"
+            "display_value": "65"
           },
           {
             "option_id": "opt_4",

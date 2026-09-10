@@ -1,28 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="100%" height="100%">
-  <defs>
-    <linearGradient id="sunbeam" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#fef08a" stop-opacity="0.8"/>
-      <stop offset="100%" stop-color="#fef08a" stop-opacity="0.05"/>
-    </linearGradient>
-    <linearGradient id="bigLeaf" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#4ade80"/>
-      <stop offset="100%" stop-color="#166534"/>
-    </linearGradient>
-  </defs>
-  <rect width="300" height="200" rx="16" fill="#f0fdf4"/>
-  <polygon points="20,0 120,0 200,160 60,160" fill="url(#sunbeam)"/>
-  <polygon points="140,0 240,0 280,180 170,180" fill="url(#sunbeam)"/>
-  <circle cx="60" cy="20" r="35" fill="#facc15" stroke="#f59e0b" stroke-width="4"/>
-  <g transform="translate(150, 115) rotate(-15)">
-    <path d="M -90,0 C -60,-70 50,-70 90,0 C 50,70 -60,70 -90,0 Z" fill="url(#bigLeaf)" stroke="#14532d" stroke-width="3"/>
-    <line x1="-85" y1="0" x2="85" y2="0" stroke="#bbf7d0" stroke-width="4" stroke-linecap="round"/>
-    <g stroke="#bbf7d0" stroke-width="2.5" stroke-linecap="round">
-      <line x1="-50" y1="0" x2="-30" y2="-35"/><line x1="-50" y1="0" x2="-30" y2="35"/>
-      <line x1="-15" y1="0" x2="10" y2="-42"/><line x1="-15" y1="0" x2="10" y2="42"/>
-      <line x1="20" y1="0" x2="48" y2="-36"/><line x1="20" y1="0" x2="48" y2="36"/>
-      <line x1="55" y1="0" x2="72" y2="-20"/><line x1="55" y1="0" x2="72" y2="20"/>
-    </g>
-    <ellipse cx="20" cy="-22" rx="9" ry="6" fill="#38bdf8" opacity="0.85" stroke="#ffffff" stroke-width="1.5"/>
-    <circle cx="17" cy="-24" r="2" fill="#ffffff"/>
-  </g>
+  <rect width="300" height="200" rx="16" fill="#f8fafc"/>
+  <!-- Microscope Base & Arm -->
+  <path d="M 100,165 L 200,165 L 180,150 L 120,150 Z" fill="#334155"/>
+  <path d="M 160,150 C 185,150 200,120 190,90 C 180,60 160,50 140,50" fill="none" stroke="#475569" stroke-width="12"/>
+  <!-- Objective Lens & Tube -->
+  <rect x="120" y="40" width="22" height="60" rx="3" fill="#64748b" stroke="#334155" stroke-width="2" transform="rotate(-15 130 70)"/>
+  <!-- Stage -->
+  <line x1="110" y1="125" x2="165" y2="125" stroke="#0f172a" stroke-width="5"/>
+  <text x="150" y="188" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle">Microscope (Magnifies Specimens)</text>
 </svg>

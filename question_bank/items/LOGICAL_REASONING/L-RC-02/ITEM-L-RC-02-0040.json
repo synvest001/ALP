@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_2_CONTEXTUAL",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Comparative weight logic in the floating castle: A gold coin is lighter than a silver bar. A silver bar is lighter than a chest. Which item is the LIGHTEST?",
+    "display_text": "Comparative weight: A coin is lighter than a textbook. A textbook is lighter than a backpack. Which item is the LIGHTEST?",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-rc-02-0040_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-L-RC-02-0040_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-l-rc-02-0040_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",
@@ -34,15 +28,15 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "The gold coin"
+            "display_value": "The coin"
           },
           {
             "option_id": "opt_2",
-            "display_value": "The silver bar"
+            "display_value": "The textbook"
           },
           {
             "option_id": "opt_3",
-            "display_value": "The chest"
+            "display_value": "The backpack"
           },
           {
             "option_id": "opt_4",
@@ -61,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Trace the transitive weight chain: The gold coin is the lightest."
+      "prompt": "The coin is the lightest."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

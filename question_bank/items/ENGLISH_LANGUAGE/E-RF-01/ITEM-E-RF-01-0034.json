@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_2_CONTEXTUAL",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Decode the ancient hieroglyph found in the ancient ruins! Which option correctly spells the sight word 'COULD'?",
+    "display_text": "Complete the sentence with the correct spelling: 'She ran as fast as she ___ across the playground.' Which spelling is correct?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-rf-01-0034_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-E-RF-01-0034_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-e-rf-01-0034_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",
@@ -38,15 +32,15 @@
           },
           {
             "option_id": "opt_2",
-            "display_value": "could"
+            "display_value": "cood"
           },
           {
             "option_id": "opt_3",
-            "display_value": "could"
+            "display_value": "culd"
           },
           {
             "option_id": "opt_4",
-            "display_value": "couldz"
+            "display_value": "coudl"
           }
         ]
       },
@@ -61,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The correct spelling is 'could'."
+      "prompt": "The correct spelling of the sight word is 'could'."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."
@@ -73,7 +67,7 @@
   "rubric": {
     "evaluation_mode": "DETERMINISTIC_EXACT_MATCH",
     "correct_criteria": {
-      "selected_option_id": "opt_3"
+      "selected_option_id": "opt_1"
     }
   },
   "safeguard_metadata": {

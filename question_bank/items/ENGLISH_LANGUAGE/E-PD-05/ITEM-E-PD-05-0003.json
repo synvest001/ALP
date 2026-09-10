@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Listen closely as The wise owl sounds out: /f - i - sh/. What word do these sounds blend together to form?",
+    "display_text": "Listen closely: /f - i - sh/. What word do these sounds blend together to make?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-pd-05-0003_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-E-PD-05-0003_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-e-pd-05-0003_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",
@@ -46,7 +40,7 @@
           },
           {
             "option_id": "opt_4",
-            "display_value": "Fairy"
+            "display_value": "Pond"
           }
         ]
       },
@@ -61,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Blending /f - i - sh/ makes the word 'Fish'."
+      "prompt": "Blending /f - i - sh/ forms 'Fish'."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

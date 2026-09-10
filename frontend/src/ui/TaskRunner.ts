@@ -113,28 +113,35 @@ export class TaskRunner {
     }
 
     if (visual) {
-      const domainIcons: Record<string, string> = {
-        'MATHEMATICS': '🔢',
-        'ENGLISH_LANGUAGE': '📖',
-        'SCIENCE_EVS': '🌿',
-        'WORLD_KNOWLEDGE': '🌍',
-        'LOGICAL_REASONING': '🧩',
-        'ARTS': '🎨',
-        'SEL': '💛'
-      };
-      const icon = domainIcons[item?.domain_id || ''] || '⭐';
+      const visualEl = visual as HTMLElement;
+      const visualAssets = item?.prompt_structure?.visual_assets;
+      const firstAsset = visualAssets && visualAssets.length > 0 ? visualAssets[0] : undefined;
+      const isVisual = item?.representation_type === 'VISUAL' && Boolean(firstAsset?.uri);
 
-      if (item?.prompt_structure?.visual_assets && item.prompt_structure.visual_assets.length > 0) {
-        const asset = item.prompt_structure.visual_assets[0];
-        const assetUri = resolveAssetUrl(asset.uri || '');
-        visual.innerHTML = `
-          <div class="task-visual-wrapper">
-            <img src="${assetUri}" alt="Visual context clue" class="task-visual-img" onerror="this.style.display='none'; const fb = this.nextElementSibling; if (fb) fb.style.display='flex';" />
-            <div class="mock-visual" style="font-size: 3.2em; padding: 20px; display: none;">${icon}</div>
-          </div>
-        `;
-      } else {
-        visual.innerHTML = `<div class="mock-visual" style="font-size: 3.2em; padding: 20px;">${icon}</div>`;
+      // Default hidden
+      visualEl.style.display = 'none';
+      visualEl.innerHTML = '';
+
+      if (isVisual && firstAsset) {
+        const assetUri = resolveAssetUrl(firstAsset.uri || '');
+        const wrapper = document.createElement('div');
+        wrapper.className = 'task-visual-wrapper';
+
+        const img = document.createElement('img');
+        img.src = assetUri;
+        img.alt = 'Visual context clue';
+        img.className = 'task-visual-img';
+        img.onload = () => {
+          img.style.background = '#ffffff';
+          visualEl.style.display = 'flex';
+        };
+        img.onerror = () => {
+          visualEl.style.display = 'none';
+          visualEl.innerHTML = '';
+        };
+
+        wrapper.appendChild(img);
+        visualEl.appendChild(wrapper);
       }
     }
     

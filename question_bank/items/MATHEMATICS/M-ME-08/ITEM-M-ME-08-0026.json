@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The explorer recorded specimens found on an expedition: solar crystals: 12, lunar rocks: 7, stardust jars: 4. Which specimen was collected the MOST?",
+    "display_text": "A student counted items in class: crayons: 12, markers: 7, pencils: 4. Which item had the HIGHEST count?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-me-08-0026_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-ME-08-0026_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-me-08-0026_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "solar crystals has the highest count of 12.",
+      "prompt": "crayons has the largest count of 12.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_3_REPRESENTATIONAL",
-  "representation_type": "SYMBOLIC",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
@@ -60,15 +54,15 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "solar crystals"
+            "display_value": "crayons"
           },
           {
             "option_id": "opt_2",
-            "display_value": "lunar rocks"
+            "display_value": "markers"
           },
           {
             "option_id": "opt_3",
-            "display_value": "stardust jars"
+            "display_value": "pencils"
           },
           {
             "option_id": "opt_4",

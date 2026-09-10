@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "A pouch contains ONLY 10 red dragon scales and 0 blue scales. If you draw one blindly, what will you definitely pull out?",
+    "display_text": "A bag contains ONLY 10 red marbles and 0 blue marbles. If you draw one without looking, what color will you definitely pull out?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-du-01-0097_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-DU-01-0097_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-du-01-0097_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "There are only red scales inside, so it is a 100% certainty!",
+      "prompt": "There are only red marbles in the bag, so it is 100% certain.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_3_REPRESENTATIONAL",
-  "representation_type": "SYMBOLIC",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
@@ -60,11 +54,11 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "A red dragon scale"
+            "display_value": "A red marble"
           },
           {
             "option_id": "opt_2",
-            "display_value": "A blue dragon scale"
+            "display_value": "A blue marble"
           },
           {
             "option_id": "opt_3",
@@ -72,7 +66,7 @@
           },
           {
             "option_id": "opt_4",
-            "display_value": "A magic wand"
+            "display_value": "A purple marble"
           }
         ]
       },

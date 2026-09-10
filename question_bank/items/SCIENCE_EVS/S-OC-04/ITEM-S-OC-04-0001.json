@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Classifying specimens in the enchanted library: Which item is a natural material harvested from organic resources?",
+    "display_text": "Which item is a natural material harvested from organic resources?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-oc-04-0001_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-S-OC-04-0001_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-s-oc-04-0001_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",

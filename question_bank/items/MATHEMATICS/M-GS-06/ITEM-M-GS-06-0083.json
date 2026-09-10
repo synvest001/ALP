@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The enchanted shield has a line of symmetry down its center. If the left side has 5 sparkling gems, how many matching gems must be on the right side?",
+    "display_text": "A leaf pattern is symmetrical down its center line. If the left wing has 5 spots, how many spots must be on the right wing to match?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-gs-06-0083_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-GS-06-0083_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-gs-06-0083_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Symmetry means both halves match identically: exactly 5 gems!",
+      "prompt": "Symmetry means both sides match identically: exactly 5 spots.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",

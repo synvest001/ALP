@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The wizard's potion needs 4 tens and 5 ones of spider venom drops. What is the total number?",
+    "display_text": "A bundle has 4 tens and 5 ones of craft sticks. What is the total number of sticks?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-nq-05-0032_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-NQ-05-0032_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-nq-05-0032_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "4 tens = 40. Add 5 ones: 40 + 5 = 45!",
+      "prompt": "4 tens = 40. Add 5 ones: 40 + 5 = 45.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",

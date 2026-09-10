@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The quest requires 16 hyper-drive cores to succeed. You have collected 11. How many MORE hyper-drive cores must you find?",
+    "display_text": "The teacher needs 16 books for the classroom. She currently has 11. How many MORE books does she need to collect?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-ps-01-0002_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-PS-01-0002_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-ps-01-0002_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Subtract what you have from what you need: 16 - 11 = 5!",
+      "prompt": "Subtract what she has from what she needs: 16 - 11 = 5.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",

@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Scanning their dimensions, which item is LONGER: The Great Wall or A wooden fence?",
+    "display_text": "Comparing lengths: Which item is LONGER: A classroom hallway or A wooden pencil?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-me-03-0114_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-ME-03-0114_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-me-03-0114_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "The Great Wall is definitely longer.",
+      "prompt": "A classroom hallway is longer.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_2_CONTEXTUAL",
-  "representation_type": "SYMBOLIC",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
@@ -60,11 +54,11 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "The Great Wall"
+            "display_value": "A classroom hallway"
           },
           {
             "option_id": "opt_2",
-            "display_value": "A wooden fence"
+            "display_value": "A wooden pencil"
           },
           {
             "option_id": "opt_3",

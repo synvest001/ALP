@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Scanning their dimensions, which item is LONGER: An endless cosmic wormhole or A simple garden hose?",
+    "display_text": "Comparing lengths: Which item is LONGER: A garden hose or A sewing needle?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-me-03-0025_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-ME-03-0025_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-me-03-0025_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "An endless cosmic wormhole is definitely longer.",
+      "prompt": "A garden hose is longer.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_2_CONTEXTUAL",
-  "representation_type": "SYMBOLIC",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
@@ -60,11 +54,11 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "An endless cosmic wormhole"
+            "display_value": "A garden hose"
           },
           {
             "option_id": "opt_2",
-            "display_value": "A simple garden hose"
+            "display_value": "A sewing needle"
           },
           {
             "option_id": "opt_3",

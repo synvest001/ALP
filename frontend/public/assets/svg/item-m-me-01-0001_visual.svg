@@ -1,11 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="100%" height="100%">
-  <rect width="300" height="200" rx="16" fill="#1e1b4b"/>
-  <!-- 5 Bright Golden Stars -->
-  <g fill="#facc15" stroke="#eab308" stroke-width="2">
-    <polygon transform="translate(50, 60) scale(1.1)" points="0,-20 6,-6 20,-6 9,3 13,16 0,8 -13,16 -9,3 -20,-6 -6,-6"/>
-    <polygon transform="translate(110, 130) scale(1.2)" points="0,-20 6,-6 20,-6 9,3 13,16 0,8 -13,16 -9,3 -20,-6 -6,-6"/>
-    <polygon transform="translate(150, 50) scale(1.3)" points="0,-20 6,-6 20,-6 9,3 13,16 0,8 -13,16 -9,3 -20,-6 -6,-6"/>
-    <polygon transform="translate(200, 130) scale(1.1)" points="0,-20 6,-6 20,-6 9,3 13,16 0,8 -13,16 -9,3 -20,-6 -6,-6"/>
-    <polygon transform="translate(250, 60) scale(1.2)" points="0,-20 6,-6 20,-6 9,3 13,16 0,8 -13,16 -9,3 -20,-6 -6,-6"/>
-  </g>
+  <rect width="300" height="200" rx="16" fill="#f8fafc"/>
+  <!-- Clock Outer Rim -->
+  <circle cx="150" cy="100" r="70" fill="#ffffff" stroke="#0284c7" stroke-width="6"/>
+  <!-- Clock Numbers -->
+  <text x="150" y="48" font-size="13" font-weight="bold" fill="#1e293b" text-anchor="middle">12</text>
+  <text x="204" y="104" font-size="13" font-weight="bold" fill="#1e293b" text-anchor="middle">3</text>
+  <text x="150" y="160" font-size="13" font-weight="bold" fill="#1e293b" text-anchor="middle">6</text>
+  <text x="96" y="104" font-size="13" font-weight="bold" fill="#1e293b" text-anchor="middle">9</text>
+  <!-- Minute Hand (points straight up to 12) -->
+  <line x1="150" y1="100" x2="150" y2="52" stroke="#0f172a" stroke-width="3" stroke-linecap="round"/>
+  <!-- Hour Hand (points to 1) -->
+  <line x1="150" y1="100" x2="166.0" y2="72.3" stroke="#dc2626" stroke-width="4.5" stroke-linecap="round"/>
+  <!-- Center Pin -->
+  <circle cx="150" cy="100" r="4.5" fill="#dc2626"/>
 </svg>

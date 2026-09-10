@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "GENERALIZE",
   "transfer_level": "LEVEL_4_STRUCTURAL",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "A cylinder is placed upright on a table. If Princess Luna looks directly DOWN at it from a bird's-eye view above, what 2D shape do they see?",
+    "display_text": "A cylinder stands upright on a table. If you look straight down at it from directly above (bird's-eye view), what 2D shape do you see?",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-sr-04-0038_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-L-SR-04-0038_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-l-sr-04-0038_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",
@@ -61,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Looking directly down onto an upright cylinder reveals its circular base."
+      "prompt": "Looking directly down onto an upright cylinder reveals its circular top."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

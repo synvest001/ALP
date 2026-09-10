@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_3_REPRESENTATIONAL",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "What happens when the prefix 'pre-' is added to the base word 'view' to form 'pre-view'?",
+    "display_text": "What does the word 'pre-view' mean when you add the prefix 'pre-'?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-vm-05-0006_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-E-VM-05-0006_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-e-vm-05-0006_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",
@@ -61,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The prefix 'pre-' means View before."
+      "prompt": "The prefix 'pre-' means view before."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

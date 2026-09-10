@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The ancient Temple of Shapes has a magical door guarded by a polygon with exactly 6 straight sides. Which shape is carved into the door?",
+    "display_text": "Look at the polygon above. It has exactly 6 straight sides. What is the name of this shape?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-gs-04-0085_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "A shape with exactly 6 sides is a Hexagon.",
+      "prompt": "A shape with 6 straight sides is a Hexagon.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +47,7 @@
   },
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_2_CONTEXTUAL",
-  "representation_type": "SYMBOLIC",
+  "representation_type": "VISUAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
@@ -68,7 +68,7 @@
           },
           {
             "option_id": "opt_3",
-            "display_value": "Square"
+            "display_value": "Triangle"
           },
           {
             "option_id": "opt_4",

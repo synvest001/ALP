@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The dragon hoard of 3 found a treasure chest with 12 gold coins. To avoid a mutiny, they must split it EQUALLY. What does sharing equally mean?",
+    "display_text": "Which option describes a shape divided into EQUAL parts?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-fr-05-0025_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-FR-05-0025_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-fr-05-0025_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Equal means fair shares for each member of the dragon hoard!",
+      "prompt": "Fractions always require parts to be exactly equal in size.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_2_CONTEXTUAL",
-  "representation_type": "SYMBOLIC",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
@@ -60,19 +54,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Everyone gets the exact same amount"
+            "display_value": "A sandwich cut into 2 matching halves of the exact same size"
           },
           {
             "option_id": "opt_2",
-            "display_value": "The captain gets the most"
+            "display_value": "A cookie broken into 1 giant piece and 3 tiny crumbs"
           },
           {
             "option_id": "opt_3",
-            "display_value": "The fastest pirate gets them all"
+            "display_value": "A ribbon cut randomly into uneven lengths"
           },
           {
             "option_id": "opt_4",
-            "display_value": "It's impossible to share"
+            "display_value": "A paper torn jaggedly"
           }
         ]
       },

@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The vault uses a two-attribute cipher: Golden Star, Silver Diamond, Golden Star, Silver Diamond... What shape and color comes next?",
+    "display_text": "Look at the sequence: Big Star, Small Moon, Big Star, Small Moon, Big Star, ___? What comes next?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-pa-06-0078_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-PA-06-0078_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-pa-06-0078_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Follow both color and shape alternating rules: next is Golden Star.",
+      "prompt": "Both attributes alternate: 'Small Moon' is next.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "GENERALIZE",
   "transfer_level": "LEVEL_4_STRUCTURAL",
-  "representation_type": "SYMBOLIC",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
@@ -60,19 +54,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Golden Star"
+            "display_value": "Small Moon"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Silver Diamond"
+            "display_value": "Big Star"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Silver Star"
+            "display_value": "Big Moon"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Golden Diamond"
+            "display_value": "Small Star"
           }
         ]
       },

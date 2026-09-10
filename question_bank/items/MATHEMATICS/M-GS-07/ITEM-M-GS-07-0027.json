@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "A master builder assembles a diamond rhombus by joining 2 matching triangles edge-to-edge. Which smaller shape was used to compose it?",
+    "display_text": "You can make a diamond shape by joining 2 matching triangles edge to edge. Which smaller shape is used?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-gs-07-0027_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-GS-07-0027_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-gs-07-0027_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "2 matching triangles were combined together.",
+      "prompt": "2 matching triangles combine to form the shape.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_3_REPRESENTATIONAL",
-  "representation_type": "SYMBOLIC",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",

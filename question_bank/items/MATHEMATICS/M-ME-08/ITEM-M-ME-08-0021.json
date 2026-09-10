@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The explorer recorded specimens found on an expedition: gold coins: 15, silver coins: 10, bronze coins: 6. Which specimen was collected the MOST?",
+    "display_text": "A student counted items in class: books: 15, magazines: 10, notebooks: 6. Which item had the HIGHEST count?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-me-08-0021_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-ME-08-0021_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-me-08-0021_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "gold coins has the highest count of 15.",
+      "prompt": "books has the largest count of 15.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
@@ -60,15 +54,15 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "gold coins"
+            "display_value": "books"
           },
           {
             "option_id": "opt_2",
-            "display_value": "silver coins"
+            "display_value": "magazines"
           },
           {
             "option_id": "opt_3",
-            "display_value": "bronze coins"
+            "display_value": "notebooks"
           },
           {
             "option_id": "opt_4",

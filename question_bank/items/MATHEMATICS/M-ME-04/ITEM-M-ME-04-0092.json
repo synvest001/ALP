@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The galactic merchant demands a \u20b920 note to buy the hyper-fuel. How many Rupees is that worth?",
+    "display_text": "A storybook costs \u20b935. Aarav pays with a \u20b950 note. How much change should Aarav receive?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-me-04-0092_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-ME-04-0092_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-me-04-0092_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "a \u20b920 note equals 20 Rupees.",
+      "prompt": "50 - 35 = 15 Rupees.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
@@ -60,19 +54,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "20 Rupees"
+            "display_value": "15 Rupees"
           },
           {
             "option_id": "opt_2",
-            "display_value": "1 Rupee"
+            "display_value": "25 Rupees"
           },
           {
             "option_id": "opt_3",
-            "display_value": "5 Rupees"
+            "display_value": "10 Rupees"
           },
           {
             "option_id": "opt_4",
-            "display_value": "500 Rupees"
+            "display_value": "20 Rupees"
           }
         ]
       },

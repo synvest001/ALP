@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "In the alchemy laboratory in the space station, you mix pure red paint pigment with pure blue paint pigment. What color is produced?",
+    "display_text": "In art class, what secondary color do you get when you mix red paint with blue paint?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-in-03-0012_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-S-IN-03-0012_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-s-in-03-0012_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",

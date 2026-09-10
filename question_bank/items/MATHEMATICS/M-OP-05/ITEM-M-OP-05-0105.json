@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Commander Zorg needs 14 energy cells to activate the teleporter. He currently has 5 cells. How many MORE cells must he insert?",
+    "display_text": "Zara needs 14 building blocks to complete a tower. She already has 5 blocks. How many MORE blocks does she need?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-op-05-0105_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-OP-05-0105_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-op-05-0105_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Find the missing part: 14 - 5 = 9 cells needed.",
+      "prompt": "Find the missing part: 14 - 5 = 9 blocks needed.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_2_CONTEXTUAL",
-  "representation_type": "SYMBOLIC",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",

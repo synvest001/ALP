@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "In a test of ultimate strength, which object is HEAVIER: A boulder of solid gold or A handful of feathers?",
+    "display_text": "Comparing weights: Which object is HEAVIER: A heavy stone boulder or A fluffy bird feather?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-me-02-0093_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-ME-02-0093_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-me-02-0093_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "A boulder of solid gold has much more mass and weight.",
+      "prompt": "A heavy stone boulder is heavier.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
@@ -60,11 +54,11 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "A boulder of solid gold"
+            "display_value": "A heavy stone boulder"
           },
           {
             "option_id": "opt_2",
-            "display_value": "A handful of feathers"
+            "display_value": "A fluffy bird feather"
           },
           {
             "option_id": "opt_3",

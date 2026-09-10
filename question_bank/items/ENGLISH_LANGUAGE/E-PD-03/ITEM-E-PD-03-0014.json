@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_2_CONTEXTUAL",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "In the crystal palace, Princess Luna must chant a spell rhyming with 'night'. Which word creates a perfect rhyme?",
+    "display_text": "Which word rhymes with 'cat'?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-pd-03-0014_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-E-PD-03-0014_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-e-pd-03-0014_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",
@@ -34,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Knight"
+            "display_value": "Hat"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Day"
+            "display_value": "Dog"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Sword"
+            "display_value": "Bird"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Castle"
+            "display_value": "Mouse"
           }
         ]
       },
@@ -61,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "'Knight' rhymes with 'night' because they share the same ending sound."
+      "prompt": "'Hat' and 'cat' share the same ending sound."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

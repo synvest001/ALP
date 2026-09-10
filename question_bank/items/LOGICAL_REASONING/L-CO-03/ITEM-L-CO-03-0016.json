@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_3_REPRESENTATIONAL",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Disjunctive reasoning for The grumpy troll: 'The guard is EITHER in the watchtower OR at the gate. The guard is NOT at the gate.' What must logically be true?",
+    "display_text": "Either/Or reasoning: 'The school bus driver is EITHER on Bus 1 OR on Bus 2. She is NOT on Bus 1.' What must be true?",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-co-03-0016_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-L-CO-03-0016_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-l-co-03-0016_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",
@@ -34,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "The guard is in the watchtower"
+            "display_value": "She is on Bus 2"
           },
           {
             "option_id": "opt_2",
-            "display_value": "The guard is at the gate"
+            "display_value": "She is on Bus 1"
           },
           {
             "option_id": "opt_3",
-            "display_value": "The guard went home"
+            "display_value": "The bus has no driver"
           },
           {
             "option_id": "opt_4",
-            "display_value": "The castle has no guards"
+            "display_value": "She is on an airplane"
           }
         ]
       },
@@ -61,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "When one of two exclusive possibilities is eliminated, the remaining option must hold."
+      "prompt": "When one option is eliminated, the other must be true."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

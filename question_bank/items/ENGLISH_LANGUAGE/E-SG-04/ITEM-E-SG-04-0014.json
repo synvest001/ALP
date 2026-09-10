@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_2_CONTEXTUAL",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Fill in the blank with the correct pronoun: 'Captain Orion adjusted his helmet. ___ stepped onto the red dust of Mars.'",
+    "display_text": "Fill in the blank with the correct pronoun: 'Leo packed his backpack. ___ walked to school.'",
     "spoken_audio_uri": "assets/audio/english_language/item-e-sg-04-0014_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-E-SG-04-0014_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-e-sg-04-0014_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",

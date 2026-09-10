@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Which sentence is written with correct, natural word order for Lady Gwen's scroll?",
+    "display_text": "Which sentence is written with the correct, natural word order?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-sg-01-0011_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-E-SG-01-0011_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-e-sg-01-0011_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",
@@ -34,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "A red dragon breathes fire."
+            "display_value": "A gentle breeze blew the leaves."
           },
           {
             "option_id": "opt_2",
-            "display_value": "Breathes fire a red dragon."
+            "display_value": "Leaves the blew breeze gentle a."
           },
           {
             "option_id": "opt_3",
-            "display_value": "Dragon red a fire breathes."
+            "display_value": "Blew breeze a gentle leaves the."
           },
           {
             "option_id": "opt_4",
-            "display_value": "A red dragons breathe fires."
+            "display_value": "A leaves gentle breeze the blew."
           }
         ]
       },
@@ -61,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "English sentences generally follow Subject + Verb + Object word order."
+      "prompt": "English sentences follow Subject + Verb + Object order."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

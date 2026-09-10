@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "REASON",
   "transfer_level": "LEVEL_2_CONTEXTUAL",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "When the magic silent 'e' attaches to the word 'hop', what new word is created?",
+    "display_text": "When you add a silent 'e' to the word 'hop', what new word is formed?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-rf-02-0025_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-E-RF-02-0025_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-e-rf-02-0025_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",

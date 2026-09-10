@@ -9,19 +9,13 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Thermal sensors scan two areas: An arctic glacier and A roaring campfire. Which location is COLDER?",
+    "display_text": "Comparing temperatures: Which is COLDER: An ice cube in the freezer or A warm bowl of soup?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-me-06-0139_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-M-ME-06-0139_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-m-me-06-0139_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "An arctic glacier is noticeably colder.",
+      "prompt": "An ice cube in the freezer is colder.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -47,7 +41,7 @@
   },
   "cognitive_depth": "GENERALIZE",
   "transfer_level": "LEVEL_4_STRUCTURAL",
-  "representation_type": "SYMBOLIC",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
@@ -60,15 +54,15 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "An arctic glacier"
+            "display_value": "An ice cube in the freezer"
           },
           {
             "option_id": "opt_2",
-            "display_value": "A roaring campfire"
+            "display_value": "A warm bowl of soup"
           },
           {
             "option_id": "opt_3",
-            "display_value": "They have identical temperatures"
+            "display_value": "They have the same temperature"
           }
         ]
       },

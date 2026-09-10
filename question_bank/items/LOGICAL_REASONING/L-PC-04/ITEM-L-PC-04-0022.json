@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "The space explorer inspects tools in the workshop: Iron hammer, Steel wrench, Copper screwdriver, and Wooden table. Which item does NOT belong by material?",
+    "display_text": "Examine these tools: Iron hammer, Steel wrench, Copper pliers, and Wooden chair. Which item does NOT belong by material?",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-pc-04-0022_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-L-PC-04-0022_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-l-pc-04-0022_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",
@@ -34,7 +28,7 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Wooden table"
+            "display_value": "Wooden chair"
           },
           {
             "option_id": "opt_2",
@@ -46,7 +40,7 @@
           },
           {
             "option_id": "opt_4",
-            "display_value": "Copper screwdriver"
+            "display_value": "Copper pliers"
           }
         ]
       },
@@ -61,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The table is made of wood, while all the tools are composed of metals."
+      "prompt": "The chair is made of wood, while the tools are made of metal."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

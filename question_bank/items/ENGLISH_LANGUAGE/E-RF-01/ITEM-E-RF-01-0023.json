@@ -10,22 +10,16 @@
   "estimated_duration_seconds": 30,
   "cognitive_depth": "APPLY",
   "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
+  "representation_type": "VERBAL",
   "primary_modality": "TAP_SELECT",
   "supported_alternative_modalities": [
     "TAP_SELECT",
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Decode the ancient hieroglyph found in the dark cave! Which option correctly spells the sight word 'SHOULD'?",
+    "display_text": "Complete the sentence with the correct spelling: 'You ___ always wash your hands before eating lunch.' Which spelling is correct?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-rf-01-0023_prompt.mp3",
-    "visual_assets": [
-      {
-        "asset_id": "ITEM-E-RF-01-0023_vis_1",
-        "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/item-e-rf-01-0023_visual.svg"
-      }
-    ]
+    "visual_assets": []
   },
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",
@@ -38,15 +32,15 @@
           },
           {
             "option_id": "opt_2",
-            "display_value": "should"
+            "display_value": "shood"
           },
           {
             "option_id": "opt_3",
-            "display_value": "should"
+            "display_value": "shuld"
           },
           {
             "option_id": "opt_4",
-            "display_value": "shouldz"
+            "display_value": "shoudl"
           }
         ]
       },
@@ -61,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The correct spelling is 'should'."
+      "prompt": "The correct spelling of the sight word is 'should'."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."
@@ -73,7 +67,7 @@
   "rubric": {
     "evaluation_mode": "DETERMINISTIC_EXACT_MATCH",
     "correct_criteria": {
-      "selected_option_id": "opt_3"
+      "selected_option_id": "opt_1"
     }
   },
   "safeguard_metadata": {
