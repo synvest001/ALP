@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "To unlock the secret door, you must press the button that comes directly BEFORE 17. What is it?",
+    "display_text": "The spaceship's countdown is at 18. What number comes directly AFTER 18 to launch the rocket?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-nq-02-0039_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Think backwards from 17: the number right before is 16.",
+      "prompt": "Count up: ..., 18, 19!",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "16"
+            "display_value": "19"
           },
           {
             "option_id": "opt_2",
-            "display_value": "18"
+            "display_value": "17"
           },
           {
             "option_id": "opt_3",
-            "display_value": "15"
+            "display_value": "20"
           },
           {
             "option_id": "opt_4",
-            "display_value": "17"
+            "display_value": "18"
           }
         ]
       },

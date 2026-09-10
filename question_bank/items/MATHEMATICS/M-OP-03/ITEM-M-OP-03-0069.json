@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Captain Orion collected 9 space crystals on Mars and 9 on Jupiter. How many crystals does he have to power his rocket?",
+    "display_text": "The alien has 8 eyes. By looking into the magic mirror, its eyes DOUBLE! How many eyes does it have now?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-op-03-0069_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Add them up: 9 + 9 = 18.",
+      "prompt": "Double means adding the number to itself: 8 + 8 = 16.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "18"
-          },
-          {
-            "option_id": "opt_2",
             "display_value": "16"
           },
           {
+            "option_id": "opt_2",
+            "display_value": "14"
+          },
+          {
             "option_id": "opt_3",
-            "display_value": "19"
+            "display_value": "18"
           },
           {
             "option_id": "opt_4",
-            "display_value": "21"
+            "display_value": "11"
           }
         ]
       },

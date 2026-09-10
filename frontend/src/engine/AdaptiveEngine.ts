@@ -16,20 +16,6 @@ export interface TaskRequestPayload {
   question_item?: QuestionItem | null;
 }
 
-const DOMAIN_TARGETS: Record<string, [number, number]> = {
-  'MATHEMATICS': [30, 40],
-  'ENGLISH_LANGUAGE': [25, 35],
-  'SCIENCE_EVS_WORLD_KNOWLEDGE': [15, 25],
-  'LOGICAL_REASONING': [10, 20]
-};
-
-const mapDomainToCategory = (domain: string) => {
-  if (domain === 'SCIENCE_EVS' || domain === 'WORLD_KNOWLEDGE') {
-    return 'SCIENCE_EVS_WORLD_KNOWLEDGE';
-  }
-  return domain;
-};
-
 export class SessionComposer {
   public questionBank: QuestionBank;
   public assessmentEngine: AssessmentEngine;
@@ -49,40 +35,10 @@ export class SessionComposer {
   }
 
   /**
-   * Reads real historical domain counts from localStorage to compute dynamic rolling deficits.
-   */
-  private getDynamicDomainActuals(kidId: string): Record<string, number> {
-    try {
-      const counts: Record<string, number> = JSON.parse(
-        localStorage.getItem(`alp_${kidId}_domain_counts`) ||
-        localStorage.getItem('alp_domain_counts') || '{}'
-      );
-      let total = 0;
-      Object.values(counts).forEach(v => total += v);
-      if (total === 0) {
-        return {
-          'MATHEMATICS': 0,
-          'ENGLISH_LANGUAGE': 0,
-          'SCIENCE_EVS_WORLD_KNOWLEDGE': 0,
-          'LOGICAL_REASONING': 0
-        };
-      }
-      return {
-        'MATHEMATICS': Math.round(((counts['MATHEMATICS'] || 0) / total) * 100),
-        'ENGLISH_LANGUAGE': Math.round(((counts['ENGLISH_LANGUAGE'] || 0) / total) * 100),
-        'SCIENCE_EVS_WORLD_KNOWLEDGE': Math.round((((counts['SCIENCE_EVS'] || 0) + (counts['WORLD_KNOWLEDGE'] || 0)) / total) * 100),
-        'LOGICAL_REASONING': Math.round(((counts['LOGICAL_REASONING'] || 0) / total) * 100)
-      };
-    } catch (e) {
-      return { 'MATHEMATICS': 0, 'ENGLISH_LANGUAGE': 0, 'SCIENCE_EVS_WORLD_KNOWLEDGE': 0, 'LOGICAL_REASONING': 0 };
-    }
-  }
-
-  /**
    * Composes a dynamic session according to Workstream 3 Dual-Axis Adaptive Design:
    * - Axis 1: Curriculum Graph progression & prerequisite unlocking
    * - Axis 2: Depth-First cognitive complexity escalation (APPLY -> REASON -> GENERALIZE)
-   * - Balanced domain ratio: 40% Mathematics (2 tasks), 1 English, 1 Logic, 1 Science/World Knowledge
+   * - Fixed domain ratio in mixed mode: 40% Mathematics (4 tasks), 20% English (2 tasks), 20% Logic (2 tasks), 10% Science (1 task), 10% World Knowledge (1 task)
    * - Multi-strand rotation: distinct subskills per domain to prevent subskill lock-in
    * - Zero question repetitions via RepetitionGuard (cooldown across last 5 sessions + intra-session uniqueness)
    */
@@ -111,14 +67,12 @@ export class SessionComposer {
     let domainSlots: string[] = [];
     
     if (focusedDomain) {
-      domainSlots = Array(targetTaskCount).fill(focusedDomain);
+      const domains = focusedDomain.split(',');
+      domainSlots = Array.from({ length: targetTaskCount }, (_, i) => domains[i % domains.length]);
     } else {
-      // Core rule: Mathematics must comprise 40% (4 tasks out of 10)
-      // 2 English Language, 2 Logical Reasoning, 2 Science/World Knowledge
-      const domainActuals = this.getDynamicDomainActuals(cleanKidId);
-      const scienceActual = domainActuals['SCIENCE_EVS_WORLD_KNOWLEDGE'] || 0;
-      
-      // Fill 10 slots
+      // Core rule: Fixed ratio for mixed adventure mode (10 slots)
+      // 40% Mathematics (4 tasks), 20% English (2 tasks), 20% Logical Reasoning (2 tasks),
+      // 10% Science (1 task), 10% World Knowledge (1 task)
       domainSlots = [
         'MATHEMATICS',
         'MATHEMATICS',

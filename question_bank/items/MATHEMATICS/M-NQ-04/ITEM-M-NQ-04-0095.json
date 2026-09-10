@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The wizard's potion needs 3 tens and 5 ones of spider venom drops. What is the total number?",
+    "display_text": "To unlock the secret door, you must press the button that comes directly BEFORE 25. What is it?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-nq-04-0095_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "3 tens = 30. Add 5 ones: 30 + 5 = 35!",
+      "prompt": "Think backwards from 25: the number right before is 24.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "35"
+            "display_value": "24"
           },
           {
             "option_id": "opt_2",
-            "display_value": "45"
+            "display_value": "26"
           },
           {
             "option_id": "opt_3",
-            "display_value": "37"
+            "display_value": "23"
           },
           {
             "option_id": "opt_4",
-            "display_value": "34"
+            "display_value": "25"
           }
         ]
       },

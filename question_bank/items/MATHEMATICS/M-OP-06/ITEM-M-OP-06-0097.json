@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Captain Orion collected 5 space crystals on Mars and 9 on Jupiter. How many crystals does he have to power his rocket?",
+    "display_text": "The treasure vault had 18 gold bars. The pirate took away 9 bars. How many are left?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-op-06-0097_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Add them up: 5 + 9 = 14.",
+      "prompt": "Subtract: 18 - 9 = 9.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "14"
+            "display_value": "9"
           },
           {
             "option_id": "opt_2",
-            "display_value": "12"
+            "display_value": "10"
           },
           {
             "option_id": "opt_3",
-            "display_value": "15"
+            "display_value": "7"
           },
           {
             "option_id": "opt_4",
-            "display_value": "17"
+            "display_value": "11"
           }
         ]
       },

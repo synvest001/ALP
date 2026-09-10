@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "During the battle, 12 goblins charged forward, and then 6 more joined them. How many goblins in all?",
+    "display_text": "Captain Orion collected 12 space crystals on Mars and 6 on Jupiter. How many crystals does he have to power his rocket?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-op-05-0008_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Combine the attacking forces: 12 + 6 = 18 goblins!",
+      "prompt": "Add them up: 12 + 6 = 18.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -64,15 +64,15 @@
           },
           {
             "option_id": "opt_2",
-            "display_value": "20"
+            "display_value": "16"
           },
           {
             "option_id": "opt_3",
-            "display_value": "17"
+            "display_value": "19"
           },
           {
             "option_id": "opt_4",
-            "display_value": "22"
+            "display_value": "21"
           }
         ]
       },

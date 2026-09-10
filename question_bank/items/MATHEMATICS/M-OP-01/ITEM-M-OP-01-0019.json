@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The alien has 6 eyes. By looking into the magic mirror, its eyes DOUBLE! How many eyes does it have now?",
+    "display_text": "Captain Orion collected 7 space crystals on Mars and 5 on Jupiter. How many crystals does he have to power his rocket?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-op-01-0019_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Double means adding the number to itself: 6 + 6 = 12.",
+      "prompt": "Add them up: 7 + 5 = 12.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -68,11 +68,11 @@
           },
           {
             "option_id": "opt_3",
-            "display_value": "14"
+            "display_value": "13"
           },
           {
             "option_id": "opt_4",
-            "display_value": "9"
+            "display_value": "15"
           }
         ]
       },

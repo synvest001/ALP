@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Captain Orion collected 9 space crystals on Mars and 9 on Jupiter. How many crystals does he have to power his rocket?",
+    "display_text": "During the battle, 9 fire dragons charged forward, and then 9 more joined them. How many fire dragons in all?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-op-04-0013_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Add them up: 9 + 9 = 18.",
+      "prompt": "Combine the attacking forces: 9 + 9 = 18 fire dragons!",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -64,15 +64,15 @@
           },
           {
             "option_id": "opt_2",
-            "display_value": "16"
+            "display_value": "20"
           },
           {
             "option_id": "opt_3",
-            "display_value": "19"
+            "display_value": "17"
           },
           {
             "option_id": "opt_4",
-            "display_value": "21"
+            "display_value": "22"
           }
         ]
       },

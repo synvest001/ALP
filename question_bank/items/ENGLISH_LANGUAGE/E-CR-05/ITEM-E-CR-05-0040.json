@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "The dragon was *colossal*, towering over the tallest castle towers. What does 'colossal' mean?",
+    "display_text": "Read the scroll: 'The space explorer found a golden key under the mat.' What did they interact with?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cr-05-0040_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Friendly"
+            "display_value": "A golden key"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Huge"
+            "display_value": "A silver sword"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Tiny"
+            "display_value": "A diamond ring"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Green"
+            "display_value": "Nothing"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Colossal means extremely large!"
+      "prompt": "Read the sentence carefully to find the object."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."
@@ -73,7 +73,7 @@
   "rubric": {
     "evaluation_mode": "DETERMINISTIC_EXACT_MATCH",
     "correct_criteria": {
-      "selected_option_id": "opt_2"
+      "selected_option_id": "opt_1"
     }
   },
   "safeguard_metadata": {

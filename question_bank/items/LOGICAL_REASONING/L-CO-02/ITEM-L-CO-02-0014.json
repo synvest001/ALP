@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Which of these futuristic gadgets belongs in the 'Communication' category?",
+    "display_text": "Logic rule for The grumpy troll: If you drop a glass, it breaks. You observe the first part. What happens?",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-co-02-0014_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Laser Blaster"
+            "display_value": "It breaks"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Gravity Boots"
+            "display_value": "It bounces"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Plasma Shield"
+            "display_value": "It floats"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Holo-Transmitter"
+            "display_value": "It vanishes"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Transmitters are used for talking and sending messages."
+      "prompt": "The result is It breaks."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."
@@ -73,7 +73,7 @@
   "rubric": {
     "evaluation_mode": "DETERMINISTIC_EXACT_MATCH",
     "correct_criteria": {
-      "selected_option_id": "opt_4"
+      "selected_option_id": "opt_1"
     }
   },
   "safeguard_metadata": {

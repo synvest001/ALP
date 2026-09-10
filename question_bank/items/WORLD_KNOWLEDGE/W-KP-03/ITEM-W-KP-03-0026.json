@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "You are flying an airplane over the vast, ancient pyramids of Giza. Which continent are you currently exploring?",
+    "display_text": "You are flying a purple plane over the Eiffel Tower. Which continent are you exploring?",
     "spoken_audio_uri": "assets/audio/world_knowledge/item-w-kp-03-0026_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Asia"
-          },
-          {
-            "option_id": "opt_2",
             "display_value": "Europe"
           },
           {
+            "option_id": "opt_2",
+            "display_value": "Asia"
+          },
+          {
             "option_id": "opt_3",
-            "display_value": "South America"
+            "display_value": "Africa"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Africa"
+            "display_value": "South America"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The pyramids of Giza are located in Egypt, which is in Africa!"
+      "prompt": "The Eiffel Tower is in Europe."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."
@@ -73,7 +73,7 @@
   "rubric": {
     "evaluation_mode": "DETERMINISTIC_EXACT_MATCH",
     "correct_criteria": {
-      "selected_option_id": "opt_4"
+      "selected_option_id": "opt_1"
     }
   },
   "safeguard_metadata": {

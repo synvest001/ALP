@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The pirate crew of 4 found a treasure chest with 16 gold coins. To avoid a mutiny, they must split it EQUALLY. What does sharing equally mean?",
+    "display_text": "The goblin troop of 4 found a treasure chest with 16 gold coins. To avoid a mutiny, they must split it EQUALLY. What does sharing equally mean?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-fr-06-0134_prompt.mp3",
     "visual_assets": [
       {

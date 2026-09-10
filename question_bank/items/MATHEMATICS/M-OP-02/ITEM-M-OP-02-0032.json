@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "During the battle, 12 goblins charged forward, and then 4 more joined them. How many goblins in all?",
+    "display_text": "The treasure vault had 20 gold bars. The pirate took away 4 bars. How many are left?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-op-02-0032_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Combine the attacking forces: 12 + 4 = 16 goblins!",
+      "prompt": "Subtract: 20 - 4 = 16.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -64,15 +64,15 @@
           },
           {
             "option_id": "opt_2",
-            "display_value": "18"
+            "display_value": "17"
           },
           {
             "option_id": "opt_3",
-            "display_value": "15"
+            "display_value": "14"
           },
           {
             "option_id": "opt_4",
-            "display_value": "20"
+            "display_value": "18"
           }
         ]
       },

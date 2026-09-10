@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Scanning their dimensions, which item is SHORTER: A tiny microchip or A giant supercomputer?",
+    "display_text": "Floating on the wind, which object is LIGHTER: A single raindrop or A swirling hurricane?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-me-06-0019_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "A tiny microchip is definitely shorter.",
+      "prompt": "A single raindrop is much lighter!",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,15 +60,15 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "A tiny microchip"
+            "display_value": "A single raindrop"
           },
           {
             "option_id": "opt_2",
-            "display_value": "A giant supercomputer"
+            "display_value": "A swirling hurricane"
           },
           {
             "option_id": "opt_3",
-            "display_value": "They are identical in length"
+            "display_value": "They weigh the exact same"
           }
         ]
       },

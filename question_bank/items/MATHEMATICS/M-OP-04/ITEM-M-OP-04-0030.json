@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The treasure vault had 17 gold bars. The pirate took away 3 bars. How many are left?",
+    "display_text": "During the battle, 10 ice wolves charged forward, and then 3 more joined them. How many ice wolves in all?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-op-04-0030_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Subtract: 17 - 3 = 14.",
+      "prompt": "Combine the attacking forces: 10 + 3 = 13 ice wolves!",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,7 +60,7 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "14"
+            "display_value": "13"
           },
           {
             "option_id": "opt_2",
@@ -72,7 +72,7 @@
           },
           {
             "option_id": "opt_4",
-            "display_value": "16"
+            "display_value": "17"
           }
         ]
       },

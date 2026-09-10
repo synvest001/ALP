@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "If the ice magic makes the shield *brittle*, what fire magic spell would make it the opposite?",
+    "display_text": "Which sentence is written correctly for The grumpy troll's royal decree?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-sg-05-0014_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Fragile"
+            "display_value": "A red dragon breathes fire."
           },
           {
             "option_id": "opt_2",
-            "display_value": "Cold"
+            "display_value": "Breathes fire a red dragon."
           },
           {
             "option_id": "opt_3",
-            "display_value": "Broken"
+            "display_value": "Dragon red a fire breathes."
           },
           {
             "option_id": "opt_4",
-            "display_value": "Flexible"
+            "display_value": "A red dragons breathe fires."
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The opposite of easily broken (brittle) is flexible/strong."
+      "prompt": "The subject and verb must agree, and the order must make sense!"
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."
@@ -73,7 +73,7 @@
   "rubric": {
     "evaluation_mode": "DETERMINISTIC_EXACT_MATCH",
     "correct_criteria": {
-      "selected_option_id": "opt_4"
+      "selected_option_id": "opt_1"
     }
   },
   "safeguard_metadata": {

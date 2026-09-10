@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The wizard's potion needs 4 tens and 2 ones of spider venom drops. What is the total number?",
+    "display_text": "The spaceship's countdown is at 14. What number comes directly AFTER 14 to launch the rocket?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-nq-02-0020_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "4 tens = 40. Add 2 ones: 40 + 2 = 42!",
+      "prompt": "Count up: ..., 14, 15!",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "42"
+            "display_value": "15"
           },
           {
             "option_id": "opt_2",
-            "display_value": "52"
+            "display_value": "13"
           },
           {
             "option_id": "opt_3",
-            "display_value": "44"
+            "display_value": "16"
           },
           {
             "option_id": "opt_4",
-            "display_value": "41"
+            "display_value": "14"
           }
         ]
       },

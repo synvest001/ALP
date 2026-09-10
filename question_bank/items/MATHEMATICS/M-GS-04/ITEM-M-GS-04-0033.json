@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "To bypass the laser grid, you must touch the Rectangle. How many straight sides does it have?",
+    "display_text": "The ancient Temple of Shapes has a magical door guarded by a polygon with exactly 3 straight sides. Which shape is carved into the door?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-gs-04-0033_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "A Rectangle always has 4 sides.",
+      "prompt": "A shape with exactly 3 sides is a Triangle.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "4"
+            "display_value": "Triangle"
           },
           {
             "option_id": "opt_2",
-            "display_value": "5"
+            "display_value": "Circle"
           },
           {
             "option_id": "opt_3",
-            "display_value": "3"
+            "display_value": "Square"
           },
           {
             "option_id": "opt_4",
-            "display_value": "5"
+            "display_value": "Star"
           }
         ]
       },

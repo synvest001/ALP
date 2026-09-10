@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The wizard's potion needs 2 tens and 9 ones of spider venom drops. What is the total number?",
+    "display_text": "Explorer! You found a hidden chest. How many mermaid pearls are sparkling inside?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-nq-06-0090_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "2 tens = 20. Add 9 ones: 20 + 9 = 29!",
+      "prompt": "Count carefully! The chest contains exactly 19 mermaid pearls.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "29"
+            "display_value": "19"
           },
           {
             "option_id": "opt_2",
-            "display_value": "39"
+            "display_value": "17"
           },
           {
             "option_id": "opt_3",
-            "display_value": "31"
+            "display_value": "21"
           },
           {
             "option_id": "opt_4",
-            "display_value": "28"
+            "display_value": "22"
           }
         ]
       },

@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The spaceship needs 18 hyper-drive cores to launch. You have collected 9. How many MORE cores must you find?",
+    "display_text": "The quest requires 18 magic potions to succeed. You have collected 9. How many MORE magic potions must you find?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-ps-02-0114_prompt.mp3",
     "visual_assets": [
       {

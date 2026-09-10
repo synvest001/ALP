@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "In the futuristic space port, which of these is NOT a vehicle meant for space travel?",
+    "display_text": "Cause and Effect: Captain Orion noticed wet footprints. Where did the suspect come from?",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-ce-04-0031_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Lunar Rover"
+            "display_value": "The River"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Orbital Station"
+            "display_value": "The Desert"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Submarine"
+            "display_value": "The Bakery"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Star Cruiser"
+            "display_value": "The Bank Vault"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Submarines travel deep underwater, not in outer space!"
+      "prompt": "The logical cause/effect is The River."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."
@@ -73,7 +73,7 @@
   "rubric": {
     "evaluation_mode": "DETERMINISTIC_EXACT_MATCH",
     "correct_criteria": {
-      "selected_option_id": "opt_3"
+      "selected_option_id": "opt_1"
     }
   },
   "safeguard_metadata": {

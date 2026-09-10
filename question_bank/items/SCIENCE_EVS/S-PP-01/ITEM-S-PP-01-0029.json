@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "You drop a bowling ball and a feather on the Moon, where there is no air resistance. What happens?",
+    "display_text": "If A brave knight cools a gas, what state of matter does it become?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-pp-01-0029_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "They hit the ground at the same time"
+            "display_value": "Liquid"
           },
           {
             "option_id": "opt_2",
-            "display_value": "The bowling ball hits first"
+            "display_value": "Solid"
           },
           {
             "option_id": "opt_3",
-            "display_value": "The feather hits first"
+            "display_value": "Plasma"
           },
           {
             "option_id": "opt_4",
-            "display_value": "They float away"
+            "display_value": "Energy"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Without air resistance, gravity pulls them down equally fast!"
+      "prompt": "It becomes Liquid."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

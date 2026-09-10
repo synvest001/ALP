@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "A secret agent is cracking a vault code: Fire, Ice, Lightning, Fire, Ice, Lightning, Fire, Ice... If she presses the wrong button, the alarm sounds! What comes next?",
+    "display_text": "A piece of the ancient map is missing! Fill in the blank: 12, ___, 36, 48",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-pa-06-0103_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "The pattern repeats: Lightning is next.",
+      "prompt": "Analyze the sequence before and after the blank.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Lightning"
+            "display_value": "24"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Fire"
+            "display_value": "18"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Ice"
+            "display_value": "30"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Earth"
+            "display_value": "20"
           }
         ]
       },

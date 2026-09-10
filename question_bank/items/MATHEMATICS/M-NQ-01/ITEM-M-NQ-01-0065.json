@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The wizard's potion needs 1 tens and 2 ones of spider venom drops. What is the total number?",
+    "display_text": "Explorer! You found a hidden chest. How many dragon scales are sparkling inside?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-nq-01-0065_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "1 tens = 10. Add 2 ones: 10 + 2 = 12!",
+      "prompt": "Count carefully! The chest contains exactly 9 dragon scales.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "12"
+            "display_value": "9"
           },
           {
             "option_id": "opt_2",
-            "display_value": "22"
+            "display_value": "7"
           },
           {
             "option_id": "opt_3",
-            "display_value": "14"
+            "display_value": "11"
           },
           {
             "option_id": "opt_4",
-            "display_value": "11"
+            "display_value": "12"
           }
         ]
       },

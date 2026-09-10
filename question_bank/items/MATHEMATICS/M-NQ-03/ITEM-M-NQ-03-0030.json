@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The wizard's potion needs 2 tens and 3 ones of spider venom drops. What is the total number?",
+    "display_text": "A fierce dragon has 21 gold coins, and a clever goblin has 13. Which number is GREATER?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-nq-03-0030_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "2 tens = 20. Add 3 ones: 20 + 3 = 23!",
+      "prompt": "21 is a larger treasure than 13.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,15 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "23"
+            "display_value": "21"
           },
           {
             "option_id": "opt_2",
-            "display_value": "33"
+            "display_value": "13"
           },
           {
             "option_id": "opt_3",
-            "display_value": "25"
-          },
-          {
-            "option_id": "opt_4",
-            "display_value": "22"
+            "display_value": "They have the same amount"
           }
         ]
       },

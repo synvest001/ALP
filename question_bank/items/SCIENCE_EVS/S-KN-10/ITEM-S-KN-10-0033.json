@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "The evil wizard casts a freeze spell on the moat's liquid water. What state of matter does the water turn into?",
+    "display_text": "The wise owl spots something that grows from an acorn. What is it?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-kn-10-0033_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Solid"
+            "display_value": "Oak tree"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Liquid"
+            "display_value": "Pine tree"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Gas"
+            "display_value": "Rose bush"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Plasma"
+            "display_value": "Sunflower"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Freezing liquid water turns it into solid ice!"
+      "prompt": "A Oak tree grows from an acorn."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

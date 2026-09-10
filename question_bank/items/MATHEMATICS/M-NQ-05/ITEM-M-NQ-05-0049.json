@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "To unlock the secret door, you must press the button that comes directly BEFORE 15. What is it?",
+    "display_text": "The wizard's potion needs 1 tens and 4 ones of spider venom drops. What is the total number?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-nq-05-0049_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Think backwards from 15: the number right before is 14.",
+      "prompt": "1 tens = 10. Add 4 ones: 10 + 4 = 14!",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -64,15 +64,15 @@
           },
           {
             "option_id": "opt_2",
-            "display_value": "16"
+            "display_value": "24"
           },
           {
             "option_id": "opt_3",
-            "display_value": "13"
+            "display_value": "16"
           },
           {
             "option_id": "opt_4",
-            "display_value": "15"
+            "display_value": "13"
           }
         ]
       },

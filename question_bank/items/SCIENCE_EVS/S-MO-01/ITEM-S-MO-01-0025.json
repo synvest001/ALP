@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "You must survive a harsh, sandy environment where it rarely rains. Which animal would be your best companion here?",
+    "display_text": "Which tool would Sir Lancelot use to measure the temperature of an object?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-mo-01-0025_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Camel"
+            "display_value": "Thermometer"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Polar Bear"
+            "display_value": "Ruler"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Frog"
+            "display_value": "Scale"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Penguin"
+            "display_value": "Microscope"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Camels are perfectly adapted to survive in dry deserts!"
+      "prompt": "A Thermometer measures temperature."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

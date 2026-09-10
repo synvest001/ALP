@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Explorer! You found a hidden chest. How many wizard wands are sparkling inside?",
+    "display_text": "The spaceship's countdown is at 15. What number comes directly AFTER 15 to launch the rocket?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-nq-02-0081_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Count carefully! The chest contains exactly 10 wizard wands.",
+      "prompt": "Count up: ..., 15, 16!",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "10"
+            "display_value": "16"
           },
           {
             "option_id": "opt_2",
-            "display_value": "8"
+            "display_value": "14"
           },
           {
             "option_id": "opt_3",
-            "display_value": "12"
+            "display_value": "17"
           },
           {
             "option_id": "opt_4",
-            "display_value": "13"
+            "display_value": "15"
           }
         ]
       },

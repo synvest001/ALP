@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "A bag contains ONLY 10 red dragon scales and 0 green scales. If you reach in blindly, what will you definitely pull out?",
+    "display_text": "A bag contains ONLY 10 red dragon scales and 0 blue scales. If you reach in blindly, what will you definitely pull out?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-du-01-0018_prompt.mp3",
     "visual_assets": [
       {
@@ -64,7 +64,7 @@
           },
           {
             "option_id": "opt_2",
-            "display_value": "A green dragon scale"
+            "display_value": "A blue dragon scale"
           },
           {
             "option_id": "opt_3",

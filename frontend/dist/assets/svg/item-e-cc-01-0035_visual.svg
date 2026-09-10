@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="100%" height="100%">
+  <rect width="300" height="200" rx="16" fill="#e0f2fe"/>
+  <!-- Water ripples -->
+  <ellipse cx="150" cy="155" rx="110" ry="18" fill="#0284c7" opacity="0.3"/>
+  <path d="M 20,165 Q 85,155 150,165 T 280,165" stroke="#38bdf8" stroke-width="3" fill="none"/>
+  <!-- Duck Body -->
+  <g transform="translate(140, 125)">
+    <ellipse cx="0" cy="0" rx="48" ry="32" fill="#facc15" stroke="#eab308" stroke-width="3"/>
+    <!-- Wing -->
+    <path d="M -20,-10 C 10,-20 30,-5 15,15 C -5,25 -25,10 -20,-10 Z" fill="#eab308" stroke="#ca8a04" stroke-width="2"/>
+    <!-- Duck Head -->
+    <circle cx="-35" cy="-35" r="26" fill="#facc15" stroke="#eab308" stroke-width="3"/>
+    <!-- Orange Beak -->
+    <polygon points="-58,-32 -82,-28 -58,-22" fill="#f97316" stroke="#c2410c" stroke-width="2"/>
+    <!-- Eye -->
+    <circle cx="-42" cy="-40" r="5" fill="#0f172a"/><circle cx="-44" cy="-42" r="1.8" fill="#ffffff"/>
+    <!-- Tail Feathers -->
+    <polygon points="45,-5 68,-22 55,10" fill="#facc15" stroke="#eab308" stroke-width="2.5"/>
+  </g>
+</svg>

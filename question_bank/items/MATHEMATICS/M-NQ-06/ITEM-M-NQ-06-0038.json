@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "A fierce dragon has 17 gold coins, and a clever goblin has 9. Which number is GREATER?",
+    "display_text": "Explorer! You found a hidden chest. How many enchanted forest acorns are sparkling inside?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-nq-06-0038_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "17 is a larger treasure than 9.",
+      "prompt": "Count carefully! The chest contains exactly 12 enchanted forest acorns.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,15 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "17"
+            "display_value": "12"
           },
           {
             "option_id": "opt_2",
-            "display_value": "9"
+            "display_value": "10"
           },
           {
             "option_id": "opt_3",
-            "display_value": "They have the same amount"
+            "display_value": "14"
+          },
+          {
+            "option_id": "opt_4",
+            "display_value": "15"
           }
         ]
       },

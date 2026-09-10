@@ -39,7 +39,8 @@ def gen_m_nq(subskill: str, idx: int):
     item_name = STORY_ITEMS[idx % len(STORY_ITEMS)]
     count = (idx % 15) + 5  # 5 to 19 (Challenging)
     
-    mod = idx % 5
+    ss_id = int(subskill.split("-")[-1]) if "-" in subskill else 1
+    mod = (ss_id - 1) % 5
     if mod == 0:
         prompt = f"Explorer! You found a hidden chest. How many {item_name} are sparkling inside?"
         correct = str(count)
@@ -81,7 +82,8 @@ def gen_m_op(subskill: str, idx: int):
     b = ((idx // 2) % 7) + 3
     total = a + b
     
-    mod = idx % 4
+    ss_id = int(subskill.split("-")[-1]) if "-" in subskill else 1
+    mod = (ss_id - 1) % 4
     if mod == 0:
         prompt = f"Captain Orion collected {a} space crystals on Mars and {b} on Jupiter. How many crystals does he have to power his rocket?"
         correct = str(total)
@@ -113,7 +115,8 @@ def gen_m_op(subskill: str, idx: int):
 
 def gen_m_gs(subskill: str, idx: int):
     """Geometry & Spatial Sense (M-GS)"""
-    mod = idx % 4
+    ss_id = int(subskill.split("-")[-1]) if "-" in subskill else 1
+    mod = (ss_id - 1) % 4
     if mod == 0:
         shapes = [("Triangle", 3), ("Square", 4), ("Rectangle", 4), ("Hexagon", 6), ("Octagon", 8)]
         shape_name, sides = shapes[idx % len(shapes)]
@@ -155,7 +158,8 @@ def gen_m_gs(subskill: str, idx: int):
 
 def gen_m_me(subskill: str, idx: int):
     """Measurement & Data (M-ME)"""
-    mod = idx % 4
+    ss_id = int(subskill.split("-")[-1]) if "-" in subskill else 1
+    mod = (ss_id - 1) % 4
     if mod == 0:
         hour = (idx % 11) + 1
         prompt = f"The time bomb will explode when the little hand hits {hour} and the big hand is on 12. What time must you defuse it?"
@@ -193,18 +197,19 @@ def gen_m_me(subskill: str, idx: int):
         pool = [o1, o2, "They are identical in length"]
         hint = f"{o1} is definitely {qtype.lower()}."
     else:
-        coins = [("a Dime", "10 cents"), ("a Quarter", "25 cents"), ("a Half-Dollar", "50 cents")]
+        coins = [("a ₹10 coin", "10 Rupees"), ("a ₹50 note", "50 Rupees"), ("a ₹100 note", "100 Rupees")]
         c_name, c_val = coins[idx % len(coins)]
-        prompt = f"The galactic merchant demands {c_name} to buy the hyper-fuel. How many cents is that worth?"
+        prompt = f"The galactic merchant demands {c_name} to buy the hyper-fuel. How many Rupees is that worth?"
         correct = c_val
-        pool = [c_val, "1 cent", "5 cents", "100 cents"]
+        pool = [c_val, "1 Rupee", "5 Rupees", "500 Rupees"]
         hint = f"{c_name} equals {c_val}."
 
     return prompt, correct, pool, hint
 
 def gen_m_pa(subskill: str, idx: int):
     """Patterns & Algebra (M-PA)"""
-    mod = idx % 3
+    ss_id = int(subskill.split("-")[-1]) if "-" in subskill else 1
+    mod = (ss_id - 1) % 3
     if mod == 0:
         patterns = [
             ("Fire, Ice, Lightning, Fire, Ice, Lightning, Fire, Ice", "Lightning", ["Lightning", "Fire", "Ice", "Earth"]),
@@ -240,31 +245,40 @@ def gen_m_pa(subskill: str, idx: int):
         return prompt, correct, pool, hint
 
 def gen_m_fr(subskill: str, idx: int):
-    """Fractions & Equal Parts (M-FR)"""
-    prompt = f"The pirate crew of { (idx%3)+3 } found a treasure chest with { ((idx%3)+3)*4 } gold coins. To avoid a mutiny, they must split it EQUALLY. What does sharing equally mean?"
+    ss_id = int(subskill.split("-")[-1]) if "-" in subskill else 1
+    groups = ["pirate crew", "wizard council", "space federation", "ninja clan", "dragon hoard", "goblin troop"]
+    group = groups[(ss_id - 1) % len(groups)]
+    prompt = f"The {group} of { (idx%3)+3 } found a treasure chest with { ((idx%3)+3)*4 } gold coins. To avoid a mutiny, they must split it EQUALLY. What does sharing equally mean?"
     correct = "Everyone gets the exact same amount"
     pool = ["Everyone gets the exact same amount", "The captain gets the most", "The fastest pirate gets them all", "It's impossible to share"]
     hint = "Equal means fair shares for everyone!"
     return prompt, correct, pool, hint
 
 def gen_m_du(subskill: str, idx: int):
-    """Data & Uncertainty (M-DU)"""
-    prompt = "A bag contains ONLY 10 red dragon scales and 0 green scales. If you reach in blindly, what will you definitely pull out?"
-    correct = "A red dragon scale"
-    pool = ["A red dragon scale", "A green dragon scale", "Nothing at all", "A magic wand"]
-    hint = "There are only red scales inside, so it's a 100% certainty!"
+    ss_id = int(subskill.split("-")[-1]) if "-" in subskill else 1
+    colors = ["red", "blue", "green", "purple", "silver", "golden", "black", "white"]
+    c1 = colors[(ss_id - 1) % len(colors)]
+    c2 = colors[(ss_id) % len(colors)]
+    prompt = f"A bag contains ONLY 10 {c1} dragon scales and 0 {c2} scales. If you reach in blindly, what will you definitely pull out?"
+    correct = f"A {c1} dragon scale"
+    pool = [f"A {c1} dragon scale", f"A {c2} dragon scale", "Nothing at all", "A magic wand"]
+    hint = f"There are only {c1} scales inside, so it's a 100% certainty!"
     return prompt, correct, pool, hint
 
+
 def gen_m_ps(subskill: str, idx: int):
-    """Problem Solving & Multi-Step (M-PS)"""
+    ss_id = int(subskill.split("-")[-1]) if "-" in subskill else 1
+    items = ["hyper-drive cores", "magic potions", "ancient scrolls", "dragon eggs", "golden shields"]
+    item = items[(ss_id - 1) % len(items)]
     need = (idx % 10) + 15
     have = need - (idx % 6 + 4)
     diff = need - have
-    prompt = f"The spaceship needs {need} hyper-drive cores to launch. You have collected {have}. How many MORE cores must you find?"
+    prompt = f"The quest requires {need} {item} to succeed. You have collected {have}. How many MORE {item} must you find?"
     correct = str(diff)
     pool = [str(diff), str(diff + 2), str(max(1, diff - 1)), str(need)]
     hint = f"Subtract what you have from what you need: {need} - {have} = {diff}!"
     return prompt, correct, pool, hint
+
 
 
 def generate_math_item(subskill: str, idx: int):
@@ -279,65 +293,293 @@ def generate_math_item(subskill: str, idx: int):
     elif prefix == "M-PS": return gen_m_ps(subskill, idx)
     else: return gen_m_nq(subskill, idx)
 
+
+
 # ----------------------------------------------------------------------
 # ENGLISH, LOGIC, SCIENCE, WORLD KNOWLEDGE (STORY-DRIVEN)
 # ----------------------------------------------------------------------
 
-ENGLISH_TOPICS = [
-    ("Phonics A", "The wise owl needs a password starting with the /p/ sound to open the enchanted library. Which of these magical items should you offer?", "Potion", ["Potion", "Wand", "Spellbook", "Crystal"], "Potion starts with the /p/ sound!"),
-    ("Vocab 1", "The dragon was *colossal*, towering over the tallest castle towers. What does 'colossal' mean?", "Huge", ["Huge", "Tiny", "Green", "Friendly"], "Colossal means extremely large!"),
-    ("Grammar 1", "Which sentence is written correctly for the King's royal decree?", "The brave knights rode swiftly.", ["The brave knights rode swiftly.", "The braved knights rides swift.", "knights brave the rode swiftly", "Riding knights brave the."], "The subject and verb must agree!"),
-    ("Rhyme 1", "To cast the spell of levitation, you must say a word that rhymes with 'Flight'. Which word works?", "Knight", ["Knight", "Dragon", "Fall", "Sword"], "Flight and Knight sound the same at the end!"),
-    ("Sight Words", "Decode the ancient hieroglyph! Which word correctly spells the word 'BECAUSE'?", "because", ["because", "becuz", "bee-cause", "b-cause"], "The correct spelling is b-e-c-a-u-s-e."),
-    ("Opposites", "If the ice magic makes the shield *brittle*, what fire magic spell would make it the opposite?", "Flexible", ["Flexible", "Fragile", "Cold", "Broken"], "The opposite of easily broken (brittle) is flexible/strong.")
-]
+NAMES = ["Captain Orion", "Princess Luna", "The wise owl", "The grumpy troll", "Sir Lancelot", "Professor Quark", "Commander Zorg", "The mystic wizard", "A brave knight", "The space explorer"]
+COLORS = ["red", "blue", "green", "golden", "silver", "purple", "crystal", "shadow", "neon", "emerald"]
+PLACES = ["the enchanted library", "the space station", "the dark cave", "the ancient ruins", "the crystal palace", "Mars", "Jupiter", "the forbidden forest", "the deep ocean", "the floating castle"]
 
-LOGIC_TOPICS = [
-    ("Odd One Out", "In the futuristic space port, which of these is NOT a vehicle meant for space travel?", "Submarine", ["Submarine", "Star Cruiser", "Lunar Rover", "Orbital Station"], "Submarines travel deep underwater, not in outer space!"),
-    ("Category", "Which of these futuristic gadgets belongs in the 'Communication' category?", "Holo-Transmitter", ["Holo-Transmitter", "Laser Blaster", "Gravity Boots", "Plasma Shield"], "Transmitters are used for talking and sending messages."),
-    ("Size Comparison", "If a Gigantosaurus is larger than a T-Rex, and a T-Rex is larger than a Velociraptor, which dinosaur is the SMALLEST?", "Velociraptor", ["Velociraptor", "Gigantosaurus", "T-Rex", "They are equal"], "Follow the size chain downwards!"),
-    ("Reasoning", "The detective noticed wet footprints leading into the bank, but it hasn't rained in weeks. Where did the suspect most likely come from?", "The River", ["The River", "The Desert", "The Bakery", "The Bank Vault"], "Wet footprints usually mean they just came from a body of water."),
-    ("Deduction", "If every alien from Mars has 3 eyes, and Zorg is from Mars, how many eyes does Zorg have?", "3", ["3", "2", "4", "Unknown"], "Zorg is from Mars, so the rule applies to him!")
-]
+# ENGLISH GENERATORS
+def gen_e_pd(subskill, idx):
+    name = NAMES[idx % len(NAMES)]
+    place = PLACES[(idx + 1) % len(PLACES)]
+    sounds = [("p", "Potion", ["Wand", "Spellbook", "Crystal"]), ("b", "Broom", ["Hat", "Cauldron", "Wand"]), ("m", "Magic", ["Potion", "Spell", "Hex"]), ("c", "Castle", ["Dragon", "Sword", "Shield"]), ("f", "Fairy", ["Goblin", "Troll", "Orc"])]
+    s, correct, wrong = sounds[idx % len(sounds)]
+    prompt = f"{name} needs a password starting with the /{s}/ sound to enter {place}. Which word works?"
+    pool = [correct] + wrong
+    return prompt, correct, pool, f"{correct} starts with /{s}/."
 
-SCIENCE_TOPICS = [
-    ("Biology", "During a deep-sea submarine expedition, you spot an animal that breathes through gills and has shiny scales. Which of these creatures did you find?", "A Great White Shark", ["A Great White Shark", "A Dolphin", "A Sea Turtle", "A Penguin"], "Fish and sharks use gills to breathe underwater, while dolphins and turtles use lungs!"),
-    ("Physics", "You drop a bowling ball and a feather on the Moon, where there is no air resistance. What happens?", "They hit the ground at the same time", ["They hit the ground at the same time", "The bowling ball hits first", "The feather hits first", "They float away"], "Without air resistance, gravity pulls them down equally fast!"),
-    ("Space", "Your starship enters the orbit of the largest planet in our solar system, famous for its Great Red Spot. Where are you?", "Jupiter", ["Jupiter", "Mars", "Saturn", "Venus"], "Jupiter is the gas giant with the massive red storm!"),
-    ("Matter", "The evil wizard casts a freeze spell on the moat's liquid water. What state of matter does the water turn into?", "Solid", ["Solid", "Liquid", "Gas", "Plasma"], "Freezing liquid water turns it into solid ice!"),
-    ("Habitats", "You must survive a harsh, sandy environment where it rarely rains. Which animal would be your best companion here?", "Camel", ["Camel", "Polar Bear", "Frog", "Penguin"], "Camels are perfectly adapted to survive in dry deserts!")
-]
+def gen_e_vm(subskill, idx):
+    name = NAMES[idx % len(NAMES)]
+    color = COLORS[(idx + 1) % len(COLORS)]
+    words = [("colossal", "Huge", ["Tiny", "Green", "Friendly"]), ("ancient", "Very old", ["New", "Shiny", "Broken"]), ("swift", "Fast", ["Slow", "Loud", "Heavy"]), ("fragile", "Easily broken", ["Strong", "Heavy", "Tall"])]
+    word, correct, wrong = words[idx % len(words)]
+    prompt = f"The {color} dragon was *{word}*, according to {name}. What does '{word}' mean?"
+    pool = [correct] + wrong
+    return prompt, correct, pool, f"The meaning of {word} is {correct}."
 
-WORLD_KNOWLEDGE_TOPICS = [
-    ("Geography", "You are flying an airplane over the vast, ancient pyramids of Giza. Which continent are you currently exploring?", "Africa", ["Africa", "Asia", "Europe", "South America"], "The pyramids of Giza are located in Egypt, which is in Africa!"),
-    ("Community Helpers", "The city's main water pipe burst! Who should the Mayor call to fix the plumbing disaster?", "A Plumber", ["A Plumber", "An Electrician", "A Baker", "A Dentist"], "Plumbers specialize in fixing pipes and water systems."),
-    ("Culture", "During your world tour, you eat a delicious meal of Sushi, wrapped in seaweed. Which country did this famous dish originate from?", "Japan", ["Japan", "Italy", "Mexico", "India"], "Sushi is a traditional and famous dish from Japan."),
-    ("History", "Which historical figure is known for wearing a tall stovepipe hat and leading the USA during the Civil War?", "Abraham Lincoln", ["Abraham Lincoln", "George Washington", "Albert Einstein", "Thomas Edison"], "Abraham Lincoln was the 16th US President."),
-    ("Safety", "You smell smoke and hear a loud fire alarm in the school. What is the very first thing you should do?", "Evacuate calmly outside", ["Evacuate calmly outside", "Hide in a closet", "Pack up your backpack", "Run around screaming"], "Always evacuate the building safely and immediately during a fire alarm.")
-]
+def gen_e_sg(subskill, idx):
+    name = NAMES[idx % len(NAMES)]
+    n = (idx % 3) + 1
+    if n == 1:
+        correct, wrong = "The brave knights rode swiftly.", ["The braved knights rides swift.", "knights brave the rode swiftly", "Riding knights brave the."]
+    elif n == 2:
+        correct, wrong = "A red dragon breathes fire.", ["Breathes fire a red dragon.", "Dragon red a fire breathes.", "A red dragons breathe fires."]
+    else:
+        correct, wrong = "The wizard casts a spell.", ["The wizards cast a spells.", "Casts a spell the wizard.", "Wizard the spell a casts."]
+    prompt = f"Which sentence is written correctly for {name}'s royal decree?"
+    pool = [correct] + wrong
+    return prompt, correct, pool, "The subject and verb must agree, and the order must make sense!"
+
+def gen_e_rf(subskill, idx):
+    place = PLACES[idx % len(PLACES)]
+    words = ["BECAUSE", "FRIEND", "THEIR", "COULD", "SHOULD", "WOULD"]
+    word = words[idx % len(words)]
+    wrong = [word.lower().replace("e", "u"), word.lower().replace("ie", "ei"), word.lower() + "z"]
+    correct = word.lower()
+    prompt = f"Decode the ancient hieroglyph found in {place}! Which option correctly spells the word '{word}'?"
+    pool = [correct, wrong[0], wrong[1], wrong[2]]
+    return prompt, correct, pool, f"The correct spelling is {correct}."
+
+def gen_e_cr(subskill, idx):
+    name = NAMES[idx % len(NAMES)]
+    stories = [("found a golden key under the mat.", "A golden key", ["A silver sword", "A diamond ring", "Nothing"]),
+               ("read the blue spellbook in the tower.", "The blue spellbook", ["The red potion", "The green scroll", "The yellow wand"]),
+               ("buried a treasure chest on the island.", "A treasure chest", ["A bag of coins", "A secret map", "A compass"])]
+    story, correct, wrong = stories[idx % len(stories)]
+    prompt = f"Read the scroll: '{name} {story}' What did they interact with?"
+    pool = [correct] + wrong
+    return prompt, correct, pool, "Read the sentence carefully to find the object."
+
+def gen_e_cc(subskill, idx):
+    name = NAMES[idx % len(NAMES)]
+    endings = [("dropped his sword, so...", "He had to fight with his shield.", ["He flew away.", "He became a baker.", "He turned invisible."]),
+               ("saw that the bridge was broken, so...", "They built a raft.", ["They walked on clouds.", "They drank a potion.", "They went to sleep."]),
+               ("was extremely hungry, so...", "He ate a large meal.", ["He sang a song.", "He read a book.", "He built a house."])]
+    start, correct, wrong = endings[idx % len(endings)]
+    prompt = f"Complete the story logically: {name} {start}"
+    pool = [correct] + wrong
+    return prompt, correct, pool, "Think about what logically happens next."
+
+def gen_e_we(subskill, idx):
+    name = NAMES[idx % len(NAMES)]
+    errors = [("The knights is brave.", "The knights are brave.", ["The knight are brave.", "Knights is brave.", "Brave is the knights."]),
+              ("She run fast.", "She runs fast.", ["She running fast.", "She runned fast.", "Her runs fast."]),
+              ("They was happy.", "They were happy.", ["They is happy.", "Them was happy.", "They happy was."])]
+    bad, correct, wrong = errors[idx % len(errors)]
+    prompt = f"Fix the grammar error in the message from {name}: '{bad}'"
+    pool = [correct] + wrong
+    return prompt, correct, pool, "Make sure the grammar is correct."
+
+def gen_e_ol(subskill, idx):
+    name = NAMES[idx % len(NAMES)]
+    situations = [("You meet the Queen", "Your Majesty", ["Hey there", "What's up", "Yo"]),
+                  ("You drop a fragile potion", "I'm sorry", ["You're welcome", "Hello", "Goodbye"]),
+                  ("Someone gives you a gift", "Thank you", ["No way", "Give me more", "Whatever"])]
+    sit, correct, wrong = situations[idx % len(situations)]
+    prompt = f"Situation in {PLACES[idx % len(PLACES)]}: {sit} near {name}. What is the most polite thing to say?"
+    pool = [correct] + wrong
+    return prompt, correct, pool, "Think about polite manners."
+
+# SCIENCE GENERATORS
+def gen_s_kn(subskill, idx):
+    name = NAMES[idx % len(NAMES)]
+    facts = [("breathes through gills", "Shark", ["Dolphin", "Turtle", "Penguin"]),
+             ("has eight legs", "Spider", ["Beetle", "Ant", "Fly"]),
+             ("grows from an acorn", "Oak tree", ["Pine tree", "Rose bush", "Sunflower"])]
+    fact, correct, wrong = facts[idx % len(facts)]
+    prompt = f"{name} spots something that {fact}. What is it?"
+    pool = [correct] + wrong
+    return prompt, correct, pool, f"A {correct} {fact}."
+
+def gen_s_oc(subskill, idx):
+    place = PLACES[idx % len(PLACES)]
+    items = [("living", "Tree", ["Rock", "Water", "Cloud"]),
+             ("non-living", "Bicycle", ["Dog", "Flower", "Bird"]),
+             ("mammal", "Bear", ["Snake", "Frog", "Shark"])]
+    cat, correct, wrong = items[idx % len(items)]
+    prompt = f"While exploring {place}, which of these is a {cat} thing?"
+    pool = [correct] + wrong
+    return prompt, correct, pool, f"{correct} is {cat}."
+
+def gen_s_pp(subskill, idx):
+    name = NAMES[idx % len(NAMES)]
+    states = [("liquid", "Solid", ["Gas", "Plasma", "Energy"]),
+              ("gas", "Liquid", ["Solid", "Plasma", "Energy"]),
+              ("liquid", "Gas", ["Solid", "Plasma", "Energy"])]
+    start, correct, wrong = states[idx % len(states)]
+    if start == "liquid" and correct == "Solid":
+        prompt = f"If {name} freezes liquid water, what state of matter does it become?"
+    elif start == "liquid" and correct == "Gas":
+        prompt = f"If {name} boils liquid water, what state of matter does it become?"
+    else:
+        prompt = f"If {name} cools a gas, what state of matter does it become?"
+    pool = [correct] + wrong
+    return prompt, correct, pool, f"It becomes {correct}."
+
+def gen_s_ee(subskill, idx):
+    color = COLORS[idx % len(COLORS)]
+    habitats = [("sandy and dry", "Camel", ["Polar Bear", "Frog", "Penguin"]),
+                ("cold and icy", "Penguin", ["Camel", "Snake", "Parrot"]),
+                ("wet and rainy", "Frog", ["Camel", "Polar Bear", "Lion"])]
+    env, correct, wrong = habitats[idx % len(habitats)]
+    prompt = f"You must survive a {env} environment wearing a {color} suit. Which animal lives here naturally?"
+    pool = [correct] + wrong
+    return prompt, correct, pool, f"{correct} lives in {env} environments."
+
+def gen_s_mo(subskill, idx):
+    name = NAMES[idx % len(NAMES)]
+    tools = [("temperature", "Thermometer", ["Ruler", "Scale", "Microscope"]),
+             ("weight", "Scale", ["Thermometer", "Ruler", "Telescope"]),
+             ("length", "Ruler", ["Scale", "Thermometer", "Microscope"])]
+    measure, correct, wrong = tools[idx % len(tools)]
+    prompt = f"Which tool would {name} use to measure the {measure} of an object?"
+    pool = [correct] + wrong
+    return prompt, correct, pool, f"A {correct} measures {measure}."
+
+def gen_s_in(subskill, idx):
+    place = PLACES[idx % len(PLACES)]
+    investigations = [("drop a heavy rock in water", "It sinks", ["It floats", "It evaporates", "It explodes"]),
+                      ("leave ice in the sun", "It melts", ["It freezes", "It grows", "It turns to stone"]),
+                      ("mix red and blue paint", "It makes purple", ["It makes green", "It makes yellow", "It makes orange"])]
+    action, correct, wrong = investigations[idx % len(investigations)]
+    prompt = f"If you {action} in {place}, what will happen?"
+    pool = [correct] + wrong
+    return prompt, correct, pool, f"The result is: {correct}."
+
+# LOGIC GENERATORS
+def gen_l_pc(subskill, idx):
+    name = NAMES[idx % len(NAMES)]
+    odds = [("space travel", "Submarine", ["Star Cruiser", "Lunar Rover", "Orbital Station"]),
+            ("fruits", "Carrot", ["Apple", "Banana", "Orange"]),
+            ("tools", "Book", ["Hammer", "Wrench", "Screwdriver"])]
+    cat, correct, wrong = odds[idx % len(odds)]
+    prompt = f"{name} asks: Which of these does NOT belong with {cat}?"
+    pool = [correct] + wrong
+    return prompt, correct, pool, f"{correct} is the odd one out."
+
+def gen_l_ar(subskill, idx):
+    color = COLORS[idx % len(COLORS)]
+    analogies = [("Bird is to sky as Fish is to...", "Water", ["Ground", "Space", "Tree"]),
+                 ("Fire is to hot as Ice is to...", "Cold", ["Warm", "Bright", "Dark"]),
+                 ("Car is to road as Train is to...", "Tracks", ["Air", "Water", "Space"])]
+    prompt_str, correct, wrong = analogies[idx % len(analogies)]
+    prompt = f"Read the {color} tablet to complete the logic: {prompt_str}"
+    pool = [correct] + wrong
+    return prompt, correct, pool, "Think about the relationship between the items."
+
+def gen_l_sr(subskill, idx):
+    name = NAMES[idx % len(NAMES)]
+    shapes = [("triangle", "3", ["4", "5", "6"]),
+              ("square", "4", ["3", "5", "6"]),
+              ("pentagon", "5", ["3", "4", "6"])]
+    shape, correct, wrong = shapes[idx % len(shapes)]
+    prompt = f"If {name} traces the edges of a {shape}, how many sides do they draw?"
+    pool = [correct] + wrong
+    return prompt, correct, pool, f"It has {correct} sides."
+
+def gen_l_rc(subskill, idx):
+    place = PLACES[idx % len(PLACES)]
+    chains = [("Gigantosaurus > T-Rex > Velociraptor", "Velociraptor", "SMALLEST", ["Gigantosaurus", "T-Rex", "They are equal"]),
+              ("Sun > Earth > Moon", "Moon", "SMALLEST", ["Sun", "Earth", "They are equal"]),
+              ("Ant < Cat < Horse", "Horse", "LARGEST", ["Ant", "Cat", "They are equal"])]
+    chain, correct, q, wrong = chains[idx % len(chains)]
+    prompt = f"Size logic in {place}: {chain}. Which is the {q}?"
+    pool = [correct] + wrong
+    return prompt, correct, pool, f"{correct} is the {q}."
+
+def gen_l_co(subskill, idx):
+    name = NAMES[idx % len(NAMES)]
+    conditions = [("If it rains, the ground is wet.", "The ground is wet", ["The ground is dry", "It snows", "The sun shines"]),
+                  ("If you drop a glass, it breaks.", "It breaks", ["It bounces", "It floats", "It vanishes"]),
+                  ("If the sun sets, it gets dark.", "It gets dark", ["It gets bright", "It rains", "It snows"])]
+    cond, correct, wrong = conditions[idx % len(conditions)]
+    prompt = f"Logic rule for {name}: {cond} You observe the first part. What happens?"
+    pool = [correct] + wrong
+    return prompt, correct, pool, f"The result is {correct}."
+
+def gen_l_ce(subskill, idx):
+    name = NAMES[idx % len(NAMES)]
+    effects = [("noticed wet footprints. Where did the suspect come from?", "The River", ["The Desert", "The Bakery", "The Bank Vault"]),
+               ("saw smoke in the sky. What is likely happening?", "A fire", ["A flood", "An earthquake", "A blizzard"]),
+               ("felt the ground shaking violently. What is happening?", "An earthquake", ["A flood", "A fire", "A hurricane"])]
+    prompt_str, correct, wrong = effects[idx % len(effects)]
+    prompt = f"Cause and Effect: {name} {prompt_str}"
+    pool = [correct] + wrong
+    return prompt, correct, pool, f"The logical cause/effect is {correct}."
+
+# WORLD KNOWLEDGE GENERATORS
+def gen_w_ka(subskill, idx):
+    name = NAMES[idx % len(NAMES)]
+    culture = [("Sushi, wrapped in seaweed", "Japan", ["Italy", "Mexico", "India"]),
+               ("Pizza and pasta", "Italy", ["Japan", "Mexico", "India"]),
+               ("Tacos and burritos", "Mexico", ["Japan", "Italy", "India"])]
+    food, correct, wrong = culture[idx % len(culture)]
+    prompt = f"{name} eats a delicious meal of {food}. Which country did this originate from?"
+    pool = [correct] + wrong
+    return prompt, correct, pool, f"{food} is from {correct}."
+
+def gen_w_ko(subskill, idx):
+    place = PLACES[idx % len(PLACES)]
+    helpers = [("water pipe burst", "A Plumber", ["An Electrician", "A Baker", "A Dentist"]),
+               ("power goes out", "An Electrician", ["A Plumber", "A Baker", "A Dentist"]),
+               ("tooth hurts", "A Dentist", ["A Plumber", "A Baker", "An Electrician"])]
+    prob, correct, wrong = helpers[idx % len(helpers)]
+    prompt = f"In {place}, the {prob}! Who should you call?"
+    pool = [correct] + wrong
+    return prompt, correct, pool, f"{correct} fixes this."
+
+def gen_w_kp(subskill, idx):
+    color = COLORS[idx % len(COLORS)]
+    geo = [("pyramids of Giza", "Africa", ["Asia", "Europe", "South America"]),
+           ("Eiffel Tower", "Europe", ["Asia", "Africa", "South America"]),
+           ("Great Wall", "Asia", ["Europe", "Africa", "South America"])]
+    landmark, correct, wrong = geo[idx % len(geo)]
+    prompt = f"You are flying a {color} plane over the {landmark}. Which continent are you exploring?"
+    pool = [correct] + wrong
+    return prompt, correct, pool, f"The {landmark} is in {correct}."
+
 
 def generate_other_domain_item(domain: str, subskill: str, idx: int):
-    if domain == "ENGLISH_LANGUAGE":
-        topic_list = ENGLISH_TOPICS
-    elif domain == "LOGICAL_REASONING":
-        topic_list = LOGIC_TOPICS
-    elif domain == "SCIENCE_EVS":
-        topic_list = SCIENCE_TOPICS
-    elif domain == "WORLD_KNOWLEDGE":
-        topic_list = WORLD_KNOWLEDGE_TOPICS
-    else:
-        topic_list = ENGLISH_TOPICS
-
-    topic = topic_list[(hash(f"{subskill}_{idx}") + idx) % len(topic_list)]
-    title, prompt, correct, raw_pool, hint = topic
-
-    pool = list(raw_pool)
-    if correct not in pool:
-        pool[0] = correct
-    shift = idx % len(pool)
-    pool = pool[shift:] + pool[:shift]
-
-    return prompt, correct, pool, hint
+    prefix = subskill[:4]
+    
+    # English
+    if prefix == "E-PD": return gen_e_pd(subskill, idx)
+    elif prefix == "E-VM": return gen_e_vm(subskill, idx)
+    elif prefix == "E-SG": return gen_e_sg(subskill, idx)
+    elif prefix == "E-RF": return gen_e_rf(subskill, idx)
+    elif prefix == "E-CR": return gen_e_cr(subskill, idx)
+    elif prefix == "E-CC": return gen_e_cc(subskill, idx)
+    elif prefix == "E-WE": return gen_e_we(subskill, idx)
+    elif prefix == "E-OL": return gen_e_ol(subskill, idx)
+    
+    # Science
+    elif prefix == "S-KN": return gen_s_kn(subskill, idx)
+    elif prefix == "S-OC": return gen_s_oc(subskill, idx)
+    elif prefix == "S-PP": return gen_s_pp(subskill, idx)
+    elif prefix == "S-EE": return gen_s_ee(subskill, idx)
+    elif prefix == "S-MO": return gen_s_mo(subskill, idx)
+    elif prefix == "S-IN": return gen_s_in(subskill, idx)
+    
+    # Logic
+    elif prefix == "L-PC": return gen_l_pc(subskill, idx)
+    elif prefix == "L-AR": return gen_l_ar(subskill, idx)
+    elif prefix == "L-SR": return gen_l_sr(subskill, idx)
+    elif prefix == "L-RC": return gen_l_rc(subskill, idx)
+    elif prefix == "L-CO": return gen_l_co(subskill, idx)
+    elif prefix == "L-CE": return gen_l_ce(subskill, idx)
+    
+    # World Knowledge
+    elif prefix == "W-KA": return gen_w_ka(subskill, idx)
+    elif prefix == "W-KO": return gen_w_ko(subskill, idx)
+    elif prefix == "W-KP": return gen_w_kp(subskill, idx)
+    
+    # Fallback
+    return gen_e_pd(subskill, idx)
 
 
 def main():

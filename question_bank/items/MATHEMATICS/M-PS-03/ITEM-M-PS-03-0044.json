@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The spaceship needs 18 hyper-drive cores to launch. You have collected 13. How many MORE cores must you find?",
+    "display_text": "The quest requires 18 ancient scrolls to succeed. You have collected 13. How many MORE ancient scrolls must you find?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-ps-03-0044_prompt.mp3",
     "visual_assets": [
       {

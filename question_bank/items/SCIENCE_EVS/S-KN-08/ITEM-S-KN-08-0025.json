@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Your starship enters the orbit of the largest planet in our solar system, famous for its Great Red Spot. Where are you?",
+    "display_text": "Sir Lancelot spots something that breathes through gills. What is it?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-kn-08-0025_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Jupiter"
+            "display_value": "Shark"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Mars"
+            "display_value": "Dolphin"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Saturn"
+            "display_value": "Turtle"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Venus"
+            "display_value": "Penguin"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Jupiter is the gas giant with the massive red storm!"
+      "prompt": "A Shark breathes through gills."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

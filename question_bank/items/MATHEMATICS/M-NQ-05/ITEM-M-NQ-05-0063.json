@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "A fierce dragon has 19 gold coins, and a clever goblin has 10. Which number is GREATER?",
+    "display_text": "The wizard's potion needs 3 tens and 9 ones of spider venom drops. What is the total number?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-nq-05-0063_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "19 is a larger treasure than 10.",
+      "prompt": "3 tens = 30. Add 9 ones: 30 + 9 = 39!",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,15 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "19"
+            "display_value": "39"
           },
           {
             "option_id": "opt_2",
-            "display_value": "10"
+            "display_value": "49"
           },
           {
             "option_id": "opt_3",
-            "display_value": "They have the same amount"
+            "display_value": "41"
+          },
+          {
+            "option_id": "opt_4",
+            "display_value": "38"
           }
         ]
       },

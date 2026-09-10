@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "You must survive a harsh, sandy environment where it rarely rains. Which animal would be your best companion here?",
+    "display_text": "While exploring the enchanted library, which of these is a living thing?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-oc-02-0031_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Frog"
+            "display_value": "Tree"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Penguin"
+            "display_value": "Rock"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Camel"
+            "display_value": "Water"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Polar Bear"
+            "display_value": "Cloud"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Camels are perfectly adapted to survive in dry deserts!"
+      "prompt": "Tree is living."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."
@@ -73,7 +73,7 @@
   "rubric": {
     "evaluation_mode": "DETERMINISTIC_EXACT_MATCH",
     "correct_criteria": {
-      "selected_option_id": "opt_3"
+      "selected_option_id": "opt_1"
     }
   },
   "safeguard_metadata": {

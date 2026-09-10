@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "The detective noticed wet footprints leading into the bank, but it hasn't rained in weeks. Where did the suspect most likely come from?",
+    "display_text": "If The grumpy troll traces the edges of a square, how many sides do they draw?",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-sr-02-0014_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "The Desert"
+            "display_value": "4"
           },
           {
             "option_id": "opt_2",
-            "display_value": "The Bakery"
+            "display_value": "3"
           },
           {
             "option_id": "opt_3",
-            "display_value": "The Bank Vault"
+            "display_value": "5"
           },
           {
             "option_id": "opt_4",
-            "display_value": "The River"
+            "display_value": "6"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Wet footprints usually mean they just came from a body of water."
+      "prompt": "It has 4 sides."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."
@@ -73,7 +73,7 @@
   "rubric": {
     "evaluation_mode": "DETERMINISTIC_EXACT_MATCH",
     "correct_criteria": {
-      "selected_option_id": "opt_4"
+      "selected_option_id": "opt_1"
     }
   },
   "safeguard_metadata": {

@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The wizard's potion needs 3 tens and 9 ones of spider venom drops. What is the total number?",
+    "display_text": "Explorer! You found a hidden chest. How many ancient golden coins are sparkling inside?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-nq-06-0135_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "3 tens = 30. Add 9 ones: 30 + 9 = 39!",
+      "prompt": "Count carefully! The chest contains exactly 19 ancient golden coins.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "39"
+            "display_value": "19"
           },
           {
             "option_id": "opt_2",
-            "display_value": "49"
+            "display_value": "17"
           },
           {
             "option_id": "opt_3",
-            "display_value": "41"
+            "display_value": "21"
           },
           {
             "option_id": "opt_4",
-            "display_value": "38"
+            "display_value": "22"
           }
         ]
       },

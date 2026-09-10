@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The ancient artifact looks exactly like a magical puzzle box. Which 3D shape is it?",
+    "display_text": "To bypass the laser grid, you must touch the Hexagon. How many straight sides does it have?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-gs-01-0094_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "A magical puzzle box is the shape of a Cube.",
+      "prompt": "A Hexagon always has 6 sides.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Cube"
+            "display_value": "6"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Sphere"
+            "display_value": "7"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Cone"
+            "display_value": "5"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Pyramid"
+            "display_value": "5"
           }
         ]
       },

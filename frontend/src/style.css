@@ -547,7 +547,7 @@ header {
 .visual-container {
   margin: 8px 0;
   height: 180px;
-  min-height: 180px;
+  min-height: 50px;
   max-height: 180px;
   width: 100%;
   display: flex;
@@ -555,6 +555,7 @@ header {
   justify-content: center;
   position: relative;
   overflow: hidden;
+  flex: 1 1 auto;
 }
 
 .task-visual-wrapper {
@@ -568,8 +569,8 @@ header {
 .task-visual-img {
   width: auto;
   max-width: 90%;
-  height: 168px;
-  max-height: 168px;
+  height: 100%;
+  max-height: 100%;
   object-fit: contain;
   border-radius: 14px;
   box-shadow: 0 4px 18px rgba(0,0,0,0.08);

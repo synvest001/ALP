@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The time bomb will explode when the little hand hits 7 and the big hand is on 12. What time must you defuse it?",
+    "display_text": "Scanning their dimensions, which item is LONGER: An endless cosmic wormhole or A simple garden hose?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-me-03-0029_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "When the long hand is on 12, it is exactly 7 o'clock!",
+      "prompt": "An endless cosmic wormhole is definitely longer.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,15 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "7 o'clock"
+            "display_value": "An endless cosmic wormhole"
           },
           {
             "option_id": "opt_2",
-            "display_value": "8 o'clock"
+            "display_value": "A simple garden hose"
           },
           {
             "option_id": "opt_3",
-            "display_value": "6 o'clock"
-          },
-          {
-            "option_id": "opt_4",
-            "display_value": "12 o'clock"
+            "display_value": "They are identical in length"
           }
         ]
       },

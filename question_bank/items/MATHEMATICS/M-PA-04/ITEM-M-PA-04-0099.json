@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "A piece of the ancient map is missing! Fill in the blank: Red, Blue, Green, Red, ___, Green",
+    "display_text": "A secret agent is cracking a vault code: Up, Down, Left, Up, Down, Left, Up... If she presses the wrong button, the alarm sounds! What comes next?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-pa-04-0099_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Analyze the sequence before and after the blank.",
+      "prompt": "The pattern repeats: Down is next.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Blue"
+            "display_value": "Down"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Yellow"
+            "display_value": "Left"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Red"
+            "display_value": "Up"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Black"
+            "display_value": "Right"
           }
         ]
       },

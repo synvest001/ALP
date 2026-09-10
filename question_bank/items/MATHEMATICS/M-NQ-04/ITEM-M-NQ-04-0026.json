@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Explorer! You found a hidden chest. How many enchanted forest acorns are sparkling inside?",
+    "display_text": "To unlock the secret door, you must press the button that comes directly BEFORE 16. What is it?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-nq-04-0026_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Count carefully! The chest contains exactly 15 enchanted forest acorns.",
+      "prompt": "Think backwards from 16: the number right before is 15.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -64,15 +64,15 @@
           },
           {
             "option_id": "opt_2",
-            "display_value": "13"
-          },
-          {
-            "option_id": "opt_3",
             "display_value": "17"
           },
           {
+            "option_id": "opt_3",
+            "display_value": "14"
+          },
+          {
             "option_id": "opt_4",
-            "display_value": "18"
+            "display_value": "16"
           }
         ]
       },

@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The galactic merchant demands a Half-Dollar to buy the hyper-fuel. How many cents is that worth?",
+    "display_text": "Scanning their dimensions, which item is SHORTER: A laser beam pointer or A massive light saber?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-me-03-0024_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "a Half-Dollar equals 50 cents.",
+      "prompt": "A laser beam pointer is definitely shorter.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,15 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "50 cents"
+            "display_value": "A laser beam pointer"
           },
           {
             "option_id": "opt_2",
-            "display_value": "1 cent"
+            "display_value": "A massive light saber"
           },
           {
             "option_id": "opt_3",
-            "display_value": "5 cents"
-          },
-          {
-            "option_id": "opt_4",
-            "display_value": "100 cents"
+            "display_value": "They are identical in length"
           }
         ]
       },

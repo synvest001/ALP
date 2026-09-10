@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 60" width="100%" height="100%">
+  
+    <g transform="translate(15,10) scale(1.0)">
+      <rect x="5" y="15" width="40" height="18" rx="5" fill="#e74c3c" />
+      <polygon points="12,15 18,5 32,5 38,15" fill="#e74c3c" />
+      <polygon points="15,13 19,7 24,7 24,13" fill="#ecf0f1" />
+      <polygon points="26,13 26,7 31,7 35,13" fill="#ecf0f1" />
+      <circle cx="14" cy="33" r="6" fill="#2c3e50" />
+      <circle cx="14" cy="33" r="2.5" fill="#bdc3c7" />
+      <circle cx="36" cy="33" r="6" fill="#2c3e50" />
+      <circle cx="36" cy="33" r="2.5" fill="#bdc3c7" />
+    </g>
+    
+    <g transform="translate(65,10) scale(1.0)">
+      <rect x="5" y="15" width="40" height="18" rx="5" fill="#e74c3c" />
+      <polygon points="12,15 18,5 32,5 38,15" fill="#e74c3c" />
+      <polygon points="15,13 19,7 24,7 24,13" fill="#ecf0f1" />
+      <polygon points="26,13 26,7 31,7 35,13" fill="#ecf0f1" />
+      <circle cx="14" cy="33" r="6" fill="#2c3e50" />
+      <circle cx="14" cy="33" r="2.5" fill="#bdc3c7" />
+      <circle cx="36" cy="33" r="6" fill="#2c3e50" />
+      <circle cx="36" cy="33" r="2.5" fill="#bdc3c7" />
+    </g>
+    
+    <g transform="translate(115,10) scale(1.0)">
+      <rect x="5" y="15" width="40" height="18" rx="5" fill="#e74c3c" />
+      <polygon points="12,15 18,5 32,5 38,15" fill="#e74c3c" />
+      <polygon points="15,13 19,7 24,7 24,13" fill="#ecf0f1" />
+      <polygon points="26,13 26,7 31,7 35,13" fill="#ecf0f1" />
+      <circle cx="14" cy="33" r="6" fill="#2c3e50" />
+      <circle cx="14" cy="33" r="2.5" fill="#bdc3c7" />
+      <circle cx="36" cy="33" r="6" fill="#2c3e50" />
+      <circle cx="36" cy="33" r="2.5" fill="#bdc3c7" />
+    </g>
+    
+    <g transform="translate(165,10) scale(1.0)">
+      <rect x="5" y="15" width="40" height="18" rx="5" fill="#e74c3c" />
+      <polygon points="12,15 18,5 32,5 38,15" fill="#e74c3c" />
+      <polygon points="15,13 19,7 24,7 24,13" fill="#ecf0f1" />
+      <polygon points="26,13 26,7 31,7 35,13" fill="#ecf0f1" />
+      <circle cx="14" cy="33" r="6" fill="#2c3e50" />
+      <circle cx="14" cy="33" r="2.5" fill="#bdc3c7" />
+      <circle cx="36" cy="33" r="6" fill="#2c3e50" />
+      <circle cx="36" cy="33" r="2.5" fill="#bdc3c7" />
+    </g>
+    
+    <g transform="translate(215,10) scale(1.0)">
+      <rect x="5" y="15" width="40" height="18" rx="5" fill="#e74c3c" />
+      <polygon points="12,15 18,5 32,5 38,15" fill="#e74c3c" />
+      <polygon points="15,13 19,7 24,7 24,13" fill="#ecf0f1" />
+      <polygon points="26,13 26,7 31,7 35,13" fill="#ecf0f1" />
+      <circle cx="14" cy="33" r="6" fill="#2c3e50" />
+      <circle cx="14" cy="33" r="2.5" fill="#bdc3c7" />
+      <circle cx="36" cy="33" r="6" fill="#2c3e50" />
+      <circle cx="36" cy="33" r="2.5" fill="#bdc3c7" />
+    </g>
+    
+    <g transform="translate(265,10) scale(1.0)">
+      <rect x="5" y="15" width="40" height="18" rx="5" fill="#e74c3c" />
+      <polygon points="12,15 18,5 32,5 38,15" fill="#e74c3c" />
+      <polygon points="15,13 19,7 24,7 24,13" fill="#ecf0f1" />
+      <polygon points="26,13 26,7 31,7 35,13" fill="#ecf0f1" />
+      <circle cx="14" cy="33" r="6" fill="#2c3e50" />
+      <circle cx="14" cy="33" r="2.5" fill="#bdc3c7" />
+      <circle cx="36" cy="33" r="6" fill="#2c3e50" />
+      <circle cx="36" cy="33" r="2.5" fill="#bdc3c7" />
+    </g>
+    
+    <g transform="translate(315,10) scale(1.0)">
+      <rect x="5" y="15" width="40" height="18" rx="5" fill="#e74c3c" />
+      <polygon points="12,15 18,5 32,5 38,15" fill="#e74c3c" />
+      <polygon points="15,13 19,7 24,7 24,13" fill="#ecf0f1" />
+      <polygon points="26,13 26,7 31,7 35,13" fill="#ecf0f1" />
+      <circle cx="14" cy="33" r="6" fill="#2c3e50" />
+      <circle cx="14" cy="33" r="2.5" fill="#bdc3c7" />
+      <circle cx="36" cy="33" r="6" fill="#2c3e50" />
+      <circle cx="36" cy="33" r="2.5" fill="#bdc3c7" />
+    </g>
+    
+</svg>

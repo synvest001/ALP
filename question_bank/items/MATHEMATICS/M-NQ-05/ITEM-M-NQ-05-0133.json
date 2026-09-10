@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "A fierce dragon has 15 gold coins, and a clever goblin has 8. Which number is GREATER?",
+    "display_text": "The wizard's potion needs 1 tens and 7 ones of spider venom drops. What is the total number?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-nq-05-0133_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "15 is a larger treasure than 8.",
+      "prompt": "1 tens = 10. Add 7 ones: 10 + 7 = 17!",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,15 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "15"
+            "display_value": "17"
           },
           {
             "option_id": "opt_2",
-            "display_value": "8"
+            "display_value": "27"
           },
           {
             "option_id": "opt_3",
-            "display_value": "They have the same amount"
+            "display_value": "19"
+          },
+          {
+            "option_id": "opt_4",
+            "display_value": "16"
           }
         ]
       },

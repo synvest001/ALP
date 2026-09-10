@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The wizard's potion needs 2 tens and 4 ones of spider venom drops. What is the total number?",
+    "display_text": "To unlock the secret door, you must press the button that comes directly BEFORE 24. What is it?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-nq-04-0130_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "2 tens = 20. Add 4 ones: 20 + 4 = 24!",
+      "prompt": "Think backwards from 24: the number right before is 23.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "24"
+            "display_value": "23"
           },
           {
             "option_id": "opt_2",
-            "display_value": "34"
+            "display_value": "25"
           },
           {
             "option_id": "opt_3",
-            "display_value": "26"
+            "display_value": "22"
           },
           {
             "option_id": "opt_4",
-            "display_value": "23"
+            "display_value": "24"
           }
         ]
       },

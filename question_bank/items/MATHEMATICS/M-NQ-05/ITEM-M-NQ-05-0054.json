@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "To unlock the secret door, you must press the button that comes directly BEFORE 20. What is it?",
+    "display_text": "The wizard's potion needs 2 tens and 9 ones of spider venom drops. What is the total number?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-nq-05-0054_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Think backwards from 20: the number right before is 19.",
+      "prompt": "2 tens = 20. Add 9 ones: 20 + 9 = 29!",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "19"
+            "display_value": "29"
           },
           {
             "option_id": "opt_2",
-            "display_value": "21"
+            "display_value": "39"
           },
           {
             "option_id": "opt_3",
-            "display_value": "18"
+            "display_value": "31"
           },
           {
             "option_id": "opt_4",
-            "display_value": "20"
+            "display_value": "28"
           }
         ]
       },

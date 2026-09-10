@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "If every alien from Mars has 3 eyes, and Zorg is from Mars, how many eyes does Zorg have?",
+    "display_text": "Cause and Effect: The mystic wizard saw smoke in the sky. What is likely happening?",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-ce-04-0008_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Unknown"
+            "display_value": "A fire"
           },
           {
             "option_id": "opt_2",
-            "display_value": "3"
+            "display_value": "A flood"
           },
           {
             "option_id": "opt_3",
-            "display_value": "2"
+            "display_value": "An earthquake"
           },
           {
             "option_id": "opt_4",
-            "display_value": "4"
+            "display_value": "A blizzard"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Zorg is from Mars, so the rule applies to him!"
+      "prompt": "The logical cause/effect is A fire."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."
@@ -73,7 +73,7 @@
   "rubric": {
     "evaluation_mode": "DETERMINISTIC_EXACT_MATCH",
     "correct_criteria": {
-      "selected_option_id": "opt_2"
+      "selected_option_id": "opt_1"
     }
   },
   "safeguard_metadata": {

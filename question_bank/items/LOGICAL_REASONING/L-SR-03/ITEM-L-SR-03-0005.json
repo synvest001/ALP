@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Which of these futuristic gadgets belongs in the 'Communication' category?",
+    "display_text": "If Sir Lancelot traces the edges of a square, how many sides do they draw?",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-sr-03-0005_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Holo-Transmitter"
+            "display_value": "4"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Laser Blaster"
+            "display_value": "3"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Gravity Boots"
+            "display_value": "5"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Plasma Shield"
+            "display_value": "6"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Transmitters are used for talking and sending messages."
+      "prompt": "It has 4 sides."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

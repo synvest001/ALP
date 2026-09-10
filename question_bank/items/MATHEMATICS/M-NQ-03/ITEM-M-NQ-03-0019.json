@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "To unlock the secret door, you must press the button that comes directly BEFORE 21. What is it?",
+    "display_text": "A fierce dragon has 19 gold coins, and a clever goblin has 14. Which number is GREATER?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-nq-03-0019_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Think backwards from 21: the number right before is 20.",
+      "prompt": "19 is a larger treasure than 14.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,15 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "20"
-          },
-          {
-            "option_id": "opt_2",
-            "display_value": "22"
-          },
-          {
-            "option_id": "opt_3",
             "display_value": "19"
           },
           {
-            "option_id": "opt_4",
-            "display_value": "21"
+            "option_id": "opt_2",
+            "display_value": "14"
+          },
+          {
+            "option_id": "opt_3",
+            "display_value": "They have the same amount"
           }
         ]
       },

@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "The wise owl needs a password starting with the /p/ sound to open the enchanted library. Which of these magical items should you offer?",
+    "display_text": "The silver dragon was *fragile*, according to The grumpy troll. What does 'fragile' mean?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-vm-05-0024_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Crystal"
+            "display_value": "Easily broken"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Potion"
+            "display_value": "Strong"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Wand"
+            "display_value": "Heavy"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Spellbook"
+            "display_value": "Tall"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Potion starts with the /p/ sound!"
+      "prompt": "The meaning of fragile is Easily broken."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."
@@ -73,7 +73,7 @@
   "rubric": {
     "evaluation_mode": "DETERMINISTIC_EXACT_MATCH",
     "correct_criteria": {
-      "selected_option_id": "opt_2"
+      "selected_option_id": "opt_1"
     }
   },
   "safeguard_metadata": {

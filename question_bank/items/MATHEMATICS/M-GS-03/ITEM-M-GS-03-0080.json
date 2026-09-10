@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The ancient Temple of Shapes has a magical door guarded by a polygon with exactly 8 straight sides. Which shape is carved into the door?",
+    "display_text": "The invisible spy is sneaking behind the ancient statues. Where is the spy located?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-gs-03-0080_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "A shape with exactly 8 sides is a Octagon.",
+      "prompt": "The spy is behind!",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Octagon"
+            "display_value": "Behind the target"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Circle"
+            "display_value": "Across the galaxy"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Square"
+            "display_value": "Underground in a bunker"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Star"
+            "display_value": "Nowhere to be found"
           }
         ]
       },

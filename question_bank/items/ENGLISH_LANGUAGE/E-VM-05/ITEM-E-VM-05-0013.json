@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "The dragon was *colossal*, towering over the tallest castle towers. What does 'colossal' mean?",
+    "display_text": "The golden dragon was *colossal*, according to The wise owl. What does 'colossal' mean?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-vm-05-0013_prompt.mp3",
     "visual_assets": [
       {
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Colossal means extremely large!"
+      "prompt": "The meaning of colossal is Huge."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

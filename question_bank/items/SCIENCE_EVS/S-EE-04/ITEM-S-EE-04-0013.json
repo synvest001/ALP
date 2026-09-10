@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "You must survive a harsh, sandy environment where it rarely rains. Which animal would be your best companion here?",
+    "display_text": "You must survive a sandy and dry environment wearing a green suit. Which animal lives here naturally?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-ee-04-0013_prompt.mp3",
     "visual_assets": [
       {
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Camels are perfectly adapted to survive in dry deserts!"
+      "prompt": "Camel lives in sandy and dry environments."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

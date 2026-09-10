@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "To cast the spell of levitation, you must say a word that rhymes with 'Flight'. Which word works?",
+    "display_text": "Fix the grammar error in the message from The grumpy troll: 'They was happy.'",
     "spoken_audio_uri": "assets/audio/english_language/item-e-we-03-0024_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Sword"
+            "display_value": "They were happy."
           },
           {
             "option_id": "opt_2",
-            "display_value": "Knight"
+            "display_value": "They is happy."
           },
           {
             "option_id": "opt_3",
-            "display_value": "Dragon"
+            "display_value": "Them was happy."
           },
           {
             "option_id": "opt_4",
-            "display_value": "Fall"
+            "display_value": "They happy was."
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Flight and Knight sound the same at the end!"
+      "prompt": "Make sure the grammar is correct."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."
@@ -73,7 +73,7 @@
   "rubric": {
     "evaluation_mode": "DETERMINISTIC_EXACT_MATCH",
     "correct_criteria": {
-      "selected_option_id": "opt_2"
+      "selected_option_id": "opt_1"
     }
   },
   "safeguard_metadata": {

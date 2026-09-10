@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "The detective noticed wet footprints leading into the bank, but it hasn't rained in weeks. Where did the suspect most likely come from?",
+    "display_text": "Read the red tablet to complete the logic: Fire is to hot as Ice is to...",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-ar-01-0011_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "The Bakery"
+            "display_value": "Cold"
           },
           {
             "option_id": "opt_2",
-            "display_value": "The Bank Vault"
+            "display_value": "Warm"
           },
           {
             "option_id": "opt_3",
-            "display_value": "The River"
+            "display_value": "Bright"
           },
           {
             "option_id": "opt_4",
-            "display_value": "The Desert"
+            "display_value": "Dark"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Wet footprints usually mean they just came from a body of water."
+      "prompt": "Think about the relationship between the items."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."
@@ -73,7 +73,7 @@
   "rubric": {
     "evaluation_mode": "DETERMINISTIC_EXACT_MATCH",
     "correct_criteria": {
-      "selected_option_id": "opt_3"
+      "selected_option_id": "opt_1"
     }
   },
   "safeguard_metadata": {

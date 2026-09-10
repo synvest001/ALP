@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "In the futuristic space port, which of these is NOT a vehicle meant for space travel?",
+    "display_text": "Logic rule for The space explorer: If it rains, the ground is wet. You observe the first part. What happens?",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-co-01-0010_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Star Cruiser"
+            "display_value": "The ground is wet"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Lunar Rover"
+            "display_value": "The ground is dry"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Orbital Station"
+            "display_value": "It snows"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Submarine"
+            "display_value": "The sun shines"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Submarines travel deep underwater, not in outer space!"
+      "prompt": "The result is The ground is wet."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."
@@ -73,7 +73,7 @@
   "rubric": {
     "evaluation_mode": "DETERMINISTIC_EXACT_MATCH",
     "correct_criteria": {
-      "selected_option_id": "opt_4"
+      "selected_option_id": "opt_1"
     }
   },
   "safeguard_metadata": {

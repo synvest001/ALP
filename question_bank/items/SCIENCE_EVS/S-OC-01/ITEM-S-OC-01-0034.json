@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Your starship enters the orbit of the largest planet in our solar system, famous for its Great Red Spot. Where are you?",
+    "display_text": "While exploring the ancient ruins, which of these is a living thing?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-oc-01-0034_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Mars"
+            "display_value": "Tree"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Saturn"
+            "display_value": "Rock"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Venus"
+            "display_value": "Water"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Jupiter"
+            "display_value": "Cloud"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Jupiter is the gas giant with the massive red storm!"
+      "prompt": "Tree is living."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."
@@ -73,7 +73,7 @@
   "rubric": {
     "evaluation_mode": "DETERMINISTIC_EXACT_MATCH",
     "correct_criteria": {
-      "selected_option_id": "opt_4"
+      "selected_option_id": "opt_1"
     }
   },
   "safeguard_metadata": {

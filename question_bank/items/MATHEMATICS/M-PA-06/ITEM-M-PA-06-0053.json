@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "To bypass the alien security matrix, complete the sequence: 9, 18, 27, 36, ___?",
+    "display_text": "A piece of the ancient map is missing! Fill in the blank: 25, 50, ___, 100",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-pa-06-0053_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Follow the skip counting logic!",
+      "prompt": "Analyze the sequence before and after the blank.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "45"
+            "display_value": "75"
           },
           {
             "option_id": "opt_2",
-            "display_value": "54"
+            "display_value": "65"
           },
           {
             "option_id": "opt_3",
-            "display_value": "40"
+            "display_value": "85"
           },
           {
             "option_id": "opt_4",
-            "display_value": "39"
+            "display_value": "55"
           }
         ]
       },

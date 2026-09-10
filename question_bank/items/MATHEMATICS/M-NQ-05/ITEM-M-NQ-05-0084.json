@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "To unlock the secret door, you must press the button that comes directly BEFORE 26. What is it?",
+    "display_text": "The wizard's potion needs 4 tens and 3 ones of spider venom drops. What is the total number?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-nq-05-0084_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Think backwards from 26: the number right before is 25.",
+      "prompt": "4 tens = 40. Add 3 ones: 40 + 3 = 43!",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "25"
+            "display_value": "43"
           },
           {
             "option_id": "opt_2",
-            "display_value": "27"
+            "display_value": "53"
           },
           {
             "option_id": "opt_3",
-            "display_value": "24"
+            "display_value": "45"
           },
           {
             "option_id": "opt_4",
-            "display_value": "26"
+            "display_value": "42"
           }
         ]
       },

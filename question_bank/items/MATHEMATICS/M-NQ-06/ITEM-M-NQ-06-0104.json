@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "To unlock the secret door, you must press the button that comes directly BEFORE 22. What is it?",
+    "display_text": "Explorer! You found a hidden chest. How many ninja throwing stars are sparkling inside?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-nq-06-0104_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Think backwards from 22: the number right before is 21.",
+      "prompt": "Count carefully! The chest contains exactly 18 ninja throwing stars.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,11 +60,11 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "21"
+            "display_value": "18"
           },
           {
             "option_id": "opt_2",
-            "display_value": "23"
+            "display_value": "16"
           },
           {
             "option_id": "opt_3",
@@ -72,7 +72,7 @@
           },
           {
             "option_id": "opt_4",
-            "display_value": "22"
+            "display_value": "21"
           }
         ]
       },

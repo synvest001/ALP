@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "During a deep-sea submarine expedition, you spot an animal that breathes through gills and has shiny scales. Which of these creatures did you find?",
+    "display_text": "You must survive a wet and rainy environment wearing a neon suit. Which animal lives here naturally?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-ee-01-0009_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "A Great White Shark"
+            "display_value": "Frog"
           },
           {
             "option_id": "opt_2",
-            "display_value": "A Dolphin"
+            "display_value": "Camel"
           },
           {
             "option_id": "opt_3",
-            "display_value": "A Sea Turtle"
+            "display_value": "Polar Bear"
           },
           {
             "option_id": "opt_4",
-            "display_value": "A Penguin"
+            "display_value": "Lion"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Fish and sharks use gills to breathe underwater, while dolphins and turtles use lungs!"
+      "prompt": "Frog lives in wet and rainy environments."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

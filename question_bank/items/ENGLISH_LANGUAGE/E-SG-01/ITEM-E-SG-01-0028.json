@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "The dragon was *colossal*, towering over the tallest castle towers. What does 'colossal' mean?",
+    "display_text": "Which sentence is written correctly for The mystic wizard's royal decree?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-sg-01-0028_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Friendly"
+            "display_value": "The brave knights rode swiftly."
           },
           {
             "option_id": "opt_2",
-            "display_value": "Huge"
+            "display_value": "The braved knights rides swift."
           },
           {
             "option_id": "opt_3",
-            "display_value": "Tiny"
+            "display_value": "knights brave the rode swiftly"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Green"
+            "display_value": "Riding knights brave the."
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Colossal means extremely large!"
+      "prompt": "The subject and verb must agree, and the order must make sense!"
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."
@@ -73,7 +73,7 @@
   "rubric": {
     "evaluation_mode": "DETERMINISTIC_EXACT_MATCH",
     "correct_criteria": {
-      "selected_option_id": "opt_2"
+      "selected_option_id": "opt_1"
     }
   },
   "safeguard_metadata": {

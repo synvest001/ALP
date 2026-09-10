@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The alien has 10 eyes. By looking into the magic mirror, its eyes DOUBLE! How many eyes does it have now?",
+    "display_text": "During the battle, 11 shadow knights charged forward, and then 7 more joined them. How many shadow knights in all?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-op-04-0023_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Double means adding the number to itself: 10 + 10 = 20.",
+      "prompt": "Combine the attacking forces: 11 + 7 = 18 shadow knights!",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "20"
-          },
-          {
-            "option_id": "opt_2",
             "display_value": "18"
           },
           {
+            "option_id": "opt_2",
+            "display_value": "20"
+          },
+          {
             "option_id": "opt_3",
-            "display_value": "22"
+            "display_value": "17"
           },
           {
             "option_id": "opt_4",
-            "display_value": "13"
+            "display_value": "22"
           }
         ]
       },

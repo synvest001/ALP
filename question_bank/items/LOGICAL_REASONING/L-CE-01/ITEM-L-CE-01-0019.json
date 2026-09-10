@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "The detective noticed wet footprints leading into the bank, but it hasn't rained in weeks. Where did the suspect most likely come from?",
+    "display_text": "Cause and Effect: A brave knight noticed wet footprints. Where did the suspect come from?",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-ce-01-0019_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "The Bakery"
-          },
-          {
-            "option_id": "opt_2",
-            "display_value": "The Bank Vault"
-          },
-          {
-            "option_id": "opt_3",
             "display_value": "The River"
           },
           {
-            "option_id": "opt_4",
+            "option_id": "opt_2",
             "display_value": "The Desert"
+          },
+          {
+            "option_id": "opt_3",
+            "display_value": "The Bakery"
+          },
+          {
+            "option_id": "opt_4",
+            "display_value": "The Bank Vault"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Wet footprints usually mean they just came from a body of water."
+      "prompt": "The logical cause/effect is The River."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."
@@ -73,7 +73,7 @@
   "rubric": {
     "evaluation_mode": "DETERMINISTIC_EXACT_MATCH",
     "correct_criteria": {
-      "selected_option_id": "opt_3"
+      "selected_option_id": "opt_1"
     }
   },
   "safeguard_metadata": {

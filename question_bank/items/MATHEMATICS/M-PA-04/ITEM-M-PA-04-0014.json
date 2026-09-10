@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "To bypass the alien security matrix, complete the sequence: 9, 18, 27, 36, ___?",
+    "display_text": "A secret agent is cracking a vault code: Triangle, Hexagon, Circle, Triangle, Hexagon... If she presses the wrong button, the alarm sounds! What comes next?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-pa-04-0014_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Follow the skip counting logic!",
+      "prompt": "The pattern repeats: Circle is next.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "45"
+            "display_value": "Circle"
           },
           {
             "option_id": "opt_2",
-            "display_value": "54"
+            "display_value": "Triangle"
           },
           {
             "option_id": "opt_3",
-            "display_value": "40"
+            "display_value": "Hexagon"
           },
           {
             "option_id": "opt_4",
-            "display_value": "39"
+            "display_value": "Square"
           }
         ]
       },

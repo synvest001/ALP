@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The spaceship's countdown is at 11. What number comes directly AFTER 11 to launch the rocket?",
+    "display_text": "A fierce dragon has 21 gold coins, and a clever goblin has 15. Which number is GREATER?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-nq-03-0092_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Count up: ..., 11, 12!",
+      "prompt": "21 is a larger treasure than 15.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,15 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "12"
+            "display_value": "21"
           },
           {
             "option_id": "opt_2",
-            "display_value": "10"
+            "display_value": "15"
           },
           {
             "option_id": "opt_3",
-            "display_value": "13"
-          },
-          {
-            "option_id": "opt_4",
-            "display_value": "11"
+            "display_value": "They have the same amount"
           }
         ]
       },

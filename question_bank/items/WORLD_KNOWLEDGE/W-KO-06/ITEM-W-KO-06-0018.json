@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Which historical figure is known for wearing a tall stovepipe hat and leading the USA during the Civil War?",
+    "display_text": "In the forbidden forest, the tooth hurts! Who should you call?",
     "spoken_audio_uri": "assets/audio/world_knowledge/item-w-ko-06-0018_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "George Washington"
+            "display_value": "A Dentist"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Albert Einstein"
+            "display_value": "A Plumber"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Thomas Edison"
+            "display_value": "A Baker"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Abraham Lincoln"
+            "display_value": "An Electrician"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Abraham Lincoln was the 16th US President."
+      "prompt": "A Dentist fixes this."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."
@@ -73,7 +73,7 @@
   "rubric": {
     "evaluation_mode": "DETERMINISTIC_EXACT_MATCH",
     "correct_criteria": {
-      "selected_option_id": "opt_4"
+      "selected_option_id": "opt_1"
     }
   },
   "safeguard_metadata": {

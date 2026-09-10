@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "To bypass the laser grid, you must touch the Octagon. How many straight sides does it have?",
+    "display_text": "The ancient artifact looks exactly like a crystal ball. Which 3D shape is it?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-gs-02-0085_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "A Octagon always has 8 sides.",
+      "prompt": "A crystal ball is the shape of a Sphere.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "8"
+            "display_value": "Sphere"
           },
           {
             "option_id": "opt_2",
-            "display_value": "9"
+            "display_value": "Cube"
           },
           {
             "option_id": "opt_3",
-            "display_value": "7"
+            "display_value": "Cone"
           },
           {
             "option_id": "opt_4",
-            "display_value": "5"
+            "display_value": "Pyramid"
           }
         ]
       },

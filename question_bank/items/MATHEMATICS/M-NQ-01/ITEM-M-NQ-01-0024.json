@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "To unlock the secret door, you must press the button that comes directly BEFORE 26. What is it?",
+    "display_text": "Explorer! You found a hidden chest. How many superhero capes are sparkling inside?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-nq-01-0024_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Think backwards from 26: the number right before is 25.",
+      "prompt": "Count carefully! The chest contains exactly 13 superhero capes.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "25"
+            "display_value": "13"
           },
           {
             "option_id": "opt_2",
-            "display_value": "27"
+            "display_value": "11"
           },
           {
             "option_id": "opt_3",
-            "display_value": "24"
+            "display_value": "15"
           },
           {
             "option_id": "opt_4",
-            "display_value": "26"
+            "display_value": "16"
           }
         ]
       },

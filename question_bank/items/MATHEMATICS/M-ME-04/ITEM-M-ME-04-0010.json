@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "In a test of ultimate strength, which object is HEAVIER: A massive space cruiser or A tiny hoverboard?",
+    "display_text": "The galactic merchant demands a \u20b910 coin to buy the hyper-fuel. How many Rupees is that worth?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-me-04-0010_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "A massive space cruiser has way more mass.",
+      "prompt": "a \u20b910 coin equals 10 Rupees.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,15 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "A massive space cruiser"
+            "display_value": "10 Rupees"
           },
           {
             "option_id": "opt_2",
-            "display_value": "A tiny hoverboard"
+            "display_value": "1 Rupee"
           },
           {
             "option_id": "opt_3",
-            "display_value": "They weigh the exact same"
+            "display_value": "5 Rupees"
+          },
+          {
+            "option_id": "opt_4",
+            "display_value": "500 Rupees"
           }
         ]
       },

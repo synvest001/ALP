@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The treasure vault had 20 gold bars. The pirate took away 6 bars. How many are left?",
+    "display_text": "Captain Orion collected 10 space crystals on Mars and 6 on Jupiter. How many crystals does he have to power his rocket?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-op-01-0078_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Subtract: 20 - 6 = 14.",
+      "prompt": "Add them up: 10 + 6 = 16.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "14"
+            "display_value": "16"
           },
           {
             "option_id": "opt_2",
-            "display_value": "15"
+            "display_value": "14"
           },
           {
             "option_id": "opt_3",
-            "display_value": "12"
+            "display_value": "17"
           },
           {
             "option_id": "opt_4",
-            "display_value": "16"
+            "display_value": "19"
           }
         ]
       },

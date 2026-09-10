@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "If a Gigantosaurus is larger than a T-Rex, and a T-Rex is larger than a Velociraptor, which dinosaur is the SMALLEST?",
+    "display_text": "Cause and Effect: Captain Orion noticed wet footprints. Where did the suspect come from?",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-ce-01-0001_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Velociraptor"
+            "display_value": "The River"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Gigantosaurus"
+            "display_value": "The Desert"
           },
           {
             "option_id": "opt_3",
-            "display_value": "T-Rex"
+            "display_value": "The Bakery"
           },
           {
             "option_id": "opt_4",
-            "display_value": "They are equal"
+            "display_value": "The Bank Vault"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Follow the size chain downwards!"
+      "prompt": "The logical cause/effect is The River."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

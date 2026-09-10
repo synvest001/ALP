@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "The invisible spy is hiding inside the dark cave. Where is the spy located?",
+    "display_text": "The ancient artifact looks exactly like a knight's pillar. Which 3D shape is it?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-gs-06-0091_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "The spy is inside!",
+      "prompt": "A knight's pillar is the shape of a Cylinder.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Inside the target"
+            "display_value": "Cylinder"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Across the galaxy"
+            "display_value": "Cube"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Underground in a bunker"
+            "display_value": "Cone"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Nowhere to be found"
+            "display_value": "Pyramid"
           }
         ]
       },

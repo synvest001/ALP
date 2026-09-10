@@ -155,7 +155,7 @@ export class MapScreen {
             <button class="btn btn-large btn-adventure" data-domain="LOGICAL_REASONING" style="background: linear-gradient(135deg, #f59e0b, #b45309);">
               🧩 Logic Focus
             </button>
-            <button class="btn btn-large btn-adventure" data-domain="SCIENCE_EVS" style="background: linear-gradient(135deg, #10b981, #047857);">
+            <button class="btn btn-large btn-adventure" data-domain="SCIENCE_EVS,WORLD_KNOWLEDGE" style="background: linear-gradient(135deg, #10b981, #047857);">
               🌍 Science & World Focus
             </button>
           </div>

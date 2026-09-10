@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "If every alien from Mars has 3 eyes, and Zorg is from Mars, how many eyes does Zorg have?",
+    "display_text": "The wise owl asks: Which of these does NOT belong with space travel?",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-pc-04-0013_prompt.mp3",
     "visual_assets": [
       {
@@ -34,19 +34,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "3"
+            "display_value": "Submarine"
           },
           {
             "option_id": "opt_2",
-            "display_value": "2"
+            "display_value": "Star Cruiser"
           },
           {
             "option_id": "opt_3",
-            "display_value": "4"
+            "display_value": "Lunar Rover"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Unknown"
+            "display_value": "Orbital Station"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Zorg is from Mars, so the rule applies to him!"
+      "prompt": "Submarine is the odd one out."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."
