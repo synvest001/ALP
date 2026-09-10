@@ -1,10 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 140">
-  <rect width="450" height="140" rx="16" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
-  <circle cx="50" cy="70" r="28" fill="#ef4444"/>
-  <rect x="110" y="42" width="56" height="56" rx="8" fill="#3b82f6"/>
-  <circle cx="230" cy="70" r="28" fill="#ef4444"/>
-  <rect x="290" y="42" width="56" height="56" rx="8" fill="#3b82f6"/>
-  <!-- Question Box -->
-  <rect x="375" y="42" width="56" height="56" rx="8" fill="#fef08a" stroke="#ca8a04" stroke-width="3" stroke-dasharray="6,3"/>
-  <text x="403" y="79" font-family="'Comic Sans MS', sans-serif" font-size="28" font-weight="bold" fill="#854d0e" text-anchor="middle">?</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="100%" height="100%">
+  <rect width="300" height="200" rx="16" fill="#fef2f2"/>
+  <g transform="translate(150, 100)">
+    <!-- Red Fire Engine / Truck -->
+    <rect x="-80" y="-10" width="160" height="70" rx="10" fill="#ef4444" stroke="#b91c1c" stroke-width="3.5"/>
+    <rect x="-65" y="5" width="40" height="30" rx="4" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/>
+    <!-- Yellow Siren Light on top -->
+    <polygon points="-50,-24 -35,-24 -38,-10 -47,-10" fill="#facc15" stroke="#eab308" stroke-width="2"/>
+    <!-- Wheels -->
+    <circle cx="-45" cy="62" r="18" fill="#1e293b" stroke="#0f172a" stroke-width="3"/>
+    <circle cx="-45" cy="62" r="7" fill="#94a3b8"/>
+    <circle cx="45" cy="62" r="18" fill="#1e293b" stroke="#0f172a" stroke-width="3"/>
+    <circle cx="45" cy="62" r="7" fill="#94a3b8"/>
+    <!-- Ladder -->
+    <rect x="-20" y="-22" width="95" height="12" fill="#e2e8f0" stroke="#64748b" stroke-width="2"/>
+    <line x1="0" y1="-22" x2="0" y2="-10" stroke="#64748b" stroke-width="2"/>
+    <line x1="25" y1="-22" x2="25" y2="-10" stroke="#64748b" stroke-width="2"/>
+    <line x1="50" y1="-22" x2="50" y2="-10" stroke="#64748b" stroke-width="2"/>
+  </g>
 </svg>

@@ -1,10 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200">
-  <rect width="400" height="200" rx="16" fill="#1e1b4b"/>
-  <g fill="#facc15" stroke="#eab308" stroke-width="2">
-    <polygon points="60,40 68,60 90,60 72,74 78,95 60,82 42,95 48,74 30,60 52,60"/>
-    <polygon points="130,110 138,130 160,130 142,144 148,165 130,152 112,165 118,144 100,130 122,130"/>
-    <polygon points="200,30 208,50 230,50 212,64 218,85 200,72 182,85 188,64 170,50 192,50"/>
-    <polygon points="270,120 278,140 300,140 282,154 288,175 270,162 252,175 258,154 240,140 262,140"/>
-    <polygon points="340,50 348,70 370,70 352,84 358,105 340,92 322,105 328,84 310,70 332,70"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="100%" height="100%">
+  <rect width="300" height="200" rx="16" fill="#fffbeb"/>
+  <g transform="translate(150, 100)">
+    <!-- Chef / Baker Tall White Hat -->
+    <path d="M -30,-30 C -50,-65 50,-65 30,-30 Z" fill="#ffffff" stroke="#d97706" stroke-width="3"/>
+    <rect x="-25" y="-30" width="50" height="15" fill="#ffffff" stroke="#d97706" stroke-width="2.5"/>
+    <!-- Fresh Golden Loaf of Bread -->
+    <ellipse cx="0" cy="25" rx="55" ry="25" fill="#d97706" stroke="#92400e" stroke-width="3.5"/>
+    <path d="M -30,20 Q -25,12 -20,22 M -5,18 Q 0,10 5,20 M 20,20 Q 25,12 30,22" stroke="#fef08a" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <!-- Steam Lines rising -->
+    <path d="M -20,-5 Q -15,-15 -20,-20 M 0,-8 Q 5,-18 0,-24 M 20,-5 Q 25,-15 20,-20" stroke="#f59e0b" stroke-width="2.5" fill="none" stroke-linecap="round"/>
   </g>
 </svg>

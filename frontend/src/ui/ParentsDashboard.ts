@@ -43,7 +43,9 @@ export class ParentsDashboard {
 
   private renderDashboard() {
     const playerName = this.app.profileSwitcher.getCurrentPlayerName() || "Guest";
-    const nodesCompleted = localStorage.getItem('alp_nodes_completed') || '0';
+    const kidKey = playerName.toLowerCase().trim();
+    this.assessmentEngine.setKidId(kidKey);
+    const nodesCompleted = localStorage.getItem(`alp_${kidKey}_nodes_completed`) || localStorage.getItem('alp_nodes_completed') || '0';
     
     const allStates = this.assessmentEngine.getAllStates();
     allStates.sort((a, b) => b.last_active - a.last_active);

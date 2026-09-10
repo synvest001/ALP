@@ -70,36 +70,38 @@ def generate_item_dict(subskill, archetype, seq_num):
         }
     }
 
-    # Custom logic based on seq_num
-    if 1 <= seq_num <= 3:
+    # Custom logic based on seq_num pattern
+    seq_mod = (seq_num - 1) % 10 + 1
+    
+    if 1 <= seq_mod <= 3:
         item["cognitive_depth"] = "APPLY"
         item["transfer_level"] = "LEVEL_1_SURFACE"
         item["representation_type"] = "VISUAL"
         item["primary_modality"] = "TAP_SELECT"
         item["supported_alternative_modalities"] = ["TAP_SELECT"]
         item["interaction_model"] = {"modality_configurations": {"tap_select": {}}}
-    elif 4 <= seq_num <= 5:
+    elif 4 <= seq_mod <= 5:
         item["cognitive_depth"] = "REASON"
         item["transfer_level"] = "LEVEL_2_CONTEXTUAL"
         item["representation_type"] = "SYMBOLIC"
         item["primary_modality"] = "TAP_SELECT"
         item["supported_alternative_modalities"] = ["TAP_SELECT"]
         item["interaction_model"] = {"modality_configurations": {"tap_select": {}}}
-    elif 6 <= seq_num <= 7:
+    elif 6 <= seq_mod <= 7:
         item["cognitive_depth"] = "REASON"
         item["transfer_level"] = "LEVEL_3_REPRESENTATIONAL"
         item["representation_type"] = "SYMBOLIC"
         item["primary_modality"] = "TAP_SELECT"
         item["supported_alternative_modalities"] = ["TAP_SELECT"]
         item["interaction_model"] = {"modality_configurations": {"tap_select": {}}}
-    elif 8 <= seq_num <= 9:
+    elif 8 <= seq_mod <= 9:
         item["cognitive_depth"] = "GENERALIZE"
         item["transfer_level"] = "LEVEL_4_STRUCTURAL"
         item["representation_type"] = "SYMBOLIC"
         item["primary_modality"] = "TAP_SELECT"
         item["supported_alternative_modalities"] = ["TAP_SELECT"]
         item["interaction_model"] = {"modality_configurations": {"tap_select": {}}}
-    elif seq_num == 10:
+    elif seq_mod == 10:
         item["cognitive_depth"] = "APPLY"
         item["transfer_level"] = "LEVEL_2_CONTEXTUAL"
         item["representation_type"] = "SYMBOLIC"
@@ -132,7 +134,7 @@ def main():
             item_dir = base_dir / "items/MATHEMATICS" / sk
             item_dir.mkdir(parents=True, exist_ok=True)
             
-            for i in range(1, 11):
+            for i in range(1, 140):
                 total_generated += 1
                 item = generate_item_dict(sk, arch, i)
                 

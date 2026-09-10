@@ -1,7 +1,7 @@
 # Comprehensive Technical Specification (Living Document)
 
-**Status:** Active Draft (Updated as built)
-**Purpose:** A unified, comprehensive technical specification document for the Magical Kingdom PWA. This document serves as a single source of truth for architecture, constraints, data structures, and UI behaviors to assist in future debugging, onboarding, and feature enhancements.
+**Status:** Active & Production-Ready
+**Purpose:** A unified, comprehensive technical specification document for the Magical Kingdom PWA. This document serves as a single source of truth for architecture, constraints, data structures, adaptive logic, and UI behaviors to assist in future debugging, onboarding, and feature enhancements.
 
 ---
 
@@ -9,14 +9,14 @@
 
 1. **Target Platforms:** Progressive Web App (PWA) supporting modern devices and legacy devices (specifically iOS 9.3.5 iPads).
 2. **Framework & Tooling:** 
-   - Core: Vanilla TypeScript, Vanilla CSS, HTML. No React, Vue, or heavy frameworks.
+   - Core: Vanilla TypeScript, Vanilla CSS, HTML. Strictly no React, Vue, or heavy external UI frameworks.
    - Build Tool: Vite with `@vitejs/plugin-legacy` (transpiling to ES5, injecting `core-js` polyfills).
 3. **Infrastructure (100% "Credit Card Free"):**
    - Frontend Hosting: GitHub Pages (Free CDN, statically hosted).
    - Backend Database: Google Sheets via Google Apps Script (GAS) API.
 4. **Offline-First Design:** 
-   - All assets (HTML, CSS, JS, Images) cached via Service Workers.
-   - Local state persists in `localStorage` and `WebSQL`.
+   - All assets (HTML, CSS, JS, Images, Data Bundles) cached locally.
+   - Local state persists in `localStorage` with kid-specific namespacing.
    - `SyncEngine` handles pushing local telemetry and progress to Google Sheets when an internet connection is available (or via manual "Sync Data" trigger).
 
 ---
@@ -24,66 +24,100 @@
 ## 2. Data Models & Storage Strategy
 
 ### A. Local Storage (Frontend)
-- `alp_registered_profiles`: JSON array of created users.
+All player-specific progress is strictly namespaced by sanitized player name (`cleanKidId`):
+- `alp_registered_profiles`: JSON array of created player profiles (`[{ name, avatar }]`).
 - `alp_current_name` / `alp_current_avatar`: Active player's session identity.
-- `alp_nodes_completed`: Integer representing the absolute total of completed nodes across all gameplay.
-- `alp_stars`: Integer representing total earned stars.
+- `alp_${kidId}_nodes_completed`: Integer representing total completed map nodes for this player.
+- `alp_${kidId}_stars`: Integer representing total earned stars for this player.
+- `alp_${kidId}_assessment_states`: Subskill mastery records (`{ subskill_id, state, successes, attempts, consecutive_successes, last_active }`).
+- `alp_${kidId}_domain_counts`: Historical answered question count by academic domain for rolling deficit balancing.
+- `alp_${kidId}_cooldown_sessions`: Rolling array of recent sessions containing answered question IDs for repetition prevention.
+- `alp_nodes_completed`, `alp_stars`: Mirrored global fallback keys for single-player compatibility.
 
 ### B. Remote Storage (Google Sheets)
 - **Profiles Sheet:** Plain text debugging of user profiles.
-- **MapProgress Sheet:** Logs `[ProfileID, NodesCompleted, Timestamp]`. The backend must eventually merge this data intelligently to resolve cross-device sync conflicts.
-- **TelemetryLogs Sheet:** Logs anonymous telemetry using UUIDs `[UUID, EventJSON, Timestamp]`. 
+- **MapProgress Sheet:** Logs `[ProfileID, NodesCompleted, Timestamp]`.
+- **TelemetryLogs Sheet:** Logs anonymous telemetry using UUIDs `[UUID, EventJSON, Timestamp]`.
 
-### C. Static JSON Artifacts
-- **Curriculum Map (`frontend/public/data/curriculum_map.json`):** 
-  - Generated at build-time by the Python ingestion script (`scripts/ingest_curriculum_map.py`). 
-  - Parses `WS1_CURRICULUM_MAP___VERSION_1_0.md` into a structured hierarchy of Domains, Strands, Skills, and Prerequisites.
-- **Question Bank (`question_bank/`):**
-  - Fully populated offline repository containing thousands of procedurally generated JSON items structured by subskill IDs (e.g. `items/W-KA-05/ITEM-W-KA-05-0001.json`).
-  - Contains its own validation layer (`validators/stage1_compliance_validator.py`), frozen JSON schema (`schema/question_specification_v1_3_0.json`), and review ledger (`ledger/validation_ledger.jsonl`).
-  - `TaskRunner` and `AdaptiveEngine` dynamically pull from this repository for session composition.
-
----
-
-## 3. User Interface (UI) Orchestration
-
-The app uses a Single Page Application (SPA) shell in `index.html`. UI screens are absolutely positioned containers toggled via CSS `.active` classes by the `app.ts` router.
-
-### Theming & Visuals
-- Heavy use of CSS variables (`--primary`, `--secondary`, `--bg-color`).
-- Glassmorphism applied with `@supports (backdrop-filter)` for older browser degradation.
-
-### Screens & Logic
-1. **Landing Screen (`#screen-landing`):** CSS animated space void. Prompts user login via Profile cards.
-2. **Account Management (`#screen-account`):** Avatar selection (Princess, Knight, Magician, Explorer) and a 4-digit PIN system for cross-device linking.
-3. **Map Screen (`#screen-map`):** 
-   - **Background Logic:** Cycles through 18 unique environment map sets (e.g., Magical Forest, Crystal Cave, Candy Canyon).
-   - **Progression Rule:** A "World" consists of a full visual map of **10 nodes**. 
-   - When 10 nodes are completed, the background dynamically advances to the next environment in the sequence, and the visual path resets to 0 for the new world.
-   - **Dynamic Greeting:** The sticky header updates to greet the player using the name of the current world background (e.g., "Welcome, Royal Highness Princess to Candy Canyon!").
-4. **Task Runner (`#modal-task-runner`):** A glassmorphic modal overlay displaying 4-option questions, hints, and visual scaffolding. Contains logic for incorrect shake animations and correct pulse animations.
-5. **Parents Dashboard (`#screen-parents`):** A professional SaaS-style dashboard displaying curriculum mastery, daily quests, and insights (currently populated with static UI placeholders).
-6. **Toybox (`#screen-sandbox`):** A drag-and-drop sticker reward zone using custom touch/mouse listeners to bypass native HTML5 drag/drop limitations on iOS 9.
+### C. Static Question Bank & Curriculum Assets
+- **Curriculum Map (`frontend/public/data/curriculum_map.json`):**
+  - Static JSON hierarchy of 5 Domains, Strands, 187 Subskills, and prerequisite dependencies.
+  - Consumed by `CurriculumGraph.ts` for unlocking downstream skills.
+- **Compiled Question Bank (`frontend/public/data/question_bank/`):**
+  - Pre-compiled by `scripts/compile_question_bank.py` into 5 domain bundles:
+    - `items_ENGLISH_LANGUAGE.json` (2,120 items)
+    - `items_LOGICAL_REASONING.json` (960 items)
+    - `items_MATHEMATICS.json` (7,645 items)
+    - `items_SCIENCE_EVS.json` (1,400 items)
+    - `items_WORLD_KNOWLEDGE.json` (800 items)
+    - `manifest.json` (12,925 indexed items)
+  - Loaded into memory asynchronously by `QuestionBank.ts` without Windows `EMFILE` file handle limits.
 
 ---
 
-## 4. Backend Endpoints (Google Apps Script)
+## 3. Adaptive Learning Architecture (Workstream 3 Compliant)
 
-Located in `backend/apps_script.js`, the GAS endpoint acts as the REST API using `doGet(e)` and `doPost(e)`.
+### Axis 1: Curriculum Graph Progression
+- Managed by `CurriculumGraph.ts`.
+- Evaluates prerequisite nodes across the 187 subskills.
+- When prerequisite subskills achieve `SECURE` mastery, downstream subskills are automatically unlocked and added to the active subskill candidate set.
+- Provides randomized foundational entry points for each domain.
 
-**Supported POST Actions:**
-- `SYNC_PROGRESS`: Receives `profileId`, `nodesCompleted`, and `timestamp` to update the MapProgress sheet.
-- `LOG_TELEMETRY`: Receives anonymous `uuid` and `events` array to push to the TelemetryLogs sheet.
-- `GET_PROFILE`: (Stub) Will handle cross-device profile retrieval using the PIN system.
+### Axis 2: Depth-First Cognitive Escalation
+- Managed by `AssessmentEngine.ts`.
+- Subskills advance through mastery states: `INTRODUCED` $\to$ `DEVELOPING` $\to$ `SECURE` $\to$ `FLEXIBLE` $\to$ `GENERALIZED`.
+- Maps mastery states directly to cognitive depth:
+  - `INTRODUCED` $\to$ **`APPLY`** (`LEVEL_1_SURFACE`)
+  - `DEVELOPING` $\to$ **`REASON`** (`LEVEL_2_CONTEXTUAL` / `LEVEL_3_REPRESENTATIONAL`)
+  - `SECURE` / `FLEXIBLE` $\to$ **`GENERALIZE`** (`LEVEL_4_STRUCTURAL`)
+
+### Zero Repetition & Randomized Sampling
+- `RepetitionGuard.ts` enforces:
+  1. **Intra-session uniqueness:** No two questions in the same session can have the same item ID.
+  2. **Multi-session cooldown:** No question seen in the kid's **last 3 sessions** may be presented again.
+- `AdaptiveEngine.ts` randomizes domain presentation order using high-entropy rolling deficit distribution. Session task sequences are unpredictable across kids and across sessions.
+
+### Fast-Track Progression (Mastery Leap)
+- **Map Advancement:**
+  - **0 Errors (Perfect Session):** Triggers a **+2 Steps Mastery Leap** and awards **2 Stars**.
+  - **1 Error:** Advances +1 step and awards 1 star.
+  - **2+ Errors:** Encouraging practice mode without node advance.
+- **Cognitive Fast-Tracking:**
+  - In `AssessmentEngine.ts`, consecutive correct answers (`consecutive_successes`) accelerate transitions:
+    - 1st correct answer $\to$ `DEVELOPING` (escalates to `REASON` depth).
+    - 2nd consecutive correct answer $\to$ `SECURE` (escalates to `GENERALIZE` depth and unlocks downstream curriculum skills).
 
 ---
 
-## 5. Ongoing Implementation Phases
+## 4. User Interface Orchestration
 
-1. **Phase 1 (Foundational Infrastructure):** ✅ Completed. Ingestion pipeline script created; Google Apps Script draft written.
-2. **Phase 2 (Core Logic & Content):** ✅ Completed. Assessment framework logic, 5-stage mastery engine, and dynamic AdaptiveEngine connected to the massively populated Question Bank repository.
-3. **Phase 3 (Adaptive Engine & Parent UI):** ✅ Completed. Wired up offline telemetry and built dynamic parents dashboard UI.
-4. **Phase 4 (Advanced UX):** ✅ Completed. Implemented graceful failure routing and strict 0-error map progression gating.
-5. **Phase 5 (Question Bank Completion & Visuals):** ✅ Completed. Generated 1,880 visual SVGs, populated 3-tier scaffolding, enforced `PURE_REASONING` language limits (<= 7 words), and passed 100% Stage 1 Compliance across all domains.
+### Screens & Modules
+1. **Landing Screen (`LandingScreen.ts`):** Hero selection grid displaying registered player cards.
+2. **Account Management (`AccountScreen.ts`):** Hero avatar picker (Princess, Knight, Magician, Explorer) and 4-digit PIN system.
+3. **Map Screen (`MapScreen.ts`):**
+   - Cycles through **10 high-definition hand-painted map themes** (`art/` backgrounds).
+   - Winding SVG golden road connecting 5 interactive nodes per realm.
+   - Dynamic sticky header greeting displaying player avatar, realm name, and stars.
+   - Realm completion celebration modal.
+4. **Fairy Castle Modal (`FairyCastleSvg.ts`):**
+   - Visual architectural viewer rendering 10 progressive wings of the Royal Fairy Castle in procedural SVG.
+   - Completing each 5-node realm constructs a new castle wing.
+5. **Grand Treasures Sandbox (`ToyboxScreen.ts`):**
+   - Gallery displaying 10 mythical relics (e.g. Celestial Astrolabe, Mermaid Pearl Harp, Chrono-Compass).
+   - Unlocked upon completing each corresponding realm.
+6. **Task Runner Modal (`TaskRunner.ts`):**
+   - Modal presentation of 4-option questions with randomized button order, image option rendering, sound effects, hints, and error scaffolding.
+   - Mastery Leap celebrations for perfect sessions.
+7. **Parents Dashboard (`ParentsDashboard.ts`):**
+   - Qualitative briefing tracking milestones completed, skills explored, mastery states, and conversational real-world connection prompts.
 
-*(Note: This document should be continuously updated as new files are created, data schemas are solidified, or architectural decisions are made.)*
+---
+
+## 5. Verification & Test Suite
+
+The platform includes automated verification scripts in `scripts/`:
+- `scripts/test_repetition_guard.js`: Verifies intra-session duplicate prevention and 3-session cooldown.
+- `scripts/test_kid_progression_and_randomization.js`: Verifies fast-track mastery leaps (+2 nodes, 2 stars), accelerated cognitive transitions, multi-kid profile isolation, and random domain sequencing.
+- `python scripts/compile_question_bank.py`: Compiles and validates all 12,925 questions into public bundles.
+- `npx tsc --noEmit`: Strict TypeScript type checking.
+- `npm run build`: Production build packaging with legacy ES5 polyfills.

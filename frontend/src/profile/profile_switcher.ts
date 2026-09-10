@@ -105,11 +105,19 @@ export class ProfileSwitcher {
     }
   }
   
-  public resetProgress(_playerName: string) {
-    // Currently progress is global, so we just clear the global keys
-    // In a future refactor, these keys should be namespaced by playerName
+  public resetProgress(playerName: string) {
+    const clean = playerName.toLowerCase().trim();
+    localStorage.removeItem(`alp_${clean}_nodes_completed`);
+    localStorage.removeItem(`alp_${clean}_stars`);
+    localStorage.removeItem(`alp_${clean}_assessment_states`);
+    localStorage.removeItem(`alp_${clean}_domain_counts`);
+    localStorage.removeItem(`alp_${clean}_cooldown_sessions`);
+    localStorage.removeItem(`alp_${clean}_daily_quest_date`);
+    localStorage.removeItem(`alp_${clean}_daily_quest_count`);
     localStorage.removeItem('alp_nodes_completed');
     localStorage.removeItem('alp_unlocked_stickers');
     localStorage.removeItem('alp_stars');
+    localStorage.removeItem('alp_daily_quest_date');
+    localStorage.removeItem('alp_daily_quest_count');
   }
 }

@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Which group of gems has MORE jewels?",
+    "display_text": "The time bomb will explode when the little hand hits 9 and the big hand is on 12. What time must you defuse it?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-me-02-0009_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "The group on the left has 6 gems, while the right only has 2.",
+      "prompt": "When the long hand is on 12, it is exactly 9 o'clock!",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,21 +60,25 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Left Group (6)"
+            "display_value": "9 o'clock"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Right Group (2)"
+            "display_value": "10 o'clock"
           },
           {
             "option_id": "opt_3",
-            "display_value": "They are Equal"
+            "display_value": "8 o'clock"
+          },
+          {
+            "option_id": "opt_4",
+            "display_value": "12 o'clock"
           }
         ]
       },
       "spoken_dictated": {
         "target_tokens": [
-          "left group (6)"
+          "5"
         ],
         "acoustic_confidence_threshold": 0.75
       }

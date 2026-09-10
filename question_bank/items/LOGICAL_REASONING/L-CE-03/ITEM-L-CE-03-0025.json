@@ -1,0 +1,85 @@
+{
+  "item_id": "ITEM-L-CE-03-0025",
+  "schema_version": "1.3.0",
+  "target_subskill_id": "L-CE-03",
+  "domain_id": "LOGICAL_REASONING",
+  "evidence_archetype": "STRATEGIC_REASONING",
+  "language_load_class": "PURE_REASONING",
+  "challenge_type": "MULTIPLE_CHOICE",
+  "creation_stage": "DRAFT",
+  "estimated_duration_seconds": 30,
+  "cognitive_depth": "REASON",
+  "transfer_level": "LEVEL_2_CONTEXTUAL",
+  "representation_type": "VISUAL",
+  "primary_modality": "TAP_SELECT",
+  "supported_alternative_modalities": [
+    "TAP_SELECT",
+    "SPOKEN_DICTATED"
+  ],
+  "prompt_structure": {
+    "display_text": "If every alien from Mars has 3 eyes, and Zorg is from Mars, how many eyes does Zorg have?",
+    "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-ce-03-0025_prompt.mp3",
+    "visual_assets": [
+      {
+        "asset_id": "ITEM-L-CE-03-0025_vis_1",
+        "asset_type": "DYNAMIC_SVG",
+        "uri": "assets/svg/item-l-ce-03-0025_visual.svg"
+      }
+    ]
+  },
+  "interaction_model": {
+    "input_mechanic": "SINGLE_CHOICE",
+    "modality_configurations": {
+      "tap_select": {
+        "options": [
+          {
+            "option_id": "opt_1",
+            "display_value": "3"
+          },
+          {
+            "option_id": "opt_2",
+            "display_value": "2"
+          },
+          {
+            "option_id": "opt_3",
+            "display_value": "4"
+          },
+          {
+            "option_id": "opt_4",
+            "display_value": "Unknown"
+          }
+        ]
+      },
+      "spoken_dictated": {
+        "target_tokens": [
+          "cloud"
+        ],
+        "acoustic_confidence_threshold": 0.75
+      }
+    }
+  },
+  "scaffolding_protocol": {
+    "level_1_reflection_prompt": {
+      "preserves_productive_struggle": true,
+      "prompt": "Zorg is from Mars, so the rule applies to him!"
+    },
+    "level_2_representation_shift": {
+      "hint": "Observe the color, shape, and clues shown in the illustration."
+    },
+    "level_3_prerequisite_bridge": {
+      "hint": "Remember the foundational rule: observe, compare, and verify."
+    }
+  },
+  "rubric": {
+    "evaluation_mode": "DETERMINISTIC_EXACT_MATCH",
+    "correct_criteria": {
+      "selected_option_id": "opt_1"
+    }
+  },
+  "safeguard_metadata": {
+    "has_unvoiced_text": false,
+    "reading_grade_level": 1.0,
+    "cultural_neutrality_verified": true,
+    "contains_gamified_dark_patterns": false
+  }
+}

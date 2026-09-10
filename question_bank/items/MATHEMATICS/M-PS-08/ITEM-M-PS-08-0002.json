@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Which group of gems has MORE jewels?",
+    "display_text": "The spaceship needs 16 hyper-drive cores to launch. You have collected 11. How many MORE cores must you find?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-ps-08-0002_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "The group on the left has 6 gems, while the right only has 2.",
+      "prompt": "Subtract what you have from what you need: 16 - 11 = 5!",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,21 +60,25 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Left Group (6)"
+            "display_value": "5"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Right Group (2)"
+            "display_value": "7"
           },
           {
             "option_id": "opt_3",
-            "display_value": "They are Equal"
+            "display_value": "4"
+          },
+          {
+            "option_id": "opt_4",
+            "display_value": "16"
           }
         ]
       },
       "spoken_dictated": {
         "target_tokens": [
-          "left group (6)"
+          "left group"
         ],
         "acoustic_confidence_threshold": 0.75
       }

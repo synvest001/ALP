@@ -4,12 +4,20 @@
   "target_subskill_id": "E-SG-03",
   "domain_id": "ENGLISH_LANGUAGE",
   "evidence_archetype": "PROCEDURAL_FLUENCY",
-  "language_load_class": "INTEGRATED_LANGUAGE_AND_REASONING",
+  "language_load_class": "MINIMAL_INSTRUCTIONAL",
   "challenge_type": "MULTIPLE_CHOICE",
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
+  "cognitive_depth": "APPLY",
+  "transfer_level": "LEVEL_1_SURFACE",
+  "representation_type": "VISUAL",
+  "primary_modality": "TAP_SELECT",
+  "supported_alternative_modalities": [
+    "TAP_SELECT",
+    "SPOKEN_DICTATED"
+  ],
   "prompt_structure": {
-    "display_text": "What word rhymes with Cat?",
+    "display_text": "The dragon was *colossal*, towering over the tallest castle towers. What does 'colossal' mean?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-sg-03-0003_prompt.mp3",
     "visual_assets": [
       {
@@ -19,15 +27,44 @@
       }
     ]
   },
+  "interaction_model": {
+    "input_mechanic": "SINGLE_CHOICE",
+    "modality_configurations": {
+      "tap_select": {
+        "options": [
+          {
+            "option_id": "opt_1",
+            "display_value": "Green"
+          },
+          {
+            "option_id": "opt_2",
+            "display_value": "Friendly"
+          },
+          {
+            "option_id": "opt_3",
+            "display_value": "Huge"
+          },
+          {
+            "option_id": "opt_4",
+            "display_value": "Tiny"
+          }
+        ]
+      },
+      "spoken_dictated": {
+        "target_tokens": [
+          "c"
+        ],
+        "acoustic_confidence_threshold": 0.75
+      }
+    }
+  },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Cat and Hat end in the same sound: -at!",
-      "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
-      "preserves_productive_struggle": true
+      "preserves_productive_struggle": true,
+      "prompt": "Colossal means extremely large!"
     },
     "level_2_representation_shift": {
-      "target_representation": "CONCRETE",
-      "hint": "Look closely at the picture and count each item."
+      "hint": "Observe the color, shape, and clues shown in the illustration."
     },
     "level_3_prerequisite_bridge": {
       "hint": "Remember the foundational rule: observe, compare, and verify."
@@ -36,7 +73,7 @@
   "rubric": {
     "evaluation_mode": "DETERMINISTIC_EXACT_MATCH",
     "correct_criteria": {
-      "selected_option_id": "opt_1"
+      "selected_option_id": "opt_3"
     }
   },
   "safeguard_metadata": {
@@ -44,44 +81,5 @@
     "reading_grade_level": 1.0,
     "cultural_neutrality_verified": true,
     "contains_gamified_dark_patterns": false
-  },
-  "cognitive_depth": "APPLY",
-  "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
-  "primary_modality": "TAP_SELECT",
-  "supported_alternative_modalities": [
-    "TAP_SELECT",
-    "SPOKEN_DICTATED"
-  ],
-  "interaction_model": {
-    "input_mechanic": "SINGLE_CHOICE",
-    "modality_configurations": {
-      "tap_select": {
-        "options": [
-          {
-            "option_id": "opt_1",
-            "display_value": "Hat"
-          },
-          {
-            "option_id": "opt_2",
-            "display_value": "Dog"
-          },
-          {
-            "option_id": "opt_3",
-            "display_value": "Fish"
-          },
-          {
-            "option_id": "opt_4",
-            "display_value": "Cup"
-          }
-        ]
-      },
-      "spoken_dictated": {
-        "target_tokens": [
-          "hat"
-        ],
-        "acoustic_confidence_threshold": 0.75
-      }
-    }
   }
 }

@@ -10,10 +10,26 @@ ITEMS_DIR = BASE_DIR / "question_bank" / "items"
 PUBLIC_SVG_DIR = BASE_DIR / "frontend" / "public" / "assets" / "svg"
 DIST_SVG_DIR = BASE_DIR / "frontend" / "dist" / "assets" / "svg"
 LEDGER_FILE = BASE_DIR / "question_bank" / "ledger" / "validation_ledger.jsonl"
+SEMANTIC_LEDGER_FILE = BASE_DIR / "question_bank" / "ledger" / "semantic_ledger.json"
 
 PUBLIC_SVG_DIR.mkdir(parents=True, exist_ok=True)
 DIST_SVG_DIR.mkdir(parents=True, exist_ok=True)
 LEDGER_FILE.parent.mkdir(parents=True, exist_ok=True)
+
+import hashlib
+import random
+
+def load_semantic_ledger():
+    if SEMANTIC_LEDGER_FILE.exists():
+        with open(SEMANTIC_LEDGER_FILE, "r") as f:
+            return set(json.load(f))
+    return set()
+
+SEMANTIC_LEDGER = load_semantic_ledger()
+
+def compute_semantic_hash(subskill, prompt, bindings_str, correct_val):
+    semantic_string = f"{subskill}|{prompt}|{bindings_str}|{correct_val}"
+    return hashlib.sha256(semantic_string.encode('utf-8')).hexdigest()
 
 # Domain themed templates for rich visual questions
 TEMPLATES = {
@@ -41,14 +57,14 @@ TEMPLATES = {
             "svg_type": "gems_comparison",
             "counts": [6, 2],
             "correct_idx": 0,
-            "distractors": ["Left Group (6)", "Right Group (2)", "They are Equal"],
-            "correct_val": "Left Group (6)",
-            "hint": "The group on the left has 6 gems, while the right only has 2."
+            "distractors": ["Left Group", "Right Group", "They are Equal"],
+            "correct_val": "Left Group",
+            "hint": "Count them carefully! The group on the left has 6 gems, while the right only has 2."
         }
     ],
     "ENGLISH_LANGUAGE": [
         {
-            "prompt": "Which letter does Sun start with?",
+            "prompt": "Which letter does this picture start with?",
             "svg_type": "sun",
             "correct_val": "S",
             "distractors": ["S", "T", "B", "M"],
@@ -162,6 +178,31 @@ def generate_themed_svg(svg_type: str, filename: str):
     <polygon points="200,30 208,50 230,50 212,64 218,85 200,72 182,85 188,64 170,50 192,50"/>
     <polygon points="270,120 278,140 300,140 282,154 288,175 270,162 252,175 258,154 240,140 262,140"/>
     <polygon points="340,50 348,70 370,70 352,84 358,105 340,92 322,105 328,84 310,70 332,70"/>
+  </g>
+</svg>''',
+        "gems_comparison": '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" width="100%" height="100%">
+  <rect width="400" height="200" rx="16" fill="#f8fafc"/>
+  <!-- Left group (6 gems) -->
+  <g transform="translate(40, 30)">
+    <rect width="140" height="140" rx="12" fill="#ecfeff" stroke="#14b8a6" stroke-width="3" stroke-dasharray="8,4"/>
+    <g fill="#0ea5e9" stroke="#0284c7" stroke-width="2">
+      <!-- Top Row -->
+      <polygon points="40,25 55,40 40,55 25,40" />
+      <polygon points="70,25 85,40 70,55 55,40" />
+      <polygon points="100,25 115,40 100,55 85,40" />
+      <!-- Bottom Row -->
+      <polygon points="40,85 55,100 40,115 25,100" />
+      <polygon points="70,85 85,100 70,115 55,100" />
+      <polygon points="100,85 115,100 100,115 85,100" />
+    </g>
+  </g>
+  <!-- Right group (2 gems) -->
+  <g transform="translate(220, 30)">
+    <rect width="140" height="140" rx="12" fill="#fff1f2" stroke="#f43f5e" stroke-width="3" stroke-dasharray="8,4"/>
+    <g fill="#ec4899" stroke="#be185d" stroke-width="2">
+      <polygon points="50,60 70,80 50,100 30,80" />
+      <polygon points="90,60 110,80 90,100 70,80" />
+    </g>
   </g>
 </svg>''',
         "apples": '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 180" width="100%" height="100%">
@@ -350,7 +391,40 @@ def enrich_item(item_path: Path):
 
     domain = item.get("domain_id", "MATHEMATICS")
     templates = TEMPLATES.get(domain, TEMPLATES["MATHEMATICS"])
-    tmpl = templates[hash(item.get("item_id", "0")) % len(templates)]
+    
+    # Try up to 20 times to find a unique semantic hash
+    for attempt in range(20):
+        # Pick a random template instead of hashing item_id
+        tmpl = random.choice(templates)
+        
+        # Randomize distractors if it's math
+        prompt = tmpl["prompt"]
+        correct_val = tmpl["correct_val"]
+        distractors = list(tmpl["distractors"])
+        if domain == "MATHEMATICS":
+            try:
+                cv = int(correct_val)
+                # Generate new valid distractors around the correct answer
+                d_set = {cv}
+                while len(d_set) < 4:
+                    d_set.add(max(1, cv + random.randint(-5, 5)))
+                distractors = [str(x) for x in list(d_set)]
+                random.shuffle(distractors)
+            except ValueError:
+                random.shuffle(distractors)
+        else:
+            random.shuffle(distractors)
+            
+        bindings_str = "" # Currently batch_enrich doesn't bind parameters tightly to SVGs, but we include it in hash for future
+        
+        sem_hash = compute_semantic_hash(item.get("target_subskill_id", ""), prompt, bindings_str, correct_val)
+        
+        if sem_hash not in SEMANTIC_LEDGER:
+            SEMANTIC_LEDGER.add(sem_hash)
+            break
+    else:
+        # If we couldn't find a unique one after 20 tries, just use the last one anyway (collision)
+        print(f"Warning: Semantic collision could not be avoided for {item['item_id']}")
     
     # Canonical archetype from WS2
     import sys
@@ -368,7 +442,7 @@ def enrich_item(item_path: Path):
     
     # Update prompt structure
     item["prompt_structure"] = {
-        "display_text": tmpl["prompt"],
+        "display_text": prompt,
         "spoken_audio_uri": f"assets/audio/{domain.lower()}/{item['item_id'].lower()}_prompt.mp3",
         "visual_assets": [
             {
@@ -385,13 +459,13 @@ def enrich_item(item_path: Path):
     # Update options
     options_list = []
     correct_opt_id = "opt_1"
-    for idx, d_text in enumerate(tmpl["distractors"]):
+    for idx, d_text in enumerate(distractors):
         opt_id = f"opt_{idx + 1}"
         options_list.append({
             "option_id": opt_id,
             "display_value": d_text
         })
-        if d_text == tmpl["correct_val"]:
+        if d_text == correct_val:
             correct_opt_id = opt_id
 
     item["interaction_model"] = {
@@ -401,7 +475,7 @@ def enrich_item(item_path: Path):
                 "options": options_list
             },
             "spoken_dictated": {
-                "target_tokens": [str(tmpl["correct_val"]).lower()],
+                "target_tokens": [str(correct_val).lower()],
                 "acoustic_confidence_threshold": 0.75
             }
         }
@@ -449,6 +523,9 @@ def enrich_item(item_path: Path):
     }
     with open(LEDGER_FILE, "a", encoding="utf-8") as lf:
         lf.write(json.dumps(log_entry) + "\n")
+        
+    with open(SEMANTIC_LEDGER_FILE, "w", encoding="utf-8") as f:
+        json.dump(list(SEMANTIC_LEDGER), f, indent=2)
         
     return True
 

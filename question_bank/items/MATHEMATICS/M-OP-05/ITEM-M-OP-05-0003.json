@@ -4,92 +4,84 @@
   "target_subskill_id": "M-OP-05",
   "domain_id": "MATHEMATICS",
   "evidence_archetype": "CONCEPTUAL",
-  "cognitive_depth": "UNDERSTAND",
-  "transfer_level": "LEVEL_1_SURFACE",
-  "primary_modality": "TYPED_KEYBOARD",
-  "supported_alternative_modalities": [
-    "TAP_SELECT"
-  ],
   "language_load_class": "PURE_REASONING",
-  "representation_type": "SYMBOLIC",
-  "challenge_type": "STANDARD",
-  "creation_stage": "ANSWERING",
-  "estimated_duration_seconds": 45,
+  "challenge_type": "MULTIPLE_CHOICE",
+  "creation_stage": "DRAFT",
+  "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "spoken_audio_uri": "assets/audio/math/m_op_05_0003_prompt.mp3",
-    "display_text": "Fill in the missing number.",
+    "display_text": "The alien has 6 eyes. By looking into the magic mirror, its eyes DOUBLE! How many eyes does it have now?",
+    "spoken_audio_uri": "assets/audio/mathematics/item-m-op-05-0003_prompt.mp3",
     "visual_assets": [
       {
-        "asset_id": "equation_5_plus_unknown_8",
-        "asset_type": "STATIC_SVG",
-        "uri": "assets/svg/eq_5_plus_box_8.svg"
+        "asset_id": "ITEM-M-OP-05-0003_vis_1",
+        "asset_type": "DYNAMIC_SVG",
+        "uri": "assets/svg/item-m-op-05-0003_visual.svg"
       }
     ]
   },
-  "interaction_model": {
-    "input_mechanic": "NUMBER_PAD_ENTRY",
-    "modality_configurations": {
-      "typed_keyboard": {
-        "keypad_type": "NUMERIC_STANDARD",
-        "max_length": 2
-      },
-      "tap_select": {
-        "options": [
-          {
-            "option_id": "opt_1",
-            "display_value": "3"
-          },
-          {
-            "option_id": "opt_2",
-            "display_value": "5"
-          },
-          {
-            "option_id": "opt_3",
-            "display_value": "8"
-          }
-        ]
-      }
-    }
-  },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "spoken_text": "What number added to 5 makes 8?",
+      "prompt": "Double means adding the number to itself: 6 + 6 = 12.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
     "level_2_representation_shift": {
-      "spoken_text": "Start at 5 and add dots until you reach 8.",
-      "target_representation": "VISUAL",
-      "visual_asset_override": "assets/svg/dot_path_5_to_8.svg"
+      "target_representation": "CONCRETE",
+      "hint": "Look closely at the picture and count each item."
     },
     "level_3_prerequisite_bridge": {
-      "spoken_text": "Count forward: 6, 7, 8. That is 3 steps.",
-      "target_prerequisite_subskill_id": "M-NQ-02",
-      "interactive_overlay": "NUMBER_PATH_HIGHLIGHT"
+      "hint": "Remember the foundational rule: observe, compare, and verify."
     }
   },
   "rubric": {
     "evaluation_mode": "DETERMINISTIC_EXACT_MATCH",
     "correct_criteria": {
-      "target_value": 3
-    },
-    "diagnostic_distractors": [
-      {
-        "response_pattern": "8",
-        "diagnostic_misconception": "EQUALITY_AS_SUM_TOTAL",
-        "recommended_ws3_branch": "STRATEGY_REFLECTION_PIVOT"
-      },
-      {
-        "response_pattern": "13",
-        "diagnostic_misconception": "ADDITIVE_OVERCOUNTING",
-        "recommended_ws3_branch": "PREREQUISITE_STRENGTHENING"
-      }
-    ]
+      "selected_option_id": "opt_1"
+    }
   },
   "safeguard_metadata": {
-    "reading_grade_level": 0.5,
     "has_unvoiced_text": false,
+    "reading_grade_level": 1.0,
     "cultural_neutrality_verified": true,
     "contains_gamified_dark_patterns": false
+  },
+  "cognitive_depth": "APPLY",
+  "transfer_level": "LEVEL_1_SURFACE",
+  "representation_type": "VISUAL",
+  "primary_modality": "TAP_SELECT",
+  "supported_alternative_modalities": [
+    "TAP_SELECT",
+    "SPOKEN_DICTATED"
+  ],
+  "interaction_model": {
+    "input_mechanic": "SINGLE_CHOICE",
+    "modality_configurations": {
+      "tap_select": {
+        "options": [
+          {
+            "option_id": "opt_1",
+            "display_value": "12"
+          },
+          {
+            "option_id": "opt_2",
+            "display_value": "10"
+          },
+          {
+            "option_id": "opt_3",
+            "display_value": "14"
+          },
+          {
+            "option_id": "opt_4",
+            "display_value": "9"
+          }
+        ]
+      },
+      "spoken_dictated": {
+        "target_tokens": [
+          "left group"
+        ],
+        "acoustic_confidence_threshold": 0.75
+      }
+    }
   }
 }

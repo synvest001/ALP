@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Count the juicy red apples in the basket.",
+    "display_text": "A bag contains ONLY 10 red dragon scales and 0 green scales. If you reach in blindly, what will you definitely pull out?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-du-07-0008_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Touch each red apple as you count: 1, 2, 3, 4.",
+      "prompt": "There are only red scales inside, so it's a 100% certainty!",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,25 +60,25 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "4"
+            "display_value": "A red dragon scale"
           },
           {
             "option_id": "opt_2",
-            "display_value": "5"
+            "display_value": "A green dragon scale"
           },
           {
             "option_id": "opt_3",
-            "display_value": "6"
+            "display_value": "Nothing at all"
           },
           {
             "option_id": "opt_4",
-            "display_value": "3"
+            "display_value": "A magic wand"
           }
         ]
       },
       "spoken_dictated": {
         "target_tokens": [
-          "4"
+          "5"
         ],
         "acoustic_confidence_threshold": 0.75
       }

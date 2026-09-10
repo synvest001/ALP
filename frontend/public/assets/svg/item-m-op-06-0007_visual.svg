@@ -1,25 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 180">
-  <rect width="400" height="180" rx="16" fill="#fef2f2"/>
-  <ellipse cx="200" cy="140" rx="150" ry="30" fill="#fecaca"/>
-  <!-- 4 apples -->
-  <g transform="translate(80, 50)">
-    <circle cx="25" cy="40" r="28" fill="#ef4444"/>
-    <path d="M 25,12 Q 30,0 22,-8" stroke="#78350f" stroke-width="4" fill="none"/>
-    <path d="M 25,6 Q 40,-2 42,8" fill="#22c55e"/>
-  </g>
-  <g transform="translate(150, 50)">
-    <circle cx="25" cy="40" r="28" fill="#ef4444"/>
-    <path d="M 25,12 Q 30,0 22,-8" stroke="#78350f" stroke-width="4" fill="none"/>
-    <path d="M 25,6 Q 40,-2 42,8" fill="#22c55e"/>
-  </g>
-  <g transform="translate(220, 50)">
-    <circle cx="25" cy="40" r="28" fill="#ef4444"/>
-    <path d="M 25,12 Q 30,0 22,-8" stroke="#78350f" stroke-width="4" fill="none"/>
-    <path d="M 25,6 Q 40,-2 42,8" fill="#22c55e"/>
-  </g>
-  <g transform="translate(290, 50)">
-    <circle cx="25" cy="40" r="28" fill="#ef4444"/>
-    <path d="M 25,12 Q 30,0 22,-8" stroke="#78350f" stroke-width="4" fill="none"/>
-    <path d="M 25,6 Q 40,-2 42,8" fill="#22c55e"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="100%" height="100%">
+  <rect width="300" height="200" rx="16" fill="#fffbeb"/>
+  <g transform="translate(150, 100)">
+    <!-- Chef / Baker Tall White Hat -->
+    <path d="M -30,-30 C -50,-65 50,-65 30,-30 Z" fill="#ffffff" stroke="#d97706" stroke-width="3"/>
+    <rect x="-25" y="-30" width="50" height="15" fill="#ffffff" stroke="#d97706" stroke-width="2.5"/>
+    <!-- Fresh Golden Loaf of Bread -->
+    <ellipse cx="0" cy="25" rx="55" ry="25" fill="#d97706" stroke="#92400e" stroke-width="3.5"/>
+    <path d="M -30,20 Q -25,12 -20,22 M -5,18 Q 0,10 5,20 M 20,20 Q 25,12 30,22" stroke="#fef08a" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <!-- Steam Lines rising -->
+    <path d="M -20,-5 Q -15,-15 -20,-20 M 0,-8 Q 5,-18 0,-24 M 20,-5 Q 25,-15 20,-20" stroke="#f59e0b" stroke-width="2.5" fill="none" stroke-linecap="round"/>
   </g>
 </svg>

@@ -8,8 +8,16 @@
   "challenge_type": "MULTIPLE_CHOICE",
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
+  "cognitive_depth": "REASON",
+  "transfer_level": "LEVEL_2_CONTEXTUAL",
+  "representation_type": "VISUAL",
+  "primary_modality": "TAP_SELECT",
+  "supported_alternative_modalities": [
+    "TAP_SELECT",
+    "SPOKEN_DICTATED"
+  ],
   "prompt_structure": {
-    "display_text": "Which animal lives under the ocean?",
+    "display_text": "You must survive a harsh, sandy environment where it rarely rains. Which animal would be your best companion here?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-kn-08-0005_prompt.mp3",
     "visual_assets": [
       {
@@ -19,15 +27,44 @@
       }
     ]
   },
+  "interaction_model": {
+    "input_mechanic": "SINGLE_CHOICE",
+    "modality_configurations": {
+      "tap_select": {
+        "options": [
+          {
+            "option_id": "opt_1",
+            "display_value": "Camel"
+          },
+          {
+            "option_id": "opt_2",
+            "display_value": "Polar Bear"
+          },
+          {
+            "option_id": "opt_3",
+            "display_value": "Frog"
+          },
+          {
+            "option_id": "opt_4",
+            "display_value": "Penguin"
+          }
+        ]
+      },
+      "spoken_dictated": {
+        "target_tokens": [
+          "camel"
+        ],
+        "acoustic_confidence_threshold": 0.75
+      }
+    }
+  },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Dolphins swim playfully through the sparkling ocean water.",
-      "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
-      "preserves_productive_struggle": true
+      "preserves_productive_struggle": true,
+      "prompt": "Camels are perfectly adapted to survive in dry deserts!"
     },
     "level_2_representation_shift": {
-      "target_representation": "CONCRETE",
-      "hint": "Look closely at the picture and count each item."
+      "hint": "Observe the color, shape, and clues shown in the illustration."
     },
     "level_3_prerequisite_bridge": {
       "hint": "Remember the foundational rule: observe, compare, and verify."
@@ -44,44 +81,5 @@
     "reading_grade_level": 1.0,
     "cultural_neutrality_verified": true,
     "contains_gamified_dark_patterns": false
-  },
-  "cognitive_depth": "REASON",
-  "transfer_level": "LEVEL_2_CONTEXTUAL",
-  "representation_type": "SYMBOLIC",
-  "primary_modality": "TAP_SELECT",
-  "supported_alternative_modalities": [
-    "TAP_SELECT",
-    "SPOKEN_DICTATED"
-  ],
-  "interaction_model": {
-    "input_mechanic": "SINGLE_CHOICE",
-    "modality_configurations": {
-      "tap_select": {
-        "options": [
-          {
-            "option_id": "opt_1",
-            "display_value": "Dolphin"
-          },
-          {
-            "option_id": "opt_2",
-            "display_value": "Monkey"
-          },
-          {
-            "option_id": "opt_3",
-            "display_value": "Eagle"
-          },
-          {
-            "option_id": "opt_4",
-            "display_value": "Squirrel"
-          }
-        ]
-      },
-      "spoken_dictated": {
-        "target_tokens": [
-          "dolphin"
-        ],
-        "acoustic_confidence_threshold": 0.75
-      }
-    }
   }
 }

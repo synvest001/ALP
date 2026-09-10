@@ -1,12 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 200">
-  <rect width="240" height="200" rx="16" fill="#fdf2f8"/>
-  <line x1="120" y1="120" x2="120" y2="185" stroke="#16a34a" stroke-width="6" stroke-linecap="round"/>
-  <path d="M 120,150 Q 90,135 90,150 Q 110,165 120,150" fill="#22c55e"/>
-  <!-- Petals -->
-  <circle cx="120" cy="80" r="18" fill="#ec4899"/>
-  <circle cx="120" cy="120" r="18" fill="#ec4899"/>
-  <circle cx="100" cy="100" r="18" fill="#ec4899"/>
-  <circle cx="140" cy="100" r="18" fill="#ec4899"/>
-  <!-- Center -->
-  <circle cx="120" cy="100" r="15" fill="#facc15"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="100%" height="100%">
+  <rect width="300" height="200" rx="16" fill="#f8fafc"/>
+  <g transform="translate(150, 100)">
+    <!-- Classroom Chalkboard -->
+    <rect x="-100" y="-60" width="200" height="120" rx="8" fill="#065f46" stroke="#78350f" stroke-width="6"/>
+    <!-- ABC 123 written on board -->
+    <text x="-65" y="-15" fill="#ffffff" font-size="28" font-family="sans-serif" font-weight="bold">ABC</text>
+    <text x="-65" y="25" fill="#fde047" font-size="28" font-family="sans-serif" font-weight="bold">123</text>
+    <!-- Red Apple for Teacher -->
+    <circle cx="55" cy="15" r="14" fill="#ef4444" stroke="#991b1b" stroke-width="1.5"/>
+    <path d="M 55,2 Q 60,-5 62,-2" fill="none" stroke="#15803d" stroke-width="2.5"/>
+  </g>
 </svg>

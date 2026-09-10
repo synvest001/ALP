@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "How many stars are in the sky?",
+    "display_text": "The time bomb will explode when the little hand hits 9 and the big hand is on 12. What time must you defuse it?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-me-07-0009_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Count each yellow star one by one: 1, 2, 3, 4, 5!",
+      "prompt": "When the long hand is on 12, it is exactly 9 o'clock!",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -36,7 +36,7 @@
   "rubric": {
     "evaluation_mode": "DETERMINISTIC_EXACT_MATCH",
     "correct_criteria": {
-      "selected_option_id": "opt_2"
+      "selected_option_id": "opt_1"
     }
   },
   "safeguard_metadata": {
@@ -60,25 +60,25 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "3"
+            "display_value": "9 o'clock"
           },
           {
             "option_id": "opt_2",
-            "display_value": "5"
+            "display_value": "10 o'clock"
           },
           {
             "option_id": "opt_3",
-            "display_value": "8"
+            "display_value": "8 o'clock"
           },
           {
             "option_id": "opt_4",
-            "display_value": "6"
+            "display_value": "12 o'clock"
           }
         ]
       },
       "spoken_dictated": {
         "target_tokens": [
-          "5"
+          "left group"
         ],
         "acoustic_confidence_threshold": 0.75
       }

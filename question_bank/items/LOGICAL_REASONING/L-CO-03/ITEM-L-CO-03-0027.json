@@ -1,0 +1,85 @@
+{
+  "item_id": "ITEM-L-CO-03-0027",
+  "schema_version": "1.3.0",
+  "target_subskill_id": "L-CO-03",
+  "domain_id": "LOGICAL_REASONING",
+  "evidence_archetype": "STRATEGIC_REASONING",
+  "language_load_class": "PURE_REASONING",
+  "challenge_type": "MULTIPLE_CHOICE",
+  "creation_stage": "DRAFT",
+  "estimated_duration_seconds": 30,
+  "cognitive_depth": "REASON",
+  "transfer_level": "LEVEL_3_REPRESENTATIONAL",
+  "representation_type": "VISUAL",
+  "primary_modality": "TAP_SELECT",
+  "supported_alternative_modalities": [
+    "TAP_SELECT",
+    "SPOKEN_DICTATED"
+  ],
+  "prompt_structure": {
+    "display_text": "Which of these futuristic gadgets belongs in the 'Communication' category?",
+    "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-co-03-0027_prompt.mp3",
+    "visual_assets": [
+      {
+        "asset_id": "ITEM-L-CO-03-0027_vis_1",
+        "asset_type": "DYNAMIC_SVG",
+        "uri": "assets/svg/item-l-co-03-0027_visual.svg"
+      }
+    ]
+  },
+  "interaction_model": {
+    "input_mechanic": "SINGLE_CHOICE",
+    "modality_configurations": {
+      "tap_select": {
+        "options": [
+          {
+            "option_id": "opt_1",
+            "display_value": "Gravity Boots"
+          },
+          {
+            "option_id": "opt_2",
+            "display_value": "Plasma Shield"
+          },
+          {
+            "option_id": "opt_3",
+            "display_value": "Holo-Transmitter"
+          },
+          {
+            "option_id": "opt_4",
+            "display_value": "Laser Blaster"
+          }
+        ]
+      },
+      "spoken_dictated": {
+        "target_tokens": [
+          "giraffe"
+        ],
+        "acoustic_confidence_threshold": 0.75
+      }
+    }
+  },
+  "scaffolding_protocol": {
+    "level_1_reflection_prompt": {
+      "preserves_productive_struggle": true,
+      "prompt": "Transmitters are used for talking and sending messages."
+    },
+    "level_2_representation_shift": {
+      "hint": "Observe the color, shape, and clues shown in the illustration."
+    },
+    "level_3_prerequisite_bridge": {
+      "hint": "Remember the foundational rule: observe, compare, and verify."
+    }
+  },
+  "rubric": {
+    "evaluation_mode": "DETERMINISTIC_EXACT_MATCH",
+    "correct_criteria": {
+      "selected_option_id": "opt_3"
+    }
+  },
+  "safeguard_metadata": {
+    "has_unvoiced_text": false,
+    "reading_grade_level": 1.0,
+    "cultural_neutrality_verified": true,
+    "contains_gamified_dark_patterns": false
+  }
+}

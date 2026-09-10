@@ -1,12 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 200">
-  <rect width="240" height="200" rx="16" fill="#fdf2f8"/>
-  <line x1="120" y1="120" x2="120" y2="185" stroke="#16a34a" stroke-width="6" stroke-linecap="round"/>
-  <path d="M 120,150 Q 90,135 90,150 Q 110,165 120,150" fill="#22c55e"/>
-  <!-- Petals -->
-  <circle cx="120" cy="80" r="18" fill="#ec4899"/>
-  <circle cx="120" cy="120" r="18" fill="#ec4899"/>
-  <circle cx="100" cy="100" r="18" fill="#ec4899"/>
-  <circle cx="140" cy="100" r="18" fill="#ec4899"/>
-  <!-- Center -->
-  <circle cx="120" cy="100" r="15" fill="#facc15"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="100%" height="100%">
+  <rect width="300" height="200" rx="16" fill="#fef2f2"/>
+  <g transform="translate(150, 100)">
+    <!-- Red Fire Engine / Truck -->
+    <rect x="-80" y="-10" width="160" height="70" rx="10" fill="#ef4444" stroke="#b91c1c" stroke-width="3.5"/>
+    <rect x="-65" y="5" width="40" height="30" rx="4" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/>
+    <!-- Yellow Siren Light on top -->
+    <polygon points="-50,-24 -35,-24 -38,-10 -47,-10" fill="#facc15" stroke="#eab308" stroke-width="2"/>
+    <!-- Wheels -->
+    <circle cx="-45" cy="62" r="18" fill="#1e293b" stroke="#0f172a" stroke-width="3"/>
+    <circle cx="-45" cy="62" r="7" fill="#94a3b8"/>
+    <circle cx="45" cy="62" r="18" fill="#1e293b" stroke="#0f172a" stroke-width="3"/>
+    <circle cx="45" cy="62" r="7" fill="#94a3b8"/>
+    <!-- Ladder -->
+    <rect x="-20" y="-22" width="95" height="12" fill="#e2e8f0" stroke="#64748b" stroke-width="2"/>
+    <line x1="0" y1="-22" x2="0" y2="-10" stroke="#64748b" stroke-width="2"/>
+    <line x1="25" y1="-22" x2="25" y2="-10" stroke="#64748b" stroke-width="2"/>
+    <line x1="50" y1="-22" x2="50" y2="-10" stroke="#64748b" stroke-width="2"/>
+  </g>
 </svg>

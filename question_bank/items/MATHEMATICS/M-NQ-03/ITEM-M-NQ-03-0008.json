@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Count the juicy red apples in the basket.",
+    "display_text": "A fierce dragon has 25 gold coins, and a clever goblin has 15. Which number is GREATER?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-nq-03-0008_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Touch each red apple as you count: 1, 2, 3, 4.",
+      "prompt": "25 is a larger treasure than 15.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,15 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "4"
+            "display_value": "25"
           },
           {
             "option_id": "opt_2",
-            "display_value": "5"
+            "display_value": "15"
           },
           {
             "option_id": "opt_3",
-            "display_value": "6"
-          },
-          {
-            "option_id": "opt_4",
-            "display_value": "3"
+            "display_value": "They have the same amount"
           }
         ]
       },

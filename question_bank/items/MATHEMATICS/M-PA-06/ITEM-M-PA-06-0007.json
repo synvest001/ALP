@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Count the red apples in the basket.",
+    "display_text": "A secret agent is cracking a vault code: Fire, Ice, Lightning, Fire, Ice, Lightning, Fire, Ice... If she presses the wrong button, the alarm sounds! What comes next?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-pa-06-0007_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Touch each red apple as you count: 1, 2, 3, 4.",
+      "prompt": "The pattern repeats: Lightning is next.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,25 +60,25 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "4"
+            "display_value": "Lightning"
           },
           {
             "option_id": "opt_2",
-            "display_value": "5"
+            "display_value": "Fire"
           },
           {
             "option_id": "opt_3",
-            "display_value": "6"
+            "display_value": "Ice"
           },
           {
             "option_id": "opt_4",
-            "display_value": "3"
+            "display_value": "Earth"
           }
         ]
       },
       "spoken_dictated": {
         "target_tokens": [
-          "4"
+          "left group"
         ],
         "acoustic_confidence_threshold": 0.75
       }

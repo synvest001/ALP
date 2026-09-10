@@ -1,8 +1,12 @@
 import { SessionComposer, TaskRequestPayload } from '../engine/AdaptiveEngine';
-import { MockProfile } from '../engine/LearnerProfileMock';
-import { UNLOCKED_STICKERS } from './ToyboxScreen';
 import { AssessmentEngine } from '../engine/AssessmentEngine';
+import { RepetitionGuard } from '../engine/RepetitionGuard';
 import { TelemetryQueue } from '../storage/telemetry_queue';
+import { MapScreen } from './MapScreen';
+import { soundFX } from '../utils/SoundFX';
+import { resolveAssetUrl } from '../utils/assets';
+import { DailyQuestManager } from '../engine/DailyQuestManager';
+import { QuestionPresentationLog } from '../storage/QuestionPresentationLog';
 
 export class TaskRunner {
   private container: HTMLElement;
@@ -13,7 +17,10 @@ export class TaskRunner {
   private assessmentEngine: AssessmentEngine;
   private telemetry: TelemetryQueue;
 
+  private app: any;
+
   constructor(_app: any) {
+    this.app = _app;
     this.container = document.getElementById('modal-task-runner') as HTMLElement;
     this.composer = new SessionComposer();
     this.assessmentEngine = new AssessmentEngine();
@@ -29,7 +36,12 @@ export class TaskRunner {
         </header>
         <main class="task-container">
           <div class="prompt-container">
-            <button id="btn-play-audio" class="btn-audio">🔊</button>
+            <button id="btn-play-audio" class="btn-audio" title="Listen to prompt">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M13.5 4.06c0-1.336-1.616-2.005-2.56-1.06l-4.5 4.5H4.508c-1.141 0-2.318.664-2.66 1.905A9.76 9.76 0 001.5 12c0 .898.121 1.768.35 2.595.341 1.24 1.518 1.905 2.659 1.905h1.93l4.5 4.5c.945.945 2.561.276 2.561-1.06V4.06zM18.584 5.106a.75.75 0 011.06 0c3.808 3.807 3.808 9.98 0 13.788a.75.75 0 11-1.06-1.06 8.25 8.25 0 000-11.668.75.75 0 010-1.06z" />
+                <path d="M15.932 7.757a.75.75 0 011.061 0 6 6 0 010 8.486.75.75 0 01-1.06-1.061 4.5 4.5 0 000-6.364.75.75 0 010-1.06z" />
+              </svg>
+            </button>
             <h2 id="task-prompt-text">Loading...</h2>
           </div>
           <div id="task-visual" class="visual-container">
@@ -57,12 +69,15 @@ export class TaskRunner {
     }
   }
 
-  public startSession(sessionData?: TaskRequestPayload[]) {
+  public async startSession(sessionData?: TaskRequestPayload[], focusedDomain?: string) {
+    const kidName = this.app?.profileSwitcher?.getCurrentPlayerName() || 'default_player';
+    await this.composer.ensureReady();
+
     // If not provided, dynamically compose using AdaptiveEngine
     if (sessionData && sessionData.length > 0) {
-      this.currentSession = sessionData;
+      this.currentSession = RepetitionGuard.validateAndEnforce(sessionData, kidName, this.composer.questionBank);
     } else {
-      this.currentSession = this.composer.generateSession(MockProfile);
+      this.currentSession = this.composer.generateSession(kidName, focusedDomain);
     }
     
     this.currentTaskIndex = 0;
@@ -86,7 +101,10 @@ export class TaskRunner {
     const hint = this.container.querySelector('#scaffolding-hint');
     const options = this.container.querySelector('#options-container');
     
-    if (progress) progress.textContent = `Task ${this.currentTaskIndex + 1} of ${this.currentSession.length} (${taskRequest.task_function_type})`;
+    const depth = taskRequest.required_cognitive_depth || item?.cognitive_depth || 'APPLY';
+    if (progress) {
+      progress.textContent = `Task ${this.currentTaskIndex + 1} of ${this.currentSession.length} (${taskRequest.task_function_type} • ${depth})`;
+    }
     
     if (item && promptText) {
       promptText.textContent = item.prompt_structure.display_text;
@@ -95,28 +113,28 @@ export class TaskRunner {
     }
 
     if (visual) {
+      const domainIcons: Record<string, string> = {
+        'MATHEMATICS': '🔢',
+        'ENGLISH_LANGUAGE': '📖',
+        'SCIENCE_EVS': '🌿',
+        'WORLD_KNOWLEDGE': '🌍',
+        'LOGICAL_REASONING': '🧩',
+        'ARTS': '🎨',
+        'SEL': '💛'
+      };
+      const icon = domainIcons[item?.domain_id || ''] || '⭐';
+
       if (item?.prompt_structure?.visual_assets && item.prompt_structure.visual_assets.length > 0) {
         const asset = item.prompt_structure.visual_assets[0];
-        let assetUri = asset.uri || '';
-        if (!assetUri.startsWith('http')) {
-          if (assetUri.startsWith('/')) assetUri = assetUri.substring(1);
-          const base = import.meta.env.BASE_URL || './';
-          assetUri = base.endsWith('/') ? base + assetUri : base + '/' + assetUri;
-        }
-        visual.innerHTML = `<img src="${assetUri}" alt="Visual context" style="max-width: 100%; max-height: 280px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); background: #fff;" onerror="this.style.display='none';" />`;
+        const assetUri = resolveAssetUrl(asset.uri || '');
+        visual.innerHTML = `
+          <div class="task-visual-wrapper">
+            <img src="${assetUri}" alt="Visual context clue" class="task-visual-img" onerror="this.style.display='none'; const fb = this.nextElementSibling; if (fb) fb.style.display='flex';" />
+            <div class="mock-visual" style="font-size: 3.2em; padding: 20px; display: none;">${icon}</div>
+          </div>
+        `;
       } else {
-        // Render a friendly icon card based on domain
-        const domainIcons: Record<string, string> = {
-          'MATHEMATICS': '🔢',
-          'ENGLISH_LANGUAGE': '📖',
-          'SCIENCE_EVS': '🌿',
-          'WORLD_KNOWLEDGE': '🌍',
-          'LOGICAL_REASONING': '🧩',
-          'ARTS': '🎨',
-          'SEL': '💛'
-        };
-        const icon = domainIcons[item?.domain_id || ''] || '⭐';
-        visual.innerHTML = `<div class="mock-visual" style="font-size: 3em; padding: 20px;">${icon}</div>`;
+        visual.innerHTML = `<div class="mock-visual" style="font-size: 3.2em; padding: 20px;">${icon}</div>`;
       }
     }
     
@@ -148,6 +166,12 @@ export class TaskRunner {
         ];
       }
       
+      // Shuffle options to prevent correct answer from always being first
+      for (let i = optionsData.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [optionsData[i], optionsData[j]] = [optionsData[j], optionsData[i]];
+      }
+      
       let correctIndex = 0;
       const correctId = item.rubric?.correct_criteria?.selected_option_id;
       
@@ -164,14 +188,9 @@ export class TaskRunner {
         
         let optHtml = `<span>${opt.text}</span>`;
         if (opt.assetUri) {
-          let uri = opt.assetUri;
-          if (!uri.startsWith('http')) {
-            if (uri.startsWith('/')) uri = uri.substring(1);
-            const base = import.meta.env.BASE_URL || './';
-            uri = base.endsWith('/') ? base + uri : base + '/' + uri;
-          }
+          const uri = resolveAssetUrl(opt.assetUri);
           optHtml = `<div style="display:flex; flex-direction:column; align-items:center; gap:6px;">
-            <img src="${uri}" style="height:35px; max-width:80px; object-fit:contain;" onerror="this.style.display='none';"/>
+            <img src="${uri}" alt="Option ${opt.text}" style="height:35px; min-height: 35px; min-width: 35px; max-width:80px; object-fit:contain;" />
             <span style="font-size:1.2em; font-weight:bold;">${opt.text}</span>
           </div>`;
         }
@@ -179,20 +198,77 @@ export class TaskRunner {
         btn.onclick = () => this.handleAnswer(idx, correctIndex, btn);
         options.appendChild(btn);
       });
+
+      // Record presentation in persistent audit log
+      try {
+        const correctOptText = optionsData[correctIndex]?.text || '';
+        const currentKid = (this.app?.profileSwitcher?.getCurrentPlayerName() || 'default_player').toLowerCase().trim();
+        const currentSessionId = this.currentSession[0]?.session_id || `sess_${Date.now()}`;
+        QuestionPresentationLog.recordPresentation({
+          kidName: currentKid,
+          sessionId: currentSessionId,
+          taskIndex: this.currentTaskIndex + 1,
+          totalSessionTasks: this.currentSession.length,
+          domainId: taskRequest.domain_id || item?.domain_id || 'UNKNOWN',
+          subskillId: taskRequest.target_subskill_id || item?.target_subskill_id || 'UNKNOWN',
+          cognitiveDepth: depth,
+          itemId: item?.item_id || 'UNKNOWN',
+          promptText: item?.prompt_structure?.display_text || '',
+          options: optionsData.map(o => ({ id: o.id, text: o.text })),
+          correctOptionId: item?.rubric?.correct_criteria?.selected_option_id || `opt_${correctIndex + 1}`,
+          correctOptionText: correctOptText
+        });
+      } catch (e) {
+        console.error("[TaskRunner] Failed to log presentation:", e);
+      }
     }
   }
 
   private handleAnswer(selectedIndex: number, correctIndex: number, btnElement: HTMLButtonElement) {
     const isCorrect = selectedIndex === correctIndex;
+    const kidName = (this.app?.profileSwitcher?.getCurrentPlayerName() || 'default_player').toLowerCase().trim();
+    this.assessmentEngine.setKidId(kidName);
     
     const item = this.currentSession[this.currentTaskIndex].question_item;
     if (item) {
+      // Audit log the kid's answer
+      try {
+        const currentSessionId = this.currentSession[0]?.session_id || `sess_${Date.now()}`;
+        const selectedText = btnElement.textContent?.trim() || '';
+        QuestionPresentationLog.recordAnswer(
+          kidName,
+          currentSessionId,
+          this.currentTaskIndex + 1,
+          selectedText,
+          isCorrect
+        );
+      } catch (e) {}
+
       this.assessmentEngine.recordAttempt(item.target_subskill_id, isCorrect, item.evidence_archetype);
       this.telemetry.trackEvent('TASK_ANSWERED', {
         subskill_id: item.target_subskill_id,
         isCorrect: isCorrect,
         archetype: item.evidence_archetype
       });
+
+      // Update domain counts dynamically for rolling deficit balancing per kid and globally
+      try {
+        const domainCounts = JSON.parse(localStorage.getItem(`alp_${kidName}_domain_counts`) || localStorage.getItem('alp_domain_counts') || '{}');
+        domainCounts[item.domain_id] = (domainCounts[item.domain_id] || 0) + 1;
+        localStorage.setItem(`alp_${kidName}_domain_counts`, JSON.stringify(domainCounts));
+        localStorage.setItem('alp_domain_counts', JSON.stringify(domainCounts));
+
+        // Mark item as seen immediately in kid-specific cooldown and global set
+        const currentSessionId = this.currentSession[0]?.session_id || `sess_${Date.now()}`;
+        const promptText = item.prompt_structure?.display_text;
+        RepetitionGuard.recordSession(kidName, currentSessionId, [item.item_id], promptText ? [promptText] : []);
+
+        const seen = JSON.parse(localStorage.getItem('alp_seen_items') || '[]');
+        if (!seen.includes(item.item_id)) {
+          seen.push(item.item_id);
+          localStorage.setItem('alp_seen_items', JSON.stringify(seen));
+        }
+      } catch (e) {}
     }
     
     const options = this.container.querySelector('#options-container');
@@ -224,47 +300,178 @@ export class TaskRunner {
 
   private finishSession() {
     this.container.classList.remove('active');
+    const kidName = (this.app?.profileSwitcher?.getCurrentPlayerName() || 'default_player').toLowerCase().trim();
     
+    // Save seen items and prompts to prevent repetition across sessions
+    try {
+      const currentSessionId = this.currentSession[0]?.session_id || `sess_${Date.now()}`;
+      const newSeen = this.currentSession.map(t => t.question_item?.item_id).filter(Boolean) as string[];
+      const newPrompts = this.currentSession.map(t => t.question_item?.prompt_structure?.display_text).filter(Boolean) as string[];
+      RepetitionGuard.recordSession(kidName, currentSessionId, newSeen, newPrompts);
+
+      const seenItems = JSON.parse(localStorage.getItem('alp_seen_items') || '[]');
+      const combined = Array.from(new Set([...seenItems, ...newSeen]));
+      localStorage.setItem('alp_seen_items', JSON.stringify(combined));
+    } catch (e) {
+      console.error(e);
+    }
+
     let celebrationHTML = '';
     
+    // Read kid-specific progress (with fallback to global)
+    const currentNodes = parseInt(
+      localStorage.getItem(`alp_${kidName}_nodes_completed`) ||
+      localStorage.getItem('alp_nodes_completed') || '0',
+      10
+    );
+    const currentStars = parseInt(
+      localStorage.getItem(`alp_${kidName}_stars`) ||
+      localStorage.getItem('alp_stars') || '0',
+      10
+    );
+
     if (this.sessionErrors === 0) {
-      // Perfect session: advance progress and award star
-      const currentStars = parseInt(localStorage.getItem('alp_stars') || '0', 10);
-      const newStars = currentStars + 1;
+      // Flawless session: All correct answers!
+      // Strictly advance +1 node (step-by-step path) and award 2 stars!
+      const nodesToAdd = 1;
+      const starsToAdd = 2;
+      const nextNodes = currentNodes + nodesToAdd;
+      const newStars = currentStars + starsToAdd;
+
+      localStorage.setItem(`alp_${kidName}_nodes_completed`, nextNodes.toString());
+      localStorage.setItem('alp_nodes_completed', nextNodes.toString());
+      localStorage.setItem(`alp_${kidName}_stars`, newStars.toString());
       localStorage.setItem('alp_stars', newStars.toString());
       
-      const currentNodes = parseInt(localStorage.getItem('alp_nodes_completed') || '0', 10);
-      localStorage.setItem('alp_nodes_completed', (currentNodes + 1).toString());
-
       const starBadge = document.getElementById('player-stars');
       if (starBadge) {
         starBadge.textContent = `⭐ ${newStars}`;
       }
 
-      const unlockedTreasure = UNLOCKED_STICKERS[currentNodes];
-      if (unlockedTreasure) {
-        celebrationHTML = `
-          <div class="celebration-content">
-            <div class="celebration-stars">⭐</div>
-            <h2>Milestone Reached!</h2>
-            <p>You earned a new star!</p>
-            <div class="treasure-reveal" style="margin-top: 20px; animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
-              <div style="font-size: 1.2em; color: #f1c40f; margin-bottom: 10px; font-weight: bold;">New Treasure Unlocked!</div>
-              <div style="font-size: 4em; filter: drop-shadow(0 0 20px rgba(241, 196, 15, 0.8)); text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);">${unlockedTreasure}</div>
-            </div>
+      soundFX.playStar();
+
+      // Record daily quest progress
+      const questStatus = DailyQuestManager.recordSessionCompleted(kidName);
+      if (questStatus.justCompleted) {
+        const bonusStars = 3;
+        const currentStarsNow = parseInt(localStorage.getItem(`alp_${kidName}_stars`) || '0', 10);
+        const starsWithBonus = currentStarsNow + bonusStars;
+        localStorage.setItem(`alp_${kidName}_stars`, starsWithBonus.toString());
+        localStorage.setItem('alp_stars', starsWithBonus.toString());
+        const starBadge = document.getElementById('player-stars');
+        if (starBadge) {
+          starBadge.textContent = `⭐ ${starsWithBonus}`;
+        }
+        soundFX.playFanfare();
+      }
+
+      // Check if this step completed the full realm path
+      const oldRealm = Math.floor(currentNodes / MapScreen.NODES_PER_MAP);
+      const newRealm = Math.floor(nextNodes / MapScreen.NODES_PER_MAP);
+      const isRealmComplete = newRealm > oldRealm || (nextNodes % MapScreen.NODES_PER_MAP === 0);
+
+      if (isRealmComplete && this.app && this.app.mapScreen) {
+        // Grand realm completion: Fairy Castle upgrade & Grand Treasure ceremony
+        this.app.mapScreen.showRealmCompletion(oldRealm, nextNodes, () => {
+          this.app.mapScreen.onShow();
+        });
+        return; // Skip standard small toast
+      }
+
+      const questPill = questStatus.justCompleted
+        ? `<div class="quest-progress-pill" style="margin-top: 10px; font-size: 1em; color: #ffffff; font-weight: bold; background: linear-gradient(135deg, #10b981, #059669); padding: 8px 16px; border-radius: 20px; display: inline-block; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);">
+            🏆 Daily Quest Conquered (3/3)! +3 Bonus Stars ⭐⭐⭐
+          </div>`
+        : `<div class="quest-progress-pill" style="margin-top: 10px; font-size: 0.95em; color: #fde047; font-weight: bold; background: rgba(0,0,0,0.4); padding: 6px 14px; border-radius: 20px; display: inline-block;">
+            Daily Quest: ${questStatus.count} / ${questStatus.target} 🎯
+          </div>`;
+
+      // Regular node completion: Flawless Mastery (+1 node, 2 stars)
+      const localProgress = (nextNodes % MapScreen.NODES_PER_MAP) || MapScreen.NODES_PER_MAP;
+      celebrationHTML = `
+        <div class="celebration-content">
+          <div class="celebration-stars">⭐ ⭐</div>
+          <h2>Flawless Mastery!</h2>
+          <p>Super fast learner! All correct answers earned <strong>2 Stars</strong> and unlocked the next path node!</p>
+          <div class="path-progress-pill" style="margin-top: 15px; font-size: 1.1em; color: #facc15; font-weight: bold; background: rgba(0,0,0,0.4); padding: 8px 16px; border-radius: 20px; display: inline-block;">
+            Path Progress: Step ${localProgress} of ${MapScreen.NODES_PER_MAP} 🌟 (+1 Step)
           </div>
-        `;
-      } else {
-        celebrationHTML = `
-          <div class="celebration-content">
-            <div class="celebration-stars">⭐</div>
-            <h2>Milestone Reached!</h2>
-            <p>You earned a new star!</p>
+          <br/>
+          ${questPill}
+        </div>
+      `;
+
+      if (this.app && this.app.mapScreen) {
+        this.app.mapScreen.onShow();
+      }
+    } else if (this.sessionErrors === 1) {
+      // Standard progression: 1 mistake, still passes with 1 node advance and 1 star
+      const nextNodes = currentNodes + 1;
+      const newStars = currentStars + 1;
+
+      localStorage.setItem(`alp_${kidName}_nodes_completed`, nextNodes.toString());
+      localStorage.setItem('alp_nodes_completed', nextNodes.toString());
+      localStorage.setItem(`alp_${kidName}_stars`, newStars.toString());
+      localStorage.setItem('alp_stars', newStars.toString());
+      
+      const starBadge = document.getElementById('player-stars');
+      if (starBadge) {
+        starBadge.textContent = `⭐ ${newStars}`;
+      }
+
+      soundFX.playStar();
+
+      // Record daily quest progress
+      const questStatus = DailyQuestManager.recordSessionCompleted(kidName);
+      if (questStatus.justCompleted) {
+        const bonusStars = 3;
+        const currentStarsNow = parseInt(localStorage.getItem(`alp_${kidName}_stars`) || '0', 10);
+        const starsWithBonus = currentStarsNow + bonusStars;
+        localStorage.setItem(`alp_${kidName}_stars`, starsWithBonus.toString());
+        localStorage.setItem('alp_stars', starsWithBonus.toString());
+        const starBadge = document.getElementById('player-stars');
+        if (starBadge) {
+          starBadge.textContent = `⭐ ${starsWithBonus}`;
+        }
+        soundFX.playFanfare();
+      }
+
+      const isRealmComplete = (nextNodes % MapScreen.NODES_PER_MAP === 0);
+      if (isRealmComplete && this.app && this.app.mapScreen) {
+        const realmIndex = Math.floor(currentNodes / MapScreen.NODES_PER_MAP);
+        this.app.mapScreen.showRealmCompletion(realmIndex, nextNodes, () => {
+          this.app.mapScreen.onShow();
+        });
+        return;
+      }
+
+      const questPill = questStatus.justCompleted
+        ? `<div class="quest-progress-pill" style="margin-top: 10px; font-size: 1em; color: #ffffff; font-weight: bold; background: linear-gradient(135deg, #10b981, #059669); padding: 8px 16px; border-radius: 20px; display: inline-block; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);">
+            🏆 Daily Quest Conquered (3/3)! +3 Bonus Stars ⭐⭐⭐
+          </div>`
+        : `<div class="quest-progress-pill" style="margin-top: 10px; font-size: 0.95em; color: #fde047; font-weight: bold; background: rgba(0,0,0,0.4); padding: 6px 14px; border-radius: 20px; display: inline-block;">
+            Daily Quest: ${questStatus.count} / ${questStatus.target} 🎯
+          </div>`;
+
+      const localProgress = (nextNodes % MapScreen.NODES_PER_MAP);
+      celebrationHTML = `
+        <div class="celebration-content">
+          <div class="celebration-stars">⭐</div>
+          <h2>Step Completed!</h2>
+          <p>Great effort! You earned a new star!</p>
+          <div class="path-progress-pill" style="margin-top: 15px; font-size: 1.1em; color: #facc15; font-weight: bold; background: rgba(0,0,0,0.4); padding: 8px 16px; border-radius: 20px; display: inline-block;">
+            Path Progress: Step ${localProgress} of ${MapScreen.NODES_PER_MAP} 🌟
           </div>
-        `;
+          <br/>
+          ${questPill}
+        </div>
+      `;
+
+      if (this.app && this.app.mapScreen) {
+        this.app.mapScreen.onShow();
       }
     } else {
-      // Imperfect session: strict gating, no progress awarded
+      // Imperfect session (2+ mistakes): strict gating, encourage practice
       celebrationHTML = `
         <div class="celebration-content" style="background: rgba(255,255,255,0.95); border: 2px solid #3498db;">
           <div class="celebration-stars" style="color: #3498db;">💡</div>
@@ -274,18 +481,22 @@ export class TaskRunner {
       `;
     }
 
-    // Show custom celebration overlay instead of native alert
+    // Show custom celebration overlay
     const overlay = document.createElement('div');
     overlay.className = 'celebration-overlay';
     overlay.innerHTML = celebrationHTML;
     document.body.appendChild(overlay);
 
-    // Auto-remove after 4 seconds
+    // Auto-remove after 3 seconds
     setTimeout(() => {
       if (document.body.contains(overlay)) {
         overlay.style.animation = 'fadeOut 0.3s ease-out';
-        setTimeout(() => document.body.removeChild(overlay), 300);
+        setTimeout(() => {
+          if (document.body.contains(overlay)) {
+            document.body.removeChild(overlay);
+          }
+        }, 300);
       }
-    }, 4000);
+    }, 3000);
   }
 }

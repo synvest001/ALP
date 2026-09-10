@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "How many stars are in the sky?",
+    "display_text": "The wizard's potion needs 1 tens and 5 ones of spider venom drops. What is the total number?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-nq-02-0005_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Count each yellow star one by one: 1, 2, 3, 4, 5!",
+      "prompt": "1 tens = 10. Add 5 ones: 10 + 5 = 15!",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -36,7 +36,7 @@
   "rubric": {
     "evaluation_mode": "DETERMINISTIC_EXACT_MATCH",
     "correct_criteria": {
-      "selected_option_id": "opt_2"
+      "selected_option_id": "opt_1"
     }
   },
   "safeguard_metadata": {
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "3"
+            "display_value": "15"
           },
           {
             "option_id": "opt_2",
-            "display_value": "5"
+            "display_value": "25"
           },
           {
             "option_id": "opt_3",
-            "display_value": "8"
+            "display_value": "17"
           },
           {
             "option_id": "opt_4",
-            "display_value": "6"
+            "display_value": "14"
           }
         ]
       },

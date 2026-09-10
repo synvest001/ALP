@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "How many stars are in the sky?",
+    "display_text": "To bypass the alien security matrix, complete the sequence: 9, 18, 27, 36, ___?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-pa-04-0005_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Count each yellow star one by one: 1, 2, 3, 4, 5!",
+      "prompt": "Follow the skip counting logic!",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -36,7 +36,7 @@
   "rubric": {
     "evaluation_mode": "DETERMINISTIC_EXACT_MATCH",
     "correct_criteria": {
-      "selected_option_id": "opt_2"
+      "selected_option_id": "opt_1"
     }
   },
   "safeguard_metadata": {
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "3"
+            "display_value": "45"
           },
           {
             "option_id": "opt_2",
-            "display_value": "5"
+            "display_value": "54"
           },
           {
             "option_id": "opt_3",
-            "display_value": "8"
+            "display_value": "40"
           },
           {
             "option_id": "opt_4",
-            "display_value": "6"
+            "display_value": "39"
           }
         ]
       },

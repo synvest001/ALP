@@ -4,92 +4,84 @@
   "target_subskill_id": "M-OP-05",
   "domain_id": "MATHEMATICS",
   "evidence_archetype": "CONCEPTUAL",
-  "cognitive_depth": "APPLY",
-  "transfer_level": "LEVEL_1_SURFACE",
-  "primary_modality": "TYPED_KEYBOARD",
-  "supported_alternative_modalities": [
-    "TAP_SELECT"
-  ],
   "language_load_class": "PURE_REASONING",
-  "representation_type": "SYMBOLIC",
-  "challenge_type": "STANDARD",
-  "creation_stage": "ANSWERING",
-  "estimated_duration_seconds": 45,
+  "challenge_type": "MULTIPLE_CHOICE",
+  "creation_stage": "DRAFT",
+  "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "spoken_audio_uri": "assets/audio/math/m_op_05_0006_prompt.mp3",
-    "display_text": "Which number makes the sum nine?",
+    "display_text": "The treasure vault had 19 gold bars. The pirate took away 5 bars. How many are left?",
+    "spoken_audio_uri": "assets/audio/mathematics/item-m-op-05-0006_prompt.mp3",
     "visual_assets": [
       {
-        "asset_id": "eq_box_plus_4_9",
-        "asset_type": "STATIC_SVG",
-        "uri": "assets/svg/eq_box_plus_4_9.svg"
+        "asset_id": "ITEM-M-OP-05-0006_vis_1",
+        "asset_type": "DYNAMIC_SVG",
+        "uri": "assets/svg/item-m-op-05-0006_visual.svg"
       }
     ]
   },
-  "interaction_model": {
-    "input_mechanic": "NUMBER_PAD_ENTRY",
-    "modality_configurations": {
-      "typed_keyboard": {
-        "keypad_type": "NUMERIC_STANDARD",
-        "max_length": 2
-      },
-      "tap_select": {
-        "options": [
-          {
-            "option_id": "opt_1",
-            "display_value": "5"
-          },
-          {
-            "option_id": "opt_2",
-            "display_value": "4"
-          },
-          {
-            "option_id": "opt_3",
-            "display_value": "9"
-          }
-        ]
-      }
-    }
-  },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "spoken_text": "The box comes first. What plus 4 equals 9?",
+      "prompt": "Subtract: 19 - 5 = 14.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
     "level_2_representation_shift": {
-      "spoken_text": "Turn the equation around: 4 plus what equals 9?",
-      "target_representation": "VISUAL",
-      "visual_asset_override": "assets/svg/commutative_ten_frame_4_5.svg"
+      "target_representation": "CONCRETE",
+      "hint": "Look closely at the picture and count each item."
     },
     "level_3_prerequisite_bridge": {
-      "spoken_text": "Start at 4 and count up to 9.",
-      "target_prerequisite_subskill_id": "M-NQ-02",
-      "interactive_overlay": "NUMBER_LINE_STEPPER"
+      "hint": "Remember the foundational rule: observe, compare, and verify."
     }
   },
   "rubric": {
     "evaluation_mode": "DETERMINISTIC_EXACT_MATCH",
     "correct_criteria": {
-      "target_value": 5
-    },
-    "diagnostic_distractors": [
-      {
-        "response_pattern": "9",
-        "diagnostic_misconception": "EQUALITY_AS_SUM_TOTAL",
-        "recommended_ws3_branch": "STRATEGY_REFLECTION_PIVOT"
-      },
-      {
-        "response_pattern": "13",
-        "diagnostic_misconception": "ADDITIVE_OVERCOUNTING",
-        "recommended_ws3_branch": "PREREQUISITE_STRENGTHENING"
-      }
-    ]
+      "selected_option_id": "opt_1"
+    }
   },
   "safeguard_metadata": {
-    "reading_grade_level": 0.5,
     "has_unvoiced_text": false,
+    "reading_grade_level": 1.0,
     "cultural_neutrality_verified": true,
     "contains_gamified_dark_patterns": false
+  },
+  "cognitive_depth": "REASON",
+  "transfer_level": "LEVEL_3_REPRESENTATIONAL",
+  "representation_type": "SYMBOLIC",
+  "primary_modality": "TAP_SELECT",
+  "supported_alternative_modalities": [
+    "TAP_SELECT",
+    "SPOKEN_DICTATED"
+  ],
+  "interaction_model": {
+    "input_mechanic": "SINGLE_CHOICE",
+    "modality_configurations": {
+      "tap_select": {
+        "options": [
+          {
+            "option_id": "opt_1",
+            "display_value": "14"
+          },
+          {
+            "option_id": "opt_2",
+            "display_value": "15"
+          },
+          {
+            "option_id": "opt_3",
+            "display_value": "12"
+          },
+          {
+            "option_id": "opt_4",
+            "display_value": "16"
+          }
+        ]
+      },
+      "spoken_dictated": {
+        "target_tokens": [
+          "5"
+        ],
+        "acoustic_confidence_threshold": 0.75
+      }
+    }
   }
 }

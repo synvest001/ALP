@@ -1,0 +1,85 @@
+{
+  "item_id": "ITEM-S-EE-01-0030",
+  "schema_version": "1.3.0",
+  "target_subskill_id": "S-EE-01",
+  "domain_id": "SCIENCE_EVS",
+  "evidence_archetype": "CONCEPTUAL",
+  "language_load_class": "PURE_REASONING",
+  "challenge_type": "MULTIPLE_CHOICE",
+  "creation_stage": "DRAFT",
+  "estimated_duration_seconds": 30,
+  "cognitive_depth": "APPLY",
+  "transfer_level": "LEVEL_2_CONTEXTUAL",
+  "representation_type": "VISUAL",
+  "primary_modality": "TAP_SELECT",
+  "supported_alternative_modalities": [
+    "TAP_SELECT",
+    "SPOKEN_DICTATED"
+  ],
+  "prompt_structure": {
+    "display_text": "During a deep-sea submarine expedition, you spot an animal that breathes through gills and has shiny scales. Which of these creatures did you find?",
+    "spoken_audio_uri": "assets/audio/science_evs/item-s-ee-01-0030_prompt.mp3",
+    "visual_assets": [
+      {
+        "asset_id": "ITEM-S-EE-01-0030_vis_1",
+        "asset_type": "DYNAMIC_SVG",
+        "uri": "assets/svg/item-s-ee-01-0030_visual.svg"
+      }
+    ]
+  },
+  "interaction_model": {
+    "input_mechanic": "SINGLE_CHOICE",
+    "modality_configurations": {
+      "tap_select": {
+        "options": [
+          {
+            "option_id": "opt_1",
+            "display_value": "A Dolphin"
+          },
+          {
+            "option_id": "opt_2",
+            "display_value": "A Sea Turtle"
+          },
+          {
+            "option_id": "opt_3",
+            "display_value": "A Penguin"
+          },
+          {
+            "option_id": "opt_4",
+            "display_value": "A Great White Shark"
+          }
+        ]
+      },
+      "spoken_dictated": {
+        "target_tokens": [
+          "roots"
+        ],
+        "acoustic_confidence_threshold": 0.75
+      }
+    }
+  },
+  "scaffolding_protocol": {
+    "level_1_reflection_prompt": {
+      "preserves_productive_struggle": true,
+      "prompt": "Fish and sharks use gills to breathe underwater, while dolphins and turtles use lungs!"
+    },
+    "level_2_representation_shift": {
+      "hint": "Observe the color, shape, and clues shown in the illustration."
+    },
+    "level_3_prerequisite_bridge": {
+      "hint": "Remember the foundational rule: observe, compare, and verify."
+    }
+  },
+  "rubric": {
+    "evaluation_mode": "DETERMINISTIC_EXACT_MATCH",
+    "correct_criteria": {
+      "selected_option_id": "opt_4"
+    }
+  },
+  "safeguard_metadata": {
+    "has_unvoiced_text": false,
+    "reading_grade_level": 1.0,
+    "cultural_neutrality_verified": true,
+    "contains_gamified_dark_patterns": false
+  }
+}

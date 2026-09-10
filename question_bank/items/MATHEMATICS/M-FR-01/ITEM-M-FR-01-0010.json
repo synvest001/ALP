@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Count the red apples in the basket.",
+    "display_text": "The pirate crew of 3 found a treasure chest with 12 gold coins. To avoid a mutiny, they must split it EQUALLY. What does sharing equally mean?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-fr-01-0010_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Touch each red apple as you count: 1, 2, 3, 4.",
+      "prompt": "Equal means fair shares for everyone!",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,19 +60,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "4"
+            "display_value": "Everyone gets the exact same amount"
           },
           {
             "option_id": "opt_2",
-            "display_value": "5"
+            "display_value": "The captain gets the most"
           },
           {
             "option_id": "opt_3",
-            "display_value": "6"
+            "display_value": "The fastest pirate gets them all"
           },
           {
             "option_id": "opt_4",
-            "display_value": "3"
+            "display_value": "It's impossible to share"
           }
         ]
       },

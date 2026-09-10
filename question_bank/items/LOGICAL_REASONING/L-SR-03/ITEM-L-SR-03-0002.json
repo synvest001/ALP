@@ -8,8 +8,16 @@
   "challenge_type": "MULTIPLE_CHOICE",
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
+  "cognitive_depth": "APPLY",
+  "transfer_level": "LEVEL_1_SURFACE",
+  "representation_type": "VISUAL",
+  "primary_modality": "TAP_SELECT",
+  "supported_alternative_modalities": [
+    "TAP_SELECT",
+    "SPOKEN_DICTATED"
+  ],
   "prompt_structure": {
-    "display_text": "What shape comes next in pattern?",
+    "display_text": "If a Gigantosaurus is larger than a T-Rex, and a T-Rex is larger than a Velociraptor, which dinosaur is the SMALLEST?",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-sr-03-0002_prompt.mp3",
     "visual_assets": [
       {
@@ -19,15 +27,44 @@
       }
     ]
   },
+  "interaction_model": {
+    "input_mechanic": "SINGLE_CHOICE",
+    "modality_configurations": {
+      "tap_select": {
+        "options": [
+          {
+            "option_id": "opt_1",
+            "display_value": "Gigantosaurus"
+          },
+          {
+            "option_id": "opt_2",
+            "display_value": "T-Rex"
+          },
+          {
+            "option_id": "opt_3",
+            "display_value": "They are equal"
+          },
+          {
+            "option_id": "opt_4",
+            "display_value": "Velociraptor"
+          }
+        ]
+      },
+      "spoken_dictated": {
+        "target_tokens": [
+          "sweet apple"
+        ],
+        "acoustic_confidence_threshold": 0.75
+      }
+    }
+  },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Say the pattern out loud: Circle, Square, Circle, Square... what comes next?",
-      "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
-      "preserves_productive_struggle": true
+      "preserves_productive_struggle": true,
+      "prompt": "Follow the size chain downwards!"
     },
     "level_2_representation_shift": {
-      "target_representation": "CONCRETE",
-      "hint": "Look closely at the picture and count each item."
+      "hint": "Observe the color, shape, and clues shown in the illustration."
     },
     "level_3_prerequisite_bridge": {
       "hint": "Remember the foundational rule: observe, compare, and verify."
@@ -36,7 +73,7 @@
   "rubric": {
     "evaluation_mode": "DETERMINISTIC_EXACT_MATCH",
     "correct_criteria": {
-      "selected_option_id": "opt_1"
+      "selected_option_id": "opt_4"
     }
   },
   "safeguard_metadata": {
@@ -44,44 +81,5 @@
     "reading_grade_level": 1.0,
     "cultural_neutrality_verified": true,
     "contains_gamified_dark_patterns": false
-  },
-  "cognitive_depth": "APPLY",
-  "transfer_level": "LEVEL_1_SURFACE",
-  "representation_type": "VISUAL",
-  "primary_modality": "TAP_SELECT",
-  "supported_alternative_modalities": [
-    "TAP_SELECT",
-    "SPOKEN_DICTATED"
-  ],
-  "interaction_model": {
-    "input_mechanic": "SINGLE_CHOICE",
-    "modality_configurations": {
-      "tap_select": {
-        "options": [
-          {
-            "option_id": "opt_1",
-            "display_value": "Circle"
-          },
-          {
-            "option_id": "opt_2",
-            "display_value": "Square"
-          },
-          {
-            "option_id": "opt_3",
-            "display_value": "Triangle"
-          },
-          {
-            "option_id": "opt_4",
-            "display_value": "Star"
-          }
-        ]
-      },
-      "spoken_dictated": {
-        "target_tokens": [
-          "circle"
-        ],
-        "acoustic_confidence_threshold": 0.75
-      }
-    }
   }
 }

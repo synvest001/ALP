@@ -1,0 +1,87 @@
+{
+  "item_id": "ITEM-M-PS-01-0059",
+  "schema_version": "1.3.0",
+  "target_subskill_id": "M-PS-01",
+  "domain_id": "MATHEMATICS",
+  "evidence_archetype": "STRATEGIC_REASONING",
+  "language_load_class": "PURE_REASONING",
+  "challenge_type": "MULTIPLE_CHOICE",
+  "creation_stage": "DRAFT",
+  "estimated_duration_seconds": 30,
+  "prompt_structure": {
+    "display_text": "The spaceship needs 23 hyper-drive cores to launch. You have collected 15. How many MORE cores must you find?",
+    "spoken_audio_uri": "assets/audio/mathematics/item-m-ps-01-0059_prompt.mp3",
+    "visual_assets": [
+      {
+        "asset_id": "ITEM-M-PS-01-0059_vis_1",
+        "asset_type": "DYNAMIC_SVG",
+        "uri": "assets/svg/item-m-ps-01-0059_visual.svg"
+      }
+    ]
+  },
+  "scaffolding_protocol": {
+    "level_1_reflection_prompt": {
+      "prompt": "Subtract what you have from what you need: 23 - 15 = 8!",
+      "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
+      "preserves_productive_struggle": true
+    },
+    "level_2_representation_shift": {
+      "target_representation": "CONCRETE",
+      "hint": "Look closely at the picture and count each item."
+    },
+    "level_3_prerequisite_bridge": {
+      "hint": "Remember the foundational rule: observe, compare, and verify."
+    }
+  },
+  "rubric": {
+    "evaluation_mode": "DETERMINISTIC_EXACT_MATCH",
+    "correct_criteria": {
+      "selected_option_id": "opt_1"
+    }
+  },
+  "safeguard_metadata": {
+    "has_unvoiced_text": false,
+    "reading_grade_level": 1.0,
+    "cultural_neutrality_verified": true,
+    "contains_gamified_dark_patterns": false
+  },
+  "cognitive_depth": "GENERALIZE",
+  "transfer_level": "LEVEL_4_STRUCTURAL",
+  "representation_type": "SYMBOLIC",
+  "primary_modality": "TAP_SELECT",
+  "supported_alternative_modalities": [
+    "TAP_SELECT",
+    "SPOKEN_DICTATED"
+  ],
+  "interaction_model": {
+    "input_mechanic": "SINGLE_CHOICE",
+    "modality_configurations": {
+      "tap_select": {
+        "options": [
+          {
+            "option_id": "opt_1",
+            "display_value": "8"
+          },
+          {
+            "option_id": "opt_2",
+            "display_value": "10"
+          },
+          {
+            "option_id": "opt_3",
+            "display_value": "7"
+          },
+          {
+            "option_id": "opt_4",
+            "display_value": "23"
+          }
+        ]
+      },
+      "spoken_dictated": {
+        "target_tokens": [
+          "5"
+        ],
+        "acoustic_confidence_threshold": 0.75
+      }
+    }
+  }
+}

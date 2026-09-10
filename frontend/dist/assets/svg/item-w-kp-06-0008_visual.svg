@@ -1,11 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180">
-  <rect width="240" height="180" rx="16" fill="#fffbeb"/>
-  <!-- Wings -->
-  <ellipse cx="105" cy="70" rx="18" ry="28" fill="#e0f2fe" opacity="0.8" transform="rotate(-20, 105, 70)"/>
-  <ellipse cx="135" cy="70" rx="18" ry="28" fill="#e0f2fe" opacity="0.8" transform="rotate(20, 135, 70)"/>
-  <!-- Bee Body -->
-  <ellipse cx="120" cy="105" rx="35" ry="24" fill="#facc15"/>
-  <path d="M 110,82 L 110,128" stroke="#1e293b" stroke-width="6"/>
-  <path d="M 128,82 L 128,128" stroke="#1e293b" stroke-width="6"/>
-  <circle cx="95" cy="100" r="3" fill="#1e293b"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="100%" height="100%">
+  <rect width="300" height="200" rx="16" fill="#ecfeff"/>
+  <g transform="translate(150, 100)">
+    <!-- White Coat & Stethoscope -->
+    <path d="M -60,60 L -40,0 L 40,0 L 60,60 Z" fill="#ffffff" stroke="#0891b2" stroke-width="3"/>
+    <!-- Red Cross Badge -->
+    <rect x="-8" y="20" width="16" height="16" rx="2" fill="#ef4444"/>
+    <rect x="-6" y="26" width="12" height="4" fill="#ffffff"/>
+    <rect x="-2" y="22" width="4" height="12" fill="#ffffff"/>
+    <!-- Stethoscope -->
+    <path d="M -25,0 C -25,35 25,35 25,0" fill="none" stroke="#334155" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="0" cy="35" r="9" fill="#0891b2" stroke="#ffffff" stroke-width="2"/>
+    <!-- Friendly Face -->
+    <circle cx="0" cy="-35" r="28" fill="#fed7aa" stroke="#ea580c" stroke-width="2.5"/>
+    <!-- Doctor Mirror / Headband -->
+    <ellipse cx="0" cy="-60" rx="30" ry="6" fill="#0891b2"/>
+    <circle cx="0" cy="-58" r="7" fill="#ffffff" stroke="#0891b2" stroke-width="2"/>
+    <circle cx="-10" cy="-38" r="3" fill="#000"/><circle cx="10" cy="-38" r="3" fill="#000"/>
+    <path d="M -10,-24 Q 0,-16 10,-24" fill="none" stroke="#c2410c" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
 </svg>

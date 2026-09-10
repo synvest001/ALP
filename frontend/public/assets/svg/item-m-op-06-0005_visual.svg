@@ -1,25 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 180">
-  <rect width="400" height="180" rx="16" fill="#fef2f2"/>
-  <ellipse cx="200" cy="140" rx="150" ry="30" fill="#fecaca"/>
-  <!-- 4 apples -->
-  <g transform="translate(80, 50)">
-    <circle cx="25" cy="40" r="28" fill="#ef4444"/>
-    <path d="M 25,12 Q 30,0 22,-8" stroke="#78350f" stroke-width="4" fill="none"/>
-    <path d="M 25,6 Q 40,-2 42,8" fill="#22c55e"/>
-  </g>
-  <g transform="translate(150, 50)">
-    <circle cx="25" cy="40" r="28" fill="#ef4444"/>
-    <path d="M 25,12 Q 30,0 22,-8" stroke="#78350f" stroke-width="4" fill="none"/>
-    <path d="M 25,6 Q 40,-2 42,8" fill="#22c55e"/>
-  </g>
-  <g transform="translate(220, 50)">
-    <circle cx="25" cy="40" r="28" fill="#ef4444"/>
-    <path d="M 25,12 Q 30,0 22,-8" stroke="#78350f" stroke-width="4" fill="none"/>
-    <path d="M 25,6 Q 40,-2 42,8" fill="#22c55e"/>
-  </g>
-  <g transform="translate(290, 50)">
-    <circle cx="25" cy="40" r="28" fill="#ef4444"/>
-    <path d="M 25,12 Q 30,0 22,-8" stroke="#78350f" stroke-width="4" fill="none"/>
-    <path d="M 25,6 Q 40,-2 42,8" fill="#22c55e"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="100%" height="100%">
+  <rect width="300" height="200" rx="16" fill="#f0fdf4"/>
+  <!-- Ground -->
+  <rect x="0" y="160" width="300" height="40" fill="#86efac"/>
+  <g transform="translate(150, 115)">
+    <!-- Chimney & Smoke -->
+    <rect x="35" y="-70" width="20" height="40" fill="#b91c1c" stroke="#7f1d1d" stroke-width="2"/>
+    <circle cx="45" cy="-80" r="8" fill="#e2e8f0" opacity="0.8"/>
+    <circle cx="55" cy="-95" r="12" fill="#e2e8f0" opacity="0.6"/>
+    <!-- Main House Walls -->
+    <rect x="-65" y="-20" width="130" height="75" fill="#fef08a" stroke="#ca8a04" stroke-width="3"/>
+    <!-- Roof -->
+    <polygon points="0,-75 80,-20 -80,-20" fill="#ef4444" stroke="#b91c1c" stroke-width="3.5"/>
+    <!-- Door -->
+    <rect x="-18" y="15" width="36" height="40" rx="3" fill="#78350f" stroke="#451a03" stroke-width="2"/>
+    <circle cx="10" cy="35" r="3" fill="#facc15"/>
+    <!-- Windows -->
+    <rect x="-50" y="-5" width="24" height="24" fill="#38bdf8" stroke="#0284c7" stroke-width="2"/>
+    <line x1="-38" y1="-5" x2="-38" y2="19" stroke="#ffffff" stroke-width="2"/><line x1="-50" y1="7" x2="-26" y2="7" stroke="#ffffff" stroke-width="2"/>
+    <rect x="26" y="-5" width="24" height="24" fill="#38bdf8" stroke="#0284c7" stroke-width="2"/>
+    <line x1="38" y1="-5" x2="38" y2="19" stroke="#ffffff" stroke-width="2"/><line x1="26" y1="7" x2="50" y2="7" stroke="#ffffff" stroke-width="2"/>
   </g>
 </svg>

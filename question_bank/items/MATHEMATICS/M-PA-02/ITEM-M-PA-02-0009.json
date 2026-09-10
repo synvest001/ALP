@@ -9,7 +9,7 @@
   "creation_stage": "DRAFT",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "Which group of gems has MORE jewels?",
+    "display_text": "A piece of the ancient map is missing! Fill in the blank: Red, Blue, Green, Red, ___, Green",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-pa-02-0009_prompt.mp3",
     "visual_assets": [
       {
@@ -21,7 +21,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "The group on the left has 6 gems, while the right only has 2.",
+      "prompt": "Analyze the sequence before and after the blank.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -60,21 +60,25 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Left Group (6)"
+            "display_value": "Blue"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Right Group (2)"
+            "display_value": "Yellow"
           },
           {
             "option_id": "opt_3",
-            "display_value": "They are Equal"
+            "display_value": "Red"
+          },
+          {
+            "option_id": "opt_4",
+            "display_value": "Black"
           }
         ]
       },
       "spoken_dictated": {
         "target_tokens": [
-          "left group (6)"
+          "left group"
         ],
         "acoustic_confidence_threshold": 0.75
       }

@@ -1,6 +1,7 @@
-import { LearnerSkillProfile, MockProfile } from './LearnerProfileMock';
 import { QuestionBank, QuestionItem } from './QuestionBank';
 import { AssessmentEngine } from './AssessmentEngine';
+import { CurriculumGraph } from './CurriculumGraph';
+import { RepetitionGuard } from './RepetitionGuard';
 
 export interface TaskRequestPayload {
   session_id: string;
@@ -12,7 +13,6 @@ export interface TaskRequestPayload {
   phase_context: string;
   required_cognitive_depth: string;
   time_budget_seconds: number;
-  // Generated Question
   question_item?: QuestionItem | null;
 }
 
@@ -23,15 +23,6 @@ const DOMAIN_TARGETS: Record<string, [number, number]> = {
   'LOGICAL_REASONING': [10, 20]
 };
 
-const FUNCTION_TARGETS: Record<string, [number, number]> = {
-  'FOCUSED_CORE': [25, 35],
-  'RETRIEVAL': [15, 25],
-  'CONSOLIDATION': [15, 25],
-  'STRATEGIC_REASONING': [15, 25],
-  'CREATIVE_TRANSFER': [10, 20]
-};
-
-// Map actual domain strings to combined target categories
 const mapDomainToCategory = (domain: string) => {
   if (domain === 'SCIENCE_EVS' || domain === 'WORLD_KNOWLEDGE') {
     return 'SCIENCE_EVS_WORLD_KNOWLEDGE';
@@ -40,130 +31,224 @@ const mapDomainToCategory = (domain: string) => {
 };
 
 export class SessionComposer {
-  private questionBank: QuestionBank;
-  private assessmentEngine: AssessmentEngine;
+  public questionBank: QuestionBank;
+  public assessmentEngine: AssessmentEngine;
+  public curriculumGraph: CurriculumGraph;
 
   constructor() {
     this.questionBank = new QuestionBank();
     this.assessmentEngine = new AssessmentEngine();
+    this.curriculumGraph = new CurriculumGraph();
   }
 
-  public generateSession(profile: LearnerSkillProfile = MockProfile): TaskRequestPayload[] {
+  public async ensureReady(): Promise<void> {
+    await Promise.all([
+      this.questionBank.ensureLoaded(),
+      this.curriculumGraph.ensureLoaded()
+    ]);
+  }
+
+  /**
+   * Reads real historical domain counts from localStorage to compute dynamic rolling deficits.
+   */
+  private getDynamicDomainActuals(kidId: string): Record<string, number> {
+    try {
+      const counts: Record<string, number> = JSON.parse(
+        localStorage.getItem(`alp_${kidId}_domain_counts`) ||
+        localStorage.getItem('alp_domain_counts') || '{}'
+      );
+      let total = 0;
+      Object.values(counts).forEach(v => total += v);
+      if (total === 0) {
+        return {
+          'MATHEMATICS': 0,
+          'ENGLISH_LANGUAGE': 0,
+          'SCIENCE_EVS_WORLD_KNOWLEDGE': 0,
+          'LOGICAL_REASONING': 0
+        };
+      }
+      return {
+        'MATHEMATICS': Math.round(((counts['MATHEMATICS'] || 0) / total) * 100),
+        'ENGLISH_LANGUAGE': Math.round(((counts['ENGLISH_LANGUAGE'] || 0) / total) * 100),
+        'SCIENCE_EVS_WORLD_KNOWLEDGE': Math.round((((counts['SCIENCE_EVS'] || 0) + (counts['WORLD_KNOWLEDGE'] || 0)) / total) * 100),
+        'LOGICAL_REASONING': Math.round(((counts['LOGICAL_REASONING'] || 0) / total) * 100)
+      };
+    } catch (e) {
+      return { 'MATHEMATICS': 0, 'ENGLISH_LANGUAGE': 0, 'SCIENCE_EVS_WORLD_KNOWLEDGE': 0, 'LOGICAL_REASONING': 0 };
+    }
+  }
+
+  /**
+   * Composes a dynamic session according to Workstream 3 Dual-Axis Adaptive Design:
+   * - Axis 1: Curriculum Graph progression & prerequisite unlocking
+   * - Axis 2: Depth-First cognitive complexity escalation (APPLY -> REASON -> GENERALIZE)
+   * - Balanced domain ratio: 40% Mathematics (2 tasks), 1 English, 1 Logic, 1 Science/World Knowledge
+   * - Multi-strand rotation: distinct subskills per domain to prevent subskill lock-in
+   * - Zero question repetitions via RepetitionGuard (cooldown across last 5 sessions + intra-session uniqueness)
+   */
+  public generateSession(kidId: string = 'default_player', focusedDomain?: string): TaskRequestPayload[] {
+    const cleanKidId = (kidId || 'default_player').toLowerCase().trim();
+    this.assessmentEngine.setKidId(cleanKidId);
+
     const session: TaskRequestPayload[] = [];
     const sessionId = `sess_${new Date().toISOString().replace(/[:.-]/g, '')}`;
-    const targetTaskCount = Math.floor(Math.random() * 3) + 4; // 4 to 6 tasks
-    const maxTimeBudgetSeconds = 20 * 60; // 20 minutes
+    const targetTaskCount = 10; // Standard 10 tasks per node
+    const maxTimeBudgetSeconds = 40 * 60; // Increased time budget
     let currentTimeBudget = 0;
 
-    // STEP 1 - DUE-EVENT INTAKE
-    for (const event of profile.dueEvents) {
-      if (session.length >= targetTaskCount || currentTimeBudget >= maxTimeBudgetSeconds) break;
+    // Load kid-specific cooldown items & prompts (last 5 sessions) and all seen items
+    const cooldownIds = RepetitionGuard.getCooldownItemIds(cleanKidId, RepetitionGuard.COOLDOWN_SESSION_COUNT);
+    const cooldownPrompts = RepetitionGuard.getCooldownPrompts(cleanKidId, RepetitionGuard.COOLDOWN_SESSION_COUNT);
+    const lifetimeSeen = RepetitionGuard.getAllSeenItemIds(cleanKidId);
+    const forbiddenBase = new Set([...cooldownIds, ...lifetimeSeen]);
+    const sessionSeenPrompts = new Set<string>();
+
+    // 1. Get real learner states
+    const secureSubskills = this.assessmentEngine.getSecureSubskills();
+    const activeSubskills = this.assessmentEngine.getActiveSubskills();
+
+    // 2. Build balanced domain sequence:
+    let domainSlots: string[] = [];
+    
+    if (focusedDomain) {
+      domainSlots = Array(targetTaskCount).fill(focusedDomain);
+    } else {
+      // Core rule: Mathematics must comprise 40% (4 tasks out of 10)
+      // 2 English Language, 2 Logical Reasoning, 2 Science/World Knowledge
+      const domainActuals = this.getDynamicDomainActuals(cleanKidId);
+      const scienceActual = domainActuals['SCIENCE_EVS_WORLD_KNOWLEDGE'] || 0;
       
+      // Fill 10 slots
+      domainSlots = [
+        'MATHEMATICS',
+        'MATHEMATICS',
+        'MATHEMATICS',
+        'MATHEMATICS',
+        'ENGLISH_LANGUAGE',
+        'ENGLISH_LANGUAGE',
+        'LOGICAL_REASONING',
+        'LOGICAL_REASONING',
+        'SCIENCE_EVS',
+        'WORLD_KNOWLEDGE'
+      ];
+    }
+
+    // High entropy shuffle ensures unpredictable sequence order across sessions and kids
+    const domainPool = domainSlots.sort(() => Math.random() - 0.5);
+
+    // 3. Ensure we have a healthy pool of active subskills across multiple strands (at least 3-4 per domain)
+    const activeSet = new Set(activeSubskills);
+
+    for (const dom of ['MATHEMATICS', 'ENGLISH_LANGUAGE', 'SCIENCE_EVS', 'WORLD_KNOWLEDGE', 'LOGICAL_REASONING']) {
+      const currentDomainActive = Array.from(activeSet).filter(
+        code => this.curriculumGraph.getDomainForSubskill(code) === dom
+      );
+      if (currentDomainActive.length < 3) {
+        const needed = 3 - currentDomainActive.length;
+        const nextSubskills = this.curriculumGraph.getNextProgressiveSubskills(dom, secureSubskills, activeSet, needed);
+        for (const s of nextSubskills) {
+          activeSet.add(s);
+        }
+      }
+    }
+
+    // 4. Fill Session Budget with Dual-Axis Progression
+    let domainCycleIndex = 0;
+    while (session.length < targetTaskCount && currentTimeBudget < maxTimeBudgetSeconds) {
+      const targetDomain = domainPool[domainCycleIndex % domainPool.length];
+      domainCycleIndex++;
+
+      // Axis 1: Find an appropriate progressive subskill in this domain
+      const domainActiveSubskills = Array.from(activeSet).filter(
+        code => this.curriculumGraph.getDomainForSubskill(code) === targetDomain
+      );
+
+      // Intra-session variety: do not repeat the same subskill in the same session if alternatives exist
+      const usedSubskillsInSession = new Set(session.map(t => t.target_subskill_id).filter(Boolean));
+      const freshSubskills = domainActiveSubskills.filter(s => !usedSubskillsInSession.has(s));
+      const subskillCandidates = freshSubskills.length > 0 ? freshSubskills : domainActiveSubskills;
+
+      let targetSubskillId: string | undefined;
+      if (subskillCandidates.length > 0) {
+        targetSubskillId = subskillCandidates[Math.floor(Math.random() * subskillCandidates.length)];
+      } else {
+        // Fall back to foundational entry points
+        const entries = this.curriculumGraph.getEntryPoints(targetDomain);
+        const freshEntries = entries.filter(s => !usedSubskillsInSession.has(s));
+        const entryCandidates = freshEntries.length > 0 ? freshEntries : entries;
+        targetSubskillId = entryCandidates[Math.floor(Math.random() * entryCandidates.length)];
+      }
+
+      // Axis 2: Depth-First cognitive depth determination
+      const targetDepth = this.assessmentEngine.getTargetCognitiveDepth(targetSubskillId);
+
+      // Determine task function type
+      const state = targetSubskillId ? this.assessmentEngine.getSubskillState(targetSubskillId) : 'INTRODUCED';
+      let functionType = 'FOCUSED_CORE';
+      if (state === 'DEVELOPING') functionType = 'CONSOLIDATION';
+      else if (state === 'SECURE' || state === 'FLEXIBLE') functionType = 'RETRIEVAL';
+
       const payload: TaskRequestPayload = {
         session_id: sessionId,
         task_index: session.length + 1,
         session_task_count: targetTaskCount,
-        task_function_type: event.task_function_type,
-        target_subskill_id: event.target_subskill_id,
-        domain_id: event.domain_id,
-        phase_context: event.phase_context,
-        required_cognitive_depth: 'APPLY', // Default for now
+        task_function_type: functionType,
+        target_subskill_id: targetSubskillId,
+        domain_id: targetDomain,
+        phase_context: 'PHASE_A',
+        required_cognitive_depth: targetDepth,
         time_budget_seconds: 120
       };
-      
-      payload.question_item = this.questionBank.getTask(payload.domain_id, payload.target_subskill_id);
-      session.push(payload);
-      currentTimeBudget += payload.time_budget_seconds;
-    }
 
-    // STEP 2 - ROLLING-WINDOW DEFICIT CHECK
-    const candidatePairs: { domain: string, functionType: string, deficitScore: number }[] = [];
-    
-    for (const domain of ['MATHEMATICS', 'ENGLISH_LANGUAGE', 'SCIENCE_EVS', 'WORLD_KNOWLEDGE', 'LOGICAL_REASONING']) {
-      const domainCategory = mapDomainToCategory(domain);
-      const domainActual = profile.trailing14DayDomainActuals[domainCategory] || 0;
-      const domainTarget = DOMAIN_TARGETS[domainCategory];
-      
-      let domainDeficit = 0;
-      if (domainActual < domainTarget[0]) {
-        domainDeficit = domainTarget[0] - domainActual;
-      }
+      const currentSessionIds = session.map(p => p.question_item?.item_id).filter(Boolean) as string[];
+      const excludeIds = Array.from(new Set([...forbiddenBase, ...currentSessionIds]));
+      const allExcludePrompts = new Set([...cooldownPrompts, ...sessionSeenPrompts]);
 
-      for (const functionType of Object.keys(FUNCTION_TARGETS)) {
-        const functionActual = profile.trailing14DayFunctionActuals[functionType] || 0;
-        const functionTarget = FUNCTION_TARGETS[functionType];
-        
-        let functionDeficit = 0;
-        if (functionActual < functionTarget[0]) {
-          functionDeficit = functionTarget[0] - functionActual;
-        }
+      payload.question_item = this.questionBank.getTask(
+        payload.domain_id,
+        payload.target_subskill_id,
+        targetDepth,
+        excludeIds,
+        allExcludePrompts
+      );
 
-        const combinedDeficit = domainDeficit + functionDeficit;
-        candidatePairs.push({ domain, functionType, deficitScore: combinedDeficit });
-      }
-    }
-
-    // Rank by deficit score descending
-    candidatePairs.sort((a, b) => b.deficitScore - a.deficitScore);
-
-    // Get active learning states from real telemetry
-    const activeStates = this.assessmentEngine.getAllStates().filter(s => s.state === 'INTRODUCED' || s.state === 'DEVELOPING');
-
-    // STEP 3 - FILL REMAINING TASK BUDGET
-    // We will dynamically pick domains based on deficits, rather than forcing M-OP-05
-    while (session.length < targetTaskCount && currentTimeBudget < maxTimeBudgetSeconds) {
-      const payload: TaskRequestPayload = {
-        session_id: sessionId,
-        task_index: session.length + 1,
-        session_task_count: targetTaskCount,
-        task_function_type: 'FOCUSED_CORE',
-        domain_id: '',
-        phase_context: 'PHASE_B',
-        required_cognitive_depth: 'UNDERSTAND',
-        time_budget_seconds: 180
-      };
-      
-      // Try to target an active subskill first
-      if (activeStates.length > 0) {
-        const targetState = activeStates[Math.floor(Math.random() * activeStates.length)];
-        payload.question_item = this.questionBank.getTask('', targetState.subskill_id); // Domain empty, subskill specified
-      }
-
-      // If no item found from active states, fallback to deficit candidates
+      // If no question found for that specific subskill/depth, relax subskill to domain
       if (!payload.question_item) {
-        const topCandidate = candidatePairs.length > 0 ? candidatePairs[0].domain : 'MATHEMATICS';
-        let domainIdToUse = topCandidate;
-        if (domainIdToUse === 'SCIENCE_EVS' || domainIdToUse === 'WORLD_KNOWLEDGE') {
-          domainIdToUse = 'SCIENCE_EVS_WORLD_KNOWLEDGE';
-        }
-        payload.domain_id = domainIdToUse;
-        payload.question_item = this.questionBank.getTask(payload.domain_id);
+        payload.question_item = this.questionBank.getTask(
+          payload.domain_id,
+          undefined,
+          undefined,
+          excludeIds,
+          allExcludePrompts
+        );
       }
-      
-      // Ultimate fallback: completely random
+
+      // If still none, get literally any unseen item from question bank
       if (!payload.question_item) {
-        const allDomains = ['MATHEMATICS', 'ENGLISH_LANGUAGE', 'SCIENCE_EVS_WORLD_KNOWLEDGE', 'LOGICAL_REASONING', 'SEL', 'ARTS'];
-        const randDomain = allDomains[Math.floor(Math.random() * allDomains.length)];
-        payload.question_item = this.questionBank.getTask(randDomain);
+        payload.question_item = this.questionBank.getTask(
+          undefined,
+          undefined,
+          undefined,
+          excludeIds,
+          allExcludePrompts
+        );
       }
 
       if (payload.question_item) {
         payload.domain_id = payload.question_item.domain_id;
         payload.target_subskill_id = payload.question_item.target_subskill_id;
+        payload.required_cognitive_depth = payload.question_item.cognitive_depth;
+        const norm = RepetitionGuard.normalizePrompt(payload.question_item.prompt_structure?.display_text);
+        if (norm) {
+          sessionSeenPrompts.add(norm);
+        }
       }
-      
+
       session.push(payload);
       currentTimeBudget += payload.time_budget_seconds;
-      
-      // Shift to avoid picking the same domain constantly
-      if (candidatePairs.length > 0) {
-        const shifted = candidatePairs.shift();
-        if (shifted) candidatePairs.push(shifted);
-      }
     }
 
-    // STEP 4 - CLOSE
-    // Metacognitive closing element can be handled in the UI
-    return session;
+    // THE HARD CHECK IN PLACE: Enforce 0 intra-session duplicates & 0 repeats in last 3 sessions
+    return RepetitionGuard.validateAndEnforce(session, cleanKidId, this.questionBank);
   }
 }

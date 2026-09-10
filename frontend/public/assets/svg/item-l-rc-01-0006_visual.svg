@@ -1,10 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 140">
-  <rect width="450" height="140" rx="16" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
-  <circle cx="50" cy="70" r="28" fill="#ef4444"/>
-  <rect x="110" y="42" width="56" height="56" rx="8" fill="#3b82f6"/>
-  <circle cx="230" cy="70" r="28" fill="#ef4444"/>
-  <rect x="290" y="42" width="56" height="56" rx="8" fill="#3b82f6"/>
-  <!-- Question Box -->
-  <rect x="375" y="42" width="56" height="56" rx="8" fill="#fef08a" stroke="#ca8a04" stroke-width="3" stroke-dasharray="6,3"/>
-  <text x="403" y="79" font-family="'Comic Sans MS', sans-serif" font-size="28" font-weight="bold" fill="#854d0e" text-anchor="middle">?</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="100%" height="100%">
+  <rect width="300" height="200" rx="16" fill="#fef3c7"/>
+  <g transform="translate(150, 110)">
+    <!-- Horns -->
+    <path d="M -30,-45 Q -40,-65 -55,-55" fill="none" stroke="#eab308" stroke-width="5" stroke-linecap="round"/>
+    <path d="M 30,-45 Q 40,-65 55,-55" fill="none" stroke="#eab308" stroke-width="5" stroke-linecap="round"/>
+    <!-- Ears -->
+    <ellipse cx="-45" cy="-35" rx="16" ry="8" fill="#f8fafc" stroke="#334155" stroke-width="2.5" transform="rotate(-15 -45 -35)"/>
+    <ellipse cx="45" cy="-35" rx="16" ry="8" fill="#f8fafc" stroke="#334155" stroke-width="2.5" transform="rotate(15 45 -35)"/>
+    <!-- Head with Black Patches -->
+    <ellipse cx="0" cy="-20" rx="46" ry="40" fill="#ffffff" stroke="#334155" stroke-width="3"/>
+    <path d="M -44,-30 Q -10,-45 -5,-20 Q -15,5 -46,0 Z" fill="#1e293b"/>
+    <!-- Big Pink Muzzle / Snout -->
+    <ellipse cx="0" cy="12" rx="34" ry="22" fill="#fbcfe8" stroke="#f472b6" stroke-width="3"/>
+    <ellipse cx="-12" cy="12" rx="5" ry="7" fill="#831843"/>
+    <ellipse cx="12" cy="12" rx="5" ry="7" fill="#831843"/>
+    <path d="M -12,24 Q 0,30 12,24" stroke="#831843" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <!-- Eyes -->
+    <circle cx="-20" cy="-24" r="7" fill="#ffffff" stroke="#1e293b" stroke-width="2"/>
+    <circle cx="-20" cy="-24" r="4" fill="#0f172a"/><circle cx="-22" cy="-26" r="1.5" fill="#ffffff"/>
+    <circle cx="20" cy="-24" r="7" fill="#ffffff" stroke="#1e293b" stroke-width="2"/>
+    <circle cx="20" cy="-24" r="4" fill="#0f172a"/><circle cx="18" cy="-26" r="1.5" fill="#ffffff"/>
+  </g>
 </svg>

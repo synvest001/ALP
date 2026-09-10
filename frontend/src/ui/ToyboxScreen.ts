@@ -1,6 +1,9 @@
 import { App } from '../app';
+import { GRAND_TREASURES, Treasure } from '../data/Treasures';
+import { soundFX } from '../utils/SoundFX';
 
-export const UNLOCKED_STICKERS = ['🐉', '💎', '🍄', '✨', '🏰', '🛡️', '⚔️'];
+// Backwards compatibility export
+export const UNLOCKED_STICKERS = GRAND_TREASURES.map(t => t.name);
 
 export class ToyboxScreen {
   private container: HTMLElement;
@@ -14,12 +17,23 @@ export class ToyboxScreen {
   public render() {
     this.container.innerHTML = `
       <header>
-        <h2>Treasures</h2>
-        <button id="btn-back-map-sandbox" class="header-btn">Back to Map</button>
+        <div class="header-titles">
+          <h2>💎 Realm Treasures & Stickers</h2>
+          <span class="header-subtitle">Earn grand treasures by completing magical kingdom paths!</span>
+        </div>
+        <div class="header-actions">
+          <button id="btn-back-map-sandbox" class="header-btn">🗺️ Back to Map</button>
+        </div>
       </header>
       <div class="treasures-layout">
         <div class="treasure-grid" id="treasure-grid-container">
            <!-- Grid injected here -->
+        </div>
+      </div>
+      <div id="treasure-detail-modal" class="treasure-modal hidden">
+        <div class="treasure-modal-card">
+          <button id="btn-close-treasure" class="btn-close-modal">✕</button>
+          <div id="treasure-modal-content"></div>
         </div>
       </div>
     `;
@@ -35,39 +49,81 @@ export class ToyboxScreen {
         this.app.showScreen('screen-map');
       });
     }
+
+    const btnClose = this.container.querySelector('#btn-close-treasure');
+    const modal = this.container.querySelector('#treasure-detail-modal');
+    if (btnClose && modal) {
+      btnClose.addEventListener('click', () => {
+        modal.classList.add('hidden');
+      });
+    }
   }
 
-  private renderGrid() {
+  public renderGrid() {
     const grid = this.container.querySelector('#treasure-grid-container');
     if (!grid) return;
     
-    // Calculate how many nodes have been completed
-    const nodesCompleted = parseInt(localStorage.getItem('alp_nodes_completed') || '0', 10);
+    // Each realm is 5 nodes
+    const kidName = (this.app?.profileSwitcher?.getCurrentPlayerName() || 'default_player').toLowerCase().trim();
+    const nodesCompleted = parseInt(
+      localStorage.getItem(`alp_${kidName}_nodes_completed`) ||
+      localStorage.getItem('alp_nodes_completed') || '0',
+      10
+    );
+    const realmsCompleted = Math.floor(nodesCompleted / 5);
     
     grid.innerHTML = '';
     
-    UNLOCKED_STICKERS.forEach((emoji, idx) => {
-      const isUnlocked = idx < nodesCompleted;
+    GRAND_TREASURES.forEach((treasure, idx) => {
+      const isUnlocked = idx < realmsCompleted;
       
-      const slot = document.createElement('div');
-      slot.className = `treasure-slot ${isUnlocked ? 'unlocked' : 'locked'}`;
+      const card = document.createElement('div');
+      card.className = `treasure-card ${isUnlocked ? 'unlocked' : 'locked'}`;
+      card.setAttribute('data-rarity', treasure.rarity.toLowerCase());
       
-      const inner = document.createElement('div');
-      inner.className = 'emoji';
-      inner.textContent = emoji;
-      
-      slot.appendChild(inner);
+      card.innerHTML = `
+        <div class="treasure-badge ${treasure.rarity.toLowerCase()}">${treasure.rarity}</div>
+        <div class="treasure-art-container">
+          ${isUnlocked ? treasure.svg : `
+            <div class="locked-icon-placeholder">
+              <span class="lock-symbol">🔒</span>
+            </div>
+          `}
+        </div>
+        <div class="treasure-info">
+          <h3 class="treasure-title">${isUnlocked ? treasure.name : 'Mystery Treasure'}</h3>
+          <p class="treasure-realm">${isUnlocked ? 'From ' + treasure.realm : 'Realm ' + (idx + 1) + ': ' + treasure.realm}</p>
+        </div>
+      `;
       
       if (isUnlocked) {
-        slot.onclick = () => {
-          // Play a small animation or sound when clicking an unlocked treasure
-          inner.style.animation = 'none';
-          void inner.offsetWidth; // trigger reflow
-          inner.style.animation = 'pulse-correct 0.5s ease';
-        };
+        card.addEventListener('click', () => {
+          soundFX.playTreasureUnlock();
+          this.showTreasureDetail(treasure);
+        });
       }
       
-      grid.appendChild(slot);
+      grid.appendChild(card);
     });
+  }
+
+  private showTreasureDetail(treasure: Treasure) {
+    const modal = this.container.querySelector('#treasure-detail-modal');
+    const content = this.container.querySelector('#treasure-modal-content');
+    if (!modal || !content) return;
+
+    content.innerHTML = `
+      <div class="detail-art-wrap">
+        ${treasure.svg}
+      </div>
+      <div class="treasure-badge ${treasure.rarity.toLowerCase()} large">${treasure.rarity}</div>
+      <h2 class="detail-title">${treasure.name}</h2>
+      <p class="detail-realm">Discovered in <strong>${treasure.realm}</strong></p>
+      <div class="detail-desc-box">
+        <p>${treasure.description}</p>
+      </div>
+    `;
+
+    modal.classList.remove('hidden');
   }
 }

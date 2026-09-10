@@ -4,34 +4,55 @@
   "target_subskill_id": "M-OP-05",
   "domain_id": "MATHEMATICS",
   "evidence_archetype": "CONCEPTUAL",
-  "cognitive_depth": "GENERALIZE",
-  "transfer_level": "LEVEL_3_REPRESENTATIONAL",
-  "primary_modality": "TAP_SELECT",
-  "supported_alternative_modalities": [
-    "SPOKEN_DICTATED"
-  ],
   "language_load_class": "PURE_REASONING",
-  "representation_type": "VISUAL",
-  "challenge_type": "NEW_REPRESENTATION",
-  "creation_stage": "ANSWERING",
-  "estimated_duration_seconds": 90,
+  "challenge_type": "MULTIPLE_CHOICE",
+  "creation_stage": "DRAFT",
+  "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "spoken_audio_uri": "assets/audio/math/m_op_05_0016_prompt.mp3",
-    "display_text": "What value does the square hide?",
+    "display_text": "During the battle, 12 goblins charged forward, and then 3 more joined them. How many goblins in all?",
+    "spoken_audio_uri": "assets/audio/mathematics/item-m-op-05-0016_prompt.mp3",
     "visual_assets": [
       {
-        "asset_id": "square_plus_3_eq_7",
+        "asset_id": "ITEM-M-OP-05-0016_vis_1",
         "asset_type": "DYNAMIC_SVG",
-        "uri": "assets/svg/shape_symbol_square_3_7.svg",
-        "state_bindings": {
-          "symbol": "SQUARE",
-          "known": 3,
-          "total": 7,
-          "hidden_val": 4
-        }
+        "uri": "assets/svg/item-m-op-05-0016_visual.svg"
       }
     ]
   },
+  "scaffolding_protocol": {
+    "level_1_reflection_prompt": {
+      "prompt": "Combine the attacking forces: 12 + 3 = 15 goblins!",
+      "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
+      "preserves_productive_struggle": true
+    },
+    "level_2_representation_shift": {
+      "target_representation": "CONCRETE",
+      "hint": "Look closely at the picture and count each item."
+    },
+    "level_3_prerequisite_bridge": {
+      "hint": "Remember the foundational rule: observe, compare, and verify."
+    }
+  },
+  "rubric": {
+    "evaluation_mode": "DETERMINISTIC_EXACT_MATCH",
+    "correct_criteria": {
+      "selected_option_id": "opt_1"
+    }
+  },
+  "safeguard_metadata": {
+    "has_unvoiced_text": false,
+    "reading_grade_level": 1.0,
+    "cultural_neutrality_verified": true,
+    "contains_gamified_dark_patterns": false
+  },
+  "cognitive_depth": "REASON",
+  "transfer_level": "LEVEL_3_REPRESENTATIONAL",
+  "representation_type": "SYMBOLIC",
+  "primary_modality": "TAP_SELECT",
+  "supported_alternative_modalities": [
+    "TAP_SELECT",
+    "SPOKEN_DICTATED"
+  ],
   "interaction_model": {
     "input_mechanic": "SINGLE_CHOICE",
     "modality_configurations": {
@@ -39,66 +60,28 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "4"
+            "display_value": "15"
           },
           {
             "option_id": "opt_2",
-            "display_value": "3"
+            "display_value": "17"
           },
           {
             "option_id": "opt_3",
-            "display_value": "7"
+            "display_value": "14"
+          },
+          {
+            "option_id": "opt_4",
+            "display_value": "19"
           }
         ]
       },
       "spoken_dictated": {
         "target_tokens": [
-          "four",
-          "4"
+          "left group"
         ],
         "acoustic_confidence_threshold": 0.75
       }
     }
-  },
-  "scaffolding_protocol": {
-    "level_1_reflection_prompt": {
-      "spoken_text": "Treat the square like a missing number box. What plus 3 is 7?",
-      "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
-      "preserves_productive_struggle": true
-    },
-    "level_2_representation_shift": {
-      "spoken_text": "Square plus 3 equals 7. So Square equals 4.",
-      "target_representation": "SYMBOLIC",
-      "visual_asset_override": "assets/svg/symbolic_substitution_4.svg"
-    },
-    "level_3_prerequisite_bridge": {
-      "spoken_text": "4 plus 3 equals 7.",
-      "target_prerequisite_subskill_id": "M-NQ-02",
-      "interactive_overlay": "SHAPE_VALUE_MATCHER"
-    }
-  },
-  "rubric": {
-    "evaluation_mode": "DETERMINISTIC_EXACT_MATCH",
-    "correct_criteria": {
-      "selected_option_id": "opt_1"
-    },
-    "diagnostic_distractors": [
-      {
-        "response_pattern": "opt_3",
-        "diagnostic_misconception": "EQUALITY_AS_SUM_TOTAL",
-        "recommended_ws3_branch": "STRATEGY_REFLECTION_PIVOT"
-      },
-      {
-        "response_pattern": "opt_2",
-        "diagnostic_misconception": "IDENTITY_COPYING",
-        "recommended_ws3_branch": "STRATEGY_REFLECTION_PIVOT"
-      }
-    ]
-  },
-  "safeguard_metadata": {
-    "reading_grade_level": 0.6,
-    "has_unvoiced_text": false,
-    "cultural_neutrality_verified": true,
-    "contains_gamified_dark_patterns": false
   }
 }
