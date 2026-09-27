@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Read the sequence: 'First, Leo opened his notebook. Next, he sharpened his pencil. Finally, he began writing his essay.' What happened FIRST?",
+    "display_text": "Read: 'First, Maya poured milk in a bowl. Next, she added cereal.' What did Maya do FIRST?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cr-06-0026_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Opened his notebook"
+            "display_value": "Poured milk"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Sharpened his pencil"
+            "display_value": "Added cereal"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Began writing his essay"
+            "display_value": "Ate lunch"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Closed his backpack"
+            "display_value": "Washed dishes"
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Look for the sequence word 'First' to identify the initial step."
+      "prompt": "The first step was poured milk."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

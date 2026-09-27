@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Read the description: 'Gentle ocean waves lapped against the warm, sandy shore lined with palm trees.' Where is this scene taking place?",
+    "display_text": "Read the clue: 'Tall pine trees grew all around as birds sang in the branches.' Where is this scene?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cr-03-0005_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "A tropical beach"
+            "display_value": "In the forest"
           },
           {
             "option_id": "opt_2",
-            "display_value": "A snowy mountain"
+            "display_value": "At the airport"
           },
           {
             "option_id": "opt_3",
-            "display_value": "A busy city street"
+            "display_value": "In a pool"
           },
           {
             "option_id": "opt_4",
-            "display_value": "A desert canyon"
+            "display_value": "In a store"
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The sensory details describe a tropical beach."
+      "prompt": "The clues tell us this is in the forest."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

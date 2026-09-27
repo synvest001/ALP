@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Look at the laboratory tool shown above. Which instrument is used to measure the mass or weight of objects?",
+    "display_text": "Look at the tool shown above. Which tool is used to weigh objects?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-mo-02-0036_prompt.mp3",
     "visual_assets": [
       {
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "A balance scale measures mass/weight."
+      "prompt": "A balance scale weighs objects."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

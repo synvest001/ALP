@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Read the resolution: 'To solve the problem of the torn garden hose, Leo wrapped water-resistant tape around the leak.' How was the problem solved?",
+    "display_text": "Read: 'The kitten was stuck in a low tree, so Dad helped it down.' How was the kitten helped?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cr-08-0025_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Wrapped water-resistant tape around the leak"
+            "display_value": "Dad helped it down"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Turned the water on higher"
+            "display_value": "Dad walked away"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Threw the plants away"
+            "display_value": "Dad climbed a roof"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Left the garden"
+            "display_value": "Dad sang a song"
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The solution was: wrapped water-resistant tape around the leak."
+      "prompt": "The solution was: dad helped it down."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

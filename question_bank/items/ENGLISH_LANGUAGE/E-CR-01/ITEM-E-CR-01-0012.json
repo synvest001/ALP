@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Read the passage: 'Dr. Nova borrowed an encyclopedia from the school library.' What object was mentioned?",
+    "display_text": "Read the sentence: 'Emma brought an apple to school.' What did Emma bring?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cr-01-0012_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "An encyclopedia"
+            "display_value": "An apple"
           },
           {
             "option_id": "opt_2",
-            "display_value": "A comic book"
+            "display_value": "A banana"
           },
           {
             "option_id": "opt_3",
-            "display_value": "A paintbrush"
+            "display_value": "A carrot"
           },
           {
             "option_id": "opt_4",
-            "display_value": "A dictionary"
+            "display_value": "An orange"
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Read the sentence carefully to find the specific object."
+      "prompt": "The sentence says it is an apple."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

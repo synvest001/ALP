@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "When a pet dog gets injured and needs medical care, who is the proper healthcare professional to visit?",
+    "display_text": "Who takes care of sick puppies and kittens?",
     "spoken_audio_uri": "assets/audio/world_knowledge/item-w-ko-02-0002_prompt.mp3",
     "visual_assets": []
   },
@@ -32,15 +32,15 @@
           },
           {
             "option_id": "opt_2",
-            "display_value": "A Pediatrician"
+            "display_value": "A Chef"
           },
           {
             "option_id": "opt_3",
-            "display_value": "A Botanist"
+            "display_value": "A Pilot"
           },
           {
             "option_id": "opt_4",
-            "display_value": "A Mechanic"
+            "display_value": "A Carpenter"
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "A Veterinarian treats this health need."
+      "prompt": "A Veterinarian helps take care of health."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

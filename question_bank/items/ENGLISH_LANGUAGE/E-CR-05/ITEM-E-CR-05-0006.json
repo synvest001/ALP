@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Read the sentence: 'Since the car battery was completely drained, the engine would not start in the morning.' What was the direct CAUSE of this event?",
+    "display_text": "Read: 'Because the sun was so hot, the snowman began to melt.' Why did the snowman melt?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cr-05-0006_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "The battery was completely drained"
+            "display_value": "The sun was hot"
           },
           {
             "option_id": "opt_2",
-            "display_value": "The car had no wheels"
+            "display_value": "It was freezing"
           },
           {
             "option_id": "opt_3",
-            "display_value": "The driver fell asleep"
+            "display_value": "It was night"
           },
           {
             "option_id": "opt_4",
-            "display_value": "The road was closed"
+            "display_value": "It was windy"
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "'The battery was completely drained' is what caused 'The engine would not start'."
+      "prompt": "The cause was: the sun was hot."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

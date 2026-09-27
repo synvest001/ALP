@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Fix the grammar error in this sentence: 'They was ready.'",
+    "display_text": "Which sentence is written correctly?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-we-01-0033_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "They were ready."
+            "display_value": "We are ready."
           },
           {
             "option_id": "opt_2",
-            "display_value": "They is ready."
+            "display_value": "We is ready."
           },
           {
             "option_id": "opt_3",
-            "display_value": "Them was ready."
+            "display_value": "We am ready."
           },
           {
             "option_id": "opt_4",
-            "display_value": "They ready was."
+            "display_value": "Ready we is."
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Make sure the subject and verb agree in number."
+      "prompt": "Use words that match."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Read the excerpt: 'Alex opened her birthday card and found a handwritten note from her best friend. A wide smile spread across her face as she hugged the card.' How was Alex feeling?",
+    "display_text": "Read: 'Maya smiled and jumped with joy when she saw the puppy.' How did Maya feel?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cr-09-0013_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Joyful and grateful"
+            "display_value": "Happy"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Angry and bitter"
+            "display_value": "Sad"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Terrified and worried"
+            "display_value": "Angry"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Bored and sleepy"
+            "display_value": "Sleepy"
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The character's body language shows they felt joyful and grateful."
+      "prompt": "The clue shows happy."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

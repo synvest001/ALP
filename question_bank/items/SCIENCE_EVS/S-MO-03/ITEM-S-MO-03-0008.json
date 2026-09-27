@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Look at the measuring tool shown above. Which tool is used to measure length or distance in centimeters?",
+    "display_text": "Look at the tool shown above. Which tool measures how long a pencil is?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-mo-03-0008_prompt.mp3",
     "visual_assets": [
       {
@@ -38,7 +38,7 @@
           },
           {
             "option_id": "opt_2",
-            "display_value": "Graduated cylinder"
+            "display_value": "Cup"
           },
           {
             "option_id": "opt_3",
@@ -46,7 +46,7 @@
           },
           {
             "option_id": "opt_4",
-            "display_value": "Microscope"
+            "display_value": "Clock"
           }
         ]
       },

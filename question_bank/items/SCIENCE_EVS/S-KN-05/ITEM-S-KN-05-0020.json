@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Which cold-blooded animal has dry, scaly skin and lays leathery eggs?",
+    "display_text": "Which animal has dry scaly skin and crawls on sunny rocks?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-kn-05-0020_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Reptile (Lizard)"
+            "display_value": "A Lizard"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Amphibian (Frog)"
+            "display_value": "A Frog"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Mammal (Rabbit)"
+            "display_value": "A Trout"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Fish (Trout)"
+            "display_value": "A Hamster"
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Reptiles have dry scales; amphibians have smooth, moist skin."
+      "prompt": "Lizards are reptiles with dry scales."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

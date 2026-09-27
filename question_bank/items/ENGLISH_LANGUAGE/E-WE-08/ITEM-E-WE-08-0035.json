@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Combine these two sentences into one effective sentence: 'The wind blew hard.' and 'The kite flew high.'",
+    "display_text": "Fill in the missing connecting word: 'I like apples ___ I like oranges.'",
     "spoken_audio_uri": "assets/audio/english_language/item-e-we-08-0035_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,23 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "The wind blew hard, so the kite flew high."
+            "display_value": "and"
           },
           {
             "option_id": "opt_2",
-            "display_value": "The wind blew hard but the kite flew high."
+            "display_value": "and"
           },
           {
             "option_id": "opt_3",
-            "display_value": "The wind blew hard because the kite flew high."
+            "display_value": "or"
           },
           {
             "option_id": "opt_4",
-            "display_value": "The wind blew hard or the kite flew high."
+            "display_value": "so"
+          },
+          {
+            "option_id": "opt_5",
+            "display_value": "but"
           }
         ]
       },
@@ -55,7 +59,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Choose the conjunction that shows the logical connection."
+      "prompt": "Use 'and' to connect the ideas."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."
@@ -67,7 +71,7 @@
   "rubric": {
     "evaluation_mode": "DETERMINISTIC_EXACT_MATCH",
     "correct_criteria": {
-      "selected_option_id": "opt_1"
+      "selected_option_id": "opt_2"
     }
   },
   "safeguard_metadata": {

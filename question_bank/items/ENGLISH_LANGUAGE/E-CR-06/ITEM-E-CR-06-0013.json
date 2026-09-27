@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Read the sequence: 'First, Maya cracked the eggs into a bowl. Next, she whisked them with milk. Finally, she cooked them in a warm pan.' What happened FIRST?",
+    "display_text": "Read: 'First, Tom put on his socks. Next, he put on his shoes.' What did Tom put on FIRST?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cr-06-0013_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Cracked the eggs into a bowl"
+            "display_value": "Socks"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Whisked them with milk"
+            "display_value": "Shoes"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Cooked them in a pan"
+            "display_value": "Hat"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Washed the dishes"
+            "display_value": "Coat"
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Look for the sequence word 'First' to identify the initial step."
+      "prompt": "The first step was socks."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

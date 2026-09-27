@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Proofread for correct capitalization: 'yesterday, maya visited london.' Which version is correct?",
+    "display_text": "Which day of the week is capitalized correctly?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-we-02-0027_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Yesterday, Maya visited London."
+            "display_value": "Friday"
           },
           {
             "option_id": "opt_2",
-            "display_value": "yesterday, Maya visited London."
+            "display_value": "friday"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Yesterday, maya visited london."
+            "display_value": "friDay"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Yesterday, Maya Visited london."
+            "display_value": "fridaY"
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Capitalize the first word of a sentence, proper names, days of the week, and specific places."
+      "prompt": "Names and days always start with a capital letter."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

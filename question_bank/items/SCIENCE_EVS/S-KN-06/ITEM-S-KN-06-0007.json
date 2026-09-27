@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Which warm-blooded animal has thick fur and feeds milk to its young?",
+    "display_text": "Which animal has warm fur, feeds milk to its babies, and can be a pet?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-kn-06-0007_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Mammal (Bear)"
+            "display_value": "A Dog"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Bird (Robin)"
+            "display_value": "A Goldfish"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Reptile (Snake)"
+            "display_value": "A Robin"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Insect (Beetle)"
+            "display_value": "An Ant"
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Fur/hair and producing milk for babies are defining mammal traits."
+      "prompt": "Dogs are mammals with fur."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

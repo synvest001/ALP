@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Look at the mighty tree shown above. Which tree grows from an acorn seed?",
+    "display_text": "Look at the tree shown above. Which tree grows from a little acorn seed?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-kn-03-0002_prompt.mp3",
     "visual_assets": [
       {
@@ -61,7 +61,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Acorns are the seeds of oak trees."
+      "prompt": "Acorns grow into mighty oak trees."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Read the situation: 'The bicycle would not roll forward because a stick was wedged tightly in the spokes.' What is the main problem?",
+    "display_text": "Read: 'Maya could not find her red crayon in the box.' What was Maya's problem?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cr-07-0012_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "A stick was wedged in the spokes"
+            "display_value": "Lost crayon"
           },
           {
             "option_id": "opt_2",
-            "display_value": "The tires had plenty of air"
+            "display_value": "Broken shoes"
           },
           {
             "option_id": "opt_3",
-            "display_value": "The helmet was red"
+            "display_value": "Too much food"
           },
           {
             "option_id": "opt_4",
-            "display_value": "The road was flat"
+            "display_value": "Rainy day"
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The obstacle is that a stick was wedged in the spokes."
+      "prompt": "The problem is that lost crayon."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

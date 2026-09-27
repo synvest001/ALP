@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Find the misspelled word in this sentence: 'The students walked down the school passige.'",
+    "display_text": "Which word is spelled correctly?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-we-09-0001_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "passage"
+            "display_value": "friend"
           },
           {
             "option_id": "opt_2",
-            "display_value": "school"
+            "display_value": "frend"
           },
           {
             "option_id": "opt_3",
-            "display_value": "students"
+            "display_value": "frind"
           },
           {
             "option_id": "opt_4",
-            "display_value": "walked"
+            "display_value": "frien"
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The correct spelling is 'passage'."
+      "prompt": "The correct spelling is 'friend'."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

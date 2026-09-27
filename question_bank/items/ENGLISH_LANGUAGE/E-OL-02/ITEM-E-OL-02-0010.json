@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "You accidentally bump into Princess Luna in the hallway and drop their notebook. What is the most courteous apology?",
+    "display_text": "You accidentally bump into a friend. What is the kind thing to say?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-ol-02-0010_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "I am so sorry for my carelessness! Let me help pick that up."
+            "display_value": "I'm sorry!"
           },
           {
             "option_id": "opt_2",
-            "display_value": "You were standing in my way!"
+            "display_value": "Move away!"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Whatever, it's just paper."
+            "display_value": "Not my fault!"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Watch where you're walking!"
+            "display_value": "Watch out!"
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "A genuine apology expresses regret and offers help."
+      "prompt": "A kind apology says sorry politely."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

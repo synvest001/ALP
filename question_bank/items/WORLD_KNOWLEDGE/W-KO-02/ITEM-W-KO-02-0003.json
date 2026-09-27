@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "When a runner sprains an ankle during sports and needs an X-ray, who is the proper healthcare professional to visit?",
+    "display_text": "Who helps you feel better when you are sick?",
     "spoken_audio_uri": "assets/audio/world_knowledge/item-w-ko-02-0003_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "A Medical Doctor"
+            "display_value": "A Doctor"
           },
           {
             "option_id": "opt_2",
-            "display_value": "A Chef"
-          },
-          {
-            "option_id": "opt_3",
             "display_value": "A Pilot"
           },
           {
+            "option_id": "opt_3",
+            "display_value": "A Baker"
+          },
+          {
             "option_id": "opt_4",
-            "display_value": "A Carpenter"
+            "display_value": "A Sailor"
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "A Medical Doctor treats this health need."
+      "prompt": "A Doctor helps take care of health."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

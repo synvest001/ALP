@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Read the sentence: 'Dr. Nova planted sunflower seeds along the garden fence on a sunny morning.' Who carried out this action?",
+    "display_text": "Read the sentence: 'Noah read a funny book about dinosaurs.' Who read the book?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cr-02-0036_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Dr. Nova"
+            "display_value": "Noah"
           },
           {
             "option_id": "opt_2",
-            "display_value": "The postmaster"
+            "display_value": "A monkey"
           },
           {
             "option_id": "opt_3",
-            "display_value": "The storekeeper"
+            "display_value": "The puppy"
           },
           {
             "option_id": "opt_4",
-            "display_value": "The librarian"
+            "display_value": "A frog"
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The text clearly states that Dr. Nova performed the action."
+      "prompt": "Noah is the character in the story."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

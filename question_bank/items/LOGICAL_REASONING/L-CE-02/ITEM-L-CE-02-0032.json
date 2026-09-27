@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Cause and Effect: You see thick dark smoke rising above the trees in the distance. What is the most likely cause?",
+    "display_text": "You see dark smoke rising into the air. What is the cause?",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-ce-02-0032_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "A fire has broken out"
+            "display_value": "A campfire or fire"
           },
           {
             "option_id": "opt_2",
-            "display_value": "A blizzard has arrived"
+            "display_value": "A rainbow"
           },
           {
             "option_id": "opt_3",
-            "display_value": "A rainbow has appeared"
+            "display_value": "A snowman melting"
           },
           {
             "option_id": "opt_4",
-            "display_value": "The lake is freezing"
+            "display_value": "A cold breeze"
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Smoke is caused by fire."
+      "prompt": "Fire produces smoke."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

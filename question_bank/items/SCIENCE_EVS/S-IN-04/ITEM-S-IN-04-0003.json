@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Plant A is placed on a sunny windowsill with water. Plant B is placed in a pitch-black closet with water. What happens to Plant B?",
+    "display_text": "What will a sunflower seed grow into if you plant it and water it?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-in-04-0003_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Plant B grows weak and pale without sunlight"
+            "display_value": "A tall sunflower"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Plant B grows twice as fast"
+            "display_value": "An apple tree"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Plant B blooms with bright flowers"
+            "display_value": "A stone"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Plant B does not change at all"
+            "display_value": "A pumpkin"
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Green plants need sunlight to perform photosynthesis."
+      "prompt": "Seeds grow into the plant they came from."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

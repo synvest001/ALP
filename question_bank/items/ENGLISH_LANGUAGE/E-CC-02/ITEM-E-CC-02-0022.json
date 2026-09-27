@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Question Generation: Princess Luna found an old, locked wooden box in the attic. Which is the best investigative question to ask?",
+    "display_text": "A classmate is crying on the bench. What is kind to ask?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cc-02-0022_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,23 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "What key opens this old wooden box?"
+            "display_value": "Are you okay?"
           },
           {
             "option_id": "opt_2",
-            "display_value": "How many pennies make a dollar?"
+            "display_value": "Are you okay?"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Why is the grass green?"
+            "display_value": "Why are you loud?"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Who likes ice cream?"
+            "display_value": "Can I have your lunch?"
+          },
+          {
+            "option_id": "opt_5",
+            "display_value": "Where is the bus?"
           }
         ]
       },
@@ -55,7 +59,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "An investigative question directly addresses the situation."
+      "prompt": "Ask a helpful question."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."
@@ -67,7 +71,7 @@
   "rubric": {
     "evaluation_mode": "DETERMINISTIC_EXACT_MATCH",
     "correct_criteria": {
-      "selected_option_id": "opt_1"
+      "selected_option_id": "opt_2"
     }
   },
   "safeguard_metadata": {

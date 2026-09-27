@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "During an experiment, a student drops an iron key and a wooden cork into water. What happens to the cork?",
+    "display_text": "If you drop a light wooden cork into a bowl of water, what happens?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-in-01-0026_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "The cork floats because wood is less dense than water"
+            "display_value": "It floats on top"
           },
           {
             "option_id": "opt_2",
-            "display_value": "The cork sinks to the bottom"
+            "display_value": "It sinks to the bottom"
           },
           {
             "option_id": "opt_3",
-            "display_value": "The cork instantly dissolves"
+            "display_value": "It dissolves away"
           },
           {
             "option_id": "opt_4",
-            "display_value": "The cork turns into stone"
+            "display_value": "It turns to stone"
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Objects less dense than water float."
+      "prompt": "Light wood floats on water."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

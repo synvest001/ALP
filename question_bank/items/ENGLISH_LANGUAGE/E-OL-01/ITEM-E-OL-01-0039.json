@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "You are introduced to the school principal alongside Leo. What is the most polite and respectful greeting?",
+    "display_text": "It is time to leave school at the end of the day. What do you say?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-ol-01-0039_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Good morning, Principal Davis, it is nice to meet you."
+            "display_value": "See you tomorrow!"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Hey there!"
+            "display_value": "Never come back"
           },
           {
             "option_id": "opt_3",
-            "display_value": "What's up?"
+            "display_value": "Be quiet"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Yo, what are you doing here?"
+            "display_value": "Give me that"
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Formal introductions require respectful greetings."
+      "prompt": "We use kind words to greet others."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

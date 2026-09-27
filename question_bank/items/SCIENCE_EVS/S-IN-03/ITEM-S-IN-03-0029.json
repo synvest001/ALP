@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "In art class, what secondary color do you get when you mix red paint with blue paint?",
+    "display_text": "What color do you get when you mix red paint and yellow paint together?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-in-03-0029_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Purple"
+            "display_value": "Orange"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Green"
+            "display_value": "Purple"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Yellow"
+            "display_value": "Green"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Orange"
+            "display_value": "Black"
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Red + Blue = Purple."
+      "prompt": "Red and yellow make orange."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

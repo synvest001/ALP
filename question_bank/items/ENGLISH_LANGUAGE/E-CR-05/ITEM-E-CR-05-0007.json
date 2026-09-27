@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Read the sentence: 'Because heavy rain poured down all night, the school sports day was postponed.' What was the direct CAUSE of this event?",
+    "display_text": "Read: 'Because it started to rain, Emma opened her umbrella.' Why did Emma open her umbrella?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cr-05-0007_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "The heavy rain poured down"
+            "display_value": "It started to rain"
           },
           {
             "option_id": "opt_2",
-            "display_value": "The sun was shining brightly"
+            "display_value": "It was sunny"
           },
           {
             "option_id": "opt_3",
-            "display_value": "The students forgot their shoes"
+            "display_value": "It was bedtime"
           },
           {
             "option_id": "opt_4",
-            "display_value": "The grass was painted"
+            "display_value": "It was hot"
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "'The heavy rain poured down' is what caused 'The sports day was postponed'."
+      "prompt": "The cause was: it started to rain."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "When a fire breaks out in a building and smoke alarm sounds, which emergency responder protects the community?",
+    "display_text": "Who puts out fires and keeps people safe in emergencies?",
     "spoken_audio_uri": "assets/audio/world_knowledge/item-w-ko-03-0039_prompt.mp3",
     "visual_assets": []
   },
@@ -36,11 +36,11 @@
           },
           {
             "option_id": "opt_3",
-            "display_value": "Mail carriers"
+            "display_value": "Bakers"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Architects"
+            "display_value": "Mail carriers"
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Firefighters handle this public emergency."
+      "prompt": "Firefighters keep our community safe."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

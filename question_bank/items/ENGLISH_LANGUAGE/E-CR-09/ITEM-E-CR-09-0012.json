@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Read the excerpt: 'Dr. Nova worked for hours building a tall wooden block tower, but it accidentally tumbled to the floor. His shoulders slumped and he let out a sad sigh.' How was Dr. Nova feeling?",
+    "display_text": "Read: 'Leo lost his favorite toy and a tear rolled down his cheek.' How did Leo feel?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cr-09-0012_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Disappointed and frustrated"
+            "display_value": "Sad"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Overjoyed and excited"
+            "display_value": "Excited"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Eager to dance"
+            "display_value": "Cheerful"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Amused and cheerful"
+            "display_value": "Silly"
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The character's body language shows they felt disappointed and frustrated."
+      "prompt": "The clue shows sad."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

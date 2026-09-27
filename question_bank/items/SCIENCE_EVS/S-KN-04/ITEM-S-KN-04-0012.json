@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Which class of warm-blooded animals has lightweight hollow bones, feathers, and lays eggs in a nest?",
+    "display_text": "Which animal has feathers, wings, and can fly in the sky?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-kn-04-0012_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Bird"
+            "display_value": "A Bird"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Reptile"
+            "display_value": "A Fish"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Mammal"
+            "display_value": "A Frog"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Amphibian"
+            "display_value": "A Rabbit"
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Feathers and hollow bones are hallmark traits of birds."
+      "prompt": "Birds have feathers and wings."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

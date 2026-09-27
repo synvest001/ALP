@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "The preserved imprint of an ancient leaf or dinosaur bone found inside rock is called a:",
+    "display_text": "What is an ancient stone footprint or bone of a dinosaur called?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-kn-10-0016_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Fossil"
+            "display_value": "A Fossil"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Crystal"
+            "display_value": "A Crystal"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Meteorite"
+            "display_value": "A Pebble"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Gemstone"
+            "display_value": "A Gem"
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Preserved traces of prehistoric life in stone are fossils."
+      "prompt": "Old bones preserved in stone are fossils."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

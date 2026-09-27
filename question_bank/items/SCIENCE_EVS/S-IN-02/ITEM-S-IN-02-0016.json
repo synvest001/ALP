@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "What happens when an ice cube is left outside on a warm, sunny afternoon?",
+    "display_text": "What happens to an ice cube left outside in the warm sunshine?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-in-02-0016_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "The ice absorbs heat and melts into liquid water"
+            "display_value": "It melts into water"
           },
           {
             "option_id": "opt_2",
-            "display_value": "The ice gets colder and grows bigger"
+            "display_value": "It freezes into stone"
           },
           {
             "option_id": "opt_3",
-            "display_value": "The ice turns into solid rock"
+            "display_value": "It grows bigger"
           },
           {
             "option_id": "opt_4",
-            "display_value": "The ice catches fire"
+            "display_value": "It catches fire"
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Heat energy causes solid ice to melt into water."
+      "prompt": "Warm sunlight melts cold ice into water."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Read the passage: 'Olivia borrowed an encyclopedia from the school library.' What object was mentioned?",
+    "display_text": "Read the sentence: 'Leo found a shiny golden key.' What did Leo find?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cr-01-0008_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "An encyclopedia"
+            "display_value": "A golden key"
           },
           {
             "option_id": "opt_2",
-            "display_value": "A comic book"
+            "display_value": "A wooden stick"
           },
           {
             "option_id": "opt_3",
-            "display_value": "A paintbrush"
+            "display_value": "A red ball"
           },
           {
             "option_id": "opt_4",
-            "display_value": "A dictionary"
+            "display_value": "A toy car"
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Read the sentence carefully to find the specific object."
+      "prompt": "The sentence says it is a golden key."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

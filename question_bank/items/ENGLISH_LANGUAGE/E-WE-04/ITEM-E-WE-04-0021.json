@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "What is the correct plural spelling of 'box'?",
+    "display_text": "What is the plural of 'bird'?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-we-04-0021_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "boxes"
+            "display_value": "birds"
           },
           {
             "option_id": "opt_2",
-            "display_value": "boxs"
+            "display_value": "birdes"
           },
           {
             "option_id": "opt_3",
-            "display_value": "boxies"
+            "display_value": "birdz"
           },
           {
             "option_id": "opt_4",
-            "display_value": "boxen"
+            "display_value": "birdies"
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The plural of 'box' is 'boxes'."
+      "prompt": "Add -s to make it plural: birds."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

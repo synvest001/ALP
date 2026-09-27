@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Cause and Effect: Alex walks into the hallway and notices wet, dripping footprints leading from the garden door. What is the most logical cause?",
+    "display_text": "Why are there wet footprints on the floor?",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-ce-01-0032_prompt.mp3",
     "visual_assets": []
   },
@@ -28,11 +28,11 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Someone walked inside from the rainy garden"
+            "display_value": "Someone walked in from the rain"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Someone baked bread in the kitchen"
+            "display_value": "Someone baked bread"
           },
           {
             "option_id": "opt_3",
@@ -40,7 +40,7 @@
           },
           {
             "option_id": "opt_4",
-            "display_value": "A lightbulb burned out"
+            "display_value": "A lamp turned on"
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Wet muddy tracks are caused by someone walking through rain."
+      "prompt": "Rain makes feet wet and muddy."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

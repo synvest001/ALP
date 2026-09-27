@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Read the resolution: 'To fix the bicycle, Maya carefully pulled the wedged stick out from between the spokes.' How was the problem solved?",
+    "display_text": "Read: 'Leo's pencil broke, so he sharpened it with a sharpener.' How did Leo fix his pencil?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cr-08-0020_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Pulled the wedged stick out from the spokes"
+            "display_value": "Sharpened it"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Painted the bicycle frame"
+            "display_value": "Threw it away"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Rode on the sidewalk"
+            "display_value": "Ate it"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Bought a new bell"
+            "display_value": "Painted it"
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The solution was: pulled the wedged stick out from the spokes."
+      "prompt": "The solution was: sharpened it."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

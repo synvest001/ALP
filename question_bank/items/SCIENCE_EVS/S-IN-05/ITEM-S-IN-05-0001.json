@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "A toy car rolls down a smooth wooden ramp and a rough carpet ramp. On which ramp will the car roll FARTHER?",
+    "display_text": "Which of your five senses tells you if an apple tastes sweet?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-in-05-0001_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "On the smooth wooden ramp, because it has less friction"
+            "display_value": "Taste"
           },
           {
             "option_id": "opt_2",
-            "display_value": "On the rough carpet ramp, because it has more friction"
+            "display_value": "Hearing"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Both ramps will produce the exact same distance"
+            "display_value": "Sight"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Neither ramp will allow the car to move"
+            "display_value": "Touch"
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Smooth surfaces produce less friction, allowing objects to travel farther."
+      "prompt": "Your tongue gives you the sense of taste."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "When you want to find a book and research a topic in the town library, which community educator assists you?",
+    "display_text": "Who helps you find storybooks in the library?",
     "spoken_audio_uri": "assets/audio/world_knowledge/item-w-ko-04-0011_prompt.mp3",
     "visual_assets": []
   },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "A Librarian provides educational guidance."
+      "prompt": "A Librarian helps us learn and read."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "What forms high in the sky when water vapor cools and condenses into tiny water droplets?",
+    "display_text": "What fluffy white shapes float high in the sky on a sunny day?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-kn-09-0002_prompt.mp3",
     "visual_assets": []
   },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Clouds form from condensed water vapor in the atmosphere."
+      "prompt": "Clouds float in the sky."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

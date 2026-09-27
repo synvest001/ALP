@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Read the description: 'Tall towering pine trees rose into the cool mist as pinecones crunched underfoot.' Where is this scene taking place?",
+    "display_text": "Read the clue: 'Gentle waves washed over the warm, sandy beach.' Where is this taking place?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cr-03-0040_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "A pine forest"
+            "display_value": "At the beach"
           },
           {
             "option_id": "opt_2",
-            "display_value": "A swimming pool"
+            "display_value": "In a cave"
           },
           {
             "option_id": "opt_3",
-            "display_value": "An airport runway"
+            "display_value": "At school"
           },
           {
             "option_id": "opt_4",
-            "display_value": "A shopping mall"
+            "display_value": "In a forest"
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The sensory details describe a pine forest."
+      "prompt": "The clues tell us this is at the beach."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

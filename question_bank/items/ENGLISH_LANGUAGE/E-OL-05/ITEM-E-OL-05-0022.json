@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Princess Luna gives directions on how to set up the science project. Which response demonstrates active listening?",
+    "display_text": "When someone is speaking to you, what is the best way to listen?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-ol-05-0022_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "So if I understand correctly, we measure the water first, then add the seeds?"
+            "display_value": "Look and listen quietly"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Yeah yeah, whatever you say."
+            "display_value": "Talk over them"
           },
           {
             "option_id": "opt_3",
-            "display_value": "I wasn't listening at all."
+            "display_value": "Cover your ears"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Just do it yourself."
+            "display_value": "Walk away"
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Active listening checks and confirms understanding."
+      "prompt": "Good listeners look at the speaker and listen quietly."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Which dialogue best matches the helpful voice of a friendly librarian helping a young reader?",
+    "display_text": "What would a friendly dragon say to invite you to play?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cc-05-0011_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,23 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "'Take your time! This wonderful mystery is one of my favorite books.'"
+            "display_value": "'Come play with me!'"
           },
           {
             "option_id": "opt_2",
-            "display_value": "'Do whatever you want.'"
+            "display_value": "'Come play with me!'"
           },
           {
             "option_id": "opt_3",
-            "display_value": "'Books are heavy.'"
+            "display_value": "'Be quiet.'"
           },
           {
             "option_id": "opt_4",
-            "display_value": "'I am eating lunch.'"
+            "display_value": "'Books are rectangular.'"
+          },
+          {
+            "option_id": "opt_5",
+            "display_value": "'I am a rock.'"
           }
         ]
       },
@@ -55,7 +59,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The dialogue should match the character's helpful role."
+      "prompt": "Dialogue should match the character's mood."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."
@@ -67,7 +71,7 @@
   "rubric": {
     "evaluation_mode": "DETERMINISTIC_EXACT_MATCH",
     "correct_criteria": {
-      "selected_option_id": "opt_1"
+      "selected_option_id": "opt_2"
     }
   },
   "safeguard_metadata": {

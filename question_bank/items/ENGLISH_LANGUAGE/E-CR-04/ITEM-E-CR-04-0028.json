@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Read the passage: 'When the team divided tasks and worked together, they cleaned the entire classroom in just ten minutes.' What is the main idea?",
+    "display_text": "Read the sentence: 'Children put away the blocks and books together so the room was tidy.' What were the children doing?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cr-04-0028_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Teamwork makes big tasks faster and easier"
+            "display_value": "Cleaning up"
           },
           {
             "option_id": "opt_2",
-            "display_value": "People should always work alone"
+            "display_value": "Sleeping"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Cleaning classrooms is impossible"
+            "display_value": "Eating lunch"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Desks clean themselves"
+            "display_value": "Swimming"
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The main idea summarizes the key point: Teamwork makes big tasks faster and easier."
+      "prompt": "The main idea is cleaning up."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

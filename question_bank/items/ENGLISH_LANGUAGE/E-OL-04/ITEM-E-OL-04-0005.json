@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "You need help carrying a heavy box of books into the classroom with Liam. How do you ask politely?",
+    "display_text": "You need help tying your shoes. What do you ask?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-ol-04-0005_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Excuse me, could you please help me carry this box?"
+            "display_value": "Could you please help me?"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Carry this right now!"
+            "display_value": "Tie this now!"
           },
           {
             "option_id": "opt_3",
-            "display_value": "You have to do this for me."
+            "display_value": "Do it fast!"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Pick this up, hurry!"
+            "display_value": "You have to help me"
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Polite requests use phrases like 'Could you please'."
+      "prompt": "Use the magic word 'please' when asking for help."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

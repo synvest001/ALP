@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Read the sentence: 'Noah steered the ferry boat safely to the harbor while the passengers rested.' Who carried out this action?",
+    "display_text": "Read the sentence: 'Leo planted sunflower seeds in the garden.' Who planted the seeds?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cr-02-0007_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Noah"
+            "display_value": "Leo"
           },
           {
             "option_id": "opt_2",
-            "display_value": "The bus driver"
+            "display_value": "A puppy"
           },
           {
             "option_id": "opt_3",
-            "display_value": "The train conductor"
+            "display_value": "The teacher"
           },
           {
             "option_id": "opt_4",
-            "display_value": "The lighthouse keeper"
+            "display_value": "A bird"
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The text clearly states that Noah performed the action."
+      "prompt": "Leo is the character in the story."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Cause and Effect: The ground suddenly rumbles violently and pictures on the wall rattle back and forth. What is the most likely cause?",
+    "display_text": "Why did the ice cube melt into a puddle of water?",
     "spoken_audio_uri": "assets/audio/logical_reasoning/item-l-ce-03-0028_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "An earthquake tremor is occurring"
+            "display_value": "It was warm in the room"
           },
           {
             "option_id": "opt_2",
-            "display_value": "A gentle breeze blew by"
+            "display_value": "It got freezing cold"
           },
           {
             "option_id": "opt_3",
-            "display_value": "The sun came out"
+            "display_value": "It was nighttime"
           },
           {
             "option_id": "opt_4",
-            "display_value": "A leaf fell"
+            "display_value": "It was kept in the freezer"
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Ground shaking is caused by seismic earthquake activity."
+      "prompt": "Warmth causes ice to melt."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Proofread for correct capitalization: 'on saturday, alex walked to lincoln park.' Which version is correct?",
+    "display_text": "Which name is capitalized correctly?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-we-02-0020_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "On Saturday, Alex walked to Lincoln Park."
+            "display_value": "Emma"
           },
           {
             "option_id": "opt_2",
-            "display_value": "on Saturday, Alex walked to Lincoln park."
+            "display_value": "emma"
           },
           {
             "option_id": "opt_3",
-            "display_value": "On saturday, alex walked to Lincoln Park."
+            "display_value": "eMma"
           },
           {
             "option_id": "opt_4",
-            "display_value": "on Saturday, alex walked to lincoln park."
+            "display_value": "EMma"
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Capitalize the first word of a sentence, proper names, days of the week, and specific places."
+      "prompt": "Names and days always start with a capital letter."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

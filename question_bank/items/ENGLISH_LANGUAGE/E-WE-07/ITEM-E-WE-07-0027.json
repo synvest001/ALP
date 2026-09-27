@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "In the sentence 'Emma ate a *good* dinner', which vivid adjective best replaces 'good'?",
+    "display_text": "Which word describes an elephant?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-we-07-0027_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "delicious"
+            "display_value": "Huge"
           },
           {
             "option_id": "opt_2",
-            "display_value": "nice"
+            "display_value": "Fly"
           },
           {
             "option_id": "opt_3",
-            "display_value": "fine"
+            "display_value": "Eat"
           },
           {
             "option_id": "opt_4",
-            "display_value": "okay"
+            "display_value": "Table"
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "'delicious' provides much richer descriptive detail."
+      "prompt": "'Huge' is a describing word."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

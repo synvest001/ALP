@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Proofread and repair this run-on sentence: 'The sun came up we packed our gear.'",
+    "display_text": "Which sentence starts with a capital letter and ends with a period?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-we-06-0013_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "The sun came up, so we packed our gear."
+            "display_value": "The sun is warm."
           },
           {
             "option_id": "opt_2",
-            "display_value": "The sun came up we, packed our gear."
+            "display_value": "the sun is warm."
           },
           {
             "option_id": "opt_3",
-            "display_value": "The sun came, up we packed our gear."
+            "display_value": "THE SUN IS WARM?"
           },
           {
             "option_id": "opt_4",
-            "display_value": "The sun came up and we packed, our gear."
+            "display_value": "sun the is warm."
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Connect independent clauses with a comma and a conjunction."
+      "prompt": "Sentences begin with a capital letter and end with a period."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

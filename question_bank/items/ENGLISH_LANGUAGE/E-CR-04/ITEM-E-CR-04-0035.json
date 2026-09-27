@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Read the passage: 'Honeybees visit blooming flowers to sip nectar, carrying pollen from flower to flower so healthy new plants can grow.' What is the main idea?",
+    "display_text": "Read the sentence: 'Honeybees fly to blooming flowers to help new plants grow.' What do bees help?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-cr-04-0035_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Honeybees help plants grow by pollinating them"
+            "display_value": "Flowers grow"
           },
           {
             "option_id": "opt_2",
-            "display_value": "Honeybees sleep all summer long"
+            "display_value": "Cars drive"
           },
           {
             "option_id": "opt_3",
-            "display_value": "Flowers do not need insects"
+            "display_value": "Fish swim"
           },
           {
             "option_id": "opt_4",
-            "display_value": "Honey is made from rainwater"
+            "display_value": "Beds sleep"
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "The main idea summarizes the key point: Honeybees help plants grow by pollinating them."
+      "prompt": "The main idea is flowers grow."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

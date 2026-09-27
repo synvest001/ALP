@@ -894,283 +894,330 @@ def gen_e_rf(subskill: str, idx: int):
 
 
 def gen_e_cr(subskill: str, idx: int):
-    """Comprehension & Response (E-CR: 9 subskills) - ALL VERBAL"""
+    """Comprehension & Response (E-CR: 9 subskills) - ALL VERBAL (Grade 1 / Level 1)"""
     ss_id = int(subskill.split("-")[-1]) if "-" in subskill else 1
     mod = (ss_id - 1) % 9
-    name = NAMES[idx % len(NAMES)]
 
     if mod == 0:
+        # Key details
         stories = [
-            ("found a lost golden key under the garden mat.", "A lost golden key", ["A silver sword", "A diamond ring", "A brass coin"]),
-            ("borrowed an encyclopedia from the school library.", "An encyclopedia", ["A comic book", "A paintbrush", "A dictionary"])
+            ("Maya has a little red wagon.", "What color is Maya's wagon?", "Red", ["Red", "Blue", "Green", "Yellow"]),
+            ("Leo found a shiny golden key.", "What did Leo find?", "A golden key", ["A golden key", "A wooden stick", "A red ball", "A toy car"]),
+            ("Emma brought an apple to school.", "What did Emma bring?", "An apple", ["An apple", "A banana", "A carrot", "An orange"])
         ]
-        story, correct, wrong = stories[idx % len(stories)]
-        prompt = f"Read the passage: '{name} {story}' What object was mentioned?"
-        pool = [correct] + wrong
-        hint = "Read the sentence carefully to find the specific object."
-    elif mod == 1:
-        actions = [
-            ("steered the ferry boat safely to the harbor while the passengers rested.", name, ["The bus driver", "The train conductor", "The lighthouse keeper"]),
-            ("planted sunflower seeds along the garden fence on a sunny morning.", name, ["The postmaster", "The storekeeper", "The librarian"])
-        ]
-        action, correct, wrong = actions[idx % len(actions)]
-        prompt = f"Read the sentence: '{name} {action}' Who carried out this action?"
-        pool = [correct] + wrong
-        hint = f"The text clearly states that {correct} performed the action."
-    elif mod == 2:
-        settings = [
-            ("Gentle ocean waves lapped against the warm, sandy shore lined with palm trees.", "A tropical beach", ["A snowy mountain", "A busy city street", "A desert canyon"]),
-            ("Tall towering pine trees rose into the cool mist as pinecones crunched underfoot.", "A pine forest", ["A swimming pool", "An airport runway", "A shopping mall"])
-        ]
-        passage, correct, wrong = settings[idx % len(settings)]
-        prompt = f"Read the description: '{passage}' Where is this scene taking place?"
-        pool = [correct] + wrong
-        hint = f"The sensory details describe {correct.lower()}."
-    elif mod == 3:
-        ideas = [
-            ("Honeybees visit blooming flowers to sip nectar, carrying pollen from flower to flower so healthy new plants can grow.", "Honeybees help plants grow by pollinating them", ["Honeybees sleep all summer long", "Flowers do not need insects", "Honey is made from rainwater"]),
-            ("When the team divided tasks and worked together, they cleaned the entire classroom in just ten minutes.", "Teamwork makes big tasks faster and easier", ["People should always work alone", "Cleaning classrooms is impossible", "Desks clean themselves"])
-        ]
-        text, correct, wrong = ideas[idx % len(ideas)]
-        prompt = f"Read the passage: '{text}' What is the main idea?"
-        pool = [correct] + wrong
-        hint = f"The main idea summarizes the key point: {correct}."
-    elif mod == 4:
-        ce_stories = [
-            ("Because heavy rain poured down all night, the school sports day was postponed.", "The sports day was postponed", "The heavy rain poured down", ["The sun was shining brightly", "The students forgot their shoes", "The grass was painted"]),
-            ("Since the car battery was completely drained, the engine would not start in the morning.", "The engine would not start", "The battery was completely drained", ["The car had no wheels", "The driver fell asleep", "The road was closed"])
-        ]
-        text, eff, cause, wrong = ce_stories[idx % len(ce_stories)]
-        prompt = f"Read the sentence: '{text}' What was the direct CAUSE of this event?"
-        correct = cause
-        pool = [cause] + wrong
-        hint = f"'{cause}' is what caused '{eff}'."
-    elif mod == 5:
-        seqs = [
-            ("First, Maya cracked the eggs into a bowl. Next, she whisked them with milk. Finally, she cooked them in a warm pan.", "Cracked the eggs into a bowl", ["Whisked them with milk", "Cooked them in a pan", "Washed the dishes"]),
-            ("First, Leo opened his notebook. Next, he sharpened his pencil. Finally, he began writing his essay.", "Opened his notebook", ["Sharpened his pencil", "Began writing his essay", "Closed his backpack"])
-        ]
-        text, correct, wrong = seqs[idx % len(seqs)]
-        prompt = f"Read the sequence: '{text}' What happened FIRST?"
-        pool = [correct] + wrong
-        hint = "Look for the sequence word 'First' to identify the initial step."
-    elif mod == 6:
-        conflicts = [
-            ("The school garden plants were wilting because the garden hose had a large tear.", "The garden hose had a large tear", ["The sun was warm", "The flowers were blooming", "The fence was newly painted"]),
-            ("The bicycle would not roll forward because a stick was wedged tightly in the spokes.", "A stick was wedged in the spokes", ["The tires had plenty of air", "The helmet was red", "The road was flat"])
-        ]
-        text, correct, wrong = conflicts[idx % len(conflicts)]
-        prompt = f"Read the situation: '{text}' What is the main problem?"
-        pool = [correct] + wrong
-        hint = f"The obstacle is that {correct.lower()}."
-    elif mod == 7:
-        solutions = [
-            ("To solve the problem of the torn garden hose, Leo wrapped water-resistant tape around the leak.", "Wrapped water-resistant tape around the leak", ["Turned the water on higher", "Threw the plants away", "Left the garden"]),
-            ("To fix the bicycle, Maya carefully pulled the wedged stick out from between the spokes.", "Pulled the wedged stick out from the spokes", ["Painted the bicycle frame", "Rode on the sidewalk", "Bought a new bell"])
-        ]
-        text, correct, wrong = solutions[idx % len(solutions)]
-        prompt = f"Read the resolution: '{text}' How was the problem solved?"
-        pool = [correct] + wrong
-        hint = f"The solution was: {correct.lower()}."
-    else:
-        feelings = [
-            ("opened her birthday card and found a handwritten note from her best friend. A wide smile spread across her face as she hugged the card.", "Joyful and grateful", ["Angry and bitter", "Terrified and worried", "Bored and sleepy"]),
-            ("worked for hours building a tall wooden block tower, but it accidentally tumbled to the floor. His shoulders slumped and he let out a sad sigh.", "Disappointed and frustrated", ["Overjoyed and excited", "Eager to dance", "Amused and cheerful"])
-        ]
-        action, correct, wrong = feelings[idx % len(feelings)]
-        prompt = f"Read the excerpt: '{name} {action}' How was {name} feeling?"
-        pool = [correct] + wrong
-        hint = f"The character's body language shows they felt {correct.lower()}."
+        text, q, correct, pool = stories[idx % len(stories)]
+        prompt = f"Read the sentence: '{text}' {q}"
+        return prompt, correct, pool, f"The sentence says it is {correct.lower()}.", "VERBAL", None
 
-    return prompt, correct, pool, hint, "VERBAL", None
+    elif mod == 1:
+        # Characters
+        chars = [
+            ("Leo planted sunflower seeds in the garden.", "Who planted the seeds?", "Leo", ["Leo", "A puppy", "The teacher", "A bird"]),
+            ("Maya rode her bicycle to the park.", "Who rode the bicycle?", "Maya", ["Maya", "The cat", "A rabbit", "The driver"]),
+            ("Noah read a funny book about dinosaurs.", "Who read the book?", "Noah", ["Noah", "A monkey", "The puppy", "A frog"])
+        ]
+        text, q, correct, pool = chars[idx % len(chars)]
+        prompt = f"Read the sentence: '{text}' {q}"
+        return prompt, correct, pool, f"{correct} is the character in the story.", "VERBAL", None
+
+    elif mod == 2:
+        # Setting
+        settings = [
+            ("Gentle waves washed over the warm, sandy beach.", "Where is this taking place?", "At the beach", ["At the beach", "In a cave", "At school", "In a forest"]),
+            ("Tall pine trees grew all around as birds sang in the branches.", "Where is this scene?", "In the forest", ["In the forest", "At the airport", "In a pool", "In a store"]),
+            ("Desks were lined in neat rows and books rested on the shelves.", "Where is this room?", "In a classroom", ["In a classroom", "In a garden", "In a kitchen", "On a farm"])
+        ]
+        text, q, correct, pool = settings[idx % len(settings)]
+        prompt = f"Read the clue: '{text}' {q}"
+        return prompt, correct, pool, f"The clues tell us this is {correct.lower()}.", "VERBAL", None
+
+    elif mod == 3:
+        # Main idea
+        ideas = [
+            ("Honeybees fly to blooming flowers to help new plants grow.", "What do bees help?", "Flowers grow", ["Flowers grow", "Cars drive", "Fish swim", "Beds sleep"]),
+            ("Children put away the blocks and books together so the room was tidy.", "What were the children doing?", "Cleaning up", ["Cleaning up", "Sleeping", "Eating lunch", "Swimming"])
+        ]
+        text, q, correct, pool = ideas[idx % len(ideas)]
+        prompt = f"Read the sentence: '{text}' {q}"
+        return prompt, correct, pool, f"The main idea is {correct.lower()}.", "VERBAL", None
+
+    elif mod == 4:
+        # Cause and effect
+        ce = [
+            ("Because it started to rain, Emma opened her umbrella.", "Why did Emma open her umbrella?", "It started to rain", ["It started to rain", "It was sunny", "It was bedtime", "It was hot"]),
+            ("Because the sun was so hot, the snowman began to melt.", "Why did the snowman melt?", "The sun was hot", ["The sun was hot", "It was freezing", "It was night", "It was windy"])
+        ]
+        text, q, correct, pool = ce[idx % len(ce)]
+        prompt = f"Read: '{text}' {q}"
+        return prompt, correct, pool, f"The cause was: {correct.lower()}.", "VERBAL", None
+
+    elif mod == 5:
+        # Sequence
+        seqs = [
+            ("First, Tom put on his socks. Next, he put on his shoes.", "What did Tom put on FIRST?", "Socks", ["Socks", "Shoes", "Hat", "Coat"]),
+            ("First, Maya poured milk in a bowl. Next, she added cereal.", "What did Maya do FIRST?", "Poured milk", ["Poured milk", "Added cereal", "Ate lunch", "Washed dishes"])
+        ]
+        text, q, correct, pool = seqs[idx % len(seqs)]
+        prompt = f"Read: '{text}' {q}"
+        return prompt, correct, pool, f"The first step was {correct.lower()}.", "VERBAL", None
+
+    elif mod == 6:
+        # Problem
+        probs = [
+            ("The puppy was hungry and barked at its empty food bowl.", "What was the puppy's problem?", "It was hungry", ["It was hungry", "It was too full", "It was sleepy", "It was flying"]),
+            ("Maya could not find her red crayon in the box.", "What was Maya's problem?", "Lost crayon", ["Lost crayon", "Broken shoes", "Too much food", "Rainy day"])
+        ]
+        text, q, correct, pool = probs[idx % len(probs)]
+        prompt = f"Read: '{text}' {q}"
+        return prompt, correct, pool, f"The problem is that {correct.lower()}.", "VERBAL", None
+
+    elif mod == 7:
+        # Solution
+        sols = [
+            ("The kitten was stuck in a low tree, so Dad helped it down.", "How was the kitten helped?", "Dad helped it down", ["Dad helped it down", "Dad walked away", "Dad climbed a roof", "Dad sang a song"]),
+            ("Leo's pencil broke, so he sharpened it with a sharpener.", "How did Leo fix his pencil?", "Sharpened it", ["Sharpened it", "Threw it away", "Ate it", "Painted it"])
+        ]
+        text, q, correct, pool = sols[idx % len(sols)]
+        prompt = f"Read: '{text}' {q}"
+        return prompt, correct, pool, f"The solution was: {correct.lower()}.", "VERBAL", None
+
+    else:
+        # Feelings / Inferences
+        feels = [
+            ("Maya smiled and jumped with joy when she saw the puppy.", "How did Maya feel?", "Happy", ["Happy", "Sad", "Angry", "Sleepy"]),
+            ("Leo lost his favorite toy and a tear rolled down his cheek.", "How did Leo feel?", "Sad", ["Sad", "Excited", "Cheerful", "Silly"])
+        ]
+        text, q, correct, pool = feels[idx % len(feels)]
+        prompt = f"Read: '{text}' {q}"
+        return prompt, correct, pool, f"The clue shows {correct.lower()}.", "VERBAL", None
 
 
 def gen_e_cc(subskill: str, idx: int):
-    """Creative & Composition (E-CC: 6 subskills) - ALL VERBAL"""
+    """Creative & Composition (E-CC: 6 subskills) - ALL VERBAL (Grade 1 / Level 1)"""
     ss_id = int(subskill.split("-")[-1]) if "-" in subskill else 1
     mod = (ss_id - 1) % 6
-    name = NAMES[idx % len(NAMES)]
 
     if mod == 0:
         endings = [
-            ("dropped his flashlight in the dark tent, so...", "He carefully reached for his lantern on the bedside table.", ["He flew up into the clouds.", "He became a master chef.", "He turned invisible."]),
-            ("saw that the wooden bridge was washed out by the stream, so...", "They walked upstream to find a shallow spot to cross.", ["They sprouted wings and flew.", "They drank hot cocoa.", "They fell asleep in the water."])
+            ("Leo dropped his crayon under the desk, so he...", "picked it up", ["picked it up", "flew away", "took a nap", "ate his shoe"]),
+            ("The puppy was thirsty, so Maya gave it...", "a bowl of water", ["a bowl of water", "a book", "a shoe", "a pencil"]),
+            ("It started to rain outside, so the children...", "went indoors", ["went indoors", "turned invisible", "went to sleep", "planted trees"])
         ]
         start, correct, wrong = endings[idx % len(endings)]
-        prompt = f"Choose a logical ending to the story: {name} {start}"
+        prompt = f"Choose the best ending to finish the sentence: '{start}'"
         pool = [correct] + wrong
-        hint = "Consider what realistically resolves the situation."
-    elif mod == 1:
-        q_scenarios = [
-            ("discovered an unfamiliar footprint in the garden soil.", "Which animal made this footprint in the garden?", ["What time is breakfast?", "Why is water wet?", "What color is a banana?"]),
-            ("found an old, locked wooden box in the attic.", "What key opens this old wooden box?", ["How many pennies make a dollar?", "Why is the grass green?", "Who likes ice cream?"])
-        ]
-        scen, correct, wrong = q_scenarios[idx % len(q_scenarios)]
-        prompt = f"Question Generation: {name} {scen} Which is the best investigative question to ask?"
-        pool = [correct] + wrong
-        hint = "An investigative question directly addresses the situation."
-    elif mod == 2:
-        hooks = [
-            ("exploring an ancient cave", "Deep inside the limestone cave, a warm golden glow reflected off the underground river.", ["Caves have rocks.", "Water is clear.", "Flashlights use batteries."]),
-            ("a sudden thunderstorm", "Dark thunderclouds rolled across the sky as the first cold drops of rain pelted the window.", ["Rain is wet.", "Summer has weather.", "Windows are made of glass."])
-        ]
-        topic, correct, wrong = hooks[idx % len(hooks)]
-        prompt = f"Choose the most engaging opening sentence for a story about {topic}:"
-        pool = [correct] + wrong
-        hint = "An engaging hook creates immediate interest and vivid imagery."
-    elif mod == 3:
-        sensory = [
-            ("a peaceful autumn morning", "Crisp golden leaves crunched underfoot as a gentle breeze carried the sweet scent of woodsmoke.", ["It was morning time.", "Leaves fall in autumn.", "People walk on roads."]),
-            ("a warm bakery", "The comforting aroma of freshly baked cinnamon bread and warm vanilla filled the cozy shop.", ["Bakeries sell food.", "Bread is made from flour.", "Ovens get hot."])
-        ]
-        setting, correct, wrong = sensory[idx % len(sensory)]
-        prompt = f"Which sentence adds the richest sensory details describing {setting}?"
-        pool = [correct] + wrong
-        hint = "Sensory details appeal to sight, sound, smell, and touch."
-    elif mod == 4:
-        dialogues = [
-            ("a friendly librarian helping a young reader", "'Take your time! This wonderful mystery is one of my favorite books.'", ["'Do whatever you want.'", "'Books are heavy.'", "'I am eating lunch.'"]),
-            ("a hiking guide giving safety advice", "'Stay together on the marked trail and keep your water bottles filled.'", ["'Run as fast as you can!'", "'I forgot where we are.'", "'Trails have dirt.'"])
-        ]
-        context, correct, wrong = dialogues[idx % len(dialogues)]
-        prompt = f"Which dialogue best matches the helpful voice of {context}?"
-        pool = [correct] + wrong
-        hint = "The dialogue should match the character's helpful role."
-    else:
-        transitions = [
-            ("Maya finished studying her spelling list. ___, she took the practice quiz.", "Afterward", ["Suddenly", "Because it was raining", "Many years ago"]),
-            ("The school bell rang. ___, the students lined up neatly at the classroom door.", "Immediately", ["In conclusion", "On the other hand", "Yesterday"])
-        ]
-        sent, correct, wrong = transitions[idx % len(transitions)]
-        prompt = f"Choose the smoothest transition word to connect these events: '{sent}'"
-        pool = [correct] + wrong
-        hint = f"'{correct}' clearly indicates the timing of the next event."
+        return prompt, correct, pool, "Pick the action that makes natural sense.", "VERBAL", None
 
-    return prompt, correct, pool, hint, "VERBAL", None
+    elif mod == 1:
+        qs = [
+            ("You found a lost puppy with a collar. What should you ask?", "Where is your home?", ["Where is your home?", "What time is dinner?", "Can you do math?", "How tall is a tree?"]),
+            ("A classmate is crying on the bench. What is kind to ask?", "Are you okay?", ["Are you okay?", "Why are you loud?", "Can I have your lunch?", "Where is the bus?"])
+        ]
+        scen, correct, wrong = qs[idx % len(qs)]
+        prompt = scen
+        pool = [correct] + wrong
+        return prompt, correct, pool, "Ask a helpful question.", "VERBAL", None
+
+    elif mod == 2:
+        starters = [
+            ("Which is the best beginning for a story about a kitten?", "A little kitten found a soft ball of yarn.", ["A little kitten found a soft ball of yarn.", "Apples are red.", "Rain is wet.", "Desks are wooden."]),
+            ("Which is the best beginning for a story about a spaceship?", "The shiny rocket blasted into the starry sky.", ["The shiny rocket blasted into the starry sky.", "Pencils have erasers.", "Cats like milk.", "The door closed."])
+        ]
+        prompt, correct, wrong = starters[idx % len(starters)]
+        pool = [correct] + wrong
+        return prompt, correct, pool, "A good story starter introduces the subject.", "VERBAL", None
+
+    elif mod == 3:
+        descs = [
+            ("Which sentence describes a sweet red strawberry best?", "A sweet, juicy red berry.", ["A sweet, juicy red berry.", "It is a thing.", "Berries are round.", "Food is eaten."]),
+            ("Which words describe a soft fluffy bunny best?", "A soft, fluffy little bunny.", ["A soft, fluffy little bunny.", "An animal with legs.", "Bunnies exist.", "Things that move."])
+        ]
+        prompt, correct, wrong = descs[idx % len(descs)]
+        pool = [correct] + wrong
+        return prompt, correct, pool, "Descriptive words help you picture the item.", "VERBAL", None
+
+    elif mod == 4:
+        talk = [
+            ("What would a friendly dragon say to invite you to play?", "'Come play with me!'", ["'Come play with me!'", "'Be quiet.'", "'Books are rectangular.'", "'I am a rock.'"]),
+            ("What does a cheerful bird seem to say in the morning?", "'Chirp chirp, wake up!'", ["'Chirp chirp, wake up!'", "'Go away.'", "'Pencils are sharp.'", "'Nighttime is here.'"])
+        ]
+        prompt, correct, wrong = talk[idx % len(talk)]
+        pool = [correct] + wrong
+        return prompt, correct, pool, "Dialogue should match the character's mood.", "VERBAL", None
+
+    else:
+        conns = [
+            ("First we played tag. ___, we ate a healthy snack.", "Next", ["Next", "Yesterday", "Never", "Because"]),
+            ("The sun came up, ___ the birds began to sing.", "and", ["and", "but", "or", "so"])
+        ]
+        sent, correct, wrong = conns[idx % len(conns)]
+        prompt = f"Fill in the missing word: '{sent}'"
+        pool = [correct] + wrong
+        return prompt, correct, pool, f"'{correct}' connects the two events naturally.", "VERBAL", None
 
 
 def gen_e_we(subskill: str, idx: int):
-    """Written Expression & Editing (E-WE: 9 subskills) - ALL VERBAL"""
+    """Written Expression & Editing (E-WE: 9 subskills) - ALL VERBAL (Grade 1 / Level 1)"""
     ss_id = int(subskill.split("-")[-1]) if "-" in subskill else 1
     mod = (ss_id - 1) % 9
 
     if mod == 0:
-        errors = [("The students is happy.", "The students are happy.", ["The student are happy.", "Students is happy.", "Happy is the students."]),
-                  ("She run fast.", "She runs fast.", ["She running fast.", "She runned fast.", "Her runs fast."]),
-                  ("They was ready.", "They were ready.", ["They is ready.", "Them was ready.", "They ready was."])]
-        bad, correct, wrong = errors[idx % len(errors)]
-        prompt = f"Fix the grammar error in this sentence: '{bad}'"
-        pool = [correct] + wrong
-        hint = "Make sure the subject and verb agree in number."
-    elif mod == 1:
-        caps = [
-            ("yesterday, maya visited london.", "Yesterday, Maya visited London.", ["yesterday, Maya visited London.", "Yesterday, maya visited london.", "Yesterday, Maya Visited london."]),
-            ("on saturday, alex walked to lincoln park.", "On Saturday, Alex walked to Lincoln Park.", ["on Saturday, Alex walked to Lincoln park.", "On saturday, alex walked to Lincoln Park.", "on Saturday, alex walked to lincoln park."])
+        # Subject-verb agreement
+        sents = [
+            ("The cat is happy.", ["The cat are happy.", "Cat the is happy.", "The cat am happy."]),
+            ("The dogs run fast.", ["The dogs runs fast.", "The dog run fast.", "Runs the dogs fast."]),
+            ("We are ready.", ["We is ready.", "We am ready.", "Ready we is."])
         ]
-        bad, correct, wrong = caps[idx % len(caps)]
-        prompt = f"Proofread for correct capitalization: '{bad}' Which version is correct?"
+        correct, wrong = sents[idx % len(sents)]
+        prompt = "Which sentence is written correctly?"
         pool = [correct] + wrong
-        hint = "Capitalize the first word of a sentence, proper names, days of the week, and specific places."
-    elif mod == 2:
-        puncts = [
-            ("Look out for that bicycle", "Look out for that bicycle!", ["Look out for that bicycle?", "Look out for that bicycle.", "Look out for that bicycle,"]),
-            ("What time does the library open", "What time does the library open?", ["What time does the library open.", "What time does the library open!", "What time does the library open,"])
-        ]
-        bad, correct, wrong = puncts[idx % len(puncts)]
-        prompt = f"Add the correct end punctuation mark to complete this sentence: '{bad}'"
-        pool = [correct] + wrong
-        hint = "Use exclamation marks for urgent warnings, and question marks for inquiries."
-    elif mod == 3:
-        plurals = [("box", "boxes", ["boxs", "boxies", "boxen"]), ("fox", "foxes", ["foxs", "foxies", "foxen"]), ("leaf", "leaves", ["leafs", "leafes", "leavs"]), ("city", "cities", ["citys", "cityes", "cites"])]
-        sing, correct, wrong = plurals[idx % len(plurals)]
-        prompt = f"What is the correct plural spelling of '{sing}'?"
-        pool = [correct] + wrong
-        hint = f"The plural of '{sing}' is '{correct}'."
-    elif mod == 4:
-        conts = [("do not", "don't", ["dont", "do'nt", "d'ont"]), ("cannot", "can't", ["cant", "ca'nt", "cann't"]), ("it is", "it's", ["its", "i'ts", "it'is"]), ("we will", "we'll", ["well", "we'ill", "w'ell"])]
-        full, correct, wrong = conts[idx % len(conts)]
-        prompt = f"Which option correctly shortens '{full}' into a contraction?"
-        pool = [correct] + wrong
-        hint = f"The apostrophe replaces omitted letters: '{full}' becomes '{correct}'."
-    elif mod == 5:
-        runons = [
-            ("The sun came up we packed our gear.", "The sun came up, so we packed our gear.", ["The sun came up we, packed our gear.", "The sun came, up we packed our gear.", "The sun came up and we packed, our gear."]),
-            ("The dog barked loudly the cat climbed the fence.", "The dog barked loudly, and the cat climbed the fence.", ["The dog barked loudly and, the cat climbed the fence.", "The dog barked, loudly the cat climbed the fence.", "The dog barked loudly the cat, climbed the fence."])
-        ]
-        bad, correct, wrong = runons[idx % len(runons)]
-        prompt = f"Proofread and repair this run-on sentence: '{bad}'"
-        pool = [correct] + wrong
-        hint = "Connect independent clauses with a comma and a conjunction."
-    elif mod == 6:
-        adjs = [
-            ("In the sentence 'Emma ate a *good* dinner', which vivid adjective best replaces 'good'?", "delicious", ["nice", "fine", "okay"]),
-            ("In the sentence 'Leo saw a *big* tree', which vivid word best replaces 'big'?", "towering", ["large", "wide", "tall"])
-        ]
-        prompt_q, correct, wrong = adjs[idx % len(adjs)]
-        prompt = prompt_q
-        pool = [correct] + wrong
-        hint = f"'{correct}' provides much richer descriptive detail."
-    elif mod == 7:
-        combos = [
-            ("The wind blew hard.", "The kite flew high.", "The wind blew hard, so the kite flew high.", ["The wind blew hard but the kite flew high.", "The wind blew hard because the kite flew high.", "The wind blew hard or the kite flew high."]),
-            ("Alex read the chapter.", "He answered the questions.", "Alex read the chapter and answered the questions.", ["Alex read the chapter but answered the questions.", "Alex read the chapter or answered the questions.", "Alex read the chapter so answered the questions."])
-        ]
-        s1, s2, correct, wrong = combos[idx % len(combos)]
-        prompt = f"Combine these two sentences into one effective sentence: '{s1}' and '{s2}'"
-        pool = [correct] + wrong
-        hint = "Choose the conjunction that shows the logical connection."
-    else:
-        spells = [
-            ("The students walked down the school passige.", "passage", ["school", "students", "walked"]),
-            ("We observed a wonderfull sunset over the hills.", "wonderful", ["observed", "sunset", "hills"]),
-            ("The firefighter wore a protective sheild.", "shield", ["firefighter", "protective", "wore"])
-        ]
-        sent, correct, wrong = spells[idx % len(spells)]
-        prompt = f"Find the misspelled word in this sentence: '{sent}'"
-        pool = [correct] + wrong
-        hint = f"The correct spelling is '{correct}'."
+        return prompt, correct, pool, "Use words that match.", "VERBAL", None
 
-    return prompt, correct, pool, hint, "VERBAL", None
+    elif mod == 1:
+        # Capitalization of names/days
+        caps = [
+            ("Which word should ALWAYS start with a capital letter?", "Monday", ["Monday", "happy", "tree", "apple"]),
+            ("Which name is capitalized correctly?", "Emma", ["Emma", "emma", "eMma", "EMma"]),
+            ("Which day of the week is capitalized correctly?", "Friday", ["Friday", "friday", "friDay", "fridaY"])
+        ]
+        prompt, correct, pool = caps[idx % len(caps)]
+        return prompt, correct, pool, "Names and days always start with a capital letter.", "VERBAL", None
+
+    elif mod == 2:
+        # Punctuation marks
+        puncts = [
+            ("Which mark goes at the end of: 'Where is my dog___'?", "?", ["?", ".", "!", ","]),
+            ("Which mark goes at the end of a statement: 'The cat is sleeping___'?", ".", [".", "?", "!", ","]),
+            ("Which mark shows excitement: 'Look at that huge rainbow___'?", "!", ["!", ".", "?", ","])
+        ]
+        prompt, correct, pool = puncts[idx % len(puncts)]
+        return prompt, correct, pool, "Questions end with a question mark (?).", "VERBAL", None
+
+    elif mod == 3:
+        # Simple plurals (-s)
+        plurals = [
+            ("What is the plural of 'dog'?", "dogs", ["dogs", "doges", "dogz", "dogies"]),
+            ("What is the plural of 'cat'?", "cats", ["cats", "cates", "catz", "caties"]),
+            ("What is the plural of 'bird'?", "birds", ["birds", "birdes", "birdz", "birdies"])
+        ]
+        prompt, correct, pool = plurals[idx % len(plurals)]
+        return prompt, correct, pool, f"Add -s to make it plural: {correct}.", "VERBAL", None
+
+    elif mod == 4:
+        # Plurals with -es
+        plurals_es = [
+            ("What is the plural of 'box'?", "boxes", ["boxes", "boxs", "boxies", "boxen"]),
+            ("What is the plural of 'fox'?", "foxes", ["foxes", "foxs", "foxies", "foxen"]),
+            ("What is the plural of 'bus'?", "buses", ["buses", "buss", "busies", "busen"])
+        ]
+        prompt, correct, pool = plurals_es[idx % len(plurals_es)]
+        return prompt, correct, pool, f"Words ending in x or s add -es: {correct}.", "VERBAL", None
+
+    elif mod == 5:
+        # Capital letter at start of sentence
+        sents = [
+            ("Which sentence starts with a capital letter and ends with a period?", "The sun is warm.", ["The sun is warm.", "the sun is warm.", "THE SUN IS WARM?", "sun the is warm."]),
+            ("Which sentence is written correctly?", "We love to read.", ["We love to read.", "we love to read.", "WE LOVE TO READ?", "read we love to."])
+        ]
+        prompt, correct, pool = sents[idx % len(sents)]
+        return prompt, correct, pool, "Sentences begin with a capital letter and end with a period.", "VERBAL", None
+
+    elif mod == 6:
+        # Describing words (Adjectives)
+        adjs = [
+            ("Which word describes the color of grass?", "Green", ["Green", "Run", "Tree", "From"]),
+            ("Which word describes how a kitten feels?", "Soft", ["Soft", "Jump", "Walk", "Door"]),
+            ("Which word describes an elephant?", "Huge", ["Huge", "Fly", "Eat", "Table"])
+        ]
+        prompt, correct, pool = adjs[idx % len(adjs)]
+        return prompt, correct, pool, f"'{correct}' is a describing word.", "VERBAL", None
+
+    elif mod == 7:
+        # Connecting words (and, but)
+        connects = [
+            ("I like apples ___ I like oranges.", "and", ["and", "or", "so", "but"]),
+            ("I ran fast, ___ I was not tired.", "but", ["but", "and", "or", "so"])
+        ]
+        sent, correct, wrong = connects[idx % len(connects)]
+        prompt = f"Fill in the missing connecting word: '{sent}'"
+        pool = [correct] + wrong
+        return prompt, correct, pool, f"Use '{correct}' to connect the ideas.", "VERBAL", None
+
+    else:
+        # Grade 1 spelling
+        spells = [
+            ("Which word is spelled correctly?", "friend", ["friend", "frend", "frind", "frien"]),
+            ("Which word is spelled correctly?", "little", ["little", "litel", "littel", "litul"]),
+            ("Which word is spelled correctly?", "water", ["water", "watur", "watter", "wahtur"])
+        ]
+        prompt, correct, pool = spells[idx % len(spells)]
+        return prompt, correct, pool, f"The correct spelling is '{correct}'.", "VERBAL", None
 
 
 def gen_e_ol(subskill: str, idx: int):
-    """Oral Language & Communication (E-OL: 6 subskills) - ALL VERBAL"""
+    """Oral Language & Communication (E-OL: 6 subskills) - ALL VERBAL (Grade 1 / Level 1)"""
     ss_id = int(subskill.split("-")[-1]) if "-" in subskill else 1
     mod = (ss_id - 1) % 6
-    name = NAMES[idx % len(NAMES)]
 
     if mod == 0:
-        prompt = f"You are introduced to the school principal alongside {name}. What is the most polite and respectful greeting?"
-        correct = "Good morning, Principal Davis, it is nice to meet you."
-        pool = [correct, "Hey there!", "What's up?", "Yo, what are you doing here?"]
-        hint = "Formal introductions require respectful greetings."
-    elif mod == 1:
-        prompt = f"You accidentally bump into {name} in the hallway and drop their notebook. What is the most courteous apology?"
-        correct = "I am so sorry for my carelessness! Let me help pick that up."
-        pool = [correct, "You were standing in my way!", "Whatever, it's just paper.", "Watch where you're walking!"]
-        hint = "A genuine apology expresses regret and offers help."
-    elif mod == 2:
-        prompt = f"{name} shares an extra pencil with you when yours breaks during class. What is the most polite response?"
-        correct = "Thank you so much, I really appreciate your help."
-        pool = [correct, "Give me an eraser too.", "Took you long enough.", "I didn't ask for this."]
-        hint = "Expressing gratitude acknowledges kindness warmly."
-    elif mod == 3:
-        prompt = f"You need help carrying a heavy box of books into the classroom with {name}. How do you ask politely?"
-        correct = "Excuse me, could you please help me carry this box?"
-        pool = [correct, "Carry this right now!", "You have to do this for me.", "Pick this up, hurry!"]
-        hint = "Polite requests use phrases like 'Could you please'."
-    elif mod == 4:
-        prompt = f"{name} gives directions on how to set up the science project. Which response demonstrates active listening?"
-        correct = "So if I understand correctly, we measure the water first, then add the seeds?"
-        pool = [correct, "Yeah yeah, whatever you say.", "I wasn't listening at all.", "Just do it yourself."]
-        hint = "Active listening checks and confirms understanding."
-    else:
-        prompt = f"A new student asks {name} for directions to the cafeteria. Which response gives the clearest directions?"
-        correct = "Walk straight down this hallway, turn left at the art room, and the cafeteria is on your right."
-        pool = [correct, "Go somewhere over there and look around.", "It's near a door, you can't miss it.", "Just wander until you find food."]
-        hint = "Clear directions use sequential landmarks and turns."
+        # E-OL-01: Greetings
+        greetings = [
+            ("Your teacher welcomes you in the morning. What do you say?", "Good morning!", ["Good morning!", "Goodbye!", "Go away", "Be quiet"]),
+            ("You meet a new friend at the park. What is a friendly greeting?", "Hello, nice to meet you!", ["Hello, nice to meet you!", "Go away!", "Don't look at me", "Nothing"]),
+            ("It is time to leave school at the end of the day. What do you say?", "See you tomorrow!", ["See you tomorrow!", "Never come back", "Be quiet", "Give me that"])
+        ]
+        prompt, correct, pool = greetings[idx % len(greetings)]
+        return prompt, correct, pool, "We use kind words to greet others.", "VERBAL", None
 
-    return prompt, correct, pool, hint, "VERBAL", None
+    elif mod == 1:
+        # E-OL-02: Apologies
+        apologies = [
+            ("You accidentally bump into a friend. What is the kind thing to say?", "I'm sorry!", ["I'm sorry!", "Move away!", "Not my fault!", "Watch out!"]),
+            ("You accidentally drop a friend's crayon. What do you say?", "Sorry, let me help pick it up!", ["Sorry, let me help!", "You dropped it", "I don't care", "Whatever"]),
+            ("You interrupted someone while they were speaking. What should you say?", "Excuse me, sorry!", ["Excuse me, sorry!", "Stop talking!", "Listen to me now!", "I don't care"])
+        ]
+        prompt, correct, pool = apologies[idx % len(apologies)]
+        return prompt, correct, pool, "A kind apology says sorry politely.", "VERBAL", None
+
+    elif mod == 2:
+        # E-OL-03: Gratitude
+        gratitude = [
+            ("A classmate shares their crayons with you. What do you say?", "Thank you!", ["Thank you!", "Give me more!", "Took you long enough", "Nothing"]),
+            ("Someone holds the door open for you. What is polite to say?", "Thank you so much!", ["Thank you so much!", "Close it!", "I didn't ask", "Hurry up"]),
+            ("You receive a nice birthday gift. What do you say?", "Thank you, I love it!", ["Thank you, I love it!", "I wanted something else", "Take it back", "No"])
+        ]
+        prompt, correct, pool = gratitude[idx % len(gratitude)]
+        return prompt, correct, pool, "Always say thank you when someone is kind.", "VERBAL", None
+
+    elif mod == 3:
+        # E-OL-04: Polite requests
+        requests = [
+            ("You want to borrow a blue crayon. How do you ask politely?", "May I please borrow that?", ["May I please borrow that?", "Give it to me!", "Mine now!", "Hand it over!"]),
+            ("You need help tying your shoes. What do you ask?", "Could you please help me?", ["Could you please help me?", "Tie this now!", "Do it fast!", "You have to help me"]),
+            ("You would like a drink of water. How do you ask nicely?", "May I get a drink, please?", ["May I get a drink, please?", "Give water now!", "I'm taking this", "Water!"])
+        ]
+        prompt, correct, pool = requests[idx % len(requests)]
+        return prompt, correct, pool, "Use the magic word 'please' when asking for help.", "VERBAL", None
+
+    elif mod == 4:
+        # E-OL-05: Good listening habits
+        listening = [
+            ("When someone is speaking to you, what is the best way to listen?", "Look and listen quietly", ["Look and listen quietly", "Talk over them", "Cover your ears", "Walk away"]),
+            ("How do you show that you are paying attention to storytime?", "Sit quietly and listen", ["Sit quietly and listen", "Shout across the room", "Play with toys", "Run around"]),
+            ("If you did not hear what someone said, what should you say politely?", "Could you please repeat that?", ["Could you please repeat that?", "Why did you yell?", "I wasn't listening", "Whatever"])
+        ]
+        prompt, correct, pool = listening[idx % len(listening)]
+        return prompt, correct, pool, "Good listeners look at the speaker and listen quietly.", "VERBAL", None
+
+    else:
+        # E-OL-06: Welcoming and including others
+        including = [
+            ("A classmate is sitting alone at recess. What can you say to include them?", "Would you like to play with us?", ["Would you like to play?", "You can't play here", "Go away", "Leave us alone"]),
+            ("A new student joins your class table. What is a welcoming thing to say?", "Welcome! You can sit with us.", ["Welcome! Sit with us.", "This table is full", "Go away", "No new kids"]),
+            ("Your group needs one more player for a game. What do you say to a friend?", "Come join our game!", ["Come join our game!", "You're not good enough", "We don't want you", "Go away"])
+        ]
+        prompt, correct, pool = including[idx % len(including)]
+        return prompt, correct, pool, "We use kind words to welcome and include everyone.", "VERBAL", None
 
 
 # ----------------------------------------------------------------------
@@ -1183,70 +1230,70 @@ def gen_s_kn(subskill: str, idx: int):
     mod = (ss_id - 1) % 11
 
     if mod == 0:
-        prompt = "Which animal breathes underwater by taking in oxygen through gills?"
+        prompt = "Which animal breathes underwater by taking in water through gills?"
         correct = "Shark"
         pool = ["Shark", "Dolphin", "Sea Turtle", "Penguin"]
-        hint = "Fish and sharks use gills to extract oxygen from water."
+        hint = "Fish and sharks use gills to breathe underwater."
         return prompt, correct, pool, hint, "VISUAL", build_creature_or_entity_svg("shark")
     elif mod == 1:
-        prompt = "Look at the insect/arachnid shown above. It has exactly eight jointed legs. What is it?"
+        prompt = "Look at the creature shown above. It has exactly eight legs. What is it?"
         correct = "Spider"
         pool = ["Spider", "Ant", "Beetle", "Butterfly"]
-        hint = "Insects have 6 legs, whereas spiders (arachnids) have 8 legs."
+        hint = "Spiders have 8 legs."
         return prompt, correct, pool, hint, "VISUAL", build_creature_or_entity_svg("spider")
     elif mod == 2:
-        prompt = "Look at the mighty tree shown above. Which tree grows from an acorn seed?"
+        prompt = "Look at the tree shown above. Which tree grows from a little acorn seed?"
         correct = "Oak tree"
         pool = ["Oak tree", "Pine tree", "Rose bush", "Sunflower"]
-        hint = "Acorns are the seeds of oak trees."
+        hint = "Acorns grow into mighty oak trees."
         return prompt, correct, pool, hint, "VISUAL", build_creature_or_entity_svg("tree")
     elif mod == 3:
-        prompt = "Which class of warm-blooded animals has lightweight hollow bones, feathers, and lays eggs in a nest?"
-        correct = "Bird"
-        pool = ["Bird", "Reptile", "Mammal", "Amphibian"]
-        hint = "Feathers and hollow bones are hallmark traits of birds."
+        prompt = "Which animal has feathers, wings, and can fly in the sky?"
+        correct = "A Bird"
+        pool = ["A Bird", "A Fish", "A Frog", "A Rabbit"]
+        hint = "Birds have feathers and wings."
         return prompt, correct, pool, hint, "VERBAL", None
     elif mod == 4:
-        prompt = "Which cold-blooded animal has dry, scaly skin and lays leathery eggs?"
-        correct = "Reptile (Lizard)"
-        pool = ["Reptile (Lizard)", "Amphibian (Frog)", "Mammal (Rabbit)", "Fish (Trout)"]
-        hint = "Reptiles have dry scales; amphibians have smooth, moist skin."
+        prompt = "Which animal has dry scaly skin and crawls on sunny rocks?"
+        correct = "A Lizard"
+        pool = ["A Lizard", "A Frog", "A Trout", "A Hamster"]
+        hint = "Lizards are reptiles with dry scales."
         return prompt, correct, pool, hint, "VERBAL", None
     elif mod == 5:
-        prompt = "Which warm-blooded animal has thick fur and feeds milk to its young?"
-        correct = "Mammal (Bear)"
-        pool = ["Mammal (Bear)", "Bird (Robin)", "Reptile (Snake)", "Insect (Beetle)"]
-        hint = "Fur/hair and producing milk for babies are defining mammal traits."
+        prompt = "Which animal has warm fur, feeds milk to its babies, and can be a pet?"
+        correct = "A Dog"
+        pool = ["A Dog", "A Goldfish", "A Robin", "An Ant"]
+        hint = "Dogs are mammals with fur."
         return prompt, correct, pool, hint, "VERBAL", None
     elif mod == 6:
-        prompt = "Look at the human organ shown above. Which organ acts as a muscular pump to circulate blood throughout the body?"
+        prompt = "Look at the body organ shown above. Which organ beats inside your chest to pump blood?"
         correct = "The Heart"
         pool = ["The Heart", "The Lungs", "The Stomach", "The Brain"]
-        hint = "The heart pumps blood through arteries and veins."
+        hint = "The heart pumps blood through your body."
         return prompt, correct, pool, hint, "VISUAL", build_creature_or_entity_svg("heart")
     elif mod == 7:
-        prompt = "Look at the celestial body shown above. Which body is the closest star to planet Earth?"
+        prompt = "Look at the sky above. Which bright star gives light and warmth to Earth during the day?"
         correct = "The Sun"
-        pool = ["The Sun", "The Moon", "Mars", "Polaris"]
-        hint = "The Sun is the star at the center of our solar system."
+        pool = ["The Sun", "The Moon", "Mars", "North Star"]
+        hint = "The Sun is the star that warms our planet."
         return prompt, correct, pool, hint, "VISUAL", build_creature_or_entity_svg("sun")
     elif mod == 8:
-        prompt = "What forms high in the sky when water vapor cools and condenses into tiny water droplets?"
+        prompt = "What fluffy white shapes float high in the sky on a sunny day?"
         correct = "Clouds"
         pool = ["Clouds", "Rainbows", "Wind", "Lightning"]
-        hint = "Clouds form from condensed water vapor in the atmosphere."
+        hint = "Clouds float in the sky."
         return prompt, correct, pool, hint, "VERBAL", None
     elif mod == 9:
-        prompt = "The preserved imprint of an ancient leaf or dinosaur bone found inside rock is called a:"
-        correct = "Fossil"
-        pool = ["Fossil", "Crystal", "Meteorite", "Gemstone"]
-        hint = "Preserved traces of prehistoric life in stone are fossils."
+        prompt = "What is an ancient stone footprint or bone of a dinosaur called?"
+        correct = "A Fossil"
+        pool = ["A Fossil", "A Crystal", "A Pebble", "A Gem"]
+        hint = "Old bones preserved in stone are fossils."
         return prompt, correct, pool, hint, "VERBAL", None
     else:
-        prompt = "Which of these is a clean, renewable energy resource that comes from nature?"
-        correct = "Solar energy from sunlight"
-        pool = ["Solar energy from sunlight", "Coal", "Petroleum oil", "Gasoline"]
-        hint = "Sunlight and wind are inexhaustible renewable energy sources."
+        prompt = "What natural warmth and light from the sky gives Earth clean energy?"
+        correct = "Sunlight"
+        pool = ["Sunlight", "Coal", "Oil", "Gasoline"]
+        hint = "Sunlight gives clean, natural energy."
         return prompt, correct, pool, hint, "VERBAL", None
 
 
@@ -1371,96 +1418,71 @@ def gen_s_ee(subskill: str, idx: int):
 
 
 def gen_s_mo(subskill: str, idx: int):
-    """Measurement & Observation in Science (S-MO: 4 subskills) - ALL VISUAL"""
+    """Measurement & Observation in Science (S-MO: 4 subskills) - ALL VISUAL (Grade 1 / Level 1)"""
     ss_id = int(subskill.split("-")[-1]) if "-" in subskill else 1
     mod = (ss_id - 1) % 4
 
     if mod == 0:
-        prompt = "Look at the scientific tool shown above. Which instrument measures thermal temperature in degrees Celsius?"
+        prompt = "Look at the tool shown above. Which tool measures whether something is hot or cold?"
         correct = "Thermometer"
-        pool = ["Thermometer", "Balance scale", "Measuring tape", "Barometer"]
+        pool = ["Thermometer", "Balance scale", "Measuring tape", "Clock"]
         hint = "A thermometer measures temperature."
         return prompt, correct, pool, hint, "VISUAL", build_tool_svg("thermometer")
     elif mod == 1:
-        prompt = "Look at the laboratory tool shown above. Which instrument is used to measure the mass or weight of objects?"
+        prompt = "Look at the tool shown above. Which tool is used to weigh objects?"
         correct = "Balance scale"
         pool = ["Balance scale", "Thermometer", "Ruler", "Telescope"]
-        hint = "A balance scale measures mass/weight."
+        hint = "A balance scale weighs objects."
         return prompt, correct, pool, hint, "VISUAL", build_tool_svg("scale")
     elif mod == 2:
-        prompt = "Look at the measuring tool shown above. Which tool is used to measure length or distance in centimeters?"
+        prompt = "Look at the tool shown above. Which tool measures how long a pencil is?"
         correct = "Ruler"
-        pool = ["Ruler", "Graduated cylinder", "Thermometer", "Microscope"]
+        pool = ["Ruler", "Cup", "Thermometer", "Clock"]
         hint = "A ruler measures length."
         return prompt, correct, pool, hint, "VISUAL", build_tool_svg("ruler")
     else:
-        prompt = "Look at the optical instrument shown above. Which tool magnifies tiny plant cells so they can be observed clearly?"
+        prompt = "Look at the tool shown above. Which tool helps you see tiny things up close?"
         correct = "Microscope"
-        pool = ["Microscope", "Telescope", "Binoculars", "Camera lens"]
-        hint = "A microscope magnifies microscopic specimens."
+        pool = ["Microscope", "Telescope", "Sunglasses", "Camera"]
+        hint = "A microscope makes tiny things look big."
         return prompt, correct, pool, hint, "VISUAL", build_tool_svg("microscope")
 
 
 def gen_s_in(subskill: str, idx: int):
-    """Scientific Inquiry & Experimentation (S-IN: 6 subskills) - ALL VERBAL"""
+    """Scientific Inquiry & Experimentation (S-IN: 6 subskills) - ALL VERBAL (Grade 1 / Level 1)"""
     ss_id = int(subskill.split("-")[-1]) if "-" in subskill else 1
     mod = (ss_id - 1) % 6
 
     if mod == 0:
-        prompt = "During an experiment, a student drops an iron key and a wooden cork into water. What happens to the cork?"
-        correct = "The cork floats because wood is less dense than water"
-        pool = [
-            "The cork floats because wood is less dense than water",
-            "The cork sinks to the bottom",
-            "The cork instantly dissolves",
-            "The cork turns into stone"
-        ]
-        hint = "Objects less dense than water float."
+        prompt = "If you drop a light wooden cork into a bowl of water, what happens?"
+        correct = "It floats on top"
+        pool = ["It floats on top", "It sinks to the bottom", "It dissolves away", "It turns to stone"]
+        hint = "Light wood floats on water."
     elif mod == 1:
-        prompt = "What happens when an ice cube is left outside on a warm, sunny afternoon?"
-        correct = "The ice absorbs heat and melts into liquid water"
-        pool = [
-            "The ice absorbs heat and melts into liquid water",
-            "The ice gets colder and grows bigger",
-            "The ice turns into solid rock",
-            "The ice catches fire"
-        ]
-        hint = "Heat energy causes solid ice to melt into water."
+        prompt = "What happens to an ice cube left outside in the warm sunshine?"
+        correct = "It melts into water"
+        pool = ["It melts into water", "It freezes into stone", "It grows bigger", "It catches fire"]
+        hint = "Warm sunlight melts cold ice into water."
     elif mod == 2:
-        prompt = "In art class, what secondary color do you get when you mix red paint with blue paint?"
-        correct = "Purple"
-        pool = ["Purple", "Green", "Yellow", "Orange"]
-        hint = "Red + Blue = Purple."
+        prompt = "What color do you get when you mix red paint and yellow paint together?"
+        correct = "Orange"
+        pool = ["Orange", "Purple", "Green", "Black"]
+        hint = "Red and yellow make orange."
     elif mod == 3:
-        prompt = "Plant A is placed on a sunny windowsill with water. Plant B is placed in a pitch-black closet with water. What happens to Plant B?"
-        correct = "Plant B grows weak and pale without sunlight"
-        pool = [
-            "Plant B grows weak and pale without sunlight",
-            "Plant B grows twice as fast",
-            "Plant B blooms with bright flowers",
-            "Plant B does not change at all"
-        ]
-        hint = "Green plants need sunlight to perform photosynthesis."
+        prompt = "What will a sunflower seed grow into if you plant it and water it?"
+        correct = "A tall sunflower"
+        pool = ["A tall sunflower", "An apple tree", "A stone", "A pumpkin"]
+        hint = "Seeds grow into the plant they came from."
     elif mod == 4:
-        prompt = "A toy car rolls down a smooth wooden ramp and a rough carpet ramp. On which ramp will the car roll FARTHER?"
-        correct = "On the smooth wooden ramp, because it has less friction"
-        pool = [
-            "On the smooth wooden ramp, because it has less friction",
-            "On the rough carpet ramp, because it has more friction",
-            "Both ramps will produce the exact same distance",
-            "Neither ramp will allow the car to move"
-        ]
-        hint = "Smooth surfaces produce less friction, allowing objects to travel farther."
+        prompt = "Which of your five senses tells you if an apple tastes sweet?"
+        correct = "Taste"
+        pool = ["Taste", "Hearing", "Sight", "Touch"]
+        hint = "Your tongue gives you the sense of taste."
     else:
-        prompt = "When a musician plucks a tight guitar string, what directly causes the musical sound to be produced?"
-        correct = "The string vibrates back and forth, creating sound waves"
-        pool = [
-            "The string vibrates back and forth, creating sound waves",
-            "The string changes color",
-            "Air is pulled into a vacuum",
-            "Light bounces off the wood"
-        ]
-        hint = "Sound is produced by physical vibrations in the air."
+        prompt = "What should you do to stay safe when doing a science activity?"
+        correct = "Listen to your teacher"
+        pool = ["Listen to your teacher", "Run around the room", "Taste unknown things", "Touch hot objects"]
+        hint = "Always follow teacher instructions for safety."
 
     return prompt, correct, pool, hint, "VERBAL", None
 
@@ -1660,30 +1682,30 @@ def gen_l_co(subskill: str, idx: int):
 
 
 def gen_l_ce(subskill: str, idx: int):
-    """Cause & Effect Reasoning (L-CE: 4 subskills) - ALL VERBAL"""
+    """Cause & Effect Reasoning (L-CE: 4 subskills) - ALL VERBAL (Grade 1 / Level 1)"""
     ss_id = int(subskill.split("-")[-1]) if "-" in subskill else 1
     mod = (ss_id - 1) % 4
 
     if mod == 0:
-        prompt = "Cause and Effect: Alex walks into the hallway and notices wet, dripping footprints leading from the garden door. What is the most logical cause?"
-        correct = "Someone walked inside from the rainy garden"
-        pool = ["Someone walked inside from the rainy garden", "Someone baked bread in the kitchen", "The room was dusty", "A lightbulb burned out"]
-        hint = "Wet muddy tracks are caused by someone walking through rain."
+        prompt = "Why are there wet footprints on the floor?"
+        correct = "Someone walked in from the rain"
+        pool = ["Someone walked in from the rain", "Someone baked bread", "The room was dusty", "A lamp turned on"]
+        hint = "Rain makes feet wet and muddy."
     elif mod == 1:
-        prompt = "Cause and Effect: You see thick dark smoke rising above the trees in the distance. What is the most likely cause?"
-        correct = "A fire has broken out"
-        pool = ["A fire has broken out", "A blizzard has arrived", "A rainbow has appeared", "The lake is freezing"]
-        hint = "Smoke is caused by fire."
+        prompt = "You see dark smoke rising into the air. What is the cause?"
+        correct = "A campfire or fire"
+        pool = ["A campfire or fire", "A rainbow", "A snowman melting", "A cold breeze"]
+        hint = "Fire produces smoke."
     elif mod == 2:
-        prompt = "Cause and Effect: The ground suddenly rumbles violently and pictures on the wall rattle back and forth. What is the most likely cause?"
-        correct = "An earthquake tremor is occurring"
-        pool = ["An earthquake tremor is occurring", "A gentle breeze blew by", "The sun came out", "A leaf fell"]
-        hint = "Ground shaking is caused by seismic earthquake activity."
+        prompt = "Why did the ice cube melt into a puddle of water?"
+        correct = "It was warm in the room"
+        pool = ["It was warm in the room", "It got freezing cold", "It was nighttime", "It was kept in the freezer"]
+        hint = "Warmth causes ice to melt."
     else:
-        prompt = "Cause and Effect: Dark storm clouds roll in, the air turns cool, and bright lightning flashes across the sky. What will happen next?"
-        correct = "A heavy rainstorm will begin"
-        pool = ["A heavy rainstorm will begin", "The day will become hot and dry", "The stars will shine brightly", "A heatwave will arrive"]
-        hint = "Thunderclouds and lightning are causes of rain."
+        prompt = "Dark storm clouds fill the sky and lightning flashes. What will happen next?"
+        correct = "It will rain"
+        pool = ["It will rain", "The sun will be blazing hot", "Stars will appear", "Snow will melt"]
+        hint = "Dark storm clouds bring rain."
 
     return prompt, correct, pool, hint, "VERBAL", None
 
@@ -1782,65 +1804,58 @@ def gen_w_ka(subskill: str, idx: int):
 
 
 def gen_w_ko(subskill: str, idx: int):
-    """Community Helpers & Occupations (W-KO: 6 subskills) - ALL VERBAL"""
+    """Community Helpers & Occupations (W-KO: 6 subskills) - ALL VERBAL (Grade 1 / Level 1)"""
     ss_id = int(subskill.split("-")[-1]) if "-" in subskill else 1
     mod = (ss_id - 1) % 6
 
     if mod == 0:
         helpers = [
-            ("a water pipe bursts and floods the kitchen floor", "A Plumber", ["An Electrician", "A Baker", "A Dentist"]),
-            ("the electrical power shuts off and circuit breakers trip", "An Electrician", ["A Plumber", "A Carpenter", "A Librarian"])
+            ("Who fixes leaky water pipes in a house?", "A Plumber", ["A Plumber", "A Baker", "A Dentist", "A Pilot"]),
+            ("Who safely fixes broken lights and electrical wires?", "An Electrician", ["An Electrician", "A Plumber", "A Carpenter", "A Painter"])
         ]
-        prob, correct, wrong = helpers[idx % len(helpers)]
-        prompt = f"When {prob}, which community helper should you call to repair it?"
-        pool = [correct] + wrong
-        hint = f"{correct} specializes in repairing this system."
+        prompt, correct, pool = helpers[idx % len(helpers)]
+        return prompt, correct, pool, f"{correct} helps fix this problem.", "VERBAL", None
+
     elif mod == 1:
         health = [
-            ("someone has a throbbing toothache that needs medical attention", "A Dentist", ["A Plumber", "A Firefighter", "An Electrician"]),
-            ("a pet dog gets injured and needs medical care", "A Veterinarian", ["A Pediatrician", "A Botanist", "A Mechanic"]),
-            ("a runner sprains an ankle during sports and needs an X-ray", "A Medical Doctor", ["A Chef", "A Pilot", "A Carpenter"])
+            ("Who checks and cleans your teeth to keep them healthy?", "A Dentist", ["A Dentist", "A Firefighter", "A Baker", "A Farmer"]),
+            ("Who takes care of sick puppies and kittens?", "A Veterinarian", ["A Veterinarian", "A Chef", "A Pilot", "A Carpenter"]),
+            ("Who helps you feel better when you are sick?", "A Doctor", ["A Doctor", "A Pilot", "A Baker", "A Sailor"])
         ]
-        sit, correct, wrong = health[idx % len(health)]
-        prompt = f"When {sit}, who is the proper healthcare professional to visit?"
-        pool = [correct] + wrong
-        hint = f"{correct} treats this health need."
+        prompt, correct, pool = health[idx % len(health)]
+        return prompt, correct, pool, f"{correct} helps take care of health.", "VERBAL", None
+
     elif mod == 2:
         safety = [
-            ("a fire breaks out in a building and smoke alarm sounds", "Firefighters", ["Librarians", "Mail carriers", "Architects"]),
-            ("traffic lights stop working at a busy intersection and cars need guidance", "Police Officers", ["Dentists", "Plumbers", "Chefs"])
+            ("Who puts out fires and keeps people safe in emergencies?", "Firefighters", ["Firefighters", "Librarians", "Bakers", "Mail carriers"]),
+            ("Who helps direct street traffic and keeps neighborhoods safe?", "Police Officers", ["Police Officers", "Dentists", "Plumbers", "Chefs"])
         ]
-        sit, correct, wrong = safety[idx % len(safety)]
-        prompt = f"When {sit}, which emergency responder protects the community?"
-        pool = [correct] + wrong
-        hint = f"{correct} handle this public emergency."
+        prompt, correct, pool = safety[idx % len(safety)]
+        return prompt, correct, pool, f"{correct} keep our community safe.", "VERBAL", None
+
     elif mod == 3:
         edu = [
-            ("you want to find a book and research a topic in the town library", "A Librarian", ["A Firefighter", "A Mechanic", "A Plumber"]),
-            ("children gather in a classroom every day to learn math and reading", "A School Teacher", ["A Pilot", "A Chef", "A Dentist"])
+            ("Who helps you find storybooks in the library?", "A Librarian", ["A Librarian", "A Firefighter", "A Mechanic", "A Plumber"]),
+            ("Who teaches children reading and math in school?", "A Teacher", ["A Teacher", "A Pilot", "A Chef", "A Dentist"])
         ]
-        sit, correct, wrong = edu[idx % len(edu)]
-        prompt = f"When {sit}, which community educator assists you?"
-        pool = [correct] + wrong
-        hint = f"{correct} provides educational guidance."
+        prompt, correct, pool = edu[idx % len(edu)]
+        return prompt, correct, pool, f"{correct} helps us learn and read.", "VERBAL", None
+
     elif mod == 4:
         transit = [
-            ("flying a commercial passenger airplane safely across the country", "An Airline Pilot", ["A Train Conductor", "A Ship Captain", "A Truck Driver"]),
-            ("driving a passenger commuter train smoothly along the railway tracks", "A Train Engineer", ["A Pilot", "A Bus Driver", "A Sailor"])
+            ("Who flies airplanes high in the sky?", "A Pilot", ["A Pilot", "A Train Conductor", "A Farmer", "A Doctor"]),
+            ("Who safely drives the big yellow school bus?", "A Bus Driver", ["A Bus Driver", "A Pilot", "A Sailor", "A Baker"])
         ]
-        sit, correct, wrong = transit[idx % len(transit)]
-        prompt = f"Who operates the vehicle when {sit}?"
-        pool = [correct] + wrong
-        hint = f"{correct} is certified to operate this vehicle."
+        prompt, correct, pool = transit[idx % len(transit)]
+        return prompt, correct, pool, f"{correct} drives this vehicle.", "VERBAL", None
+
     else:
         agri = [
-            ("planting seeds, caring for crops, and harvesting food in fields", "A Farmer", ["A Carpenter", "A Plumber", "An Electrician"]),
-            ("mixing dough, kneading flour, and baking fresh loaves of bread in ovens", "A Baker", ["A Doctor", "A Pilot", "A Mechanic"])
+            ("Who grows vegetables, fruits, and grain on a farm?", "A Farmer", ["A Farmer", "A Carpenter", "A Plumber", "A Doctor"]),
+            ("Who bakes fresh loaves of bread and tasty cookies?", "A Baker", ["A Baker", "A Doctor", "A Pilot", "A Mechanic"])
         ]
-        sit, correct, wrong = agri[idx % len(agri)]
-        prompt = f"Which food producer is responsible for {sit}?"
-        pool = [correct] + wrong
-        hint = f"{correct} produces this food for the community."
+        prompt, correct, pool = agri[idx % len(agri)]
+        return prompt, correct, pool, f"{correct} makes food for the community.", "VERBAL", None
 
     return prompt, correct, pool, hint, "VERBAL", None
 

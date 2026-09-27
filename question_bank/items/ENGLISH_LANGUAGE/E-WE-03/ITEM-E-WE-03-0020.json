@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Add the correct end punctuation mark to complete this sentence: 'What time does the library open'",
+    "display_text": "Which mark goes at the end of a statement: 'The cat is sleeping___'?",
     "spoken_audio_uri": "assets/audio/english_language/item-e-we-03-0020_prompt.mp3",
     "visual_assets": []
   },
@@ -28,19 +28,19 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "What time does the library open?"
+            "display_value": "."
           },
           {
             "option_id": "opt_2",
-            "display_value": "What time does the library open."
+            "display_value": "?"
           },
           {
             "option_id": "opt_3",
-            "display_value": "What time does the library open!"
+            "display_value": "!"
           },
           {
             "option_id": "opt_4",
-            "display_value": "What time does the library open,"
+            "display_value": ","
           }
         ]
       },
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Use exclamation marks for urgent warnings, and question marks for inquiries."
+      "prompt": "Questions end with a question mark (?)."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."

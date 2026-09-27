@@ -17,7 +17,7 @@
     "SPOKEN_DICTATED"
   ],
   "prompt_structure": {
-    "display_text": "Which of these is a clean, renewable energy resource that comes from nature?",
+    "display_text": "What natural warmth and light from the sky gives Earth clean energy?",
     "spoken_audio_uri": "assets/audio/science_evs/item-s-kn-11-0014_prompt.mp3",
     "visual_assets": []
   },
@@ -28,7 +28,7 @@
         "options": [
           {
             "option_id": "opt_1",
-            "display_value": "Solar energy from sunlight"
+            "display_value": "Sunlight"
           },
           {
             "option_id": "opt_2",
@@ -36,7 +36,7 @@
           },
           {
             "option_id": "opt_3",
-            "display_value": "Petroleum oil"
+            "display_value": "Oil"
           },
           {
             "option_id": "opt_4",
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Sunlight and wind are inexhaustible renewable energy sources."
+      "prompt": "Sunlight gives clean, natural energy."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."
