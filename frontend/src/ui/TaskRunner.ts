@@ -26,6 +26,7 @@ export class TaskRunner {
   private app: any;
   private currentValidHint: string | null = null;
   private flagPressTimer: any = null;
+  private currentTaskWrongAttempts = 0;
 
   constructor(_app: any) {
     this.app = _app;
@@ -322,12 +323,14 @@ export class TaskRunner {
     
     this.currentTaskIndex = 0;
     this.sessionErrors = 0;
+    this.currentTaskWrongAttempts = 0;
     this.container.classList.add('active');
     this.renderTask();
   }
 
   private renderTask() {
     this.cancelSpeech();
+    this.currentTaskWrongAttempts = 0;
 
     if (this.currentTaskIndex >= this.currentSession.length) {
       this.finishSession();
@@ -524,30 +527,57 @@ export class TaskRunner {
       } catch (e) {}
     }
     
-    const options = this.container.querySelector('#options-container');
-    if (options) {
-      const allBtns = options.querySelectorAll('.btn-option') as NodeListOf<HTMLButtonElement>;
-      allBtns.forEach(b => b.disabled = true);
-    }
-    
     if (isCorrect) {
+      const options = this.container.querySelector('#options-container');
+      if (options) {
+        const allBtns = options.querySelectorAll('.btn-option') as NodeListOf<HTMLButtonElement>;
+        allBtns.forEach(b => b.disabled = true);
+      }
       btnElement.classList.add('correct');
       setTimeout(() => {
         this.currentTaskIndex++;
         this.renderTask();
       }, 1000);
     } else {
+      this.currentTaskWrongAttempts++;
       this.sessionErrors++;
       btnElement.classList.add('incorrect');
+      btnElement.disabled = true;
+
       const hint = this.container.querySelector('#scaffolding-hint');
-      if (hint && this.currentValidHint) hint.classList.remove('hidden');
-      
-      // Graceful failure routing: Move to the next question after 2.5 seconds
-      setTimeout(() => {
-        btnElement.classList.remove('incorrect');
-        this.currentTaskIndex++;
-        this.renderTask();
-      }, 2500);
+
+      if (this.currentTaskWrongAttempts === 1) {
+        // First wrong attempt: show only neutral "Try again!" with no hint text
+        console.log('[TaskRunner] First wrong attempt on task: showing neutral "Try again!".');
+        if (hint) {
+          hint.textContent = 'Try again!';
+          hint.classList.remove('hidden');
+        }
+      } else {
+        // Second (or subsequent) wrong attempt on the same task: show scaffolding hint (if valid)
+        console.log('[TaskRunner] Second wrong attempt on task: displaying scaffolding hint.');
+        if (hint) {
+          if (this.currentValidHint) {
+            hint.textContent = this.currentValidHint;
+            hint.classList.remove('hidden');
+          } else {
+            hint.classList.add('hidden');
+          }
+        }
+
+        const options = this.container.querySelector('#options-container');
+        if (options) {
+          const allBtns = options.querySelectorAll('.btn-option') as NodeListOf<HTMLButtonElement>;
+          allBtns.forEach(b => b.disabled = true);
+        }
+
+        // Graceful failure routing: Move to the next question after 2.5 seconds
+        setTimeout(() => {
+          btnElement.classList.remove('incorrect');
+          this.currentTaskIndex++;
+          this.renderTask();
+        }, 2500);
+      }
     }
   }
 
