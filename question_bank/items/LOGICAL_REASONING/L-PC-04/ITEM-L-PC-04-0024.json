@@ -4,7 +4,7 @@
   "target_subskill_id": "L-PC-04",
   "domain_id": "LOGICAL_REASONING",
   "evidence_archetype": "STRATEGIC_REASONING",
-  "language_load_class": "PURE_REASONING",
+  "language_load_class": "INTEGRATED_LANGUAGE_AND_REASONING",
   "challenge_type": "STANDARD",
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
@@ -72,8 +72,8 @@
   },
   "safeguard_metadata": {
     "has_unvoiced_text": false,
-    "reading_grade_level": 1.0,
-    "cultural_neutrality_verified": true,
+    "reading_grade_level": 7.4,
+    "cultural_neutrality_verified": false,
     "contains_gamified_dark_patterns": false
   }
 }

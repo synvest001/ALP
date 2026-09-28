@@ -72,8 +72,8 @@
   },
   "safeguard_metadata": {
     "has_unvoiced_text": false,
-    "reading_grade_level": 1.0,
-    "cultural_neutrality_verified": true,
+    "reading_grade_level": 3.1,
+    "cultural_neutrality_verified": false,
     "contains_gamified_dark_patterns": false
   }
 }

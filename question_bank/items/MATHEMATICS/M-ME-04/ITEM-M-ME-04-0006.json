@@ -9,7 +9,7 @@
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
   "prompt_structure": {
-    "display_text": "A toy car costs \u20b918. Kabir pays with a \u20b920 note. How much change should he get back?",
+    "display_text": "A toy car costs ₹18. Kabir pays with a ₹20 note. How much change should he get back?",
     "spoken_audio_uri": "assets/audio/mathematics/item-m-me-04-0006_prompt.mp3",
     "visual_assets": []
   },
@@ -35,8 +35,8 @@
   },
   "safeguard_metadata": {
     "has_unvoiced_text": false,
-    "reading_grade_level": 1.0,
-    "cultural_neutrality_verified": true,
+    "reading_grade_level": 0.0,
+    "cultural_neutrality_verified": false,
     "contains_gamified_dark_patterns": false
   },
   "cognitive_depth": "REASON",

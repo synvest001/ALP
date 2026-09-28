@@ -15,7 +15,7 @@
   },
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
-      "prompt": "Multiply: 5 \u00d7 3 = 15 craft sticks.",
+      "prompt": "Multiply: 5 × 3 = 15 craft sticks.",
       "pedagogical_target": "STRATEGY_REFLECTION_PIVOT",
       "preserves_productive_struggle": true
     },
@@ -35,8 +35,8 @@
   },
   "safeguard_metadata": {
     "has_unvoiced_text": false,
-    "reading_grade_level": 1.0,
-    "cultural_neutrality_verified": true,
+    "reading_grade_level": 0.9,
+    "cultural_neutrality_verified": false,
     "contains_gamified_dark_patterns": false
   },
   "cognitive_depth": "APPLY",

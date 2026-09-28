@@ -4,7 +4,7 @@
   "target_subskill_id": "S-PP-01",
   "domain_id": "SCIENCE_EVS",
   "evidence_archetype": "CONCEPTUAL",
-  "language_load_class": "PURE_REASONING",
+  "language_load_class": "INTEGRATED_LANGUAGE_AND_REASONING",
   "challenge_type": "STANDARD",
   "creation_stage": "ANSWERING",
   "estimated_duration_seconds": 30,
@@ -55,7 +55,7 @@
   "scaffolding_protocol": {
     "level_1_reflection_prompt": {
       "preserves_productive_struggle": true,
-      "prompt": "Water freezes at 0\u00b0C into solid ice."
+      "prompt": "Water freezes at 0°C into solid ice."
     },
     "level_2_representation_shift": {
       "hint": "Observe the color, shape, and clues shown in the illustration."
@@ -72,8 +72,8 @@
   },
   "safeguard_metadata": {
     "has_unvoiced_text": false,
-    "reading_grade_level": 1.0,
-    "cultural_neutrality_verified": true,
+    "reading_grade_level": 7.0,
+    "cultural_neutrality_verified": false,
     "contains_gamified_dark_patterns": false
   }
 }
