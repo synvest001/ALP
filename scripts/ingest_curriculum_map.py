@@ -14,7 +14,7 @@ def parse_curriculum_map(filepath):
     
     domain_pattern = re.compile(r'^# \d+\.\s+(Domain.*?)\s+—\s+(.*)')
     strand_pattern = re.compile(r'^## (\d+\.\d+)\s+(.*)')
-    skill_pattern = re.compile(r'^\*\*(.*?)\s+(.*)\*\*')
+    skill_pattern = re.compile(r'^\*\*([MESLW]-[A-Z]{2}-[0-9]{2})\s+(.*)\*\*')
     
     for line in lines:
         line = line.strip()
@@ -29,6 +29,13 @@ def parse_curriculum_map(filepath):
                 "strands": []
             }
             domains.append(current_domain)
+            current_strand = None
+            current_skill = None
+            continue
+        elif re.match(r'^# \d+\.\s+', line):
+            # Non-domain top-level heading encountered (e.g. # 11., # 16., # 17.)
+            # Reset current_domain so non-domain content is not swallowed into prior domains
+            current_domain = None
             current_strand = None
             current_skill = None
             continue
