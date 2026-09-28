@@ -203,7 +203,7 @@ export class SessionComposer {
       currentTimeBudget += payload.time_budget_seconds;
     }
 
-    // THE HARD CHECK IN PLACE: Enforce 0 intra-session duplicates & 0 repeats in last 3 sessions
+    // THE HARD CHECK IN PLACE: Enforce 0 intra-session duplicates & 0 repeats in last 5 sessions
     return RepetitionGuard.validateAndEnforce(session, cleanKidId, this.questionBank);
   }
 }
