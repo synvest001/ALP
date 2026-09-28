@@ -8,6 +8,12 @@ import { resolveAssetUrl } from '../utils/assets';
 import { DailyQuestManager } from '../engine/DailyQuestManager';
 import { QuestionPresentationLog } from '../storage/QuestionPresentationLog';
 
+const GENERIC_HINTS = new Set([
+  "Look closely at the picture and count each item.",
+  "Observe the color, shape, and clues shown in the illustration.",
+  "Remember the foundational rule: observe, compare, and verify."
+]);
+
 export class TaskRunner {
   private container: HTMLElement;
   private currentSession: TaskRequestPayload[] = [];
@@ -18,6 +24,8 @@ export class TaskRunner {
   private telemetry: TelemetryQueue;
 
   private app: any;
+  private currentValidHint: string | null = null;
+  private flagPressTimer: any = null;
 
   constructor(_app: any) {
     this.app = _app;
@@ -29,10 +37,13 @@ export class TaskRunner {
 
   public render() {
     this.container.innerHTML = `
-      <div class="modal-content task-modal-content">
-        <header class="task-header">
+      <div class="modal-content task-modal-content" style="position: relative;">
+        <header class="task-header" style="display: flex; justify-content: space-between; align-items: center;">
           <div class="quest-status" id="task-progress-indicator">Task 1 of X</div>
-          <button id="btn-quit-task" class="btn btn-small">Quit</button>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <button id="btn-report-flag" class="btn-flag" title="Press and hold for 2s to report a problem" style="background: transparent; border: none; font-size: 1.15rem; cursor: pointer; opacity: 0.6; padding: 4px 6px; border-radius: 6px; user-select: none; -webkit-user-select: none;">🚩</button>
+            <button id="btn-quit-task" class="btn btn-small">Quit</button>
+          </div>
         </header>
         <main class="task-container">
           <div class="prompt-container">
@@ -54,17 +65,237 @@ export class TaskRunner {
             <!-- Chunky Buttons injected here -->
           </div>
         </main>
+
+        <!-- Problem Report Overlay (Appears on 2s Long-Press of 🚩) -->
+        <div id="problem-report-overlay" class="hidden" style="position: absolute; inset: 0; background: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; z-index: 200; padding: 16px; border-radius: 20px;">
+          <div style="background: white; border-radius: 16px; padding: 20px; max-width: 440px; width: 100%; box-shadow: 0 10px 25px rgba(0,0,0,0.3); color: #1e293b; text-align: left;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <h3 style="margin: 0; font-size: 1.15rem; font-weight: bold; color: #1e293b;">🚩 Parent Problem Report</h3>
+              <button id="btn-close-report" style="background: none; border: none; font-size: 1.2rem; cursor: pointer; color: #64748b; padding: 4px 8px;">✕</button>
+            </div>
+            <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 12px;">Copy this debug info and send it to the developer:</p>
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 12px; border-radius: 8px; font-family: monospace; font-size: 0.85rem; margin-bottom: 16px; word-break: break-word;">
+              <div><strong>Item ID:</strong> <span id="report-item-id">-</span></div>
+              <div style="margin-top: 6px;"><strong>Subskill:</strong> <span id="report-subskill-id">-</span></div>
+              <div style="margin-top: 6px;"><strong>Prompt:</strong> <span id="report-prompt-text">-</span></div>
+            </div>
+            <div style="display: flex; gap: 10px; justify-content: flex-end; align-items: center;">
+              <span id="copy-confirmation" class="hidden" style="color: #16a34a; font-size: 0.85rem; font-weight: 500;">✓ Copied!</span>
+              <button id="btn-copy-report" style="background: #2563eb; color: white; border: none; padding: 8px 16px; border-radius: 8px; font-weight: bold; cursor: pointer;">📋 Copy Info</button>
+            </div>
+          </div>
+        </div>
       </div>
     `;
 
     this.bindEvents();
   }
 
-  private bindEvents() {
+  private cancelSpeech() {
+    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+      try {
+        window.speechSynthesis.cancel();
+      } catch (e) {}
+    }
+  }
+
+  private speakPrompt(text: string) {
+    if (!text || typeof window === 'undefined' || !('speechSynthesis' in window) || typeof SpeechSynthesisUtterance === 'undefined') {
+      return;
+    }
+    try {
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'en-US';
+      utterance.rate = 0.85;
+
+      const voices = window.speechSynthesis.getVoices();
+      const enVoice = voices.find(v => v.lang.startsWith('en')) || null;
+      if (enVoice) utterance.voice = enVoice;
+
+      console.log('[TaskRunner] SpeechSynthesis speak called for prompt:', text);
+      window.speechSynthesis.speak(utterance);
+    } catch (e) {
+      console.warn('[TaskRunner] Speech synthesis failed or blocked:', e);
+    }
+  }
+
+  private computeValidHint(item: any): string | null {
+    if (!item?.scaffolding_protocol) return null;
+    const hasVisual = Boolean(item.representation_type === 'VISUAL' && item.prompt_structure?.visual_assets?.[0]?.uri);
+
+    const candidates: string[] = [
+      item.scaffolding_protocol.level_1_reflection_prompt?.prompt || '',
+      item.scaffolding_protocol.level_2_representation_shift?.hint || '',
+      item.scaffolding_protocol.level_3_prerequisite_bridge?.hint || ''
+    ];
+
+    for (const text of candidates) {
+      const trimmed = text.trim();
+      if (!trimmed) continue;
+      if (GENERIC_HINTS.has(trimmed)) continue;
+      if (!hasVisual && /\b(illustration|picture)\b/i.test(trimmed)) continue;
+      return trimmed;
+    }
+    return null;
+  }
+
+  private showProblemReport() {
+    console.log('[TaskRunner] Opening Parent Problem Report overlay.');
+    const overlay = this.container.querySelector('#problem-report-overlay');
+    if (!overlay) return;
+    const item = this.currentSession[this.currentTaskIndex]?.question_item;
+    const elItemId = overlay.querySelector('#report-item-id');
+    const elSubskill = overlay.querySelector('#report-subskill-id');
+    const elPrompt = overlay.querySelector('#report-prompt-text');
+    const copyConfirm = overlay.querySelector('#copy-confirmation');
+
+    if (elItemId) elItemId.textContent = item?.item_id || 'UNKNOWN';
+    if (elSubskill) elSubskill.textContent = item?.target_subskill_id || 'UNKNOWN';
+    if (elPrompt) elPrompt.textContent = item?.prompt_structure?.display_text || 'UNKNOWN';
+    if (copyConfirm) copyConfirm.classList.add('hidden');
+
+    overlay.classList.remove('hidden');
+  }
+
+  private copyProblemReport() {
+    const item = this.currentSession[this.currentTaskIndex]?.question_item;
+    const text = `Item ID: ${item?.item_id || 'UNKNOWN'}\nSubskill: ${item?.target_subskill_id || 'UNKNOWN'}\nPrompt: ${item?.prompt_structure?.display_text || 'UNKNOWN'}`;
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(() => {
+        const confirm = this.container.querySelector('#copy-confirmation');
+        if (confirm) confirm.classList.remove('hidden');
+        console.log('[TaskRunner] Problem report info copied to clipboard.');
+      }).catch(() => {
+        this.fallbackCopy(text);
+      });
+    } else {
+      this.fallbackCopy(text);
+    }
+  }
+
+  private fallbackCopy(text: string) {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try {
+      document.execCommand('copy');
+      const confirm = this.container.querySelector('#copy-confirmation');
+      if (confirm) confirm.classList.remove('hidden');
+      console.log('[TaskRunner] Problem report info copied via execCommand fallback.');
+    } catch (e) {}
+    document.body.removeChild(ta);
+  }
+
+  private showEmptyBankError() {
+    this.cancelSpeech();
+    this.container.classList.add('active');
+    this.container.innerHTML = `
+      <div class="modal-content task-modal-content" style="text-align: center; padding: 40px 20px;">
+        <header class="task-header" style="justify-content: flex-end; display: flex;">
+          <button id="btn-quit-task" class="btn btn-small">✕</button>
+        </header>
+        <main class="task-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 250px;">
+          <div style="font-size: 3rem; margin-bottom: 16px;">🏰✨</div>
+          <h2 style="font-size: 1.4rem; color: #1e293b; margin-bottom: 12px; font-weight: 700;">Couldn't load the questions.</h2>
+          <p style="color: #64748b; font-size: 1.05rem; margin-bottom: 24px; max-width: 400px; line-height: 1.5;">Check your connection and reload.</p>
+          <button id="btn-reload-app" class="btn btn-large cta-glow" style="padding: 12px 32px; font-size: 1.1rem; border-radius: 12px; background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; border: none; cursor: pointer; font-weight: bold;">Reload</button>
+        </main>
+      </div>
+    `;
+    const btnReload = this.container.querySelector('#btn-reload-app');
+    if (btnReload) {
+      btnReload.addEventListener('click', () => {
+        window.location.reload();
+      });
+    }
     const btnQuit = this.container.querySelector('#btn-quit-task');
     if (btnQuit) {
       btnQuit.addEventListener('click', () => {
         this.container.classList.remove('active');
+        this.render();
+      });
+    }
+  }
+
+  private bindEvents() {
+    const hasSpeech = typeof window !== 'undefined' && 'speechSynthesis' in window && typeof SpeechSynthesisUtterance !== 'undefined';
+    const btnAudio = this.container.querySelector('#btn-play-audio') as HTMLElement | null;
+    if (btnAudio) {
+      if (!hasSpeech) {
+        btnAudio.style.display = 'none';
+      } else {
+        btnAudio.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const item = this.currentSession[this.currentTaskIndex]?.question_item;
+          const text = item?.prompt_structure?.display_text;
+          if (text) {
+            console.log('[TaskRunner] Audio button clicked by user.');
+            this.speakPrompt(text);
+          }
+        });
+      }
+    }
+
+    const btnQuit = this.container.querySelector('#btn-quit-task');
+    if (btnQuit) {
+      btnQuit.addEventListener('click', () => {
+        this.cancelSpeech();
+        this.container.classList.remove('active');
+      });
+    }
+
+    // Flag button long-press (2 seconds)
+    const btnFlag = this.container.querySelector('#btn-report-flag') as HTMLElement | null;
+    if (btnFlag) {
+      const startPress = (_e: Event) => {
+        console.log('[TaskRunner] Flag press started (2s timer initiated).');
+        btnFlag.style.opacity = '1';
+        btnFlag.style.transform = 'scale(1.25)';
+        if (!this.flagPressTimer) {
+          this.flagPressTimer = setTimeout(() => {
+            console.log('[TaskRunner] 2s long-press elapsed on flag.');
+            btnFlag.style.transform = 'none';
+            this.showProblemReport();
+            this.flagPressTimer = null;
+          }, 2000);
+        }
+      };
+      const cancelPress = () => {
+        if (this.flagPressTimer) {
+          console.log('[TaskRunner] Flag press released before 2s.');
+          clearTimeout(this.flagPressTimer);
+          this.flagPressTimer = null;
+        }
+        btnFlag.style.opacity = '0.6';
+        btnFlag.style.transform = 'none';
+      };
+      btnFlag.addEventListener('pointerdown', startPress);
+      btnFlag.addEventListener('mousedown', startPress);
+      btnFlag.addEventListener('touchstart', startPress, {passive: true});
+      btnFlag.addEventListener('pointerup', cancelPress);
+      btnFlag.addEventListener('mouseup', cancelPress);
+      btnFlag.addEventListener('touchend', cancelPress);
+      btnFlag.addEventListener('pointerleave', cancelPress);
+      btnFlag.addEventListener('pointercancel', cancelPress);
+    }
+
+    // Problem report close & copy
+    const btnCloseReport = this.container.querySelector('#btn-close-report');
+    if (btnCloseReport) {
+      btnCloseReport.addEventListener('click', () => {
+        const overlay = this.container.querySelector('#problem-report-overlay');
+        if (overlay) overlay.classList.add('hidden');
+      });
+    }
+    const btnCopyReport = this.container.querySelector('#btn-copy-report');
+    if (btnCopyReport) {
+      btnCopyReport.addEventListener('click', () => {
+        this.copyProblemReport();
       });
     }
   }
@@ -72,6 +303,15 @@ export class TaskRunner {
   public async startSession(sessionData?: TaskRequestPayload[], focusedDomain?: string) {
     const kidName = this.app?.profileSwitcher?.getCurrentPlayerName() || 'default_player';
     await this.composer.ensureReady();
+
+    // Empty Question Bank Guard
+    if (this.composer.questionBank.getLoadedCount() === 0) {
+      this.showEmptyBankError();
+      return;
+    }
+
+    // Ensure task runner DOM structure is rendered
+    this.render();
 
     // If not provided, dynamically compose using AdaptiveEngine
     if (sessionData && sessionData.length > 0) {
@@ -87,6 +327,8 @@ export class TaskRunner {
   }
 
   private renderTask() {
+    this.cancelSpeech();
+
     if (this.currentTaskIndex >= this.currentSession.length) {
       this.finishSession();
       return;
@@ -108,6 +350,8 @@ export class TaskRunner {
     
     if (item && promptText) {
       promptText.textContent = item.prompt_structure.display_text;
+      // Auto-read prompt
+      this.speakPrompt(item.prompt_structure.display_text);
     } else if (promptText) {
       promptText.textContent = "Error loading task item.";
     }
@@ -145,9 +389,11 @@ export class TaskRunner {
       }
     }
     
+    // Compute valid non-generic hint
+    this.currentValidHint = this.computeValidHint(item);
     if (hint) {
       hint.classList.add('hidden');
-      hint.textContent = item?.scaffolding_protocol?.level_1_reflection_prompt?.prompt || 'Try again!';
+      hint.textContent = this.currentValidHint || '';
     }
     
     if (options && item) {
@@ -294,7 +540,7 @@ export class TaskRunner {
       this.sessionErrors++;
       btnElement.classList.add('incorrect');
       const hint = this.container.querySelector('#scaffolding-hint');
-      if (hint) hint.classList.remove('hidden');
+      if (hint && this.currentValidHint) hint.classList.remove('hidden');
       
       // Graceful failure routing: Move to the next question after 2.5 seconds
       setTimeout(() => {
@@ -306,6 +552,7 @@ export class TaskRunner {
   }
 
   private finishSession() {
+    this.cancelSpeech();
     this.container.classList.remove('active');
     const kidName = (this.app?.profileSwitcher?.getCurrentPlayerName() || 'default_player').toLowerCase().trim();
     
