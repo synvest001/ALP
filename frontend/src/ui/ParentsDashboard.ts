@@ -21,7 +21,7 @@ export class ParentsDashboard {
   private async fetchCurriculumMap() {
     if (!this.curriculumMap) {
       try {
-        const res = await fetch('/data/curriculum_map.json');
+        const res = await fetch(`${import.meta.env.BASE_URL}data/curriculum_map.json`);
         this.curriculumMap = await res.json();
       } catch (e) {
         console.error('Failed to load curriculum map', e);

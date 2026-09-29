@@ -70,11 +70,12 @@ export class AccountScreen {
   }
 
   private getAvatarSrc(avatar: string) {
+    const base = import.meta.env.BASE_URL;
     const map: Record<string, string> = {
-      princess: '/art/princess_avatar.jpg',
-      knight: '/art/knight_avatar.jpg',
-      magician: '/art/magician_avatar.jpg',
-      explorer: '/art/explorer_avatar.jpg'
+      princess: `${base}art/princess_avatar.jpg`,
+      knight: `${base}art/knight_avatar.jpg`,
+      magician: `${base}art/magician_avatar.jpg`,
+      explorer: `${base}art/explorer_avatar.jpg`
     };
     return map[avatar] || map['princess'];
   }

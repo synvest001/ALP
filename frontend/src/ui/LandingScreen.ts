@@ -65,12 +65,13 @@ export class LandingScreen {
 
     // Move avatarImages import or redefine it later. For now, assuming it's available.
     // We'll hardcode paths for safety in this module until constants are set up.
+    const base = import.meta.env.BASE_URL;
     const getAvatarSrc = (avatar: string) => {
       const map: Record<string, string> = {
-        princess: '/art/princess_avatar.jpg',
-        knight: '/art/knight_avatar.jpg',
-        magician: '/art/magician_avatar.jpg',
-        explorer: '/art/explorer_avatar.jpg'
+        princess: `${base}art/princess_avatar.jpg`,
+        knight: `${base}art/knight_avatar.jpg`,
+        magician: `${base}art/magician_avatar.jpg`,
+        explorer: `${base}art/explorer_avatar.jpg`
       };
       return map[avatar] || map['princess'];
     };

@@ -1,0 +1,220 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1642"/>
+      <stop offset="45%" stop-color="#2c3e50"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+
+    <!-- Radial Magic Glow -->
+    <radialGradient id="auroraGlow" cx="50%" cy="46%" r="50%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#6366f1" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#1e1642" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Gold Gradients -->
+    <linearGradient id="goldBright" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffbeb"/>
+      <stop offset="35%" stop-color="#fef08a"/>
+      <stop offset="70%" stop-color="#facc15"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+
+    <linearGradient id="goldDark" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#92400e"/>
+    </linearGradient>
+
+    <!-- Castle Tower Gradients -->
+    <linearGradient id="wallGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="30%" stop-color="#64748b"/>
+      <stop offset="70%" stop-color="#475569"/>
+      <stop offset="100%" stop-color="#334155"/>
+    </linearGradient>
+
+    <linearGradient id="keepGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="35%" stop-color="#60a5fa"/>
+      <stop offset="70%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+
+    <!-- Spire Roof Gradients -->
+    <linearGradient id="roofGradPink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f472b6"/>
+      <stop offset="50%" stop-color="#ec4899"/>
+      <stop offset="100%" stop-color="#9d174d"/>
+    </linearGradient>
+
+    <linearGradient id="roofGradPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c084fc"/>
+      <stop offset="50%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#6b21a8"/>
+    </linearGradient>
+
+    <!-- Gate Interior Glow -->
+    <linearGradient id="gateGlow" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="60%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#78350f"/>
+    </linearGradient>
+
+    <!-- Shadow Filter -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+    <filter id="starGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Solid Canvas Background -->
+  <rect width="512" height="512" fill="url(#bgGrad)" />
+
+  <!-- Magic Aura -->
+  <circle cx="256" cy="245" r="215" fill="url(#auroraGlow)"/>
+
+  <!-- Starfield & Sparkles -->
+  <g fill="#fef08a" opacity="0.9">
+    <!-- Star 1 Top Left -->
+    <path d="M 95 100 Q 95 115 80 115 Q 95 115 95 130 Q 95 115 110 115 Q 95 115 95 100 Z" fill="#fef08a" opacity="0.85"/>
+    <!-- Star 2 Top Right -->
+    <path d="M 415 110 Q 415 125 400 125 Q 415 125 415 140 Q 415 125 430 125 Q 415 125 415 110 Z" fill="#fde047" opacity="0.9"/>
+    <!-- Small sparkles -->
+    <circle cx="160" cy="85" r="3.5" fill="#fef08a" opacity="0.75"/>
+    <circle cx="355" cy="80" r="3" fill="#a7f3d0" opacity="0.8"/>
+    <circle cx="75" cy="210" r="3" fill="#fde047" opacity="0.6"/>
+    <circle cx="435" cy="225" r="3.5" fill="#fef08a" opacity="0.7"/>
+    <circle cx="120" cy="180" r="2" fill="#e0e7ff" opacity="0.6"/>
+    <circle cx="390" cy="180" r="2.5" fill="#e0e7ff" opacity="0.6"/>
+  </g>
+
+  <!-- Floating Island Foundation -->
+  <g filter="url(#shadow)">
+    <!-- Base Rock / Earth under castle -->
+    <path d="M 76 390 C 130 420 382 420 436 390 C 448 382 444 402 420 416 C 360 450 152 450 92 416 C 68 402 64 382 76 390 Z" fill="#1e293b"/>
+    <!-- Foundation Meadow / Crystal Grass -->
+    <path d="M 80 380 Q 256 405 432 380 Q 445 392 432 400 Q 256 426 80 400 Q 67 392 80 380 Z" fill="#059669"/>
+    <path d="M 96 383 Q 256 403 416 383 Q 426 390 416 396 Q 256 416 96 396 Q 86 390 96 383 Z" fill="#10b981"/>
+  </g>
+
+  <!-- Castle Structure -->
+  <g filter="url(#shadow)">
+    <!-- OUTER CURTAIN WALLS -->
+    <rect x="120" y="295" width="272" height="95" rx="3" fill="url(#wallGrad)"/>
+
+    <!-- Rampart Crenellations Outer -->
+    <rect x="122" y="282" width="20" height="15" rx="2" fill="url(#wallGrad)"/>
+    <rect x="150" y="282" width="20" height="15" rx="2" fill="url(#wallGrad)"/>
+    <rect x="342" y="282" width="20" height="15" rx="2" fill="url(#wallGrad)"/>
+    <rect x="370" y="282" width="20" height="15" rx="2" fill="url(#wallGrad)"/>
+
+    <!-- Decorative Gold Rim on Ramparts -->
+    <rect x="116" y="294" width="280" height="6" rx="2" fill="url(#goldBright)"/>
+
+    <!-- LEFT FLANK TOWER -->
+    <g>
+      <rect x="92" y="225" width="58" height="160" rx="3" fill="url(#wallGrad)"/>
+      <!-- Tower Overhang Band -->
+      <rect x="86" y="217" width="70" height="12" rx="2" fill="url(#goldBright)"/>
+      <!-- Crenellations -->
+      <rect x="88" y="206" width="16" height="13" rx="2" fill="url(#wallGrad)"/>
+      <rect x="113" y="206" width="16" height="13" rx="2" fill="url(#wallGrad)"/>
+      <rect x="138" y="206" width="16" height="13" rx="2" fill="url(#wallGrad)"/>
+      <!-- Conical Roof -->
+      <polygon points="121,118 78,212 164,212" fill="url(#roofGradPink)"/>
+      <!-- Spire Finial -->
+      <circle cx="121" cy="116" r="6" fill="url(#goldBright)"/>
+      <!-- Window -->
+      <path d="M 113 255 A 8 8 0 0 1 129 255 L 129 278 L 113 278 Z" fill="#fef08a"/>
+      <line x1="121" y1="247" x2="121" y2="278" stroke="#92400e" stroke-width="2"/>
+    </g>
+
+    <!-- RIGHT FLANK TOWER -->
+    <g>
+      <rect x="362" y="225" width="58" height="160" rx="3" fill="url(#wallGrad)"/>
+      <!-- Tower Overhang Band -->
+      <rect x="356" y="217" width="70" height="12" rx="2" fill="url(#goldBright)"/>
+      <!-- Crenellations -->
+      <rect x="358" y="206" width="16" height="13" rx="2" fill="url(#wallGrad)"/>
+      <rect x="383" y="206" width="16" height="13" rx="2" fill="url(#wallGrad)"/>
+      <rect x="408" y="206" width="16" height="13" rx="2" fill="url(#wallGrad)"/>
+      <!-- Conical Roof -->
+      <polygon points="391,118 348,212 434,212" fill="url(#roofGradPink)"/>
+      <!-- Spire Finial -->
+      <circle cx="391" cy="116" r="6" fill="url(#goldBright)"/>
+      <!-- Window -->
+      <path d="M 383 255 A 8 8 0 0 1 399 255 L 399 278 L 383 278 Z" fill="#fef08a"/>
+      <line x1="391" y1="247" x2="391" y2="278" stroke="#92400e" stroke-width="2"/>
+    </g>
+
+    <!-- CENTRAL GREAT KEEP (High Tower) -->
+    <g>
+      <rect x="186" y="170" width="140" height="215" rx="3" fill="url(#keepGrad)"/>
+      <!-- Keep Upper Trim -->
+      <rect x="178" y="162" width="156" height="14" rx="2" fill="url(#goldBright)"/>
+      <!-- Keep Battlements -->
+      <rect x="182" y="150" width="22" height="14" rx="2" fill="url(#keepGrad)"/>
+      <rect x="216" y="150" width="22" height="14" rx="2" fill="url(#keepGrad)"/>
+      <rect x="250" y="150" width="22" height="14" rx="2" fill="url(#keepGrad)"/>
+      <rect x="284" y="150" width="22" height="14" rx="2" fill="url(#keepGrad)"/>
+      <rect x="308" y="150" width="22" height="14" rx="2" fill="url(#keepGrad)"/>
+
+      <!-- High Grand Spire Roof -->
+      <polygon points="256,58 174,156 338,156" fill="url(#roofGradPurple)"/>
+
+      <!-- Rose Window in Center Spire -->
+      <circle cx="256" cy="216" r="22" fill="#1e1b4b" stroke="url(#goldBright)" stroke-width="4"/>
+      <circle cx="256" cy="216" r="14" fill="#ec4899"/>
+      <circle cx="256" cy="216" r="7" fill="#fef08a"/>
+      <!-- Rosette crossbeams -->
+      <line x1="234" y1="216" x2="278" y2="216" stroke="#fef08a" stroke-width="2.5"/>
+      <line x1="256" y1="194" x2="256" y2="238" stroke="#fef08a" stroke-width="2.5"/>
+    </g>
+
+    <!-- ROYAL CROWN ON THE KEEP RAMPARTS -->
+    <g transform="translate(256, 168)">
+      <path d="M -30 0 L -30 -16 L -16 -6 L 0 -22 L 16 -6 L 30 -16 L 30 0 Z" fill="url(#goldBright)" stroke="#92400e" stroke-width="1.5"/>
+      <!-- Jewels on crown points -->
+      <circle cx="-30" cy="-16" r="3.5" fill="#ef4444"/>
+      <circle cx="0" cy="-22" r="4.5" fill="#38bdf8"/>
+      <circle cx="30" cy="-16" r="3.5" fill="#ef4444"/>
+      <circle cx="-15" cy="-3" r="2.5" fill="#a855f7"/>
+      <circle cx="0" cy="-3" r="3" fill="#fef08a"/>
+      <circle cx="15" cy="-3" r="2.5" fill="#a855f7"/>
+    </g>
+
+    <!-- GRAND PALACE GATEWAY (Entrance) -->
+    <g>
+      <!-- Outer Archway Border -->
+      <path d="M 214 390 L 214 316 A 42 42 0 0 1 298 316 L 298 390 Z" fill="url(#goldBright)" stroke="#78350f" stroke-width="3"/>
+      <!-- Inner Portal Void with Golden Radiance -->
+      <path d="M 224 390 L 224 322 A 32 32 0 0 1 288 322 L 288 390 Z" fill="url(#gateGlow)"/>
+      <!-- Portcullis Grids -->
+      <line x1="240" y1="316" x2="240" y2="390" stroke="#78350f" stroke-width="2.5"/>
+      <line x1="256" y1="310" x2="256" y2="390" stroke="#78350f" stroke-width="3"/>
+      <line x1="272" y1="316" x2="272" y2="390" stroke="#78350f" stroke-width="2.5"/>
+      <line x1="224" y1="345" x2="288" y2="345" stroke="#78350f" stroke-width="2.5"/>
+      <line x1="224" y1="368" x2="288" y2="368" stroke="#78350f" stroke-width="2.5"/>
+    </g>
+
+    <!-- RADIANT SUMMIT STAR (Top of central spire) -->
+    <g transform="translate(256, 54)" filter="url(#starGlow)">
+      <!-- Central Gem / Jewel -->
+      <circle cx="0" cy="0" r="14" fill="url(#goldBright)" stroke="#fff" stroke-width="2"/>
+      <!-- Star Flares -->
+      <path d="M 0 -36 Q 3 -10 26 0 Q 3 10 0 36 Q -3 10 -26 0 Q -3 -10 0 -36 Z" fill="url(#goldBright)"/>
+      <path d="M 0 -24 Q 2 -7 18 0 Q 2 7 0 24 Q -2 7 -18 0 Q -2 -7 0 -24 Z" fill="#ffffff" opacity="0.9"/>
+      <!-- Diagonal subtle rays -->
+      <path d="M -14 -14 L 14 14 M -14 14 L 14 -14" stroke="url(#goldBright)" stroke-width="3.5" stroke-linecap="round"/>
+      <circle cx="0" cy="0" r="5" fill="#ffffff"/>
+    </g>
+  </g>
+</svg>
