@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="100%" height="100%">
-  <rect width="300" height="200" rx="16" fill="#f1f5f9"/>
-  <ellipse cx="150" cy="165" rx="55" ry="12" fill="#cbd5e1"/>
-  <!-- Cone Body -->
-  <path d="M 150,45 L 95,150 A 55,15 0 0,0 205,150 Z" fill="#60a5fa" stroke="#1d4ed8" stroke-width="2.5"/>
-  <!-- Cone Base -->
-  <ellipse cx="150" cy="150" rx="55" ry="15" fill="#3b82f6" stroke="#1d4ed8" stroke-width="2"/>
-  <text x="150" y="188" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle">Cone (3D Hat)</text>
-</svg>
