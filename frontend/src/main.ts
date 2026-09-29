@@ -6,8 +6,15 @@ export const telemetry = {
   trackEvent: (evt: string, data: any) => console.log('TELEMETRY:', evt, data)
 };
 
-// Start the app when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
+function start() {
   const app = new App();
   app.init();
-});
+}
+
+// Start the app immediately if DOM is already parsed/interactive, otherwise wait for DOMContentLoaded
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', start);
+} else {
+  start();
+}
+
