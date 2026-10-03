@@ -1845,4 +1845,19 @@ header {
   100% { filter: drop-shadow(0 0 25px #fde047); opacity: 1; }
 }
 
+/* ===== Lite mode: old/slow devices (iPad mini 1, iOS 9). Applied via <html class="lite"> ===== */
+html.lite *, html.lite *::before, html.lite *::after {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  -webkit-filter: none !important;
+  filter: none !important;
+  text-shadow: none !important;
+  animation-iteration-count: 1 !important;
+  animation-duration: 0.01s !important;
+  animation-delay: 0s !important;
+  transition-duration: 0s !important;
+}
+html.lite .screen, html.lite .modal { will-change: auto !important; }
+
+
 

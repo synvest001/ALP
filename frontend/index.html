@@ -5,6 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Magical Kingdom</title>
     
+    <script>
+      (function () {
+        try {
+          var q = location.search;
+          var old = !window.fetch || /OS [5-9]_|OS 10_/.test(navigator.userAgent);
+          var lite = q.indexOf('lite=1') > -1 || (old && q.indexOf('lite=0') === -1);
+          if (lite) document.documentElement.className += ' lite';
+        } catch (e) {}
+        var shown = 0;
+        function show(msg) {
+          try {
+            if (shown++ > 2) return;
+            var d = document.createElement('div');
+            d.style.cssText = 'position:fixed;left:0;right:0;bottom:0;z-index:2147483647;background:#7f1d1d;color:#fff;font:12px/1.4 monospace;padding:8px 10px;word-break:break-all;max-height:35%;overflow:auto';
+            d.textContent = 'Error: ' + msg;
+            (document.body || document.documentElement).appendChild(d);
+          } catch (e) {}
+        }
+        window.onerror = function (m, src, line, col) {
+          show(m + ' @' + String(src || '').split('/').pop() + ':' + line + ':' + col);
+        };
+        window.addEventListener('unhandledrejection', function (e) {
+          show('Promise: ' + (e && e.reason && (e.reason.message || e.reason)));
+        });
+      })();
+    </script>
     <link rel="manifest" href="./manifest.json">
     <meta name="theme-color" content="#2c3e50">
     <link rel="icon" type="image/png" href="./icon-192.png">

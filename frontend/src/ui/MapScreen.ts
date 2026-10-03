@@ -580,11 +580,15 @@ export class MapScreen {
     const scrollX = targetNode.x - (vWidth / 2);
     const scrollY = targetNode.y - (vHeight / 2);
     
-    viewport.scrollTo({
-      left: scrollX,
-      top: scrollY,
-      behavior: 'smooth'
-    });
+    const vp = viewport as HTMLElement;
+    if (typeof vp.scrollTo === 'function') {
+      try {
+        vp.scrollTo({ left: scrollX, top: scrollY, behavior: 'smooth' });
+        return;
+      } catch (e) { /* old WebKit: fall through to plain assignment */ }
+    }
+    vp.scrollLeft = Math.max(0, scrollX);
+    vp.scrollTop = Math.max(0, scrollY);
   }
 
   /**
