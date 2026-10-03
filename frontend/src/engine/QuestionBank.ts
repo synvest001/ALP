@@ -42,89 +42,123 @@ export interface QuestionItem {
 }
 
 export class QuestionBank {
+  // Working set: only the subskill chunks needed for the upcoming session are in memory.
+  private chunks: Map<string, QuestionItem[]> = new Map();
   private items: QuestionItem[] = [];
   private itemsByDomain: Map<string, QuestionItem[]> = new Map();
   private itemsBySubskill: Map<string, QuestionItem[]> = new Map();
-  private loadedDomains: Set<string> = new Set();
-  private loadPromise: Promise<void> | null = null;
+  private chunkIndex: Record<string, { domain: string; count: number }> | null = null;
+  private legacyMode = false;
+  private indexPromise: Promise<void> | null = null;
   public isReady = false;
   private loadErrors: string[] = [];
 
+  private static readonly DOMAINS = [
+    'MATHEMATICS', 'ENGLISH_LANGUAGE', 'SCIENCE_EVS', 'LOGICAL_REASONING', 'WORLD_KNOWLEDGE'
+  ];
+
   constructor() {
-    this.loadPromise = this.preloadAll();
+    this.indexPromise = this.loadIndex();
   }
 
-  public async preloadAll(): Promise<void> {
-    if (this.isReady) return;
-    
-    const domains = [
-      'MATHEMATICS',
-      'ENGLISH_LANGUAGE',
-      'SCIENCE_EVS',
-      'LOGICAL_REASONING',
-      'WORLD_KNOWLEDGE'
-    ];
-
+  /** Loads the tiny chunk index. Falls back to legacy full bundles (dev server). */
+  private async loadIndex(): Promise<void> {
     this.loadErrors = [];
     try {
-      // Sequential (not Promise.all) to keep peak memory low on older iPads.
-      for (const dom of domains) {
-        const url = resolveAssetUrl(`data/question_bank/items_${dom}.json`);
-        let lastErr = '';
-        for (let attempt = 1; attempt <= 2; attempt++) {
-          try {
-            const data: QuestionItem[] = await getJson<QuestionItem[]>(url);
-            this.addItems(dom, data);
-            lastErr = '';
-            break;
-          } catch (err: any) {
-            lastErr = String(err && err.message ? err.message : err);
-            console.warn(`[QuestionBank] ${dom}: attempt ${attempt} failed:`, err);
-          }
-        }
-        if (lastErr) this.loadErrors.push(`${dom}: ${lastErr}`);
-      }
-      // Only mark ready if something loaded, so ensureLoaded() can retry later.
-      this.isReady = this.items.length > 0;
-      console.log(`[QuestionBank] Initialized ${this.items.length} questions.` +
-        (this.loadErrors.length ? ` Errors: ${this.loadErrors.join('; ')}` : ''));
-    } catch (e) {
-      console.error("[QuestionBank] Error during question bank initialization:", e);
+      const idx = await getJson<{ subskills: Record<string, { domain: string; count: number }> }>(
+        resolveAssetUrl('data/question_bank/chunks/index.json')
+      );
+      this.chunkIndex = idx.subskills;
+      this.isReady = true;
+      console.log(`[QuestionBank] Chunk index ready: ${Object.keys(this.chunkIndex).length} subskills.`);
+    } catch (e: any) {
+      console.warn('[QuestionBank] No chunk index; falling back to full bundles.', e);
+      await this.loadLegacyBundles();
     }
+  }
+
+  /** Dev-server fallback: load every domain bundle, sequentially. */
+  private async loadLegacyBundles(): Promise<void> {
+    this.legacyMode = true;
+    for (const dom of QuestionBank.DOMAINS) {
+      try {
+        const data = await getJson<QuestionItem[]>(resolveAssetUrl(`data/question_bank/items_${dom}.json`));
+        for (const it of data) {
+          const list = this.chunks.get(it.target_subskill_id) || [];
+          list.push(it);
+          this.chunks.set(it.target_subskill_id, list);
+        }
+      } catch (e: any) {
+        this.loadErrors.push(`${dom}: ${String(e && e.message ? e.message : e)}`);
+      }
+    }
+    this.rebuildViews();
+    this.isReady = this.items.length > 0;
+  }
+
+  public async ensureLoaded(): Promise<void> {
+    if (this.indexPromise) await this.indexPromise;
+    if (!this.isReady) {
+      this.indexPromise = this.loadIndex();
+      await this.indexPromise;
+    }
+  }
+
+  public hasSubskill(id: string): boolean {
+    return this.legacyMode ? this.chunks.has(id) : !!(this.chunkIndex && this.chunkIndex[id]);
+  }
+
+  /**
+   * Make exactly these subskills resident in memory (loading missing ones one at a time,
+   * evicting the rest). Keeps the working set small on 512 MB devices.
+   */
+  public async loadSubskills(ids: string[]): Promise<void> {
+    await this.ensureLoaded();
+    if (this.legacyMode || !this.chunkIndex) return;
+    const wanted = new Set(ids.filter(id => this.chunkIndex![id]));
+    for (const id of Array.from(this.chunks.keys())) {
+      if (!wanted.has(id)) this.chunks.delete(id);
+    }
+    this.loadErrors = [];
+    const missing = Array.from(wanted).filter(id => !this.chunks.has(id));
+    for (const id of missing) {
+      let lastErr = '';
+      for (let attempt = 1; attempt <= 2; attempt++) {
+        try {
+          const data = await getJson<QuestionItem[]>(resolveAssetUrl(`data/question_bank/chunks/${id}.json`));
+          this.chunks.set(id, data);
+          lastErr = '';
+          break;
+        } catch (err: any) {
+          lastErr = String(err && err.message ? err.message : err);
+          console.warn(`[QuestionBank] ${id}: attempt ${attempt} failed:`, err);
+        }
+      }
+      if (lastErr) this.loadErrors.push(`${id}: ${lastErr}`);
+    }
+    this.rebuildViews();
+    console.log(`[QuestionBank] Working set: ${this.chunks.size} subskills, ${this.items.length} items.` +
+      (this.loadErrors.length ? ` Errors: ${this.loadErrors.join('; ')}` : ''));
   }
 
   public getLoadErrors(): string[] {
     return this.loadErrors;
   }
 
-  public async ensureLoaded(): Promise<void> {
-    if (this.isReady) return;
-    if (this.loadPromise) await this.loadPromise;
-    // Nothing loaded the first time (e.g. transient error): try again.
-    if (!this.isReady) {
-      this.loadPromise = this.preloadAll();
-      await this.loadPromise;
-    }
-  }
-
-  private addItems(domain: string, newItems: QuestionItem[]) {
-    this.loadedDomains.add(domain);
-    if (!this.itemsByDomain.has(domain)) {
-      this.itemsByDomain.set(domain, []);
-    }
-    const domainList = this.itemsByDomain.get(domain)!;
-
-    for (const item of newItems) {
-      this.items.push(item);
-      domainList.push(item);
-
-      const subskill = item.target_subskill_id;
-      if (!this.itemsBySubskill.has(subskill)) {
-        this.itemsBySubskill.set(subskill, []);
+  private rebuildViews() {
+    this.items = [];
+    this.itemsByDomain = new Map();
+    this.itemsBySubskill = new Map();
+    this.chunks.forEach((list, sub) => {
+      this.itemsBySubskill.set(sub, list);
+      for (const item of list) {
+        this.items.push(item);
+        const d = this.itemsByDomain.get(item.domain_id);
+        if (d) d.push(item); else this.itemsByDomain.set(item.domain_id, [item]);
       }
-      this.itemsBySubskill.get(subskill)!.push(item);
-    }
+    });
   }
+
 
   private normalizePrompt(text?: string): string {
     if (!text) return '';

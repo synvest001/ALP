@@ -34,6 +34,42 @@ export class SessionComposer {
     ]);
   }
 
+  private preparedActiveSet: Set<string> | null = null;
+
+  /** Active subskills for the next session (random next-progressive picks happen here, once). */
+  private computeActiveSet(): Set<string> {
+    const secureSubskills = this.assessmentEngine.getSecureSubskills();
+    const activeSubskills = this.assessmentEngine.getActiveSubskills();
+    const activeSet = new Set(activeSubskills);
+    for (const dom of ['MATHEMATICS', 'ENGLISH_LANGUAGE', 'SCIENCE_EVS', 'WORLD_KNOWLEDGE', 'LOGICAL_REASONING']) {
+      const currentDomainActive = Array.from(activeSet).filter(
+        code => this.curriculumGraph.getDomainForSubskill(code) === dom
+      );
+      if (currentDomainActive.length < 3) {
+        const needed = 3 - currentDomainActive.length;
+        const nextSubskills = this.curriculumGraph.getNextProgressiveSubskills(dom, secureSubskills, activeSet, needed);
+        for (const sub of nextSubskills) {
+          activeSet.add(sub);
+        }
+      }
+    }
+    return activeSet;
+  }
+
+  /** Async step before generateSession(): load only the question chunks this session can use. */
+  public async prepareSession(kidId: string = 'default_player'): Promise<void> {
+    await this.ensureReady();
+    const cleanKidId = (kidId || 'default_player').toLowerCase().trim();
+    this.assessmentEngine.setKidId(cleanKidId);
+    const activeSet = this.computeActiveSet();
+    this.preparedActiveSet = activeSet;
+    const needed = new Set<string>(activeSet);
+    for (const dom of ['MATHEMATICS', 'ENGLISH_LANGUAGE', 'SCIENCE_EVS', 'WORLD_KNOWLEDGE', 'LOGICAL_REASONING']) {
+      for (const e of this.curriculumGraph.getEntryPoints(dom)) needed.add(e);
+    }
+    await this.questionBank.loadSubskills(Array.from(needed));
+  }
+
   /**
    * Composes a dynamic session according to Workstream 3 Dual-Axis Adaptive Design:
    * - Axis 1: Curriculum Graph progression & prerequisite unlocking
@@ -59,10 +95,6 @@ export class SessionComposer {
     // lifetimeSeen is retained for reporting/analytics, not for session exclusion.
     const forbiddenBase = new Set([...cooldownIds]);
     const sessionSeenPrompts = new Set<string>();
-
-    // 1. Get real learner states
-    const secureSubskills = this.assessmentEngine.getSecureSubskills();
-    const activeSubskills = this.assessmentEngine.getActiveSubskills();
 
     // 2. Build balanced domain sequence:
     let domainSlots: string[] = [];
@@ -91,21 +123,9 @@ export class SessionComposer {
     // High entropy shuffle ensures unpredictable sequence order across sessions and kids
     const domainPool = domainSlots.sort(() => Math.random() - 0.5);
 
-    // 3. Ensure we have a healthy pool of active subskills across multiple strands (at least 3-4 per domain)
-    const activeSet = new Set(activeSubskills);
-
-    for (const dom of ['MATHEMATICS', 'ENGLISH_LANGUAGE', 'SCIENCE_EVS', 'WORLD_KNOWLEDGE', 'LOGICAL_REASONING']) {
-      const currentDomainActive = Array.from(activeSet).filter(
-        code => this.curriculumGraph.getDomainForSubskill(code) === dom
-      );
-      if (currentDomainActive.length < 3) {
-        const needed = 3 - currentDomainActive.length;
-        const nextSubskills = this.curriculumGraph.getNextProgressiveSubskills(dom, secureSubskills, activeSet, needed);
-        for (const s of nextSubskills) {
-          activeSet.add(s);
-        }
-      }
-    }
+    // 3. Active subskills (computed once in prepareSession so the needed chunks are resident)
+    const activeSet = this.preparedActiveSet ?? this.computeActiveSet();
+    this.preparedActiveSet = null;
 
     // 4. Fill Session Budget with Dual-Axis Progression
     let domainCycleIndex = 0;

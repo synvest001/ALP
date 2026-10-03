@@ -306,6 +306,10 @@ export class TaskRunner {
     const kidName = this.app?.profileSwitcher?.getCurrentPlayerName() || 'default_player';
     await this.composer.ensureReady();
 
+    if (!(sessionData && sessionData.length > 0)) {
+      await this.composer.prepareSession(kidName);
+    }
+
     // Empty Question Bank Guard
     if (this.composer.questionBank.getLoadedCount() === 0) {
       this.showEmptyBankError();

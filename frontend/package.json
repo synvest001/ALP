@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build && node scripts/optimize-art.mjs",
+    "build": "tsc && vite build && node scripts/split-question-bank.mjs && node scripts/optimize-art.mjs",
     "preview": "vite preview",
     "generate-icons": "node scripts/generate-icons.mjs"
   },
