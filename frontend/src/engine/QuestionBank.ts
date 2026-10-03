@@ -1,4 +1,5 @@
 import { resolveAssetUrl } from '../utils/assets';
+import { getJson } from '../utils/http';
 
 export interface QuestionItem {
   item_id: string;
@@ -72,13 +73,7 @@ export class QuestionBank {
         let lastErr = '';
         for (let attempt = 1; attempt <= 2; attempt++) {
           try {
-            const res = await fetch(url);
-            if (!res.ok) {
-              lastErr = `HTTP ${res.status}`;
-              console.warn(`[QuestionBank] ${dom}: ${lastErr} (${url})`);
-              continue;
-            }
-            const data: QuestionItem[] = await res.json();
+            const data: QuestionItem[] = await getJson<QuestionItem[]>(url);
             this.addItems(dom, data);
             lastErr = '';
             break;

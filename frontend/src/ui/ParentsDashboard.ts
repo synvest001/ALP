@@ -1,5 +1,6 @@
 import { App } from '../app';
 import { AssessmentEngine } from '../engine/AssessmentEngine';
+import { getJson } from '../utils/http';
 
 export class ParentsDashboard {
   private container: HTMLElement;
@@ -21,8 +22,7 @@ export class ParentsDashboard {
   private async fetchCurriculumMap() {
     if (!this.curriculumMap) {
       try {
-        const res = await fetch(`${import.meta.env.BASE_URL}data/curriculum_map.json`);
-        this.curriculumMap = await res.json();
+        this.curriculumMap = await getJson(`${import.meta.env.BASE_URL}data/curriculum_map.json`);
       } catch (e) {
         console.error('Failed to load curriculum map', e);
       }

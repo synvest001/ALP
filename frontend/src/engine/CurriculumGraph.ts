@@ -1,4 +1,5 @@
 import { resolveAssetUrl } from '../utils/assets';
+import { getJson } from '../utils/http';
 
 export interface SubskillNode {
   code: string;
@@ -49,15 +50,10 @@ export class CurriculumGraph {
   private async initGraph(): Promise<void> {
     try {
       const url = resolveAssetUrl('data/curriculum_map.json');
-      const res = await fetch(url);
-      if (res.ok) {
-        const data = await res.json();
-        this.parseCurriculumMap(data);
-        this.isGraphLoaded = true;
-        console.log(`[CurriculumGraph] Loaded ${this.nodes.size} subskills across ${this.domainNodes.size} domains.`);
-      } else {
-        console.warn(`[CurriculumGraph] Failed to fetch curriculum map from ${url}: status ${res.status}`);
-      }
+      const data = await getJson(url);
+      this.parseCurriculumMap(data);
+      this.isGraphLoaded = true;
+      console.log(`[CurriculumGraph] Loaded ${this.nodes.size} subskills across ${this.domainNodes.size} domains.`);
     } catch (e) {
       console.warn("[CurriculumGraph] Could not fetch curriculum_map.json, using fallback entry points", e);
     }
