@@ -204,6 +204,7 @@ export class TaskRunner {
           <div style="font-size: 3rem; margin-bottom: 16px;">🏰✨</div>
           <h2 style="font-size: 1.4rem; color: #1e293b; margin-bottom: 12px; font-weight: 700;">Couldn't load the questions.</h2>
           <p style="color: #64748b; font-size: 1.05rem; margin-bottom: 24px; max-width: 400px; line-height: 1.5;">Check your connection and reload.</p>
+          <p style="color: #94a3b8; font-size: 0.8rem; margin: -12px 0 20px; max-width: 420px; word-break: break-word;">${(this.composer.questionBank.getLoadErrors?.() || []).join(' · ') || 'No error details recorded.'}</p>
           <button id="btn-reload-app" class="btn btn-large cta-glow" style="padding: 12px 32px; font-size: 1.1rem; border-radius: 12px; background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; border: none; cursor: pointer; font-weight: bold;">Reload</button>
         </main>
       </div>

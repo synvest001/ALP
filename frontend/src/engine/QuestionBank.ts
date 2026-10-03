@@ -47,6 +47,7 @@ export class QuestionBank {
   private loadedDomains: Set<string> = new Set();
   private loadPromise: Promise<void> | null = null;
   public isReady = false;
+  private loadErrors: string[] = [];
 
   constructor() {
     this.loadPromise = this.preloadAll();
@@ -63,35 +64,51 @@ export class QuestionBank {
       'WORLD_KNOWLEDGE'
     ];
 
+    this.loadErrors = [];
     try {
-      const fetchDomain = async (dom: string) => {
-        try {
-          const path = `data/question_bank/items_${dom}.json`;
-          const url = resolveAssetUrl(path);
-          const res = await fetch(url);
-          if (res.ok) {
+      // Sequential (not Promise.all) to keep peak memory low on older iPads.
+      for (const dom of domains) {
+        const url = resolveAssetUrl(`data/question_bank/items_${dom}.json`);
+        let lastErr = '';
+        for (let attempt = 1; attempt <= 2; attempt++) {
+          try {
+            const res = await fetch(url);
+            if (!res.ok) {
+              lastErr = `HTTP ${res.status}`;
+              console.warn(`[QuestionBank] ${dom}: ${lastErr} (${url})`);
+              continue;
+            }
             const data: QuestionItem[] = await res.json();
             this.addItems(dom, data);
+            lastErr = '';
+            break;
+          } catch (err: any) {
+            lastErr = String(err && err.message ? err.message : err);
+            console.warn(`[QuestionBank] ${dom}: attempt ${attempt} failed:`, err);
           }
-        } catch (err) {
-          console.warn(`[QuestionBank] Failed to load ${dom} bundle:`, err);
         }
-      };
-
-      await Promise.all(domains.map(fetchDomain));
-      this.isReady = true;
-      console.log(`[QuestionBank] Successfully initialized ${this.items.length} total questions into memory.`);
+        if (lastErr) this.loadErrors.push(`${dom}: ${lastErr}`);
+      }
+      // Only mark ready if something loaded, so ensureLoaded() can retry later.
+      this.isReady = this.items.length > 0;
+      console.log(`[QuestionBank] Initialized ${this.items.length} questions.` +
+        (this.loadErrors.length ? ` Errors: ${this.loadErrors.join('; ')}` : ''));
     } catch (e) {
       console.error("[QuestionBank] Error during question bank initialization:", e);
     }
   }
 
+  public getLoadErrors(): string[] {
+    return this.loadErrors;
+  }
+
   public async ensureLoaded(): Promise<void> {
     if (this.isReady) return;
-    if (this.loadPromise) {
+    if (this.loadPromise) await this.loadPromise;
+    // Nothing loaded the first time (e.g. transient error): try again.
+    if (!this.isReady) {
+      this.loadPromise = this.preloadAll();
       await this.loadPromise;
-    } else {
-      await this.preloadAll();
     }
   }
 
