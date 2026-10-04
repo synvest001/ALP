@@ -1,5 +1,6 @@
 import './style.css';
 import { App } from './app';
+import { speech } from './utils/Speech';
 
 // Telemetry placeholder
 export const telemetry = {
@@ -7,6 +8,7 @@ export const telemetry = {
 };
 
 function start() {
+  speech.init();
   const app = new App();
   app.init();
 }

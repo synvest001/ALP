@@ -7,6 +7,7 @@ import { soundFX } from '../utils/SoundFX';
 import { resolveAssetUrl } from '../utils/assets';
 import { DailyQuestManager } from '../engine/DailyQuestManager';
 import { QuestionPresentationLog } from '../storage/QuestionPresentationLog';
+import { speech } from '../utils/Speech';
 
 const GENERIC_HINTS = new Set([
   "Look closely at the picture and count each item.",
@@ -93,32 +94,11 @@ export class TaskRunner {
   }
 
   private cancelSpeech() {
-    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
-      try {
-        window.speechSynthesis.cancel();
-      } catch (e) {}
-    }
+    speech.cancel();
   }
 
   private speakPrompt(text: string) {
-    if (!text || typeof window === 'undefined' || !('speechSynthesis' in window) || typeof SpeechSynthesisUtterance === 'undefined') {
-      return;
-    }
-    try {
-      window.speechSynthesis.cancel();
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = 'en-US';
-      utterance.rate = 0.85;
-
-      const voices = window.speechSynthesis.getVoices();
-      const enVoice = voices.find(v => v.lang.startsWith('en')) || null;
-      if (enVoice) utterance.voice = enVoice;
-
-      console.log('[TaskRunner] SpeechSynthesis speak called for prompt:', text);
-      window.speechSynthesis.speak(utterance);
-    } catch (e) {
-      console.warn('[TaskRunner] Speech synthesis failed or blocked:', e);
-    }
+    speech.speak(text);
   }
 
   private computeValidHint(item: any): string | null {
@@ -225,7 +205,7 @@ export class TaskRunner {
   }
 
   private bindEvents() {
-    const hasSpeech = typeof window !== 'undefined' && 'speechSynthesis' in window && typeof SpeechSynthesisUtterance !== 'undefined';
+    const hasSpeech = speech.isSupported();
     const btnAudio = this.container.querySelector('#btn-play-audio') as HTMLElement | null;
     if (btnAudio) {
       if (!hasSpeech) {
