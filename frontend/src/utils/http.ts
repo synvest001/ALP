@@ -22,3 +22,23 @@ export function getJson<T = any>(url: string): Promise<T> {
     }
   });
 }
+
+export function postText(url: string, body: string, timeoutMs: number): Promise<string> {
+  return new Promise<string>(function (resolve, reject) {
+    try {
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST', url, true);
+      xhr.setRequestHeader('Content-Type', 'text/plain;charset=utf-8');
+      xhr.timeout = timeoutMs;
+      xhr.onload = function () {
+        if (xhr.status < 200 || xhr.status >= 300) { reject(new Error('HTTP ' + xhr.status)); return; }
+        resolve(xhr.responseText);
+      };
+      xhr.onerror = function () { reject(new Error('Network error (could not reach sync server)')); };
+      xhr.ontimeout = function () { reject(new Error('Sync timed out')); };
+      xhr.send(body);
+    } catch (e: any) {
+      reject(new Error(String(e && e.message ? e.message : e)));
+    }
+  });
+}

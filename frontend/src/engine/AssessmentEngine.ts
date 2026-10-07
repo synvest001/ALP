@@ -31,6 +31,10 @@ export class AssessmentEngine {
     }
   }
 
+  public reload(): void {
+    this.loadState();
+  }
+
   private getStorageKey(): string {
     return `alp_${this.kidId}_assessment_states`;
   }

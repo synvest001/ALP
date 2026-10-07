@@ -1,4 +1,5 @@
 import { App } from '../app';
+import { SyncEngine, syncCurrentPlayer, FamilyKid } from '../engine/SyncEngine';
 
 export class AccountScreen {
   private container: HTMLElement;
@@ -31,6 +32,19 @@ export class AccountScreen {
             <h3 style="margin-bottom: 15px;">Select your avatar:</h3>
             <div id="profiles-container"></div>
           </div>
+        </div>
+
+        <!-- Sync across devices -->
+        <div class="parents-card" style="margin-bottom: 20px;">
+          <h3 style="margin-top: 0; margin-bottom: 8px;">Sync across devices</h3>
+          <p style="color: #64748b; font-size: 0.95rem; margin-bottom: 15px;">Use a family code to sync progress across multiple devices.</p>
+          <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 12px; flex-wrap: wrap;">
+            <input type="text" id="family-code-input" placeholder="Family code" value="${SyncEngine.getFamilyCode()}" style="padding: 8px 12px; font-size: 1rem; border-radius: 8px; border: 2px solid #ccc; flex: 1; min-width: 180px; max-width: 300px;" />
+            <button id="btn-save-family-code" class="parents-btn" style="padding: 8px 16px;">Save code</button>
+            <button id="btn-list-kids" class="parents-btn" style="padding: 8px 16px;">Show children in this family</button>
+          </div>
+          <div id="sync-status" style="font-size: 0.9rem; color: #475569; margin-bottom: 10px; min-height: 1.2em;"></div>
+          <div id="family-kids-list"></div>
         </div>
         
         <div class="parents-card">
@@ -65,6 +79,71 @@ export class AccountScreen {
         newPlayerForm.classList.remove('hidden');
         btnShowNewPlayer.classList.add('hidden');
         this.renderNewPlayerAvatars();
+      });
+    }
+
+    const syncStatusEl = this.container.querySelector('#sync-status') as HTMLElement | null;
+    const btnSaveCode = this.container.querySelector('#btn-save-family-code') as HTMLButtonElement | null;
+    const btnListKids = this.container.querySelector('#btn-list-kids') as HTMLButtonElement | null;
+    const familyCodeInput = this.container.querySelector('#family-code-input') as HTMLInputElement | null;
+    const familyKidsList = this.container.querySelector('#family-kids-list') as HTMLElement | null;
+
+    if (!SyncEngine.endpointConfigured()) {
+      if (syncStatusEl) syncStatusEl.textContent = 'Sync is not set up yet.';
+      if (btnSaveCode) btnSaveCode.disabled = true;
+      if (btnListKids) btnListKids.disabled = true;
+    }
+
+    if (btnSaveCode && familyCodeInput) {
+      btnSaveCode.addEventListener('click', () => {
+        const code = familyCodeInput.value;
+        SyncEngine.setFamilyCode(code);
+        if (syncStatusEl) syncStatusEl.textContent = 'Family code saved.';
+      });
+    }
+
+    if (btnListKids) {
+      btnListKids.addEventListener('click', () => {
+        if (syncStatusEl) syncStatusEl.textContent = 'Checking family...';
+        SyncEngine.listKids().then((res) => {
+          if (!res.ok) {
+            if (syncStatusEl) syncStatusEl.textContent = res.message;
+            if (familyKidsList) familyKidsList.innerHTML = '';
+            return;
+          }
+          if (syncStatusEl) syncStatusEl.textContent = '';
+          if (!familyKidsList) return;
+          familyKidsList.innerHTML = '';
+          if (!res.kids || res.kids.length === 0) {
+            familyKidsList.innerHTML = '<p style="color: #64748b; font-size: 0.9rem; margin-top: 8px;">No children found for this code yet.</p>';
+            return;
+          }
+          res.kids.forEach((kid: FamilyKid) => {
+            const row = document.createElement('div');
+            row.className = 'account-list-item';
+            row.style.marginTop = '8px';
+            row.innerHTML = `
+              <div class="account-list-info">
+                <img src="${this.getAvatarSrc(kid.avatar || 'princess')}" alt="${kid.name}" />
+                <span style="font-weight: bold; font-size: 1.1em; color: #2c3e50;">${kid.name}</span>
+              </div>
+              <button class="parents-btn btn-add-device" style="border-color: #27ae60; color: #27ae60;">Add to this device</button>
+            `;
+            const btnAdd = row.querySelector('.btn-add-device');
+            if (btnAdd) {
+              btnAdd.addEventListener('click', () => {
+                this.app.profileSwitcher.login(kid.name, kid.avatar || 'princess');
+                this.renderProfileList();
+                if (syncStatusEl) syncStatusEl.textContent = 'Syncing ' + kid.name + '...';
+                syncCurrentPlayer(this.app).then((syncRes) => {
+                  if (syncStatusEl) syncStatusEl.textContent = syncRes.message;
+                  this.renderProfileList();
+                });
+              });
+            }
+            familyKidsList.appendChild(row);
+          });
+        });
       });
     }
   }
@@ -141,7 +220,13 @@ export class AccountScreen {
       btn.addEventListener('click', (e) => {
         const name = (e.target as HTMLElement).getAttribute('data-name');
         if (name && confirm(`Are you sure you want to reset all progress for ${name}? This will wipe their map and stickers.`)) {
+          SyncEngine.bumpEpoch(name);
+          const clean = name.toLowerCase().trim();
+          const epoch = localStorage.getItem(`alp_${clean}_sync_epoch`);
+          const updated = localStorage.getItem(`alp_${clean}_sync_updated`);
           this.app.profileSwitcher.resetProgress(name);
+          if (epoch !== null) localStorage.setItem(`alp_${clean}_sync_epoch`, epoch);
+          if (updated !== null) localStorage.setItem(`alp_${clean}_sync_updated`, updated);
           alert(`${name}'s progress has been reset.`);
           this.renderProfileList();
         }

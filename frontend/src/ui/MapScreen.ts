@@ -1,5 +1,5 @@
 import { App } from '../app';
-import { SyncEngine } from '../engine/SyncEngine';
+import { SyncEngine, syncCurrentPlayer } from '../engine/SyncEngine';
 import { GRAND_TREASURES } from '../data/Treasures';
 import { FAIRY_CASTLE_PARTS, getUnlockedCastlePartsCount, renderFairyCastleSvg } from '../data/FairyCastle';
 import { soundFX } from '../utils/SoundFX';
@@ -165,6 +165,16 @@ export class MapScreen {
 
     this.bindEvents();
     this.loadState();
+    if (this.container.classList.contains('active')) {
+      this.onShow();
+    }
+    if (SyncEngine.shouldAutoSync()) {
+      syncCurrentPlayer(this.app).then((res) => {
+        if (res.ok && res.changed) {
+          this.render();
+        }
+      });
+    }
   }
 
   private getPlayerKey(prefix: string): string {
@@ -274,22 +284,25 @@ export class MapScreen {
     const btnSync = this.container.querySelector('#btn-sync') as HTMLButtonElement;
     
     if (btnSync) {
-      btnSync.addEventListener('click', async () => {
+      btnSync.addEventListener('click', () => {
         btnSync.textContent = 'Syncing...';
         btnSync.disabled = true;
-        
-        const syncEngine = new SyncEngine();
-        const success = await syncEngine.sync();
-        
-        btnSync.textContent = success ? 'Synced!' : 'Sync Failed';
-        setTimeout(() => {
-          btnSync.textContent = 'Sync Data';
-          btnSync.disabled = false;
-        }, 2000);
-        
-        if (success) {
-          this.render();
-        }
+        syncCurrentPlayer(this.app).then((res) => {
+          btnSync.textContent = res.ok ? 'Synced!' : (res.message.length > 40 ? res.message.substring(0, 40) + '…' : res.message);
+          if (res.ok && res.changed) {
+            this.render();
+          }
+          setTimeout(() => {
+            const currentBtn = this.container.querySelector('#btn-sync') as HTMLButtonElement | null;
+            if (currentBtn) {
+              currentBtn.textContent = 'Sync Data';
+              currentBtn.disabled = false;
+            } else {
+              btnSync.textContent = 'Sync Data';
+              btnSync.disabled = false;
+            }
+          }, res.ok ? 2000 : 5000);
+        });
       });
     }
     

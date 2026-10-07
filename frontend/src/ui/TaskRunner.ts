@@ -8,6 +8,7 @@ import { resolveAssetUrl } from '../utils/assets';
 import { DailyQuestManager } from '../engine/DailyQuestManager';
 import { QuestionPresentationLog } from '../storage/QuestionPresentationLog';
 import { speech } from '../utils/Speech';
+import { SyncEngine, syncCurrentPlayer } from '../engine/SyncEngine';
 
 const GENERIC_HINTS = new Set([
   "Look closely at the picture and count each item.",
@@ -283,7 +284,10 @@ export class TaskRunner {
   }
 
   public async startSession(sessionData?: TaskRequestPayload[], focusedDomain?: string) {
+    this.assessmentEngine.reload();
     const kidName = this.app?.profileSwitcher?.getCurrentPlayerName() || 'default_player';
+    this.assessmentEngine.setKidId(kidName);
+    this.assessmentEngine.reload();
     await this.composer.ensureReady();
 
     if (!(sessionData && sessionData.length > 0)) {
@@ -611,6 +615,10 @@ export class TaskRunner {
       localStorage.setItem('alp_nodes_completed', nextNodes.toString());
       localStorage.setItem(`alp_${kidName}_stars`, newStars.toString());
       localStorage.setItem('alp_stars', newStars.toString());
+
+      if (SyncEngine.shouldAutoSync()) {
+        syncCurrentPlayer(this.app).catch(() => {});
+      }
       
       const starBadge = document.getElementById('player-stars');
       if (starBadge) {
@@ -682,6 +690,10 @@ export class TaskRunner {
       localStorage.setItem('alp_nodes_completed', nextNodes.toString());
       localStorage.setItem(`alp_${kidName}_stars`, newStars.toString());
       localStorage.setItem('alp_stars', newStars.toString());
+
+      if (SyncEngine.shouldAutoSync()) {
+        syncCurrentPlayer(this.app).catch(() => {});
+      }
       
       const starBadge = document.getElementById('player-stars');
       if (starBadge) {
