@@ -2,7 +2,7 @@ import { mergeRecords } from './SyncMerge';
 import { postText } from '../utils/http';
 
 // Paste the deployed Google Apps Script web-app URL here (ends in /exec).
-export const SYNC_ENDPOINT = 'PASTE_APPS_SCRIPT_URL_HERE';
+export const SYNC_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxwVDcBy1wzT_JRK4Vff9UWjWli7BwS5w-8p2WrbUhtoaRANyIhMnr5S7q31-WLr78I7Q/exec';
 
 export interface SyncResult { ok: boolean; message: string; changed: boolean; avatar?: string; }
 export interface FamilyKid { kid: string; name: string; avatar: string; }
