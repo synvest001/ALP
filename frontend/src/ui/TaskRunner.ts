@@ -1,7 +1,8 @@
 import { SessionComposer, TaskRequestPayload } from '../engine/AdaptiveEngine';
 import { AssessmentEngine } from '../engine/AssessmentEngine';
 import { RepetitionGuard } from '../engine/RepetitionGuard';
-import { TelemetryQueue } from '../storage/telemetry_queue';
+import { EventLog } from '../engine/EventLog';
+import { ALPSessionEvent } from '../engine/EventTypes';
 import { MapScreen } from './MapScreen';
 import { soundFX } from '../utils/SoundFX';
 import { resolveAssetUrl } from '../utils/assets';
@@ -23,7 +24,6 @@ export class TaskRunner {
   private sessionErrors = 0;
   private composer: SessionComposer;
   private assessmentEngine: AssessmentEngine;
-  private telemetry: TelemetryQueue;
 
   private app: any;
   private currentValidHint: string | null = null;
@@ -35,7 +35,6 @@ export class TaskRunner {
     this.container = document.getElementById('modal-task-runner') as HTMLElement;
     this.composer = new SessionComposer();
     this.assessmentEngine = new AssessmentEngine();
-    this.telemetry = new TelemetryQueue();
   }
 
   public render() {
@@ -229,6 +228,22 @@ export class TaskRunner {
       btnQuit.addEventListener('click', () => {
         this.cancelSpeech();
         this.container.classList.remove('active');
+        const kidName = (this.app?.profileSwitcher?.getCurrentPlayerName() || 'default_player').toLowerCase().trim();
+        const currentSessionId = this.currentSession[0]?.session_id || `sess_${Date.now()}`;
+        const devId = EventLog.getDeviceId();
+        const seq = EventLog.nextDeviceSeq();
+        const sesQuit: ALPSessionEvent = {
+          i: devId + '-' + seq,
+          d: devId,
+          q: seq,
+          t: Date.now(),
+          y: 'ses',
+          ep: parseInt(localStorage.getItem('alp_' + kidName + '_sync_epoch') || '0', 10),
+          ss: currentSessionId,
+          e: 'end',
+          why: 'quit'
+        };
+        EventLog.appendEvent(kidName, sesQuit);
       });
     }
 
@@ -284,7 +299,6 @@ export class TaskRunner {
   }
 
   public async startSession(sessionData?: TaskRequestPayload[], focusedDomain?: string) {
-    this.assessmentEngine.reload();
     const kidName = this.app?.profileSwitcher?.getCurrentPlayerName() || 'default_player';
     this.assessmentEngine.setKidId(kidName);
     this.assessmentEngine.reload();
@@ -309,6 +323,22 @@ export class TaskRunner {
     } else {
       this.currentSession = this.composer.generateSession(kidName, focusedDomain);
     }
+
+    // Log session start boundary
+    const currentSessionId = this.currentSession[0]?.session_id || `sess_${Date.now()}`;
+    const devId = EventLog.getDeviceId();
+    const seq = EventLog.nextDeviceSeq();
+    const sesStart: ALPSessionEvent = {
+      i: devId + '-' + seq,
+      d: devId,
+      q: seq,
+      t: Date.now(),
+      y: 'ses',
+      ep: parseInt(localStorage.getItem('alp_' + kidName + '_sync_epoch') || '0', 10),
+      ss: currentSessionId,
+      e: 'start'
+    };
+    EventLog.appendEvent(kidName, sesStart);
     
     this.currentTaskIndex = 0;
     this.sessionErrors = 0;
@@ -476,9 +506,9 @@ export class TaskRunner {
     
     const item = this.currentSession[this.currentTaskIndex].question_item;
     if (item) {
+      const currentSessionId = this.currentSession[0]?.session_id || `sess_${Date.now()}`;
       // Audit log the kid's answer
       try {
-        const currentSessionId = this.currentSession[0]?.session_id || `sess_${Date.now()}`;
         const selectedText = btnElement.textContent?.trim() || '';
         QuestionPresentationLog.recordAnswer(
           kidName,
@@ -489,11 +519,11 @@ export class TaskRunner {
         );
       } catch (e) {}
 
-      this.assessmentEngine.recordAttempt(item.target_subskill_id, isCorrect, item.evidence_archetype);
-      this.telemetry.trackEvent('TASK_ANSWERED', {
-        subskill_id: item.target_subskill_id,
-        isCorrect: isCorrect,
-        archetype: item.evidence_archetype
+      this.assessmentEngine.recordAttempt(item.target_subskill_id, isCorrect, item.evidence_archetype, {
+        hintTier: this.currentTaskWrongAttempts,
+        modality: 'TAP_SELECT',
+        itemId: item.item_id,
+        sessionId: currentSessionId
       });
 
       // Update domain counts dynamically for rolling deficit balancing per kid and globally
@@ -574,6 +604,23 @@ export class TaskRunner {
     this.cancelSpeech();
     this.container.classList.remove('active');
     const kidName = (this.app?.profileSwitcher?.getCurrentPlayerName() || 'default_player').toLowerCase().trim();
+    const currentSessionId = this.currentSession[0]?.session_id || `sess_${Date.now()}`;
+
+    // Log session end boundary
+    const devId = EventLog.getDeviceId();
+    const seq = EventLog.nextDeviceSeq();
+    const sesEnd: ALPSessionEvent = {
+      i: devId + '-' + seq,
+      d: devId,
+      q: seq,
+      t: Date.now(),
+      y: 'ses',
+      ep: parseInt(localStorage.getItem('alp_' + kidName + '_sync_epoch') || '0', 10),
+      ss: currentSessionId,
+      e: 'end',
+      why: 'done'
+    };
+    EventLog.appendEvent(kidName, sesEnd);
     
     // Save seen items and prompts to prevent repetition across sessions
     try {

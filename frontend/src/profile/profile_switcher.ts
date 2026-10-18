@@ -1,3 +1,5 @@
+import { EventLog } from '../engine/EventLog';
+
 export interface UserProfile {
   name: string;
   avatar: string;
@@ -99,6 +101,7 @@ export class ProfileSwitcher {
   public deleteProfile(playerName: string) {
     this.savedProfiles = this.savedProfiles.filter(p => p.name.toLowerCase() !== playerName.toLowerCase());
     this.saveRegistry();
+    EventLog.clearKidLog(playerName);
     
     if (this.currentPlayerName && this.currentPlayerName.toLowerCase() === playerName.toLowerCase()) {
       this.logout();
@@ -107,6 +110,7 @@ export class ProfileSwitcher {
   
   public resetProgress(playerName: string) {
     const clean = playerName.toLowerCase().trim();
+    EventLog.clearKidLog(playerName);
     localStorage.removeItem(`alp_${clean}_nodes_completed`);
     localStorage.removeItem(`alp_${clean}_stars`);
     localStorage.removeItem(`alp_${clean}_assessment_states`);

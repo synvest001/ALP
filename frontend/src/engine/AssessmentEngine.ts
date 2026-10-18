@@ -1,3 +1,6 @@
+import { ALPEvent, ALPAttemptEvent } from './EventTypes';
+import { EventLog } from './EventLog';
+
 export type MasteryState = 'INTRODUCED' | 'DEVELOPING' | 'SECURE' | 'FLEXIBLE' | 'GENERALIZED';
 
 export interface SubskillState {
@@ -9,25 +12,194 @@ export interface SubskillState {
   last_active: number;
 }
 
+export function getEffectiveTime(ev: ALPEvent, localNow: number): number {
+  var srv: number | undefined;
+  if (ev.y === 'ckp') {
+    srv = ev.recv_r;
+  } else {
+    srv = typeof ev.r === 'number' && ev.r > 1000000000 ? ev.r : undefined;
+  }
+  if (typeof srv === 'number' && !isNaN(srv)) {
+    return Math.min(ev.t, srv);
+  }
+  return Math.min(ev.t, localNow);
+}
+
+export function compareEvents(a: ALPEvent, b: ALPEvent, localNow: number): number {
+  var ta = getEffectiveTime(a, localNow);
+  var tb = getEffectiveTime(b, localNow);
+  if (ta !== tb) return ta - tb;
+  if (a.d !== b.d) return a.d < b.d ? -1 : 1;
+  return (a.q || 0) - (b.q || 0);
+}
+
+/**
+ * Pure function: applies a single event to a dictionary of SubskillState.
+ * Uses event.t for last_active, never Date.now().
+ */
+export function applyEvent(
+  states: { [subskill_id: string]: SubskillState },
+  ev: ALPEvent
+): { [subskill_id: string]: SubskillState } {
+  if (ev.y === 'base') {
+    if (ev.states) {
+      for (var k in ev.states) {
+        if (Object.prototype.hasOwnProperty.call(ev.states, k)) {
+          var src = ev.states[k];
+          states[k] = {
+            subskill_id: src.subskill_id,
+            state: src.state,
+            successes: src.successes || 0,
+            attempts: src.attempts || 0,
+            consecutive_successes: src.consecutive_successes || 0,
+            last_active: src.last_active || ev.t
+          };
+        }
+      }
+    }
+  } else if (ev.y === 'att') {
+    var sid = ev.s;
+    if (!states[sid]) {
+      states[sid] = {
+        subskill_id: sid,
+        state: 'INTRODUCED',
+        successes: 0,
+        attempts: 0,
+        consecutive_successes: 0,
+        last_active: ev.t
+      };
+    }
+    var st = states[sid];
+    st.attempts += 1;
+    st.last_active = ev.t;
+    if (ev.ok === 1) {
+      st.successes += 1;
+      st.consecutive_successes = (st.consecutive_successes || 0) + 1;
+    } else {
+      st.consecutive_successes = 0;
+    }
+
+    var streak = st.consecutive_successes || 0;
+    // Exactly existing fast-track progression thresholds:
+    if (st.state === 'INTRODUCED' && (streak >= 1 || st.successes >= 2)) {
+      st.state = 'DEVELOPING';
+    } else if (st.state === 'DEVELOPING' && (streak >= 2 || st.successes >= 4)) {
+      st.state = 'SECURE';
+    } else if (st.state === 'SECURE' && (streak >= 3 || st.successes >= 6)) {
+      st.state = 'FLEXIBLE';
+    }
+  } else if (ev.y === 'ckp') {
+    if (ev.ok === 1 && ev.r === 3) {
+      if (states[ev.s] && states[ev.s].state === 'FLEXIBLE') {
+        states[ev.s].state = 'GENERALIZED';
+      }
+    }
+  }
+  return states;
+}
+
+/**
+ * Pure function: deterministic replay of an event set.
+ * Invariant under any permutation of the same event set.
+ */
+export function replay(
+  events: ALPEvent[],
+  currentEpoch?: number,
+  localNow?: number
+): { [subskill_id: string]: SubskillState } {
+  var now = typeof localNow === 'number' ? localNow : Date.now();
+  var seenIds: { [id: string]: boolean } = {};
+  var unique: ALPEvent[] = [];
+
+  for (var i = 0; i < events.length; i++) {
+    var ev = events[i];
+    if (typeof currentEpoch === 'number' && ev.ep < currentEpoch) {
+      continue; // Ignore old-epoch events
+    }
+    if (!seenIds[ev.i]) {
+      seenIds[ev.i] = true;
+      unique.push(ev);
+    }
+  }
+
+  // Sort into deterministic total order: (tEff, d, q)
+  unique.sort(function (a, b) {
+    return compareEvents(a, b, now);
+  });
+
+  var states: { [subskill_id: string]: SubskillState } = {};
+  var seenCheckpoints: { [key: string]: boolean } = {};
+  var failedProbesPerSession: { [key: string]: number } = {};
+  var fatigueSessions: { [sessionId: string]: number } = {};
+
+  for (var j = 0; j < unique.length; j++) {
+    var item = unique[j];
+
+    if (item.y === 'ses') {
+      if (item.e === 'end' && item.why === 'fatigue') {
+        fatigueSessions[item.ss] = item.t;
+      }
+      continue;
+    }
+
+    if (item.y === 'att') {
+      // If session ended by fatigue, attempts made after fatigue trigger add no evidence
+      if (item.ss && typeof fatigueSessions[item.ss] === 'number') {
+        if (item.t >= fatigueSessions[item.ss]) {
+          continue;
+        }
+      }
+      applyEvent(states, item);
+    } else if (item.y === 'ckp') {
+      var ckpKey = item.s + '_' + item.r;
+      if (seenCheckpoints[ckpKey]) {
+        // Later checkpoint events for the same (skill, r) are ignored
+        continue;
+      }
+      seenCheckpoints[ckpKey] = true;
+
+      if (item.ok === 1) {
+        applyEvent(states, item);
+      } else {
+        // Checkpoint failure: Demotion requires two probe failures in the SAME session
+        var probeKey = (item.ss || '') + '_' + item.s;
+        failedProbesPerSession[probeKey] = (failedProbesPerSession[probeKey] || 0) + 1;
+        if (failedProbesPerSession[probeKey] >= 2) {
+          if (states[item.s]) {
+            var st = states[item.s].state;
+            if (st === 'SECURE' || st === 'FLEXIBLE' || st === 'GENERALIZED') {
+              states[item.s].state = 'DEVELOPING';
+            }
+          }
+        }
+      }
+    } else if (item.y === 'base') {
+      applyEvent(states, item);
+    }
+  }
+
+  return states;
+}
+
 export class AssessmentEngine {
-  private states: Map<string, SubskillState> = new Map();
+  private states: { [subskill_id: string]: SubskillState } = {};
   private kidId: string = 'default_player';
 
   constructor(kidId?: string) {
     if (kidId) {
       this.kidId = kidId.toLowerCase().trim();
     } else {
-      const current = localStorage.getItem('alp_current_name');
+      var current = localStorage.getItem('alp_current_name');
       if (current) this.kidId = current.toLowerCase().trim();
     }
-    this.loadState();
+    this.init();
   }
 
-  public setKidId(kidId: string) {
-    const clean = (kidId || 'default_player').toLowerCase().trim();
+  public setKidId(kidId: string): void {
+    var clean = (kidId || 'default_player').toLowerCase().trim();
     if (this.kidId !== clean) {
       this.kidId = clean;
-      this.loadState();
+      this.init();
     }
   }
 
@@ -35,80 +207,114 @@ export class AssessmentEngine {
     this.loadState();
   }
 
-  private getStorageKey(): string {
-    return `alp_${this.kidId}_assessment_states`;
+  private getKidEpoch(): number {
+    var raw = localStorage.getItem('alp_' + this.kidId + '_sync_epoch');
+    var n = parseInt(raw || '0', 10);
+    return isNaN(n) ? 0 : n;
   }
 
-  private loadState() {
-    this.states.clear();
-    const key = this.getStorageKey();
-    let raw = localStorage.getItem(key);
-    // Fallback to legacy global state if kid state not yet initialized
+  private getStorageKey(): string {
+    return 'alp_' + this.kidId + '_assessment_states';
+  }
+
+  private init(): void {
+    this.loadState();
+    // One-time baseline migration if needed
+    EventLog.initKidLog(this.kidId, this.getKidEpoch(), this.states);
+  }
+
+  private loadState(): void {
+    this.states = {};
+    var key = this.getStorageKey();
+    var raw = localStorage.getItem(key);
     if (!raw && this.kidId === 'default_player') {
       raw = localStorage.getItem('alp_assessment_states');
     }
     if (raw) {
       try {
-        const parsed = JSON.parse(raw);
-        for (const k of Object.keys(parsed)) {
-          this.states.set(k, parsed[k]);
+        var parsed = JSON.parse(raw);
+        for (var k in parsed) {
+          if (Object.prototype.hasOwnProperty.call(parsed, k)) {
+            this.states[k] = parsed[k];
+          }
         }
       } catch (e) {
-        console.error("Failed to parse assessment state", e);
+        console.error('Failed to parse assessment state', e);
+      }
+    } else {
+      // If cache empty, rebuild from event log replay
+      var events = EventLog.getEvents(this.kidId);
+      if (events.length > 0) {
+        this.states = replay(events, this.getKidEpoch());
+        this.saveState();
       }
     }
   }
 
-  private saveState() {
-    const obj: any = {};
-    this.states.forEach((val, key) => {
-      obj[key] = val;
-    });
-    localStorage.setItem(this.getStorageKey(), JSON.stringify(obj));
-    // Also update global legacy key if default
+  private saveState(): void {
+    var serialized = JSON.stringify(this.states);
+    localStorage.setItem(this.getStorageKey(), serialized);
     if (this.kidId === 'default_player') {
-      localStorage.setItem('alp_assessment_states', JSON.stringify(obj));
+      localStorage.setItem('alp_assessment_states', serialized);
     }
   }
 
   public getSubskillState(subskill_id: string): MasteryState {
-    const state = this.states.get(subskill_id);
+    var state = this.states[subskill_id];
     return state ? state.state : 'INTRODUCED';
   }
 
   public getAllStates(): SubskillState[] {
-    return Array.from(this.states.values());
-  }
-
-  public getSecureSubskills(): Set<string> {
-    const secure = new Set<string>();
-    this.states.forEach((state, id) => {
-      if (state.state === 'SECURE' || state.state === 'FLEXIBLE' || state.state === 'GENERALIZED') {
-        secure.add(id);
+    var list: SubskillState[] = [];
+    for (var k in this.states) {
+      if (Object.prototype.hasOwnProperty.call(this.states, k)) {
+        list.push(this.states[k]);
       }
-    });
-    return secure;
-  }
-
-  public getActiveSubskills(): string[] {
-    const active: string[] = [];
-    this.states.forEach((state, id) => {
-      if (state.state === 'INTRODUCED' || state.state === 'DEVELOPING') {
-        active.push(id);
-      }
-    });
-    return active;
+    }
+    return list;
   }
 
   /**
-   * Implements Workstream 3 §5.1 Depth-First Cognitive Depth Escalation:
-   * INTRODUCED  -> APPLY (Level 1 Surface)
-   * DEVELOPING  -> REASON (Level 2/3 Contextual & Representational)
-   * SECURE      -> GENERALIZE (Level 4 Structural)
+   * Returns a plain ES5 object implementing Set-like interface { has(code): boolean }
+   * for seamless compatibility with CurriculumGraph without requiring ES6 Set.
    */
+  public getSecureSubskills(): any {
+    var secure: { [code: string]: boolean } = {};
+    for (var id in this.states) {
+      if (Object.prototype.hasOwnProperty.call(this.states, id)) {
+        var st = this.states[id].state;
+        if (st === 'SECURE' || st === 'FLEXIBLE' || st === 'GENERALIZED') {
+          secure[id] = true;
+        }
+      }
+    }
+    return {
+      has: function (code: string): boolean {
+        return Boolean(secure[code]);
+      },
+      add: function (code: string): any {
+        secure[code] = true;
+        return this;
+      }
+    };
+  }
+
+  public getActiveSubskills(): string[] {
+    var active: string[] = [];
+    for (var id in this.states) {
+      if (Object.prototype.hasOwnProperty.call(this.states, id)) {
+        var st = this.states[id].state;
+        if (st === 'INTRODUCED' || st === 'DEVELOPING') {
+          active.push(id);
+        }
+      }
+    }
+    return active;
+  }
+
   public getTargetCognitiveDepth(subskill_id?: string): string {
     if (!subskill_id) return 'APPLY';
-    const state = this.getSubskillState(subskill_id);
+    var state = this.getSubskillState(subskill_id);
     switch (state) {
       case 'INTRODUCED':
         return 'APPLY';
@@ -123,48 +329,57 @@ export class AssessmentEngine {
     }
   }
 
-  public recordAttempt(subskill_id: string, isCorrect: boolean, archetype: string) {
-    let state = this.states.get(subskill_id);
-    if (!state) {
-      state = { subskill_id, state: 'INTRODUCED', successes: 0, attempts: 0, consecutive_successes: 0, last_active: Date.now() };
-      this.states.set(subskill_id, state);
+  public recordAttempt(
+    subskill_id: string,
+    isCorrect: boolean,
+    _archetype: string,
+    options?: {
+      hintTier?: number;
+      modality?: string;
+      itemId?: string;
+      sessionId?: string;
     }
+  ): void {
+    var devId = EventLog.getDeviceId();
+    var seq = EventLog.nextDeviceSeq();
+    var now = Date.now();
+    var epoch = this.getKidEpoch();
 
-    state.attempts++;
-    state.last_active = Date.now();
-    if (isCorrect) {
-      state.successes++;
-      state.consecutive_successes = (state.consecutive_successes || 0) + 1;
-    } else {
-      state.consecutive_successes = 0;
-    }
+    var ev: ALPAttemptEvent = {
+      i: devId + '-' + seq,
+      d: devId,
+      q: seq,
+      t: now,
+      y: 'att',
+      ep: epoch,
+      s: subskill_id,
+      m: options && options.itemId ? options.itemId : '',
+      ok: isCorrect ? 1 : 0,
+      h: options && typeof options.hintTier === 'number' ? options.hintTier : 0,
+      md: options && options.modality ? options.modality : 'TAP_SELECT',
+      cf: 0,
+      ss: options && options.sessionId ? options.sessionId : ''
+    };
 
-    this.evaluateTransitions(state, archetype);
+    // 1. Append event to the chunked append-only log
+    EventLog.appendEvent(this.kidId, ev);
+
+    // 2. Update local cached state via pure applyEvent
+    var prevState = this.getSubskillState(subskill_id);
+    applyEvent(this.states, ev);
+    var newState = this.getSubskillState(subskill_id);
+
+    // 3. Save cached state
     this.saveState();
-  }
 
-  private evaluateTransitions(state: SubskillState, _archetype: string) {
-    const prevState = state.state;
-    const streak = state.consecutive_successes || 0;
-
-    // Fast-Track progression logic:
-    // If the kid is answering correctly (streak >= 1 or streak >= 2), advance immediately!
-    if (state.state === 'INTRODUCED' && (streak >= 1 || state.successes >= 2)) {
-      state.state = 'DEVELOPING';
-      console.log(`[AssessmentEngine] ${state.subskill_id} FAST-TRACK advanced to DEVELOPING (Cognitive Depth escalates to REASON)`);
-    } else if (state.state === 'DEVELOPING' && (streak >= 2 || state.successes >= 4)) {
-      state.state = 'SECURE';
-      console.log(`[AssessmentEngine] ${state.subskill_id} FAST-TRACK advanced to SECURE (Unlocked downstream prerequisites; Cognitive Depth escalates to GENERALIZE)`);
-    } else if (state.state === 'SECURE' && (streak >= 3 || state.successes >= 6)) {
-      state.state = 'FLEXIBLE';
-      console.log(`[AssessmentEngine] ${state.subskill_id} advanced to FLEXIBLE`);
-    }
-
-    if (prevState !== state.state) {
+    // 4. Dispatch mastery transition event if changed
+    if (prevState !== newState) {
       try {
-        window.dispatchEvent(new CustomEvent('alp:mastery_transition', {
-          detail: { subskill_id: state.subskill_id, oldState: prevState, newState: state.state }
-        }));
+        window.dispatchEvent(
+          new CustomEvent('alp:mastery_transition', {
+            detail: { subskill_id: subskill_id, oldState: prevState, newState: newState }
+          })
+        );
       } catch (e) {}
     }
   }

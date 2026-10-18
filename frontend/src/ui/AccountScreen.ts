@@ -1,5 +1,6 @@
 import { App } from '../app';
 import { SyncEngine, syncCurrentPlayer, FamilyKid } from '../engine/SyncEngine';
+import { EventLog } from '../engine/EventLog';
 
 export class AccountScreen {
   private container: HTMLElement;
@@ -11,6 +12,16 @@ export class AccountScreen {
   }
 
   public render() {
+    const currentKid = (this.app?.profileSwitcher?.getCurrentPlayerName() || 'default_player').toLowerCase().trim();
+    const isLargeLog = EventLog.isOver3MB(currentKid);
+    const logBytes = EventLog.getTotalBytes(currentKid);
+    const logMB = (logBytes / (1024 * 1024)).toFixed(1);
+    const largeLogNotice = isLargeLog
+      ? `<div class="parents-card" style="margin-bottom: 20px; background: #fefce8; border: 1px solid #fef08a; color: #713f12;">
+           <p style="margin: 0; font-size: 0.95rem;">Notice: Saved progress events on this device are large (~${logMB} MB). Tip: sync or export now and then so progress is backed up.</p>
+         </div>`
+      : '';
+
     this.container.innerHTML = `
       <header class="parents-header">
         <div class="parents-header-title">
@@ -20,6 +31,7 @@ export class AccountScreen {
         <button id="btn-close-account" class="parents-btn">Back</button>
       </header>
       <main style="padding: 40px; max-width: 800px; margin: 0 auto; width: 100%;">
+        ${largeLogNotice}
         
         <!-- New Player Form -->
         <div class="parents-card" style="margin-bottom: 20px; text-align: center;">
