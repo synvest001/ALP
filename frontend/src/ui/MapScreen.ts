@@ -288,7 +288,7 @@ export class MapScreen {
         btnSync.textContent = 'Syncing...';
         btnSync.disabled = true;
         syncCurrentPlayer(this.app).then((res) => {
-          btnSync.textContent = res.ok ? 'Synced!' : (res.message.length > 40 ? res.message.substring(0, 40) + '…' : res.message);
+          btnSync.textContent = res.message;
           if (res.ok && res.changed) {
             this.render();
           }

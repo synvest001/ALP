@@ -8,7 +8,7 @@
     "build": "tsc && vite build && node scripts/split-question-bank.mjs && node scripts/optimize-art.mjs",
     "preview": "vite preview",
     "generate-icons": "node scripts/generate-icons.mjs",
-    "test": "tsx --test test/phase1_event_log.test.ts"
+    "test": "tsx --test test/*.test.ts"
   },
   "dependencies": {
     "core-js": "^3.37.1"

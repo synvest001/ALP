@@ -104,10 +104,13 @@ export function applyEvent(
  */
 export function replay(
   events: ALPEvent[],
-  currentEpoch?: number,
-  localNow?: number
+  currentEpoch: number,
+  localNow: number
 ): { [subskill_id: string]: SubskillState } {
-  var now = typeof localNow === 'number' ? localNow : Date.now();
+  if (typeof localNow !== 'number' || isNaN(localNow)) {
+    throw new Error('replay() requires an explicit localNow timestamp');
+  }
+  var now = localNow;
   var seenIds: { [id: string]: boolean } = {};
   var unique: ALPEvent[] = [];
 
@@ -143,9 +146,10 @@ export function replay(
     }
 
     if (item.y === 'att') {
-      // If session ended by fatigue, attempts made after fatigue trigger add no evidence
+      // If session ended by fatigue, attempts made after fatigue trigger add no negative evidence.
+      // Successful attempts (ok === 1) are preserved; only failed attempts (ok === 0) are discarded.
       if (item.ss && typeof fatigueSessions[item.ss] === 'number') {
-        if (item.t >= fatigueSessions[item.ss]) {
+        if (item.t >= fatigueSessions[item.ss] && item.ok === 0) {
           continue;
         }
       }
@@ -245,7 +249,7 @@ export class AssessmentEngine {
       // If cache empty, rebuild from event log replay
       var events = EventLog.getEvents(this.kidId);
       if (events.length > 0) {
-        this.states = replay(events, this.getKidEpoch());
+        this.states = replay(events, this.getKidEpoch(), Date.now());
         this.saveState();
       }
     }

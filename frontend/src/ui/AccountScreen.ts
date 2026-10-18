@@ -131,6 +131,38 @@ export class AccountScreen {
             return;
           }
           res.kids.forEach((kid: FamilyKid) => {
+            const isLocal = this.app.profileSwitcher.getSavedProfiles().some(
+              (p: any) => p.name.toLowerCase() === kid.name.toLowerCase()
+            );
+
+            if (kid.tombstoned) {
+              if (isLocal) {
+                const row = document.createElement('div');
+                row.className = 'account-list-item';
+                row.style.marginTop = '8px';
+                row.innerHTML = `
+                  <div class="account-list-info">
+                    <img src="${this.getAvatarSrc(kid.avatar || 'princess')}" alt="${kid.name}" />
+                    <span style="color: #64748b;">${kid.name} (Removed on another device)</span>
+                  </div>
+                  <button class="parents-btn btn-remove-tombstoned" style="border-color: #e74c3c; color: #c0392b;">Remove from this device</button>
+                `;
+                const btnRemove = row.querySelector('.btn-remove-tombstoned');
+                if (btnRemove) {
+                  btnRemove.addEventListener('click', () => {
+                    if (confirm(`This child was removed on another device. Remove ${kid.name} from this device as well?`)) {
+                      this.app.profileSwitcher.deleteProfile(kid.name);
+                      this.renderProfileList();
+                      this.app.landingScreen.render();
+                      row.remove();
+                    }
+                  });
+                }
+                familyKidsList.appendChild(row);
+              }
+              return;
+            }
+
             const row = document.createElement('div');
             row.className = 'account-list-item';
             row.style.marginTop = '8px';
@@ -146,7 +178,7 @@ export class AccountScreen {
               btnAdd.addEventListener('click', () => {
                 this.app.profileSwitcher.login(kid.name, kid.avatar || 'princess');
                 this.renderProfileList();
-                if (syncStatusEl) syncStatusEl.textContent = 'Syncing ' + kid.name + '...';
+                if (syncStatusEl) syncStatusEl.textContent = 'Syncing...';
                 syncCurrentPlayer(this.app).then((syncRes) => {
                   if (syncStatusEl) syncStatusEl.textContent = syncRes.message;
                   this.renderProfileList();
@@ -248,9 +280,11 @@ export class AccountScreen {
     accountProfilesList.querySelectorAll('.delete-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         const name = (e.target as HTMLElement).getAttribute('data-name');
-        if (name && confirm(`DANGER: Are you sure you want to permanently delete the profile ${name}?`)) {
+        if (name && confirm(`Are you sure you want to remove the profile for ${name}?`)) {
+          if (SyncEngine.isConfigured()) {
+            SyncEngine.deleteKid(name);
+          }
           this.app.profileSwitcher.deleteProfile(name);
-          alert(`${name} has been deleted.`);
           this.renderProfileList();
           // Update landing screen in case the deleted profile was active
           this.app.landingScreen.render();

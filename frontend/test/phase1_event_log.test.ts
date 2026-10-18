@@ -154,30 +154,31 @@ test('(a) Replay is invariant under any permutation of the same event set', () =
     { i: `${dev1}-3`, d: dev1, q: 3, t: baseTime + 400, y: 'att', ep: 0, s: 'M-NQ-01', m: 'i5', ok: 1, h: 0, md: 'TAP_SELECT', cf: 0, ss: 's1' }
   ];
 
-  const standardResult = replay(events);
+  const standardResult = replay(events, 0, baseTime + 500);
 
   // Generate permutations and verify identical states
   const perm1 = [events[4], events[2], events[0], events[3], events[1]];
   const perm2 = [events[1], events[3], events[4], events[0], events[2]];
   const perm3 = [events[3], events[4], events[2], events[1], events[0]];
 
-  assert.deepEqual(replay(perm1), standardResult);
-  assert.deepEqual(replay(perm2), standardResult);
-  assert.deepEqual(replay(perm3), standardResult);
+  assert.deepEqual(replay(perm1, 0, baseTime + 500), standardResult);
+  assert.deepEqual(replay(perm2, 0, baseTime + 500), standardResult);
+  assert.deepEqual(replay(perm3, 0, baseTime + 500), standardResult);
 });
 
 test('(b) Duplicating events changes nothing', () => {
   const dev = 'abcdef123456';
+  const now = 3000;
   const events: ALPEvent[] = [
     { i: `${dev}-1`, d: dev, q: 1, t: 1000, y: 'att', ep: 0, s: 'M-NQ-01', m: 'i1', ok: 1, h: 0, md: 'TAP_SELECT', cf: 0, ss: 's1' },
     { i: `${dev}-2`, d: dev, q: 2, t: 2000, y: 'att', ep: 0, s: 'M-NQ-01', m: 'i2', ok: 1, h: 0, md: 'TAP_SELECT', cf: 0, ss: 's1' }
   ];
 
-  const originalState = replay(events);
+  const originalState = replay(events, 0, now);
 
   // Triplicate the events in the list
   const duplicated = [...events, ...events, ...events];
-  const dedupedState = replay(duplicated);
+  const dedupedState = replay(duplicated, 0, now);
 
   assert.deepEqual(dedupedState, originalState);
 });
@@ -195,7 +196,7 @@ test('(c) Two devices same day, interleaved attempts, both counted', () => {
     { i: `${devB}-2`, d: devB, q: 2, t: baseT + 400, y: 'att', ep: 0, s: 'M-NQ-01', m: 'i4', ok: 1, h: 0, md: 'TAP_SELECT', cf: 0, ss: 'sB' }
   ];
 
-  const state = replay(events);
+  const state = replay(events, 0, baseT + 500);
   assert.ok(state['M-NQ-01']);
   assert.equal(state['M-NQ-01'].attempts, 4);
   assert.equal(state['M-NQ-01'].successes, 4);
@@ -221,8 +222,8 @@ test('(d) The same R2 checkpoint on two devices counts once, deterministic winne
     { i: `${devB}-1`, d: devB, q: 1, t: t2, y: 'ckp', ep: 0, s: 'M-OP-01', r: 2, ok: 0, ss: 'sB' }
   ];
 
-  const stateForward = replay(events);
-  const stateReverse = replay([events[4], events[3], events[2], events[1], events[0]]);
+  const stateForward = replay(events, 0, t2 + 1000);
+  const stateReverse = replay([events[4], events[3], events[2], events[1], events[0]], 0, t2 + 1000);
 
   // Dev A at t1 is the deterministic winner; Dev B's R2 duplicate is ignored
   assert.deepEqual(stateForward, stateReverse);
@@ -264,16 +265,19 @@ test('(f) Fatigue-ended session adds no negative evidence', () => {
     { i: `${dev}-2`, d: dev, q: 2, t: baseT + 1000, y: 'att', ep: 0, s: 'M-NQ-01', m: 'i1', ok: 1, h: 0, md: 'TAP_SELECT', cf: 0, ss: sess },
     // Fatigue boundary triggered
     { i: `${dev}-3`, d: dev, q: 3, t: baseT + 2000, y: 'ses', ep: 0, ss: sess, e: 'end', why: 'fatigue' },
-    // Question 2 attempted AFTER fatigue boundary: failed
-    { i: `${dev}-4`, d: dev, q: 4, t: baseT + 3000, y: 'att', ep: 0, s: 'M-NQ-01', m: 'i2', ok: 0, h: 1, md: 'TAP_SELECT', cf: 0, ss: sess }
+    // Question 2 attempted AFTER fatigue boundary: FAILED (negative evidence - should be discarded)
+    { i: `${dev}-4`, d: dev, q: 4, t: baseT + 3000, y: 'att', ep: 0, s: 'M-NQ-01', m: 'i2', ok: 0, h: 1, md: 'TAP_SELECT', cf: 0, ss: sess },
+    // Question 3 attempted AFTER fatigue boundary: SUCCESSFUL (should NOT be discarded)
+    { i: `${dev}-5`, d: dev, q: 5, t: baseT + 4000, y: 'att', ep: 0, s: 'M-NQ-01', m: 'i3', ok: 1, h: 0, md: 'TAP_SELECT', cf: 0, ss: sess }
   ];
 
-  const state = replay(events);
-  // Only the pre-fatigue correct attempt should be counted
-  assert.equal(state['M-NQ-01'].attempts, 1);
-  assert.equal(state['M-NQ-01'].successes, 1);
-  assert.equal(state['M-NQ-01'].consecutive_successes, 1);
-  assert.equal(state['M-NQ-01'].state, 'DEVELOPING');
+  const state = replay(events, 0, baseT + 5000);
+  // Post-fatigue failure (ok=0) was discarded (no negative evidence written),
+  // but post-fatigue success (ok=1) was preserved: 2 successes total -> SECURE
+  assert.equal(state['M-NQ-01'].attempts, 2);
+  assert.equal(state['M-NQ-01'].successes, 2);
+  assert.equal(state['M-NQ-01'].consecutive_successes, 2);
+  assert.equal(state['M-NQ-01'].state, 'SECURE');
 });
 
 test('(g) A "base" event plus later events reproduces the pre-upgrade state exactly', () => {
@@ -292,7 +296,7 @@ test('(g) A "base" event plus later events reproduces the pre-upgrade state exac
     { i: `${dev}-2`, d: dev, q: 2, t: baseT + 1000, y: 'att', ep: 0, s: 'M-NQ-01', m: 'i1', ok: 1, h: 0, md: 'TAP_SELECT', cf: 0, ss: 's1' }
   ];
 
-  const state = replay(events);
+  const state = replay(events, 0, baseT + 2000);
 
   // E-OL-01 kept exactly as migrated
   assert.equal(state['E-OL-01'].state, 'SECURE');
@@ -309,6 +313,7 @@ test('(g) A "base" event plus later events reproduces the pre-upgrade state exac
 test('(h) Single-data-point guardrail: replay of a log yields exactly the state live play yields under the existing rules, and a merge never produces a stage the existing rules would not produce from the same events', () => {
   localStorage.clear();
   const kid = 'charlie';
+  const now = 2000000;
   const engine = new AssessmentEngine(kid);
 
   // 1. Live play: simulate 1 attempt (correct)
@@ -318,7 +323,7 @@ test('(h) Single-data-point guardrail: replay of a log yields exactly the state 
 
   // Replay of this exact event log matches live play
   const eventsLive1 = EventLog.getEvents(kid);
-  const replayed1 = replay(eventsLive1);
+  const replayed1 = replay(eventsLive1, 0, now);
   assert.equal(replayed1['M-GS-01'].state, liveState1);
 
   // 2. Add second correct attempt
@@ -327,7 +332,7 @@ test('(h) Single-data-point guardrail: replay of a log yields exactly the state 
   assert.equal(liveState2, 'SECURE'); // streak=2 -> SECURE
 
   const eventsLive2 = EventLog.getEvents(kid);
-  const replayed2 = replay(eventsLive2);
+  const replayed2 = replay(eventsLive2, 0, now);
   assert.equal(replayed2['M-GS-01'].state, liveState2);
 
   // 3. Verify that merging fewer events than required NEVER produces a stage jump
@@ -335,7 +340,7 @@ test('(h) Single-data-point guardrail: replay of a log yields exactly the state 
   const singleFailEvent: ALPEvent[] = [
     { i: 'devX-1', d: 'devX', q: 1, t: 1000, y: 'att', ep: 0, s: 'M-GS-02', m: 'i1', ok: 0, h: 0, md: 'TAP_SELECT', cf: 0, ss: 'sX' }
   ];
-  const replayedFail = replay(singleFailEvent);
+  const replayedFail = replay(singleFailEvent, 0, now);
   assert.equal(replayedFail['M-GS-02'].state, 'INTRODUCED');
 });
 
@@ -351,12 +356,12 @@ test('(i) Epoch test: old-epoch events pulled from the server do not resurrect p
   ];
 
   // If replayed under epoch 0, M-NQ-01 would be FLEXIBLE
-  const stateEpoch0 = replay(oldEpochEvents, 0);
+  const stateEpoch0 = replay(oldEpochEvents, 0, baseT + 500);
   assert.equal(stateEpoch0['M-NQ-01'].state, 'FLEXIBLE');
 
   // Reset Progress happened: profile epoch is now 1
   // Replaying with currentEpoch = 1 ignores all epoch 0 events
-  const stateEpoch1 = replay(oldEpochEvents, 1);
+  const stateEpoch1 = replay(oldEpochEvents, 1, baseT + 500);
   assert.equal(stateEpoch1['M-NQ-01'], undefined); // No progress resurrected!
 
   // New events recorded in epoch 1
@@ -365,7 +370,7 @@ test('(i) Epoch test: old-epoch events pulled from the server do not resurrect p
     { i: `${dev}-4`, d: dev, q: 4, t: baseT + 1000, y: 'att', ep: 1, s: 'M-NQ-01', m: 'i4', ok: 1, h: 0, md: 'TAP_SELECT', cf: 0, ss: 's2' }
   ];
 
-  const stateNew = replay(newEpochEvents, 1);
+  const stateNew = replay(newEpochEvents, 1, baseT + 1500);
   // Only the epoch 1 event applies: 1 attempt, 1 success -> DEVELOPING
   assert.equal(stateNew['M-NQ-01'].attempts, 1);
   assert.equal(stateNew['M-NQ-01'].successes, 1);
