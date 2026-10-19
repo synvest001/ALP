@@ -71,7 +71,6 @@ export class SyncEngine {
   }
 
   public static notConfiguredMessage(): string {
-    if (!SyncEngine.endpointConfigured()) return "Sync isn't set up yet.";
     return "Sync isn't set up yet.";
   }
 
@@ -84,7 +83,7 @@ export class SyncEngine {
   }
 
   /** Class B profile only. Does NOT hold or sync derived per-skill states. */
-  private static buildLocal(kid: string, name: string, avatar: string): ClassBProfile {
+  public static buildLocal(kid: string, name: string, avatar: string): ClassBProfile {
     var syncedAvatar = localStorage.getItem(k(kid, 'synced_avatar'));
     var updated = int(localStorage.getItem(k(kid, 'sync_updated')));
     if (avatar && avatar !== syncedAvatar) updated = Date.now();
@@ -104,7 +103,7 @@ export class SyncEngine {
     };
   }
 
-  private static applyRecord(kid: string, rec: any, makeGlobalMirror: boolean): void {
+  public static applyRecord(kid: string, rec: any, makeGlobalMirror: boolean): void {
     if (!rec) return;
     var nodes = String(rec.nodes || 0);
     var stars = String(rec.stars || 0);

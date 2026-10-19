@@ -3,10 +3,29 @@
 // 1. Extensions > Apps Script in Google Sheets.
 // 2. Paste this file into Code.gs.
 // 3. Deploy > New deployment > Web app (Execute as: Me, Who has access: Anyone).
-// 4. Note: Snapshots are created daily. To restore a snapshot, the spreadsheet owner
-//    manually copies the desired events_snap_YYYYMMDD tab back to the 'events' tab.
+// 4. Daily Snapshot Setup (in Apps Script Editor):
+//    a. In the left navigation bar, click the clock icon: "Triggers".
+//    b. Click "+ Add Trigger" (bottom right).
+//    c. Choose which function to run: "runDailySnapshot".
+//    d. Choose which deployment should run: "Head".
+//    e. Select event source: "Time-driven".
+//    f. Select type of time based trigger: "Day timer".
+//    g. Select time of day: "1am to 2am" (or preferred hour).
+//    h. Click "Save".
+//    Note: Snapshots retain the last 7 daily tabs (events_snap_YYYYMMDD). To restore a snapshot,
+//    the spreadsheet owner manually copies the desired snapshot tab back to the 'events' tab.
 
 var SNAPSHOT_KEEP = 7;
+
+/**
+ * Top-level entrypoint for Apps Script Time-driven trigger.
+ * Can also be run manually from the Apps Script code editor.
+ */
+function runDailySnapshot() {
+  var sheetAccess = getSheetAccess();
+  var nowMs = Date.now();
+  return handleSnapshot(sheetAccess, nowMs);
+}
 
 function getSheetAccess(ss) {
   if (!ss) {
@@ -633,6 +652,7 @@ if (typeof module !== 'undefined' && module.exports) {
     handleDeleteKid: handleDeleteKid,
     handleExportCheck: handleExportCheck,
     handleSnapshot: handleSnapshot,
+    runDailySnapshot: runDailySnapshot,
     mergeRecords: mergeRecords,
     pureSha256: pureSha256,
     SNAPSHOT_KEEP: SNAPSHOT_KEEP

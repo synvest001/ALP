@@ -118,6 +118,11 @@ export class ParentsDashboard {
             <p>Your child is actively working on this skill in the app. Try pointing out examples of this concept in real life to reinforce their learning naturally.</p>
           </div>
         </div>
+
+        <!-- Backup & Sync Tip -->
+        <div class="parents-card" style="grid-column: 1 / -1; padding: 15px 20px;">
+          <p style="margin: 0; font-size: 0.95rem; color: #64748b;">Tip: sync or export now and then so progress is backed up.</p>
+        </div>
       </main>
     `;
 

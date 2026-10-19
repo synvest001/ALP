@@ -101,7 +101,7 @@ export class ProfileSwitcher {
   public deleteProfile(playerName: string) {
     this.savedProfiles = this.savedProfiles.filter(p => p.name.toLowerCase() !== playerName.toLowerCase());
     this.saveRegistry();
-    EventLog.clearKidLog(playerName);
+    this.resetProgress(playerName);
     
     if (this.currentPlayerName && this.currentPlayerName.toLowerCase() === playerName.toLowerCase()) {
       this.logout();

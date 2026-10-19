@@ -44,6 +44,11 @@ export class App {
     } else {
       this.showScreen('screen-landing');
     }
+
+    // Request persistent storage if supported by the browser
+    if (typeof navigator !== 'undefined' && navigator.storage && typeof navigator.storage.persist === 'function') {
+      navigator.storage.persist().catch(function () {});
+    }
   }
 
   public showScreen(screenId: string) {

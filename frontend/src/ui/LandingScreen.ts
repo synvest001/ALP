@@ -59,7 +59,19 @@ export class LandingScreen {
     const profiles = this.app.profileSwitcher.getSavedProfiles();
     
     if (profiles.length === 0) {
-      container.innerHTML = '<p style="color: rgba(255,255,255,0.7); font-size: 1.2em;">No hero found. Create one in Account Mgmt!</p>';
+      container.innerHTML = `
+        <div style="text-align: center; max-width: 480px; margin: 20px auto; color: white; padding: 20px; background: rgba(0,0,0,0.3); border-radius: 12px;">
+          <p style="font-size: 1.1em; margin-bottom: 15px;">Restore this child from your family code or a backup file.</p>
+          <button id="btn-landing-to-account" class="parents-btn" style="padding: 10px 20px; font-size: 1rem; color: #27ae60; border-color: #27ae60;">Go to Account Management</button>
+        </div>
+      `;
+      var btnToAccount = container.querySelector('#btn-landing-to-account');
+      if (btnToAccount) {
+        btnToAccount.addEventListener('click', () => {
+          this.app.accountScreen.render();
+          this.app.showScreen('screen-account');
+        });
+      }
       return;
     }
 

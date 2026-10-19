@@ -155,6 +155,32 @@ export class EventLog {
     return EventLog.getTotalBytes(kid) > THREE_MB;
   }
 
+  /**
+   * Union incoming events into the child's local log.
+   * Deduplicates by event ID (ev.i) so no duplicates are stored.
+   */
+  public static unionEvents(kid: string, incoming: ALPEvent[]): number {
+    var clean = EventLog.cleanKid(kid);
+    var existing = EventLog.getEvents(clean);
+    var seen: { [id: string]: boolean } = {};
+    for (var i = 0; i < existing.length; i++) {
+      if (existing[i] && existing[i].i) {
+        seen[existing[i].i] = true;
+      }
+    }
+
+    var added = 0;
+    for (var j = 0; j < incoming.length; j++) {
+      var ev = incoming[j];
+      if (ev && ev.i && !seen[ev.i]) {
+        seen[ev.i] = true;
+        EventLog.appendEvent(clean, ev);
+        added++;
+      }
+    }
+    return added;
+  }
+
   /** Delete all chunk keys and metadata for a kid. */
   public static clearKidLog(kid: string): void {
     var clean = EventLog.cleanKid(kid);
