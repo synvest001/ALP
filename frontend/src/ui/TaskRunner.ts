@@ -10,6 +10,7 @@ import { DailyQuestManager } from '../engine/DailyQuestManager';
 import { QuestionPresentationLog } from '../storage/QuestionPresentationLog';
 import { speech } from '../utils/Speech';
 import { SyncEngine, syncCurrentPlayer } from '../engine/SyncEngine';
+import { ContentManifestManager } from '../engine/ContentManifest';
 
 const GENERIC_HINTS = new Set([
   "Look closely at the picture and count each item.",
@@ -303,6 +304,7 @@ export class TaskRunner {
     this.assessmentEngine.setKidId(kidName);
     this.assessmentEngine.reload();
     await this.composer.ensureReady();
+    await ContentManifestManager.checkManifestAtSessionStart();
 
     if (!(sessionData && sessionData.length > 0)) {
       await this.composer.prepareSession(kidName);

@@ -1,5 +1,6 @@
 import { resolveAssetUrl } from '../utils/assets';
 import { getJson } from '../utils/http';
+import { ContentManifestManager } from './ContentManifest';
 
 export interface QuestionItem {
   item_id: string;
@@ -120,13 +121,16 @@ export class QuestionBank {
       if (!wanted.has(id)) this.chunks.delete(id);
     }
     this.loadErrors = [];
-    const missing = Array.from(wanted).filter(id => !this.chunks.has(id));
+    const missing = Array.from(wanted).filter(id => ContentManifestManager.shouldRefreshChunk(id, this.chunks.has(id)));
     for (const id of missing) {
       let lastErr = '';
       for (let attempt = 1; attempt <= 2; attempt++) {
         try {
-          const data = await getJson<QuestionItem[]>(resolveAssetUrl(`data/question_bank/chunks/${id}.json`));
+          const ver = ContentManifestManager.getChunkVersion(id);
+          const verQuery = ver ? `?v=${ver}` : '';
+          const data = await getJson<QuestionItem[]>(resolveAssetUrl(`data/question_bank/chunks/${id}.json${verQuery}`));
           this.chunks.set(id, data);
+          ContentManifestManager.markChunkLoaded(id);
           lastErr = '';
           break;
         } catch (err: any) {
@@ -179,6 +183,8 @@ export class QuestionBank {
     const excludeSet = new Set(excludeIds || []);
 
     const isAllowed = (it: QuestionItem) => {
+      if (ContentManifestManager.isItemRetired(it.item_id)) return false;
+      if (ContentManifestManager.isChunkRetired(it.target_subskill_id)) return false;
       if (excludeSet.has(it.item_id)) return false;
       if (excludePrompts && it.prompt_structure?.display_text) {
         const norm = this.normalizePrompt(it.prompt_structure.display_text);
@@ -244,7 +250,7 @@ export class QuestionBank {
       const domainItems = (domain_id === 'SCIENCE_EVS_WORLD_KNOWLEDGE')
         ? [...(this.itemsByDomain.get('SCIENCE_EVS') || []), ...(this.itemsByDomain.get('WORLD_KNOWLEDGE') || [])]
         : (this.itemsByDomain.get(domain_id) || []);
-      const domainUnseenIdOnly = domainItems.filter(it => !excludeSet.has(it.item_id));
+      const domainUnseenIdOnly = domainItems.filter(it => !excludeSet.has(it.item_id) && !ContentManifestManager.isItemRetired(it.item_id) && !ContentManifestManager.isChunkRetired(it.target_subskill_id));
       if (domainUnseenIdOnly.length > 0) {
         const fallbackItem = domainUnseenIdOnly[Math.floor(Math.random() * domainUnseenIdOnly.length)];
         console.warn(`[QuestionBank] Domain Affinity Guard fallback: exhausted unique prompts for domain '${domain_id}'. Dropping excludePrompts filter and serving item '${fallbackItem.item_id}' (prompt: "${fallbackItem.prompt_structure?.display_text}").`);
@@ -259,14 +265,15 @@ export class QuestionBank {
     }
 
     // 9. If strictly no unseen prompts exist anywhere, relax prompt filter but still enforce unique item ID
-    const unseenIdOnly = this.items.filter(it => !excludeSet.has(it.item_id));
+    const unseenIdOnly = this.items.filter(it => !excludeSet.has(it.item_id) && !ContentManifestManager.isItemRetired(it.item_id) && !ContentManifestManager.isChunkRetired(it.target_subskill_id));
     if (unseenIdOnly.length > 0) {
       const fallbackItem = unseenIdOnly[Math.floor(Math.random() * unseenIdOnly.length)];
       console.warn(`[QuestionBank] Global fallback: exhausted unique prompts globally. Dropping excludePrompts filter and serving item '${fallbackItem.item_id}' (prompt: "${fallbackItem.prompt_structure?.display_text}").`);
       return fallbackItem;
     }
 
-    return this.items.length > 0 ? this.items[Math.floor(Math.random() * this.items.length)] : null;
+    const activeOnly = this.items.filter(it => !ContentManifestManager.isItemRetired(it.item_id) && !ContentManifestManager.isChunkRetired(it.target_subskill_id));
+    return activeOnly.length > 0 ? activeOnly[Math.floor(Math.random() * activeOnly.length)] : null;
   }
 
   public getLoadedCount(): number {
